@@ -1,6 +1,6 @@
 ---
-title: "安裝並設定 Azure PowerShell | Microsoft Docs"
-description: "如何安裝並設定 Azure PowerShell 以供第一次使用。"
+title: 安裝並設定 Azure PowerShell | Microsoft Docs
+description: 如何安裝並設定 Azure PowerShell 以供第一次使用。
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -11,10 +11,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/17/2017
 ms.openlocfilehash: 0c1500a8748a3aa4546c6ce1e8d16a635b056edb
-ms.sourcegitcommit: b256bf48e15ee98865de0fae50e7b81878b03a54
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="install-and-configure-azure-powershell"></a>安裝並設定 Azure PowerShell
 

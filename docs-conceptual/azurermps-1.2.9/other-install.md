@@ -1,6 +1,6 @@
 ---
-title: "Azure PowerShell 的其他安裝方式 | Microsoft Docs"
-description: "如何使用 MSI 套件或 Web Platform Installer 來安裝 Azure PowerShell。"
+title: Azure PowerShell 的其他安裝方式 | Microsoft Docs
+description: 如何使用 MSI 套件或 Web Platform Installer 來安裝 Azure PowerShell。
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -11,10 +11,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/06/2017
 ms.openlocfilehash: 73c099375cecc8abdd5d6179109513946e7e793b
-ms.sourcegitcommit: c42c7176276ec4e1cc3360a93e6b15d32083bf9f
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="other-installation-methods"></a>其他安裝方法
 
@@ -56,7 +56,7 @@ At line:1 char:1
     + FullyQualifiedErrorId : CommandNotFoundException
 ```
 
-若要修正此錯誤，請重新啟動電腦或使用完整路徑來匯入模組。 例如：
+若要修正此錯誤，請重新啟動電腦或使用完整路徑來匯入模組。 例如︰
 
 ```powershell
 Import-Module "$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\AzureRM.psd1"

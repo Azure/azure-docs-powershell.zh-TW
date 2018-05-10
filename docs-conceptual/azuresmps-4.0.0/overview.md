@@ -1,6 +1,6 @@
 ---
-title: "Azure PowerShell 服務管理模組的概觀 | Microsoft Docs"
-description: "Azure PowerShell 的概觀以及有關安裝和設定的連結。"
+title: Azure PowerShell 服務管理模組的概觀 | Microsoft Docs
+description: Azure PowerShell 的概觀以及有關安裝和設定的連結。
 author: sdwheeler
 manager: carmonm
 ms.product: azure
@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.author: sewhee
 ms.manager: carmonm
 ms.openlocfilehash: d9a99d05eb2a1ca269f94cfbe6df4b64cec8a2f6
-ms.sourcegitcommit: b256bf48e15ee98865de0fae50e7b81878b03a54
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="overview-of-the-azure-powershell-service-management-module"></a>Azure PowerShell 服務管理模組的概觀
 

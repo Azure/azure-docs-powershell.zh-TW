@@ -1,6 +1,6 @@
 ---
-title: "Azure PowerShell 變更記錄 | Microsoft Docs"
-description: "這是在最新版中對 Azure powershell 所做的變更歷程記錄。"
+title: Azure PowerShell 變更記錄 | Microsoft Docs
+description: 這是在最新版中對 Azure powershell 所做的變更歷程記錄。
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -9,13 +9,13 @@ ms.service: azure-powershell
 ms.product: azure
 ms.devlang: powershell
 ms.topic: conceptual
-ms.workload: 
+ms.workload: ''
 ms.date: 05/18/2017
 ms.openlocfilehash: 5fe7591855577e083aad5923aed37b18d0b2a40c
-ms.sourcegitcommit: b256bf48e15ee98865de0fae50e7b81878b03a54
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="release-notes"></a>版本資訊
 
