@@ -135,7 +135,7 @@ $env:AzureRmContextAutoSave="true" | "false"
   任何變更都會改變全域內容。
 - [Disable-AzureRmContextAutosave][disable] - 關閉自動儲存內容。 需要每個新的 PowerShell 工作階段才能再次登入。
 - [Select-AzureRmContext][select] - 選取內容作為預設值。 所有後續的 Cmdlet 都會使用此內容中的認證來進行驗證。
-- [Disconnect-AzureRmAccount][remove-cred] - 將與帳戶相關聯的所有認證和內容移除。
+- [Disconnect-AzureRmAccount][remove-cred] - 移除與帳戶相關聯的所有認證和內容。
 - [Remove-AzureRmContext][remove-context] - 將已命名的內容移除。
 - [Rename-AzureRmContext][rename] - 將現有的內容重新命名。
 

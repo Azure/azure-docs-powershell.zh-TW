@@ -1,6 +1,6 @@
 ---
-title: "Azure PowerShell 變更記錄 | Microsoft Docs"
-description: "這是在最新版中對 Azure powershell 所做的變更歷程記錄。"
+title: Azure PowerShell 變更記錄 | Microsoft Docs
+description: 這是在最新版中對 Azure powershell 所做的變更歷程記錄。
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -9,13 +9,13 @@ ms.service: azure-powershell
 ms.product: azure
 ms.devlang: powershell
 ms.topic: conceptual
-ms.workload: 
+ms.workload: ''
 ms.date: 07/26/2017
 ms.openlocfilehash: d8a891673df343551cbd805016c2d25ee4e31c8c
-ms.sourcegitcommit: e6b7e20bbd04eda51416c56b13f867102b602d1a
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/07/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="release-notes"></a>版本資訊
 
@@ -35,7 +35,7 @@ ms.lasthandoff: 10/07/2017
     - Get-AzureRmAutomationDscNodeConfigurationDeployment
     - Get-AzureRmAutomationDscNodeConfigurationDeploymentSchedule
 * CognitiveServices
-  * 整合辨識服務管理 SDK 2.0.0 版。
+  * 整合認知服務管理 SDK 2.0.0 版。
   * Get-AzureRmCognitiveServicesAccount 現在可正確支援分頁。
 * 計算
   * 執行命令功能：
@@ -143,7 +143,7 @@ ms.lasthandoff: 10/07/2017
     - 已更新 Set-AzureRmNetworkInterfaceIpConfig：已新增 ApplicationSecurityGroup 和 ApplicationSecurityGroupId 選擇性參數
     - 已更新 New-AzureRmNetworkSecurityRuleConfig：已新增 SourceApplicationSecurityGroup、SourceApplicationSecurityGroupId、DestinationApplicationSecurityGroup 和 DestinationApplicationSecurityGroupId 選擇性參數
     - 已更新 Add-AzureRmNetworkSecurityRuleConfig：已新增 SourceApplicationSecurityGroup、SourceApplicationSecurityGroupId、DestinationApplicationSecurityGroup 和 DestinationApplicationSecurityGroupId 選擇性參數
-    - 已更新 Set-AzureRmNetworkSecurityRuleConfig：已新增 SourceApplicationSecurityGroup、SourceApplicationSecurityGroupId、DestinationApplicationSecurityGroup 和 DestinationApplicationSecurityGroupId 選擇性參數
+    - 已更新 New-AzureRmNetworkSecurityRuleConfig：已新增 SourceApplicationSecurityGroup、SourceApplicationSecurityGroupId、DestinationApplicationSecurityGroup 和 DestinationApplicationSecurityGroupId 選擇性參數
   * 已新增 VpnDeviceConfiguration 指令碼的新命令
     - Get-AzureRmVirtualNetworkGatewaySupportedVpnDevices
     - Get-AzureRmVirtualNetworkGatewayConnectionVpnDeviceConfigScript
@@ -175,15 +175,15 @@ ms.lasthandoff: 10/07/2017
   * 使用 PSRoleAssignment 物件來新增移除 Roleassignment 的支援
     - 使用者現在可以使用 PSRoleassignmnet inputobject 搭配 Remove-AzureRMRoleAssignment commandlet 來移除 roleassignment。
   * 新增 ManagedApplication Cmdlet
-    - 可建立受管理應用程式的 New-AzureRmManagedApplication Cmdlet
-    - 可列出訂用帳戶下所有受管理應用程式或可取得特定受管理應用程式的 Get-AzureRmManagedApplication Cmdlet
-    - 可刪除受管理應用程式的 Remove-AzureRmManagedApplication Cmdlet
-    - 可更新現有受管理應用程式的 Set-AzureRmManagedApplication Cmdlet
+    - 可建立受控應用程式的 New-AzureRmManagedApplication Cmdlet
+    - 可列出訂用帳戶下所有受控應用程式或可取得特定受控應用程式的 Get-AzureRmManagedApplication Cmdlet
+    - 可刪除受控應用程式的 Remove-AzureRmManagedApplication Cmdlet
+    - 可更新現有受控應用程式的 Set-AzureRmManagedApplication Cmdlet
   * 新增 ManagedApplicationDefinition Cmdlet
-    - 可使用 ZIP 檔案 URI 或使用 mainTemplate 與 createUiDefinition json 檔案建立受管理應用程式定義的 New-AzureRmManagedApplicationDefinition Cmdlet
-    - 可列出資源群組下所有受管理應用程式定義或可取得特定受管理應用程式的 Get-AzureRmManagedApplicationDefinition Cmdlet
-    - 可刪除受管理應用程式定義的 Remove-AzureRmManagedApplicationDefinition Cmdlet
-    - 可更新現有受管理應用程式定義的 Set-AzureRmManagedApplicationDefinition Cmdlet
+    - 可使用 ZIP 檔案 URI 或使用 mainTemplate 與 createUiDefinition json 檔案建立受控應用程式定義的 New-AzureRmManagedApplicationDefinition Cmdlet
+    - 可列出資源群組下所有受控應用程式定義或可取得特定受控應用程式的 Get-AzureRmManagedApplicationDefinition Cmdlet
+    - 可刪除受控應用程式定義的 Remove-AzureRmManagedApplicationDefinition Cmdlet
+    - 可更新現有受控應用程式定義的 Set-AzureRmManagedApplicationDefinition Cmdlet
 * Sql
   * 新增虛擬網路規則的支援
     - 新增 Get-AzureRmSqlServerVirtualNetworkRule Cmdlet，可依 Azure SQL Server 中特定的規則名稱或虛擬網路規則的清單取得虛擬網路規則。
@@ -230,7 +230,7 @@ ms.lasthandoff: 10/07/2017
   * 對 Get-AzureRmVM -Status 輸出公開 MaintenanceRedeployStatus
   * 對 Get-AzureRmComputeResourceSku 的表格格式公開限制與功能
 * DataLakeStore
-  * 問題的修正：https://github.com/Azure/azure-powershell/issues/4323
+  * 修正此問題：https://github.com/Azure/azure-powershell/issues/4323
 * EventHub
   * 為 NamespaceAttributes 新增了 ResourceGroup 屬性
     - 「ResourceGroup」獲得命名空間所在資源群組的名稱
@@ -299,15 +299,15 @@ ms.lasthandoff: 10/07/2017
 
 ## <a name="20170717---version-421"></a>2017.07.17 - 版本 4.2.1
 * 計算
-    - 透過 VM 磁碟和 VM 磁碟快照集修正問題，建立並更新 Cmdlet，(連結) (英文) [https://github.com/azure/azure-powershell/issues/4309]
+    - 修正 VM 磁碟和 VM 磁碟快照集建立和更新 Cmdlet 的問題，(連結) [https://github.com/azure/azure-powershell/issues/4309]
       - New-AzureRmDisk
       - New-AzureRmSnapshot
       - Update-AzureRmDisk
       - Update-AzureRmSnapshot
 * 設定檔
-    - 在 RDFE 使用非互動使用者驗證修正問題 (連結) (英文) [https://github.com/Azure/azure-powershell/issues/4299]
+    - 修正 RDFE 中非互動使用者驗證問題 (連結) [https://github.com/Azure/azure-powershell/issues/4299]
 * ServiceManagement
-    - 使用非互動使用者驗證修正問題 (連結) (英文) [https://github.com/Azure/azure-powershell/issues/4299]
+    - 修正非互動使用者驗證問題 (連結) [https://github.com/Azure/azure-powershell/issues/4299]
 
 ## <a name="2017711---version-420"></a>2017.7.11 - 版本 4.2.0
 * AnalysisServices
@@ -315,12 +315,12 @@ ms.lasthandoff: 10/07/2017
         - 引進用以擷取 AS 伺服器記錄檔 Export-AzureAnalysisServicesInstanceLog 的 API
 * 自動化
     * 針對 New-AzureRmAutomationSchedule，正確設定每週和每月排程的 TimeZone 值
-        - 詳細資訊可以在本問題找到 (英文)：https://github.com/Azure/azure-powershell/issues/3043
+        - 在此問題中可找到詳細資訊：https://github.com/Azure/azure-powershell/issues/3043
 * AzureBatch
     - 新增 Get-AzureBatchJobPreparationAndReleaseTaskStatus cmdlet。
     - 將位元組範圍的開始與結束加入 Get-AzureBatchNodeFileContent 參數。
 * CognitiveServices
-    * 整合辨識服務管理 SDK 1.0.0 版。
+    * 整合認知服務管理 SDK 1.0.0 版。
     * 修正帳戶名稱長度檢查錯誤。
 * 計算
     * 儲存體帳戶類型支援映像磁碟：
@@ -370,7 +370,7 @@ ms.lasthandoff: 10/07/2017
         - Add-AzureRmDataLakeStoreItemContent
 * Dns
     * 針對 Get-AzureRmDnsZone 修正管線情節中的錯誤
-        - 詳細資訊可以在這裡找到 (英文)：https://github.com/Azure/azure-powershell/issues/4203
+        - 如需詳細資訊，請參閱：https://github.com/Azure/azure-powershell/issues/4203
 * HDInsight
     * 新增支援以啟用/停用 Operations Management Suite (OMS)
     * 新的 Cmdlet
@@ -437,7 +437,7 @@ ms.lasthandoff: 10/07/2017
         - Get-AzureRmVirtualNetworkUsageList
 * 設定檔
     * 修正使用 Import-AzureRmContext 或 Save-AzureRmContext 時的錯誤
-        - 詳細資訊可以在本問題找到 (英文)：https://github.com/Azure/azure-powershell/issues/3954
+        - 在此問題中可找到詳細資訊：https://github.com/Azure/azure-powershell/issues/3954
 * RecoveryServices.SiteRecovery
     * 推出新的 Azure Site Recovery 作業模組。
         - 所有 Cmdlet 的開頭均為 AzureRmRecoveryServicesAsr*
@@ -447,7 +447,7 @@ ms.lasthandoff: 10/07/2017
     * 已取代的伺服器升級 Cmdlet，因為舊的伺服器版本 (2.0) 已經不存在。
     * 將新的選擇性切換參數「AssignIdentity」加入 New-AzureRmSqlServer 和 Set-AzureRmSqlServer Cmdlet，以支援佈建 SQL 伺服器資源的資源身分識別
     * 參數 ResourceGroupName 現在是 Get-AzureRmSqlServer 的選擇性項目
-        - 詳細資訊可在下列問題中找到 (英文)：https://github.com/Azure/azure-powershell/issues/635
+        - 在下列問題中可找到詳細資訊：https://github.com/Azure/azure-powershell/issues/635
 * ExpressRoute 的 ServiceManagement：
     * 更新 New-AzureBgpPeering Cmdlet，新增下列選項：
         - PeerAddressType：可指定「IPv4」或「IPv6」的值，以建立對應位址系列類型的 BGP 對等互連
@@ -461,7 +461,7 @@ ms.lasthandoff: 10/07/2017
     * 新增的 SKU：B1、B2、S0
     * 新增相應增加/減少支援
 * CognitiveServices
-    * 更新在建立辨識服務資源時的授權合約詳細顯示內容
+    * 更新在建立認知服務資源時的授權合約詳細顯示內容
 * 計算
     * 針對具有多個受控磁碟的虛擬機器，修正 Test-AzureRmVMAEMExtension
     * 更新 Set-AzureRmVMAEMExtension：新增進階受控磁碟的快取資訊
@@ -533,7 +533,7 @@ ms.lasthandoff: 10/07/2017
       * 新增 `-EnvironmentName` 參數別名，以便回溯相容於 AzureRM.profile 的 2.x 版本
 
 ## <a name="20170512---version-401"></a>2017.05.12 - 版本 4.0.1
- * 修正離線情況下 New-AzureStorageContext 的問題 (英文)：https://github.com/Azure/azure-powershell/issues/3939
+ * 修正離線案例中 New-AzureStorageContext 的問題：https://github.com/Azure/azure-powershell/issues/3939
 
 ## <a name="20170510---version-400"></a>2017.05.10 - 版本 4.0.0
 
@@ -554,7 +554,7 @@ ms.lasthandoff: 10/07/2017
   - 移除 PS VM 物件中重複的 DataDiskNames 和 NetworkInterfaceIDs 屬性。
   - 使個別位於 Remove-AzureRmVMDataDisk 和 Remove-AzureRmVMNetworkInterface 中的 DataDiskNames 和 NetworkInterfaceIDs 參數成為選擇性。
   - 修正 Get Cmdlet 傳回清單物件時的管線問題。
-  - 已重新命名和 RDFE Cmdlet 衝突的 Cmdlet。 如需詳細資料，請參閱此問題：https://github.com/Azure/azure-powershell/issues/2917
+  - 已重新命名和 RDFE Cmdlet 衝突的 Cmdlet。 如需詳細資料，請參閱問題 https://github.com/Azure/azure-powershell/issues/2917
     + `New-AzureVMSqlServerAutoBackupConfig` 已重新命名為 `New-AzureRmVMSqlServerAutoBackupConfig`
     + `New-AzureVMSqlServerAutoPatchingConfig` 已重新命名為 `New-AzureRmVMSqlServerAutoPatchingConfig`
     + `New-AzureVMSqlServerKeyVaultCredentialConfig` 已重新命名為 `New-AzureRmVMSqlServerKeyVaultCredentialConfig`
