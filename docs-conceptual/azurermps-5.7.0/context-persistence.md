@@ -2,19 +2,19 @@
 title: 在 PowerShell 工作階段之間保存使用者登入
 description: 本文說明 Azure PowerShell 中的新功能，可讓您在多個 PowerShell 工作階段中重複使用認證和其他使用者資訊。
 services: azure
-author: sdwheeler
-ms.author: sewhee
+author: sptramer
+ms.author: sttramer
 manager: carmonm
 ms.product: azure
 ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 15e1c9ca770c9fcd72513c4f53f7726edd9c2469
-ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
+ms.openlocfilehash: e086ce919b4cdd14a8cc7527aa62bfd9ce09628a
+ms.sourcegitcommit: 5971c92cb023bdd1d71fa2ad0a3b378abfbd092a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="persisting-user-logins-across-powershell-sessions"></a>在 PowerShell 工作階段之間保存使用者登入
 
@@ -135,7 +135,7 @@ $env:AzureRmContextAutoSave="true" | "false"
   任何變更都會改變全域內容。
 - [Disable-AzureRmContextAutosave][disable] - 關閉自動儲存內容。 需要每個新的 PowerShell 工作階段才能再次登入。
 - [Select-AzureRmContext][select] - 選取內容作為預設值。 所有後續的 Cmdlet 都會使用此內容中的認證來進行驗證。
-- [Disconnect-AzureRmAccount][remove-cred] - 將與帳戶相關聯的所有認證和內容移除。
+- [Disconnect-AzureRmAccount][remove-cred] - 移除與帳戶相關聯的所有認證和內容。
 - [Remove-AzureRmContext][remove-context] - 將已命名的內容移除。
 - [Rename-AzureRmContext][rename] - 將現有的內容重新命名。
 

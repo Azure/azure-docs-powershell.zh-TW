@@ -2,8 +2,8 @@
 title: Azure PowerShell 變更記錄 | Microsoft Docs
 description: 這是在最新版中對 Azure powershell 所做的變更歷程記錄。
 services: azure
-author: sdwheeler
-ms.author: sewhee
+author: sptramer
+ms.author: sttramer
 manager: carmonm
 ms.service: azure-powershell
 ms.product: azure
@@ -11,11 +11,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 07/26/2017
-ms.openlocfilehash: d8a891673df343551cbd805016c2d25ee4e31c8c
-ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
+ms.openlocfilehash: bf53fd9f3a4417fb8cdefbdcce57aa6da270edbf
+ms.sourcegitcommit: 5971c92cb023bdd1d71fa2ad0a3b378abfbd092a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="release-notes"></a>版本資訊
 

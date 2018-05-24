@@ -2,19 +2,19 @@
 title: 安裝和設定 Azure PowerShell 服務管理模組 | Microsoft Docs
 description: 如何安裝並設定 Azure PowerShell 以供第一次使用。
 services: azure
-author: sdwheeler
-ms.author: sewhee
+author: sptramer
+ms.author: sttramer
 manager: carmonm
 ms.product: azure
 ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/06/2017
-ms.openlocfilehash: f46fe25352c100976dd8fc3b1c48ddfc3926f906
-ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
+ms.openlocfilehash: 6f0f56dd09913ac535552aaa06c8e4431d78c24a
+ms.sourcegitcommit: 5971c92cb023bdd1d71fa2ad0a3b378abfbd092a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="installing-the-azure-powershell-service-management-module"></a>安裝 Azure PowerShell 服務管理模組
 
