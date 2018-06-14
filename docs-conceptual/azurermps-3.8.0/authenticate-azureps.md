@@ -1,19 +1,18 @@
 ---
 title: 使用 Azure PowerShell 來登入
 description: 使用 Azure PowerShell 來登入
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: 52a2ccba1886c2761d66aee52b27d66e8da4d630
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: f2a9247d442229b7323e5a9195c7257e45d58e56
+ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821525"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "34853231"
 ---
 # <a name="log-in-with-azure-powershell"></a>使用 Azure PowerShell 來登入
 

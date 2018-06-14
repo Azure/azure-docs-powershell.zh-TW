@@ -1,19 +1,18 @@
 ---
 title: 使用實驗性 Azure PowerShell 模組
 description: 了解實驗性 Azure PowerShell 模組的原理和使用方式。
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
-ms.openlocfilehash: 4eb94644bb87e69ef6edc79d36189b453e45ecd0
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: ac571363d79c83b268b5c25f65b14f16d4b86e71
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34819961"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323028"
 ---
 # <a name="using-experimental-azure-powershell-modules"></a>使用實驗性 Azure PowerShell 模組
 
@@ -31,11 +30,11 @@ Azure PowerShell 小組著重於 Azure 中的開發人員工具 (特別是 CLI)�
 
 系統會將實驗性模組發佈至 PowerShell 資源庫，就如同現有的 Azure PowerShell 模組。 若要查看實驗模組清單，請執行下列命令：
 
-```powershell
+```azurepowershell-interactive
 Find-Module AzureRM.*.Experiments
 ```
 
-```Output
+```output
 Version Name                         Repository Description
 ------- ----                         ---------- -----------
 1.0.25  AzureRM.Compute.Experiments  PSGallery  Azure Compute experiments for VM creation
@@ -44,7 +43,7 @@ Version Name                         Repository Description
 
 若要安裝實驗性模組，請使用下列提升權限 PowerShell 工作階段中的命令：
 
-```powershell
+```azurepowershell-interactive
 Install-Module AzureRM.Compute.Experiments
 Install-Module AzureRM.Websites.Experiments
 ```

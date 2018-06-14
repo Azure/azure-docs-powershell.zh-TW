@@ -1,19 +1,18 @@
 ---
 title: 將查詢結果格式化 | Microsoft Docs
 description: 如何查詢 Azure 中的資源，並將結果格式化。
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 481beac237d1a6e4b9cf50e541f6abcad8e3ae1a
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: cd806f9ae8185b7415609a083ecb1b78e548fd9c
+ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34820250"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "34853520"
 ---
 # <a name="formatting-query-results"></a>將查詢結果格式化
 

@@ -1,19 +1,18 @@
 ---
 title: 在 PowerShell 工作階段之間保存使用者登入
 description: 本文說明 Azure PowerShell 中的新功能，可讓您在多個 PowerShell 工作階段中重複使用認證和其他使用者資訊。
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 75eaa1f04e4274e1028e950ad9a98520db2b94de
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: d650cfaae580acd10b3ddb06edec9883f1a32844
+ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34822035"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "34853962"
 ---
 # <a name="persisting-user-logins-across-powershell-sessions"></a>在 PowerShell 工作階段之間保存使用者登入
 

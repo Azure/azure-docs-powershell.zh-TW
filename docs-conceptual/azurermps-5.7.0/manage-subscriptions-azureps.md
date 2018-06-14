@@ -1,19 +1,18 @@
 ---
-title: 使用 Azure PowerShell 來管理 Azure 訂用帳戶 | Microsoft Docs
+title: 使用 Azure PowerShell 來管理 Azure 訂用帳戶
 description: 使用 Azure PowerShell 來管理 Azure 訂用帳戶
-keywords: Azure PowerShell, 訂用帳戶
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: d28da700efbc2927cb3f73ae696759fb1e0c0cd6
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: fbd2fe315efbdfb2147218229d51e983e2b61361
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821950"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323351"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>管理多個 Azure 訂用帳戶
 
@@ -21,11 +20,11 @@ ms.locfileid: "34821950"
 
 1. 取得您帳戶中所有訂用帳戶的清單。
 
-    ```powershell
+    ```azurepowershell-interactive
     Get-AzureRmSubscription
     ```
 
-    ```
+    ```output
     Environment           : AzureCloud
     Account               : username@contoso.com
     TenantId              : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
@@ -50,17 +49,17 @@ ms.locfileid: "34821950"
 
 2. 預設設定。
 
-    ```powershell
+    ```azurepowershell-interactive
     Select-AzureRmSubscription -SubscriptionName "My Demos"
     ```
 
 3. 執行 `Get-AzureRmContext` Cmdlet 來驗證變更。
 
-    ```powershell
+    ```azurepowershell-interactive
     Get-AzureRmContext
     ```
 
-    ```
+    ```output
     Environment           : AzureCloud
     Account               : username@contoso.com
     TenantId              : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
