@@ -1,25 +1,32 @@
 ---
-title: 開始使用 Azure PowerShell | Microsoft Docs
+title: 開始使用 Azure PowerShell
 description: ''
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: d43323ca696ed115a86e7502a3bac829118028e4
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: cfb7ff30b442bb345931728dab131e1b80e58989
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821032"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323368"
 ---
-# <a name="getting-started-with-azure-powershell"></a>開始使用 Azure PowerShell
+# <a name="get-started-with-azure-powershell"></a>開始使用 Azure PowerShell
 
-Azure PowerShell 的設計是為了讓您從命令列管理 Azure 資源，以及讓您建置可對 Azure Resource Manager 起作用的自動化指令碼。 您可以在瀏覽器中將它與 [Azure Cloud Shell](/azure/cloud-shell/overview) 搭配使用，或可將它安裝在本機電腦上，並在任何 PowerShell 工作階段中使用它。 本文可協助您開始使用 Azure PowerShell，並讓您知道其背後的核心概念。
+Azure PowerShell 的設計是為了讓您從命令列管理 Azure 資源，以及讓您建置可對 Azure Resource Manager 起作用的自動化指令碼。 您可以在瀏覽器中將它與 [Azure Cloud Shell](/azure/cloud-shell/overview) 搭配使用，或者將它安裝在本機電腦上。 本文可協助您開始使用 Azure PowerShell，並讓您知道其背後的核心概念。
 
-## <a name="connect"></a>連線
+## <a name="install-azure-powershell"></a>安裝 Azure PowerShell
+
+第一步是確定您已安裝最新版的 Azure PowerShell。 如需最新版本的相關資訊，請參閱[版本資訊](./release-notes-azureps.md)。
+
+1. [安裝 Azure PowerShell](install-azurerm-ps.md)。
+
+2. 若要確認安裝是否成功，請從命令列執行 `Get-Module AzureRM -ListAvailable`。
+
+## <a name="azure-cloud-shell"></a>Azure Cloud Shell 
 
 若要開始使用，最簡單的方式就是[啟動 Cloud Shell](/azure/cloud-shell/quickstart)。
 
@@ -37,15 +44,7 @@ Azure PowerShell 的設計是為了讓您從命令列管理 Azure 資源，以�
 
 您也可以安裝 Azure PowerShell，並在本機 PowerShell 工作階段中使用。
 
-## <a name="install-azure-powershell"></a>安裝 Azure PowerShell
-
-第一步是確定您已安裝最新版的 Azure PowerShell。 如需最新版本的相關資訊，請參閱[版本資訊](./release-notes-azureps.md)。
-
-1. [安裝 Azure PowerShell](install-azurerm-ps.md)。
-
-2. 若要確認安裝是否成功，請從命令列執行 `Get-Module AzureRM -ListAvailable`。
-
-## <a name="log-in-to-azure"></a>登入 Azure
+## <a name="sign-in-to-azure"></a>登入 Azure
 
 以互動方式登入︰
 
@@ -63,11 +62,11 @@ Azure PowerShell 的設計是為了讓您從命令列管理 Azure 資源，以�
 
 首先，建立認證物件。
 
-```powershell
+```azurepowershell-interactive
 $cred = Get-Credential -Message "Enter a username and password for the virtual machine."
 ```
 
-```Output
+```output
 Windows PowerShell credential request.
 Enter a username and password for the virtual machine.
 User: localAdmin
@@ -75,11 +74,11 @@ Password for user localAdmin: *********
 ```
 接著，建立 VM。
 
-```powershell
+```azurepowershell-interactive
 New-AzureRmVM -Name SampleVM -Credential $cred
 ```
 
-```Output
+```output
 ResourceGroupName        : SampleVM
 Id                       : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/SampleVM/providers/Microsoft.Compute/virtualMachines/SampleVM
 VmId                     : 43f6275d-ce50-49c8-a831-5d5974006e63
@@ -97,11 +96,11 @@ FullyQualifiedDomainName : samplevm-2c0867.eastus.cloudapp.azure.com
 
 就是這麼簡單。 但是，您可能會好奇是不是還建立了其他項目，以及 VM 是如何設定的。 先來看看我們的資源群組。
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmResourceGroup | Select-Object ResourceGroupName,Location
 ```
 
-```Output
+```output
 ResourceGroupName          Location
 -----------------          --------
 cloud-shell-storage-westus westus
@@ -112,13 +111,13 @@ SampleVM                   eastus
 
 現在，在這個新的資源群組中還建立了哪些其他的資源？
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmResource |
   Where ResourceGroupName -eq SampleVM |
     Select-Object ResourceGroupName,Location,ResourceType,Name
 ```
 
-```Output
+```output
 ResourceGroupName          Location ResourceType                            Name
 -----------------          -------- ------------                            ----
 SAMPLEVM                   eastus   Microsoft.Compute/disks                 SampleVM_OsDisk_1_9b286c54b168457fa1f8c47...
@@ -131,13 +130,13 @@ SampleVM                   eastus   Microsoft.Network/virtualNetworks       Samp
 
 讓我們取得更多關於 VM 的詳細資料。 此範例顯示如何擷取用來建立 VM 的 OS 映像相關資訊。
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmVM -Name SampleVM -ResourceGroupName SampleVM |
   Select-Object -ExpandProperty StorageProfile |
     Select-Object -ExpandProperty ImageReference
 ```
 
-```Output
+```output
 Publisher : MicrosoftWindowsServer
 Offer     : WindowsServer
 Sku       : 2016-Datacenter
@@ -155,11 +154,11 @@ Id        :
 
 讓我們建立一個名為「MyResourceGroup」的資源群組，位置則定在 Azure 的 westeurope 區域。 若要這麼做，請輸入下列命令：
 
-```powershell
+```azurepowershell-interactive
 New-AzureRmResourceGroup -Name 'myResourceGroup' -Location 'westeurope'
 ```
 
-```Output
+```output
 ResourceGroupName : myResourceGroup
 Location          : westeurope
 ProvisioningState : Succeeded
@@ -173,7 +172,7 @@ ResourceId        : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resource
 
 首先，我們需要建立一個子網路組態，以用於虛擬網路的建立程序。 我們也會建立公用 IP 位址，以便可以連線到此 VM。 我們會建立網路安全性群組，來保護對於公用位址的存取。 最後，我們會使用前面的所有資源來建立虛擬 NIC。
 
-```powershell
+```azurepowershell-interactive
 # Variables for common values
 $resourceGroup = "myResourceGroup"
 $location = "westeurope"
@@ -213,7 +212,7 @@ $nic = New-AzureRmNetworkInterface -Name myNic2 -ResourceGroupName $resourceGrou
 
 我們已擁有所需的資源，可以建立 VM 組態物件了。
 
-```powershell
+```azurepowershell-interactive
 # Create a virtual machine configuration
 $vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize Standard_D1 |
   Set-AzureRmVMOperatingSystem -Linux -ComputerName $vmName -Credential $cred -DisablePasswordAuthentication |
@@ -221,7 +220,7 @@ $vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize Standard_D1 |
   Add-AzureRmVMNetworkInterface -Id $nic.Id
 
 # Configure SSH Keys
-$sshPublicKey = Get-Content "$env:USERPROFILE\.ssh\id_rsa.pub"
+$sshPublicKey = Get-Content -Raw "$env:USERPROFILE\.ssh\id_rsa.pub"
 Add-AzureRmVMSshPublicKey -VM $vmConfig -KeyData $sshPublicKey -Path "/home/azureuser/.ssh/authorized_keys"
 ```
 
@@ -229,7 +228,7 @@ Add-AzureRmVMSshPublicKey -VM $vmConfig -KeyData $sshPublicKey -Path "/home/azur
 
 現在，我們可以使用 VM 組態物件來建立 VM。
 
-```powershell
+```azurepowershell-interactive
 New-AzureRmVM -ResourceGroupName $resourceGroup -Location $location -VM $vmConfig
 ```
 
@@ -239,7 +238,7 @@ VM 已經建立好，因此您可以搭配使用 SSH 與您所建立之 VM 的�
 ssh xx.xxx.xxx.xxx
 ```
 
-```Output
+```output
 Welcome to Ubuntu 14.04.4 LTS (GNU/Linux 3.19.0-65-generic x86_64)
 
  * Documentation:  https://help.ubuntu.com/
@@ -276,13 +275,13 @@ my-login@MyLinuxVM:../../..$
 
 例如，若要建立 Azure 網路負載平衡器，然後與我們新建立的 VM 相關聯，我們可以使用下列建立命令︰
 
-```powershell
+```azurepowershell-interactive
 New-AzureRmLoadBalancer -Name MyLoadBalancer -ResourceGroupName myResourceGroup -Location westeurope
 ```
 
 我們也可以使用下列命令，為我們的基礎結構建立新的私人虛擬網路 (此網路在 Azure 中通常稱為「VNet」)︰
 
-```powershell
+```azurepowershell-interactive
 $subnetConfig = New-AzureRmVirtualNetworkSubnetConfig -Name mySubnet2 -AddressPrefix 10.0.0.0/16
 $vnet = New-AzureRmVirtualNetwork -ResourceGroupName myResourceGroup -Location westeurope `
   -Name MYvNET3 -AddressPrefix 10.0.0.0/16 -Subnet $subnetConfig
@@ -292,7 +291,7 @@ Azure 和 Azure PowerShell 的功能之所以強大，是因為它們不只能�
 
 例如，您可以使用 Azure PowerShell 來建立 Azure AppService。 Azure AppService 是一種受控平台服務，它可讓您裝載 Web 應用程式，而不必擔心基礎結構的問題。 在建立 Azure AppService 之後，您可以使用下列命令在 AppService 內建立兩個新的 Azure Web Apps︰
 
-```powershell
+```azurepowershell-interactive
 # Create an Azure AppService that we can host any number of web apps within
 New-AzureRmAppServicePlan -Name MyAppServicePlan -Tier Basic -NumberofWorkers 2 -WorkerSize Small -ResourceGroupName myResourceGroup -Location westeurope
 
@@ -305,13 +304,13 @@ New-AzureRmWebApp -Name MyWebApp43433 -AppServicePlan MyAppServicePlan -Resource
 
 您可以使用 `Get-AzureRmResource` Cmdlet 來列出 Azure 內所執行的資源。 下列範例顯示我們剛才在新的資源群組中所建立的資源。
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmResource |
   Where-Object ResourceGroupName -eq myResourceGroup |
     Select-Object Name,Location,ResourceType
 ```
 
-```Output
+```output
 Name                                                  Location   ResourceType
 ----                                                  --------   ------------
 myLinuxVM_OsDisk_1_36ca038791f642ba91270879088c249a   westeurope Microsoft.Compute/disks
@@ -334,13 +333,13 @@ micromyresomywi032907510                              westeurope Microsoft.Stora
 
 為了清除 Azure 帳戶，您想要移除我們已在此範例中建立的資源。 您可以使用 `Remove-AzureRm*` Cmdlet 來刪除您不再需要的資源。 若要移除我們已建立的 Windows VM，請使用下列命令︰
 
-```powershell
+```azurepowershell-interactive
 Remove-AzureRmVM -Name myWindowsVM -ResourceGroupName myResourceGroup
 ```
 
 系統會提示您確認您想要移除資源。
 
-```Output
+```output
 Confirm
 Are you sure you want to remove resource group 'myResourceGroup'
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
@@ -348,11 +347,11 @@ Are you sure you want to remove resource group 'myResourceGroup'
 
 您也可以一次刪除許多資源。 例如，下列命令會將資源群組「MyResourceGroup」整個刪除，之前我們將這個群組用於此快速入門教學課程中的所有範例。 這會移除資源群組和其中的所有資源。
 
-```powershell
+```azurepowershell-interactive
 Remove-AzureRmResourceGroup -Name myResourceGroup
 ```
 
-```Output
+```output
 Confirm
 Are you sure you want to remove resource group 'myResourceGroup'
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y

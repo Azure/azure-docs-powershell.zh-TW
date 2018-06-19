@@ -1,25 +1,24 @@
 ---
-title: 查詢 Azure 資源以及將結果格式化 | Microsoft Docs
+title: 查詢 Azure PowerShell Cmdlet 的輸出
 description: 如何查詢 Azure 中的資源，並將結果格式化。
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 03/30/2017
-ms.openlocfilehash: dde1702f512be70ece137059797e29c75926e231
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.date: 06/08/2018
+ms.openlocfilehash: daa39ada5b4e969264b6e8596dc7b090bb196fd5
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34820301"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323079"
 ---
-# <a name="querying-for-azure-resources"></a>查詢 Azure 資源
+# <a name="query-output-of-azure-powershell-cmdlets"></a>查詢 Azure PowerShell Cmdlet 的輸出
 
 使用內建 Cmdlet 即可在 PowerShell 中完成查詢。 在 PowerShell 中，Cmdlet 名稱採用**_動詞-名詞_** 的格式。 使用動詞 **_Get_** 的 Cmdlet 是查詢 Cmdlet。 Cmdlet 名詞則是 Cmdlet 動詞要據以執行之 Azure 資源的類型。
 
-## <a name="selecting-simple-properties"></a>選取簡單屬性
+## <a name="select-simple-properties"></a>選取簡單屬性
 
 Azure PowerShell 已為每個 Cmdlet 定義了預設格式。 每個資源類型最常見的屬性則會以資料表或清單格式自動顯示。 如需如何將輸出格式化的詳細資訊，請參閱[將查詢結果格式化](formatting-output.md)。
 
@@ -51,7 +50,7 @@ MyUnbuntu1610 MYWESTEURG        westeurope
 MyWin2016VM   MYWESTEURG        westeurope
 ```
 
-## <a name="selecting-complex-nested-properties"></a>選取複雜的巢狀屬性
+## <a name="select-complex-nested-properties"></a>選取複雜的巢狀屬性
 
 如果您想要選取的屬性在 JSON 中輸出深入巢狀，您必須將完整路徑提供給該巢狀屬性。 下列範例顯示如何從 `Get-AzureRmVM` Cmdlet 選取 VM 名稱和 OS 類型。
 
@@ -66,7 +65,7 @@ MyUnbuntu1610   Linux
 MyWin2016VM   Windows
 ```
 
-## <a name="filter-result-using-the-where-object-cmdlet"></a>使用 Where-Object Cmdlet 來篩選結果
+## <a name="filter-results-with-the-where-object-cmdlet"></a>使用 Where-Object Cmdlet 來篩選結果
 
 `Where-Object` Cmdlet 可讓您根據任何屬性值來篩選結果。 在下列範例中，篩選器只會選取名稱中具有 "RGD" 文字的 VM。
 

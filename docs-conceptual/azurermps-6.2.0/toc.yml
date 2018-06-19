@@ -17,27 +17,27 @@
       items:
         - name: 建立服務主體
           href: create-azure-service-principal-azureps.md
-        - name: 使用持續性認證
+        - name: 持續性認證
           href: context-persistence.md
     - name: 查詢
       href: queries-azureps.md
-    - name: 格式化
+    - name: 格式化輸出
       href: formatting-output.md
-    - name: 訂用帳戶
+    - name: 管理訂用帳戶
       href: manage-subscriptions-azureps.md
     - name: 部署
       items:
-        - name: 使用 Resource Manager 範本進行部署
+        - name: 部署 Resource Manager 範本
           href: /azure/azure-resource-manager/resource-group-template-deploy
         - name: 匯出 Resource Manager 範本
           href: /azure/azure-resource-manager/resource-manager-export-template-powershell
-        - name: 使用 SAS 權杖來部署私用 Resource Manager 範本
+        - name: 部署私人 Resource Manager 範本
           href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
     - name: 概念
       items:
-        - name: 使用實驗性模組
+        - name: 實驗性模組
           href: using-experimental-modules.md
-        - name: 使用 PowerShell 作業
+        - name: PowerShell 工作
           href: using-psjobs.md
     - name: 版本資訊
       href: release-notes-azureps.md

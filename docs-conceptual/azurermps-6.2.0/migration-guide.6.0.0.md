@@ -1,20 +1,18 @@
 ---
 title: Microsoft Azure PowerShell 6.0.0 的重大變更
 description: 本移轉指南包含在第 6 版發行中對 Azure PowerShell 進行重大變更的清單。
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.workload: ''
 ms.date: 5/1/2018
-ms.openlocfilehash: 2fd51f9e0217da4af7322c4776de49d916a8822c
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: 830afb067ea22999c09c1b894b72097bb8ebfa3b
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34822086"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323504"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Microsoft Azure PowerShell 6.0.0 的重大變更
 
@@ -153,7 +151,7 @@ New-AzureRmAvailabilitySet -ResourceGroupName "MyRG" -Name "MyAvailabilitySet" -
 
 **Set-AzureRmVMAEMExtension**
 - 已移除參數 `DisableWAD`
-    -  Windows Azure 診斷預設為停用
+    -  Microsoft Azure 診斷預設為停用
 
 **Set-AzureRmVMDataDisk**
 - 參數 `StorageAccountType` 可接受的值分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`

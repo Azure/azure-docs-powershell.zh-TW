@@ -1,25 +1,32 @@
 ---
-title: 開始使用 Azure PowerShell | Microsoft Docs
+title: 開始使用 Azure PowerShell
 description: ''
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: fa9be1722b8260c4737c180eec79ae836235654c
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: cfb7ff30b442bb345931728dab131e1b80e58989
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821882"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323130"
 ---
-# <a name="getting-started-with-azure-powershell"></a>開始使用 Azure PowerShell
+# <a name="get-started-with-azure-powershell"></a>開始使用 Azure PowerShell
 
-Azure PowerShell 的設計是為了讓您從命令列管理 Azure 資源，以及讓您建置可對 Azure Resource Manager 起作用的自動化指令碼。 您可以在瀏覽器中將它與 [Azure Cloud Shell](/azure/cloud-shell/overview) 搭配使用，或可將它安裝在本機電腦上，並在任何 PowerShell 工作階段中使用它。 本文可協助您開始使用 Azure PowerShell，並讓您知道其背後的核心概念。
+Azure PowerShell 的設計是為了讓您從命令列管理 Azure 資源，以及讓您建置可對 Azure Resource Manager 起作用的自動化指令碼。 您可以在瀏覽器中將它與 [Azure Cloud Shell](/azure/cloud-shell/overview) 搭配使用，或者將它安裝在本機電腦上。 本文可協助您開始使用 Azure PowerShell，並讓您知道其背後的核心概念。
 
-## <a name="connect"></a>連線
+## <a name="install-azure-powershell"></a>安裝 Azure PowerShell
+
+第一步是確定您已安裝最新版的 Azure PowerShell。 如需最新版本的相關資訊，請參閱[版本資訊](./release-notes-azureps.md)。
+
+1. [安裝 Azure PowerShell](install-azurerm-ps.md)。
+
+2. 若要確認安裝是否成功，請從命令列執行 `Get-Module AzureRM -ListAvailable`。
+
+## <a name="azure-cloud-shell"></a>Azure Cloud Shell 
 
 若要開始使用，最簡單的方式就是[啟動 Cloud Shell](/azure/cloud-shell/quickstart)。
 
@@ -37,15 +44,7 @@ Azure PowerShell 的設計是為了讓您從命令列管理 Azure 資源，以�
 
 您也可以安裝 Azure PowerShell，並在本機 PowerShell 工作階段中使用。
 
-## <a name="install-azure-powershell"></a>安裝 Azure PowerShell
-
-第一步是確定您已安裝最新版的 Azure PowerShell。 如需最新版本的相關資訊，請參閱[版本資訊](./release-notes-azureps.md)。
-
-1. [安裝 Azure PowerShell](install-azurerm-ps.md)。
-
-2. 若要確認安裝是否成功，請從命令列執行 `Get-Module AzureRM -ListAvailable`。
-
-## <a name="log-in-to-azure"></a>登入 Azure
+## <a name="sign-in-to-azure"></a>登入 Azure
 
 以互動方式登入︰
 

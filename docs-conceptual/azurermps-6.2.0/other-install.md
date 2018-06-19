@@ -1,25 +1,26 @@
 ---
-title: Azure PowerShell 的其他安裝方式 | Microsoft Docs
+title: Azure PowerShell 的其他安裝方式
 description: 如何使用 MSI 套件或 Web Platform Installer 來安裝 Azure PowerShell。
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/06/2017
-ms.openlocfilehash: cb4ced3b72b69546594d75e7eb7db822b549a664
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.date: 06/06/2018
+ms.openlocfilehash: 0919583d9cb05a75fae3b812eed84109be8b28aa
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821644"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323317"
 ---
 # <a name="other-installation-methods"></a>其他安裝方法
 
-Azure PowerShell 有多種安裝方法。 慣用方法是搭配使用 PowerShellGet 和 PowerShell 資源庫。 您可以使用 Web Platform Installer (WebPI) 將 Azure PowerShell 安裝在 Windows 上，也可以用 GitHub 中的 MSI 檔案安裝。 Azure PowerShell 也可以安裝在 Docker 容器中。
+本文說明如何使用 MSI 或 Web Platform Installer (WebPI) 來安裝 Azure PowerShell。 您也可以從 Docker 容器內部執行 Azure PowerShell。 只有在您的系統需要時才使用這些安裝方法。 安裝 Azure PowerShell 的標準方式就是透過 PowerShellGet。 如需使用 PowerShellGet 安裝 Azure PowerShell 的指示，請參閱[使用 PowerShellGet 安裝 Azure PowerShell](install-azurerm-ps.md)。
 
-## <a name="install-on-windows-using-the-web-platform-installer"></a>使用 Web Platform Installer 安裝在 Windows 上
+若要在 Linux 或 macOS 環境上安裝，請參閱[在 macOS 或 Linux 上安裝 Azure PowerShell](install-azurermps-maclinux.md)。
+
+## <a name="install-or-update-on-windows-using-the-web-platform-installer"></a>使用 Web Platform Installer 在 Windows 上安裝或更新
 
 從 WebPI 來安裝最新版 Azure PowerShell 的方法和安裝舊版的方法一樣。
 請下載 [Azure PowerShell WebPI 套件](http://aka.ms/webpi-azps)並開始安裝。
@@ -29,9 +30,9 @@ Azure PowerShell 有多種安裝方法。 慣用方法是搭配使用 PowerShell
 >
 > PowerShell 資源庫模組會在 `$env:ProgramFiles\WindowsPowerShell\Modules` 中安裝模組。 相較之下，WebPI 安裝程式會在 `$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\` 中安裝 Azure 模組。
 >
-> 如果安裝期間發生錯誤，請手動移除 `$env:ProgramFiles\WindowsPowerShell\Modules` 資料來中的 Azure* 資料夾，再重試安裝。
+> 如果安裝期間發生錯誤，請手動移除 `$env:ProgramFiles\WindowsPowerShell\Modules` 資料來中的 `Azure*` 資料夾，再重試安裝。
 
-一旦完成安裝，您的 `$env:PSModulePath` 設定中應會有包含 Azure PowerShell Cmdlet 的目錄。 下列命令可用來確認系統是否已正確安裝 Azure PowerShell。
+一旦完成安裝，您的 `$env:PSModulePath` 設定中應會有包含 Azure PowerShell Cmdlet 的目錄。 下列命令可用來確認系統是否已正確安裝 Azure PowerShell：
 
 ```powershell
 # To make sure the Azure PowerShell module is available after you install
@@ -55,38 +56,31 @@ At line:1 char:1
     + FullyQualifiedErrorId : CommandNotFoundException
 ```
 
-若要修正此錯誤，請重新啟動電腦或使用完整路徑來匯入模組。 例如︰
+若要修正此錯誤，請重新啟動電腦或使用完整路徑來匯入模組。
 
 ```powershell
 Import-Module "$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\AzureRM.psd1"
 ```
 
-## <a name="install-on-windows-using-the-msi-package"></a>使用 MSI 套件安裝在 Windows 上
+## <a name="install-or-update-on-windows-using-the-msi-package"></a>使用 MSI 套件在 Windows 上安裝或更新
 
 您可以使用 MSI 檔案 (可從 [GitHub](https://aka.ms/azps-release) 取得) 來安裝 Azure PowerShell。 如果您已安裝舊版的 Azure 模組，安裝程式會自動移除這些模組。 MSI 套件會在 `$env:ProgramFiles\WindowsPowerShell\Modules` 中安裝模組，但不會建立版本專屬的資料夾。
 
-## <a name="install-in-a-docker-container"></a>安裝在 Docker 容器中
+## <a name="run-in-a-docker-container"></a>在 Docker 容器中執行
 
-我們會維護使用 Azure PowerShell 預先設定的 Docker 映像。
+我們會維護使用 Azure PowerShell 預先設定的一組 Docker 映像。 有兩種類型的容器可用：在 Windows 上執行傳統 PowerShell 的容器，以及在 Windows 或 Linux 上執行 PowerShell Core 的容器。
 
-透過 `docker run` 執行容器。
+| 環境 | Docker 映像 |
+|-------------|--------------|
+| Windows 上的 PowerShell | [azuresdk/azure-powershell](https://hub.docker.com/r/azuresdk/azure-powershell/) |
+| Windows 上的 PowerShell Core | [azuresdk/azure-powershell-core:nanoserver](https://hub.docker.com/r/azuresdk/azure-powershell-core/) |
+| Linux 上的 PowerShell Core | [azuresdk/azure-powershell-core:latest](https://hub.docker.com/r/azuresdk/azure-powershell-core/) |
 
-```powershell
-docker run azuresdk/azure-powershell
-```
-
-此外，我們將一部分的 Cmdlet 作為 PowerShell Core 容器來進行維護 。
-
-若為 Mac/Linux，請使用 `latest` 映像。
-
-```bash
-docker run azuresdk/azure-powershell-core:latest
-```
-
-若為 Windows，則使用 `nanoserver` 映像。
+若要執行上述任何容器，您要使用 `docker run -it $ImageName` 來取得互動終端機。 例如，若要在 Linux 容器上執行 PowerShell Core，請使用：
 
 ```powershell
-docker run azuresdk/azure-powershell-core:nanoserver
+docker run -it azuresdk/azure-powershell-core:latest
 ```
 
-Azure PowerShell 是透過 [PowerShell 資源庫](https://www.powershellgallery.com/)中的 `Install-Module` 安裝在映像上。
+> [!NOTE]
+> 若要在 Docker 中執行 Windows 容器，您的主機作業系統必須是 Windows，且 Docker 必須設為執行 Windows 容器。 若要深入了解在 Docker 中於 Windows 與 Linux 環境之間切換，請參閱 Docker 文件：[在 Windows 與 Linux 容器之間切換](https://docs.docker.com/docker-for-windows/#switch-between-windows-and-linux-containers)。

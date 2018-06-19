@@ -1,34 +1,33 @@
 ---
-title: 將查詢結果格式化 | Microsoft Docs
-description: 如何查詢 Azure 中的資源，並將結果格式化。
-services: azure
+title: 格式化 Azure PowerShell Cmdlet 輸出
+description: 如何格式化 Azure PowerShell 的 Cmdlet 輸出。
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 03/30/2017
-ms.openlocfilehash: f407d9e999b405f6c649d5353c39b4225698e88b
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.date: 06/07/2018
+ms.openlocfilehash: 833c82903305f99be5ad43f707e22644bb568abe
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34820709"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323045"
 ---
-# <a name="formatting-query-results"></a>將查詢結果格式化
+# <a name="format-azurepowershell-cmdlet-output"></a>格式化 Azure PowerShell Cmdlet 輸出
 
-根據預設，每個 PowerShell Cmdlet 都已預先定義輸出的格式，以方便您閱讀輸出內容。  PowerShell 也會賦予您彈性，讓您可以使用下列 Cmdlet 來調整輸出或將 Cmdlet 輸出轉換成不同格式：
+根據預設，每個 Azure PowerShell Cmdlet 都已預先定義輸出的格式，以方便您閱讀輸出內容。  PowerShell 也會賦予您彈性，讓您可以使用下列 Cmdlet 來調整輸出或將 Cmdlet 輸出轉換成不同格式：
 
 | 格式化      | 轉換       |
 |-----------------|------------------|
-| `Format-Custom` | `ConvertTo-Csv`  |
-| `Format-List`   | `ConvertTo-Html` |
-| `Format-Table`  | `ConvertTo-Json` |
-| `Format-Wide`   | `ConvertTo-Xml`  |
+| [Format-Custom](/powershell/module/microsoft.powershell.utility/format-custom) | [ConvertTo-Csv](/powershell/module/microsoft.powershell.utility/convertto-csv)  |
+| [Format-List](/powershell/module/microsoft.powershell.utility/format-list)   | [ConvertTo-Html](/powershell/module/microsoft.powershell.utility/convertto-html) |
+| [Format-Table](/powershell/module/microsoft.powershell.utility/format-table)  | [ConvertTo-Json](/powershell/module/microsoft.powershell.utility/convertto-json) |
+| [Format-Wide](/powershell/module/microsoft.powershell.utility/format-wide)   | [ConvertTo-Xml](/powershell/module/microsoft.powershell.utility/convertto-xml)  |
 
-## <a name="formatting-examples"></a>格式化範例
+## <a name="format-examples"></a>格式化範例
 
-在這個範例中，我們會取得預設訂用帳戶中的 Azure VM 清單。  Get-AzureRmVM 命令將輸出預設為資料表格式。
+在這個範例中，我們會取得預設訂用帳戶中的 Azure VM 清單。  `Get-AzureRmVM` 命令將輸出預設為資料表格式。
 
 ```azurepowershell-interactive
 Get-AzureRmVM
@@ -54,7 +53,7 @@ MyUnbuntu1610 MYWESTEURG        westeurope
 MyWin2016VM   MYWESTEURG        westeurope
 ```
 
-如果您想要的話，也可以使用清單格式來檢視資訊。 下列範例示範如何使用 `Format-List` Cmdlet 來這麼做。
+輸出也可以格式化成清單。 下列範例示範如何使用 `Format-List` Cmdlet 來這麼做。
 
 ```azurepowershell-interactive
 Get-AzureRmVM | Format-List Name,VmId,Location,ResourceGroupName
@@ -72,9 +71,9 @@ Location          : westeurope
 ResourceGroupName : MYWESTEURG
 ```
 
-## <a name="converting-to-other-data-types"></a>轉換成其他資料類型
+## <a name="convert-to-other-data-types"></a>轉換成其他資料類型
 
-PowerShell 也提供多種輸出格式以供您滿足需求。  在下列範例中，我們使用 `Select-Object` Cmdlet 來取得訂用帳戶中的虛擬機器屬性，並將輸出轉換成 CSV 格式以方便您匯入資料庫或試算表中。
+PowerShell 也可讓您取得命令輸出，並將它轉換成多種資料格式。 在下列範例中，我們使用 `Select-Object` Cmdlet 來取得訂用帳戶中的虛擬機器屬性，並將輸出轉換成 CSV 格式以方便您匯入資料庫或試算表中。
 
 ```azurepowershell-interactive
 Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,ProvisioningState | ConvertTo-Csv -NoTypeInformation
@@ -86,7 +85,7 @@ Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,Provisioni
 "MYWESTUERG","/subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/MYWESTUERG/providers/Microsoft.Compute/virtualMachines/MyWin2016VM","4650c755-fc2b-4fc7-a5bc-298d5c00808f","MyWin2016VM","westeurope","Succeeded"
 ```
 
-您也可以將輸出轉換成 JSON 格式。  下列範例會建立相同的 VM 清單，但會將輸出格式變更為 JSON。
+輸出也可以轉換成 JSON 格式。  下列範例會建立相同的 VM 清單，但會將輸出格式變更為 JSON。
 
 ```azurepowershell-interactive
 Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,ProvisioningState | ConvertTo-Json
