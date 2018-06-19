@@ -1,71 +1,44 @@
 ---
-title: 安裝並設定 Azure PowerShell | Microsoft Docs
-description: 如何安裝並設定 Azure PowerShell 以供第一次使用。
-services: azure
+title: 使用 PowerShellGet 安裝 Azure PowerShell
+description: 如何使用 PowerShellGet 安裝 Azure PowerShell
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 03/27/2018
-ms.openlocfilehash: 9f737201f13c07565b95a20227c75794b624e99c
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.date: 05/31/2018
+ms.openlocfilehash: 9b7046157e32a5c8473210e9840f9ae1b2f45902
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821967"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323096"
 ---
-# <a name="install-and-configure-azure-powershell"></a><span data-ttu-id="a2ccc-103">安裝並設定 Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="a2ccc-103">Install and configure Azure PowerShell</span></span>
+# <a name="install-azure-powershell-with-powershellget"></a><span data-ttu-id="246b7-103">使用 PowerShellGet 安裝 Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="246b7-103">Install Azure PowerShell with PowerShellGet</span></span>
 
-<span data-ttu-id="a2ccc-104">本文說明在 Windows 環境中安裝 Azure PowerShell 模組的步驟。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-104">This article explains the steps to install the Azure PowerShell modules in a Windows environment.</span></span>
-<span data-ttu-id="a2ccc-105">如果您想要在 macOS 或 Linux 上使用 Azure PowerShell，請參閱下列文章：[在 macOS 與 Linux 上安裝和設定 Azure PowerShell](install-azurermps-maclinux.md)。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-105">If you want to use Azure PowerShell on macOS or Linux, see the following article: [Install and configure Azure PowerShell on macOS and Linux](install-azurermps-maclinux.md).</span></span>
+<span data-ttu-id="246b7-104">本文說明在 Windows 環境中使用 PowerShellGet 安裝 Azure PowerShell 模組的步驟。</span><span class="sxs-lookup"><span data-stu-id="246b7-104">This article explains the steps to install the Azure PowerShell modules in a Windows environment using PowerShellGet.</span></span>  <span data-ttu-id="246b7-105">這是安裝 Azure PowerShell 的偏好方式，但是如果您想要使用 Web Platform Installer 或 MSI 套件來安裝，請參閱[其他安裝方法](other-install.md)。</span><span class="sxs-lookup"><span data-stu-id="246b7-105">This is the preferred way to install Azure PowerShell, but if you would rather install with the Web Platform Installer or MSI package, see [Other installation methods](other-install.md).</span></span>
 
-## <a name="system-requirements"></a><span data-ttu-id="a2ccc-106">系統需求</span><span class="sxs-lookup"><span data-stu-id="a2ccc-106">System requirements</span></span>
+<span data-ttu-id="246b7-106">如果您想要在 macOS 或 Linux 上使用 Azure PowerShell，請參閱下列文章：[在 macOS 與 Linux 上安裝和設定 Azure PowerShell](install-azurermps-maclinux.md)。</span><span class="sxs-lookup"><span data-stu-id="246b7-106">If you want to use Azure PowerShell on macOS or Linux, see the following article: [Install and configure Azure PowerShell on macOS and Linux](install-azurermps-maclinux.md).</span></span>
 
-<span data-ttu-id="a2ccc-107">Azure PowerShell 版本 6.0.0 需要 PowerShell 版本 5.0 (或更新版本)。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-107">Azure PowerShell version 6.0.0 requires version 5.0 (or higher) of PowerShell.</span></span> <span data-ttu-id="a2ccc-108">Azure PowerShell 的舊版_至少需要_ PowerShell 版本 3.0，才能執行任何 Cmdlet。如需升級至 PowerShell 5.0 的詳細資訊，請參閱[此表格](/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell)。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-108">Previous versions of Azure PowerShell required _at least_ version 3.0 of PowerShell to run any cmdlet.For information on upgrading to PowerShell 5.0, please see [this table](/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).</span></span>
+## <a name="system-requirements"></a><span data-ttu-id="246b7-107">系統需求</span><span class="sxs-lookup"><span data-stu-id="246b7-107">System requirements</span></span>
 
-## <a name="step-1-install-powershellget"></a><span data-ttu-id="a2ccc-109">步驟 1：安裝 PowerShellGet</span><span class="sxs-lookup"><span data-stu-id="a2ccc-109">Step 1: Install PowerShellGet</span></span>
+<span data-ttu-id="246b7-108">Azure PowerShell 版本 6.1.0 需要 PowerShell 版本 5.0 (或更新版本)。</span><span class="sxs-lookup"><span data-stu-id="246b7-108">Azure PowerShell version 6.1.0 requires version 5.0 (or higher) of PowerShell.</span></span> <span data-ttu-id="246b7-109">如需升級到 PowerShell 5.0 的詳細資訊，請參閱[升級現有的 Windows PowerShell](/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell)。</span><span class="sxs-lookup"><span data-stu-id="246b7-109">For information on upgrading to PowerShell 5.0, see [Upgrading existing Windows PowerShell](/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).</span></span>
 
-<span data-ttu-id="a2ccc-110">從 PowerShell 資源庫安裝 Azure PowerShell 是慣用的安裝方法。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-110">Installing Azure PowerShell from the PowerShell Gallery is the preferred method of installation.</span></span>
+<span data-ttu-id="246b7-110">PowerShellGet 會自動包含在 PowerShell 5.0 中。</span><span class="sxs-lookup"><span data-stu-id="246b7-110">PowerShellGet is automatically included as part of PowerShell 5.0.</span></span>
 
-<span data-ttu-id="a2ccc-111">從 PowerShell 資源庫安裝項目需要有 PowerShellGet 模組。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-111">Installing items from the PowerShell Gallery requires the PowerShellGet module.</span></span> <span data-ttu-id="a2ccc-112">確定您有適當版本的 PowerShellGet 及其他系統需求。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-112">Make sure you have the appropriate version of PowerShellGet and other system requirements.</span></span> <span data-ttu-id="a2ccc-113">執行下列命令，以查看您的系統上是否已安裝 PowerShellGet。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-113">Run the following command to see if you have PowerShellGet installed on your system.</span></span>
+## <a name="install-or-update-the-azure-powershell-module"></a><span data-ttu-id="246b7-111">安裝或更新 Azure PowerShell 模組</span><span class="sxs-lookup"><span data-stu-id="246b7-111">Install or update the Azure PowerShell module</span></span>
 
-```powershell
-Get-Module -Name PowerShellGet -ListAvailable | Select-Object -Property Name,Version,Path
-```
-
-<span data-ttu-id="a2ccc-114">您應該會看到類似下面的輸出：</span><span class="sxs-lookup"><span data-stu-id="a2ccc-114">You should see something similar to the following output:</span></span>
-
-```Output
-Name          Version Path
-----          ------- ----
-Name          Version Path
-----          ------- ----
-PowerShellGet 1.6.0   C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.6.0\PowerShellGet.psd1
-PowerShellGet 1.0.0.1 C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PowerShellGet.psd1
-```
-
-<span data-ttu-id="a2ccc-115">您需要 PowerShellGet 1.1.2.0 版或更高版本。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-115">You need PowerShellGet version 1.1.2.0 or higher.</span></span> <span data-ttu-id="a2ccc-116">若要更新 PowerShellGet，請使用下列命令：</span><span class="sxs-lookup"><span data-stu-id="a2ccc-116">To update PowerShellGet, use the following command:</span></span>
-
-```powershell
-Install-Module PowerShellGet -Force
-```
-
-<span data-ttu-id="a2ccc-117">如果您未安裝 PowerShellGet，請參閱本文的[如何取得 PowerShellGet](#how-to-get-powershellget)一節。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-117">If you do not have PowerShellGet installed, see the [How to get PowerShellGet](#how-to-get-powershellget) section of this article.</span></span>
-
-> [!NOTE]
-> <span data-ttu-id="a2ccc-118">若要使用 PowerShellGet，需要有可讓您執行指令碼的執行原則。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-118">Using PowerShellGet requires an Execution Policy that allows you to run scripts.</span></span> <span data-ttu-id="a2ccc-119">如需 PowerShell 的執行原則詳細資訊，請參閱[關於執行原則](/powershell/module/microsoft.powershell.core/about/about_execution_policies)。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-119">For more information about PowerShell's Execution Policy, see [About Execution Policies](/powershell/module/microsoft.powershell.core/about/about_execution_policies).</span></span>
-
-## <a name="step-2-install-azure-powershell"></a><span data-ttu-id="a2ccc-120">步驟 2：安裝 Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="a2ccc-120">Step 2: Install Azure PowerShell</span></span>
-
-<span data-ttu-id="a2ccc-121">從 PowerShell 資源庫安裝 Azure PowerShell 需要提高的權限。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-121">Installing Azure PowerShell from the PowerShell Gallery requires elevated privileges.</span></span> <span data-ttu-id="a2ccc-122">從提高權限的 PowerShell 工作階段執行下列命令︰</span><span class="sxs-lookup"><span data-stu-id="a2ccc-122">Run the following command from an elevated PowerShell session:</span></span>
+<span data-ttu-id="246b7-112">從 PowerShell 資源庫安裝 Azure PowerShell 需要提高的權限。</span><span class="sxs-lookup"><span data-stu-id="246b7-112">Installing Azure PowerShell from the PowerShell Gallery requires elevated privileges.</span></span> <span data-ttu-id="246b7-113">從提高權限的 PowerShell 工作階段執行下列命令︰</span><span class="sxs-lookup"><span data-stu-id="246b7-113">Run the following command from an elevated PowerShell session:</span></span>
 
 ```powershell
 # Install the Azure Resource Manager modules from the PowerShell Gallery
 Install-Module -Name AzureRM -AllowClobber
 ```
 
-<span data-ttu-id="a2ccc-123">根據預設，PowerShell 資源庫未設為 PowerShellGet 的信任存放庫。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-123">By default, the PowerShell gallery is not configured as a Trusted repository for PowerShellGet.</span></span> <span data-ttu-id="a2ccc-124">第一次使用 PSGallery 時，您會看到下列提示：</span><span class="sxs-lookup"><span data-stu-id="a2ccc-124">The first time you use the PSGallery you see the following prompt:</span></span>
+> [!IMPORTANT]
+> <span data-ttu-id="246b7-114">這個命令會更新您系統上的任何現有 Azure PowerShell 安裝。</span><span class="sxs-lookup"><span data-stu-id="246b7-114">This command will update any existing installation of Azure PowerShell on your system.</span></span> <span data-ttu-id="246b7-115">如果您需要安裝一個以上的版本，請參閱[可以安裝多個版本的 Azure PowerShell 嗎？](#multiple-versions)的常見問題集答案</span><span class="sxs-lookup"><span data-stu-id="246b7-115">If you need to have more than one version installed, see the FAQ answer for [Can I install multiple versions of Azure PowerShell?](#multiple-versions)</span></span>
+
+<span data-ttu-id="246b7-116">根據預設，PowerShell 資源庫未設為 PowerShellGet 的信任存放庫。</span><span class="sxs-lookup"><span data-stu-id="246b7-116">By default, the PowerShell gallery is not configured as a trusted repository for PowerShellGet.</span></span> <span data-ttu-id="246b7-117">第一次使用 PSGallery 時，您會看到下列提示：</span><span class="sxs-lookup"><span data-stu-id="246b7-117">The first time you use the PSGallery you see the following prompt:</span></span>
 
 ```Output
 Untrusted repository
@@ -74,101 +47,62 @@ You are installing the modules from an untrusted repository. If you trust this r
 its InstallationPolicy value by running the Set-PSRepository cmdlet.
 
 Are you sure you want to install the modules from 'PSGallery'?
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): Y
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-<span data-ttu-id="a2ccc-125">請回答「是」或「全部皆是」以繼續安裝。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-125">Answer 'Yes' or 'Yes to All' to continue with the installation.</span></span>
+<span data-ttu-id="246b7-118">請回答「是」或「全部皆是」以繼續安裝。</span><span class="sxs-lookup"><span data-stu-id="246b7-118">Answer 'Yes' or 'Yes to All' to continue with the installation.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="a2ccc-126">如果您的 NuGet 版本比 2.8.5.201 舊，系統會提示您下載並安裝最新版的 NuGet。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-126">If you have a version older than 2.8.5.201 of NuGet, you are prompted to download and install the latest version of NuGet.</span></span>
+> <span data-ttu-id="246b7-119">如果您的 NuGet 版本比 2.8.5.201 舊，系統會提示您下載並安裝最新版的 NuGet。</span><span class="sxs-lookup"><span data-stu-id="246b7-119">If you have a version older than 2.8.5.201 of NuGet, you are prompted to download and install the latest version of NuGet.</span></span>
 
-<span data-ttu-id="a2ccc-127">AzureRM 模組是 Azure Resource Manager Cmdlet 的彙總套件模組。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-127">The AzureRM module is a rollup module for the Azure Resource Manager cmdlets.</span></span> <span data-ttu-id="a2ccc-128">當您安裝 AzureRM 模組時，系統會從 PowerShell 資源庫下載先前未安裝的任何 Azure PowerShell 模組。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-128">When you install the AzureRM module, any Azure PowerShell module not previously installed is downloaded and from the PowerShell Gallery.</span></span>
+<span data-ttu-id="246b7-120">AzureRM 模組是 Azure Resource Manager Cmdlet 的彙總套件模組。</span><span class="sxs-lookup"><span data-stu-id="246b7-120">The AzureRM module is a rollup module for the Azure Resource Manager cmdlets.</span></span> <span data-ttu-id="246b7-121">當您安裝 AzureRM 模組時，系統會從 PowerShell 資源庫下載先前未安裝的任何 Azure PowerShell 模組。</span><span class="sxs-lookup"><span data-stu-id="246b7-121">When you install the AzureRM module, any Azure PowerShell module not previously installed is downloaded from the PowerShell Gallery.</span></span>
 
-<span data-ttu-id="a2ccc-129">若有安裝舊版的 Azure PowerShell，則可能會出現錯誤。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-129">If you have a previous version of Azure PowerShell installed you may receive an error.</span></span> <span data-ttu-id="a2ccc-130">若要解決此問題，請參閱本文的[更新為新版的 Azure PowerShell](#update-azps) 小節。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-130">To resolve this issue, see the [Updating to a new version of Azure PowerShell](#update-azps) section of this article.</span></span>
+## <a name="load-the-azure-powershell-module"></a><span data-ttu-id="246b7-122">載入 Azure PowerShell 模組</span><span class="sxs-lookup"><span data-stu-id="246b7-122">Load the Azure PowerShell module</span></span>
 
-## <a name="step-3-load-the-azurerm-module"></a><span data-ttu-id="a2ccc-131">步驟 3︰載入 AzureRM 模組</span><span class="sxs-lookup"><span data-stu-id="a2ccc-131">Step 3: Load the AzureRM module</span></span>
-<span data-ttu-id="a2ccc-132">安裝模組後，您需要將模組載入您的 PowerShell 工作階段。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-132">Once the module is installed, you need to load the module into your PowerShell session.</span></span> <span data-ttu-id="a2ccc-133">您應該在一般 (未提高權限) PowerShell 工作階段中執行此動作。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-133">You should do this in a normal (non-elevated) PowerShell session.</span></span> <span data-ttu-id="a2ccc-134">使用 `Import-Module`Cmdlet 載入模組，如下所示︰</span><span class="sxs-lookup"><span data-stu-id="a2ccc-134">Modules are loaded using the `Import-Module` cmdlet, as follows:</span></span>
+<span data-ttu-id="246b7-123">安裝模組後，您需要將模組載入您的 PowerShell 工作階段。</span><span class="sxs-lookup"><span data-stu-id="246b7-123">Once the module is installed, you need to load the module into your PowerShell session.</span></span> <span data-ttu-id="246b7-124">您應該在一般 (未提高權限) PowerShell 工作階段中執行此動作。</span><span class="sxs-lookup"><span data-stu-id="246b7-124">You should do this in a normal (non-elevated) PowerShell session.</span></span> <span data-ttu-id="246b7-125">使用 `Import-Module`Cmdlet 載入模組，如下所示︰</span><span class="sxs-lookup"><span data-stu-id="246b7-125">Modules are loaded using the `Import-Module` cmdlet, as follows:</span></span>
 
 ```powershell
 Import-Module -Name AzureRM
 ```
 
-## <a name="next-steps"></a><span data-ttu-id="a2ccc-135">後續步驟</span><span class="sxs-lookup"><span data-stu-id="a2ccc-135">Next Steps</span></span>
+## <a name="reporting-issues-and-feedback"></a><span data-ttu-id="246b7-126">報告問題和意見反應</span><span class="sxs-lookup"><span data-stu-id="246b7-126">Reporting issues and feedback</span></span>
 
-<span data-ttu-id="a2ccc-136">如需有關使用 Azure PowerShell 的詳細資訊，請參閱下列文章：</span><span class="sxs-lookup"><span data-stu-id="a2ccc-136">For more information about using Azure PowerShell, see the following articles:</span></span>
+<span data-ttu-id="246b7-127">如果您遇到任何工具錯誤，請[在 GitHub 上提出問題](https://github.com/Azure/azure-powershell/issues)。</span><span class="sxs-lookup"><span data-stu-id="246b7-127">If you encounter any bugs with the tool, please [file an issue on GitHub](https://github.com/Azure/azure-powershell/issues).</span></span> <span data-ttu-id="246b7-128">若要從命令列提供意見反應，請使用 `Send-Feedback` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="246b7-128">To provide feedback from the command line, use the `Send-Feedback` cmdlet.</span></span>
 
-* [<span data-ttu-id="a2ccc-137">開始使用 Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="a2ccc-137">Get started with Azure PowerShell</span></span>](get-started-azureps.md)
+## <a name="next-steps"></a><span data-ttu-id="246b7-129">後續步驟</span><span class="sxs-lookup"><span data-stu-id="246b7-129">Next Steps</span></span>
 
-## <a name="reporting-issues-and-feedback"></a><span data-ttu-id="a2ccc-138">報告問題和意見反應</span><span class="sxs-lookup"><span data-stu-id="a2ccc-138">Reporting issues and feedback</span></span>
+<span data-ttu-id="246b7-130">如需有關使用 Azure PowerShell 的詳細資訊，請參閱下列文章：</span><span class="sxs-lookup"><span data-stu-id="246b7-130">For more information about using Azure PowerShell, see the following articles:</span></span>
 
-<span data-ttu-id="a2ccc-139">如果您遇到任何與工具有關的錯誤，請在 GitHub 存放庫的[問題](https://github.com/Azure/azure-powershell/issues)一節中提出問題。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-139">If you encounter any bugs with the tool, file an issue in the [Issues](https://github.com/Azure/azure-powershell/issues) section of our GitHub repo.</span></span> <span data-ttu-id="a2ccc-140">若要從命令列提供意見反應，請使用 `Send-Feedback` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-140">To provide feedback from the command line, use the `Send-Feedback` cmdlet.</span></span>
+* [<span data-ttu-id="246b7-131">開始使用 Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="246b7-131">Get started with Azure PowerShell</span></span>](get-started-azureps.md)
 
-## <a name="frequently-asked-questions"></a><span data-ttu-id="a2ccc-141">常見問題集</span><span class="sxs-lookup"><span data-stu-id="a2ccc-141">Frequently asked questions</span></span>
+## <a name="frequently-asked-questions"></a><span data-ttu-id="246b7-132">常見問題集</span><span class="sxs-lookup"><span data-stu-id="246b7-132">Frequently asked questions</span></span>
 
-### <a name="how-to-get-powershellget"></a><span data-ttu-id="a2ccc-142">如何取得 PowerShellGet</span><span class="sxs-lookup"><span data-stu-id="a2ccc-142">How to get PowerShellGet</span></span>
+### <a id="helpmechoose"></a><span data-ttu-id="246b7-133">如何檢查 Azure PowerShell 版本？</span><span class="sxs-lookup"><span data-stu-id="246b7-133">How do I check the version of Azure PowerShell?</span></span>
 
-|<span data-ttu-id="a2ccc-143">案例</span><span class="sxs-lookup"><span data-stu-id="a2ccc-143">Scenario</span></span>|<span data-ttu-id="a2ccc-144">安裝指示</span><span class="sxs-lookup"><span data-stu-id="a2ccc-144">Install instructions</span></span>|
-|---|---|
-|<span data-ttu-id="a2ccc-145">Windows 10</span><span class="sxs-lookup"><span data-stu-id="a2ccc-145">Windows 10</span></span><br/><span data-ttu-id="a2ccc-146">Windows Server 2016</span><span class="sxs-lookup"><span data-stu-id="a2ccc-146">Windows Server 2016</span></span>|<span data-ttu-id="a2ccc-147">內建於 OS 包含的 Windows Management Framework (WMF) 5.0</span><span class="sxs-lookup"><span data-stu-id="a2ccc-147">Built into Windows Management Framework (WMF) 5.0 included in the OS</span></span>|
-|<span data-ttu-id="a2ccc-148">我想要升級至 PowerShell 5</span><span class="sxs-lookup"><span data-stu-id="a2ccc-148">I want to upgrade to PowerShell 5</span></span>|<ol><li>[<span data-ttu-id="a2ccc-149">安裝最新版的 WMF</span><span class="sxs-lookup"><span data-stu-id="a2ccc-149">Install the latest version of WMF</span></span>](https://www.microsoft.com/en-us/download/details.aspx?id=54616)</li><li><span data-ttu-id="a2ccc-150">執行以下命令：</span><span class="sxs-lookup"><span data-stu-id="a2ccc-150">Run the following command:</span></span><br/>```Install-Module PowerShellGet -Force```</li></ol>|
-|<span data-ttu-id="a2ccc-151">我是在採用 PowerShell 3 或 PowerShell 4 的 Windows 版本上執行</span><span class="sxs-lookup"><span data-stu-id="a2ccc-151">I am running on a version of Windows with PowerShell 3 or PowerShell 4</span></span>|<ol><span data-ttu-id="a2ccc-152"><il>[取得 PackageManagement 模組](http://go.microsoft.com/fwlink/?LinkID=746217)</il></span><span class="sxs-lookup"><span data-stu-id="a2ccc-152"><il>[Get the PackageManagement modules](http://go.microsoft.com/fwlink/?LinkID=746217)</il></span></span><li><span data-ttu-id="a2ccc-153">執行以下命令：</span><span class="sxs-lookup"><span data-stu-id="a2ccc-153">Run the following command:</span></span><br/>```Install-Module PowerShellGet -Force```</li></ol>|
-
-<a id="helpmechoose"></a>
-### <a name="checking-the-version-of-azure-powershell"></a><span data-ttu-id="a2ccc-154">檢查 Azure PowerShell 的版本</span><span class="sxs-lookup"><span data-stu-id="a2ccc-154">Checking the version of Azure PowerShell</span></span>
-
-<span data-ttu-id="a2ccc-155">雖然我們鼓勵您儘早升級至最新版本，但仍針對數個 Azure PowerShell 版本提供支援。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-155">Although we encourage you to upgrade to the latest version as early as possible, several versions of Azure PowerShell are supported.</span></span> <span data-ttu-id="a2ccc-156">若要判斷已安裝的 Azure PowerShell 版本，請從命令列執行 `Get-Module AzureRM`。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-156">To determine the version of Azure PowerShell you have installed, run `Get-Module AzureRM` from your command line.</span></span>
+<span data-ttu-id="246b7-134">雖然我們鼓勵您儘早升級至最新版本，但仍針對數個 Azure PowerShell 版本提供支援。</span><span class="sxs-lookup"><span data-stu-id="246b7-134">Although we encourage you to upgrade to the latest version as early as possible, several versions of Azure PowerShell are supported.</span></span> <span data-ttu-id="246b7-135">若要判斷已安裝的 Azure PowerShell 版本，請從命令列執行 `Get-Module AzureRM`。</span><span class="sxs-lookup"><span data-stu-id="246b7-135">To determine the version of Azure PowerShell you have installed, run `Get-Module AzureRM` from your command line.</span></span>
 
 ```powershell
 Get-Module AzureRM -ListAvailable | Select-Object -Property Name,Version,Path
 ```
 
-### <a name="support-for-classic-deployment-methods"></a><span data-ttu-id="a2ccc-157">對於傳統部署方法的支援</span><span class="sxs-lookup"><span data-stu-id="a2ccc-157">Support for classic deployment methods</span></span>
+### <a name="can-i-use-azure-powershell-for-azure-classic-deployments"></a><span data-ttu-id="246b7-136">可以針對 Azure 傳統部署使用 Azure PowerShell 嗎？</span><span class="sxs-lookup"><span data-stu-id="246b7-136">Can I use Azure PowerShell for Azure Classic deployments?</span></span>
 
-<span data-ttu-id="a2ccc-158">如果您有使用傳統部署模型的部署，則可以安裝 Azure PowerShell 的服務管理版本。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-158">If you have deployments that use the classic deployment model you can install the Service Management version of Azure PowerShell.</span></span> <span data-ttu-id="a2ccc-159">如需詳細資訊，請參閱[安裝 Azure PowerShell 服務管理模組](/powershell/azure/servicemanagement/install-azure-ps)。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-159">For more information, see [Install the Azure PowerShell Service Management module](/powershell/azure/servicemanagement/install-azure-ps).</span></span> <span data-ttu-id="a2ccc-160">Azure 和 AzureRM 模組會共用通用相依性。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-160">The Azure and AzureRM modules share common dependencies.</span></span> <span data-ttu-id="a2ccc-161">若您同時使用 Azure 與 AzureRM 模組，則應該安裝每個套件的相同版本。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-161">If you use both the Azure and AzureRM modules, you should install the same version of each package.</span></span>
+<span data-ttu-id="246b7-137">如果您有使用傳統部署模型的部署，則可以安裝 Azure PowerShell 的服務管理版本。</span><span class="sxs-lookup"><span data-stu-id="246b7-137">If you have deployments that use the classic deployment model you can install the Service Management version of Azure PowerShell.</span></span> <span data-ttu-id="246b7-138">如需詳細資訊，請參閱[安裝 Azure PowerShell 服務管理模組](/powershell/azure/servicemanagement/install-azure-ps)。</span><span class="sxs-lookup"><span data-stu-id="246b7-138">For more information, see [Install the Azure PowerShell Service Management module](/powershell/azure/servicemanagement/install-azure-ps).</span></span> <span data-ttu-id="246b7-139">Azure 和 AzureRM 模組會共用通用相依性。</span><span class="sxs-lookup"><span data-stu-id="246b7-139">The Azure and AzureRM modules share common dependencies.</span></span> <span data-ttu-id="246b7-140">若您同時使用 Azure 與 AzureRM 模組，則應該安裝每個套件的相同版本。</span><span class="sxs-lookup"><span data-stu-id="246b7-140">If you use both the Azure and AzureRM modules, you should install the same version of each package.</span></span>
 
-### <a id="update-azps"></a><span data-ttu-id="a2ccc-162">更新為新版的 Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="a2ccc-162">Updating to a new version of Azure PowerShell</span></span>
+### <a name="a-namemultiple-versionscan-i-install-multiple-versions-of-azure-powershell"></a><span data-ttu-id="246b7-141"><a name="multiple-versions"/>可以安裝多個版本的 Azure PowerShell 嗎？</span><span class="sxs-lookup"><span data-stu-id="246b7-141"><a name="multiple-versions"/>Can I install multiple versions of Azure PowerShell?</span></span>
 
-<span data-ttu-id="a2ccc-163">若有安裝包括服務管理模組的舊版 Azure PowerShell，則可能會出現下列錯誤：</span><span class="sxs-lookup"><span data-stu-id="a2ccc-163">If you have a previous version of Azure PowerShell installed that includes the Service Management module, you may receive the following error:</span></span>
-
-```Output
-PackageManagement\Install-Package : A command with name 'Get-AzureStorageContainerAcl' is already
-available on this system. This module 'Azure.Storage' may override the existing commands. If you
-still want to install this module 'Azure.Storage', use -AllowClobber parameter.
-
-At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PSModule.psm1:1772 char:21
-+ ...          $null = PackageManagement\Install-Package @PSBoundParameters
-+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidOperation: (Microsoft.Power....InstallPackage:InstallPackage) [Install-Package], Exception
-    + FullyQualifiedErrorId : CommandAlreadyAvailable,Validate-ModuleCommandAlreadyAvailable,Microsoft.PowerShell.PackageManagement.Cmdlets.InstallPackage
-```
-
-<span data-ttu-id="a2ccc-164">如錯誤訊息所述，您必須使用 -AllowClobber 參數來安裝模組。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-164">As the error message states, you need to use the -AllowClobber parameter to install the module.</span></span> <span data-ttu-id="a2ccc-165">使用下列命令：</span><span class="sxs-lookup"><span data-stu-id="a2ccc-165">Use the following command:</span></span>
+<span data-ttu-id="246b7-142">PowerShellGet 是唯一支援安裝多個版本的方法。</span><span class="sxs-lookup"><span data-stu-id="246b7-142">PowerShellGet the only method of installation that supports multiple versions.</span></span> <span data-ttu-id="246b7-143">若要安裝多個版本，您可以將 `-RequiredVersion` 參數新增至 `Install-Module` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="246b7-143">To install multiple versions, you can add the `-RequiredVersion` parameter to the `Install-Module` cmdlet.</span></span> <span data-ttu-id="246b7-144">例如，若要同時安裝 6.1.0 版和 1.2.9 版：</span><span class="sxs-lookup"><span data-stu-id="246b7-144">For example, to install both versions 6.1.0 and 1.2.9:</span></span>
 
 ```powershell
-# Install the Azure Resource Manager modules from the PowerShell Gallery
-Install-Module -Name AzureRM -AllowClobber
-```
-
-<span data-ttu-id="a2ccc-166">如需詳細資訊，請參閱 [Install-Module](https://msdn.microsoft.com/powershell/reference/5.1/PowerShellGet/install-module) 的說明主題。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-166">For more information, see the help topic for [Install-Module](https://msdn.microsoft.com/powershell/reference/5.1/PowerShellGet/install-module).</span></span>
-
-### <a name="installing-module-versions-side-by-side"></a><span data-ttu-id="a2ccc-167">並存安裝模組版本</span><span class="sxs-lookup"><span data-stu-id="a2ccc-167">Installing module versions side by side</span></span>
-
-<span data-ttu-id="a2ccc-168">PowerShellGet 安裝方法是唯一支援的多個版本安裝方法。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-168">The PowerShellGet method of installation is the only method that supports the installation of multiple versions.</span></span> <span data-ttu-id="a2ccc-169">例如，您的指令碼可能是使用您沒有時間或資源更新的舊版 Azure PowerShell 所撰寫。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-169">For example, you may have scripts written using a previous version of Azure PowerShell that you don't have the time or resources to updated.</span></span> <span data-ttu-id="a2ccc-170">下列命令說明如何安裝多個 Azure PowerShell 版本︰</span><span class="sxs-lookup"><span data-stu-id="a2ccc-170">The following commands illustrate how to install multiple versions of Azure PowerShell:</span></span>
-
-```powershell
-Install-Module -Name AzureRM -RequiredVersion 3.7.0
+Install-Module -Name AzureRM -RequiredVersion 6.1.0
 Install-Module -Name AzureRM -RequiredVersion 1.2.9
 ```
 
-<span data-ttu-id="a2ccc-171">在一個 PowerShell 工作階段中只可以載入一個模組版本。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-171">Only one version of the module can be loaded in a PowerShell session.</span></span> <span data-ttu-id="a2ccc-172">您必須開啟新的 PowerShell 視窗，並使用 `Import-Module` 來匯入特定版本的 AzureRM Cmdlet︰</span><span class="sxs-lookup"><span data-stu-id="a2ccc-172">You must open a new PowerShell window and use `Import-Module` to import a specific version of the AzureRM cmdlets:</span></span>
+<span data-ttu-id="246b7-145">在一個 PowerShell 工作階段中只可以載入一個模組版本。</span><span class="sxs-lookup"><span data-stu-id="246b7-145">Only one version of the module can be loaded in a PowerShell session.</span></span> <span data-ttu-id="246b7-146">您必須開啟新的 PowerShell 視窗，並使用 `Import-Module` 來匯入特定版本的 Azure PowerShell 模組。</span><span class="sxs-lookup"><span data-stu-id="246b7-146">You must open a new PowerShell window and use `Import-Module` to import a specific version of the Azure PowerShell module.</span></span>
 
 ```powershell
 Import-Module -Name AzureRM -RequiredVersion 1.2.9
 ```
 
 > [!NOTE]
-> <span data-ttu-id="a2ccc-173">2.1.0 版和 1.2.6 版是第一批設計成可並存安裝及使用的模組版本。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-173">Version 2.1.0 and version 1.2.6 are the first module versions designed to be installed and used side by side.</span></span> <span data-ttu-id="a2ccc-174">載入舊版的 Azure PowerShell 時，會載入不相容的 **AzureRM.Profile** 模組版本。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-174">When loading an earlier version of the Azure PowerShell, incompatible versions of the **AzureRM.Profile** module are loaded.</span></span> <span data-ttu-id="a2ccc-175">這會導致每當您執行某個 Cmdlet 時，Cmdlet 都會提示您登入。</span><span class="sxs-lookup"><span data-stu-id="a2ccc-175">This results in the cmdlets prompting you to log in whenever you execute a cmdlet.</span></span>
-
-### <a name="other-installation-methods"></a><span data-ttu-id="a2ccc-176">其他安裝方法</span><span class="sxs-lookup"><span data-stu-id="a2ccc-176">Other installation methods</span></span>
-
-<span data-ttu-id="a2ccc-177">如需有關使用 Web Platform Installer 或 MSI 套件進行安裝的資訊，請參閱[其他安裝方法](other-install.md)</span><span class="sxs-lookup"><span data-stu-id="a2ccc-177">For information about installing using the Web Platform Installer or the MSI Package, see [Other installation methods](other-install.md)</span></span>
+> <span data-ttu-id="246b7-147">2.1.0 版和 1.2.6 版是第一批設計成可並存安裝及使用的模組版本。</span><span class="sxs-lookup"><span data-stu-id="246b7-147">Version 2.1.0 and version 1.2.6 are the first module versions designed to be installed and used side by side.</span></span> <span data-ttu-id="246b7-148">載入舊版的 Azure PowerShell 時，會載入不相容的 **AzureRM.Profile** 模組版本。</span><span class="sxs-lookup"><span data-stu-id="246b7-148">When loading an earlier version of the Azure PowerShell, incompatible versions of the **AzureRM.Profile** module are loaded.</span></span> <span data-ttu-id="246b7-149">這會導致每當您執行某個 Cmdlet 時，Cmdlet 都會提示您登入。</span><span class="sxs-lookup"><span data-stu-id="246b7-149">This results in the cmdlets prompting you to log in whenever you execute a cmdlet.</span></span>
