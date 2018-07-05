@@ -6,7 +6,7 @@
       items:
         - name: 在 macOS 或 Linux 上安裝
           href: install-azurermps-maclinux.md
-        - name: 使用 MSI 或 Web PI 安裝
+        - name: 使用 MSI 安裝
           href: other-install.md
         - name: 在 Docker 中執行
           href: azurerm-ps-in-docker.md
@@ -46,8 +46,8 @@
     - name: 版本資訊
       href: release-notes-azureps.md
       items:
-        - name: Azure PowerShell 5.x 的重大變更
-          href: migration-guide.5.0.0.md
+        - name: Azure PowerShell 6.x 的重大變更
+          href: migration-guide.6.0.0.md
 - name: 教學課程
   items:
     - name: 建立虛擬機器
