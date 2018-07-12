@@ -1,73 +1,89 @@
 ---
-title: 在 macOS 與 Linux 上安裝和設定 Azure PowerShell | Microsoft Docs
-description: 如何在 macOS 與 Linux 上安裝 Azure PowerShell，以及針對初次使用來進行設定。
+title: 在 macOS 或 Linux 上安裝 Azure PowerShell
+description: 如何在 macOS 或 Linux 上安裝 Azure PowerShell。
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 01/12/2018
-ms.openlocfilehash: 336acecfdaee0eee0862805064ac5aab90a32982
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.date: 06/06/2018
+ms.openlocfilehash: a779f402fb2b3fccc8269aa30a6fe98a949251d6
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34853537"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100098"
 ---
-# <a name="install-and-configure-azure-powershell-on-macos-and-linux"></a>在 macOS 與 Linux 上安裝和設定 Azure PowerShell
+# <a name="install-azure-powershell-on-macos-or-linux"></a>在 macOS 或 Linux 上安裝 Azure PowerShell
 
-現在可以將 PowerShell Core v6 與 Azure PowerShell 安裝在非 Windows 平台上。
-將 Azure PowerShell 安裝在 macOS 與 Linux 的程序與安裝在 Windows 上沒有不同，但您必須先安裝 PowerShell Core v6。
+針對非 Windows 平台，可以在 PowerShell Core v6 中執行 Azure PowerShell。 這版的 PowerShell 是針對支援 .NET Core 的任何平台使用所建置。 若要使用這些平台，可以使用 .NET Core 特別版本的 Azure PowerShell。
 
 > [!NOTE]
-
 > PowerShell Core v6 與 Azure PowerShell for .NET Core 目前仍處於 Beta 階段。
 > 這些產品只提供有限支援。 若有問題或發現錯誤，請在 GitHub 中提出。
 >
 > * [關於 PowerShell Core v6 的問題](https://github.com/PowerShell/PowerShell/issues)
 > * [關於Azure PowerShell 的問題](https://github.com/azure/azure-docs-powershell/issues)
 
-## <a name="step-1-install-powershell-core-v6"></a>步驟 1：安裝 PowerShell Core v6
+## <a name="install-powershell-core"></a>安裝 PowerShell Core
 
-PowerShell Core v6 安裝程序因目標作業系統而異。
-雖然 PowerShell Core v6 可以安裝在 Windows 上，但本文只說明在 macOS 與 Linux 上安裝的步驟。 如果您想要在 Windows 中使用 Azure PowerShell，請參閱 Windows 適用的[安裝](./install-azurerm-ps.md)文章。
-
-Linux 或 macOS 上的 **PowerShell Core v6** 安裝作業會因為 Linux 發行版本和作業系統版本不同而有所差異。
+macOS 和大部分 Linux 發佈的 PowerShell Core 安裝指示皆不同。
 您可以在下列文章中找到詳細的指示：
 
-- [在 macOS 和 Linux 上安裝 PowerShell Core](/powershell/scripting/setup/installing-powershell-core-on-macos-and-linux)
+- [Install PowerShell Core on macOS](/powershell/scripting/setup/installing-powershell-core-on-macos)
+- [Install PowerShell Core on Linux](/powershell/scripting/setup/installing-powershell-core-on-linux)
 
-## <a name="step-2-install-azure-powershell-for-net-core"></a>步驟 2：安裝 Azure PowerShell for .NET Core
+## <a name="install-azure-powershell-for-net-core"></a>安裝 Azure PowerShell for .NET Core
 
-PowerShell Core v6 隨附於已安裝的 PowerShellGet 模組。 這可讓您輕鬆地安裝任何已發佈到 PowerShell 資源庫的模組。 若要安裝 Azure PowerShell，請開啟新的 PowerShell 工作階段，並執行下列命令：
+PowerShell Core 隨附於已安裝的 PowerShellGet 模組。 安裝 PowerShell 中的模組需要較高的權限，因此必須以超級使用者身分來啟動您的工作階段：
+
+```bash
+sudo pwsh
+```
+
+若要安裝 Azure PowerShell，請執行下列命令：
 
 ```powershell
 Install-Module AzureRM.NetCore
 ```
 
-## <a name="step-3-load-the-azurermnetcore-module"></a>步驟 3：載入 AzureRM.Netcore 模組
+> [!IMPORTANT]
+> 其他文章中詳述的 `AzureRM` 模組並非針對 .NET Core 所建置，且無法搭配 PowerShell Core 使用。 `AzureRM` 和 `AzureRM.NetCore` 都是使用相同的 Cmdlet 名稱，因此唯一的差異在於彙總套件模組的名稱，以及它們是針對哪個版本的 .NET 所建置。
 
-安裝模組後，您需要將模組載入您的 PowerShell 工作階段。 使用 `Import-Module`Cmdlet 載入模組，如下所示︰
+根據預設，PowerShell 資源庫未設為 PowerShellGet 的信任存放庫。 第一次使用 PSGallery 時，您會看到下列提示：
+
+```output
+Untrusted repository
+
+You are installing the modules from an untrusted repository. If you trust this repository, change
+its InstallationPolicy value by running the Set-PSRepository cmdlet.
+
+Are you sure you want to install the modules from 'PSGallery'?
+[Y] Yes� [A] Yes to All� [N] No� [L] No to All� [S] Suspend� [?] Help (default is "N"):
+```
+
+請回答 `Yes` 或 `Yes to All` 以繼續安裝。
+
+## <a name="sign-in"></a>登入
+
+若要開始使用 Azure PowerShell，您必須使用 [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 將 `AzureRM.Netcore` 載入您的 PowerShell 工作階段，然後使用您的 Azure 認證登入。 匯入模組「不」需要較高的權限。
 
 ```powershell
+# Import the module into the PowerShell session
 Import-Module AzureRM.Netcore
-Import-Module AzureRM.Profile.Netcore
+# Connect to Azure with an interactive dialog for sign-in
+Connect-AzureRmAccount
 ```
 
-匯入完成後，您可以嘗試使用下列命令登入 Azure，來測試新安裝的模組：
-
-```powershell
-Login-AzureRMAccount
-```
-
-上述命令應會提示您移至 `https://aka.ms/devicelogin`，並輸入您收到的驗證碼。
+您必須針對每個啟動的新 PowerShell 工作階段重複這些步驟。 自動匯入 `AzureRM` 模組需要設定 PowerShell 設定檔，您可以在[關於設定檔](/powershell/module/microsoft.powershell.core/about/about_profiles)中加以了解。
+在 macOS 和 Linux 上，您應該透過 `$Profile` 環境變數來使用設定檔。 若要了解如何在工作階段之間保存您的 Azure 登入，請參閱[在 PowerShell 工作階段之間保存使用者認證](context-persistence.md)。
 
 ## <a name="available-cmdlets"></a>可用的 Cmdlet
 
-Azure PowerShell modules for .NET Standard 模組仍在開發中。 這些模組未提供適用於 Windows 版模組的所有 Cmdlet。 AzureRM.Netcore 模組實作了下列功能：
+適用於 .NET Core 的 Azure PowerShell 模組仍在開發中。 這些模組未提供適用於 Windows 版模組的所有 Cmdlet。 AzureRM.Netcore 模組實作了下列功能：
 
 * 帳戶管理
-  - 透過 Microsoft Azure Active Directory，以 Microsoft 帳戶、組織帳戶或服務主體登入
+  - 透過 Microsoft Azure Active Directory，使用 Microsoft 帳戶、組織帳戶或服務主體登入
   - 透過 Save-AzureRmContext 將認證儲存到磁碟上，及使用 Import-AzureRmContext 載入儲存的認證
 * 環境
   - 取得其他現成可用的 Microsoft Azure 環境
