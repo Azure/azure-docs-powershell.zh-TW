@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 12a57f9aaf445fe95f731e09a6dcd174b97aa3fe
+ms.openlocfilehash: 76e08c462bb34bd2b16a11f70f14c4584b72795a
 ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100183"
+ms.locfileid: "38100353"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>在 PowerShell 工作階段之間保存使用者認證
 
@@ -38,12 +38,10 @@ Azure 內容是一組資訊，可定義 Azure PowerShell Cmdlet 的目標。 內
 
 ## <a name="automatically-saving-the-context-for-the-next-sign-in"></a>自動儲存內容以供下一次登入使用
 
-根據預設，每當您關閉 PowerShell 工作階段時，Azure PowerShell 就會捨棄內容資訊。
+從 6.3.0 版開始，Azure PowerShell 會自動保留工作階段之間的內容資訊。 若要將 PowerShell 設定為忘記您的內容和認證，請使用 `Disable-AzureRmContextAutoSave`。 您每次開啟 PowerShell 工作階段時，都必須登入 Azure。
 
 若要讓 Azure PowerShell 在 PowerShell 工作階段關閉之後記住您的內容，請使用 `Enable-AzureRmContextAutosave`。 內容與認證資訊會自動儲存在您使用者目錄中的特殊隱藏資料夾中 (`%AppData%\Roaming\Windows Azure PowerShell`)。
 接下來，每個新的 PowerShell 工作階段都會將您最後一個工作階段中使用的內容作為目標。
-
-若要將 PowerShell 設定為忘記您的內容和認證，請使用 `Disable-AzureRmContextAutoSave`。 您每次開啟 PowerShell 工作階段時，都必須登入 Azure。
 
 可讓您管理 Azure 內容的 Cmdlet 也能讓您進行更細緻的控制。 您是否僅需要將變更套用到目前的 PowerShell 工作階段 (`Process` 範圍) 還是要套用到每個 PowerShell 工作階段 (`CurrentUser` 範圍)。 這些選項將在[使用內容範圍](#Using-Context-Scopes)中深入討論。
 
@@ -71,7 +69,7 @@ Azure 內容是一組資訊，可定義 Azure PowerShell Cmdlet 的目標。 內
 
 ## <a name="creating-selecting-renaming-and-removing-contexts"></a>建立、選取、重新命名和移除內容
 
-若要建立內容，您必須登入 Azure。 `Add-AzureRmAccount` Cmdlet (或其別名 `Login-AzureRmAccount`) 會設定後續 Azure PowerShell Cmdlet 所使用的預設內容，並可讓您存取認證所允許的任何租用戶或訂用帳戶。
+若要建立內容，您必須登入 Azure。 `Connect-AzureRmAccount` Cmdlet (或其別名 `Login-AzureRmAccount`) 會設定後續 Azure PowerShell Cmdlet 所使用的預設內容，並可讓您存取認證所允許的任何租用戶或訂用帳戶。
 
 若要在登入之後新增內容，請使用 `Set-AzureRmContext` (或其別名 `Select-AzureRmSubscription`)。
 
@@ -99,10 +97,10 @@ PS C:\> Remove-AzureRmContext Contoso2
 
 ## <a name="removing-credentials"></a>移除認證
 
-您可以使用 `Remove-AzureRmAccount` (也稱為 `Logout-AzureRmAccount`) 來移除使用者或服務主體的所有憑證和相關聯內容。 在無參數的情況下執行時，`Remove-AzureRmAccount` Cmdlet 會移除目前內容中與使用者或服務主體相關聯的所有認證和內容。 您可以傳入使用者名稱、服務主體名稱或內容，將特定的主體作為目標。
+您可以使用 `Disconnect-AzureRmAccount` (也稱為 `Logout-AzureRmAccount`) 來移除使用者或服務主體的所有憑證和相關聯內容。 在無參數的情況下執行時，`Disconnect-AzureRmAccount` Cmdlet 會移除目前內容中與使用者或服務主體相關聯的所有認證和內容。 您可以傳入使用者名稱、服務主體名稱或內容，將特定的主體作為目標。
 
 ```azurepowershell-interactive
-Remove-AzureRmAccount user1@contoso.org
+Disconnect-AzureRmAccount user1@contoso.org
 ```
 
 ## <a name="using-context-scopes"></a>使用內容範圍
@@ -133,7 +131,7 @@ $env:AzureRmContextAutoSave="true" | "false"
   任何變更都會改變全域內容。
 - [Disable-AzureRmContextAutosave][disable] - 關閉自動儲存內容。 需要每個新的 PowerShell 工作階段才能再次登入。
 - [Select-AzureRmContext][select] - 選取內容作為預設值。 所有後續的 Cmdlet 都會使用此內容中的認證來進行驗證。
-- [Remove-AzureRmAccount][remove-cred] - 將與帳戶相關聯的所有認證和內容移除。
+- [Disconnect-AzureRmAccount][remove-cred] - 移除與帳戶相關聯的所有認證和內容。
 - [Remove-AzureRmContext][remove-context] - 將已命名的內容移除。
 - [Rename-AzureRmContext][rename] - 將現有的內容重新命名。
 
@@ -148,11 +146,11 @@ $env:AzureRmContextAutoSave="true" | "false"
 [enable]: /powershell/module/azurerm.profile/Enable-AzureRmContextAutosave
 [disable]: /powershell/module/azurerm.profile/Disable-AzureRmContextAutosave
 [select]: /powershell/module/azurerm.profile/Select-AzureRmContext
-[remove-cred]: /powershell/module/azurerm.profile/Remove-AzureRmAccount
+[remove-cred]: /powershell/module/azurerm.profile/Disconnect-AzureRmAccount
 [remove-context]: /powershell/module/azurerm.profile/Remove-AzureRmContext
 [rename]: /powershell/module/azurerm.profile/Rename-AzureRmContext
 
 <!-- Updated cmdlets -->
-[login]: /powershell/module/azurerm.profile/Add-AzureRmAccount
+[login]: /powershell/module/azurerm.profile/Connect-AzureRmAccount
 [import]: /powershell/module/azurerm.profile/Import-AzureRmAccount
 [set-context]: /powershell/module/azurerm.profile/Import-AzureRmContext

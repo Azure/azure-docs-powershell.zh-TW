@@ -1,90 +1,74 @@
 ---
-title: 使用 Azure PowerShell 來登入
-description: 使用 Azure PowerShell 來登入
+title: 使用 Azure PowerShell 登入
+description: 如何使用 Azure PowerShell 以使用者、服務主體身分登入，或使用 MSI 登入。
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: f2a9247d442229b7323e5a9195c7257e45d58e56
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 6525e41be54c3f6b97812504c436e0ff3f5edf8e
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34853792"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100081"
 ---
-# <a name="log-in-with-azure-powershell"></a>使用 Azure PowerShell 來登入
+# <a name="sign-in-with-azure-powershell"></a>使用 Azure PowerShell 登入
 
-Azure PowerShell 支援多種登入方法。 最簡單的入門方法是在命令列以互動方式登入。
+Azure PowerShell 支援多種驗證方法。 最簡單的入門方法是在命令列以互動方式登入。
 
-## <a name="interactive-log-in"></a>互動式登入
+## <a name="sign-in-interactively"></a>以互動方式登入
 
-1. 輸入 `Login-AzureRmAccount`。 您會看到對話方塊，裡面會要求您提供 Azure 認證。
+若要以互動方式登入，請使用 [Connect-AzureRmAccount](/powershell/module/azurerm.profile/connect-azurermaccount) Cmdlet。
 
-2. 輸入與您帳戶相關聯的電子郵件地址和密碼。 Azure 會驗證並儲存認證資訊，然後關閉視窗。
+```azurepowershell
+Connect-AzureRmAccount
+```
 
-## <a name="log-in-with-a-service-principal"></a>使用服務主體來登入
+執行時，此 Cmdlet 會顯示對話方塊，提示您輸入與 Azure 帳戶相關聯的電子郵件地址和密碼。 驗證時，會針對目前的 PowerShell 工作階段儲存該資訊，關閉對話方塊，您就具有所有 Azure PowerShell Cmdlet 的存取權。
+
+> [!IMPORTANT]
+> 從 Azure PowerShell 6.3.0 開始，只要您保持登入 Windows，您的認證就會在多個 PowerShell 工作階段之間共用。 如需詳細資訊，請參閱[持續性認證](context-persistence.md)中的文章。
+
+## <a name="sign-in-with-a-service-principal"></a>使用服務主體來登入
 
 服務主體提供您建立非互動式帳戶的方式，以用來操控資源。 服務主體就像是使用者帳戶，您可以使用 Azure Active Directory 對其套用規則。 僅授與服務主體所需的最低權限，可確保您的自動化指令碼會更加安全。
 
-1. 如果您還沒有服務主體，請[建立一個](create-azure-service-principal-azureps.md)。
+如果您需要建立服務主體以便與 Azure PowerShell 搭配使用，請參閱[使用 Azure PowerShell 建立 Azure 服務主體](create-azure-service-principal-azureps.md)。
 
-2. 使用服務主體來登入。
+若要使用服務主體來登入，請使用 `-ServicePrincipal` 引數和 `Connect-AzureRmAccount` Cmdlet。 您也需要服務主體的應用程式識別碼、登入認證，以及與服務主體相關聯的租用戶識別碼。 若要取得服務主體的認證作為適當物件，請使用 [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential) Cmdlet。 這個 Cmdlet 會顯示對話方塊，讓您在其中輸入服務主體使用者識別碼和密碼。
 
-    ```powershell
-    Login-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
-    ```
+```azurepowershell-interactive
+$pscredential = Get-Credential
+Connect-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
+```
 
-    若要取得您的 TenantId，請以互動方式登入，然後從您的訂用帳戶中取得 TenantId。
+## <a name="sign-in-using-an-azure-vm-managed-service-identity"></a>使用 Azure 虛擬機受控服務識別登入
 
-    ```powershell
-    Get-AzureRmSubscription
-    ```
-
-    ```
-    Environment           : AzureCloud
-    Account               : username@contoso.com
-    TenantId              : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-    SubscriptionId        : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-    SubscriptionName      : My Production Subscription
-    CurrentStorageAccount :
-    ```
-
-### <a name="log-in-using-an-azure-vm-managed-service-identity"></a>使用 Azure VM 受控服務識別登入
-
-受控服務識別 (MSI) 是 Azure Active Directory 的預覽功能。 您可以使用 MSI 服務主體進行登入，並取得僅限應用程式的存取權杖來存取其他資源。
+受控服務識別 (MSI) 是 Azure Active Directory 的預覽功能。 您可以使用 MSI 服務主體進行登入，並取得僅限應用程式的存取權杖來存取其他資源。 MSI 僅適用於在 Azure 雲端中執行的虛擬機器。
 
 如需 MSI 的詳細資訊，請參閱[如何使用 Azure VM 受控服務識別登入 (MSI) 進行登入和取得權杖](/azure/active-directory/msi-how-to-get-access-token-using-msi)。
 
-## <a name="log-in-to-another-cloud"></a>登入其他雲端
+## <a name="sign-in-to-another-cloud"></a>登入其他雲端
 
-Azure 雲端服務提供不同的環境，以遵循各國政府的資料處理法規。 如果您的 Azure 帳戶位於某一個政府雲端，則需要在登入時指定環境。 例如，如果您的帳戶位於中國雲端，則可使用下列命令來登入：
+Azure 雲端服務提供不同的環境，以遵循各個區域的資料處理法規。 如果您的 Azure 帳戶位於與其中一個區域相關聯的雲端，則需要在登入時指定環境。 例如，如果您的帳戶位於中國雲端，則可使用下列命令來登入：
 
-```powershell
+```azurepowershell-interactive
 Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 ```
 
 使用下列命令來取得可用環境的清單：
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmEnvironment | Select-Object Name
-```
-
-```
-Name
-----
-AzureCloud
-AzureChinaCloud
-AzureUSGovernment
-AzureGermanCloud
 ```
 
 ## <a name="learn-more-about-managing-azure-role-based-access"></a>深入了解如何管理 Azure 角色型存取
 
 如需 Azure 中的驗證與訂用帳戶管理的詳細資訊，請參閱[管理帳戶、訂用帳戶和管理角色](/azure/active-directory/role-based-access-control-configure)。
 
-可用來管理角色的 Azure PowerShell Cmdlet
+可用來管理角色的 Azure PowerShell Cmdlet：
 
 * [Get-AzureRmRoleAssignment](/powershell/module/AzureRM.Resources/Get-AzureRmRoleAssignment)
 * [Get-AzureRmRoleDefinition](/powershell/module/AzureRM.Resources/Get-AzureRmRoleDefinition)

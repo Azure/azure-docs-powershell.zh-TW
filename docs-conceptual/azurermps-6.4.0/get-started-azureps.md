@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: a036bb78ddb084dceb3668ab5751951dedd85e15
+ms.openlocfilehash: 5aa3b3fdeff20ea4c6f830f834e61f37d81da07d
 ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100465"
+ms.locfileid: "38100370"
 ---
 # <a name="get-started-with-azure-powershell"></a>開始使用 Azure PowerShell
 
@@ -48,7 +48,7 @@ Azure PowerShell 的設計是為了讓您從命令列管理 Azure 資源，以�
 
 以互動方式登入︰
 
-1. 輸入 `Connect-AzureRmAccount`。 您會看到對話方塊，裡面會要求您提供 Azure 認證。 選項 [-Environment] 可以讓您登入 Azure China 或 Azure Germany。
+1. 輸入 `Connect-AzureRmAccount`。 您會看到對話方塊，裡面會要求您提供 Azure 認證。 選項 [-Environment] 可讓您驗證 Azure China 或 Azure Germany。
 
    例如 Connect-AzureRmAccount -Environment AzureChinaCloud
 

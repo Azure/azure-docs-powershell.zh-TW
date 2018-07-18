@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: 05dd023b407a46ea9133493a000ad9ff75b08dee
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 2444abc6f6f2280645c77c3effcd02db74f4f997
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34854438"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100234"
 ---
 # <a name="install-and-configure-azure-powershell"></a>安裝並設定 Azure PowerShell
 
@@ -50,6 +50,9 @@ Install-Module PowerShellGet -Force
 
 > [!NOTE]
 > 若要使用 PowerShellGet，需要有可讓您執行指令碼的執行原則。 如需 PowerShell 的執行原則詳細資訊，請參閱[關於執行原則](/powershell/module/microsoft.powershell.core/about/about_execution_policies)。
+
+> [!IMPORTANT]
+> 本文件中所述的模組 AzureRM 會使用 .NET Framework。 這會造成與使用 .NET Core 的 PowerShell 6.0 不相容。 如果您使用 PowerShell 6.0，請遵循[適用於 macOS 和 Linux 的安裝指示](install-azurermps-maclinux.md)。 
 
 ## <a name="step-2-install-azure-powershell"></a>步驟 2：安裝 Azure PowerShell
 

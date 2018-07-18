@@ -1,22 +1,22 @@
 ---
-title: 在 PowerShell 工作階段之間保存使用者登入
-description: 本文說明 Azure PowerShell 中的新功能，可讓您在多個 PowerShell 工作階段中重複使用認證和其他使用者資訊。
+title: 在 PowerShell 工作階段之間保存使用者認證
+description: 了解如何重覆使用 Azure 認證及多個 PowerShell 工作階段之間的其他資訊。
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 5ae4f03207b74df06a2cb81ea1cd0516a4abd2dd
-ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
+ms.openlocfilehash: 3107f77987745faa7ec57ea4811c62a38a7b2aa2
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35323113"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100251"
 ---
-# <a name="persisting-user-logins-across-powershell-sessions"></a>在 PowerShell 工作階段之間保存使用者登入
+# <a name="persisting-user-credentials-across-powershell-sessions"></a>在 PowerShell 工作階段之間保存使用者認證
 
-在 Azure PowerShell 的 2017 年 9 月版本中，Azure Resource Manager Cmdlet 推出新的功能，**Azure 內容自動儲存**。 這項功能會啟用數個新的使用者情節，包括：
+Azure PowerShell 提供了稱為 **Azure 內容自動儲存**的功能，可提供下列功能：
 
 - 在新的 PowerShell 工作階段中重複使用的登入資訊保留。
 - 更易於使用的背景工作，可長時間執行 Cmdlet。
@@ -36,7 +36,7 @@ Azure 內容是一組資訊，可定義 Azure PowerShell Cmdlet 的目標。 內
 
 在舊版中，您每次開啟新的 PowerShell 工作階段時都必須建立 Azure 內容。 從 Azure PowerShell v4.4.0 開始，您在每次開啟新的 PowerShell 工作階段時，可以啟用自動儲存和重複使用 Azure 內容。
 
-## <a name="automatically-saving-the-context-for-the-next-login"></a>自動儲存內容以供下一次登入使用
+## <a name="automatically-saving-the-context-for-the-next-sign-in"></a>自動儲存內容以供下一次登入使用
 
 根據預設，每當您關閉 PowerShell 工作階段時，Azure PowerShell 就會捨棄內容資訊。
 
@@ -71,7 +71,7 @@ Azure 內容是一組資訊，可定義 Azure PowerShell Cmdlet 的目標。 內
 
 ## <a name="creating-selecting-renaming-and-removing-contexts"></a>建立、選取、重新命名和移除內容
 
-若要建立內容，您必須登入 Azure。 `Connect-AzureRmAccount` Cmdlet (或其別名 `Login-AzureRmAccount`) 會設定後續 Azure PowerShell Cmdlet 所使用的預設內容，並可讓您存取登入認證所允許的任何租用戶或訂用帳戶。
+若要建立內容，您必須登入 Azure。 `Connect-AzureRmAccount` Cmdlet (或其別名 `Login-AzureRmAccount`) 會設定後續 Azure PowerShell Cmdlet 所使用的預設內容，並可讓您存取認證所允許的任何租用戶或訂用帳戶。
 
 若要在登入之後新增內容，請使用 `Set-AzureRmContext` (或其別名 `Select-AzureRmSubscription`)。
 
@@ -140,7 +140,7 @@ $env:AzureRmContextAutoSave="true" | "false"
 對現有設定檔 Cmdlet 的變更
 
 - [Add-AzureRmAccount][login] - 允許登入程序或目前使用者的範圍。
-  允許登入之後命名預設內容。
+  允許驗證之後命名預設內容。
 - [Import-AzureRmContext][import] - 允許登入程序或目前使用者的範圍。
 - [Set-AzureRmContext][set-context] - 允許選取現有的已命名內容，以及對程序或目前使用者的範圍變更。
 

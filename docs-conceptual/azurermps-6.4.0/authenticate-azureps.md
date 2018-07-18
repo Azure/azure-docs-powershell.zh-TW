@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: af39fec226492c9ccf251c996b57e274de783178
+ms.openlocfilehash: 20194ac2282d602ba61bf130791edac9f4ffae6c
 ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100268"
+ms.locfileid: "38100217"
 ---
 # <a name="sign-in-with-azure-powershell"></a>使用 Azure PowerShell 登入
 
@@ -29,7 +29,7 @@ Connect-AzureRmAccount
 執行時，此 Cmdlet 會顯示對話方塊，提示您輸入與 Azure 帳戶相關聯的電子郵件地址和密碼。 驗證時，會針對目前的 PowerShell 工作階段儲存該資訊，關閉對話方塊，您就具有所有 Azure PowerShell Cmdlet 的存取權。
 
 > [!IMPORTANT]
-> 此登入_僅_適用於目前的 PowerShell 工作階段。 若要在多個工作階段之間保持驗證，請參閱[持續性認證](context-persistence.md)中的文章。
+> 從 Azure PowerShell 6.3.0 開始，只要您保持登入 Windows，您的認證就會在多個 PowerShell 工作階段之間共用。 如需詳細資訊，請參閱[持續性認證](context-persistence.md)中的文章。
 
 ## <a name="sign-in-with-a-service-principal"></a>使用服務主體來登入
 

@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: 2f37df114b620566a663eb12c7e739975bc1f8bf
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 0897e8fc3a50a58ac8945bd95722736526f63e19
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34854574"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100149"
 ---
 # <a name="getting-started-with-azure-powershell"></a>開始使用 Azure PowerShell
 
@@ -44,11 +44,11 @@ Azure PowerShell 的設計是為了讓您從命令列管理 Azure 資源，以�
 
 2. 若要確認安裝是否成功，請從命令列執行 `Get-Module AzureRM -ListAvailable`。
 
-## <a name="log-in-to-azure"></a>登入 Azure
+## <a name="sign-in-to-azure"></a>登入 Azure
 
 以互動方式登入︰
 
-1. 輸入 `Login-AzureRmAccount`。 您會看到對話方塊，裡面會要求您提供 Azure 認證。 選項 [-EnvironmentName] 可以讓您登入 Azure China 或 Azure Germany。
+1. 輸入 `Login-AzureRmAccount`。 您會看到對話方塊，裡面會要求您提供 Azure 認證。 選項 [-EnvironmentName] 可讓您驗證 Azure China 或 Azure Germany。
 
    例如 Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
@@ -362,7 +362,7 @@ Are you sure you want to remove resource group 'myResourceGroup'
 
 ## <a name="next-steps"></a>後續步驟
 
-* [使用 Azure PowerShell 來登入](authenticate-azureps.md)
+* [使用 Azure PowerShell 登入](authenticate-azureps.md)
 * [使用 Azure PowerShell 來管理 Azure 訂用帳戶](manage-subscriptions-azureps.md)
 * [使用 Azure PowerShell 在 Azure 中建立服務主體](create-azure-service-principal-azureps.md)
 * 參閱從較舊版本進行移轉的相關版本資訊：[https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).

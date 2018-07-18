@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 07/26/2017
-ms.openlocfilehash: 5c8d9fd2e79dd18ee26493343e038c2a5ed24b26
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 6f0e304c499fc8bf4909e2825d52cd63b1fcbf5d
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34854421"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100486"
 ---
 # <a name="release-notes"></a>版本資訊
 
@@ -151,8 +151,8 @@ ms.locfileid: "34854421"
       - 內容持續性「已停用」之作業的常見模式：`Start-Job {param ($context) New-AzureRmVM -AzureRmContext $context [... other parameters]} -ArgumentList (Get-AzureRmContext)`
       - 內容持續性「已啟用」之作業的常見模式：`Start-Job {New-AzureRmVM [... other parameters]}`
   * 在工作階段之間保存登入資訊，新的 Cmdlet：
-    - Enable-AzureRmContextAutosave - 啟用工作階段之間的登入持續性。
-    - Disable-AzureRmContextAutosave - 停用工作階段之間的登入持續性。
+    - Enable-AzureRmContextAutosave - 啟用工作階段之間的認證持續性。
+    - Disable-AzureRmContextAutosave - 停用工作階段之間的認證持續性。
   * 管理內容資訊，新的 cmdlet
     - Select-AzureRmContext - 選取作用中的命名內容。
     - Rename-AzureRmContext - 將現有內容重新命名以方便參考。
