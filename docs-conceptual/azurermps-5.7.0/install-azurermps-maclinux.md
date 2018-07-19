@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/06/2018
-ms.openlocfilehash: a779f402fb2b3fccc8269aa30a6fe98a949251d6
-ms.sourcegitcommit: 4c775721461210431bd913f28d1f1e6f1976880a
+ms.openlocfilehash: 6e7d447ea9672c174e3f1d103bc56c11a7f37192
+ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37091498"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39024914"
 ---
 # <a name="install-azure-powershell-on-macos-or-linux"></a>在 macOS 或 Linux 上安裝 Azure PowerShell
 
@@ -30,8 +30,8 @@ ms.locfileid: "37091498"
 macOS 和大部分 Linux 發佈的 PowerShell Core 安裝指示皆不同。
 您可以在下列文章中找到詳細的指示：
 
-- [Install PowerShell Core on macOS](/powershell/scripting/setup/installing-powershell-core-on-macos)
-- [Install PowerShell Core on Linux](/powershell/scripting/setup/installing-powershell-core-on-linux)
+* [Install PowerShell Core on macOS](/powershell/scripting/setup/installing-powershell-core-on-macos)
+* [Install PowerShell Core on Linux](/powershell/scripting/setup/installing-powershell-core-on-linux)
 
 ## <a name="install-azure-powershell-for-net-core"></a>安裝 Azure PowerShell for .NET Core
 
@@ -59,7 +59,7 @@ You are installing the modules from an untrusted repository. If you trust this r
 its InstallationPolicy value by running the Set-PSRepository cmdlet.
 
 Are you sure you want to install the modules from 'PSGallery'?
-[Y] Yes� [A] Yes to All� [N] No� [L] No to All� [S] Suspend� [?] Help (default is "N"):
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
 請回答 `Yes` 或 `Yes to All` 以繼續安裝。
@@ -83,17 +83,17 @@ Connect-AzureRmAccount
 適用於 .NET Core 的 Azure PowerShell 模組仍在開發中。 這些模組未提供適用於 Windows 版模組的所有 Cmdlet。 AzureRM.Netcore 模組實作了下列功能：
 
 * 帳戶管理
-  - 透過 Microsoft Azure Active Directory，使用 Microsoft 帳戶、組織帳戶或服務主體登入
-  - 透過 Save-AzureRmContext 將認證儲存到磁碟上，及使用 Import-AzureRmContext 載入儲存的認證
+  * 透過 Microsoft Azure Active Directory，使用 Microsoft 帳戶、組織帳戶或服務主體登入
+  * 透過 Save-AzureRmContext 將認證儲存到磁碟上，及使用 Import-AzureRmContext 載入儲存的認證
 * 環境
-  - 取得其他現成可用的 Microsoft Azure 環境
-  - 新增/設定/移除自訂環境 (例如 Azure Stack 或 Windows Azure 套件環境)
+  * 取得其他現成可用的 Microsoft Azure 環境
+  * 新增/設定/移除自訂環境 (例如 Azure Stack 或 Windows Azure 套件環境)
 * 使用資源管理員與服務管理介面之 Azure 服務適用的管理平面 Cmdlet。
-  - 虛擬機器
-  - App Service (網站)
-  - SQL Database
-  - 儲存體
-  - 網路
+  * 虛擬機器
+  * App Service (網站)
+  * SQL Database
+  * 儲存體
+  * 網路
 
 ## <a name="next-steps"></a>後續步驟
 

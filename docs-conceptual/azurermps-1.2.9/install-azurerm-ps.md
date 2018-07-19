@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: c9a2f7b87654de5a50d8e0f06fefc6d362532aaf
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: a5ad1ce6001c9326a5dad135fe5aeea512f70675
+ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34852891"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39025152"
 ---
 # <a name="install-and-configure-azure-powershell"></a>安裝並設定 Azure PowerShell
 
@@ -79,6 +79,7 @@ AzureRM 模組是 Azure Resource Manager Cmdlet 的彙總套件模組。 當您�
 若有安裝舊版的 Azure PowerShell，則可能會出現錯誤。 若要解決此問題，請參閱本文的[更新為新版的 Azure PowerShell](#update-azps) 小節。
 
 ## <a name="step-3-load-the-azurerm-module"></a>步驟 3︰載入 AzureRM 模組
+
 安裝模組後，您需要將模組載入您的 PowerShell 工作階段。 您應該在一般 (未提高權限) PowerShell 工作階段中執行此動作。 使用 `Import-Module`Cmdlet 載入模組，如下所示︰
 
 ```powershell
@@ -101,8 +102,7 @@ Import-Module -Name AzureRM
 |我想要升級至 PowerShell 5|[安裝最新版的 WMF](https://www.microsoft.com/en-us/download/details.aspx?id=54616)|
 |我是在採用 PowerShell 3 或 PowerShell 4 的 Windows 版本上執行|[取得 PackageManagement 模組](http://go.microsoft.com/fwlink/?LinkID=746217)|
 
-<a id="helpmechoose"></a>
-### <a name="checking-the-version-of-azure-powershell"></a>檢查 Azure PowerShell 的版本
+### <a name="div-idhelpmechoosechecking-the-version-of-azure-powershell"></a><div id="helpmechoose"/>檢查 Azure PowerShell 的版本
 
 雖然我們鼓勵您儘早升級至最新版本，但仍針對數個 Azure PowerShell 版本提供支援。 若要判斷已安裝的 Azure PowerShell 版本，請從命令列執行 `Get-Module AzureRM`。
 
@@ -114,7 +114,7 @@ Get-Module AzureRM -ListAvailable | Select-Object -Property Name,Version,Path
 
 如果您有使用傳統部署模型的部署，則可以安裝 Azure PowerShell 的服務管理版本。 如需詳細資訊，請參閱[安裝 Azure PowerShell 服務管理模組](/powershell/azure/servicemanagement/install-azure-ps)。 Azure 和 AzureRM 模組會共用通用相依性。 若您同時使用 Azure 與 AzureRM 模組，則應該安裝每個套件的相同版本。
 
-### <a id="update-azps"></a>更新為新版的 Azure PowerShell
+### <a name="div-idupdate-azpsupdating-to-a-new-version-of-azure-powershell"></a><div id="update-azps"/>更新為新版的 Azure PowerShell
 
 若有安裝包括服務管理模組的舊版 Azure PowerShell，則可能會出現下列錯誤：
 

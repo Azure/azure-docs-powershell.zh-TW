@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/20/2018
-ms.openlocfilehash: f6c52b413aa2981dc24c7e60fe832e37dcbc8baa
-ms.sourcegitcommit: 4c775721461210431bd913f28d1f1e6f1976880a
+ms.openlocfilehash: 7c6446a66cd3ab9fe8f5d8adf13fed36ee093340
+ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37091447"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39025305"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi-or-web-platform-installer"></a>使用 MSI 或 Web Platform Installer 在 Windows 上安裝 Azure PowerShell
 

@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/15/2018
-ms.openlocfilehash: 2809d8265af85a786b1b72ab9be3135f166a20e8
+ms.openlocfilehash: 50b05e5f25b6e3e1c815f6b26f1b53b84cd0b7da
 ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 07/13/2018
-ms.locfileid: "39025322"
+ms.locfileid: "39025271"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>使用 PowerShellGet 在 Windows 上安裝 Azure PowerShell
 
@@ -24,40 +24,14 @@ ms.locfileid: "39025322"
 
 ## <a name="requirements"></a>需求
 
-若要安裝 Azure PowerShell，您需要 PowerShellGet 1.1.2.0 版或更高版本。 若要檢查您的系統上是否可使用，請執行下列命令：
+自 Azure PowerShell 6.0 版開始，Azure PowerShell 需要 PowerShell 5.0 版。 若要檢查您電腦上執行的 PowerShell 版本，請執行下列命令：
 
 ```powershell
-Get-Module -Name PowerShellGet -ListAvailable | Select-Object -Property Name,Version,Path
+$PSVersionTable.PSVersion
 ```
 
-您應該會看到類似下面的輸出：
+如果您的版本過期，請參閱[升級現有的 Windows PowerShell](/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell)。
 
-```output
-Name          Version Path
-----          ------- ----
-Name          Version Path
-----          ------- ----
-PowerShellGet 1.6.0   C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.6.0\PowerShellGet.psd1
-PowerShellGet 1.0.0.1 C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PowerShellGet.psd1
-```
-
-若您需要更新 PowerShellGet 的安裝，請執行下列命令：
-
-```powershell
-Install-Module PowerShellGet -Force
-```
-
-若您尚未安裝 PowerShellGet，請遵循下表中適用您系統的指示。
-
-|案例|安裝指示|
-|---|---|
-|Windows 10<br/>Windows Server 2016|內建於 OS 包含的 Windows Management Framework (WMF) 5.0|
-|升級至 PowerShell 5| <ol><li>[安裝最新版的 WMF](https://www.microsoft.com/en-us/download/details.aspx?id=54616)</li><li>執行以下命令：<br/>```Install-Module PowerShellGet -Force```</li></ol>|
-|Windows 與 PowerShell 3 或 PowerShell 4|<ol><il>[取得 PackageManagement 模組](http://go.microsoft.com/fwlink/?LinkID=746217)</il><li>執行以下命令：<br/>```Install-Module PowerShellGet -Force```</li></ol>|
-
-> [!NOTE]
-> 若要使用 PowerShellGet，需要有可讓您執行指令碼的執行原則。 如需 PowerShell 的執行原則詳細資訊，請參閱[關於執行原則](/powershell/module/microsoft.powershell.core/about/about_execution_policies)。
->
 > [!IMPORTANT]
 > 本文件中所述的模組 AzureRM 會使用 .NET Framework。 這會造成與使用 .NET Core 的 PowerShell 6.0 不相容。 如果您使用 PowerShell 6.0，請遵循[適用於 macOS 和 Linux 的安裝指示](install-azurermps-maclinux.md)。
 
