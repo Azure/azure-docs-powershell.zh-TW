@@ -7,42 +7,42 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: f2a9247d442229b7323e5a9195c7257e45d58e56
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: caacf32af78b98e8d9d455a8c4dd0bbb698d355f
+ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34853129"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39024574"
 ---
-# <a name="log-in-with-azure-powershell"></a><span data-ttu-id="31659-103">使用 Azure PowerShell 來登入</span><span class="sxs-lookup"><span data-stu-id="31659-103">Log in with Azure PowerShell</span></span>
+# <a name="log-in-with-azure-powershell"></a><span data-ttu-id="7b019-103">使用 Azure PowerShell 來登入</span><span class="sxs-lookup"><span data-stu-id="7b019-103">Log in with Azure PowerShell</span></span>
 
-<span data-ttu-id="31659-104">Azure PowerShell 支援多種登入方法。</span><span class="sxs-lookup"><span data-stu-id="31659-104">Azure PowerShell supports multiple login methods.</span></span> <span data-ttu-id="31659-105">最簡單的入門方法是在命令列以互動方式登入。</span><span class="sxs-lookup"><span data-stu-id="31659-105">The simplest way to get started is to log in interactively at the command line.</span></span>
+<span data-ttu-id="7b019-104">Azure PowerShell 支援多種登入方法。</span><span class="sxs-lookup"><span data-stu-id="7b019-104">Azure PowerShell supports multiple login methods.</span></span> <span data-ttu-id="7b019-105">最簡單的入門方法是在命令列以互動方式登入。</span><span class="sxs-lookup"><span data-stu-id="7b019-105">The simplest way to get started is to log in interactively at the command line.</span></span>
 
-## <a name="interactive-log-in"></a><span data-ttu-id="31659-106">互動式登入</span><span class="sxs-lookup"><span data-stu-id="31659-106">Interactive log in</span></span>
+## <a name="interactive-log-in"></a><span data-ttu-id="7b019-106">互動式登入</span><span class="sxs-lookup"><span data-stu-id="7b019-106">Interactive log in</span></span>
 
-1. <span data-ttu-id="31659-107">輸入 `Login-AzureRmAccount`。</span><span class="sxs-lookup"><span data-stu-id="31659-107">Type `Login-AzureRmAccount`.</span></span> <span data-ttu-id="31659-108">您會看到對話方塊，裡面會要求您提供 Azure 認證。</span><span class="sxs-lookup"><span data-stu-id="31659-108">You will get dialog box asking for your Azure credentials.</span></span>
+1. <span data-ttu-id="7b019-107">輸入 `Login-AzureRmAccount`。</span><span class="sxs-lookup"><span data-stu-id="7b019-107">Type `Login-AzureRmAccount`.</span></span> <span data-ttu-id="7b019-108">您會看到對話方塊，裡面會要求您提供 Azure 認證。</span><span class="sxs-lookup"><span data-stu-id="7b019-108">You will get dialog box asking for your Azure credentials.</span></span>
 
-2. <span data-ttu-id="31659-109">輸入與您帳戶相關聯的電子郵件地址和密碼。</span><span class="sxs-lookup"><span data-stu-id="31659-109">Type the email address and password associated with your account.</span></span> <span data-ttu-id="31659-110">Azure 會驗證並儲存認證資訊，然後關閉視窗。</span><span class="sxs-lookup"><span data-stu-id="31659-110">Azure authenticates and saves the credential information, and then closes the window.</span></span>
+2. <span data-ttu-id="7b019-109">輸入與您帳戶相關聯的電子郵件地址和密碼。</span><span class="sxs-lookup"><span data-stu-id="7b019-109">Type the email address and password associated with your account.</span></span> <span data-ttu-id="7b019-110">Azure 會驗證並儲存認證資訊，然後關閉視窗。</span><span class="sxs-lookup"><span data-stu-id="7b019-110">Azure authenticates and saves the credential information, and then closes the window.</span></span>
 
-## <a name="log-in-with-a-service-principal"></a><span data-ttu-id="31659-111">使用服務主體來登入</span><span class="sxs-lookup"><span data-stu-id="31659-111">Log in with a service principal</span></span>
+## <a name="log-in-with-a-service-principal"></a><span data-ttu-id="7b019-111">使用服務主體來登入</span><span class="sxs-lookup"><span data-stu-id="7b019-111">Log in with a service principal</span></span>
 
-<span data-ttu-id="31659-112">服務主體提供您建立非互動式帳戶的方式，以用來操控資源。</span><span class="sxs-lookup"><span data-stu-id="31659-112">Service principals provide a way for you to create non-interactive accounts that you can use to manipulate resources.</span></span> <span data-ttu-id="31659-113">服務主體就像是使用者帳戶，您可以使用 Azure Active Directory 對其套用規則。</span><span class="sxs-lookup"><span data-stu-id="31659-113">Service principals are like user accounts to which you can apply rules using Azure Active Directory.</span></span> <span data-ttu-id="31659-114">僅授與服務主體所需的最低權限，可確保您的自動化指令碼會更加安全。</span><span class="sxs-lookup"><span data-stu-id="31659-114">By granting the minimum permissions needed to a service principal, you can ensure your automation scripts are even more secure.</span></span>
+<span data-ttu-id="7b019-112">服務主體提供您建立非互動式帳戶的方式，以用來操控資源。</span><span class="sxs-lookup"><span data-stu-id="7b019-112">Service principals provide a way for you to create non-interactive accounts that you can use to manipulate resources.</span></span> <span data-ttu-id="7b019-113">服務主體就像是使用者帳戶，您可以使用 Azure Active Directory 對其套用規則。</span><span class="sxs-lookup"><span data-stu-id="7b019-113">Service principals are like user accounts to which you can apply rules using Azure Active Directory.</span></span> <span data-ttu-id="7b019-114">僅授與服務主體所需的最低權限，可確保您的自動化指令碼會更加安全。</span><span class="sxs-lookup"><span data-stu-id="7b019-114">By granting the minimum permissions needed to a service principal, you can ensure your automation scripts are even more secure.</span></span>
 
-1. <span data-ttu-id="31659-115">如果您還沒有服務主體，請[建立一個](create-azure-service-principal-azureps.md)。</span><span class="sxs-lookup"><span data-stu-id="31659-115">If you don't already have a service principal, [create one](create-azure-service-principal-azureps.md).</span></span>
+1. <span data-ttu-id="7b019-115">如果您還沒有服務主體，請[建立一個](create-azure-service-principal-azureps.md)。</span><span class="sxs-lookup"><span data-stu-id="7b019-115">If you don't already have a service principal, [create one](create-azure-service-principal-azureps.md).</span></span>
 
-2. <span data-ttu-id="31659-116">使用服務主體來登入。</span><span class="sxs-lookup"><span data-stu-id="31659-116">Log in with the service principal.</span></span>
+2. <span data-ttu-id="7b019-116">使用服務主體來登入。</span><span class="sxs-lookup"><span data-stu-id="7b019-116">Log in with the service principal.</span></span>
 
     ```powershell
     Login-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
     ```
 
-    <span data-ttu-id="31659-117">若要取得您的 TenantId，請以互動方式登入，然後從您的訂用帳戶中取得 TenantId。</span><span class="sxs-lookup"><span data-stu-id="31659-117">To get your TenantId, log in interactively and then get the TenantId from your subscription.</span></span>
+    <span data-ttu-id="7b019-117">若要取得您的 TenantId，請以互動方式登入，然後從您的訂用帳戶中取得 TenantId。</span><span class="sxs-lookup"><span data-stu-id="7b019-117">To get your TenantId, log in interactively and then get the TenantId from your subscription.</span></span>
 
     ```powershell
     Get-AzureRmSubscription
     ```
 
-    ```
+    ```output
     Environment           : AzureCloud
     Account               : username@contoso.com
     TenantId              : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
@@ -51,27 +51,27 @@ ms.locfileid: "34853129"
     CurrentStorageAccount :
     ```
 
-### <a name="log-in-using-an-azure-vm-managed-service-identity"></a><span data-ttu-id="31659-118">使用 Azure VM 受控服務識別登入</span><span class="sxs-lookup"><span data-stu-id="31659-118">Log in using an Azure VM Managed Service Identity</span></span>
+### <a name="log-in-using-an-azure-vm-managed-service-identity"></a><span data-ttu-id="7b019-118">使用 Azure VM 受控服務識別登入</span><span class="sxs-lookup"><span data-stu-id="7b019-118">Log in using an Azure VM Managed Service Identity</span></span>
 
-<span data-ttu-id="31659-119">受控服務識別 (MSI) 是 Azure Active Directory 的預覽功能。</span><span class="sxs-lookup"><span data-stu-id="31659-119">Managed Service Identity (MSI) is a preview feature of Azure Active Directory.</span></span> <span data-ttu-id="31659-120">您可以使用 MSI 服務主體進行登入，並取得僅限應用程式的存取權杖來存取其他資源。</span><span class="sxs-lookup"><span data-stu-id="31659-120">You can use an MSI service principal for sign-in, and acquire an app-only access token to access other resources.</span></span>
+<span data-ttu-id="7b019-119">受控服務識別 (MSI) 是 Azure Active Directory 的預覽功能。</span><span class="sxs-lookup"><span data-stu-id="7b019-119">Managed Service Identity (MSI) is a preview feature of Azure Active Directory.</span></span> <span data-ttu-id="7b019-120">您可以使用 MSI 服務主體進行登入，並取得僅限應用程式的存取權杖來存取其他資源。</span><span class="sxs-lookup"><span data-stu-id="7b019-120">You can use an MSI service principal for sign-in, and acquire an app-only access token to access other resources.</span></span>
 
-<span data-ttu-id="31659-121">如需 MSI 的詳細資訊，請參閱[如何使用 Azure VM 受控服務識別登入 (MSI) 進行登入和取得權杖](/azure/active-directory/msi-how-to-get-access-token-using-msi)。</span><span class="sxs-lookup"><span data-stu-id="31659-121">For more information about MSI, see [How to use an Azure VM Managed Service Identity (MSI) for sign-in and token acquisition](/azure/active-directory/msi-how-to-get-access-token-using-msi).</span></span>
+<span data-ttu-id="7b019-121">如需 MSI 的詳細資訊，請參閱[如何使用 Azure VM 受控服務識別登入 (MSI) 進行登入和取得權杖](/azure/active-directory/msi-how-to-get-access-token-using-msi)。</span><span class="sxs-lookup"><span data-stu-id="7b019-121">For more information about MSI, see [How to use an Azure VM Managed Service Identity (MSI) for sign-in and token acquisition](/azure/active-directory/msi-how-to-get-access-token-using-msi).</span></span>
 
-## <a name="log-in-to-another-cloud"></a><span data-ttu-id="31659-122">登入其他雲端</span><span class="sxs-lookup"><span data-stu-id="31659-122">Log in to another Cloud</span></span>
+## <a name="log-in-to-another-cloud"></a><span data-ttu-id="7b019-122">登入其他雲端</span><span class="sxs-lookup"><span data-stu-id="7b019-122">Log in to another Cloud</span></span>
 
-<span data-ttu-id="31659-123">Azure 雲端服務提供不同的環境，以遵循各國政府的資料處理法規。</span><span class="sxs-lookup"><span data-stu-id="31659-123">Azure cloud services provide different environments that adhere to the data-handling regulations of various governments.</span></span> <span data-ttu-id="31659-124">如果您的 Azure 帳戶位於某一個政府雲端，則需要在登入時指定環境。</span><span class="sxs-lookup"><span data-stu-id="31659-124">If your Azure account is in one the government clouds, you need to specify the environment when you sign in.</span></span> <span data-ttu-id="31659-125">例如，如果您的帳戶位於中國雲端，則可使用下列命令來登入：</span><span class="sxs-lookup"><span data-stu-id="31659-125">For example, if you account is in the China cloud you sign on using the following command:</span></span>
+<span data-ttu-id="7b019-123">Azure 雲端服務提供不同的環境，以遵循各國政府的資料處理法規。</span><span class="sxs-lookup"><span data-stu-id="7b019-123">Azure cloud services provide different environments that adhere to the data-handling regulations of various governments.</span></span> <span data-ttu-id="7b019-124">如果您的 Azure 帳戶位於某一個政府雲端，則需要在登入時指定環境。</span><span class="sxs-lookup"><span data-stu-id="7b019-124">If your Azure account is in one the government clouds, you need to specify the environment when you sign in.</span></span> <span data-ttu-id="7b019-125">例如，如果您的帳戶位於中國雲端，則可使用下列命令來登入：</span><span class="sxs-lookup"><span data-stu-id="7b019-125">For example, if you account is in the China cloud you sign on using the following command:</span></span>
 
 ```powershell
 Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 ```
 
-<span data-ttu-id="31659-126">使用下列命令來取得可用環境的清單：</span><span class="sxs-lookup"><span data-stu-id="31659-126">Use the following command to get a list of available environments:</span></span>
+<span data-ttu-id="7b019-126">使用下列命令來取得可用環境的清單：</span><span class="sxs-lookup"><span data-stu-id="7b019-126">Use the following command to get a list of available environments:</span></span>
 
 ```powershell
 Get-AzureRmEnvironment | Select-Object Name
 ```
 
-```
+```output
 Name
 ----
 AzureCloud
@@ -80,16 +80,16 @@ AzureUSGovernment
 AzureGermanCloud
 ```
 
-## <a name="learn-more-about-managing-azure-role-based-access"></a><span data-ttu-id="31659-127">深入了解如何管理 Azure 角色型存取</span><span class="sxs-lookup"><span data-stu-id="31659-127">Learn more about managing Azure role-based access</span></span>
+## <a name="learn-more-about-managing-azure-role-based-access"></a><span data-ttu-id="7b019-127">深入了解如何管理 Azure 角色型存取</span><span class="sxs-lookup"><span data-stu-id="7b019-127">Learn more about managing Azure role-based access</span></span>
 
-<span data-ttu-id="31659-128">如需 Azure 中的驗證與訂用帳戶管理的詳細資訊，請參閱[管理帳戶、訂用帳戶和管理角色](/azure/active-directory/role-based-access-control-configure)。</span><span class="sxs-lookup"><span data-stu-id="31659-128">For more information about authentication and subscription management in Azure, see [Manage Accounts, Subscriptions, and Administrative Roles](/azure/active-directory/role-based-access-control-configure).</span></span>
+<span data-ttu-id="7b019-128">如需 Azure 中的驗證與訂用帳戶管理的詳細資訊，請參閱[管理帳戶、訂用帳戶和管理角色](/azure/active-directory/role-based-access-control-configure)。</span><span class="sxs-lookup"><span data-stu-id="7b019-128">For more information about authentication and subscription management in Azure, see [Manage Accounts, Subscriptions, and Administrative Roles](/azure/active-directory/role-based-access-control-configure).</span></span>
 
-<span data-ttu-id="31659-129">可用來管理角色的 Azure PowerShell Cmdlet</span><span class="sxs-lookup"><span data-stu-id="31659-129">Azure PowerShell cmdlets for role management</span></span>
+<span data-ttu-id="7b019-129">可用來管理角色的 Azure PowerShell Cmdlet</span><span class="sxs-lookup"><span data-stu-id="7b019-129">Azure PowerShell cmdlets for role management</span></span>
 
-* [<span data-ttu-id="31659-130">Get-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="31659-130">Get-AzureRmRoleAssignment</span></span>](/powershell/module/AzureRM.Resources/Get-AzureRmRoleAssignment)
-* [<span data-ttu-id="31659-131">Get-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="31659-131">Get-AzureRmRoleDefinition</span></span>](/powershell/module/AzureRM.Resources/Get-AzureRmRoleDefinition)
-* [<span data-ttu-id="31659-132">New-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="31659-132">New-AzureRmRoleAssignment</span></span>](/powershell/module/AzureRM.Resources/New-AzureRmRoleAssignment)
-* [<span data-ttu-id="31659-133">New-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="31659-133">New-AzureRmRoleDefinition</span></span>](/powershell/module/AzureRM.Resources/New-AzureRmRoleDefinition)
-* [<span data-ttu-id="31659-134">Remove-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="31659-134">Remove-AzureRmRoleAssignment</span></span>](/powershell/module/AzureRM.Resources/Remove-AzureRmRoleAssignment)
-* [<span data-ttu-id="31659-135">Remove-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="31659-135">Remove-AzureRmRoleDefinition</span></span>](/powershell/module/AzureRM.Resources/Remove-AzureRmRoleDefinition)
-* [<span data-ttu-id="31659-136">Set-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="31659-136">Set-AzureRmRoleDefinition</span></span>](/powershell/moduel/AzureRM.Resources/Set-AzureRmRoleDefinition)
+* [<span data-ttu-id="7b019-130">Get-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="7b019-130">Get-AzureRmRoleAssignment</span></span>](/powershell/module/AzureRM.Resources/Get-AzureRmRoleAssignment)
+* [<span data-ttu-id="7b019-131">Get-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="7b019-131">Get-AzureRmRoleDefinition</span></span>](/powershell/module/AzureRM.Resources/Get-AzureRmRoleDefinition)
+* [<span data-ttu-id="7b019-132">New-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="7b019-132">New-AzureRmRoleAssignment</span></span>](/powershell/module/AzureRM.Resources/New-AzureRmRoleAssignment)
+* [<span data-ttu-id="7b019-133">New-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="7b019-133">New-AzureRmRoleDefinition</span></span>](/powershell/module/AzureRM.Resources/New-AzureRmRoleDefinition)
+* [<span data-ttu-id="7b019-134">Remove-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="7b019-134">Remove-AzureRmRoleAssignment</span></span>](/powershell/module/AzureRM.Resources/Remove-AzureRmRoleAssignment)
+* [<span data-ttu-id="7b019-135">Remove-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="7b019-135">Remove-AzureRmRoleDefinition</span></span>](/powershell/module/AzureRM.Resources/Remove-AzureRmRoleDefinition)
+* [<span data-ttu-id="7b019-136">Set-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="7b019-136">Set-AzureRmRoleDefinition</span></span>](/powershell/moduel/AzureRM.Resources/Set-AzureRmRoleDefinition)
