@@ -1,0 +1,79 @@
+---
+title: 使用 Azure PowerShell 登入
+description: 如何使用 Azure PowerShell 以使用者、服務主體身分登入，或使用 MSI 登入。
+author: sptramer
+ms.author: sttramer
+manager: carmonm
+ms.devlang: powershell
+ms.topic: conceptual
+ms.date: 05/15/2017
+ms.openlocfilehash: 20194ac2282d602ba61bf130791edac9f4ffae6c
+ms.sourcegitcommit: fd11600079ee3844986552bccc4e274a231332b6
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39368138"
+---
+# <a name="sign-in-with-azure-powershell"></a><span data-ttu-id="2df3f-103">使用 Azure PowerShell 登入</span><span class="sxs-lookup"><span data-stu-id="2df3f-103">Sign in with Azure PowerShell</span></span>
+
+<span data-ttu-id="2df3f-104">Azure PowerShell 支援多種驗證方法。</span><span class="sxs-lookup"><span data-stu-id="2df3f-104">Azure PowerShell supports multiple authentication methods.</span></span> <span data-ttu-id="2df3f-105">最簡單的入門方法是在命令列以互動方式登入。</span><span class="sxs-lookup"><span data-stu-id="2df3f-105">The simplest way to get started is to sign in interactively at the command line.</span></span>
+
+## <a name="sign-in-interactively"></a><span data-ttu-id="2df3f-106">以互動方式登入</span><span class="sxs-lookup"><span data-stu-id="2df3f-106">Sign in interactively</span></span>
+
+<span data-ttu-id="2df3f-107">若要以互動方式登入，請使用 [Connect-AzureRmAccount](/powershell/module/azurerm.profile/connect-azurermaccount) Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="2df3f-107">To sign in interactively, use the [Connect-AzureRmAccount](/powershell/module/azurerm.profile/connect-azurermaccount) cmdlet.</span></span>
+
+```azurepowershell
+Connect-AzureRmAccount
+```
+
+<span data-ttu-id="2df3f-108">執行時，此 Cmdlet 會顯示對話方塊，提示您輸入與 Azure 帳戶相關聯的電子郵件地址和密碼。</span><span class="sxs-lookup"><span data-stu-id="2df3f-108">When run, this cmdlet will bring up a dialog box prompting you for your email address and password associated with your Azure account.</span></span> <span data-ttu-id="2df3f-109">驗證時，會針對目前的 PowerShell 工作階段儲存該資訊，關閉對話方塊，您就具有所有 Azure PowerShell Cmdlet 的存取權。</span><span class="sxs-lookup"><span data-stu-id="2df3f-109">When you authenticate, that information is saved for the current PowerShell session, the dialog is closed, and you have access to all of the Azure PowerShell cmdlets.</span></span>
+
+> [!IMPORTANT]
+> <span data-ttu-id="2df3f-110">從 Azure PowerShell 6.3.0 開始，只要您保持登入 Windows，您的認證就會在多個 PowerShell 工作階段之間共用。</span><span class="sxs-lookup"><span data-stu-id="2df3f-110">As of Azure PowerShell 6.3.0, your credentials are shared among multiple PowerShell sessions as long as you remain signed in to Windows.</span></span> <span data-ttu-id="2df3f-111">如需詳細資訊，請參閱[持續性認證](context-persistence.md)中的文章。</span><span class="sxs-lookup"><span data-stu-id="2df3f-111">For more information, see the article on [Persistent Credentials](context-persistence.md).</span></span>
+
+## <a name="sign-in-with-a-service-principal"></a><span data-ttu-id="2df3f-112">使用服務主體來登入</span><span class="sxs-lookup"><span data-stu-id="2df3f-112">Sign in with a service principal</span></span>
+
+<span data-ttu-id="2df3f-113">服務主體提供您建立非互動式帳戶的方式，以用來操控資源。</span><span class="sxs-lookup"><span data-stu-id="2df3f-113">Service principals provide a way for you to create non-interactive accounts that you can use to manipulate resources.</span></span> <span data-ttu-id="2df3f-114">服務主體就像是使用者帳戶，您可以使用 Azure Active Directory 對其套用規則。</span><span class="sxs-lookup"><span data-stu-id="2df3f-114">Service principals are like user accounts to which you can apply rules using Azure Active Directory.</span></span> <span data-ttu-id="2df3f-115">僅授與服務主體所需的最低權限，可確保您的自動化指令碼會更加安全。</span><span class="sxs-lookup"><span data-stu-id="2df3f-115">By granting the minimum permissions needed to a service principal, you can ensure your automation scripts are even more secure.</span></span>
+
+<span data-ttu-id="2df3f-116">如果您需要建立服務主體以便與 Azure PowerShell 搭配使用，請參閱[使用 Azure PowerShell 建立 Azure 服務主體](create-azure-service-principal-azureps.md)。</span><span class="sxs-lookup"><span data-stu-id="2df3f-116">If you need to create a service principal for use with Azure PowerShell, see [Create an Azure service principal with Azure PowerShell](create-azure-service-principal-azureps.md).</span></span>
+
+<span data-ttu-id="2df3f-117">若要使用服務主體來登入，請使用 `-ServicePrincipal` 引數和 `Connect-AzureRmAccount` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="2df3f-117">To sign in with a service principal, use the `-ServicePrincipal` argument with the `Connect-AzureRmAccount` cmdlet.</span></span> <span data-ttu-id="2df3f-118">您也需要服務主體的應用程式識別碼、登入認證，以及與服務主體相關聯的租用戶識別碼。</span><span class="sxs-lookup"><span data-stu-id="2df3f-118">You will also need the service princpal's application ID, sign-in credentials, and the tenant ID associate with the service principal.</span></span> <span data-ttu-id="2df3f-119">若要取得服務主體的認證作為適當物件，請使用 [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential) Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="2df3f-119">In order to get the service principal's credentials as the appropriate object, use the [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential) cmdlet.</span></span> <span data-ttu-id="2df3f-120">這個 Cmdlet 會顯示對話方塊，讓您在其中輸入服務主體使用者識別碼和密碼。</span><span class="sxs-lookup"><span data-stu-id="2df3f-120">This cmdlet will display a dialog box to enter the service principal user ID and password into.</span></span>
+
+```azurepowershell-interactive
+$pscredential = Get-Credential
+Connect-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
+```
+
+## <a name="sign-in-using-an-azure-vm-managed-service-identity"></a><span data-ttu-id="2df3f-121">使用 Azure 虛擬機受控服務識別登入</span><span class="sxs-lookup"><span data-stu-id="2df3f-121">Sign in using an Azure VM Managed Service Identity</span></span>
+
+<span data-ttu-id="2df3f-122">受控服務識別 (MSI) 是 Azure Active Directory 的預覽功能。</span><span class="sxs-lookup"><span data-stu-id="2df3f-122">Managed Service Identity (MSI) is a preview feature of Azure Active Directory.</span></span> <span data-ttu-id="2df3f-123">您可以使用 MSI 服務主體進行登入，並取得僅限應用程式的存取權杖來存取其他資源。</span><span class="sxs-lookup"><span data-stu-id="2df3f-123">You can use an MSI service principal for sign-in, and acquire an app-only access token to access other resources.</span></span> <span data-ttu-id="2df3f-124">MSI 僅適用於在 Azure 雲端中執行的虛擬機器。</span><span class="sxs-lookup"><span data-stu-id="2df3f-124">MSI is only available on virtual machines running in an Azure cloud.</span></span>
+
+<span data-ttu-id="2df3f-125">如需 MSI 的詳細資訊，請參閱[如何使用 Azure VM 受控服務識別登入 (MSI) 進行登入和取得權杖](/azure/active-directory/msi-how-to-get-access-token-using-msi)。</span><span class="sxs-lookup"><span data-stu-id="2df3f-125">For more information about MSI, see [How to use an Azure VM Managed Service Identity (MSI) for sign-in and token acquisition](/azure/active-directory/msi-how-to-get-access-token-using-msi).</span></span>
+
+## <a name="sign-in-to-another-cloud"></a><span data-ttu-id="2df3f-126">登入其他雲端</span><span class="sxs-lookup"><span data-stu-id="2df3f-126">Sign in to another Cloud</span></span>
+
+<span data-ttu-id="2df3f-127">Azure 雲端服務提供不同的環境，以遵循各個區域的資料處理法規。</span><span class="sxs-lookup"><span data-stu-id="2df3f-127">Azure cloud services provide different environments that adhere to the data-handling regulations of various regions.</span></span> <span data-ttu-id="2df3f-128">如果您的 Azure 帳戶位於與其中一個區域相關聯的雲端，則需要在登入時指定環境。</span><span class="sxs-lookup"><span data-stu-id="2df3f-128">If your Azure account is in a cloud associated with one of these regions, you need to specify the environment when you sign in.</span></span> <span data-ttu-id="2df3f-129">例如，如果您的帳戶位於中國雲端，則可使用下列命令來登入：</span><span class="sxs-lookup"><span data-stu-id="2df3f-129">For example, if you account is in the China cloud you sign on using the following command:</span></span>
+
+```azurepowershell-interactive
+Connect-AzureRmAccount -Environment AzureChinaCloud
+```
+
+<span data-ttu-id="2df3f-130">使用下列命令來取得可用環境的清單：</span><span class="sxs-lookup"><span data-stu-id="2df3f-130">Use the following command to get a list of available environments:</span></span>
+
+```azurepowershell-interactive
+Get-AzureRmEnvironment | Select-Object Name
+```
+
+## <a name="learn-more-about-managing-azure-role-based-access"></a><span data-ttu-id="2df3f-131">深入了解如何管理 Azure 角色型存取</span><span class="sxs-lookup"><span data-stu-id="2df3f-131">Learn more about managing Azure role-based access</span></span>
+
+<span data-ttu-id="2df3f-132">如需 Azure 中的驗證與訂用帳戶管理的詳細資訊，請參閱[管理帳戶、訂用帳戶和管理角色](/azure/active-directory/role-based-access-control-configure)。</span><span class="sxs-lookup"><span data-stu-id="2df3f-132">For more information about authentication and subscription management in Azure, see [Manage Accounts, Subscriptions, and Administrative Roles](/azure/active-directory/role-based-access-control-configure).</span></span>
+
+<span data-ttu-id="2df3f-133">可用來管理角色的 Azure PowerShell Cmdlet：</span><span class="sxs-lookup"><span data-stu-id="2df3f-133">Azure PowerShell cmdlets for role management:</span></span>
+
+* [<span data-ttu-id="2df3f-134">Get-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="2df3f-134">Get-AzureRmRoleAssignment</span></span>](/powershell/module/AzureRM.Resources/Get-AzureRmRoleAssignment)
+* [<span data-ttu-id="2df3f-135">Get-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="2df3f-135">Get-AzureRmRoleDefinition</span></span>](/powershell/module/AzureRM.Resources/Get-AzureRmRoleDefinition)
+* [<span data-ttu-id="2df3f-136">New-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="2df3f-136">New-AzureRmRoleAssignment</span></span>](/powershell/module/AzureRM.Resources/New-AzureRmRoleAssignment)
+* [<span data-ttu-id="2df3f-137">New-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="2df3f-137">New-AzureRmRoleDefinition</span></span>](/powershell/module/AzureRM.Resources/New-AzureRmRoleDefinition)
+* [<span data-ttu-id="2df3f-138">Remove-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="2df3f-138">Remove-AzureRmRoleAssignment</span></span>](/powershell/module/AzureRM.Resources/Remove-AzureRmRoleAssignment)
+* [<span data-ttu-id="2df3f-139">Remove-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="2df3f-139">Remove-AzureRmRoleDefinition</span></span>](/powershell/module/AzureRM.Resources/Remove-AzureRmRoleDefinition)
+* [<span data-ttu-id="2df3f-140">Set-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="2df3f-140">Set-AzureRmRoleDefinition</span></span>](/powershell/moduel/AzureRM.Resources/Set-AzureRmRoleDefinition)
