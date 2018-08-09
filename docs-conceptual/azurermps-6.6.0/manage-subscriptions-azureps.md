@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
 ms.openlocfilehash: fbd2fe315efbdfb2147218229d51e983e2b61361
-ms.sourcegitcommit: fd11600079ee3844986552bccc4e274a231332b6
+ms.sourcegitcommit: afae9f2f091b21ed07d5aec1c249cf859a8b89a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39367798"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "39653520"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>管理多個 Azure 訂用帳戶
 
