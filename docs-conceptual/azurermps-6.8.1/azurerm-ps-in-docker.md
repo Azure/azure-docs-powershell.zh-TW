@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/20/2018
 ms.openlocfilehash: 27ac176d8bd0b142b7740b2ba6793edb500a8af3
-ms.sourcegitcommit: dca906e73e943aac207cee23b79915773419c673
+ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43250516"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43383561"
 ---
 # <a name="run-azure-powershell-in-a-docker-container"></a>在 Docker 容器中執行 Azure PowerShell
 
