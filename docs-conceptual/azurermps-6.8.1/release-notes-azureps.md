@@ -7,19 +7,68 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
-ms.date: 5/1/2018
-ms.openlocfilehash: 6043d17df1b5e91521bad31e65372c10ee6a5c6a
-ms.sourcegitcommit: dca906e73e943aac207cee23b79915773419c673
+ms.date: 08/28/2018
+ms.openlocfilehash: f4f3141998be14f0b5b223aed1af283534bf061d
+ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43250089"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43383833"
 ---
 # <a name="release-notes"></a>版本資訊
 
 這是此版本中對 Azure PowerShell 所做的變更清單。
 
 ---
+## <a name="681---august-2018"></a>6.8.1 - 2018 年 8 月
+#### <a name="general"></a>一般
+* 已修正未設定預設資源群組的問題。
+* 已更新通用執行階段組件
+
+#### <a name="azurermapimanagement"></a>AzureRM.ApiManagement
+* 已修正未設定預設資源群組的問題。
+* 已修正的問題 https://github.com/Azure/azure-powershell/issues/6603
+    - Import-AzureRmApiManagementApi 和 *-AzureRmApiManagementCertificate cmdlets 目前處理相對路徑
+* 已修正的問題 https://github.com/Azure/azure-powershell/issues/6879
+    - CertificateInformation 為可設定的屬性，允許 Set-AzureRmApiManagement Cmdlet 正常運作。 已藉由升級至 4.0.4-preview NuGet 而修正
+* 已修正的問題 https://github.com/Azure/azure-powershell/issues/6853
+    - 已修正依產品名稱搜尋的 Odata 篩選條件
+* 已修正的問題 https://github.com/Azure/azure-powershell/issues/6814
+    - 已修正依 API 名稱搜尋的 Odata 篩選條件
+* 已新增對 AzureMonitor 記錄器的支援
+
+
+#### <a name="azurermcompute"></a>AzureRM.Compute
+* 已修正在錯誤輸出中遺漏目標的問題。
+* 已修正搭配受控磁碟的 VM 之儲存體帳戶類型的問題
+* 已修正未設定預設資源群組的問題。
+* 修正適用於其他環境的 AEM 擴充 Cmdlet，例如 Azure China
+
+#### <a name="azurermnetwork"></a>AzureRM.Network
+* 已將預設的 Cmdlet 輸出表示法變更為資料表檢視
+
+#### <a name="azurermpowerbiembedded"></a>AzureRM.PowerBIEmbedded
+* 修正在嘗試調整已暫停的容量時，Update-AzureRmPowerBIEmbeddedCapacity 中發生的錯誤
+
+
+#### <a name="azurermresources"></a>AzureRM.Resources
+* 已修正從 MarketPlace 建立受控應用程式發生的問題。
+
+#### <a name="azurermservicebus"></a>AzureRM.ServiceBus
+* 已修正的問題
+    - https://github.com/Azure/azure-powershell/issues/5058
+    - https://github.com/Azure/azure-powershell/issues/5055
+    - https://github.com/Azure/azure-powershell/issues/6891
+
+#### <a name="azurermtrafficmanager"></a>AzureRM.TrafficManager
+* 已新增對 MultiValue 路由方法的支援
+    - 為 MultiValue 路由新增 'MaxReturn' 參數
+* 已新增對子網路路由方法的支援
+    - 支援端點中的 IP 位址範圍 (子網路)
+* 已新增對設定檔中自訂標頭的支援
+* 已新增對設定檔中預期狀態碼的支援
+* 已新增對端點中自訂標頭的支援
+
 ## <a name="680---august-2018"></a>6.8.0 - 2018 年 8 月
 #### <a name="general"></a>一般
 * 已修正未設定預設資源群組的問題。
