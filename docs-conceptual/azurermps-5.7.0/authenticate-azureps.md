@@ -1,18 +1,18 @@
 ---
 title: 使用 Azure PowerShell 登入
-description: 如何使用 Azure PowerShell 以使用者、服務主體身分登入，或使用 MSI 登入。
+description: 如何使用 Azure PowerShell 以使用者身分登入、使用服務主體登入，或使用適用於 Azure 資源的受控識別登入。
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: af39fec226492c9ccf251c996b57e274de783178
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 530eafcd0d14dbfd790a22d80c5922f304f4e0b2
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100268"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46300692"
 ---
 # <a name="sign-in-with-azure-powershell"></a>使用 Azure PowerShell 登入
 
@@ -44,11 +44,11 @@ $pscredential = Get-Credential
 Connect-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
 ```
 
-## <a name="sign-in-using-an-azure-vm-managed-service-identity"></a>使用 Azure 虛擬機受控服務識別登入
+## <a name="sign-in-using-managed-identities-for-azure-resources"></a>使用適用於 Azure 資源的受控識別登入
 
-受控服務識別 (MSI) 是 Azure Active Directory 的預覽功能。 您可以使用 MSI 服務主體進行登入，並取得僅限應用程式的存取權杖來存取其他資源。 MSI 僅適用於在 Azure 雲端中執行的虛擬機器。
+適用於 Azure 資源的受控識別是 Azure Active Directory 的一項功能。 您可以使用受控識別服務主體進行登入，並取得僅限應用程式的存取權杖來存取其他資源。 受控識別僅適用於在 Azure 雲端中執行的虛擬機器。
 
-如需 MSI 的詳細資訊，請參閱[如何使用 Azure VM 受控服務識別登入 (MSI) 進行登入和取得權杖](/azure/active-directory/msi-how-to-get-access-token-using-msi)。
+若想進一步了解適用於 Azure 資源的受控識別，請參閱[如何在 Azure VM 上使用適用於 Azure 資源的受控識別取得存取權杖](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token)。
 
 ## <a name="sign-in-to-another-cloud"></a>登入其他雲端
 
