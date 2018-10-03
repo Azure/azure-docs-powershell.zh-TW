@@ -1,3 +1,20 @@
+---
+title: Azure Stack Admin PowerShell 概觀 | Microsoft Docs
+description: Azure Stack Admin PowerShell 的概觀以及有關安裝和設定的指示。
+author: bganapa
+ms.author: bganapa
+manager: knithinc
+ms.devlang: powershell
+ms.topic: conceptual
+ms.manager: knithinc
+ms.date: 09/21/2018
+ms.openlocfilehash: 72d147f5bc9c882083dda6b33b1c89663fd2eb34
+ms.sourcegitcommit: 19dffee617477001f98d43e39a50ce1fad087b74
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47178794"
+---
 # <a name="azure-stack-module-140"></a>Azure Stack 模組 1.4.0
 
 ## <a name="requirements"></a>需求：

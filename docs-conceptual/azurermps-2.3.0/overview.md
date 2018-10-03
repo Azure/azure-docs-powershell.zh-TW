@@ -1,6 +1,6 @@
 ---
-title: Azure Stack Admin PowerShell 概觀 | Microsoft Docs
-description: Azure Stack Admin PowerShell 的概觀以及有關安裝和設定的指示。
+title: Azure Stack PowerShell 概觀 | Microsoft Docs
+description: Azure Stack PowerShell 的概觀以及有關安裝和設定的指示。
 author: bganapa
 ms.author: bganapa
 manager: knithinc
@@ -8,47 +8,53 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
-ms.openlocfilehash: fb892daeafb1365ea62324392ac806cf9f3d39cf
+ms.openlocfilehash: d514e43d82bcb51f65831dc506e58e8747db0381
 ms.sourcegitcommit: 19dffee617477001f98d43e39a50ce1fad087b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2018
-ms.locfileid: "47179134"
+ms.locfileid: "47178454"
 ---
-# <a name="azure-stack-module-130"></a>Azure Stack 模組 1.3.0
+# <a name="azurerm-module-230"></a>AzureRM 模組 2.3.0
 
 ## <a name="requirements"></a>需求：
-支援的最低 Azure Stack 版本為 1804 版。
+支援的最低 Azure Stack 版本為 1808 版。
 
 請注意：如果您使用的是舊版，請安裝版本 1.2.11
 
-## <a name="known-issues"></a>已知問題：
-
-- 需要 Azure Stack 1803 版本才能關閉警示
-- 某些儲存體 Cmdlet 需要 Azure Stack 1804 版本
-- New-AzsOffer 不允許建立具公用狀態的供應項目。 Set-AzsOffer Cmdlet 之後需要呼叫以變更狀態。
-- 必須重新部署才能移除 IP 集區
-
-## <a name="breaking-changes"></a>重大變更
-從 1.2.11 移轉的所有中斷性變更記錄於此 https://aka.ms/azspowershellmigration
 
 ## <a name="install"></a>Install
-```
-# Remove previous Versions
-Uninstall-Module AzureRM.AzureStackAdmin -Force
-Uninstall-Module AzureRM.AzureStackStorage -Force
+```powershell
+# Remove previous versions of AzureStack modules
 Uninstall-Module -Name AzureStack -Force 
+Uninstall-Module -Name AzureRM -Force 
+Uninstall-Module AzureRM.AzureStackAdmin -Force -ErrorAction Continue
+Uninstall-Module AzureRM.AzureStackStorage -Force -ErrorAction Continue
+Get-Module Azs.* -ListAvailable | Uninstall-Module -Force
+Get-Module Azure.* -ListAvailable | Uninstall-Module -Force
 
 
 # Install the AzureRM.Bootstrapper module. Select Yes when prompted to install NuGet
 Install-Module -Name AzureRm.BootStrapper
 
 # Install and import the API Version Profile required by Azure Stack into the current PowerShell session.
-Use-AzureRmProfile -Profile 2017-03-09-profile -Force
+Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 
-# Install Azure Stack Admin Module
-Install-Module -Name AzureStack -RequiredVersion 1.3.0
 ```
+
+##<a name="release-notes"></a>版本資訊
+* 2.3.0 版中有一些重大變更。 若要從 1.2.11 版升級，我們已建立移轉指南： https://aka.ms/azspowershellmigration
+* 此版本對應到 azurestack 特有的 api 設定檔 2018-03-01-hybrid
+* 所有模組皆取用比 AzureRm.Profile 模組上更大或相等的相依性。
+* 每個模組支援的 API 版本都會更新。 
+    * 計算 - 2017-03-30
+    * 網路 - 2017-10-01
+    * 儲存體 2016-01-01
+    * 資源 - 2018-02-01
+    * KeyVault - 2016-10-01
+    * DNS - 2016-04-01
+* 您可以在 https://github.com/Azure/azure-rest-api-specs/blob/master/profile/2018-03-01-hybrid.json 中找到每個資源類型的完整 API 版本對應
+
 ## <a name="content"></a>內容：
 ### <a name="azure-bridge"></a>Azure Bridge
 Azure Stack AzureBridge 管理員模組的預覽版本可讓您從 Azure 同步發佈映像。
@@ -63,7 +69,7 @@ Azure Stack AzureBridge 管理員模組的預覽版本可讓您從 Azure 同步�
 Azure Stack 商務管理員模組的預覽版本可提供方法來檢視 Azure Stack 系統間的彙總資料使用量。
 
 ### <a name="compute"></a>計算
-Azure Stack 計算管理員模組的預覽版本可提供功能來管理計算配額、平台映像和虛擬機器擴充功能。
+Azure Stack 計算管理員模組的預覽版本可提供功能來管理計算配額、平台映像、受控磁碟和虛擬機器擴充功能。
 
 ### <a name="fabric"></a>網狀架構
 Azure Stack 網狀架構管理員模組的預覽版本可讓系統管理員檢視和管理基礎結構元件：
