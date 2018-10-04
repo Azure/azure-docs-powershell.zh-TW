@@ -8,26 +8,26 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/09/2018
 ms.openlocfilehash: 99c635e7d94731d360b81c10b7f08086652ca81f
-ms.sourcegitcommit: 19dffee617477001f98d43e39a50ce1fad087b74
+ms.sourcegitcommit: 6c38e86e16da99f65cd183c63e34f7176b121ab8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47179032"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "47424933"
 ---
-# <a name="format-azurepowershell-cmdlet-output"></a><span data-ttu-id="d459c-103">格式化 Azure PowerShell Cmdlet 輸出</span><span class="sxs-lookup"><span data-stu-id="d459c-103">Format AzurePowerShell cmdlet output</span></span>
+# <a name="format-azurepowershell-cmdlet-output"></a><span data-ttu-id="26598-103">格式化 Azure PowerShell Cmdlet 輸出</span><span class="sxs-lookup"><span data-stu-id="26598-103">Format AzurePowerShell cmdlet output</span></span>
 
-<span data-ttu-id="d459c-104">根據預設，每個 Azure PowerShell Cmdlet 都已預先定義輸出的格式，以方便您閱讀輸出內容。</span><span class="sxs-lookup"><span data-stu-id="d459c-104">By default each Azure PowerShell cmdlet has predefined formatting of output making it easy to read.</span></span>  <span data-ttu-id="d459c-105">PowerShell 也會賦予您彈性，讓您可以使用下列 Cmdlet 來調整輸出或將 Cmdlet 輸出轉換成不同格式：</span><span class="sxs-lookup"><span data-stu-id="d459c-105">PowerShell also provides the flexibility to adjust the output or convert the cmdlet output to a different format with the following cmdlets:</span></span>
+<span data-ttu-id="26598-104">根據預設，每個 Azure PowerShell Cmdlet 都已預先定義輸出的格式，以方便您閱讀輸出內容。</span><span class="sxs-lookup"><span data-stu-id="26598-104">By default each Azure PowerShell cmdlet has predefined formatting of output making it easy to read.</span></span>  <span data-ttu-id="26598-105">PowerShell 也會賦予您彈性，讓您可以使用下列 Cmdlet 來調整輸出或將 Cmdlet 輸出轉換成不同格式：</span><span class="sxs-lookup"><span data-stu-id="26598-105">PowerShell also provides the flexibility to adjust the output or convert the cmdlet output to a different format with the following cmdlets:</span></span>
 
-| <span data-ttu-id="d459c-106">格式化</span><span class="sxs-lookup"><span data-stu-id="d459c-106">Formatting</span></span>      | <span data-ttu-id="d459c-107">轉換</span><span class="sxs-lookup"><span data-stu-id="d459c-107">Conversion</span></span>       |
+| <span data-ttu-id="26598-106">格式化</span><span class="sxs-lookup"><span data-stu-id="26598-106">Formatting</span></span>      | <span data-ttu-id="26598-107">轉換</span><span class="sxs-lookup"><span data-stu-id="26598-107">Conversion</span></span>       |
 |-----------------|------------------|
-| [<span data-ttu-id="d459c-108">Format-Custom</span><span class="sxs-lookup"><span data-stu-id="d459c-108">Format-Custom</span></span>](/powershell/module/microsoft.powershell.utility/format-custom) | [<span data-ttu-id="d459c-109">ConvertTo-Csv</span><span class="sxs-lookup"><span data-stu-id="d459c-109">ConvertTo-Csv</span></span>](/powershell/module/microsoft.powershell.utility/convertto-csv)  |
-| [<span data-ttu-id="d459c-110">Format-List</span><span class="sxs-lookup"><span data-stu-id="d459c-110">Format-List</span></span>](/powershell/module/microsoft.powershell.utility/format-list)   | [<span data-ttu-id="d459c-111">ConvertTo-Html</span><span class="sxs-lookup"><span data-stu-id="d459c-111">ConvertTo-Html</span></span>](/powershell/module/microsoft.powershell.utility/convertto-html) |
-| [<span data-ttu-id="d459c-112">Format-Table</span><span class="sxs-lookup"><span data-stu-id="d459c-112">Format-Table</span></span>](/powershell/module/microsoft.powershell.utility/format-table)  | [<span data-ttu-id="d459c-113">ConvertTo-Json</span><span class="sxs-lookup"><span data-stu-id="d459c-113">ConvertTo-Json</span></span>](/powershell/module/microsoft.powershell.utility/convertto-json) |
-| [<span data-ttu-id="d459c-114">Format-Wide</span><span class="sxs-lookup"><span data-stu-id="d459c-114">Format-Wide</span></span>](/powershell/module/microsoft.powershell.utility/format-wide)   | [<span data-ttu-id="d459c-115">ConvertTo-Xml</span><span class="sxs-lookup"><span data-stu-id="d459c-115">ConvertTo-Xml</span></span>](/powershell/module/microsoft.powershell.utility/convertto-xml)  |
+| [<span data-ttu-id="26598-108">Format-Custom</span><span class="sxs-lookup"><span data-stu-id="26598-108">Format-Custom</span></span>](/powershell/module/microsoft.powershell.utility/format-custom) | [<span data-ttu-id="26598-109">ConvertTo-Csv</span><span class="sxs-lookup"><span data-stu-id="26598-109">ConvertTo-Csv</span></span>](/powershell/module/microsoft.powershell.utility/convertto-csv)  |
+| [<span data-ttu-id="26598-110">Format-List</span><span class="sxs-lookup"><span data-stu-id="26598-110">Format-List</span></span>](/powershell/module/microsoft.powershell.utility/format-list)   | [<span data-ttu-id="26598-111">ConvertTo-Html</span><span class="sxs-lookup"><span data-stu-id="26598-111">ConvertTo-Html</span></span>](/powershell/module/microsoft.powershell.utility/convertto-html) |
+| [<span data-ttu-id="26598-112">Format-Table</span><span class="sxs-lookup"><span data-stu-id="26598-112">Format-Table</span></span>](/powershell/module/microsoft.powershell.utility/format-table)  | [<span data-ttu-id="26598-113">ConvertTo-Json</span><span class="sxs-lookup"><span data-stu-id="26598-113">ConvertTo-Json</span></span>](/powershell/module/microsoft.powershell.utility/convertto-json) |
+| [<span data-ttu-id="26598-114">Format-Wide</span><span class="sxs-lookup"><span data-stu-id="26598-114">Format-Wide</span></span>](/powershell/module/microsoft.powershell.utility/format-wide)   | [<span data-ttu-id="26598-115">ConvertTo-Xml</span><span class="sxs-lookup"><span data-stu-id="26598-115">ConvertTo-Xml</span></span>](/powershell/module/microsoft.powershell.utility/convertto-xml)  |
 
-## <a name="format-examples"></a><span data-ttu-id="d459c-116">格式化範例</span><span class="sxs-lookup"><span data-stu-id="d459c-116">Format examples</span></span>
+## <a name="format-examples"></a><span data-ttu-id="26598-116">格式化範例</span><span class="sxs-lookup"><span data-stu-id="26598-116">Format examples</span></span>
 
-<span data-ttu-id="d459c-117">在此範例中，我們會取得預設訂用帳戶中的 Azure VM 清單。</span><span class="sxs-lookup"><span data-stu-id="d459c-117">In this example, we get a list of Azure VMs in our default subscription.</span></span>  <span data-ttu-id="d459c-118">`Get-AzureRmVM` 命令將輸出預設為資料表格式。</span><span class="sxs-lookup"><span data-stu-id="d459c-118">The `Get-AzureRmVM` command defaults output into a table format.</span></span>
+<span data-ttu-id="26598-117">在此範例中，我們會取得預設訂用帳戶中的 Azure VM 清單。</span><span class="sxs-lookup"><span data-stu-id="26598-117">In this example, we get a list of Azure VMs in our default subscription.</span></span>  <span data-ttu-id="26598-118">`Get-AzureRmVM` 命令將輸出預設為資料表格式。</span><span class="sxs-lookup"><span data-stu-id="26598-118">The `Get-AzureRmVM` command defaults output into a table format.</span></span>
 
 ```azurepowershell-interactive
 Get-AzureRmVM
@@ -40,7 +40,7 @@ MYWESTEURG        MyUnbuntu1610 westeurope Standard_DS1_v2   Linux myunbuntu1610
 MYWESTEURG          MyWin2016VM westeurope Standard_DS1_v2 Windows   mywin2016vm880         Succeeded
 ```
 
-<span data-ttu-id="d459c-119">如果您想要限制傳回的資料行數目，您可以使用 `Format-Table` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="d459c-119">If you would like to limit the columns returned you can use the `Format-Table` cmdlet.</span></span> <span data-ttu-id="d459c-120">在下列範例中，我們會取得相同的虛擬機器清單，但輸出中僅有 VM 名稱、資源群組和 VM 的位置。</span><span class="sxs-lookup"><span data-stu-id="d459c-120">In the following example, we get the same list of virtual machines but restrict the output to just the name of the VM, the resource group, and the location of the VM.</span></span>  <span data-ttu-id="d459c-121">`-Autosize` 參數會根據資料大小來調整資料行的大小。</span><span class="sxs-lookup"><span data-stu-id="d459c-121">The `-Autosize` parameter sizes the columns according to the size of the data.</span></span>
+<span data-ttu-id="26598-119">如果您想要限制傳回的資料行數目，您可以使用 `Format-Table` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="26598-119">If you would like to limit the columns returned you can use the `Format-Table` cmdlet.</span></span> <span data-ttu-id="26598-120">在下列範例中，我們會取得相同的虛擬機器清單，但輸出中僅有 VM 名稱、資源群組和 VM 的位置。</span><span class="sxs-lookup"><span data-stu-id="26598-120">In the following example, we get the same list of virtual machines but restrict the output to just the name of the VM, the resource group, and the location of the VM.</span></span>  <span data-ttu-id="26598-121">`-Autosize` 參數會根據資料大小來調整資料行的大小。</span><span class="sxs-lookup"><span data-stu-id="26598-121">The `-Autosize` parameter sizes the columns according to the size of the data.</span></span>
 
 ```azurepowershell-interactive
 Get-AzureRmVM | Format-Table Name,ResourceGroupName,Location -AutoSize
@@ -53,7 +53,7 @@ MyUnbuntu1610 MYWESTEURG        westeurope
 MyWin2016VM   MYWESTEURG        westeurope
 ```
 
-<span data-ttu-id="d459c-122">輸出也可以格式化成清單。</span><span class="sxs-lookup"><span data-stu-id="d459c-122">Output can also be formatted into a list.</span></span> <span data-ttu-id="d459c-123">下列範例示範如何使用 `Format-List` Cmdlet 來這麼做。</span><span class="sxs-lookup"><span data-stu-id="d459c-123">The following example shows this using the`Format-List` cmdlet.</span></span>
+<span data-ttu-id="26598-122">輸出也可以格式化成清單。</span><span class="sxs-lookup"><span data-stu-id="26598-122">Output can also be formatted into a list.</span></span> <span data-ttu-id="26598-123">下列範例示範如何使用 `Format-List` Cmdlet 來這麼做。</span><span class="sxs-lookup"><span data-stu-id="26598-123">The following example shows this using the`Format-List` cmdlet.</span></span>
 
 ```azurepowershell-interactive
 Get-AzureRmVM | Format-List Name,VmId,Location,ResourceGroupName
@@ -71,9 +71,9 @@ Location          : westeurope
 ResourceGroupName : MYWESTEURG
 ```
 
-## <a name="convert-to-other-data-types"></a><span data-ttu-id="d459c-124">轉換成其他資料類型</span><span class="sxs-lookup"><span data-stu-id="d459c-124">Convert to other data types</span></span>
+## <a name="convert-to-other-data-types"></a><span data-ttu-id="26598-124">轉換成其他資料類型</span><span class="sxs-lookup"><span data-stu-id="26598-124">Convert to other data types</span></span>
 
-<span data-ttu-id="d459c-125">PowerShell 也可讓您取得命令輸出，並將它轉換成多種資料格式。</span><span class="sxs-lookup"><span data-stu-id="d459c-125">PowerShell also allows taking command output and converting it into multiple data formats.</span></span> <span data-ttu-id="d459c-126">在下列範例中，我們使用 `Select-Object` Cmdlet 來取得訂用帳戶中的虛擬機器屬性，並將輸出轉換成 CSV 格式以方便您匯入資料庫或試算表中。</span><span class="sxs-lookup"><span data-stu-id="d459c-126">In the following example, the `Select-Object` cmdlet is used to get attributes of the virtual machines in our subscription and convert the output to CSV format for easy import into a database or spreadsheet.</span></span>
+<span data-ttu-id="26598-125">PowerShell 也可讓您取得命令輸出，並將它轉換成多種資料格式。</span><span class="sxs-lookup"><span data-stu-id="26598-125">PowerShell also allows taking command output and converting it into multiple data formats.</span></span> <span data-ttu-id="26598-126">在下列範例中，我們使用 `Select-Object` Cmdlet 來取得訂用帳戶中的虛擬機器屬性，並將輸出轉換成 CSV 格式以方便您匯入資料庫或試算表中。</span><span class="sxs-lookup"><span data-stu-id="26598-126">In the following example, the `Select-Object` cmdlet is used to get attributes of the virtual machines in our subscription and convert the output to CSV format for easy import into a database or spreadsheet.</span></span>
 
 ```azurepowershell-interactive
 Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,ProvisioningState | ConvertTo-Csv -NoTypeInformation
@@ -85,7 +85,7 @@ Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,Provisioni
 "MYWESTUERG","/subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/MYWESTUERG/providers/Microsoft.Compute/virtualMachines/MyWin2016VM","4650c755-fc2b-4fc7-a5bc-298d5c00808f","MyWin2016VM","westeurope","Succeeded"
 ```
 
-<span data-ttu-id="d459c-127">輸出也可以轉換成 JSON 格式。</span><span class="sxs-lookup"><span data-stu-id="d459c-127">Output can also be converted into the JSON format.</span></span>  <span data-ttu-id="d459c-128">下列範例會建立相同的 VM 清單，但會將輸出格式變更為 JSON。</span><span class="sxs-lookup"><span data-stu-id="d459c-128">The following example creates the same list of VMs but changes the output format to JSON.</span></span>
+<span data-ttu-id="26598-127">輸出也可以轉換成 JSON 格式。</span><span class="sxs-lookup"><span data-stu-id="26598-127">Output can also be converted into the JSON format.</span></span>  <span data-ttu-id="26598-128">下列範例會建立相同的 VM 清單，但會將輸出格式變更為 JSON。</span><span class="sxs-lookup"><span data-stu-id="26598-128">The following example creates the same list of VMs but changes the output format to JSON.</span></span>
 
 ```azurepowershell-interactive
 Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,ProvisioningState | ConvertTo-Json

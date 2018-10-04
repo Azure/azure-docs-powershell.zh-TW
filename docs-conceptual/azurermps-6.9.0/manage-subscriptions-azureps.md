@@ -8,17 +8,17 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
 ms.openlocfilehash: 3f1c1bab5f9903ee7df813bf1ef043c7107ebe79
-ms.sourcegitcommit: 19dffee617477001f98d43e39a50ce1fad087b74
+ms.sourcegitcommit: 6c38e86e16da99f65cd183c63e34f7176b121ab8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47179270"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "47425358"
 ---
-# <a name="manage-multiple-azure-subscriptions"></a><span data-ttu-id="4d19f-103">管理多個 Azure 訂用帳戶</span><span class="sxs-lookup"><span data-stu-id="4d19f-103">Manage multiple Azure subscriptions</span></span>
+# <a name="manage-multiple-azure-subscriptions"></a><span data-ttu-id="c158b-103">管理多個 Azure 訂用帳戶</span><span class="sxs-lookup"><span data-stu-id="c158b-103">Manage multiple Azure subscriptions</span></span>
 
-<span data-ttu-id="4d19f-104">如果您是 Azure 的新手，可能只會擁有單一訂用帳戶。</span><span class="sxs-lookup"><span data-stu-id="4d19f-104">If you're brand new to Azure, you probably only have a single subscription.</span></span> <span data-ttu-id="4d19f-105">但是，如果您已使用 Azure 一段時間，可能已建立了多個 Azure 訂用帳戶。</span><span class="sxs-lookup"><span data-stu-id="4d19f-105">But if you have been using Azure for a while, you may have created multiple Azure subscriptions.</span></span> <span data-ttu-id="4d19f-106">您可以將 Azure PowerShell 設定為針對特定訂用帳戶來執行命令。</span><span class="sxs-lookup"><span data-stu-id="4d19f-106">You can configure Azure PowerShell to execute commands against a particular subscription.</span></span>
+<span data-ttu-id="c158b-104">如果您是 Azure 的新手，可能只會擁有單一訂用帳戶。</span><span class="sxs-lookup"><span data-stu-id="c158b-104">If you're brand new to Azure, you probably only have a single subscription.</span></span> <span data-ttu-id="c158b-105">但是，如果您已使用 Azure 一段時間，可能已建立了多個 Azure 訂用帳戶。</span><span class="sxs-lookup"><span data-stu-id="c158b-105">But if you have been using Azure for a while, you may have created multiple Azure subscriptions.</span></span> <span data-ttu-id="c158b-106">您可以將 Azure PowerShell 設定為針對特定訂用帳戶來執行命令。</span><span class="sxs-lookup"><span data-stu-id="c158b-106">You can configure Azure PowerShell to execute commands against a particular subscription.</span></span>
 
-1. <span data-ttu-id="4d19f-107">取得您帳戶中所有訂用帳戶的清單。</span><span class="sxs-lookup"><span data-stu-id="4d19f-107">Get a list of all subscriptions in your account.</span></span>
+1. <span data-ttu-id="c158b-107">取得您帳戶中所有訂用帳戶的清單。</span><span class="sxs-lookup"><span data-stu-id="c158b-107">Get a list of all subscriptions in your account.</span></span>
 
     ```azurepowershell-interactive
     Get-AzureRmSubscription
@@ -47,13 +47,13 @@ ms.locfileid: "47179270"
     CurrentStorageAccount :
     ```
 
-2. <span data-ttu-id="4d19f-108">預設設定。</span><span class="sxs-lookup"><span data-stu-id="4d19f-108">Set the default.</span></span>
+2. <span data-ttu-id="c158b-108">預設設定。</span><span class="sxs-lookup"><span data-stu-id="c158b-108">Set the default.</span></span>
 
     ```azurepowershell-interactive
     Select-AzureRmSubscription -Subscription "My Demos"
     ```
 
-3. <span data-ttu-id="4d19f-109">執行 `Get-AzureRmContext` Cmdlet 來驗證變更。</span><span class="sxs-lookup"><span data-stu-id="4d19f-109">Verify the change by running the `Get-AzureRmContext` cmdlet.</span></span>
+3. <span data-ttu-id="c158b-109">執行 `Get-AzureRmContext` Cmdlet 來驗證變更。</span><span class="sxs-lookup"><span data-stu-id="c158b-109">Verify the change by running the `Get-AzureRmContext` cmdlet.</span></span>
 
     ```azurepowershell-interactive
     Get-AzureRmContext
@@ -68,4 +68,4 @@ ms.locfileid: "47179270"
     CurrentStorageAccount :
     ```
 
-<span data-ttu-id="4d19f-110">在您設定預設訂用帳戶後，所有的 Azure PowerShell 命令都會對此訂用帳戶執行。</span><span class="sxs-lookup"><span data-stu-id="4d19f-110">Once you set your default subscription, all Azure PowerShell commands run against this subscription.</span></span>
+<span data-ttu-id="c158b-110">在您設定預設訂用帳戶後，所有的 Azure PowerShell 命令都會對此訂用帳戶執行。</span><span class="sxs-lookup"><span data-stu-id="c158b-110">Once you set your default subscription, all Azure PowerShell commands run against this subscription.</span></span>

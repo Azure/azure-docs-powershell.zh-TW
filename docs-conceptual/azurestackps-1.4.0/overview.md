@@ -9,29 +9,29 @@ ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
 ms.openlocfilehash: 72d147f5bc9c882083dda6b33b1c89663fd2eb34
-ms.sourcegitcommit: 19dffee617477001f98d43e39a50ce1fad087b74
+ms.sourcegitcommit: 6c38e86e16da99f65cd183c63e34f7176b121ab8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47178794"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "47424848"
 ---
-# <a name="azure-stack-module-140"></a><span data-ttu-id="bcb35-103">Azure Stack 模組 1.4.0</span><span class="sxs-lookup"><span data-stu-id="bcb35-103">Azure Stack Module 1.4.0</span></span>
+# <a name="azure-stack-module-140"></a><span data-ttu-id="3681e-103">Azure Stack 模組 1.4.0</span><span class="sxs-lookup"><span data-stu-id="3681e-103">Azure Stack Module 1.4.0</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="bcb35-104">需求：</span><span class="sxs-lookup"><span data-stu-id="bcb35-104">Requirements:</span></span>
-<span data-ttu-id="bcb35-105">支援的最低 Azure Stack 版本為 1804 版。</span><span class="sxs-lookup"><span data-stu-id="bcb35-105">Minimum supported Azure Stack version is 1804.</span></span>
+## <a name="requirements"></a><span data-ttu-id="3681e-104">需求：</span><span class="sxs-lookup"><span data-stu-id="3681e-104">Requirements:</span></span>
+<span data-ttu-id="3681e-105">支援的最低 Azure Stack 版本為 1804 版。</span><span class="sxs-lookup"><span data-stu-id="3681e-105">Minimum supported Azure Stack version is 1804.</span></span>
 
-<span data-ttu-id="bcb35-106">請注意：如果您使用的是舊版，請安裝版本 1.2.11</span><span class="sxs-lookup"><span data-stu-id="bcb35-106">Note: If you are using an earlier version install version 1.2.11</span></span>
+<span data-ttu-id="3681e-106">請注意：如果您使用的是舊版，請安裝版本 1.2.11</span><span class="sxs-lookup"><span data-stu-id="3681e-106">Note: If you are using an earlier version install version 1.2.11</span></span>
 
-## <a name="known-issues"></a><span data-ttu-id="bcb35-107">已知問題：</span><span class="sxs-lookup"><span data-stu-id="bcb35-107">Known issues:</span></span>
+## <a name="known-issues"></a><span data-ttu-id="3681e-107">已知問題：</span><span class="sxs-lookup"><span data-stu-id="3681e-107">Known issues:</span></span>
 
-- <span data-ttu-id="bcb35-108">需要 Azure Stack 1803 版本才能關閉警示</span><span class="sxs-lookup"><span data-stu-id="bcb35-108">Close Alert requires Azure Stack version 1803</span></span>
-- <span data-ttu-id="bcb35-109">New-AzsOffer 不允許建立具公用狀態的供應項目。</span><span class="sxs-lookup"><span data-stu-id="bcb35-109">New-AzsOffer does not allow to create an offer with state public.</span></span> <span data-ttu-id="bcb35-110">Set-AzsOffer Cmdlet 之後需要呼叫以變更狀態。</span><span class="sxs-lookup"><span data-stu-id="bcb35-110">The Set-AzsOffer cmdlet needs to be called afterwards to change the state.</span></span>
-- <span data-ttu-id="bcb35-111">必須重新部署才能移除 IP 集區</span><span class="sxs-lookup"><span data-stu-id="bcb35-111">An IP Pool cannot be removed without a redeployment</span></span>
+- <span data-ttu-id="3681e-108">需要 Azure Stack 1803 版本才能關閉警示</span><span class="sxs-lookup"><span data-stu-id="3681e-108">Close Alert requires Azure Stack version 1803</span></span>
+- <span data-ttu-id="3681e-109">New-AzsOffer 不允許建立具公用狀態的供應項目。</span><span class="sxs-lookup"><span data-stu-id="3681e-109">New-AzsOffer does not allow to create an offer with state public.</span></span> <span data-ttu-id="3681e-110">Set-AzsOffer Cmdlet 之後需要呼叫以變更狀態。</span><span class="sxs-lookup"><span data-stu-id="3681e-110">The Set-AzsOffer cmdlet needs to be called afterwards to change the state.</span></span>
+- <span data-ttu-id="3681e-111">必須重新部署才能移除 IP 集區</span><span class="sxs-lookup"><span data-stu-id="3681e-111">An IP Pool cannot be removed without a redeployment</span></span>
 
-## <a name="breaking-changes"></a><span data-ttu-id="bcb35-112">重大變更</span><span class="sxs-lookup"><span data-stu-id="bcb35-112">Breaking Changes</span></span>
-<span data-ttu-id="bcb35-113">自版本 1.3.0 以來均無重大變更。</span><span class="sxs-lookup"><span data-stu-id="bcb35-113">There are no breaking changes from the version 1.3.0.</span></span> <span data-ttu-id="bcb35-114">從 1.2.11 移轉的所有中斷性變更記錄於此 https://aka.ms/azspowershellmigration</span><span class="sxs-lookup"><span data-stu-id="bcb35-114">All breaking changes migrating from 1.2.11 are documented here https://aka.ms/azspowershellmigration</span></span>
+## <a name="breaking-changes"></a><span data-ttu-id="3681e-112">重大變更</span><span class="sxs-lookup"><span data-stu-id="3681e-112">Breaking Changes</span></span>
+<span data-ttu-id="3681e-113">自版本 1.3.0 以來均無重大變更。</span><span class="sxs-lookup"><span data-stu-id="3681e-113">There are no breaking changes from the version 1.3.0.</span></span> <span data-ttu-id="3681e-114">從 1.2.11 移轉的所有中斷性變更記錄於此 https://aka.ms/azspowershellmigration</span><span class="sxs-lookup"><span data-stu-id="3681e-114">All breaking changes migrating from 1.2.11 are documented here https://aka.ms/azspowershellmigration</span></span>
 
-## <a name="install"></a><span data-ttu-id="bcb35-115">Install</span><span class="sxs-lookup"><span data-stu-id="bcb35-115">Install</span></span>
+## <a name="install"></a><span data-ttu-id="3681e-115">Install</span><span class="sxs-lookup"><span data-stu-id="3681e-115">Install</span></span>
 ```
 # Remove previous versions of AzureStack modules
 Uninstall-Module -Name AzureStack -Force 
@@ -49,98 +49,98 @@ Use-AzureRmProfile -Profile 2017-03-09-profile -Force
 # Install Azure Stack Admin Module
 Install-Module -Name AzureStack -RequiredVersion 1.4.0
 ```
-## <a name="release-notes"></a><span data-ttu-id="bcb35-116">版本資訊</span><span class="sxs-lookup"><span data-stu-id="bcb35-116">Release Notes</span></span>
-    * <span data-ttu-id="bcb35-117">Azurestack 1.4.0 版本自先前版本 1.3.0 以來並無重大變更</span><span class="sxs-lookup"><span data-stu-id="bcb35-117">Azurestack 1.4.0 version has no breaking changes from the previous release 1.3.0</span></span>
-    * <span data-ttu-id="bcb35-118">Azs.AzureBridge.Admin</span><span class="sxs-lookup"><span data-stu-id="bcb35-118">Azs.AzureBridge.Admin</span></span>
-        - <span data-ttu-id="bcb35-119">修正在分頁結果中僅傳送單一頁面的 BUG</span><span class="sxs-lookup"><span data-stu-id="bcb35-119">Fix for the bug that returned only a single page in paginated results</span></span>
-    * <span data-ttu-id="bcb35-120">Azs.Backup.Admin</span><span class="sxs-lookup"><span data-stu-id="bcb35-120">Azs.Backup.Admin</span></span>
-        - <span data-ttu-id="bcb35-121">已將 BackupFrequencyInHours、IsBackupSchedulerEnabled 及 BackupRetentionPeriodInDays 等新參數新增至 Cmdlet Set-AzsBackupShare</span><span class="sxs-lookup"><span data-stu-id="bcb35-121">Added new parameters BackupFrequencyInHours, IsBackupSchedulerEnabled, BackupRetentionPeriodInDays in cmdlet Set-AzsBackupShare</span></span>
-        - <span data-ttu-id="bcb35-122">已新增 Cmdlet New-EncyptionKeyBase64，以協助建立加密金鑰</span><span class="sxs-lookup"><span data-stu-id="bcb35-122">Added a cmdlet New-EncyptionKeyBase64 to facilitate creating encryption key</span></span>
-        - <span data-ttu-id="bcb35-123">修正在分頁結果中僅傳送單一頁面的 BUG</span><span class="sxs-lookup"><span data-stu-id="bcb35-123">Fix for the bug that returned only a single page in paginated results</span></span>
-    * <span data-ttu-id="bcb35-124">Azs.Commerce.Admin</span><span class="sxs-lookup"><span data-stu-id="bcb35-124">Azs.Commerce.Admin</span></span>
-        - <span data-ttu-id="bcb35-125">修正在分頁結果中僅傳送單一頁面的 BUG</span><span class="sxs-lookup"><span data-stu-id="bcb35-125">Fix for the bug that returned only a single page in paginated results</span></span>
-    * <span data-ttu-id="bcb35-126">Azs.Fabric.Admin</span><span class="sxs-lookup"><span data-stu-id="bcb35-126">Azs.Fabric.Admin</span></span>
-        - <span data-ttu-id="bcb35-127">修正在分頁結果中僅傳送單一頁面的 BUG</span><span class="sxs-lookup"><span data-stu-id="bcb35-127">Fix for the bug that returned only a single page in paginated results</span></span>
-        - <span data-ttu-id="bcb35-128">已新增 Cmdlet Add-AzsScaleUnitNode，讓管理員可將新的縮放單位節點新增至 azurestack 戳記</span><span class="sxs-lookup"><span data-stu-id="bcb35-128">Added a cmdlet Add-AzsScaleUnitNode to enable admin to add new scale unit nodes to the azurestack stamp</span></span>
-        - <span data-ttu-id="bcb35-129">已新增 Cmdlet 和 New-AzsScaleUnitNodeObject，以協助建立縮放單位參數物件</span><span class="sxs-lookup"><span data-stu-id="bcb35-129">Added cmdlet and New-AzsScaleUnitNodeObject to facilitate the creation scale unit parameter objects</span></span>
-    * <span data-ttu-id="bcb35-130">Azs.Gallery.Admin</span><span class="sxs-lookup"><span data-stu-id="bcb35-130">Azs.Gallery.Admin</span></span>
-        - <span data-ttu-id="bcb35-131">修正在分頁結果中僅傳送單一頁面的 BUG</span><span class="sxs-lookup"><span data-stu-id="bcb35-131">Fix for the bug that returned only a single page in paginated results</span></span>
-    * <span data-ttu-id="bcb35-132">Azs.InfrastructureInsights.Admin</span><span class="sxs-lookup"><span data-stu-id="bcb35-132">Azs.InfrastructureInsights.Admin</span></span>
-        - <span data-ttu-id="bcb35-133">修正在分頁結果中僅傳送單一頁面的 BUG</span><span class="sxs-lookup"><span data-stu-id="bcb35-133">Fix for the bug that returned only a single page in paginated results</span></span>
-    * <span data-ttu-id="bcb35-134">Azs.Network.Admin</span><span class="sxs-lookup"><span data-stu-id="bcb35-134">Azs.Network.Admin</span></span>
-        - <span data-ttu-id="bcb35-135">修正在分頁結果中僅傳送單一頁面的 BUG</span><span class="sxs-lookup"><span data-stu-id="bcb35-135">Fix for the bug that returned only a single page in paginated results</span></span>
-    * <span data-ttu-id="bcb35-136">Azs.Update.Admin</span><span class="sxs-lookup"><span data-stu-id="bcb35-136">Azs.Update.Admin</span></span>
-        - <span data-ttu-id="bcb35-137">修正在分頁結果中僅傳送單一頁面的 BUG</span><span class="sxs-lookup"><span data-stu-id="bcb35-137">Fix for the bug that returned only a single page in paginated results</span></span>
-    * <span data-ttu-id="bcb35-138">Azs.Subscriptions</span><span class="sxs-lookup"><span data-stu-id="bcb35-138">Azs.Subscriptions</span></span>
-        - <span data-ttu-id="bcb35-139">修正在分頁結果中僅傳送單一頁面的 BUG</span><span class="sxs-lookup"><span data-stu-id="bcb35-139">Fix for the bug that returned only a single page in paginated results</span></span>
-    * <span data-ttu-id="bcb35-140">Azs.Subscriptions.Admin</span><span class="sxs-lookup"><span data-stu-id="bcb35-140">Azs.Subscriptions.Admin</span></span>
-        - <span data-ttu-id="bcb35-141">已新增 Cmdlet Move-AzsSubscription，以便在受委派的提供者供應項目之間移動訂用帳戶</span><span class="sxs-lookup"><span data-stu-id="bcb35-141">Added a cmdlet Move-AzsSubscription to move subscriptions between delegated provider offers</span></span>
-        - <span data-ttu-id="bcb35-142">已新增 Cmdlet Test-AzsMoveSubscription，以便驗證該使用者訂用帳戶可以在受委派的提供者供應項目之間移動</span><span class="sxs-lookup"><span data-stu-id="bcb35-142">Added a cmdlet Test-AzsMoveSubscription to validate that user subscriptions can be moved between delegated provider offers</span></span>
-        - <span data-ttu-id="bcb35-143">修正在分頁結果中僅傳送單一頁面的 BUG</span><span class="sxs-lookup"><span data-stu-id="bcb35-143">Fix for the bug that returned only a single page in paginated results'</span></span>
+## <a name="release-notes"></a><span data-ttu-id="3681e-116">版本資訊</span><span class="sxs-lookup"><span data-stu-id="3681e-116">Release Notes</span></span>
+    * <span data-ttu-id="3681e-117">Azurestack 1.4.0 版本自先前版本 1.3.0 以來並無重大變更</span><span class="sxs-lookup"><span data-stu-id="3681e-117">Azurestack 1.4.0 version has no breaking changes from the previous release 1.3.0</span></span>
+    * <span data-ttu-id="3681e-118">Azs.AzureBridge.Admin</span><span class="sxs-lookup"><span data-stu-id="3681e-118">Azs.AzureBridge.Admin</span></span>
+        - <span data-ttu-id="3681e-119">修正在分頁結果中僅傳送單一頁面的 BUG</span><span class="sxs-lookup"><span data-stu-id="3681e-119">Fix for the bug that returned only a single page in paginated results</span></span>
+    * <span data-ttu-id="3681e-120">Azs.Backup.Admin</span><span class="sxs-lookup"><span data-stu-id="3681e-120">Azs.Backup.Admin</span></span>
+        - <span data-ttu-id="3681e-121">已將 BackupFrequencyInHours、IsBackupSchedulerEnabled 及 BackupRetentionPeriodInDays 等新參數新增至 Cmdlet Set-AzsBackupShare</span><span class="sxs-lookup"><span data-stu-id="3681e-121">Added new parameters BackupFrequencyInHours, IsBackupSchedulerEnabled, BackupRetentionPeriodInDays in cmdlet Set-AzsBackupShare</span></span>
+        - <span data-ttu-id="3681e-122">已新增 Cmdlet New-EncyptionKeyBase64，以協助建立加密金鑰</span><span class="sxs-lookup"><span data-stu-id="3681e-122">Added a cmdlet New-EncyptionKeyBase64 to facilitate creating encryption key</span></span>
+        - <span data-ttu-id="3681e-123">修正在分頁結果中僅傳送單一頁面的 BUG</span><span class="sxs-lookup"><span data-stu-id="3681e-123">Fix for the bug that returned only a single page in paginated results</span></span>
+    * <span data-ttu-id="3681e-124">Azs.Commerce.Admin</span><span class="sxs-lookup"><span data-stu-id="3681e-124">Azs.Commerce.Admin</span></span>
+        - <span data-ttu-id="3681e-125">修正在分頁結果中僅傳送單一頁面的 BUG</span><span class="sxs-lookup"><span data-stu-id="3681e-125">Fix for the bug that returned only a single page in paginated results</span></span>
+    * <span data-ttu-id="3681e-126">Azs.Fabric.Admin</span><span class="sxs-lookup"><span data-stu-id="3681e-126">Azs.Fabric.Admin</span></span>
+        - <span data-ttu-id="3681e-127">修正在分頁結果中僅傳送單一頁面的 BUG</span><span class="sxs-lookup"><span data-stu-id="3681e-127">Fix for the bug that returned only a single page in paginated results</span></span>
+        - <span data-ttu-id="3681e-128">已新增 Cmdlet Add-AzsScaleUnitNode，讓管理員可將新的縮放單位節點新增至 azurestack 戳記</span><span class="sxs-lookup"><span data-stu-id="3681e-128">Added a cmdlet Add-AzsScaleUnitNode to enable admin to add new scale unit nodes to the azurestack stamp</span></span>
+        - <span data-ttu-id="3681e-129">已新增 Cmdlet 和 New-AzsScaleUnitNodeObject，以協助建立縮放單位參數物件</span><span class="sxs-lookup"><span data-stu-id="3681e-129">Added cmdlet and New-AzsScaleUnitNodeObject to facilitate the creation scale unit parameter objects</span></span>
+    * <span data-ttu-id="3681e-130">Azs.Gallery.Admin</span><span class="sxs-lookup"><span data-stu-id="3681e-130">Azs.Gallery.Admin</span></span>
+        - <span data-ttu-id="3681e-131">修正在分頁結果中僅傳送單一頁面的 BUG</span><span class="sxs-lookup"><span data-stu-id="3681e-131">Fix for the bug that returned only a single page in paginated results</span></span>
+    * <span data-ttu-id="3681e-132">Azs.InfrastructureInsights.Admin</span><span class="sxs-lookup"><span data-stu-id="3681e-132">Azs.InfrastructureInsights.Admin</span></span>
+        - <span data-ttu-id="3681e-133">修正在分頁結果中僅傳送單一頁面的 BUG</span><span class="sxs-lookup"><span data-stu-id="3681e-133">Fix for the bug that returned only a single page in paginated results</span></span>
+    * <span data-ttu-id="3681e-134">Azs.Network.Admin</span><span class="sxs-lookup"><span data-stu-id="3681e-134">Azs.Network.Admin</span></span>
+        - <span data-ttu-id="3681e-135">修正在分頁結果中僅傳送單一頁面的 BUG</span><span class="sxs-lookup"><span data-stu-id="3681e-135">Fix for the bug that returned only a single page in paginated results</span></span>
+    * <span data-ttu-id="3681e-136">Azs.Update.Admin</span><span class="sxs-lookup"><span data-stu-id="3681e-136">Azs.Update.Admin</span></span>
+        - <span data-ttu-id="3681e-137">修正在分頁結果中僅傳送單一頁面的 BUG</span><span class="sxs-lookup"><span data-stu-id="3681e-137">Fix for the bug that returned only a single page in paginated results</span></span>
+    * <span data-ttu-id="3681e-138">Azs.Subscriptions</span><span class="sxs-lookup"><span data-stu-id="3681e-138">Azs.Subscriptions</span></span>
+        - <span data-ttu-id="3681e-139">修正在分頁結果中僅傳送單一頁面的 BUG</span><span class="sxs-lookup"><span data-stu-id="3681e-139">Fix for the bug that returned only a single page in paginated results</span></span>
+    * <span data-ttu-id="3681e-140">Azs.Subscriptions.Admin</span><span class="sxs-lookup"><span data-stu-id="3681e-140">Azs.Subscriptions.Admin</span></span>
+        - <span data-ttu-id="3681e-141">已新增 Cmdlet Move-AzsSubscription，以便在受委派的提供者供應項目之間移動訂用帳戶</span><span class="sxs-lookup"><span data-stu-id="3681e-141">Added a cmdlet Move-AzsSubscription to move subscriptions between delegated provider offers</span></span>
+        - <span data-ttu-id="3681e-142">已新增 Cmdlet Test-AzsMoveSubscription，以便驗證該使用者訂用帳戶可以在受委派的提供者供應項目之間移動</span><span class="sxs-lookup"><span data-stu-id="3681e-142">Added a cmdlet Test-AzsMoveSubscription to validate that user subscriptions can be moved between delegated provider offers</span></span>
+        - <span data-ttu-id="3681e-143">修正在分頁結果中僅傳送單一頁面的 BUG</span><span class="sxs-lookup"><span data-stu-id="3681e-143">Fix for the bug that returned only a single page in paginated results'</span></span>
 
-## <a name="content"></a><span data-ttu-id="bcb35-144">內容：</span><span class="sxs-lookup"><span data-stu-id="bcb35-144">Content:</span></span>
-### <a name="azure-bridge"></a><span data-ttu-id="bcb35-145">Azure Bridge</span><span class="sxs-lookup"><span data-stu-id="bcb35-145">Azure Bridge</span></span>
-<span data-ttu-id="bcb35-146">Azure Stack AzureBridge 管理員模組的預覽版本可讓您從 Azure 同步發佈映像。</span><span class="sxs-lookup"><span data-stu-id="bcb35-146">Preview release of the Azure Stack AzureBridge administrator module which allows you to syndicate images from Azure.</span></span>
+## <a name="content"></a><span data-ttu-id="3681e-144">內容：</span><span class="sxs-lookup"><span data-stu-id="3681e-144">Content:</span></span>
+### <a name="azure-bridge"></a><span data-ttu-id="3681e-145">Azure Bridge</span><span class="sxs-lookup"><span data-stu-id="3681e-145">Azure Bridge</span></span>
+<span data-ttu-id="3681e-146">Azure Stack AzureBridge 管理員模組的預覽版本可讓您從 Azure 同步發佈映像。</span><span class="sxs-lookup"><span data-stu-id="3681e-146">Preview release of the Azure Stack AzureBridge administrator module which allows you to syndicate images from Azure.</span></span>
 
-### <a name="backup"></a><span data-ttu-id="bcb35-147">Backup </span><span class="sxs-lookup"><span data-stu-id="bcb35-147">Backup</span></span>
-<span data-ttu-id="bcb35-148">備份管理員模組的預覽版本可允許管理員：</span><span class="sxs-lookup"><span data-stu-id="bcb35-148">Preview release of the Backup administrator module that allows administrators to:</span></span>
-- <span data-ttu-id="bcb35-149">設定備份的儲存位置</span><span class="sxs-lookup"><span data-stu-id="bcb35-149">Configure where backups are stored</span></span>
-- <span data-ttu-id="bcb35-150">執行備份</span><span class="sxs-lookup"><span data-stu-id="bcb35-150">Perform backups</span></span>
-- <span data-ttu-id="bcb35-151">列出並還原已完成的備份</span><span class="sxs-lookup"><span data-stu-id="bcb35-151">List and restore completed backup</span></span>
+### <a name="backup"></a><span data-ttu-id="3681e-147">Backup </span><span class="sxs-lookup"><span data-stu-id="3681e-147">Backup</span></span>
+<span data-ttu-id="3681e-148">備份管理員模組的預覽版本可允許管理員：</span><span class="sxs-lookup"><span data-stu-id="3681e-148">Preview release of the Backup administrator module that allows administrators to:</span></span>
+- <span data-ttu-id="3681e-149">設定備份的儲存位置</span><span class="sxs-lookup"><span data-stu-id="3681e-149">Configure where backups are stored</span></span>
+- <span data-ttu-id="3681e-150">執行備份</span><span class="sxs-lookup"><span data-stu-id="3681e-150">Perform backups</span></span>
+- <span data-ttu-id="3681e-151">列出並還原已完成的備份</span><span class="sxs-lookup"><span data-stu-id="3681e-151">List and restore completed backup</span></span>
 
-### <a name="commerce"></a><span data-ttu-id="bcb35-152">商業</span><span class="sxs-lookup"><span data-stu-id="bcb35-152">Commerce</span></span>
-<span data-ttu-id="bcb35-153">Azure Stack 商務管理員模組的預覽版本可提供方法來檢視 Azure Stack 系統間的彙總資料使用量。</span><span class="sxs-lookup"><span data-stu-id="bcb35-153">Preview release of the Azure Stack Commerce administrator module which provides a way to view aggregate data usage across your Azure Stack system.</span></span>
+### <a name="commerce"></a><span data-ttu-id="3681e-152">商業</span><span class="sxs-lookup"><span data-stu-id="3681e-152">Commerce</span></span>
+<span data-ttu-id="3681e-153">Azure Stack 商務管理員模組的預覽版本可提供方法來檢視 Azure Stack 系統間的彙總資料使用量。</span><span class="sxs-lookup"><span data-stu-id="3681e-153">Preview release of the Azure Stack Commerce administrator module which provides a way to view aggregate data usage across your Azure Stack system.</span></span>
 
-### <a name="compute"></a><span data-ttu-id="bcb35-154">計算</span><span class="sxs-lookup"><span data-stu-id="bcb35-154">Compute</span></span>
-<span data-ttu-id="bcb35-155">Azure Stack 計算管理員模組的預覽版本可提供功能來管理計算配額、平台映像和虛擬機器擴充功能。</span><span class="sxs-lookup"><span data-stu-id="bcb35-155">Preview release of the Azure Stack Compute administrator module which provides functionality to manage compute quotas, platform images, and virtual machine extensions.</span></span>
+### <a name="compute"></a><span data-ttu-id="3681e-154">計算</span><span class="sxs-lookup"><span data-stu-id="3681e-154">Compute</span></span>
+<span data-ttu-id="3681e-155">Azure Stack 計算管理員模組的預覽版本可提供功能來管理計算配額、平台映像和虛擬機器擴充功能。</span><span class="sxs-lookup"><span data-stu-id="3681e-155">Preview release of the Azure Stack Compute administrator module which provides functionality to manage compute quotas, platform images, and virtual machine extensions.</span></span>
 
-### <a name="fabric"></a><span data-ttu-id="bcb35-156">網狀架構</span><span class="sxs-lookup"><span data-stu-id="bcb35-156">Fabric</span></span>
-<span data-ttu-id="bcb35-157">Azure Stack 網狀架構管理員模組的預覽版本可讓系統管理員檢視和管理基礎結構元件：</span><span class="sxs-lookup"><span data-stu-id="bcb35-157">Preview release of the Azure Stack Fabric administrator module which allows administrators to view and manage infrastructure components:</span></span>
-- <span data-ttu-id="bcb35-158">縮放單位節點的停止、啟動和關閉</span><span class="sxs-lookup"><span data-stu-id="bcb35-158">Stop, Start and Shutdown of scale unit nodes</span></span>
-- <span data-ttu-id="bcb35-159">針對 FRU 相關活動清空和繼續縮放單位節點</span><span class="sxs-lookup"><span data-stu-id="bcb35-159">Drain and Resume of scale unit nodes for FRU related activities</span></span>
-- <span data-ttu-id="bcb35-160">縮放單位節點修復</span><span class="sxs-lookup"><span data-stu-id="bcb35-160">Repair of scale unit nodes</span></span>
-- <span data-ttu-id="bcb35-161">基礎結構角色重新啟動</span><span class="sxs-lookup"><span data-stu-id="bcb35-161">Restart of Infrastructure role</span></span>
-- <span data-ttu-id="bcb35-162">基礎結構角色執行個體的停止、啟動和關閉</span><span class="sxs-lookup"><span data-stu-id="bcb35-162">Stop, Start and Shutdown of Infrastructure role instances</span></span>
-- <span data-ttu-id="bcb35-163">建立新的 IP 集區</span><span class="sxs-lookup"><span data-stu-id="bcb35-163">Create new IP Pools</span></span>
+### <a name="fabric"></a><span data-ttu-id="3681e-156">網狀架構</span><span class="sxs-lookup"><span data-stu-id="3681e-156">Fabric</span></span>
+<span data-ttu-id="3681e-157">Azure Stack 網狀架構管理員模組的預覽版本可讓系統管理員檢視和管理基礎結構元件：</span><span class="sxs-lookup"><span data-stu-id="3681e-157">Preview release of the Azure Stack Fabric administrator module which allows administrators to view and manage infrastructure components:</span></span>
+- <span data-ttu-id="3681e-158">縮放單位節點的停止、啟動和關閉</span><span class="sxs-lookup"><span data-stu-id="3681e-158">Stop, Start and Shutdown of scale unit nodes</span></span>
+- <span data-ttu-id="3681e-159">針對 FRU 相關活動清空和繼續縮放單位節點</span><span class="sxs-lookup"><span data-stu-id="3681e-159">Drain and Resume of scale unit nodes for FRU related activities</span></span>
+- <span data-ttu-id="3681e-160">縮放單位節點修復</span><span class="sxs-lookup"><span data-stu-id="3681e-160">Repair of scale unit nodes</span></span>
+- <span data-ttu-id="3681e-161">基礎結構角色重新啟動</span><span class="sxs-lookup"><span data-stu-id="3681e-161">Restart of Infrastructure role</span></span>
+- <span data-ttu-id="3681e-162">基礎結構角色執行個體的停止、啟動和關閉</span><span class="sxs-lookup"><span data-stu-id="3681e-162">Stop, Start and Shutdown of Infrastructure role instances</span></span>
+- <span data-ttu-id="3681e-163">建立新的 IP 集區</span><span class="sxs-lookup"><span data-stu-id="3681e-163">Create new IP Pools</span></span>
 
-### <a name="gallery"></a><span data-ttu-id="bcb35-164">資源庫</span><span class="sxs-lookup"><span data-stu-id="bcb35-164">Gallery</span></span>
-<span data-ttu-id="bcb35-165">Azure Stack 資源庫管理員模組的預覽版本可提供功能來管理 Azure Stack 市集中的資源庫項目。</span><span class="sxs-lookup"><span data-stu-id="bcb35-165">Preview release of the Azure Stack Gallery administrator module which provides functionality to manage gallery items in the Azure Stack marketplace.</span></span>
+### <a name="gallery"></a><span data-ttu-id="3681e-164">資源庫</span><span class="sxs-lookup"><span data-stu-id="3681e-164">Gallery</span></span>
+<span data-ttu-id="3681e-165">Azure Stack 資源庫管理員模組的預覽版本可提供功能來管理 Azure Stack 市集中的資源庫項目。</span><span class="sxs-lookup"><span data-stu-id="3681e-165">Preview release of the Azure Stack Gallery administrator module which provides functionality to manage gallery items in the Azure Stack marketplace.</span></span>
 
-### <a name="infrastructure-insights"></a><span data-ttu-id="bcb35-166">基礎結構深入解析</span><span class="sxs-lookup"><span data-stu-id="bcb35-166">Infrastructure Insights</span></span>
-<span data-ttu-id="bcb35-167">基礎結構深入解析管理員模組的預覽版本可讓系統管理員：</span><span class="sxs-lookup"><span data-stu-id="bcb35-167">Preview release of the Infrastructure Insights administrator module which allows administrators:</span></span>
-- <span data-ttu-id="bcb35-168">檢視其 Azure Stack 戳記資源的健康情況</span><span class="sxs-lookup"><span data-stu-id="bcb35-168">View the health of their Azure Stack stamp resources</span></span>
-- <span data-ttu-id="bcb35-169">檢視和管理警示</span><span class="sxs-lookup"><span data-stu-id="bcb35-169">View and manage alerts</span></span>
+### <a name="infrastructure-insights"></a><span data-ttu-id="3681e-166">基礎結構深入解析</span><span class="sxs-lookup"><span data-stu-id="3681e-166">Infrastructure Insights</span></span>
+<span data-ttu-id="3681e-167">基礎結構深入解析管理員模組的預覽版本可讓系統管理員：</span><span class="sxs-lookup"><span data-stu-id="3681e-167">Preview release of the Infrastructure Insights administrator module which allows administrators:</span></span>
+- <span data-ttu-id="3681e-168">檢視其 Azure Stack 戳記資源的健康情況</span><span class="sxs-lookup"><span data-stu-id="3681e-168">View the health of their Azure Stack stamp resources</span></span>
+- <span data-ttu-id="3681e-169">檢視和管理警示</span><span class="sxs-lookup"><span data-stu-id="3681e-169">View and manage alerts</span></span>
 
-### <a name="keyvault"></a><span data-ttu-id="bcb35-170">KeyVault</span><span class="sxs-lookup"><span data-stu-id="bcb35-170">KeyVault</span></span>
-<span data-ttu-id="bcb35-171">Azure Stack KeyVault 管理員模組的預覽版本可讓系統管理員檢視 KeyVault 配額。</span><span class="sxs-lookup"><span data-stu-id="bcb35-171">Preview release of the Azure Stack KeyVault administrator module which allows administrator to view KeyVault quotas.</span></span>
+### <a name="keyvault"></a><span data-ttu-id="3681e-170">KeyVault</span><span class="sxs-lookup"><span data-stu-id="3681e-170">KeyVault</span></span>
+<span data-ttu-id="3681e-171">Azure Stack KeyVault 管理員模組的預覽版本可讓系統管理員檢視 KeyVault 配額。</span><span class="sxs-lookup"><span data-stu-id="3681e-171">Preview release of the Azure Stack KeyVault administrator module which allows administrator to view KeyVault quotas.</span></span>
 
-### <a name="network"></a><span data-ttu-id="bcb35-172">網路</span><span class="sxs-lookup"><span data-stu-id="bcb35-172">Network</span></span>
-<span data-ttu-id="bcb35-173">網路管理員模組的預覽版本可以執行：</span><span class="sxs-lookup"><span data-stu-id="bcb35-173">Preview release of the Network administrator module which allows:</span></span>
-- <span data-ttu-id="bcb35-174">網路配額管理</span><span class="sxs-lookup"><span data-stu-id="bcb35-174">Management of network quotas</span></span>
-- <span data-ttu-id="bcb35-175">檢視配置的網路資源，例如公用 IP 位址、虛擬網路、負載平衡器</span><span class="sxs-lookup"><span data-stu-id="bcb35-175">View allocated network resources such as public IP addresses, virtual networks, load balancers</span></span>
-- <span data-ttu-id="bcb35-176">提供 Cmdlet 以顯示系統管理員概觀</span><span class="sxs-lookup"><span data-stu-id="bcb35-176">Provides a cmdlet which displays an administrator overview</span></span>
+### <a name="network"></a><span data-ttu-id="3681e-172">網路</span><span class="sxs-lookup"><span data-stu-id="3681e-172">Network</span></span>
+<span data-ttu-id="3681e-173">網路管理員模組的預覽版本可以執行：</span><span class="sxs-lookup"><span data-stu-id="3681e-173">Preview release of the Network administrator module which allows:</span></span>
+- <span data-ttu-id="3681e-174">網路配額管理</span><span class="sxs-lookup"><span data-stu-id="3681e-174">Management of network quotas</span></span>
+- <span data-ttu-id="3681e-175">檢視配置的網路資源，例如公用 IP 位址、虛擬網路、負載平衡器</span><span class="sxs-lookup"><span data-stu-id="3681e-175">View allocated network resources such as public IP addresses, virtual networks, load balancers</span></span>
+- <span data-ttu-id="3681e-176">提供 Cmdlet 以顯示系統管理員概觀</span><span class="sxs-lookup"><span data-stu-id="3681e-176">Provides a cmdlet which displays an administrator overview</span></span>
 
-### <a name="storage"></a><span data-ttu-id="bcb35-177">儲存體</span><span class="sxs-lookup"><span data-stu-id="bcb35-177">Storage</span></span>
-<span data-ttu-id="bcb35-178">Azure Stack 儲存體管理員模組的預覽版本。</span><span class="sxs-lookup"><span data-stu-id="bcb35-178">Preview release of the Azure Stack Storage administrator module.</span></span>  <span data-ttu-id="bcb35-179">在此版本中，我們提供的功能有：</span><span class="sxs-lookup"><span data-stu-id="bcb35-179">In this release we provide the functionality to:</span></span>
-- <span data-ttu-id="bcb35-180">管理儲存體配額</span><span class="sxs-lookup"><span data-stu-id="bcb35-180">Manage storage quotas</span></span>
-- <span data-ttu-id="bcb35-181">記憶體回收刪除的儲存體資源</span><span class="sxs-lookup"><span data-stu-id="bcb35-181">Garbage collect deleted storage resources</span></span>
-- <span data-ttu-id="bcb35-182">還原已刪除的儲存體帳戶</span><span class="sxs-lookup"><span data-stu-id="bcb35-182">Restore deleted storage accounts</span></span>
-- <span data-ttu-id="bcb35-183">將容器從一個共用遷移到另一個</span><span class="sxs-lookup"><span data-stu-id="bcb35-183">Migrate containers from one share to another</span></span>
-- <span data-ttu-id="bcb35-184">檢視個別儲存元件的相關資訊</span><span class="sxs-lookup"><span data-stu-id="bcb35-184">View information about the individual storage components</span></span>
-- <span data-ttu-id="bcb35-185">檢視使用量和效能資訊</span><span class="sxs-lookup"><span data-stu-id="bcb35-185">View usage and performance information</span></span>
+### <a name="storage"></a><span data-ttu-id="3681e-177">儲存體</span><span class="sxs-lookup"><span data-stu-id="3681e-177">Storage</span></span>
+<span data-ttu-id="3681e-178">Azure Stack 儲存體管理員模組的預覽版本。</span><span class="sxs-lookup"><span data-stu-id="3681e-178">Preview release of the Azure Stack Storage administrator module.</span></span>  <span data-ttu-id="3681e-179">在此版本中，我們提供的功能有：</span><span class="sxs-lookup"><span data-stu-id="3681e-179">In this release we provide the functionality to:</span></span>
+- <span data-ttu-id="3681e-180">管理儲存體配額</span><span class="sxs-lookup"><span data-stu-id="3681e-180">Manage storage quotas</span></span>
+- <span data-ttu-id="3681e-181">記憶體回收刪除的儲存體資源</span><span class="sxs-lookup"><span data-stu-id="3681e-181">Garbage collect deleted storage resources</span></span>
+- <span data-ttu-id="3681e-182">還原已刪除的儲存體帳戶</span><span class="sxs-lookup"><span data-stu-id="3681e-182">Restore deleted storage accounts</span></span>
+- <span data-ttu-id="3681e-183">將容器從一個共用遷移到另一個</span><span class="sxs-lookup"><span data-stu-id="3681e-183">Migrate containers from one share to another</span></span>
+- <span data-ttu-id="3681e-184">檢視個別儲存元件的相關資訊</span><span class="sxs-lookup"><span data-stu-id="3681e-184">View information about the individual storage components</span></span>
+- <span data-ttu-id="3681e-185">檢視使用量和效能資訊</span><span class="sxs-lookup"><span data-stu-id="3681e-185">View usage and performance information</span></span>
 
-### <a name="subscription-admin"></a><span data-ttu-id="bcb35-186">訂用帳戶管理員</span><span class="sxs-lookup"><span data-stu-id="bcb35-186">Subscription Admin</span></span>
-<span data-ttu-id="bcb35-187">Azure Stack 訂用帳戶管理員模組的預覽版本。</span><span class="sxs-lookup"><span data-stu-id="bcb35-187">Preview release of the Azure Stack Subscription administrator module.</span></span>  <span data-ttu-id="bcb35-188">此模組可提供功能讓系統管理員：</span><span class="sxs-lookup"><span data-stu-id="bcb35-188">This module provides functionality for administrators to:</span></span>
-- <span data-ttu-id="bcb35-189">管理方案和供應項目</span><span class="sxs-lookup"><span data-stu-id="bcb35-189">Manage plans and offers</span></span>
-- <span data-ttu-id="bcb35-190">檢視使用量和效能資訊</span><span class="sxs-lookup"><span data-stu-id="bcb35-190">View usage and performance information</span></span>
-- <span data-ttu-id="bcb35-191">管理 RBAC</span><span class="sxs-lookup"><span data-stu-id="bcb35-191">Manage RBAC</span></span>
+### <a name="subscription-admin"></a><span data-ttu-id="3681e-186">訂用帳戶管理員</span><span class="sxs-lookup"><span data-stu-id="3681e-186">Subscription Admin</span></span>
+<span data-ttu-id="3681e-187">Azure Stack 訂用帳戶管理員模組的預覽版本。</span><span class="sxs-lookup"><span data-stu-id="3681e-187">Preview release of the Azure Stack Subscription administrator module.</span></span>  <span data-ttu-id="3681e-188">此模組可提供功能讓系統管理員：</span><span class="sxs-lookup"><span data-stu-id="3681e-188">This module provides functionality for administrators to:</span></span>
+- <span data-ttu-id="3681e-189">管理方案和供應項目</span><span class="sxs-lookup"><span data-stu-id="3681e-189">Manage plans and offers</span></span>
+- <span data-ttu-id="3681e-190">檢視使用量和效能資訊</span><span class="sxs-lookup"><span data-stu-id="3681e-190">View usage and performance information</span></span>
+- <span data-ttu-id="3681e-191">管理 RBAC</span><span class="sxs-lookup"><span data-stu-id="3681e-191">Manage RBAC</span></span>
 
-### <a name="subscription"></a><span data-ttu-id="bcb35-192">訂用帳戶</span><span class="sxs-lookup"><span data-stu-id="bcb35-192">Subscription</span></span>
-<span data-ttu-id="bcb35-193">Azure Stack 訂用帳戶模組的預覽版本。</span><span class="sxs-lookup"><span data-stu-id="bcb35-193">Preview release of the Azure Stack Subscription module.</span></span>  <span data-ttu-id="bcb35-194">此模組可提供功能讓使用者：</span><span class="sxs-lookup"><span data-stu-id="bcb35-194">This module provides functionality for Users to:</span></span>
-- <span data-ttu-id="bcb35-195">建立、刪除和更新訂用帳戶</span><span class="sxs-lookup"><span data-stu-id="bcb35-195">Create, Delete and Update Subscriptions</span></span>
+### <a name="subscription"></a><span data-ttu-id="3681e-192">訂用帳戶</span><span class="sxs-lookup"><span data-stu-id="3681e-192">Subscription</span></span>
+<span data-ttu-id="3681e-193">Azure Stack 訂用帳戶模組的預覽版本。</span><span class="sxs-lookup"><span data-stu-id="3681e-193">Preview release of the Azure Stack Subscription module.</span></span>  <span data-ttu-id="3681e-194">此模組可提供功能讓使用者：</span><span class="sxs-lookup"><span data-stu-id="3681e-194">This module provides functionality for Users to:</span></span>
+- <span data-ttu-id="3681e-195">建立、刪除和更新訂用帳戶</span><span class="sxs-lookup"><span data-stu-id="3681e-195">Create, Delete and Update Subscriptions</span></span>
 
-### <a name="update"></a><span data-ttu-id="bcb35-196">更新</span><span class="sxs-lookup"><span data-stu-id="bcb35-196">Update</span></span>
-<span data-ttu-id="bcb35-197">Azure Stack 更新管理員模組的預覽版本。</span><span class="sxs-lookup"><span data-stu-id="bcb35-197">Preview release of the Azure Stack Update administrator module.</span></span>  <span data-ttu-id="bcb35-198">在此模組中系統管理員可以：</span><span class="sxs-lookup"><span data-stu-id="bcb35-198">In this module administrators can:</span></span>
-- <span data-ttu-id="bcb35-199">列出及安裝可用更新</span><span class="sxs-lookup"><span data-stu-id="bcb35-199">List and install available updates</span></span>
-- <span data-ttu-id="bcb35-200">繼續中斷的更新</span><span class="sxs-lookup"><span data-stu-id="bcb35-200">Resume interrupted updates</span></span>
-- <span data-ttu-id="bcb35-201">檢視已安裝的更新</span><span class="sxs-lookup"><span data-stu-id="bcb35-201">View installed updates</span></span>
+### <a name="update"></a><span data-ttu-id="3681e-196">更新</span><span class="sxs-lookup"><span data-stu-id="3681e-196">Update</span></span>
+<span data-ttu-id="3681e-197">Azure Stack 更新管理員模組的預覽版本。</span><span class="sxs-lookup"><span data-stu-id="3681e-197">Preview release of the Azure Stack Update administrator module.</span></span>  <span data-ttu-id="3681e-198">在此模組中系統管理員可以：</span><span class="sxs-lookup"><span data-stu-id="3681e-198">In this module administrators can:</span></span>
+- <span data-ttu-id="3681e-199">列出及安裝可用更新</span><span class="sxs-lookup"><span data-stu-id="3681e-199">List and install available updates</span></span>
+- <span data-ttu-id="3681e-200">繼續中斷的更新</span><span class="sxs-lookup"><span data-stu-id="3681e-200">Resume interrupted updates</span></span>
+- <span data-ttu-id="3681e-201">檢視已安裝的更新</span><span class="sxs-lookup"><span data-stu-id="3681e-201">View installed updates</span></span>
