@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 09/26/2018
 ms.openlocfilehash: f69dc1455cac18d46acff6588755198b97f4dec1
-ms.sourcegitcommit: a749eb729f583c9d0dd86141bbd04984d77ae9ab
+ms.sourcegitcommit: f6f5e256143aa6c097de3e57e930d8badea49f30
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "48881988"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49399581"
 ---
 # <a name="overview-of-azure-deployment-manager"></a>Azure 部署管理員概觀
 
