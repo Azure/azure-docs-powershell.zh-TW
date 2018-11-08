@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: 71a2554052f5a25ea86fe44b6dcf5d9343c81f3e
-ms.sourcegitcommit: ff44dec6418a449757bded3c6ebe0a7d4c05ee6e
+ms.openlocfilehash: edbf17141cac4ea6e41282c8e1dd07c5b738351c
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50737929"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211599"
 ---
 # <a name="log-in-with-azure-powershell"></a>使用 Azure PowerShell 來登入
 
@@ -32,13 +32,13 @@ Azure PowerShell 支援多種登入方法。 最簡單的入門方法是在命�
 
 2. 使用服務主體來登入。
 
-    ```powershell
+    ```powershell-interactive
     Login-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
     ```
 
     若要取得您的 TenantId，請以互動方式登入，然後從您的訂用帳戶中取得 TenantId。
 
-    ```powershell
+    ```powershell-interactive
     Get-AzureRmSubscription
     ```
 
@@ -61,13 +61,13 @@ Azure PowerShell 支援多種登入方法。 最簡單的入門方法是在命�
 
 Azure 雲端服務提供不同的環境，以遵循各國政府的資料處理法規。 如果您的 Azure 帳戶位於某一個政府雲端，則需要在登入時指定環境。 例如，如果您的帳戶位於中國雲端，則可使用下列命令來登入：
 
-```powershell
+```powershell-interactive
 Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 ```
 
 使用下列命令來取得可用環境的清單：
 
-```powershell
+```powershell-interactive
 Get-AzureRmEnvironment | Select-Object Name
 ```
 

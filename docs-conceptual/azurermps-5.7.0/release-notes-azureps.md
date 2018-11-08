@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
-ms.openlocfilehash: f69a0b79ac17c3a6502abfa9bbc5370693ad508e
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 1a9d38cd60ba596c085e5ee9f8d815e238362b1f
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34854268"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211939"
 ---
 # <a name="release-notes"></a>版本資訊
 
@@ -29,13 +29,13 @@ Azure PowerShell 5.7.0 安裝程式：[連結](https://github.com/Azure/azure-po
 
 若要從 PowerShell 資源庫安裝 `AzureRM`，請執行以下命令：
 
-```powershell
+```powershell-interactive
 Install-Module -Name AzureRM -Repository PSGallery -Force
 ```
 
 若要從舊版的 `AzureRM` 更新，請執行以下命令：
 
-```powershell
+```powershell-interactive
 Update-Module -Name AzureRM
 ```
 
@@ -94,7 +94,7 @@ Update-Module -Name AzureRM
 * 新增 Cmdlet 'Stop-AzureRmSqlElasticPoolActivity' 以支援在彈性集區中取消非同步作業
 * 更新 Get-AzureRmSqlDatabaseActivity 和 Get-AzureRmSqlElasticPoolActivity Cmdlet 的回應，以在回應中反映更多資訊
 
-自上次發行後的變更：https://github.com/Azure/azure-powershell/compare/v5.6.0-March2018...v5.7.0-April2018
+自上次發行後的變更： https://github.com/Azure/azure-powershell/compare/v5.6.0-March2018...v5.7.0-April2018
 
 ## <a name="560---march-2018"></a>5.6.0 - 2018 年 3 月
 
@@ -493,7 +493,7 @@ Update-Module -Name AzureRM
 * 已針對長時間執行的 KeyVault Cmdlet 新增 -AsJob 支援。 允許選取的 Cmdlet 在背景中執行，並傳回作業以追蹤及控制進度。
   * 受影響的 Cmdlet 是：Remove-AzureRmKeyVault
 * 修正了 Set-AzureRmKeyVaultAccessPolicy 中，AAD 篩選器會將 SPN 設為提供的 UPN 而非設定 UPN 本身的錯誤
-  - 請參閱下列問題以取得更多資訊：https://github.com/Azure/azure-powershell/issues/5201
+  - 請參閱下列問題以取得更多資訊： https://github.com/Azure/azure-powershell/issues/5201
 
 #### <a name="azurermlogicapp"></a>AzureRM.LogicApp
 * 已將 Location 完成碼新增到 -Location 參數中，以便透過有效的位置來實現 Tab 鍵自動完成
@@ -667,7 +667,7 @@ Update-Module -Name AzureRM
   - 新增 Update-AzureRmPowerBIEmbeddedCapacity Cmdlet - 修改 PowerBI Embedded 容量的執行個體
 * 設定檔
   - 已將 USGovernmentActiveDirectoryEndpoint 更新為 https://login.microsoftonline.us/
-    - 如需更多關於 Azure Government 端點對應的資訊，請參閱以下文章：https://docs.microsoft.com/en-us/azure/azure-government/documentation-government-developer-guide#endpoint-mapping
+    - 如需更多關於 Azure Government 端點對應的資訊，請參閱以下文章： https://docs.microsoft.com/en-us/azure/azure-government/documentation-government-developer-guide#endpoint-mapping
     - 新增 Cmdlet 的 -AsJob 支援，讓選取的 Cmdlet 可在背景中執行並傳回作業以追蹤和控制進度
     - 將 -AsJob 參數新增至 Get-AzureRmSubscription Cmdlet
 * RecoveryServices.Backup

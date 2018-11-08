@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
 ms.openlocfilehash: 6bd1bea43303e9f5a2b46d63a3ac51b4c4031b9f
-ms.sourcegitcommit: ff44dec6418a449757bded3c6ebe0a7d4c05ee6e
+ms.sourcegitcommit: 1f699b72bf544d92459da9d888cc0091f9415b65
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50737351"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "50971834"
 ---
 # <a name="query-output-of-azure-powershell-cmdlets"></a>查詢 Azure PowerShell Cmdlet 的輸出
 

@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/06/2018
-ms.openlocfilehash: 6e7d447ea9672c174e3f1d103bc56c11a7f37192
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 47611281f67d68c9fc2686e0c6156b060a225158
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024829"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51212007"
 ---
 # <a name="install-azure-powershell-on-macos-or-linux"></a>在 macOS 或 Linux 上安裝 Azure PowerShell
 
@@ -43,7 +43,7 @@ sudo pwsh
 
 若要安裝 Azure PowerShell，請執行下列命令：
 
-```powershell
+```powershell-interactive
 Install-Module AzureRM.NetCore
 ```
 
@@ -59,7 +59,7 @@ You are installing the modules from an untrusted repository. If you trust this r
 its InstallationPolicy value by running the Set-PSRepository cmdlet.
 
 Are you sure you want to install the modules from 'PSGallery'?
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
 請回答 `Yes` 或 `Yes to All` 以繼續安裝。
@@ -68,7 +68,7 @@ Are you sure you want to install the modules from 'PSGallery'?
 
 若要開始使用 Azure PowerShell，您必須使用 [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 將 `AzureRM.Netcore` 載入您的 PowerShell 工作階段，然後使用您的 Azure 認證登入。 匯入模組「不」需要較高的權限。
 
-```powershell
+```powershell-interactive
 # Import the module into the PowerShell session
 Import-Module AzureRM.Netcore
 # Connect to Azure with an interactive dialog for sign-in

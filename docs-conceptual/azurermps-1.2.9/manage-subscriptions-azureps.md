@@ -8,12 +8,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 00f346c2e90fb6615dd9eac96e13f4cfc243d204
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 8869b700e513d6fc07e69de1dbfe852bd2a52df1
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024472"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211055"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>管理多個 Azure 訂用帳戶
 
@@ -21,7 +21,7 @@ ms.locfileid: "39024472"
 
 1. 取得您帳戶中所有訂用帳戶的清單。
 
-    ```powershell
+    ```powershell-interactive
     Get-AzureRmSubscription
     ```
 
@@ -50,13 +50,13 @@ ms.locfileid: "39024472"
 
 2. 預設設定。
 
-    ```powershell
+    ```powershell-interactive
     Select-AzureRmSubscription -SubscriptionName "My Demos"
     ```
 
 3. 執行 `Get-AzureRmContext` Cmdlet 來驗證變更。
 
-    ```powershell
+    ```powershell-interactive
     Get-AzureRmContext
     ```
 

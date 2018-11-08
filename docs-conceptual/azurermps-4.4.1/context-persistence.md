@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 12a57f9aaf445fe95f731e09a6dcd174b97aa3fe
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 85de158cd2a4c3a38f653a530db8e6fae50cb37f
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100183"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211123"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>在 PowerShell 工作階段之間保存使用者認證
 
@@ -55,7 +55,7 @@ Azure 內容是一組資訊，可定義 Azure PowerShell Cmdlet 的目標。 內
 
   大部分的 AzureRM Cmdlet 可讓您將內容作為參數傳遞至 Cmdlet。 您可以將內容傳遞至背景作業，如下列範例所示：
 
-  ```powershell
+  ```powershell-interactive
   PS C:\> $job = Start-Job { param ($ctx) New-AzureRmVm -AzureRmContext $ctx [... Additional parameters ...]} -ArgumentList (Get-AzureRmContext)
   ```
 
@@ -63,7 +63,7 @@ Azure 內容是一組資訊，可定義 Azure PowerShell Cmdlet 的目標。 內
 
   如果您已啟用**內容自動儲存**，背景作業就會自動使用預設儲存的內容。
 
-  ```powershell
+  ```powershell-interactive
   PS C:\> $job = Start-Job { New-AzureRmVm [... Additional parameters ...]}
   ```
 

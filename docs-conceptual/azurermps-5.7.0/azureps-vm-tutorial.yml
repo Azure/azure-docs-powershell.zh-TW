@@ -16,12 +16,12 @@ metadata:
   ms.technology: azure-powershell
   ms.service: virtual-machines
   clicktale: true
-  ms.openlocfilehash: e6d585d76f507a7959e6e6227aff1effad8fa336
-  ms.sourcegitcommit: f648ac92fafb16cc0e9ca6bc85d00fa327baf396
+  ms.openlocfilehash: 6bf5fdd20d0f9831fc5e7eae9158343c995034b4
+  ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 08/24/2018
-  ms.locfileid: "38100064"
+  ms.lasthandoff: 11/07/2018
+  ms.locfileid: "51211691"
 items:
 - durationInMinutes: 1
   content: >-
@@ -38,7 +38,7 @@ items:
     如果您使用 Azure PowerShell 的本機安裝，必須先登入，再執行任何其他步驟。
 
 
-    ```powershell
+    ```powershell-interactive
 
     Connect-AzureRmAccount
 
@@ -54,7 +54,7 @@ items:
     在本教學課程中，所有建立的資源都會移入名為 `TutorialResources` 的單一群組。
 
 
-    ```powershell
+    ```powershell-interactive
 
     New-AzureRmResourceGroup -Name TutorialResources -Location eastus
 
@@ -80,7 +80,7 @@ items:
     建立新的虛擬機器之前，您必須先建立認證物件，且此認證物件需包含 Windows VM 系統管理員帳戶的使用者名稱和密碼。
 
 
-    ```powershell
+    ```powershell-interactive
 
     $cred = Get-Credential -Message "Enter a username and password for the virtual machine."
 
@@ -110,7 +110,7 @@ items:
     建立執行 Windows 的新虛擬機器。
 
 
-    ```powershell
+    ```powershell-interactive
 
     $vmParams = @{
       ResourceGroupName = 'TutorialResources'
@@ -143,7 +143,7 @@ items:
     VM 準備就緒之後，我們就可以在 Azure 入口網站中檢視結果，或檢查 \$newVM1 變數查看結果。
 
 
-    ```powershell
+    ```powershell-interactive
 
     $newVM1
 
@@ -186,7 +186,7 @@ items:
     從我們剛才建立的 VM 取得更詳細的資訊。 在此範例中，我們會確認 VM 的名稱以及所建立的系統管理員帳戶。
 
 
-    ```powershell
+    ```powershell-interactive
 
     $newVM1.OSProfile | Select-Object ComputerName,AdminUserName
 
@@ -207,7 +207,7 @@ items:
     我們可以使用其他 Azure PowerShell 命令來取得有關網路設定的特定資訊。
 
 
-    ```powershell
+    ```powershell-interactive
 
     $newVM1 | Get-AzureRmNetworkInterface |
       Select-Object -ExpandProperty IpConfigurations |
@@ -232,7 +232,7 @@ items:
     為了確認 VM 正在執行，需要透過遠端桌面連線。 為此，我們需要公用 IP 位址。
 
 
-    ```powershell
+    ```powershell-interactive
 
     $publicIp = Get-AzureRmPublicIpAddress -Name tutorialPublicIp -ResourceGroupName TutorialResources
 
@@ -259,7 +259,7 @@ items:
     您可以在您的本機電腦執行下列命令，以透過遠端桌面連線到 VM。
 
 
-    ```powershell
+    ```powershell-interactive
 
     mstsc.exe /v <PUBLIC_IP_ADDRESS>
 
@@ -273,7 +273,7 @@ items:
     第二個 VM 會使用現有子網路。
 
 
-    ```powershell
+    ```powershell-interactive
 
     $vm2Params = @{
       ResourceGroupName = 'TutorialResources'
@@ -328,7 +328,7 @@ items:
     由於 \$newVM2 物件的 FullyQualifiedDomainName 屬性已傳回新的公用 IP 位址，您可以省略一些步驟以取得這項資訊。 使用下列命令利用遠端桌面建立連線。
 
 
-    ```powershell
+    ```powershell-interactive
 
     mstsc.exe /v $newVM2.FullyQualifiedDomainName
 
@@ -339,7 +339,7 @@ items:
     現在已完成本教學課程，可以開始清除已建立的資源。 您可以使用 `Remove-AzureRmResource` 命令刪除個別的資源，但使用 `Remove-AzureRmResourceGroup` 命令刪除群組是移除資源群組中所有資源最安全的方法。
 
 
-    ```powershell
+    ```powershell-interactive
 
     $job = Remove-AzureRmResourceGroup -Name TutorialResources -Force -AsJob
 
@@ -363,7 +363,7 @@ items:
     此命令會刪除教學課程期間建立的資源，並保證以正確的順序將資源解除配置。 `-AsJob` 參數可防止 PowerShell 在刪除作業執行時遭到阻止。 若要等候刪除完成，使用以下命令：
 
 
-    ```powershell
+    ```powershell-interactive
 
     Wait-Job -Id $job.Id
 

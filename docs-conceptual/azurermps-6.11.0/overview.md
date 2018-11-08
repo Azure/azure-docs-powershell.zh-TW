@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 09/11/2018
 ms.openlocfilehash: 32decf653a956d0b0b202b38a238f42fa831ecae
-ms.sourcegitcommit: ff44dec6418a449757bded3c6ebe0a7d4c05ee6e
+ms.sourcegitcommit: 1f699b72bf544d92459da9d888cc0091f9415b65
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50737810"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "50972327"
 ---
 # <a name="overview-of-azure-powershell"></a>Azure PowerShell 的概觀
 

@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/15/2018
-ms.openlocfilehash: 2809d8265af85a786b1b72ab9be3135f166a20e8
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: a868a62bd7bb2f39775a3b7878e2c8484c50438d
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39025322"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211089"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>使用 PowerShellGet 在 Windows 上安裝 Azure PowerShell
 
@@ -26,7 +26,7 @@ ms.locfileid: "39025322"
 
 若要安裝 Azure PowerShell，您需要 PowerShellGet 1.1.2.0 版或更高版本。 若要檢查您的系統上是否可使用，請執行下列命令：
 
-```powershell
+```powershell-interactive
 Get-Module -Name PowerShellGet -ListAvailable | Select-Object -Property Name,Version,Path
 ```
 
@@ -43,7 +43,7 @@ PowerShellGet 1.0.0.1 C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1
 
 若您需要更新 PowerShellGet 的安裝，請執行下列命令：
 
-```powershell
+```powershell-interactive
 Install-Module PowerShellGet -Force
 ```
 
@@ -65,7 +65,7 @@ Install-Module PowerShellGet -Force
 
 您需要較高的權限，以從 PowerShell 資源庫安裝模組。 若要安裝 Azure PowerShell，請在已提升權限的工作階段中執行下列命令：
 
-```powershell
+```powershell-interactive
 Install-Module -Name AzureRM
 ```
 
@@ -81,7 +81,7 @@ You are installing the modules from an untrusted repository. If you trust this r
 its InstallationPolicy value by running the Set-PSRepository cmdlet.
 
 Are you sure you want to install the modules from 'PSGallery'?
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
 請回答 `Yes` 或 `Yes to All` 以繼續安裝。
@@ -92,7 +92,7 @@ Are you sure you want to install the modules from 'PSGallery'?
 
 若要開始使用 Azure PowerShell，您必須使用 [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 將 `AzureRM` 載入您目前的 PowerShell 工作階段，然後使用您的 Azure 認證登入。
 
-```powershell
+```powershell-interactive
 # Import the module into the PowerShell session
 Import-Module AzureRM
 # Connect to Azure with an interactive dialog for sign-in
@@ -106,7 +106,7 @@ Connect-AzureRmAccount
 
 您可以執行 [Update-Module](/powershell/module/powershellget/update-module) 來更新您的 Azure PowerShell 安裝。 這個命令「不會」將舊版解除安裝。
 
-```powershell
+```powershell-interactive
 Update-Module -Name AzureRM
 ```
 
@@ -116,14 +116,14 @@ Update-Module -Name AzureRM
 
 可以安裝多個版本的 Azure PowerShell。 如果您使用內部部署 Azure Stack 資源、執行較舊版本的 Windows 而無法更新至 PowerShell 5.0，或使用 Azure 傳統部署模型，可能需要一個以上的版本。 若要安裝較舊的版本，請在安裝時提供 `-RequiredVersion` 引數。
 
-```powershell
+```powershell-interactive
 # Install version 1.2.9 of Azure PowerShell
 Install-Module -Name AzureRM -RequiredVersion 1.2.9
 ```
 
 當您載入 Azure PowerShell 模組時，預設會載入最新版本。 若要載入不同的版本，請提供 `-RequiredVersion` 引數。
 
-```powershell
+```powershell-interactive
 # Load version 1.2.9 of Azure PowerShell
 Import-Module -Name AzureRM -RequiredVersion 1.2.9
 ```

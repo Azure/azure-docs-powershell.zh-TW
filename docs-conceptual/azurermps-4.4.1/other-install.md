@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/06/2017
-ms.openlocfilehash: b23d8071c3c91bee1387c54cce1a34004ecdd9ad
-ms.sourcegitcommit: ff44dec6418a449757bded3c6ebe0a7d4c05ee6e
+ms.openlocfilehash: 5016c7e768aba94308d0e78785481fafbac36c74
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50737725"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211769"
 ---
 # <a name="other-installation-methods"></a>其他安裝方法
 
@@ -32,7 +32,7 @@ Azure PowerShell 有多種安裝方法。 慣用方法是搭配使用 PowerShell
 
 一旦完成安裝，您的 `$env:PSModulePath` 設定中應會有包含 Azure PowerShell Cmdlet 的目錄。 下列命令可用來確認系統是否已正確安裝 Azure PowerShell。
 
-```powershell
+```powershell-interactive
 # To make sure the Azure PowerShell module is available after you install
 Get-Module -ListAvailable Azure* | Select-Object Name, Version, Path
 ```
@@ -56,7 +56,7 @@ At line:1 char:1
 
 若要修正此錯誤，請重新啟動電腦或使用完整路徑來匯入模組。 例如︰
 
-```powershell
+```powershell-interactive
 Import-Module "$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\AzureRM.psd1"
 ```
 
