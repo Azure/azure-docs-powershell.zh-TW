@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: a9cd0667e098e6b2c8577d11218b842548bee9d3
-ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
+ms.openlocfilehash: 39d9fa6e354c3c3448053c9cdc98fdc7f55b068d
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51212615"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51274563"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Microsoft Azure PowerShell 6.0.0 的重大變更
 
@@ -255,8 +255,8 @@ Remove-AzureRmDataLakeStoreItem -Account "ContosoADL" -path /myFolder -Recurse
 - 此 Cmdlet 不再接受組成存取權杖的個別參數；相反地，Cmdlet 會取代明確的存取權杖參數，例如 `Service` 或 `Permissions`，並使用泛型 `TemplateUri` 參數，對應至在其他位置定義的範例存取權杖 (假定使用的是儲存體 PowerShell Cmdlet，或是依據儲存體文件手動組成。)此 Cmdlet 會保留 `ValidityPeriod` 參數。
 
 如需撰寫 Azure 儲存體共用存取權杖的詳細資訊，請分別參閱以下文件頁面：
-- [建構服務 SAS] (https://docs.microsoft.com/rest/api/storageservices/Constructing-a-Service-SAS)
-- [建構帳戶 SAS] (https://docs.microsoft.com/rest/api/storageservices/constructing-an-account-sas)
+- [建構服務 SAS](https://docs.microsoft.com/rest/api/storageservices/Constructing-a-Service-SAS)
+- [建構帳戶 SAS](https://docs.microsoft.com/rest/api/storageservices/constructing-an-account-sas)
 
 ```powershell-interactive
 # Old

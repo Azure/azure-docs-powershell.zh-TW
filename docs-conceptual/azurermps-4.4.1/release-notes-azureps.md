@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 07/26/2017
-ms.openlocfilehash: 6f0e304c499fc8bf4909e2825d52cd63b1fcbf5d
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 563f84c3af98de066611dd80102e552b31f12883
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100486"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51274920"
 ---
 # <a name="release-notes"></a>版本資訊
 
@@ -228,7 +228,7 @@ ms.locfileid: "38100486"
   * 對 Get-AzureRmVM -Status 輸出公開 MaintenanceRedeployStatus
   * 對 Get-AzureRmComputeResourceSku 的表格格式公開限制與功能
 * DataLakeStore
-  * 修正此問題：https://github.com/Azure/azure-powershell/issues/4323
+  * 修正此問題： https://github.com/Azure/azure-powershell/issues/4323
 * EventHub
   * 為 NamespaceAttributes 新增了 ResourceGroup 屬性
     - 「ResourceGroup」獲得命名空間所在資源群組的名稱
@@ -262,14 +262,15 @@ ms.locfileid: "38100486"
       - Remove-AzureRMRoleDefinition
       - Set-AzureRMRoleDefinition
 * ServiceBus
-    * 為命名空間、佇列與主題新增了以下新的 Commandlet。 授權規則作業是根據參數集而執行。
-     - New-AzureRmServiceBusAuthorizationRule - 將新的 AuthorizationRule 新增至現有的 ServiceBus 命名空間/佇列/主題。
-     - Get-AzureRmServiceBusAuthorizationRule - 取得現有 ServiceBus 命名空間/佇列/主題的 AuthorizationRule/AuthorizationRule 清單。
-     - Set-AzureRmServiceBusAuthorizationRule - 更新 Servicebus 命名空間/佇列/主題現有 AuthorizationRule 的屬性。
-     - New-AzureRmServiceBusKey - 為現有 ServiceBus 命名空間/佇列/主題的 AuthorizationRule 產生新的主要/次要索引鍵。
-     - Get-AzureRmServiceBusKey - 取得現有 ServiceBus 命名空間/佇列/主題的 AuthorizationRule 的主要/次要索引鍵。
-     - Remove-AzureRmServiceBusNamespaceAuthorizationRule - 刪除 ServiceBus 命名空間/佇列/主題的現有 AuthorizationRule。
-    * 新增了資源群組屬性至 NamespceAttributes
+  * 為命名空間、佇列與主題新增了以下新的 Commandlet。 授權規則作業是根據參數集而執行。
+    - New-AzureRmServiceBusAuthorizationRule - 將新的 AuthorizationRule 新增至現有的 ServiceBus 命名空間/佇列/主題。
+    - Get-AzureRmServiceBusAuthorizationRule - 取得現有 ServiceBus 命名空間/佇列/主題的 AuthorizationRule/AuthorizationRule 清單。
+    - Set-AzureRmServiceBusAuthorizationRule - 更新 Servicebus 命名空間/佇列/主題現有 AuthorizationRule 的屬性。
+    - New-AzureRmServiceBusKey - 為現有 ServiceBus 命名空間/佇列/主題的 AuthorizationRule 產生新的主要/次要索引鍵。
+    - Get-AzureRmServiceBusKey - 取得現有 ServiceBus 命名空間/佇列/主題的 AuthorizationRule 的主要/次要索引鍵。
+    - Remove-AzureRmServiceBusNamespaceAuthorizationRule - 刪除 ServiceBus 命名空間/佇列/主題的現有 AuthorizationRule。
+  * 新增了資源群組屬性至 NamespceAttributes
+
 * Sql
     * 更新 Set-AzureRmSqlServerTransparentDataEncryptionProtector，以在加密保護裝置類型設為 AzureKeyVault 時，顯示警告並要求確認
     * 為稽核設定新增更新的 Cmdlet
@@ -297,15 +298,16 @@ ms.locfileid: "38100486"
 
 ## <a name="20170717---version-421"></a>2017.07.17 - 版本 4.2.1
 * 計算
-    - 修正 VM 磁碟和 VM 磁碟快照集建立和更新 Cmdlet 的問題，(連結) [https://github.com/azure/azure-powershell/issues/4309]
-      - New-AzureRmDisk
-      - New-AzureRmSnapshot
-      - Update-AzureRmDisk
-      - Update-AzureRmSnapshot
+  - 修正 VM 磁碟和 VM 磁碟快照集建立和更新 Cmdlet 的問題，(連結) [<https://github.com/azure/azure-powershell/issues/4309>]
+    - New-AzureRmDisk
+    - New-AzureRmSnapshot
+    - Update-AzureRmDisk
+    - Update-AzureRmSnapshot
 * 設定檔
-    - 修正 RDFE 中非互動使用者驗證問題 (連結) [https://github.com/Azure/azure-powershell/issues/4299]
+  - 修正 RDFE 中非互動使用者驗證問題 (連結) [<https://github.com/Azure/azure-powershell/issues/4299>]
+
 * ServiceManagement
-    - 修正非互動使用者驗證問題 (連結) [https://github.com/Azure/azure-powershell/issues/4299]
+  - 修正非互動使用者驗證問題 (連結) [<https://github.com/Azure/azure-powershell/issues/4299>]
 
 ## <a name="2017711---version-420"></a>2017.7.11 - 版本 4.2.0
 * AnalysisServices
@@ -313,7 +315,7 @@ ms.locfileid: "38100486"
         - 引進用以擷取 AS 伺服器記錄檔 Export-AzureAnalysisServicesInstanceLog 的 API
 * 自動化
     * 針對 New-AzureRmAutomationSchedule，正確設定每週和每月排程的 TimeZone 值
-        - 在此問題中可找到詳細資訊：https://github.com/Azure/azure-powershell/issues/3043
+        - 在此問題中可找到詳細資訊： https://github.com/Azure/azure-powershell/issues/3043
 * AzureBatch
     - 新增 Get-AzureBatchJobPreparationAndReleaseTaskStatus cmdlet。
     - 將位元組範圍的開始與結束加入 Get-AzureBatchNodeFileContent 參數。
@@ -368,7 +370,7 @@ ms.locfileid: "38100486"
         - Add-AzureRmDataLakeStoreItemContent
 * Dns
     * 針對 Get-AzureRmDnsZone 修正管線情節中的錯誤
-        - 如需詳細資訊，請參閱：https://github.com/Azure/azure-powershell/issues/4203
+        - 如需詳細資訊，請參閱： https://github.com/Azure/azure-powershell/issues/4203
 * HDInsight
     * 新增支援以啟用/停用 Operations Management Suite (OMS)
     * 新的 Cmdlet
@@ -435,7 +437,7 @@ ms.locfileid: "38100486"
         - Get-AzureRmVirtualNetworkUsageList
 * 設定檔
     * 修正使用 Import-AzureRmContext 或 Save-AzureRmContext 時的錯誤
-        - 在此問題中可找到詳細資訊：https://github.com/Azure/azure-powershell/issues/3954
+        - 在此問題中可找到詳細資訊： https://github.com/Azure/azure-powershell/issues/3954
 * RecoveryServices.SiteRecovery
     * 推出新的 Azure Site Recovery 作業模組。
         - 所有 Cmdlet 的開頭均為 AzureRmRecoveryServicesAsr*
@@ -445,7 +447,7 @@ ms.locfileid: "38100486"
     * 已取代的伺服器升級 Cmdlet，因為舊的伺服器版本 (2.0) 已經不存在。
     * 將新的選擇性切換參數「AssignIdentity」加入 New-AzureRmSqlServer 和 Set-AzureRmSqlServer Cmdlet，以支援佈建 SQL 伺服器資源的資源身分識別
     * 參數 ResourceGroupName 現在是 Get-AzureRmSqlServer 的選擇性項目
-        - 在下列問題中可找到詳細資訊：https://github.com/Azure/azure-powershell/issues/635
+        - 在下列問題中可找到詳細資訊： https://github.com/Azure/azure-powershell/issues/635
 * ExpressRoute 的 ServiceManagement：
     * 更新 New-AzureBgpPeering Cmdlet，新增下列選項：
         - PeerAddressType：可指定「IPv4」或「IPv6」的值，以建立對應位址系列類型的 BGP 對等互連
@@ -531,7 +533,7 @@ ms.locfileid: "38100486"
       * 新增 `-EnvironmentName` 參數別名，以便回溯相容於 AzureRM.profile 的 2.x 版本
 
 ## <a name="20170512---version-401"></a>2017.05.12 - 版本 4.0.1
- * 修正離線案例中 New-AzureStorageContext 的問題：https://github.com/Azure/azure-powershell/issues/3939
+ * 修正離線案例中 New-AzureStorageContext 的問題： https://github.com/Azure/azure-powershell/issues/3939
 
 ## <a name="20170510---version-400"></a>2017.05.10 - 版本 4.0.0
 
@@ -660,7 +662,7 @@ ms.locfileid: "38100486"
 * ServiceBus
 
   - 錯誤修正：ServiceBus 佇列物件屬性值已設為 Null，該物件是做為 Set-AzureRmServiceBusQueue Cmdlet 中的輸入參數使用以更新佇列。
-   - 受影響的屬性包括 LockDuration、EntityAvailabilityStatus、DuplicateDetectionHistoryTimeWindow、MaxDeliveryCount 和 MessageCount
+    - 受影響的屬性包括 LockDuration、EntityAvailabilityStatus、DuplicateDetectionHistoryTimeWindow、MaxDeliveryCount 和 MessageCount
 * ServiceFabric
 
   - 已新增適用於 Service Fabric 的 Cmdlet

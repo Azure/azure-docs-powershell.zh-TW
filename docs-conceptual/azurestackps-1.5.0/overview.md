@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
-ms.openlocfilehash: 18861f0e5232e0b505767aa9609099afe88f9477
-ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
+ms.openlocfilehash: afa83a6258e57e961576b328e67fad634704dddf
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51211157"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51275311"
 ---
 # <a name="azure-stack-module-150"></a>Azure Stack 模組 1.5.0
 
@@ -46,7 +46,7 @@ Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 Install-Module -Name AzureStack -RequiredVersion 1.5.0
 ```
 
-##<a name="release-notes"></a>版本資訊
+## <a name="release-notes"></a>版本資訊
 * 已更新所有 Azure Stack Admin 模組以取得比 AzureRm.Profile 模組上更大或相等的相依性
 * 支援處理所有模組中的巢狀資源名稱
 * 修正所有模組中的錯誤 (bug)，其中 ErrorActionPreference 會複寫為「停止」
