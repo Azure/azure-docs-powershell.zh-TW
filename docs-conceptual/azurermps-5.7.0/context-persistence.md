@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
 ms.openlocfilehash: 164444b7bacbef202513bfafe2f75bdcd6d027c4
-ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51211293"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51274427"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>在 PowerShell 工作階段之間保存使用者認證
 
