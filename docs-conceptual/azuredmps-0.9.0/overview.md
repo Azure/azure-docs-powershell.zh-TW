@@ -10,14 +10,14 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 09/26/2018
 ms.openlocfilehash: f69dc1455cac18d46acff6588755198b97f4dec1
-ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51274070"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211531"
 ---
-# <a name="overview-of-azure-deployment-manager"></a><span data-ttu-id="e0086-103">Azure 部署管理員概觀</span><span class="sxs-lookup"><span data-stu-id="e0086-103">Overview of Azure Deployment Manager</span></span>
+# <a name="overview-of-azure-deployment-manager"></a><span data-ttu-id="27153-103">Azure 部署管理員概觀</span><span class="sxs-lookup"><span data-stu-id="27153-103">Overview of Azure Deployment Manager</span></span>
 
-<span data-ttu-id="e0086-104">部署管理員可讓您使用安全部署實務，跨多區域部署服務。</span><span class="sxs-lookup"><span data-stu-id="e0086-104">Deployment Manager enables you to use safe deployment practices when deploying your service across many regions.</span></span>
+<span data-ttu-id="27153-104">部署管理員可讓您使用安全部署實務，跨多區域部署服務。</span><span class="sxs-lookup"><span data-stu-id="27153-104">Deployment Manager enables you to use safe deployment practices when deploying your service across many regions.</span></span>
 
-<span data-ttu-id="e0086-105">Azure 部署管理員處於公開預覽狀態。</span><span class="sxs-lookup"><span data-stu-id="e0086-105">Azure Deployment Manager is in public preview.</span></span> <span data-ttu-id="e0086-106">若要了解如何註冊預覽版，並使用 Azure 部署管理員，請參閱[透過 Azure 部署管理員啟用安全部署實務](https://docs.microsoft.com/en-us/azure/azure-resource-manager/deployment-manager-overview)。</span><span class="sxs-lookup"><span data-stu-id="e0086-106">To learn how to sign up for the preview and use Azure Deployment Manager, see [Enable safe deployment practices with Azure Deployment Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/deployment-manager-overview).</span></span> <span data-ttu-id="e0086-107">如需教學課程，請參閱[使用 Azure 部署管理員搭配 Resource Manager 範本](https://docs.microsoft.com/en-us/azure/azure-resource-manager/deployment-manager-tutorial)。</span><span class="sxs-lookup"><span data-stu-id="e0086-107">For a tutorial, see [Use Azure Deployment Manager with Resource Manager templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/deployment-manager-tutorial).</span></span>
+<span data-ttu-id="27153-105">Azure 部署管理員處於公開預覽狀態。</span><span class="sxs-lookup"><span data-stu-id="27153-105">Azure Deployment Manager is in public preview.</span></span> <span data-ttu-id="27153-106">若要了解如何註冊預覽版，並使用 Azure 部署管理員，請參閱[透過 Azure 部署管理員啟用安全部署實務](https://docs.microsoft.com/en-us/azure/azure-resource-manager/deployment-manager-overview)。</span><span class="sxs-lookup"><span data-stu-id="27153-106">To learn how to sign up for the preview and use Azure Deployment Manager, see [Enable safe deployment practices with Azure Deployment Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/deployment-manager-overview).</span></span> <span data-ttu-id="27153-107">如需教學課程，請參閱[使用 Azure 部署管理員搭配 Resource Manager 範本](https://docs.microsoft.com/en-us/azure/azure-resource-manager/deployment-manager-tutorial)。</span><span class="sxs-lookup"><span data-stu-id="27153-107">For a tutorial, see [Use Azure Deployment Manager with Resource Manager templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/deployment-manager-tutorial).</span></span>
