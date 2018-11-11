@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 09/11/2018
 ms.openlocfilehash: 5378cdb9d70aa0d2dc617d06d3c887ec20eb7767
-ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51212661"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51274597"
 ---
 # <a name="get-started-with-azure-powershell"></a>開始使用 Azure PowerShell
 

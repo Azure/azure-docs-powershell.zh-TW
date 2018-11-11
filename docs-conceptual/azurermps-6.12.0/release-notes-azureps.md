@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 08/28/2018
-ms.openlocfilehash: c60bc9197266cc1da37cc9af7baf03e7ba8fb7ac
-ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
+ms.openlocfilehash: 8a7b184ed06eb078956229fa67d02840014e3aaf
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51212621"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51275515"
 ---
 # <a name="release-notes"></a>版本資訊
 
@@ -164,7 +164,7 @@ ms.locfileid: "51212621"
 #### <a name="azurermprofile"></a>AzureRM.Profile
 * 儲存體通用程式碼的小幅變更
 * 已更新說明檔以包含完整的參數類型。
-- 已變更 - 非強制性的 ServicePrincipal 位在 ServicePrincipalCertificateWithSubscriptionId 參數集 
+* 已變更 - 非強制性的 ServicePrincipal 位在 ServicePrincipalCertificateWithSubscriptionId 參數集 
 
 #### <a name="azurestorage"></a>Azure.Storage
 * 支援使用 OAuth 建立儲存體內容。 
@@ -403,7 +403,7 @@ ms.locfileid: "51212621"
 
 #### <a name="azurestorage"></a>Azure.Storage
 * 移除 Azure 檔案共用 5TB 的配額限制
-- Set-AzureStorageShareQuota
+* Set-AzureStorageShareQuota
 
 #### <a name="azurermanalysisservices"></a>AzureRM.AnalysisServices
 * 已更新至最新版本的 Azure ClientRuntime。
@@ -680,8 +680,8 @@ ms.locfileid: "51212621"
 
 #### <a name="azurestorage"></a>Azure.Storage
 * 支援使用唯寫 SAS 權杖上傳 Blob 或檔案
-- Set-AzureStorageBlobContent
-- Set-AzureStorageFileContent
+* Set-AzureStorageBlobContent
+* Set-AzureStorageFileContent
 
 #### <a name="azurermanalysisservices"></a>AzureRM.AnalysisServices
 * 將必要屬性 ResourceGroupName 新增至 AS。
