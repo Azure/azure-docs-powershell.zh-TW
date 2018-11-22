@@ -1,19 +1,18 @@
 ---
-title: 使用 Azure PowerShell 來管理 Azure 訂用帳戶 | Microsoft Docs
+title: 使用 Azure PowerShell 來管理 Azure 訂用帳戶
 description: 使用 Azure PowerShell 來管理 Azure 訂用帳戶
-keywords: Azure PowerShell, 訂用帳戶
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 03/30/2017
-ms.openlocfilehash: 12e304f32f585c1af40d20579cd46999e0a12395
+ms.date: 09/11/2018
+ms.openlocfilehash: a93461af1dafbf8f2c85ef127ecaefadf3be2f52
 ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/22/2018
-ms.locfileid: "52257953"
+ms.locfileid: "52259460"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>管理多個 Azure 訂用帳戶
 
@@ -21,7 +20,7 @@ ms.locfileid: "52257953"
 
 1. 取得您帳戶中所有訂用帳戶的清單。
 
-    ```powershell-interactive
+    ```azurepowershell-interactive
     Get-AzureRmSubscription
     ```
 
@@ -50,13 +49,13 @@ ms.locfileid: "52257953"
 
 2. 預設設定。
 
-    ```powershell-interactive
-    Select-AzureRmSubscription -SubscriptionName "My Demos"
+    ```azurepowershell-interactive
+    Select-AzureRmSubscription -Subscription "My Demos"
     ```
 
 3. 執行 `Get-AzureRmContext` Cmdlet 來驗證變更。
 
-    ```powershell-interactive
+    ```azurepowershell-interactive
     Get-AzureRmContext
     ```
 
@@ -69,4 +68,4 @@ ms.locfileid: "52257953"
     CurrentStorageAccount :
     ```
 
-一旦您設定預設訂用帳戶後，所有後續的 Azure PowerShell 命令都會對此訂用帳戶執行。
+在您設定預設訂用帳戶後，所有的 Azure PowerShell 命令都會對此訂用帳戶執行。

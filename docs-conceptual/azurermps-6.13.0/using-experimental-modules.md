@@ -6,15 +6,15 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/05/2017
-ms.openlocfilehash: ff58693c8ec21b7e50e37bd85975a9ae3980a5e7
+ms.date: 09/11/2018
+ms.openlocfilehash: 77d0ce36ae3ab7c7bddd3febef4600fc9652850f
 ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/22/2018
-ms.locfileid: "52259126"
+ms.locfileid: "52259411"
 ---
-# <a name="using-experimental-azure-powershell-modules"></a>使用實驗性 Azure PowerShell 模組
+# <a name="use-experimental-azure-powershell-modules"></a>使用實驗性 Azure PowerShell 模組
 
 Azure PowerShell 小組著重於 Azure 中的開發人員工具 (特別是 CLI)，正針對 Azure PowerShell 體驗的許多增強功能進行實驗。
 
@@ -89,8 +89,8 @@ Azure CLI 2.0 使用一系列的智慧型預設值，讓終端使用者能更輕
 
 例如，「建立 web 應用程式」情節可能會有 `-Git` 或 `-AddRemote` 參數，能將 "azure" 遠端自動新增至現有的 Git 存放庫。
 
-- 可設定的預設值 - 使用者應該能夠預設諸如 `-ResourceGroupName` 和 `-Location` 等特定的通用參數。
+- 可設定的預設值 - 使用者應該能夠設定諸如 `-ResourceGroupName` 和 `-Location` 等特定通用參數的預設值。
 
-- 大小的預設值 - 資源「大小」會混淆使用者，因為許多資源提供者都會使用不同的名稱 (例如，"Standard\_DS1\_v2" 或 "S1")。 不過，大部分使用者較關心的是成本。 因此，以定價排程作為基礎來定義「通用」大小是合理的。 使用者可以選擇特定的大小，或是讓 Azure PowerShell 以資源預算作為基礎選擇_最佳選項_。
+- 大小的預設值 - 資源「大小」會混淆使用者，因為許多資源提供者都會使用不同的名稱 (例如，"Standard\_DS1\_v2" 或 "S1")。 不過，大部分使用者較關心的是成本。 以定價排程作為基礎來定義「通用」大小是合理的。 使用者可以選擇特定的大小，或是讓 Azure PowerShell 以資源預算作為基礎選擇_最佳選項_。
 
 - 輸出格式 - Azure PowerShell 目前會傳回 `PSObject`，且幾乎沒有主控台輸出。 Azure PowerShell 需要向使用者顯示一些關於已使用的「智慧型預設值」資訊。

@@ -6,17 +6,17 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 05/15/2017
-ms.openlocfilehash: 9a93145f2abeea466a739775ca8ae7e337e78166
+ms.date: 09/09/2018
+ms.openlocfilehash: 6a42217c47c1e5101a708da87c15fc14004f2069
 ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/22/2018
-ms.locfileid: "52259143"
+ms.locfileid: "52259423"
 ---
 # <a name="sign-in-with-azure-powershell"></a>使用 Azure PowerShell 登入
 
-Azure PowerShell 支援多種驗證方法。 最簡單的入門方法是在命令列以互動方式登入。
+Azure PowerShell 支援數種驗證方法。 最簡單的入門方法是在命令列以互動方式登入。
 
 ## <a name="sign-in-interactively"></a>以互動方式登入
 
@@ -26,16 +26,16 @@ Azure PowerShell 支援多種驗證方法。 最簡單的入門方法是在命�
 Connect-AzureRmAccount
 ```
 
-執行時，此 Cmdlet 會顯示對話方塊，提示您輸入與 Azure 帳戶相關聯的電子郵件地址和密碼。 驗證時，會針對目前的 PowerShell 工作階段儲存該資訊，關閉對話方塊，您就具有所有 Azure PowerShell Cmdlet 的存取權。
+執行時，此 Cmdlet 會顯示對話方塊，提示您輸入與 Azure 帳戶相關聯的電子郵件地址和密碼。 此驗證的效用限於目前的 PowerShell 工作階段。
 
 > [!IMPORTANT]
-> 此登入_僅_適用於目前的 PowerShell 工作階段。 若要在多個工作階段之間保持驗證，請參閱[持續性認證](context-persistence.md)中的文章。
+> 從 Azure PowerShell 6.3.0 開始，只要您保持登入 Windows，您的認證就會在多個 PowerShell 工作階段之間共用。 如需詳細資訊，請參閱[持續性認證](context-persistence.md)中的文章。
 
 ## <a name="sign-in-with-a-service-principal"></a>使用服務主體來登入
 
-服務主體提供您建立非互動式帳戶的方式，以用來操控資源。 服務主體就像是使用者帳戶，您可以使用 Azure Active Directory 對其套用規則。 僅授與服務主體所需的最低權限，可確保您的自動化指令碼會更加安全。
+服務主體為非互動式 Azure 帳戶。 如同其他使用者帳戶，其權限也受到 Azure Active Directory 的管理。 藉由僅為服務主體授與其所需的權限，您的自動化指令碼得以受到保護。
 
-如果您需要建立服務主體以便與 Azure PowerShell 搭配使用，請參閱[使用 Azure PowerShell 建立 Azure 服務主體](create-azure-service-principal-azureps.md)。
+若要了解如何建立與 Azure PowerShell 搭配使用的服務主體，請參閱[使用 Azure PowerShell 建立 Azure 服務主體](create-azure-service-principal-azureps.md)。
 
 若要使用服務主體來登入，請使用 `-ServicePrincipal` 引數和 `Connect-AzureRmAccount` Cmdlet。 您也需要服務主體的應用程式識別碼、登入認證，以及與服務主體相關聯的租用戶識別碼。 若要取得服務主體的認證作為適當物件，請使用 [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential) Cmdlet。 這個 Cmdlet 會顯示對話方塊，讓您在其中輸入服務主體使用者識別碼和密碼。
 
@@ -44,21 +44,31 @@ $pscredential = Get-Credential
 Connect-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
 ```
 
-## <a name="sign-in-using-managed-identities-for-azure-resources"></a>使用適用於 Azure 資源的受控識別登入
+## <a name="sign-in-using-an-azure-managed-service-identity"></a>使用 Azure 受控服務識別登入
 
 適用於 Azure 資源的受控識別是 Azure Active Directory 的一項功能。 您可以使用受控識別服務主體進行登入，並取得僅限應用程式的存取權杖來存取其他資源。 受控識別僅適用於在 Azure 雲端中執行的虛擬機器。
 
 若想進一步了解適用於 Azure 資源的受控識別，請參閱[如何在 Azure VM 上使用適用於 Azure 資源的受控識別取得存取權杖](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token)。
 
+## <a name="sign-in-as-a-cloud-solution-provider-csp"></a>以雲端解決方案提供者 (CSP) 身分登入
+
+[雲端解決方案提供者 (CSP)](https://azure.microsoft.com/en-us/offers/ms-azr-0145p/) 登入需要使用 `-TenantId`。 一般來說，此參數可以提供作為租用戶識別碼或網域名稱。 不過，如果是 CSP 登入，則必須提供為**租用戶識別碼**。
+
+```azurepowershell-interactive
+Connect-AzureRmAccount -TenantId 'xxxx-xxxx-xxxx-xxxx'
+```
+
 ## <a name="sign-in-to-another-cloud"></a>登入其他雲端
 
-Azure 雲端服務提供不同的環境，以遵循各個區域的資料處理法規。 如果您的 Azure 帳戶位於與其中一個區域相關聯的雲端，則需要在登入時指定環境。 例如，如果您的帳戶位於中國雲端，則可使用下列命令來登入：
+Azure 雲端服務提供符合區域資料處理法規的環境。
+針對區域雲端中的帳戶，使用 `-Environment` 引數設定您登入時的環境。
+例如，如果您的帳戶位於中國雲端：
 
 ```azurepowershell-interactive
 Connect-AzureRmAccount -Environment AzureChinaCloud
 ```
 
-使用下列命令來取得可用環境的清單：
+下列命令可取得可用環境的清單：
 
 ```azurepowershell-interactive
 Get-AzureRmEnvironment | Select-Object Name
@@ -76,4 +86,4 @@ Get-AzureRmEnvironment | Select-Object Name
 * [New-AzureRmRoleDefinition](/powershell/module/AzureRM.Resources/New-AzureRmRoleDefinition)
 * [Remove-AzureRmRoleAssignment](/powershell/module/AzureRM.Resources/Remove-AzureRmRoleAssignment)
 * [Remove-AzureRmRoleDefinition](/powershell/module/AzureRM.Resources/Remove-AzureRmRoleDefinition)
-* [Set-AzureRmRoleDefinition](/powershell/moduel/AzureRM.Resources/Set-AzureRmRoleDefinition)
+* [Set-AzureRmRoleDefinition](/powershell/module/AzureRM.Resources/Set-AzureRmRoleDefinition)
