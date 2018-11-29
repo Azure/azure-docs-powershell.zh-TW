@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
 ms.openlocfilehash: 39d9fa6e354c3c3448053c9cdc98fdc7f55b068d
-ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
+ms.sourcegitcommit: 558436c824d9b59731aa9b963cdc8df4dea932e7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "52259443"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52587120"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Microsoft Azure PowerShell 6.0.0 的重大變更
 
