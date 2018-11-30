@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 11/16/2018
-ms.openlocfilehash: 32e96c6459c9db0c4b9eda0cc170c85ba99a22ca
-ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
+ms.date: 11/26/2018
+ms.openlocfilehash: 3d52b18750341f220dc8e10d6bf89796457c5a10
+ms.sourcegitcommit: 558436c824d9b59731aa9b963cdc8df4dea932e7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "52259455"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52588174"
 ---
 # <a name="install-the-azure-powershell-az-module"></a>安裝 Azure PowerShell 'Az' 模組
 
@@ -32,7 +32,9 @@ $PSVersionTable.PSVersion
 
 > [!IMPORTANT]
 >
-> 您不得同時在一個系統上安裝 `AzureRM` 和 `Az` 模組。 若要安裝 `Az` 模組，必須先將 `AzureRM` 解除安裝。 如需執行該動作的指示，請參閱[將 Azure PowerShell 模組 (AzureRM) 解除安裝](uninstall-azurerm-ps.md)。
+> 您可以同時安裝 `AzureRM` 和 `Az` 模組。 若您已安裝了兩個模組，__請勿啟用別名__。
+> 啟用別名會讓 `AzureRM` Cmdlet 和 `Az` 命令別名產生衝突，且可能導致未預期的行為。
+> 建議您在安裝 `Az` 模組之前，先將 `AzureRM` 解除安裝。 您可以隨時將 `AzureRM` 解除安裝，或啟用別名。 如需解除安裝作的指示，請參閱[將 Azure PowerShell 模組 (AzureRM) 解除安裝](uninstall-azurerm-ps.md)。 
 
 若要在全域範圍安裝模組，您需要較高的權限，以從 PowerShell 資源庫安裝模組。 若要安裝 Azure PowerShell，請在提升權限的工作階段中執行下列命令 (在 Windows 上「以系統管理員身分執行」，或在 macOS 或 Linux 上使用超級使用者權限執行)：
 
