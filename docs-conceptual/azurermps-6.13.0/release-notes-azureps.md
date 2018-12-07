@@ -161,7 +161,7 @@ ms.locfileid: "52826726"
 * 淘汰的 Azure 備份 Cmdlet。
 
 #### <a name="azurermcompute"></a>AzureRM.Compute
-* 已將新的大小新增至虛擬機器大小白名單，當使用 'New-AzureRmVm' 的簡單參數集合時，將會開啟加速的網路
+* 已將新的大小新增至虛擬機器大小允許清單，當使用 'New-AzureRmVm' 的簡單參數集合時，將會開啟加速的網路
 * 已將 ResourceName 引數完成器新增至所有 Cmdlet。
 
 #### <a name="azurermdatalakestore"></a>AzureRM.DataLakeStore
