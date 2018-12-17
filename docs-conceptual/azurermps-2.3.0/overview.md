@@ -9,18 +9,18 @@ ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
 ms.openlocfilehash: cd415e862bfaa2b767cce108689ebaf34ef74305
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52826845"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53218148"
 ---
 # <a name="azurerm-module-230"></a>AzureRM 模組 2.3.0
 
 ## <a name="requirements"></a>需求：
 支援的最低 Azure Stack 版本為 1808 版。
 
-請注意：如果您使用的是舊版，請安裝版本 1.2.11
+注意：如果您使用的是舊版，請安裝版本 1.2.11
 
 
 ## <a name="install"></a>Install

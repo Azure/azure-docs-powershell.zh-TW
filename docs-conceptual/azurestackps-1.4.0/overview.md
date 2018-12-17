@@ -8,19 +8,19 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
-ms.openlocfilehash: 72d147f5bc9c882083dda6b33b1c89663fd2eb34
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.openlocfilehash: c87e53a9befe20a664b73fd86a52033ff5841e29
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52826641"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53216376"
 ---
 # <a name="azure-stack-module-140"></a>Azure Stack 模組 1.4.0
 
 ## <a name="requirements"></a>需求：
 支援的最低 Azure Stack 版本為 1804 版。
 
-請注意：如果您使用的是舊版，請安裝版本 1.2.11
+注意：如果您使用的是舊版，請安裝版本 1.2.11
 
 ## <a name="known-issues"></a>已知問題：
 

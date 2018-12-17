@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
 ms.openlocfilehash: ef796bcb81e24b1942c644aad2b4ec7705916b02
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52826539"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53217740"
 ---
 # <a name="install-and-configure-azure-powershell"></a>安裝並設定 Azure PowerShell
 
@@ -84,7 +84,7 @@ AzureRM 模組是 Azure Resource Manager Cmdlet 的彙總套件模組。 當您�
 
 若有安裝舊版的 Azure PowerShell，則可能會出現錯誤。 若要解決此問題，請參閱本文的[更新為新版的 Azure PowerShell](#update-azps) 小節。
 
-## <a name="step-3-load-the-azurerm-module"></a>步驟 3︰載入 AzureRM 模組
+## <a name="step-3-load-the-azurerm-module"></a>步驟 3：載入 AzureRM 模組
 
 安裝模組後，您需要將模組載入您的 PowerShell 工作階段。 您應該在一般 (未提高權限) PowerShell 工作階段中執行此動作。 使用 `Import-Module`Cmdlet 載入模組，如下所示︰
 

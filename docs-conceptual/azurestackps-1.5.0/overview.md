@@ -9,18 +9,18 @@ ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
 ms.openlocfilehash: afa83a6258e57e961576b328e67fad634704dddf
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52827304"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53216614"
 ---
 # <a name="azure-stack-module-150"></a>Azure Stack 模組 1.5.0
 
 ## <a name="requirements"></a>需求：
 支援的最低 Azure Stack 版本為 1808 版。
 
-請注意：如果您使用的是舊版，請安裝版本 1.4.0
+注意：如果您使用的是舊版，請安裝版本 1.4.0
 
 ## <a name="known-issues"></a>已知問題：
 
