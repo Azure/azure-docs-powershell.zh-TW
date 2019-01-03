@@ -7,23 +7,18 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/06/2018
-ms.openlocfilehash: 47611281f67d68c9fc2686e0c6156b060a225158
-ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
+ms.openlocfilehash: 936bb24eecb4077080e172bf0d29fe57ec652187
+ms.sourcegitcommit: 797c18f93aaa495ef005993b2e202d7378588dfa
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53217519"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53594449"
 ---
 # <a name="install-azure-powershell-on-macos-or-linux"></a>在 macOS 或 Linux 上安裝 Azure PowerShell
 
 針對非 Windows 平台，可以在 PowerShell Core v6 中執行 Azure PowerShell。 這版的 PowerShell 是針對支援 .NET Core 的任何平台使用所建置。 若要使用這些平台，可以使用 .NET Core 特別版本的 Azure PowerShell。
 
-> [!NOTE]
-> PowerShell Core v6 與 Azure PowerShell for .NET Core 目前仍處於 Beta 階段。
-> 這些產品只提供有限支援。 若有問題或發現錯誤，請在 GitHub 中提出。
->
-> * [關於 PowerShell Core v6 的問題](https://github.com/PowerShell/PowerShell/issues)
-> * [關於Azure PowerShell 的問題](https://github.com/azure/azure-docs-powershell/issues)
+[!INCLUDE[az-replacing-azurerm.md](../includes/az-replacing-azurerm.md)]
 
 ## <a name="install-powershell-core"></a>安裝 PowerShell Core
 

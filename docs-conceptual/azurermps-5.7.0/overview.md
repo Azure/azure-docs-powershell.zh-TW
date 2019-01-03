@@ -8,14 +8,16 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 08/31/2017
-ms.openlocfilehash: fd7d291683269ac9647abe67663a08fc7e0b4881
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: e5c344ca59de37eeb59bba538e7437d4a0c26ed7
+ms.sourcegitcommit: 4acddc7026522c4fe39de2c4424917d88ee01b7e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39025356"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53736404"
 ---
 # <a name="overview-of-azure-powershell"></a>Azure PowerShell 的概觀
+
+[!INCLUDE[az-replacing-azurerm.md](../includes/az-replacing-azurerm.md)]
 
 Azure PowerShell 提供了一組 Cmdlet，它們會使用 [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) 模型來管理 Azure 資源。 您可以在瀏覽器中將它與 [Azure Cloud Shell](/azure/cloud-shell/overview) 搭配使用，或可將它安裝在本機電腦上，並在任何 PowerShell 工作階段中使用它。
 
@@ -28,9 +30,6 @@ Azure PowerShell 提供了一組 Cmdlet，它們會使用 [Azure Resource Manage
 * [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
 * [SQL Databases](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
 
-> [!NOTE]
-> 如果您的部署使用無法轉換的傳統部署模型，您可以安裝 Azure PowerShell 的服務管理版本。 如需詳細資訊，請參閱[安裝 Azure PowerShell 服務管理模組](/powershell/azure/servicemanagement/install-azure-ps)。
-
 ## <a name="learn-powershell-basics"></a>了解 PowerShell 基本概念
 
 如果您不熟悉 PowerShell，則 PowerShell 的簡介會很有幫助。
@@ -38,7 +37,7 @@ Azure PowerShell 提供了一組 Cmdlet，它們會使用 [Azure Resource Manage
 * [安裝 PowerShell](/powershell/scripting/installing-windows-powershell)
 * [使用 PowerShell 編寫指令碼](/powershell/scripting/scripting-with-windows-powershell)
 
-您也可以觀賞這段影片︰[PowerShell 基本概念：(第 1 部分) 開始使用 PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1)。
+您也可以觀看這段影片：[PowerShell 基本概念：(第 1 部份) 開始使用 PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1)。
 
 或是參加 Microsoft Virtual Academy 的[開始使用 PowerShell Jumpstart](https://mva.microsoft.com/liveevents/powershell-jumpstart)。
 

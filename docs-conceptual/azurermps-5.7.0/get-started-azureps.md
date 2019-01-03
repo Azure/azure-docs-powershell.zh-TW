@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/15/2017
-ms.openlocfilehash: edba82ef095079e24700a47eeb7747b3b28b7643
-ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
+ms.openlocfilehash: a64bc4f07a5dc7d3f42e13877ed3bca53c4987d3
+ms.sourcegitcommit: 6685809f054203bd733c84f68acc69e53e5cca8c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53216682"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53982870"
 ---
 # <a name="get-started-with-azure-powershell"></a>開始使用 Azure PowerShell
 
@@ -24,7 +24,7 @@ Azure PowerShell 的設計是為了讓您從命令列管理 Azure 資源，以�
 
 1. [安裝 Azure PowerShell](install-azurerm-ps.md)。
 
-2. 若要確認安裝是否成功，請從命令列執行 `Get-Module AzureRM -ListAvailable`。
+2. 若要確認安裝是否成功，請從命令列執行 `Get-InstalledModule AzureRM -AllVersions`。
 
 ## <a name="azure-cloud-shell"></a>Azure Cloud Shell
 

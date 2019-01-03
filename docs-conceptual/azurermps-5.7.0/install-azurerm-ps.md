@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/15/2018
-ms.openlocfilehash: 5f7f65aa25d86feb77a85fc28d122118216542cc
-ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
+ms.openlocfilehash: 5561fd7a1b2018c126da26eaad7d51049497ec8e
+ms.sourcegitcommit: 6685809f054203bd733c84f68acc69e53e5cca8c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53217366"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53983006"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>使用 PowerShellGet 在 Windows 上安裝 Azure PowerShell
 
@@ -20,14 +20,12 @@ ms.locfileid: "53217366"
 
 如需在其他平台上安裝 Azure PowerShell 的指示，請參閱[在 macOS 與 Linux 上安裝和設定 Azure PowerShell](install-azurermps-maclinux.md)。
 
-這個版本的 Azure PowerShell 不支援 Azure 傳統部署模型。 如需傳統部署的支援，請遵循[安裝 Azure PowerShell 服務管理模組](/powershell/azure/servicemanagement/install-azure-ps)中的指示。
-
 ## <a name="requirements"></a>需求
 
 若要安裝 Azure PowerShell，您需要 PowerShellGet 1.1.2.0 版或更高版本。 若要檢查您的系統上是否可使用，請執行下列命令：
 
 ```powershell-interactive
-Get-Module -Name PowerShellGet -ListAvailable | Select-Object -Property Name,Version,Path
+Get-InstalledModule -Name PowerShellGet -AllVersions | Select-Object -Property Name,Version,Path
 ```
 
 您應該會看到類似下面的輸出：

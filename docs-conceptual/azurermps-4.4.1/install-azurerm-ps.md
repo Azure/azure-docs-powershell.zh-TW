@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: ef796bcb81e24b1942c644aad2b4ec7705916b02
-ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
+ms.openlocfilehash: fac77e88612091c09106dffea6aa6d3765c1416b
+ms.sourcegitcommit: 6685809f054203bd733c84f68acc69e53e5cca8c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53217740"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53982989"
 ---
 # <a name="install-and-configure-azure-powershell"></a>安裝並設定 Azure PowerShell
 
@@ -21,12 +21,14 @@ ms.locfileid: "53217740"
 
 從 PowerShell 資源庫安裝 Azure PowerShell 是慣用的安裝方法。
 
+[!INCLUDE[az-replacing-azurerm.md](../includes/az-replacing-azurerm.md)]
+
 ## <a name="step-1-install-powershellget"></a>步驟 1：安裝 PowerShellGet
 
 從 PowerShell 資源庫安裝項目需要有 PowerShellGet 模組。 確定您有適當版本的 PowerShellGet 及其他系統需求。 執行下列命令，以查看您的系統上是否已安裝 PowerShellGet。
 
 ```powershell-interactive
-Get-Module -Name PowerShellGet -ListAvailable | Select-Object -Property Name,Version,Path
+Get-InstalledModule -Name PowerShellGet -ListAvailable | Select-Object -Property Name,Version,Path
 ```
 
 您應該會看到類似下面的輸出：
@@ -114,10 +116,10 @@ Import-Module -Name AzureRM
 
 ### <a name="div-idhelpmechoosechecking-the-version-of-azure-powershell"></a><div id="helpmechoose"/>檢查 Azure PowerShell 的版本
 
-雖然我們鼓勵您儘早升級至最新版本，但仍針對數個 Azure PowerShell 版本提供支援。 若要判斷已安裝的 Azure PowerShell 版本，請從命令列執行 `Get-Module AzureRM`。
+雖然我們鼓勵您儘早升級至最新版本，但仍針對數個 Azure PowerShell 版本提供支援。 若要判斷已安裝的 Azure PowerShell 版本，請從命令列執行 `Get-InstalledModule AzureRM`。
 
 ```powershell-interactive
-Get-Module AzureRM -ListAvailable | Select-Object -Property Name,Version,Path
+Get-InstalledModule AzureRM -AllVersions | Select-Object -Property Name,Version,Path
 ```
 
 ### <a name="support-for-classic-deployment-methods"></a>對於傳統部署方法的支援

@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/06/2017
-ms.openlocfilehash: 6cc6d9984e49c0cbc23c7ef3a77b98c0b7f3a8e0
-ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
+ms.openlocfilehash: b7283e4a54cd423282141c07750630050799d59c
+ms.sourcegitcommit: 6685809f054203bd733c84f68acc69e53e5cca8c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53217774"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53982785"
 ---
 # <a name="installing-the-azure-powershell-service-management-module"></a>安裝 Azure PowerShell 服務管理模組
 
@@ -23,7 +23,7 @@ ms.locfileid: "53217774"
 從 PowerShell 資源庫安裝項目需要有 PowerShellGet 模組。 確定您有適當版本的 PowerShellGet 及其他系統需求。 執行下列命令，以查看您的系統上是否已安裝 PowerShellGet。
 
 ```powershell
-Get-Module PowerShellGet -list | Select-Object Name,Version,Path
+Get-InstalledModule PowerShellGet -AllVersions | Select-Object Name,Version,Path
 ```
 
 您應該會看到類似下面的輸出：
@@ -70,7 +70,7 @@ Add-AzureAccount
 
 ## <a name="azure-service-management-cmdlets"></a>Azure 服務管理的 Cmdlet
 
-Azure PowerShell 模組經常會更新。 如果您發現 Cmdlet 的線上說明包含模組中沒有的 Cmdlet 或參數，請下載並安裝最新版的模組。 若要尋找您的模組版本，請輸入︰`(Get-Module Azure).Version`。
+Azure PowerShell 模組經常會更新。 如果您發現 Cmdlet 的線上說明包含模組中沒有的 Cmdlet 或參數，請下載並安裝最新版的模組。 若要尋找您的模組版本，請輸入︰`(Get-InstalledModule Azure).Version`。
 
 如需相關指令碼範例來協助您在 Azure 中自動進行一些常見工作，請參閱 [Windows Azure 指令碼中心](http://www.windowsazure.com/documentation/scripts/)。
 
@@ -88,8 +88,8 @@ Azure PowerShell 模組經常會更新。 如果您發現 Cmdlet 的線上說明
 
 ### <a name="checking-the-version-of-azure-powershell"></a>檢查 Azure PowerShell 的版本
 
-雖然我們鼓勵您儘早升級至最新版本，但支援的 Azure PowerShell 版本有好幾個。 若要判斷已安裝的 Azure PowerShell 版本，請從命令列執行 `Get-Module AzureRM`。
+雖然我們鼓勵您儘早升級至最新版本，但支援的 Azure PowerShell 版本有好幾個。 若要判斷已安裝的 Azure PowerShell 版本，請從命令列執行 `Get-InstalledModule Azure`。
 
 ```powershell
-Get-Module AzureRM -list | Select-Object Name,Version,Path
+Get-InstalledModule Azure -AllVersions | Select-Object Name,Version,Path
 ```
