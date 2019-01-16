@@ -3,16 +3,16 @@ author: sptramer
 ms.author: sttramer
 ms.date: 12/20/2018
 ms.topic: include
-ms.openlocfilehash: a19417fcab60d92edc1867901fe8c4fffdaefd30
-ms.sourcegitcommit: 4acddc7026522c4fe39de2c4424917d88ee01b7e
+ms.openlocfilehash: 0ed886744a95e9f5a9c251c1dfd40d537d31812d
+ms.sourcegitcommit: 007a733342f37894d4aaec7a859dc1ca93c00c92
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53736880"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54029279"
 ---
 > [!NOTE]
 > 
-> 從 2018 年 12 月開始，AzureRM 模組不會再新增任何功能。 AzureRM 會繼續提供支援及收到錯誤修正。 新的功能會在 Azure PowerShell Az 模組中。 若要深入了解 Az 模組，包括如何從 AzureRM 升級，請參閱[主要的 Azure PowerShell 文件](/powershell/azure)。
+> 從 2018 年 12 月開始，AzureRM 模組不會再新增任何功能。 在 2020 年 12 月之前，我們會持續支援 AzureRM，也會接收錯誤修正。 新的功能會在 Azure PowerShell Az 模組中。 若要深入了解 Az 模組，包括如何從 AzureRM 升級，請參閱[主要的 Azure PowerShell 文件](/powershell/azure)。
 >
 > Azure Stack 使用者目前請繼續使用 AzureRM。 支援 Azure Stack 的最新 AzureRM 版本是 [AzureRM 2.3.0](/powershell/azure/azurerm?view=azurermps-2.3.0)。
 >
