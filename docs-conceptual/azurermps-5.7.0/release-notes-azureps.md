@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
 ms.openlocfilehash: 1a9d38cd60ba596c085e5ee9f8d815e238362b1f
-ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
+ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53218097"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56153125"
 ---
 # <a name="release-notes"></a>版本資訊
 

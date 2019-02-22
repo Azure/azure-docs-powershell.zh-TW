@@ -9,11 +9,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.openlocfilehash: 19379a57e2ed369f75b2f02c73c00c1fbe02213e
-ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
+ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53217706"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56144155"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>使用 Azure PowerShell 來建立 Azure 服務主體
 

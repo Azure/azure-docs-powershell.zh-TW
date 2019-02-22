@@ -7,28 +7,28 @@ metadata:
   level: Beginner
   displayType: two-column
   interactive: azurepowershell
-  ms.date: 02/08/2018
-  ms.author: sewhee
-  author: sdwheeler
+  ms.date: 12/13/2018
+  ms.author: sttramer
+  author: sptramer
   manager: carmonm
   ms.devlang: azure-powershell
   ms.prod: powershell
   ms.technology: azure-powershell
-  ms.service: virtual-machines
+  ms.topic: tutorial
   clicktale: true
-  ms.openlocfilehash: 34ee404e432562e4ebfda58e47235d4597ac5b5c
+  ms.openlocfilehash: 98fa4e7428104a4b2e61029e04655b8682743cca
   ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
   ms.translationtype: HT
   ms.contentlocale: zh-TW
   ms.lasthandoff: 02/12/2019
-  ms.locfileid: "56144188"
+  ms.locfileid: "56153137"
 items:
 - durationInMinutes: 1
   content: >-
     在本教學課程中，您將了解使用 Azure PowerShell 設定虛擬機器所需的所有步驟。 本教學課程也涵蓋輸出查詢、Azure 資源重複使用和資源清除。
 
 
-    您可以透過 Azure Cloud Shell 提供的互動式體驗完成本教學課程，也可以在本機[安裝 Azure PowerShell](install-azurerm-ps.md)。
+    您可以透過 Azure Cloud Shell 提供的互動式體驗完成本教學課程，也可以在本機[安裝 Azure PowerShell](install-az-ps.md)。
 
 
     使用 __ctrl-shift-v__ (__在 macOS 上使用 cmd shift hyper-v__) 將教學課程的文字貼到 Azure Cloud Shell。
@@ -40,7 +40,7 @@ items:
 
     ```powershell-interactive
 
-    Connect-AzureRmAccount
+    Connect-AzAccount
 
     ```
 
@@ -56,7 +56,7 @@ items:
 
     ```powershell-interactive
 
-    New-AzureRmResourceGroup -Name TutorialResources -Location eastus
+    New-AzResourceGroup -Name TutorialResources -Location eastus
 
     ```
 
@@ -122,7 +122,7 @@ items:
       OpenPorts = 3389
     }
 
-    $newVM1 = New-AzureRmVM @vmParams
+    $newVM1 = New-AzVM @vmParams
 
     ```
 
@@ -209,13 +209,13 @@ items:
 
     ```powershell-interactive
 
-    $newVM1 | Get-AzureRmNetworkInterface |
+    $newVM1 | Get-AzNetworkInterface |
       Select-Object -ExpandProperty IpConfigurations |
         Select-Object Name,PrivateIpAddress
     ```
 
 
-    在此範例中，我們使用 PowerShell 管線將 \$newVM1 物件傳送給 `Get-AzureRmNetworkInterface` Cmdlet。 從產生的網路介面物件中，選取巢狀的 IpConfigurations 物件。 從 IpConfigurations 物件，選取 Name 和 PrivateIpAddress 屬性。
+    在此範例中，我們使用 PowerShell 管線將 \$newVM1 物件傳送給 `Get-AzNetworkInterface` Cmdlet。 從產生的網路介面物件中，選取巢狀的 IpConfigurations 物件。 從 IpConfigurations 物件，選取 Name 和 PrivateIpAddress 屬性。
 
 
     ```Output
@@ -234,7 +234,7 @@ items:
 
     ```powershell-interactive
 
-    $publicIp = Get-AzureRmPublicIpAddress -Name tutorialPublicIp -ResourceGroupName TutorialResources
+    $publicIp = Get-AzPublicIpAddress -Name tutorialPublicIp -ResourceGroupName TutorialResources
 
 
     $publicIp | Select-Object Name,IpAddress,@{label='FQDN';expression={$_.DnsSettings.Fqdn}}
@@ -242,7 +242,7 @@ items:
     ```
 
 
-    在此範例中，我們使用 `Get-AzureRmPublicIpAddress`，並將結果儲存在 \$publicIp 變數。 在這個變數中選取屬性，並使用運算式來擷取巢狀的 Fqdn 屬性。
+    在此範例中，我們使用 `Get-AzPublicIpAddress`，並將結果儲存在 \$publicIp 變數。 在這個變數中選取屬性，並使用運算式來擷取巢狀的 Fqdn 屬性。
 
 
     ```Output
@@ -286,7 +286,7 @@ items:
       OpenPorts = 3389
     }
 
-    $newVM2 = New-AzureRmVM @vm2Params
+    $newVM2 = New-AzVM @vm2Params
 
 
     $newVM2
@@ -336,12 +336,12 @@ items:
 - durationInMinutes: 4
   title: 清除
   content: >-
-    現在已完成本教學課程，可以開始清除已建立的資源。 您可以使用 `Remove-AzureRmResource` 命令刪除個別的資源，但使用 `Remove-AzureRmResourceGroup` 命令刪除群組是移除資源群組中所有資源最安全的方法。
+    現在已完成本教學課程，可以開始清除已建立的資源。 您可以使用 `Remove-AzResource` 命令刪除個別的資源，但使用 `Remove-AzResourceGroup` 命令刪除群組是移除資源群組中所有資源最安全的方法。
 
 
     ```powershell-interactive
 
-    $job = Remove-AzureRmResourceGroup -Name TutorialResources -Force -AsJob
+    $job = Remove-AzResourceGroup -Name TutorialResources -Force -AsJob
 
 
     $job
@@ -355,7 +355,7 @@ items:
 
     --     ----            -------------   -----         -----------     --------             -------
 
-    1      Long Running... AzureLongRun... Running       True            localhost            Remove-AzureRmResource...
+    1      Long Running... AzureLongRun... Running       True            localhost            Remove-AzResource...
 
     ```
 
@@ -373,4 +373,4 @@ items:
     清理完成後，表示已完成本教學課程。 請繼續閱讀您學到的所有內容摘要，以及取得可協助您使用後續步驟的資源連結。
 - durationInMinutes: 1
   title: 總結
-  content: "\n恭喜！ 您已了解如何使用新資源或現有資源建立 VM、使用運算式和其他 Azure PowerShell 命令來擷取資料並儲存到殼層變數，以及查看為 Azure VM 建立的部分資源。\n\n接下來，您可以根據要如何使用 Azure PowerShell，進行不同的步驟。 有各種不同的資料可讓您進一步深入探討本教學課程中涵蓋的功能。\n\n### <a name=\"in-depth-azure-powershell-documentation\"></a>深入了解 Azure PowerShell 文件\n\n建議您花點時間瀏覽完整的[Azure PowerShell 文件](overview.md)。\n\n如需本教學課程中使用之命令的詳細資訊，請參閱以下文章。\n\n- [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup)\n- [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential)\n- [New-AzureRmVM](/powershell/module/azurerm.compute/new-azurermvm)\n- [Select-Object](/powershell/module/microsoft.powershell.utility/select-object)\n- [Get-AzureRmPublicIpAddress](/powershell/module/azurerm.network/get-AzureRmPublicIpAddress)\n- [Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/Remove-AzureRmResourceGroup)\n- [Wait-Job](/powershell/module/microsoft.powershell.core/wait-job)\n\n另外也有一些文章可幫助您深入了解教學課程中出現的 CLI 功能。\n\n- [PowerShell 展開](/powershell/module/microsoft.powershell.core/about/about_splatting)\n- [查詢](queries-azureps.md)\n- [格式化](formatting-output.md)\n- [使用 PowerShell 作業](using-psjobs.md)\n\n### <a name=\"sample-scripts\"></a>範例指令碼\n\n如果您想要立即開始進行特定工作，可看看一些範例指令碼。\n\n- [Linux 虛擬機器](/azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Windows 虛擬機器](/azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [SQL Databases](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Cosmos DB](/azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json)\n\n### <a name=\"feedback\"></a>意見反應\n\n如果您想要提供意見反應、建議或詢問問題，可透過許多方式與我們連絡。\n\n* `Send-Feedback` 是內建的 Azure PowerShell 命令，是內建的 Azure PowerShell 命令，可讓您向我們的小組提供意見反應，格式不拘。\n* 在 [Azure PowerShell 存放庫](https://github.com/Azure/azure-powershell/issues)中提交功能要求或錯誤報告。\n* 若要詢問問題或釐清問題，請在 [Azure PowerShell 文件存放庫](https://github.com/MicrosoftDocs/azure-docs-powershell/issues)中提交問題。\n\n希望您滿意 Azure PowerShell！"
+  content: "\n恭喜！ 您已了解如何使用新資源或現有資源建立 VM、使用運算式和其他 Azure PowerShell 命令來擷取資料並儲存到殼層變數，以及查看為 Azure VM 建立的部分資源。\n\n接下來，您可以根據要如何使用 Azure PowerShell，進行不同的步驟。 有各種不同的資料可讓您進一步深入探討本教學課程中涵蓋的功能。\n\n### <a name=\"in-depth-azure-powershell-documentation\"></a>深入了解 Azure PowerShell 文件\n\n建議您花點時間瀏覽完整的[Azure PowerShell 文件](overview.md)。\n\n如需本教學課程中使用之命令的詳細資訊，請參閱以下文章。\n\n- [New-AzResourceGroup](/powershell/module/Az.resources/new-Azresourcegroup)\n- [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential)\n- [New-AzVM](/powershell/module/Az.compute/new-Azvm)\n- [Select-Object](/powershell/module/microsoft.powershell.utility/select-object)\n- [Get-AzPublicIpAddress](/powershell/module/Az.network/get-AzPublicIpAddress)\n- [Remove-AzResourceGroup](/powershell/module/Az.resources/Remove-AzResourceGroup)\n- [Wait-Job](/powershell/module/microsoft.powershell.core/wait-job)\n\n另外也有一些文章可幫助您深入了解教學課程中出現的 CLI 功能。\n\n- [PowerShell 展開](/powershell/module/microsoft.powershell.core/about/about_splatting)\n- [查詢](queries-azureps.md)\n- [格式化](formatting-output.md)\n- [使用 PowerShell 作業](using-psjobs.md)\n\n### <a name=\"sample-scripts\"></a>範例指令碼\n\n如果您想要立即開始進行特定工作，可看看一些範例指令碼。\n\n- [Linux 虛擬機器](/azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Windows 虛擬機器](/azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [SQL Databases](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Cosmos DB](/azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json)\n\n### <a name=\"feedback\"></a>意見反應\n\n如果您想要提供意見反應、建議或詢問問題，可透過許多方式與我們連絡。\n\n* `Send-Feedback` 是內建的 Azure PowerShell 命令，是內建的 Azure PowerShell 命令，可讓您向我們的小組提供意見反應，格式不拘。\n* 在 [Azure PowerShell 存放庫](https://github.com/Azure/azure-powershell/issues)中提交功能要求或錯誤報告。\n* 若要詢問問題或釐清問題，請在 [Azure PowerShell 文件存放庫](https://github.com/MicrosoftDocs/azure-docs-powershell/issues)中提交問題。\n\n希望您滿意 Azure PowerShell！"

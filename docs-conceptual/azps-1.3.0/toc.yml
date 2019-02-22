@@ -2,15 +2,12 @@ items:
 - name: Azure PowerShell
   href: overview.md
   items:
+  - name: 新的 Az 模組簡介
+    href: new-azureps-module-az.md
   - name: Install
-    href: install-azurerm-ps.md
-    items:
-    - name: 在 macOS 或 Linux 上安裝
-      href: install-azurermps-maclinux.md
-    - name: 使用 MSI 或 Web PI 安裝
-      href: other-install.md
+    href: install-az-ps.md
   - name: 解除安裝
-    href: uninstall-azurerm-ps.md
+    href: uninstall-az-ps.md
   - name: 開始使用
     href: get-started-azureps.md
   - name: Cloud Shell
@@ -22,6 +19,8 @@ items:
       href: create-azure-service-principal-azureps.md
     - name: 持續性認證
       href: context-persistence.md
+  - name: 從 AzureRM 遷移
+    href: migrate-from-azurerm-to-az.md
   - name: 查詢
     href: queries-azureps.md
   - name: 格式化輸出
@@ -45,8 +44,8 @@ items:
   - name: 版本資訊
     href: release-notes-azureps.md
     items:
-    - name: Azure PowerShell 5.x 的重大變更
-      href: migration-guide.5.0.0.md
+    - name: Az 1.0.0 的重大變更
+      href: migrate-az-1.0.0.md
 - name: 教學課程
   items:
   - name: 建立虛擬機器
@@ -63,9 +62,9 @@ items:
     href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
   - name: Cosmos DB
     href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
-ms.openlocfilehash: d9dea81278a566ae4024aa1b5c7a4aa464cc96aa
+ms.openlocfilehash: 5954dc3821f68af8bba916fc4832038ca24b5ca5
 ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153073"
+ms.locfileid: "56144124"

@@ -6,17 +6,17 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/05/2017
-ms.openlocfilehash: ff58693c8ec21b7e50e37bd85975a9ae3980a5e7
+ms.date: 12/13/2018
+ms.openlocfilehash: ae2fecf73271a34a08ac66de03962a7a529e353b
 ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153068"
+ms.locfileid: "56144184"
 ---
-# <a name="using-experimental-azure-powershell-modules"></a>使用實驗性 Azure PowerShell 模組
+# <a name="use-experimental-azure-powershell-modules"></a>使用實驗性 Azure PowerShell 模組
 
-Azure PowerShell 小組著重於 Azure 中的開發人員工具 (特別是 CLI)，正針對 Azure PowerShell 體驗的許多增強功能進行實驗。
+Azure PowerShell 小組著重於 Azure 中的開發人員工具，正針對 Azure PowerShell 體驗的許多增強功能進行實驗。 本文說明如何選擇加入 Azure PowerShell 的實驗，並提供意見反應給開發小組。
 
 ## <a name="experimentation-methodology"></a>實驗方法
 
@@ -24,29 +24,17 @@ Azure PowerShell 小組著重於 Azure 中的開發人員工具 (特別是 CLI)�
 
 可透過現有的 Azure PowerShell 模組來並行安裝這些模組。 已將 Cmdlet 名稱縮短來提供較短的名稱，並防止名稱與現有的非實驗性 Cmdlet 發生衝突。
 
-實驗性模組使用下列命名慣例：`AzureRM.*.Experiments`. 此命名慣例類似於預覽模組的命名：`AzureRM.*.Preview`。 預覽模組與實驗性模組不同。 預覽模組所實作的 Azure 服務新功能僅可作為預覽供應項目。 預覽模組會取代現有的 Azure PowerShell 模組，並使用相同的 Cmdlet 和參數名稱。
+實驗性模組使用下列命名慣例：`Az.*.Experiments`. 此命名慣例類似於預覽模組的命名：`Az.*.Preview`。 預覽模組與實驗性模組不同。 預覽模組所實作的 Azure 服務新功能僅可作為預覽供應項目。 預覽模組會取代現有的 Azure PowerShell 模組，並使用相同的 Cmdlet 和參數名稱。
 
 ## <a name="how-to-install-an-experimental-module"></a>如何安裝實驗性模組
 
 系統會將實驗性模組發佈至 PowerShell 資源庫，就如同現有的 Azure PowerShell 模組。 若要查看實驗模組清單，請執行下列命令：
 
 ```azurepowershell-interactive
-Find-Module AzureRM.*.Experiments
+Find-Module Az.*.Experiments
 ```
 
-```output
-Version Name                         Repository Description
-------- ----                         ---------- -----------
-1.0.25  AzureRM.Compute.Experiments  PSGallery  Azure Compute experiments for VM creation
-1.0.0   AzureRM.Websites.Experiments PSGallery  Create and deploy web applications using Azure App Services.
-```
-
-若要安裝實驗性模組，請使用下列提升權限 PowerShell 工作階段中的命令：
-
-```azurepowershell-interactive
-Install-Module AzureRM.Compute.Experiments
-Install-Module AzureRM.Websites.Experiments
-```
+若要安裝實驗性模組，請使用 `Install-Module` Cmdlet。
 
 ### <a name="documentation-and-support"></a>文件與支援
 
@@ -56,8 +44,8 @@ Install-Module AzureRM.Websites.Experiments
 
 ## <a name="experiments-and-areas-of-improvement"></a>增強功能的實驗和區域
 
-這些增強功能是以競爭產品中的主要區別作為基礎來加以選取。 例如，Azure CLI 2.0 已提出關於_情節_而非 _API 介面區_的基礎命令論點。
-Azure CLI 2.0 使用一系列的智慧型預設值，讓終端使用者能更輕鬆地進行「使用者入門」情節。
+這些增強功能是以競爭產品中的主要區別作為基礎來加以選取。 例如，Azure CLI 已提出關於_情節_而非 _API 介面區_的基礎命令論點。
+Azure CLI 使用一系列的智慧型預設值，讓終端使用者能更輕鬆地進行「使用者入門」情節。
 
 ### <a name="core-improvements"></a>核心增強功能
 
@@ -65,7 +53,8 @@ Azure CLI 2.0 使用一系列的智慧型預設值，讓終端使用者能更輕
 
 - 以情節作為基礎的 Cmdlet - *All- cmdlet 都應針對情節而非 Azure REST 服務設計。
 
-- 簡短名稱 - 包含 Cmdlet 的名稱 (例如，`New-AzureRmVM` => `New-AzVm`) 以及參數的名稱 (例如，`-ResourceGroupName` => `-Rg`)。 使用別名可與「舊的」Cmdlet 相容。 提供_回溯相容性_參數集。
+- 簡短名稱 - 包含 Cmdlet 的名稱以及參數的名稱。
+  使用別名可與「舊的」Cmdlet 相容。 提供_回溯相容性_參數集。
 
 - 智慧型預設值 - 建立智慧型預設值以填入「必要」資訊。 例如︰
   - 資源群組
@@ -89,8 +78,8 @@ Azure CLI 2.0 使用一系列的智慧型預設值，讓終端使用者能更輕
 
 例如，「建立 web 應用程式」情節可能會有 `-Git` 或 `-AddRemote` 參數，能將 "azure" 遠端自動新增至現有的 Git 存放庫。
 
-- 可設定的預設值 - 使用者應該能夠預設諸如 `-ResourceGroupName` 和 `-Location` 等特定的通用參數。
+- 可設定的預設值 - 使用者應該能夠設定諸如 `-ResourceGroupName` 和 `-Location` 等特定通用參數的預設值。
 
-- 大小的預設值 - 資源「大小」會混淆使用者，因為許多資源提供者都會使用不同的名稱 (例如，"Standard\_DS1\_v2" 或 "S1")。 不過，大部分使用者較關心的是成本。 因此，以定價排程作為基礎來定義「通用」大小是合理的。 使用者可以選擇特定的大小，或是讓 Azure PowerShell 以資源預算作為基礎選擇_最佳選項_。
+- 大小的預設值 - 資源「大小」會混淆使用者，因為許多資源提供者都會使用不同的名稱 (例如，"Standard\_DS1\_v2" 或 "S1")。 不過，大部分使用者較關心的是成本。 以定價排程作為基礎來定義「通用」大小是合理的。 使用者可以選擇特定的大小，或是讓 Azure PowerShell 以資源預算作為基礎選擇_最佳選項_。
 
 - 輸出格式 - Azure PowerShell 目前會傳回 `PSObject`，且幾乎沒有主控台輸出。 Azure PowerShell 需要向使用者顯示一些關於已使用的「智慧型預設值」資訊。
