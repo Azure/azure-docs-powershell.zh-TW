@@ -8,44 +8,44 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/06/2018
 ms.openlocfilehash: 936bb24eecb4077080e172bf0d29fe57ec652187
-ms.sourcegitcommit: 797c18f93aaa495ef005993b2e202d7378588dfa
+ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53594449"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56153081"
 ---
-# <a name="install-azure-powershell-on-macos-or-linux"></a><span data-ttu-id="65e9d-103">在 macOS 或 Linux 上安裝 Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="65e9d-103">Install Azure PowerShell on macOS or Linux</span></span>
+# <a name="install-azure-powershell-on-macos-or-linux"></a><span data-ttu-id="49d5b-103">在 macOS 或 Linux 上安裝 Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="49d5b-103">Install Azure PowerShell on macOS or Linux</span></span>
 
-<span data-ttu-id="65e9d-104">針對非 Windows 平台，可以在 PowerShell Core v6 中執行 Azure PowerShell。</span><span class="sxs-lookup"><span data-stu-id="65e9d-104">For non-Windows platforms, it's possible to run Azure PowerShell in PowerShell Core v6.</span></span> <span data-ttu-id="65e9d-105">這版的 PowerShell 是針對支援 .NET Core 的任何平台使用所建置。</span><span class="sxs-lookup"><span data-stu-id="65e9d-105">This version of PowerShell is built for use on any platform that supports .NET Core.</span></span> <span data-ttu-id="65e9d-106">若要使用這些平台，可以使用 .NET Core 特別版本的 Azure PowerShell。</span><span class="sxs-lookup"><span data-stu-id="65e9d-106">To work with these platforms, there's a special .NET Core version of Azure PowerShell available.</span></span>
+<span data-ttu-id="49d5b-104">針對非 Windows 平台，可以在 PowerShell Core v6 中執行 Azure PowerShell。</span><span class="sxs-lookup"><span data-stu-id="49d5b-104">For non-Windows platforms, it's possible to run Azure PowerShell in PowerShell Core v6.</span></span> <span data-ttu-id="49d5b-105">這版的 PowerShell 是針對支援 .NET Core 的任何平台使用所建置。</span><span class="sxs-lookup"><span data-stu-id="49d5b-105">This version of PowerShell is built for use on any platform that supports .NET Core.</span></span> <span data-ttu-id="49d5b-106">若要使用這些平台，可以使用 .NET Core 特別版本的 Azure PowerShell。</span><span class="sxs-lookup"><span data-stu-id="49d5b-106">To work with these platforms, there's a special .NET Core version of Azure PowerShell available.</span></span>
 
 [!INCLUDE[az-replacing-azurerm.md](../includes/az-replacing-azurerm.md)]
 
-## <a name="install-powershell-core"></a><span data-ttu-id="65e9d-107">安裝 PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="65e9d-107">Install PowerShell Core</span></span>
+## <a name="install-powershell-core"></a><span data-ttu-id="49d5b-107">安裝 PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="49d5b-107">Install PowerShell Core</span></span>
 
-<span data-ttu-id="65e9d-108">macOS 和大部分 Linux 發佈的 PowerShell Core 安裝指示皆不同。</span><span class="sxs-lookup"><span data-stu-id="65e9d-108">The installation instructions for PowerShell Core are different for macOS and most Linux distributions.</span></span>
-<span data-ttu-id="65e9d-109">您可以在下列文章中找到詳細的指示：</span><span class="sxs-lookup"><span data-stu-id="65e9d-109">Detailed instructions can be found in the following articles:</span></span>
+<span data-ttu-id="49d5b-108">macOS 和大部分 Linux 發佈的 PowerShell Core 安裝指示皆不同。</span><span class="sxs-lookup"><span data-stu-id="49d5b-108">The installation instructions for PowerShell Core are different for macOS and most Linux distributions.</span></span>
+<span data-ttu-id="49d5b-109">您可以在下列文章中找到詳細的指示：</span><span class="sxs-lookup"><span data-stu-id="49d5b-109">Detailed instructions can be found in the following articles:</span></span>
 
-* [<span data-ttu-id="65e9d-110">Install PowerShell Core on macOS</span><span class="sxs-lookup"><span data-stu-id="65e9d-110">Install PowerShell Core on macOS</span></span>](/powershell/scripting/setup/installing-powershell-core-on-macos)
-* [<span data-ttu-id="65e9d-111">Install PowerShell Core on Linux</span><span class="sxs-lookup"><span data-stu-id="65e9d-111">Install PowerShell Core on Linux</span></span>](/powershell/scripting/setup/installing-powershell-core-on-linux)
+* [<span data-ttu-id="49d5b-110">Install PowerShell Core on macOS</span><span class="sxs-lookup"><span data-stu-id="49d5b-110">Install PowerShell Core on macOS</span></span>](/powershell/scripting/setup/installing-powershell-core-on-macos)
+* [<span data-ttu-id="49d5b-111">Install PowerShell Core on Linux</span><span class="sxs-lookup"><span data-stu-id="49d5b-111">Install PowerShell Core on Linux</span></span>](/powershell/scripting/setup/installing-powershell-core-on-linux)
 
-## <a name="install-azure-powershell-for-net-core"></a><span data-ttu-id="65e9d-112">安裝 Azure PowerShell for .NET Core</span><span class="sxs-lookup"><span data-stu-id="65e9d-112">Install Azure PowerShell for .NET Core</span></span>
+## <a name="install-azure-powershell-for-net-core"></a><span data-ttu-id="49d5b-112">安裝 Azure PowerShell for .NET Core</span><span class="sxs-lookup"><span data-stu-id="49d5b-112">Install Azure PowerShell for .NET Core</span></span>
 
-<span data-ttu-id="65e9d-113">PowerShell Core 隨附於已安裝的 PowerShellGet 模組。</span><span class="sxs-lookup"><span data-stu-id="65e9d-113">PowerShell Core comes with the PowerShellGet module already installed.</span></span> <span data-ttu-id="65e9d-114">安裝 PowerShell 中的模組需要較高的權限，因此必須以超級使用者身分來啟動您的工作階段：</span><span class="sxs-lookup"><span data-stu-id="65e9d-114">Installation of modules in PowerShell requires elevated privileges, so you'll need to start your session as superuser:</span></span>
+<span data-ttu-id="49d5b-113">PowerShell Core 隨附於已安裝的 PowerShellGet 模組。</span><span class="sxs-lookup"><span data-stu-id="49d5b-113">PowerShell Core comes with the PowerShellGet module already installed.</span></span> <span data-ttu-id="49d5b-114">安裝 PowerShell 中的模組需要較高的權限，因此必須以超級使用者身分來啟動您的工作階段：</span><span class="sxs-lookup"><span data-stu-id="49d5b-114">Installation of modules in PowerShell requires elevated privileges, so you'll need to start your session as superuser:</span></span>
 
 ```bash
 sudo pwsh
 ```
 
-<span data-ttu-id="65e9d-115">若要安裝 Azure PowerShell，請執行下列命令：</span><span class="sxs-lookup"><span data-stu-id="65e9d-115">To install Azure PowerShell, run the following command:</span></span>
+<span data-ttu-id="49d5b-115">若要安裝 Azure PowerShell，請執行下列命令：</span><span class="sxs-lookup"><span data-stu-id="49d5b-115">To install Azure PowerShell, run the following command:</span></span>
 
 ```powershell-interactive
 Install-Module AzureRM.NetCore
 ```
 
 > [!IMPORTANT]
-> <span data-ttu-id="65e9d-116">其他文章中詳述的 `AzureRM` 模組並非針對 .NET Core 所建置，且無法搭配 PowerShell Core 使用。</span><span class="sxs-lookup"><span data-stu-id="65e9d-116">The `AzureRM` module detailed in other articles is not built for .NET Core and will not work with PowerShell Core.</span></span> <span data-ttu-id="65e9d-117">`AzureRM` 和 `AzureRM.NetCore` 都是使用相同的 Cmdlet 名稱，因此唯一的差異在於彙總套件模組的名稱，以及它們是針對哪個版本的 .NET 所建置。</span><span class="sxs-lookup"><span data-stu-id="65e9d-117">Both `AzureRM` and `AzureRM.NetCore` use the same cmdlet names, so the only difference is the name of the rollup module and which .NET version they are built against.</span></span>
+> <span data-ttu-id="49d5b-116">其他文章中詳述的 `AzureRM` 模組並非針對 .NET Core 所建置，且無法搭配 PowerShell Core 使用。</span><span class="sxs-lookup"><span data-stu-id="49d5b-116">The `AzureRM` module detailed in other articles is not built for .NET Core and will not work with PowerShell Core.</span></span> <span data-ttu-id="49d5b-117">`AzureRM` 和 `AzureRM.NetCore` 都是使用相同的 Cmdlet 名稱，因此唯一的差異在於彙總套件模組的名稱，以及它們是針對哪個版本的 .NET 所建置。</span><span class="sxs-lookup"><span data-stu-id="49d5b-117">Both `AzureRM` and `AzureRM.NetCore` use the same cmdlet names, so the only difference is the name of the rollup module and which .NET version they are built against.</span></span>
 
-<span data-ttu-id="65e9d-118">根據預設，PowerShell 資源庫未設為 PowerShellGet 的信任存放庫。</span><span class="sxs-lookup"><span data-stu-id="65e9d-118">By default, the PowerShell gallery isn't configured as a trusted repository for PowerShellGet.</span></span> <span data-ttu-id="65e9d-119">第一次使用 PSGallery 時，您會看到下列提示：</span><span class="sxs-lookup"><span data-stu-id="65e9d-119">The first time you use the PSGallery you see the following prompt:</span></span>
+<span data-ttu-id="49d5b-118">根據預設，PowerShell 資源庫未設為 PowerShellGet 的信任存放庫。</span><span class="sxs-lookup"><span data-stu-id="49d5b-118">By default, the PowerShell gallery isn't configured as a trusted repository for PowerShellGet.</span></span> <span data-ttu-id="49d5b-119">第一次使用 PSGallery 時，您會看到下列提示：</span><span class="sxs-lookup"><span data-stu-id="49d5b-119">The first time you use the PSGallery you see the following prompt:</span></span>
 
 ```output
 Untrusted repository
@@ -57,11 +57,11 @@ Are you sure you want to install the modules from 'PSGallery'?
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-<span data-ttu-id="65e9d-120">請回答 `Yes` 或 `Yes to All` 以繼續安裝。</span><span class="sxs-lookup"><span data-stu-id="65e9d-120">Answer `Yes` or `Yes to All` to continue with the installation.</span></span>
+<span data-ttu-id="49d5b-120">請回答 `Yes` 或 `Yes to All` 以繼續安裝。</span><span class="sxs-lookup"><span data-stu-id="49d5b-120">Answer `Yes` or `Yes to All` to continue with the installation.</span></span>
 
-## <a name="sign-in"></a><span data-ttu-id="65e9d-121">登入</span><span class="sxs-lookup"><span data-stu-id="65e9d-121">Sign in</span></span>
+## <a name="sign-in"></a><span data-ttu-id="49d5b-121">登入</span><span class="sxs-lookup"><span data-stu-id="49d5b-121">Sign in</span></span>
 
-<span data-ttu-id="65e9d-122">若要開始使用 Azure PowerShell，您必須使用 [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 將 `AzureRM.Netcore` 載入您的 PowerShell 工作階段，然後使用您的 Azure 認證登入。</span><span class="sxs-lookup"><span data-stu-id="65e9d-122">To start working with Azure PowerShell, you need to load `AzureRM.Netcore` into your PowerShell session with the [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet, and then sign in with your Azure credentials.</span></span> <span data-ttu-id="65e9d-123">匯入模組「不」需要較高的權限。</span><span class="sxs-lookup"><span data-stu-id="65e9d-123">Importing a module does __not__ require elevated privileges.</span></span>
+<span data-ttu-id="49d5b-122">若要開始使用 Azure PowerShell，您必須使用 [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 將 `AzureRM.Netcore` 載入您的 PowerShell 工作階段，然後使用您的 Azure 認證登入。</span><span class="sxs-lookup"><span data-stu-id="49d5b-122">To start working with Azure PowerShell, you need to load `AzureRM.Netcore` into your PowerShell session with the [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet, and then sign in with your Azure credentials.</span></span> <span data-ttu-id="49d5b-123">匯入模組「不」需要較高的權限。</span><span class="sxs-lookup"><span data-stu-id="49d5b-123">Importing a module does __not__ require elevated privileges.</span></span>
 
 ```powershell-interactive
 # Import the module into the PowerShell session
@@ -70,26 +70,26 @@ Import-Module AzureRM.Netcore
 Connect-AzureRmAccount
 ```
 
-<span data-ttu-id="65e9d-124">您必須針對每個啟動的新 PowerShell 工作階段重複這些步驟。</span><span class="sxs-lookup"><span data-stu-id="65e9d-124">You'll need to repeat these steps for every new PowerShell session you start.</span></span> <span data-ttu-id="65e9d-125">自動匯入 `AzureRM` 模組需要設定 PowerShell 設定檔，您可以在[關於設定檔](/powershell/module/microsoft.powershell.core/about/about_profiles)中加以了解。</span><span class="sxs-lookup"><span data-stu-id="65e9d-125">Automatically importing the `AzureRM` module requires setting up a PowerShell profile, which you can learn about in [About Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles).</span></span>
-<span data-ttu-id="65e9d-126">在 macOS 和 Linux 上，您應該透過 `$Profile` 環境變數來使用設定檔。</span><span class="sxs-lookup"><span data-stu-id="65e9d-126">On macOS and Linux, you should work with your profile through the `$Profile` environment variable.</span></span> <span data-ttu-id="65e9d-127">若要了解如何在工作階段之間保存您的 Azure 登入，請參閱[在 PowerShell 工作階段之間保存使用者認證](context-persistence.md)。</span><span class="sxs-lookup"><span data-stu-id="65e9d-127">To learn how to persist your Azure sign in across sessions, see [Persist user credentials across PowerShell sessions](context-persistence.md).</span></span>
+<span data-ttu-id="49d5b-124">您必須針對每個啟動的新 PowerShell 工作階段重複這些步驟。</span><span class="sxs-lookup"><span data-stu-id="49d5b-124">You'll need to repeat these steps for every new PowerShell session you start.</span></span> <span data-ttu-id="49d5b-125">自動匯入 `AzureRM` 模組需要設定 PowerShell 設定檔，您可以在[關於設定檔](/powershell/module/microsoft.powershell.core/about/about_profiles)中加以了解。</span><span class="sxs-lookup"><span data-stu-id="49d5b-125">Automatically importing the `AzureRM` module requires setting up a PowerShell profile, which you can learn about in [About Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles).</span></span>
+<span data-ttu-id="49d5b-126">在 macOS 和 Linux 上，您應該透過 `$Profile` 環境變數來使用設定檔。</span><span class="sxs-lookup"><span data-stu-id="49d5b-126">On macOS and Linux, you should work with your profile through the `$Profile` environment variable.</span></span> <span data-ttu-id="49d5b-127">若要了解如何在工作階段之間保存您的 Azure 登入，請參閱[在 PowerShell 工作階段之間保存使用者認證](context-persistence.md)。</span><span class="sxs-lookup"><span data-stu-id="49d5b-127">To learn how to persist your Azure sign in across sessions, see [Persist user credentials across PowerShell sessions](context-persistence.md).</span></span>
 
-## <a name="available-cmdlets"></a><span data-ttu-id="65e9d-128">可用的 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="65e9d-128">Available cmdlets</span></span>
+## <a name="available-cmdlets"></a><span data-ttu-id="49d5b-128">可用的 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="49d5b-128">Available cmdlets</span></span>
 
-<span data-ttu-id="65e9d-129">適用於 .NET Core 的 Azure PowerShell 模組仍在開發中。</span><span class="sxs-lookup"><span data-stu-id="65e9d-129">The Azure PowerShell modules for .NET Core are still in development.</span></span> <span data-ttu-id="65e9d-130">這些模組未提供適用於 Windows 版模組的所有 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="65e9d-130">These modules do not provide the full set of cmdlets that are available for the Windows version of the modules.</span></span> <span data-ttu-id="65e9d-131">AzureRM.Netcore 模組實作了下列功能：</span><span class="sxs-lookup"><span data-stu-id="65e9d-131">The following functions are implemented in AzureRM.Netcore modules:</span></span>
+<span data-ttu-id="49d5b-129">適用於 .NET Core 的 Azure PowerShell 模組仍在開發中。</span><span class="sxs-lookup"><span data-stu-id="49d5b-129">The Azure PowerShell modules for .NET Core are still in development.</span></span> <span data-ttu-id="49d5b-130">這些模組未提供適用於 Windows 版模組的所有 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="49d5b-130">These modules do not provide the full set of cmdlets that are available for the Windows version of the modules.</span></span> <span data-ttu-id="49d5b-131">AzureRM.Netcore 模組實作了下列功能：</span><span class="sxs-lookup"><span data-stu-id="49d5b-131">The following functions are implemented in AzureRM.Netcore modules:</span></span>
 
-* <span data-ttu-id="65e9d-132">帳戶管理</span><span class="sxs-lookup"><span data-stu-id="65e9d-132">Account management</span></span>
-  * <span data-ttu-id="65e9d-133">透過 Microsoft Azure Active Directory，使用 Microsoft 帳戶、組織帳戶或服務主體登入</span><span class="sxs-lookup"><span data-stu-id="65e9d-133">Sign in with Microsoft account, Organizational account, or Service Principal through Microsoft Azure Active Directory</span></span>
-  * <span data-ttu-id="65e9d-134">透過 Save-AzureRmContext 將認證儲存到磁碟上，及使用 Import-AzureRmContext 載入儲存的認證</span><span class="sxs-lookup"><span data-stu-id="65e9d-134">Save Credentials to disk with Save-AzureRmContext and load saved credentials using Import-AzureRmContext</span></span>
-* <span data-ttu-id="65e9d-135">環境</span><span class="sxs-lookup"><span data-stu-id="65e9d-135">Environment</span></span>
-  * <span data-ttu-id="65e9d-136">取得其他現成可用的 Microsoft Azure 環境</span><span class="sxs-lookup"><span data-stu-id="65e9d-136">Get the different out-of-box Microsoft Azure environments</span></span>
-  * <span data-ttu-id="65e9d-137">新增/設定/移除自訂環境 (例如 Azure Stack 或 Windows Azure 套件環境)</span><span class="sxs-lookup"><span data-stu-id="65e9d-137">Add/Set/Remove customized environments (like your Azure Stack or Windows Azure Pack environments)</span></span>
-* <span data-ttu-id="65e9d-138">使用資源管理員與服務管理介面之 Azure 服務適用的管理平面 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="65e9d-138">Management plane cmdlets for Azure services using Resource Manager and Service Management interfaces.</span></span>
-  * <span data-ttu-id="65e9d-139">虛擬機器</span><span class="sxs-lookup"><span data-stu-id="65e9d-139">Virtual Machine</span></span>
-  * <span data-ttu-id="65e9d-140">App Service (網站)</span><span class="sxs-lookup"><span data-stu-id="65e9d-140">App Service (Websites)</span></span>
-  * <span data-ttu-id="65e9d-141">SQL Database</span><span class="sxs-lookup"><span data-stu-id="65e9d-141">SQL Database</span></span>
-  * <span data-ttu-id="65e9d-142">儲存體</span><span class="sxs-lookup"><span data-stu-id="65e9d-142">Storage</span></span>
-  * <span data-ttu-id="65e9d-143">網路</span><span class="sxs-lookup"><span data-stu-id="65e9d-143">Network</span></span>
+* <span data-ttu-id="49d5b-132">帳戶管理</span><span class="sxs-lookup"><span data-stu-id="49d5b-132">Account management</span></span>
+  * <span data-ttu-id="49d5b-133">透過 Microsoft Azure Active Directory，使用 Microsoft 帳戶、組織帳戶或服務主體登入</span><span class="sxs-lookup"><span data-stu-id="49d5b-133">Sign in with Microsoft account, Organizational account, or Service Principal through Microsoft Azure Active Directory</span></span>
+  * <span data-ttu-id="49d5b-134">透過 Save-AzureRmContext 將認證儲存到磁碟上，及使用 Import-AzureRmContext 載入儲存的認證</span><span class="sxs-lookup"><span data-stu-id="49d5b-134">Save Credentials to disk with Save-AzureRmContext and load saved credentials using Import-AzureRmContext</span></span>
+* <span data-ttu-id="49d5b-135">環境</span><span class="sxs-lookup"><span data-stu-id="49d5b-135">Environment</span></span>
+  * <span data-ttu-id="49d5b-136">取得其他現成可用的 Microsoft Azure 環境</span><span class="sxs-lookup"><span data-stu-id="49d5b-136">Get the different out-of-box Microsoft Azure environments</span></span>
+  * <span data-ttu-id="49d5b-137">新增/設定/移除自訂環境 (例如 Azure Stack 或 Windows Azure 套件環境)</span><span class="sxs-lookup"><span data-stu-id="49d5b-137">Add/Set/Remove customized environments (like your Azure Stack or Windows Azure Pack environments)</span></span>
+* <span data-ttu-id="49d5b-138">使用資源管理員與服務管理介面之 Azure 服務適用的管理平面 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="49d5b-138">Management plane cmdlets for Azure services using Resource Manager and Service Management interfaces.</span></span>
+  * <span data-ttu-id="49d5b-139">虛擬機器</span><span class="sxs-lookup"><span data-stu-id="49d5b-139">Virtual Machine</span></span>
+  * <span data-ttu-id="49d5b-140">App Service (網站)</span><span class="sxs-lookup"><span data-stu-id="49d5b-140">App Service (Websites)</span></span>
+  * <span data-ttu-id="49d5b-141">SQL Database</span><span class="sxs-lookup"><span data-stu-id="49d5b-141">SQL Database</span></span>
+  * <span data-ttu-id="49d5b-142">儲存體</span><span class="sxs-lookup"><span data-stu-id="49d5b-142">Storage</span></span>
+  * <span data-ttu-id="49d5b-143">網路</span><span class="sxs-lookup"><span data-stu-id="49d5b-143">Network</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="65e9d-144">後續步驟</span><span class="sxs-lookup"><span data-stu-id="65e9d-144">Next Steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="49d5b-144">後續步驟</span><span class="sxs-lookup"><span data-stu-id="49d5b-144">Next Steps</span></span>
 
-<span data-ttu-id="65e9d-145">如需有關使用 Azure PowerShell 的詳細資訊，請參閱[開始使用 Azure PowerShell](get-started-azureps.md)文章。</span><span class="sxs-lookup"><span data-stu-id="65e9d-145">For more information about using Azure PowerShell, see the [Get started with Azure PowerShell](get-started-azureps.md) article.</span></span>
+<span data-ttu-id="49d5b-145">如需有關使用 Azure PowerShell 的詳細資訊，請參閱[開始使用 Azure PowerShell](get-started-azureps.md)文章。</span><span class="sxs-lookup"><span data-stu-id="49d5b-145">For more information about using Azure PowerShell, see the [Get started with Azure PowerShell](get-started-azureps.md) article.</span></span>
