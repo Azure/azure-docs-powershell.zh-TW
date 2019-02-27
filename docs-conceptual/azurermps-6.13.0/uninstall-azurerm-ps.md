@@ -7,12 +7,12 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: 7456e45fe9a94d3c1e809dfd075a090448001607
-ms.sourcegitcommit: 6685809f054203bd733c84f68acc69e53e5cca8c
+ms.openlocfilehash: a0afae1ba51fdb34425c91049e08d7388f434d7d
+ms.sourcegitcommit: 0b5b0434fba7a752b0199256e04fa34f06aaf33a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53982810"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56464973"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>將 Azure PowerShell 模組解除安裝
 
@@ -20,7 +20,7 @@ ms.locfileid: "53982810"
 如果發生錯誤 (bug)，希望您[提出 GitHub 問題](https://github.com/azure/azure-powershell/issues)，非常感謝您。
 
 
-## <a name="uninstall-msi"></a>解除安裝 MSI
+## <a name="uninstall-azure-powershell-msi"></a>解除安裝 Azure PowerShell MSI
 
 如果您使用 MSI 套件安裝 Azure PowerShell，則必須透過 Windows 系統而非 PowerShell 來解除安裝。
 
@@ -29,7 +29,7 @@ ms.locfileid: "53982810"
 | Windows 10 | [開始] > [設定] > [應用程式] |
 | Windows 7 </br>Windows 8 | [開啟] > [控制台] > [程式] > [解除安裝程式] |
 
-您在此畫面上應該會看到程式清單中的 "Azure PowerShell"，並可從該處解除安裝。
+您在此畫面上應該會看到程式清單中的 __Azure PowerShell__。 這是要解除安裝的應用程式。
 
 ## <a name="uninstall-from-powershell"></a>從 PowerShell 解除安裝
 
