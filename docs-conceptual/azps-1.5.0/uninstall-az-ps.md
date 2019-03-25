@@ -7,12 +7,12 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: fcec2c713d1967a5a70df9b13aa30d9ff4625e9d
-ms.sourcegitcommit: 447276d46ffeeb37f0c07a570536665e36c5ddb8
+ms.openlocfilehash: 6a34ac1821c3cec359d0d64664d3f1689621b304
+ms.sourcegitcommit: e736293cbc7b813b6b133781c88c7978fb22122a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57882169"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58215265"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>將 Azure PowerShell 模組解除安裝
 
@@ -111,8 +111,8 @@ $versions[1..($versions.Length-1)]  | foreach { Uninstall-AllModules -TargetModu
 
 ## <a name="uninstall-the-azurerm-module"></a>將 AzureRM 模組解除安裝
 
-如果您的系統上安裝了 Az 模組，並想要將 AzureRM 解除安裝，有兩個簡單的選項可讓您不必執行上述的 `Uninstall-AllModules` 指令碼。 您要遵循哪個方法取決於您安裝 AzureRM 的方式。
-如果您不確定，請先查看如何將 MSI 解除安裝的步驟。
+如果您的系統上安裝了 Az 模組，並想要將 AzureRM 解除安裝，有兩個選項可讓您不必執行上述的 `Uninstall-AllModules` 指令碼。 您要遵循哪個方法取決於您安裝 AzureRM 模組的方式。
+如果您不確定，請先遵循如何將 MSI 解除安裝的步驟。
 
 ### <a name="uninstall-azure-powershell-msi"></a>解除安裝 Azure PowerShell MSI
 
@@ -123,11 +123,11 @@ $versions[1..($versions.Length-1)]  | foreach { Uninstall-AllModules -TargetModu
 | Windows 10 | [開始] > [設定] > [應用程式] |
 | Windows 7 </br>Windows 8 | [開啟] > [控制台] > [程式] > [解除安裝程式] |
 
-您在此畫面上應該會看到程式清單中的 __Azure PowerShell__。 這是要解除安裝的應用程式。
+您在此畫面上應該會看到程式清單中的 __Azure PowerShell__。 這是要解除安裝的應用程式。 如果並未列出此程式，而您是透過 PowerShellGet 安裝，則應遵循下一組指示。
 
 ### <a name="uninstall-from-powershell"></a>從 PowerShell 解除安裝
 
-如果您是從 PowerShellGet 安裝 AzureRM，則可以使用新的 `Uninstall-AzureRM` 命令移除模組。 這會從機器中移除「所有」AzureRM 模組，但需要系統管理員權限。
+如果透過 PowerShellGet 安裝了 AzureRM，您可以使用 [Uninstall-AzureRM](/powershell/module/az.accounts/uninstall-azurerm) 命令移除模組，您可以在 `Az.Accounts` 模模組中找到這個命令。 這會從機器中移除「所有」AzureRM 模組，但需要系統管理員權限。
 
 ```powershell-interactive
 Uninstall-AzureRm

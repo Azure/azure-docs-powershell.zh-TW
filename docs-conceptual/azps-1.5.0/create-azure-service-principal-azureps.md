@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/20/2019
-ms.openlocfilehash: ae8bb8341209fedc3fadf8137f4faaf1ad3fe686
-ms.sourcegitcommit: 447276d46ffeeb37f0c07a570536665e36c5ddb8
+ms.openlocfilehash: 3ce1135cc81d11ce6faa62c790cb4358b5fceda4
+ms.sourcegitcommit: 32dad89878c7e728f740936f5f338b8ae878a6a1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57882181"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58192917"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>使用 Azure PowerShell 來建立 Azure 服務主體
 
@@ -88,7 +88,7 @@ $sp = New-AzADServicePrincipal -DisplayName ServicePrincipalName -KeyCredential 
 
 ## <a name="get-an-existing-service-principal"></a>取得現有的服務主體
 
-您可以使用 [Get-AzADServicePrincipal](/module/az.resources/get-azadserviceprincipal) 擷取目前作用中租用戶的服務主體清單。 依預設，此命令會傳回租用戶中的__所有__服務主體，因此對於大型組織，可能需要長時間來傳回結果。 建議使用選擇性伺服器端篩選引數的其中一個：
+您可以使用 [Get-AzADServicePrincipal](/powershell/module/az.resources/get-azadserviceprincipal) 擷取目前作用中租用戶的服務主體清單。 依預設，此命令會傳回租用戶中的__所有__服務主體，因此對於大型組織，可能需要長時間來傳回結果。 建議使用選擇性伺服器端篩選引數的其中一個：
 
 * `-DisplayNameBeginsWith` 會要求服務主體的_前置詞_符合所提供的值。 服務主體的顯示名稱是建立期間使用 `-DisplayName` 所設定的值。
 * `-DisplayName` 要求服務主體名稱_完全相符_。
@@ -121,7 +121,7 @@ Delete-AzRoleAssignment -ApplicationId <service principal application ID> -RoleD
 列出指派的角色可以驗證變更：
 
 ```azurepowershell-interactive
-Get-AzRoleAssignment -ServicePrinicpalName ServicePrincipalName
+Get-AzRoleAssignment -ServicePrincipalName ServicePrincipalName
 ```
 
 ## <a name="sign-in-using-a-service-principal"></a>使用服務主體來登入
