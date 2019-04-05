@@ -7,46 +7,46 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
-ms.openlocfilehash: 58aa777ca599c2a6181f0ecc5c20f6db7a89b75f
-ms.sourcegitcommit: 8f59e11e5c991543964154d63648aa1e6ae22512
+ms.openlocfilehash: 825a07e01194a07b747712a62384c7f162e63d7d
+ms.sourcegitcommit: d3069aba7d1ac248aff755e4b21533af1f73251d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58475245"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58808031"
 ---
-# <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a><span data-ttu-id="9d400-103">使用 PowerShell 作業平行執行 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="9d400-103">Running cmdlets in parallel using PowerShell jobs</span></span>
+# <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a><span data-ttu-id="60adb-103">使用 PowerShell 作業平行執行 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="60adb-103">Running cmdlets in parallel using PowerShell jobs</span></span>
 
-<span data-ttu-id="9d400-104">PowerShell 支援 [PowerShell 作業](/powershell/module/microsoft.powershell.core/about/about_jobs)的非同步動作。</span><span class="sxs-lookup"><span data-stu-id="9d400-104">PowerShell supports asynchronous action with [PowerShell Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs).</span></span>
-<span data-ttu-id="9d400-105">Azure PowerShell 高度相依於進行或等待對 Azure 進行網路呼叫。</span><span class="sxs-lookup"><span data-stu-id="9d400-105">Azure PowerShell is heavily dependent on making, and waiting for, network calls to Azure.</span></span> <span data-ttu-id="9d400-106">您常有可能需要進行非封鎖式呼叫。</span><span class="sxs-lookup"><span data-stu-id="9d400-106">You may often find yourself needing to make non-blocking calls.</span></span> <span data-ttu-id="9d400-107">為了因應這項需求，Azure PowerShell 提供了絕佳的 [PSJob](/powershell/module/microsoft.powershell.core/about/about_jobs) 支援。</span><span class="sxs-lookup"><span data-stu-id="9d400-107">To address this need, Azure PowerShell provides first-class [PSJob](/powershell/module/microsoft.powershell.core/about/about_jobs) support.</span></span>
+<span data-ttu-id="60adb-104">PowerShell 支援 [PowerShell 作業](/powershell/module/microsoft.powershell.core/about/about_jobs)的非同步動作。</span><span class="sxs-lookup"><span data-stu-id="60adb-104">PowerShell supports asynchronous action with [PowerShell Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs).</span></span>
+<span data-ttu-id="60adb-105">Azure PowerShell 高度相依於進行或等待對 Azure 進行網路呼叫。</span><span class="sxs-lookup"><span data-stu-id="60adb-105">Azure PowerShell is heavily dependent on making, and waiting for, network calls to Azure.</span></span> <span data-ttu-id="60adb-106">您常有可能需要進行非封鎖式呼叫。</span><span class="sxs-lookup"><span data-stu-id="60adb-106">You may often find yourself needing to make non-blocking calls.</span></span> <span data-ttu-id="60adb-107">為了因應這項需求，Azure PowerShell 提供了絕佳的 [PSJob](/powershell/module/microsoft.powershell.core/about/about_jobs) 支援。</span><span class="sxs-lookup"><span data-stu-id="60adb-107">To address this need, Azure PowerShell provides first-class [PSJob](/powershell/module/microsoft.powershell.core/about/about_jobs) support.</span></span>
 
-## <a name="context-persistence-and-psjobs"></a><span data-ttu-id="9d400-108">內容持續性和 PSJobs</span><span class="sxs-lookup"><span data-stu-id="9d400-108">Context Persistence and PSJobs</span></span>
+## <a name="context-persistence-and-psjobs"></a><span data-ttu-id="60adb-108">內容持續性和 PSJobs</span><span class="sxs-lookup"><span data-stu-id="60adb-108">Context Persistence and PSJobs</span></span>
 
-<span data-ttu-id="9d400-109">PSJobs 會以個別程序的形式執行，因此您的 Azure 連線必須與它們共用。</span><span class="sxs-lookup"><span data-stu-id="9d400-109">Since PSJobs are run as separate processes, your Azure connection must be shared with them.</span></span> <span data-ttu-id="9d400-110">使用 `Connect-AzAccount` 登入您的 Azure 帳戶後，請將內容傳至作業。</span><span class="sxs-lookup"><span data-stu-id="9d400-110">After signing in to your Azure account with `Connect-AzAccount`, pass the context to a job.</span></span>
+<span data-ttu-id="60adb-109">PSJobs 會以個別程序的形式執行，因此您的 Azure 連線必須與它們共用。</span><span class="sxs-lookup"><span data-stu-id="60adb-109">Since PSJobs are run as separate processes, your Azure connection must be shared with them.</span></span> <span data-ttu-id="60adb-110">使用 `Connect-AzAccount` 登入您的 Azure 帳戶後，請將內容傳至作業。</span><span class="sxs-lookup"><span data-stu-id="60adb-110">After signing in to your Azure account with `Connect-AzAccount`, pass the context to a job.</span></span>
 
 ```azurepowershell-interactive
 $creds = Get-Credential
-$job = Start-Job { param($context,$vmadmin) New-AzVM -Name MyVm -AzContext $context -Credential $vmadmin} -Arguments (Get-AzContext),$creds
+$job = Start-Job { param($context,$vmadmin) New-AzVM -Name MyVm -AzContext $context -Credential $vmadmin} -ArgumentList (Get-AzContext),$creds
 ```
 
-<span data-ttu-id="9d400-111">但是，若您已選擇使用 `Enable-AzContextAutosave` 自動儲存內容，則該內容會自動與您建立的所有作業共用。</span><span class="sxs-lookup"><span data-stu-id="9d400-111">However, if you have chosen to have your context automatically saved with `Enable-AzContextAutosave`, the context is automatically shared with any jobs you create.</span></span>
+<span data-ttu-id="60adb-111">但是，若您已選擇使用 `Enable-AzContextAutosave` 自動儲存內容，則該內容會自動與您建立的所有作業共用。</span><span class="sxs-lookup"><span data-stu-id="60adb-111">However, if you have chosen to have your context automatically saved with `Enable-AzContextAutosave`, the context is automatically shared with any jobs you create.</span></span>
 
 ```azurepowershell-interactive
 Enable-AzContextAutosave
 $creds = Get-Credential
-$job = Start-Job { param($vmadmin) New-AzVM -Name MyVm -Credential $vmadmin} -Arguments $creds
+$job = Start-Job { param($vmadmin) New-AzVM -Name MyVm -Credential $vmadmin} -ArgumentList $creds
 ```
 
-## <a name="automatic-jobs-with--asjob"></a><span data-ttu-id="9d400-112">使用 `-AsJob` 將作業自動化</span><span class="sxs-lookup"><span data-stu-id="9d400-112">Automatic Jobs with `-AsJob`</span></span>
+## <a name="automatic-jobs-with--asjob"></a><span data-ttu-id="60adb-112">使用 `-AsJob` 將作業自動化</span><span class="sxs-lookup"><span data-stu-id="60adb-112">Automatic Jobs with `-AsJob`</span></span>
 
-<span data-ttu-id="9d400-113">為了便於作業， Azure PowerShell 也會在某些長期執行的 Cmdlet 中提供 `-AsJob` 開關。</span><span class="sxs-lookup"><span data-stu-id="9d400-113">As a convenience, Azure PowerShell also provides an `-AsJob` switch on some long-running cmdlets.</span></span>
-<span data-ttu-id="9d400-114">`-AsJob` 開關能讓您更輕鬆地建立 PSJobs。</span><span class="sxs-lookup"><span data-stu-id="9d400-114">The `-AsJob` switch makes creating PSJobs even easier.</span></span>
+<span data-ttu-id="60adb-113">為了便於作業， Azure PowerShell 也會在某些長期執行的 Cmdlet 中提供 `-AsJob` 開關。</span><span class="sxs-lookup"><span data-stu-id="60adb-113">As a convenience, Azure PowerShell also provides an `-AsJob` switch on some long-running cmdlets.</span></span>
+<span data-ttu-id="60adb-114">`-AsJob` 開關能讓您更輕鬆地建立 PSJobs。</span><span class="sxs-lookup"><span data-stu-id="60adb-114">The `-AsJob` switch makes creating PSJobs even easier.</span></span>
 
 ```azurepowershell-interactive
 $creds = Get-Credential
 $job = New-AzVM -Name MyVm -Credential $creds -AsJob
 ```
 
-<span data-ttu-id="9d400-115">您可以使用 `Get-Job` 和 `Get-AzVM`，隨時檢查作業和進度。</span><span class="sxs-lookup"><span data-stu-id="9d400-115">You can inspect the job and progress at any time with `Get-Job` and `Get-AzVM`.</span></span>
+<span data-ttu-id="60adb-115">您可以使用 `Get-Job` 和 `Get-AzVM`，隨時檢查作業和進度。</span><span class="sxs-lookup"><span data-stu-id="60adb-115">You can inspect the job and progress at any time with `Get-Job` and `Get-AzVM`.</span></span>
 
 ```azurepowershell-interactive
 Get-Job $job
@@ -63,11 +63,11 @@ ResourceGroupName    Name Location          VmSize  OsType     NIC ProvisioningS
 MyVm                 MyVm   eastus Standard_DS1_v2 Windows    MyVm          Creating
 ```
 
-<span data-ttu-id="9d400-116">作業完成後，請使用 `Receive-Job` 取得作業的結果。</span><span class="sxs-lookup"><span data-stu-id="9d400-116">When the job completes, get the result of the job with `Receive-Job`.</span></span>
+<span data-ttu-id="60adb-116">作業完成後，請使用 `Receive-Job` 取得作業的結果。</span><span class="sxs-lookup"><span data-stu-id="60adb-116">When the job completes, get the result of the job with `Receive-Job`.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="9d400-117">若 `Receive-Job` 旗標並未顯示，`-AsJob` 會從 Cmdlet 傳回結果。</span><span class="sxs-lookup"><span data-stu-id="9d400-117">`Receive-Job` returns the result from the cmdlet as if the `-AsJob` flag were not present.</span></span>
-> <span data-ttu-id="9d400-118">例如，`Do-Action -AsJob` 的 `Receive-Job` 結果與 `Do-Action` 結果的類型相同。</span><span class="sxs-lookup"><span data-stu-id="9d400-118">For example, the `Receive-Job` result of `Do-Action -AsJob` is of the same type as the result of `Do-Action`.</span></span>
+> <span data-ttu-id="60adb-117">若 `Receive-Job` 旗標並未顯示，`-AsJob` 會從 Cmdlet 傳回結果。</span><span class="sxs-lookup"><span data-stu-id="60adb-117">`Receive-Job` returns the result from the cmdlet as if the `-AsJob` flag were not present.</span></span>
+> <span data-ttu-id="60adb-118">例如，`Do-Action -AsJob` 的 `Receive-Job` 結果與 `Do-Action` 結果的類型相同。</span><span class="sxs-lookup"><span data-stu-id="60adb-118">For example, the `Receive-Job` result of `Do-Action -AsJob` is of the same type as the result of `Do-Action`.</span></span>
 
 ```azurepowershell-interactive
 $vm = Receive-Job $job
@@ -90,9 +90,9 @@ StorageProfile           : {ImageReference, OsDisk, DataDisks}
 FullyQualifiedDomainName : myvmmyvm.eastus.cloudapp.azure.com
 ```
 
-## <a name="example-scenarios"></a><span data-ttu-id="9d400-119">範例案例</span><span class="sxs-lookup"><span data-stu-id="9d400-119">Example Scenarios</span></span>
+## <a name="example-scenarios"></a><span data-ttu-id="60adb-119">範例案例</span><span class="sxs-lookup"><span data-stu-id="60adb-119">Example Scenarios</span></span>
 
-<span data-ttu-id="9d400-120">一次建立數個 VM：</span><span class="sxs-lookup"><span data-stu-id="9d400-120">Create several VMs at once:</span></span>
+<span data-ttu-id="60adb-120">一次建立數個 VM：</span><span class="sxs-lookup"><span data-stu-id="60adb-120">Create several VMs at once:</span></span>
 
 ```azurepowershell-interactive
 $creds = Get-Credential
@@ -107,7 +107,7 @@ Get-Job | Wait-Job
 Get-AzVM
 ```
 
-<span data-ttu-id="9d400-121">在此範例中，`Wait-Job` Cmdlet 會在作業執行時暫停指令碼。</span><span class="sxs-lookup"><span data-stu-id="9d400-121">In this example, the `Wait-Job` cmdlet causes the script to pause while jobs run.</span></span> <span data-ttu-id="9d400-122">一旦所有作業完成之後，指令碼會繼續執行。</span><span class="sxs-lookup"><span data-stu-id="9d400-122">The script continues executing once all of the jobs have completed.</span></span> <span data-ttu-id="9d400-123">以平行方式執行數個作業，指令碼即會等待作業完成再繼續。</span><span class="sxs-lookup"><span data-stu-id="9d400-123">Several jobs run in parallel then the script waits for completion before continuing.</span></span>
+<span data-ttu-id="60adb-121">在此範例中，`Wait-Job` Cmdlet 會在作業執行時暫停指令碼。</span><span class="sxs-lookup"><span data-stu-id="60adb-121">In this example, the `Wait-Job` cmdlet causes the script to pause while jobs run.</span></span> <span data-ttu-id="60adb-122">一旦所有作業完成之後，指令碼會繼續執行。</span><span class="sxs-lookup"><span data-stu-id="60adb-122">The script continues executing once all of the jobs have completed.</span></span> <span data-ttu-id="60adb-123">以平行方式執行數個作業，指令碼即會等待作業完成再繼續。</span><span class="sxs-lookup"><span data-stu-id="60adb-123">Several jobs run in parallel then the script waits for completion before continuing.</span></span>
 
 ```output
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
