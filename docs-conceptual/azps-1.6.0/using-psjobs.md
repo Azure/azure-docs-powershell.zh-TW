@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
-ms.openlocfilehash: 58aa777ca599c2a6181f0ecc5c20f6db7a89b75f
-ms.sourcegitcommit: 8f59e11e5c991543964154d63648aa1e6ae22512
+ms.openlocfilehash: 825a07e01194a07b747712a62384c7f162e63d7d
+ms.sourcegitcommit: d3069aba7d1ac248aff755e4b21533af1f73251d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58475245"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58808031"
 ---
 # <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a>使用 PowerShell 作業平行執行 Cmdlet
 
@@ -25,7 +25,7 @@ PSJobs 會以個別程序的形式執行，因此您的 Azure 連線必須與它
 
 ```azurepowershell-interactive
 $creds = Get-Credential
-$job = Start-Job { param($context,$vmadmin) New-AzVM -Name MyVm -AzContext $context -Credential $vmadmin} -Arguments (Get-AzContext),$creds
+$job = Start-Job { param($context,$vmadmin) New-AzVM -Name MyVm -AzContext $context -Credential $vmadmin} -ArgumentList (Get-AzContext),$creds
 ```
 
 但是，若您已選擇使用 `Enable-AzContextAutosave` 自動儲存內容，則該內容會自動與您建立的所有作業共用。
@@ -33,7 +33,7 @@ $job = Start-Job { param($context,$vmadmin) New-AzVM -Name MyVm -AzContext $cont
 ```azurepowershell-interactive
 Enable-AzContextAutosave
 $creds = Get-Credential
-$job = Start-Job { param($vmadmin) New-AzVM -Name MyVm -Credential $vmadmin} -Arguments $creds
+$job = Start-Job { param($vmadmin) New-AzVM -Name MyVm -Credential $vmadmin} -ArgumentList $creds
 ```
 
 ## <a name="automatic-jobs-with--asjob"></a>使用 `-AsJob` 將作業自動化
