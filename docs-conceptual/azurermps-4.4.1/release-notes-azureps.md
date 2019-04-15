@@ -385,7 +385,7 @@ ms.locfileid: "56153071"
     * 已針對 Get-AzureRmLog 修正問題 #3957
         - 問題 1：後端傳回的記錄，每頁 200 筆，透過接續 Token 連結下一頁。 客戶會看到 Cmdlet 只傳回 200 筆記錄，但確知應還有更多記錄。 除非 MaxEvents 小於 200，否則不論客戶設定的值為何，都會發生這種情形。
         - 問題 2：文件包含不正確的 Cmdlet 相關資料，例如：預設期間是 1 小時。
-        - 修正問題 1：Cmdlet 現在會遵循後端傳回的接續 Token，直到達到 MaxEvents 或集合的結束為止。<br>MaxEvents 的預設值為 1000，最大值為 100000。 凡 MaxEvents 值小於 1 都會忽略，並改為使用預設值。 這些值和行為並未變更，現在都已正確地記錄。<br>由於 Cmdlet 名稱未說明相關事件，而只提供了記錄檔，因此已新增 MaxEvents 別名 -MaxRecords-。
+        - 修正問題 1：Cmdlet 現在會遵循後端傳回的接續 Token，直到達到 MaxEvents 或集合的結束為止。<br>MaxEvents 的預設值為 1000，最大值為 100000。 凡 MaxEvents 值小於 1 都會忽略，並改為使用預設值。 這些值和行為並未變更，現在都已正確地記錄。<br>由於 Cmdlet 名稱未說明相關事件，而只提供了記錄，因此已新增 MaxEvents 別名 -MaxRecords-。
         - 修正問題 2：文件包含正確及更詳細的資訊：新的別名、正確的期間、正確的預設值、最小值和最大值。
 * KeyVault
     * 將 -UserPrincipalName 指定到 Set-AzureRMKeyVaultAccessPolicy 和 Remove-AzureRMKeyVaultAccessPolicy Cmdlet 時，請從目錄查詢中移除電子郵件地址。
