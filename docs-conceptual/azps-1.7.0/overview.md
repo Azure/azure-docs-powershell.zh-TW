@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 01/10/2019
 ms.openlocfilehash: 45ab083dd133c8c7b8dbe902484c92564bc216b9
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59363994"
 ---
 # <a name="overview-of-azure-powershell"></a>Azure PowerShell 的概觀
@@ -56,7 +56,7 @@ AzureRM 仍可取得 Bug 修正，但不會再獲得新的功能。
 * [Linux 虛擬機器](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=/powershell/azure/toc.json)
 * [Windows 虛擬機器](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=/powershell/azure/toc.json)
 * [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
-* [SQL Database](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
+* [SQL Databases](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
 
 ## <a name="build-your-skills-with-microsoft-learn"></a>透過 Microsoft Learn 增進您的技巧
 

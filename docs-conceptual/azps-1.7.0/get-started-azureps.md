@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 01/14/2019
 ms.openlocfilehash: 0c3b749cb2ac7f11dacafca76b65944f523f727d
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59363984"
 ---
 # <a name="get-started-with-azure-powershell"></a>開始使用 Azure PowerShell
@@ -67,9 +67,9 @@ Get-Command -Verb Get -Noun AzVM* -Module Az.Compute
 | [資源群組](/azure/azure-resource-manager/resource-group-overview) | [Az.Resources](/powershell/module/az.resources#resources) | `AzResourceGroup` |
 | [虛擬機器](/azure/virtual-machines) | [Az.Compute](/powershell/module/az.compute#virtual_machines) | `AzVM` |
 | [儲存體帳戶](/azure/storage/common/storage-introduction) | [Az.Storage](/powershell/module/az.storage/) | `AzStorageAccount` |
-| [Key Vault](/azure/key-vault/key-vault-whatis) | [Az.KeyVault](/powershell/module/az.keyvault) | `AzKeyVault` |
+| [金鑰保存庫](/azure/key-vault/key-vault-whatis) | [Az.KeyVault](/powershell/module/az.keyvault) | `AzKeyVault` |
 | [Web 應用程式](/azure/app-service) | [Az.Websites](/powershell/module/az.websites) | `AzWebApp` |
-| [SQL DATABASE](/azure/sql-database) | [Az.Sql](/powershell/module/az.sql) | `AzSqlDatabase` |
+| [SQL 資料庫](/azure/sql-database) | [Az.Sql](/powershell/module/az.sql) | `AzSqlDatabase` |
 
 如需 Azure PowerShell 中的完整模組清單，請參閱裝載於 GitHub 上的 [Azure PowerShell 模組清單](https://github.com/Azure/azure-powershell/blob/master/documentation/azure-powershell-modules.md)。
 
@@ -83,7 +83,7 @@ Get-Command -Verb Get -Noun AzVM* -Module Az.Compute
 另外還有其他熱門 Azure 服務的 Azure PowerShell 快速入門：
 
 * [建立儲存體帳戶](/azure/storage/common/storage-quickstart-create-account?tabs=azure-powershell)
-* [在 Azure Blob 儲存體之間傳送物件](/azure/storage/blobs/storage-quickstart-blobs-powershell)
+* [ 在 Azure Blob 儲存體之間傳送物件](/azure/storage/blobs/storage-quickstart-blobs-powershell)
 * [從 Azure Key Vault 建立及擷取祕密](/azure/key-vault/quick-create-powershell)
 * [建立 Azure SQL 資料庫和防火牆](/azure/sql-database/scripts/sql-database-create-and-configure-database-powershell)
 * [在 Azure 容器執行個體中執行容器](/azure/container-instances/container-instances-quickstart-powershell)
@@ -97,4 +97,4 @@ Get-Command -Verb Get -Noun AzVM* -Module Az.Compute
 * [使用 Azure PowerShell 建立服務主體](create-azure-service-principal-azureps.md)
 * 從社群獲得協助︰
   * [MSDN 上的 Azure 論壇](http://go.microsoft.com/fwlink/p/?LinkId=320212)
-  * [堆疊溢位](http://go.microsoft.com/fwlink/?LinkId=320213)
+  * [Stack Overflow](http://go.microsoft.com/fwlink/?LinkId=320213)

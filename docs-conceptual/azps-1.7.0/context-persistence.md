@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
 ms.openlocfilehash: 8702de48429482748939fb1a43ff911bed15f6c0
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59363671"
 ---
 # <a name="persist-user-credentials-across-powershell-sessions"></a>在 PowerShell 工作階段之間保存使用者認證
@@ -92,8 +92,7 @@ PS C:\> Rename-AzContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Contoso
 PS C:\> Remove-AzContext Contoso2
 ```
 
-忘記名為 'Contoso2' 的內容。 您可以使用下列項目來重新建立此內容：
-`Set-AzContext`
+忘記名為 'Contoso2' 的內容。 您可以使用 `Set-AzContext` 來重新建立此內容
 
 ## <a name="removing-credentials"></a>移除認證
 

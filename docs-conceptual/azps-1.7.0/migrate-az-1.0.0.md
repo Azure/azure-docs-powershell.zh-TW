@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/14/2018
 ms.openlocfilehash: be3e19dc4b689adbc63b933dd9f3454122d5344a
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59363990"
 ---
 # <a name="migration-guide-for-az-100"></a>Az 1.0.0 的移轉指南
@@ -42,7 +42,7 @@ ms.locfileid: "59363990"
   - [Az.RecoveryServices (先前是 AzureRM.RecoveryServices、AzureRM.RecoveryServices.Backup 和 AzureRM.RecoveryServices.SiteRecovery)](#azrecoveryservices-previously-azurermrecoveryservices-azurermrecoveryservicesbackup-and-azurermrecoveryservicessiterecovery)
   - [Az.Resources (先前是 AzureRM.Resources)](#azresources-previously-azurermresources)
   - [Az.ServiceFabric (先前是 AzureRM.ServiceFabric)](#azservicefabric-previously-azurermservicefabric)
-  - [Az.Sql (previously AzureRM.Sql)](#azsql-previously-azurermsql)
+  - [Az.Sql (先前是 AzureRM.Sql)](#azsql-previously-azurermsql)
   - [Az.Storage (先前是 Azure.Storage 和 AzureRM.Storage)](#azstorage-previously-azurestorage-and-azurermstorage)
   - [Az.Websites (先前是 AzureRM.Websites)](#azwebsites-previously-azurermwebsites)
 
@@ -188,9 +188,9 @@ RequiredModules = @(@{ModuleName="Az.Profile"; ModuleVersion="1.0.0"})
 ### <a name="azcompute-previously-azurermcompute"></a>Az.Compute (先前是 AzureRM.Compute)
 - 已從 `PSVirtualMachine` 和 `PSVirtualMachineScaleSet` 物件中的 `Identity` 屬性移除 `IdentityIds`。指令碼不應再使用這個欄位的值來決定處理方式。
 - `PSVirtualMachineScaleSetVM` 物件的 `InstanceView` 屬性，其類型已從 `VirtualMachineInstanceView` 變更為 `VirtualMachineScaleSetVMInstanceView`
-- `AutoOSUpgradePolicy` 和 `UpgradePolicy` 屬性已從 `AutomaticOSUpgrade` 中移除
+- 已從 `UpgradePolicy` 屬性移除 `AutoOSUpgradePolicy` 和 `AutomaticOSUpgrade` 屬性
 - `PSSnapshotUpdate` 物件中的 `Sku` 屬性，其類型已從 `DiskSku` 變更為 `SnapshotSku`
-- `VmScaleSetVMParameterSet` 已從 `Add-AzVMDataDisk` Cmdlet 移除，您無法再將資料磁碟個別地新增至擴展集 VM。
+- 已從 `Add-AzVMDataDisk` Cmdlet 移除 `VmScaleSetVMParameterSet`，您無法再將資料磁碟個別地新增至擴展集 VM。
 
 ### <a name="azdatafactory-previously-azurermdatafactories-and-azurermdatafactoryv2"></a>Az.DataFactory (先前是 AzureRM.DataFactories 和 AzureRM.DataFactoryV2)
 - `GatewayName` 已成為 `New-AzDataFactoryEncryptValue` Cmdlet 的必要參數
@@ -304,7 +304,7 @@ RequiredModules = @(@{ModuleName="Az.Profile"; ModuleVersion="1.0.0"})
 
 ### <a name="azsql-previously-azurermsql"></a>Az.Sql (previously AzureRM.Sql)
 - 已從 `Set-AzSqlDatabaseBackupLongTermRetentionPolicy` Cmdlet 移除 `State` 和 `ResourceId` 參數
-- 已移除淘汰的 Cmdlet：`Get/Set-AzSqlServerBackupLongTermRetentionVault`、`Get/Start/Stop-AzSqlServerUpgrade`、`Get/Set-AzSqlDatabaseAuditingPolicy`、`Get/Set-AzSqlServerAuditingPolicy`、`Remove-AzSqlDatabaseAuditing`、 `Remove-AzSqlServerAuditing`
+- 已移除淘汰的 Cmdlet：`Get/Set-AzSqlServerBackupLongTermRetentionVault`、`Get/Start/Stop-AzSqlServerUpgrade`、`Get/Set-AzSqlDatabaseAuditingPolicy`、`Get/Set-AzSqlServerAuditingPolicy`、`Remove-AzSqlDatabaseAuditing`、`Remove-AzSqlServerAuditing`
 - 已從 `Get-AzSqlDatabaseBackupLongTermRetentionPolicy` Cmdlet 移除淘汰的 `Current` 參數
 - 已從 `Get-AzSqlServerServiceObjective` Cmdlet 移除淘汰的 `DatabaseName` 參數
 - 已從 `Set-AzSqlDatabaseDataMaskingPolicy` Cmdlet 移除淘汰的 `PrivilegedLogin` 參數

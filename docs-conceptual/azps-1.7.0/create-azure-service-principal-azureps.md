@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/20/2019
 ms.openlocfilehash: 06116c7eb6ed848c9f369a3dd16f5e901e02afbe
-ms.sourcegitcommit: 1f13aaa89d23130f84b98047e261d26cd4e9cf0c
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/10/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59430613"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>使用 Azure PowerShell 來建立 Azure 服務主體
@@ -91,8 +91,8 @@ $sp = New-AzADServicePrincipal -DisplayName ServicePrincipalName -KeyCredential 
 
 您可以使用 [Get-AzADServicePrincipal](/powershell/module/az.resources/get-azadserviceprincipal) 擷取目前作用中租用戶的服務主體清單。 依預設，此命令會傳回租用戶中的__所有__服務主體，因此對於大型組織，可能需要長時間來傳回結果。 建議使用選擇性伺服器端篩選引數的其中一個：
 
-* `-DisplayNameBeginsWith` 要求服務主體的「前置詞」符合所提供的值。 服務主體的顯示名稱是建立期間使用 `-DisplayName` 所設定的值。
-* `-DisplayName` 要求服務主體名稱「完全相符」。
+* `-DisplayNameBeginsWith` 會要求服務主體的_前置詞_符合所提供的值。 服務主體的顯示名稱是建立期間使用 `-DisplayName` 所設定的值。
+* `-DisplayName` 要求服務主體名稱_完全相符_。
 
 ## <a name="manage-service-principal-roles"></a>管理服務主體角色
 
