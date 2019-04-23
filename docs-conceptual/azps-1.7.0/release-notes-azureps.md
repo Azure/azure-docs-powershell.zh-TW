@@ -218,7 +218,7 @@ ms.locfileid: "59363986"
 * 修正防止重複建立 KeyCredentials 的錯誤
 
 #### <a name="azsql"></a>Az.Sql
-* 新增 SQL DB 超大規模層支援
+* 新增 SQL DB 超大規模資料庫層支援
 * 已修正以下錯誤：由於在還原要求中設定非必要屬性造成還原失敗
 
 #### <a name="azwebsites"></a>Az.Websites
