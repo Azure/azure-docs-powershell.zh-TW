@@ -1,15 +1,12 @@
 - name: Azure PowerShell
   href: overview.md
   items:
+    - name: 新的 Az 模組簡介
+      href: new-azureps-module-az.md
     - name: Install
-      href: install-azurerm-ps.md
-      items:
-        - name: 在 macOS 或 Linux 上安裝
-          href: install-azurermps-maclinux.md
-        - name: 使用 MSI 或 Web PI 安裝
-          href: other-install.md
+      href: install-az-ps.md
     - name: 解除安裝
-      href: uninstall-azurerm-ps.md
+      href: uninstall-az-ps.md
     - name: 開始使用
       href: get-started-azureps.md
     - name: Cloud Shell
@@ -21,6 +18,8 @@
           href: create-azure-service-principal-azureps.md
         - name: 持續性認證
           href: context-persistence.md
+    - name: 從 AzureRM 遷移
+      href: migrate-from-azurerm-to-az.md
     - name: 查詢
       href: queries-azureps.md
     - name: 格式化輸出
@@ -44,8 +43,8 @@
     - name: 版本資訊
       href: release-notes-azureps.md
       items:
-        - name: Azure PowerShell 5.x 的重大變更
-          href: migration-guide.5.0.0.md
+        - name: Az 1.0.0 的重大變更
+          href: migrate-az-1.0.0.md
 - name: 教學課程
   items:
     - name: 建立虛擬機器
