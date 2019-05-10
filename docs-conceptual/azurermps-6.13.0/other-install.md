@@ -7,31 +7,29 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/16/2018
-ms.openlocfilehash: 0976fd51b26010702d200cee445d93269405416c
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 8fdf5598050cea2ef3f7422d53b22f9e49fe7477
+ms.sourcegitcommit: b37b8bb6f8e39ecea5b50ceec48601eed313add7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153122"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65511678"
 ---
-# <a name="install-azure-powershell-on-windows-with-msi"></a><span data-ttu-id="cf246-103">使用 MSI 在 Windows 上安裝 Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="cf246-103">Install Azure PowerShell on Windows with MSI</span></span>
+# <a name="install-azure-powershell-on-windows-with-msi"></a><span data-ttu-id="73728-103">使用 MSI 在 Windows 上安裝 Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="73728-103">Install Azure PowerShell on Windows with MSI</span></span>
 
-<span data-ttu-id="cf246-104">本文說明如何使用 MSI 安裝程式在 Windows 上安裝 Azure PowerShell。</span><span class="sxs-lookup"><span data-stu-id="cf246-104">This article explains how to install Azure PowerShell on Windows using an MSI installer.</span></span>  
-<span data-ttu-id="cf246-105">只有在您的系統需要時才使用這些安裝方法。</span><span class="sxs-lookup"><span data-stu-id="cf246-105">Use these installation methods only if they're necessary for your system.</span></span> <span data-ttu-id="cf246-106">在 Windows 上安裝 Azure PowerShell 的建議方法是使用 PowerShellGet。</span><span class="sxs-lookup"><span data-stu-id="cf246-106">The recommended way to install Azure PowerShell on Windows is with PowerShellGet.</span></span> <span data-ttu-id="cf246-107">如需使用 PowerShellGet 安裝 Azure PowerShell 的指示，請參閱[使用 PowerShellGet 安裝 Azure PowerShell](install-azurerm-ps.md)。</span><span class="sxs-lookup"><span data-stu-id="cf246-107">For instructions on using PowerShellGet to install Azure PowerShell, see [Install Azure PowerShell with PowerShellGet](install-azurerm-ps.md).</span></span>
-
-> [!NOTE]
-> <span data-ttu-id="cf246-108">Azure PowerShell 6.x 版和更高版本無法再使用 Web Platform Installer 的安裝方法。</span><span class="sxs-lookup"><span data-stu-id="cf246-108">The Web Platform Installer method of installation is no longer available for versions of Azure PowerShell 6.x and higher.</span></span> <span data-ttu-id="cf246-109">如果您需要使用 Web Platform Installer，請考慮改用 MSI，或可安裝舊版的 Azure PowerShell。</span><span class="sxs-lookup"><span data-stu-id="cf246-109">If you require use of the Web Platform Installer please consider using the MSI instead, or you can install an earlier version of Azure PowerShell.</span></span>
-
-<span data-ttu-id="cf246-110">若要在 Linux 或 macOS 環境上安裝，請參閱[在 macOS 或 Linux 上安裝 Azure PowerShell](install-azurermps-maclinux.md)。</span><span class="sxs-lookup"><span data-stu-id="cf246-110">To install on Linux or macOS environments, see [Install Azure PowerShell on macOS or Linux](install-azurermps-maclinux.md).</span></span>
-
-## <a name="install-or-update-on-windows-using-the-msi-package"></a><span data-ttu-id="cf246-111">使用 MSI 套件在 Windows 上安裝或更新</span><span class="sxs-lookup"><span data-stu-id="cf246-111">Install or update on Windows using the MSI Package</span></span>
-
-<span data-ttu-id="cf246-112">您可以使用 MSI 檔案 (可從 [GitHub](https://github.com/Azure/azure-powershell/releases/tag/v6.13.1-November2018) 取得) 來安裝適用於 Azure PowerShell 5.x 的 Azure PowerShell。</span><span class="sxs-lookup"><span data-stu-id="cf246-112">Azure PowerShell for Windows PowerShell 5.x can be installed using the MSI file available from [GitHub](https://github.com/Azure/azure-powershell/releases/tag/v6.13.1-November2018).</span></span> <span data-ttu-id="cf246-113">如果您已利用 MSI 身分安裝舊版的 Azure 模組，安裝程式會自動移除這些模組。</span><span class="sxs-lookup"><span data-stu-id="cf246-113">If you have installed previous versions of Azure modules as an MSI, the installer automatically removes them.</span></span> <span data-ttu-id="cf246-114">MSI 套件會在 `${env:ProgramFiles}\WindowsPowerShell\Modules` 中安裝模組。</span><span class="sxs-lookup"><span data-stu-id="cf246-114">The MSI package installs modules in `${env:ProgramFiles}\WindowsPowerShell\Modules`.</span></span> <span data-ttu-id="cf246-115">`AzureRM` 和 `Azure` 模組都已安裝。</span><span class="sxs-lookup"><span data-stu-id="cf246-115">Both the `AzureRM` and `Azure` modules are installed.</span></span>
+<span data-ttu-id="73728-104">本文說明如何使用 MSI 安裝程式在 Windows 上安裝 Azure PowerShell。</span><span class="sxs-lookup"><span data-stu-id="73728-104">This article explains how to install Azure PowerShell on Windows using an MSI installer.</span></span>  
+<span data-ttu-id="73728-105">只有在您的系統需要時才使用這些安裝方法。</span><span class="sxs-lookup"><span data-stu-id="73728-105">Use these installation methods only if they're necessary for your system.</span></span> <span data-ttu-id="73728-106">在 Windows 上安裝 Azure PowerShell 的建議方法是使用 PowerShellGet。</span><span class="sxs-lookup"><span data-stu-id="73728-106">The recommended way to install Azure PowerShell on Windows is with PowerShellGet.</span></span> <span data-ttu-id="73728-107">如需使用 PowerShellGet 安裝 Azure PowerShell 的指示，請參閱[使用 PowerShellGet 安裝 Azure PowerShell](install-azurerm-ps.md)。</span><span class="sxs-lookup"><span data-stu-id="73728-107">For instructions on using PowerShellGet to install Azure PowerShell, see [Install Azure PowerShell with PowerShellGet](install-azurerm-ps.md).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="cf246-116">僅在您使用 Azure 傳統部署模型時，才使用 `Azure` 模組。</span><span class="sxs-lookup"><span data-stu-id="cf246-116">Only use the `Azure` module if you are working with the Azure classic deployment model.</span></span>
+> <span data-ttu-id="73728-108">Azure PowerShell 6.x 版和更高版本無法再使用 Web Platform Installer 的安裝方法。</span><span class="sxs-lookup"><span data-stu-id="73728-108">The Web Platform Installer method of installation is no longer available for versions of Azure PowerShell 6.x and higher.</span></span> <span data-ttu-id="73728-109">如果您需要使用 Web Platform Installer，請考慮改用 MSI，或可安裝舊版的 Azure PowerShell。</span><span class="sxs-lookup"><span data-stu-id="73728-109">If you require use of the Web Platform Installer please consider using the MSI instead, or you can install an earlier version of Azure PowerShell.</span></span>
 
-<span data-ttu-id="cf246-117">若要開始使用 Azure PowerShell，請使用您的 Azure 認證登入。</span><span class="sxs-lookup"><span data-stu-id="cf246-117">To start working with Azure PowerShell, sign in with your Azure credentials.</span></span>
+## <a name="install-or-update-on-windows-using-the-msi-package"></a><span data-ttu-id="73728-110">使用 MSI 套件在 Windows 上安裝或更新</span><span class="sxs-lookup"><span data-stu-id="73728-110">Install or update on Windows using the MSI Package</span></span>
+
+<span data-ttu-id="73728-111">您可以使用 MSI 檔案 (可從 [GitHub](https://github.com/Azure/azure-powershell/releases/tag/v6.13.1-November2018) 取得) 來安裝適用於 Azure PowerShell 5.x 的 Azure PowerShell。</span><span class="sxs-lookup"><span data-stu-id="73728-111">Azure PowerShell for Windows PowerShell 5.x can be installed using the MSI file available from [GitHub](https://github.com/Azure/azure-powershell/releases/tag/v6.13.1-November2018).</span></span> <span data-ttu-id="73728-112">如果您已利用 MSI 身分安裝舊版的 Azure 模組，安裝程式會自動移除這些模組。</span><span class="sxs-lookup"><span data-stu-id="73728-112">If you have installed previous versions of Azure modules as an MSI, the installer automatically removes them.</span></span> <span data-ttu-id="73728-113">MSI 套件會在 `${env:ProgramFiles}\WindowsPowerShell\Modules` 中安裝模組。</span><span class="sxs-lookup"><span data-stu-id="73728-113">The MSI package installs modules in `${env:ProgramFiles}\WindowsPowerShell\Modules`.</span></span> <span data-ttu-id="73728-114">`AzureRM` 和 `Azure` 模組都已安裝。</span><span class="sxs-lookup"><span data-stu-id="73728-114">Both the `AzureRM` and `Azure` modules are installed.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="73728-115">僅在您使用 Azure 傳統部署模型時，才使用 `Azure` 模組。</span><span class="sxs-lookup"><span data-stu-id="73728-115">Only use the `Azure` module if you are working with the Azure classic deployment model.</span></span>
+
+<span data-ttu-id="73728-116">若要開始使用 Azure PowerShell，請使用您的 Azure 認證登入。</span><span class="sxs-lookup"><span data-stu-id="73728-116">To start working with Azure PowerShell, sign in with your Azure credentials.</span></span>
 
 ```powershell-interactive
 # Connect to Azure with an interactive dialog for sign-in
@@ -40,6 +38,6 @@ Connect-AzureRmAccount
 
 > [!NOTE]
 >
-> <span data-ttu-id="cf246-118">如果您已停用自動載入模組功能，則必須透過 `Import-Module AzureRM` 來手動匯入模組。</span><span class="sxs-lookup"><span data-stu-id="cf246-118">If you've disabled module autoloading, you need to manually import the module with `Import-Module AzureRM`.</span></span> <span data-ttu-id="cf246-119">因為模組的結構化方式，這可能需要幾秒鐘的時間。</span><span class="sxs-lookup"><span data-stu-id="cf246-119">Because of the way the module is structured, this can take a few seconds.</span></span>
+> <span data-ttu-id="73728-117">如果您已停用自動載入模組功能，則必須透過 `Import-Module AzureRM` 來手動匯入模組。</span><span class="sxs-lookup"><span data-stu-id="73728-117">If you've disabled module autoloading, you need to manually import the module with `Import-Module AzureRM`.</span></span> <span data-ttu-id="73728-118">因為模組的結構化方式，這可能需要幾秒鐘的時間。</span><span class="sxs-lookup"><span data-stu-id="73728-118">Because of the way the module is structured, this can take a few seconds.</span></span>
 
-<span data-ttu-id="cf246-120">您必須針對每個啟動的新 PowerShell 工作階段重複此步驟。</span><span class="sxs-lookup"><span data-stu-id="cf246-120">You'll need to repeat this step for every new PowerShell session you start.</span></span> <span data-ttu-id="cf246-121">若要了解如何在 PowerShell 工作階段之間保存您的 Azure 登入，請參閱[在 PowerShell 工作階段之間保存使用者認證](context-persistence.md)。</span><span class="sxs-lookup"><span data-stu-id="cf246-121">To learn how to persist your Azure sign-in across PowerShell sessions, see [Persist user credentials across PowerShell sessions](context-persistence.md).</span></span>
+<span data-ttu-id="73728-119">您必須針對每個啟動的新 PowerShell 工作階段重複此步驟。</span><span class="sxs-lookup"><span data-stu-id="73728-119">You'll need to repeat this step for every new PowerShell session you start.</span></span> <span data-ttu-id="73728-120">若要了解如何在 PowerShell 工作階段之間保存您的 Azure 登入，請參閱[在 PowerShell 工作階段之間保存使用者認證](context-persistence.md)。</span><span class="sxs-lookup"><span data-stu-id="73728-120">To learn how to persist your Azure sign-in across PowerShell sessions, see [Persist user credentials across PowerShell sessions](context-persistence.md).</span></span>
