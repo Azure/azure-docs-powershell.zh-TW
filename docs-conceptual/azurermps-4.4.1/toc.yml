@@ -1,47 +1,41 @@
 - name: Azure PowerShell
   href: overview.md
+- name: Install
   items:
-    - name: Install
+    - name: 使用 PowerShellGet 安裝
       href: install-azurerm-ps.md
-      items:
-        - name: 在 macOS 與 Linux 上安裝
-          href: install-azurermps-maclinux.md
-        - name: 其他安裝方法
-          href: other-install.md
-    - name: 開始使用
-      href: get-started-azureps.md
-    - name: Cloud Shell
-      href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
-    - name: 登入
+    - name: 使用 MSI 或 Web PI 安裝
+      href: other-install.md
+- name: 開始使用
+  href: get-started-azureps.md
+- name: Cloud Shell
+  href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
+- name: 登入
+  items:
+    - name: 驗證方法
       href: authenticate-azureps.md
-      items:
-        - name: 建立服務主體
-          href: create-azure-service-principal-azureps.md
-        - name: 持續性認證
-          href: context-persistence.md
-    - name: 查詢
-      href: queries-azureps.md
-    - name: 格式化輸出
-      href: formatting-output.md
-    - name: 管理訂用帳戶
-      href: manage-subscriptions-azureps.md
-    - name: 部署
-      items:
-        - name: 部署 Resource Manager 範本
-          href: /azure/azure-resource-manager/resource-group-template-deploy
-        - name: 匯出 Resource Manager 範本
-          href: /azure/azure-resource-manager/resource-manager-export-template-powershell
-        - name: 部署私人 Resource Manager 範本
-          href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
-    - name: 概念
-      items:
-        - name: 實驗性模組
-          href: using-experimental-modules.md
-    - name: 版本資訊
-      href: release-notes-azureps.md
-      items:
-        - name: Azure PowerShell 4.x 的重大變更
-          href: migration-guide.4.0.0.md
+    - name: 建立服務主體
+      href: create-azure-service-principal-azureps.md
+    - name: 持續性認證
+      href: context-persistence.md
+- name: 查詢
+  href: queries-azureps.md
+- name: 格式化輸出
+  href: formatting-output.md
+- name: 管理訂用帳戶
+  href: manage-subscriptions-azureps.md
+- name: 部署
+  items:
+    - name: 部署 Resource Manager 範本
+      href: /azure/azure-resource-manager/resource-group-template-deploy
+    - name: 匯出 Resource Manager 範本
+      href: /azure/azure-resource-manager/resource-manager-export-template-powershell
+    - name: 部署私人 Resource Manager 範本
+      href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
+- name: 概念
+  items:
+    - name: 實驗性模組
+      href: using-experimental-modules.md
 - name: 指令碼範例
   items:
     - name: Linux 虛擬機器
@@ -54,3 +48,7 @@
       href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
     - name: Cosmos DB
       href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
+- name: 版本資訊
+  href: release-notes-azureps.md
+- name: Azure PowerShell 4.x 的重大變更
+  href: migration-guide.4.0.0.md
