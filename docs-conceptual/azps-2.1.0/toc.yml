@@ -6,6 +6,12 @@
   href: install-az-ps.md
 - name: 解除安裝
   href: uninstall-az-ps.md
+- name: 從 AzureRM 遷移
+  items:
+    - name: 移轉步驟
+      href: migrate-from-azurerm-to-az.md
+    - name: AzureRM 和 Az 之間的變更
+      href: migrate-az-1.0.0.md
 - name: 開始使用
   href: get-started-azureps.md
 - name: Cloud Shell
@@ -18,8 +24,6 @@
       href: create-azure-service-principal-azureps.md
     - name: 持續性認證
       href: context-persistence.md
-- name: 從 AzureRM 遷移
-  href: migrate-from-azurerm-to-az.md
 - name: 查詢
   href: queries-azureps.md
 - name: 格式化輸出
@@ -58,5 +62,3 @@
       href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
 - name: 版本資訊
   href: release-notes-azureps.md
-- name: Az 1.0.0 的重大變更
-  href: migrate-az-1.0.0.md
