@@ -7,53 +7,55 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: 39d9fa6e354c3c3448053c9cdc98fdc7f55b068d
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 1fbd24996da2fbc7d4e95c2a63f828aea6cb3145
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153059"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534932"
 ---
-# <a name="breaking-changes-for-microsoft-azure-powershell-600"></a><span data-ttu-id="3aae6-103">Microsoft Azure PowerShell 6.0.0 的重大變更</span><span class="sxs-lookup"><span data-stu-id="3aae6-103">Breaking changes for Microsoft Azure PowerShell 6.0.0</span></span>
+# <a name="breaking-changes-for-microsoft-azure-powershell-600"></a><span data-ttu-id="2bc32-103">Microsoft Azure PowerShell 6.0.0 的重大變更</span><span class="sxs-lookup"><span data-stu-id="2bc32-103">Breaking changes for Microsoft Azure PowerShell 6.0.0</span></span>
 
-<span data-ttu-id="3aae6-104">本文件為 Microsoft Azure PowerShell Cmdlet 的客戶提供重大變更通知和移轉指南。</span><span class="sxs-lookup"><span data-stu-id="3aae6-104">This document serves as both a breaking change notification and migration guide for consumers of the Microsoft Azure PowerShell cmdlets.</span></span> <span data-ttu-id="3aae6-105">每一節都會說明促成重大變更的原因和阻力最小的移轉路徑。</span><span class="sxs-lookup"><span data-stu-id="3aae6-105">Each section describes both the impetus for the breaking change and the migration path of least resistance.</span></span> <span data-ttu-id="3aae6-106">如需深入了解內容，請參閱與每次變更相關聯的提取要求。</span><span class="sxs-lookup"><span data-stu-id="3aae6-106">For in-depth context, please refer to the pull request associated with each change.</span></span>
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
-## <a name="table-of-contents"></a><span data-ttu-id="3aae6-107">目錄</span><span class="sxs-lookup"><span data-stu-id="3aae6-107">Table of Contents</span></span>
+<span data-ttu-id="2bc32-104">本文件為 Microsoft Azure PowerShell Cmdlet 的客戶提供重大變更通知和移轉指南。</span><span class="sxs-lookup"><span data-stu-id="2bc32-104">This document serves as both a breaking change notification and migration guide for consumers of the Microsoft Azure PowerShell cmdlets.</span></span> <span data-ttu-id="2bc32-105">每一節都會說明促成重大變更的原因和阻力最小的移轉路徑。</span><span class="sxs-lookup"><span data-stu-id="2bc32-105">Each section describes both the impetus for the breaking change and the migration path of least resistance.</span></span> <span data-ttu-id="2bc32-106">如需深入了解內容，請參閱與每次變更相關聯的提取要求。</span><span class="sxs-lookup"><span data-stu-id="2bc32-106">For in-depth context, please refer to the pull request associated with each change.</span></span>
 
-- [<span data-ttu-id="3aae6-108">一般重大變更</span><span class="sxs-lookup"><span data-stu-id="3aae6-108">General breaking changes</span></span>](#general-breaking-changes)
-    - [<span data-ttu-id="3aae6-109">移至 5.0 所需的最低 PowerShell 版本</span><span class="sxs-lookup"><span data-stu-id="3aae6-109">Minimum PowerShell version required bumped to 5.0</span></span>](#minimum-powershell-version-required-bumped-to-50)
-    - [<span data-ttu-id="3aae6-110">依預設啟用內容自動儲存</span><span class="sxs-lookup"><span data-stu-id="3aae6-110">Context autosaved enabled by default</span></span>](#context-autosave-enabled-by-default)
-    - [<span data-ttu-id="3aae6-111">移除標記別名</span><span class="sxs-lookup"><span data-stu-id="3aae6-111">Removal of Tags alias</span></span>](#removal-of-tags-alias)
-- [<span data-ttu-id="3aae6-112">AzureRM.Compute Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="3aae6-112">Breaking changes to AzureRM.Compute cmdlets</span></span>](#breaking-changes-to-azurermcompute-cmdlets)
-- [<span data-ttu-id="3aae6-113">AzureRM.DataLakeStore Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="3aae6-113">Breaking changes to AzureRM.DataLakeStore cmdlets</span></span>](#breaking-changes-to-azurermdatalakestore-cmdlets)
-- [<span data-ttu-id="3aae6-114">AzureRM.Dns Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="3aae6-114">Breaking changes to AzureRM.Dns cmdlets</span></span>](#breaking-changes-to-azurermdns-cmdlets)
-- [<span data-ttu-id="3aae6-115">AzureRM.Insights Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="3aae6-115">Breaking changes to AzureRM.Insights cmdlets</span></span>](#breaking-changes-to-azurerminsights-cmdlets)
-- [<span data-ttu-id="3aae6-116">AzureRM.KeyVault Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="3aae6-116">Breaking changes to AzureRM.KeyVault cmdlets</span></span>](#breaking-changes-to-azurermkeyvault-cmdlets)
-- [<span data-ttu-id="3aae6-117">AzureRM.Network Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="3aae6-117">Breaking changes to AzureRM.Network cmdlets</span></span>](#breaking-changes-to-azurermnetwork-cmdlets)
-- [<span data-ttu-id="3aae6-118">AzureRM.RedisCache Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="3aae6-118">Breaking changes to AzureRM.RedisCache cmdlets</span></span>](#breaking-changes-to-azurermrediscache-cmdlets)
-- [<span data-ttu-id="3aae6-119">AzureRM.Resources Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="3aae6-119">Breaking changes to AzureRM.Resources cmdlets</span></span>](#breaking-changes-to-azurermresources-cmdlets)
-- [<span data-ttu-id="3aae6-120">AzureRM.Storage Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="3aae6-120">Breaking changes to AzureRM.Storage cmdlets</span></span>](#breaking-changes-to-azurermstorage-cmdlets)
-- [<span data-ttu-id="3aae6-121">移除的模組</span><span class="sxs-lookup"><span data-stu-id="3aae6-121">Removed modules</span></span>](#removed-modules)
+## <a name="table-of-contents"></a><span data-ttu-id="2bc32-107">目錄</span><span class="sxs-lookup"><span data-stu-id="2bc32-107">Table of Contents</span></span>
+
+- [<span data-ttu-id="2bc32-108">一般重大變更</span><span class="sxs-lookup"><span data-stu-id="2bc32-108">General breaking changes</span></span>](#general-breaking-changes)
+    - [<span data-ttu-id="2bc32-109">移至 5.0 所需的最低 PowerShell 版本</span><span class="sxs-lookup"><span data-stu-id="2bc32-109">Minimum PowerShell version required bumped to 5.0</span></span>](#minimum-powershell-version-required-bumped-to-50)
+    - [<span data-ttu-id="2bc32-110">依預設啟用內容自動儲存</span><span class="sxs-lookup"><span data-stu-id="2bc32-110">Context autosaved enabled by default</span></span>](#context-autosave-enabled-by-default)
+    - [<span data-ttu-id="2bc32-111">移除標記別名</span><span class="sxs-lookup"><span data-stu-id="2bc32-111">Removal of Tags alias</span></span>](#removal-of-tags-alias)
+- [<span data-ttu-id="2bc32-112">AzureRM.Compute Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="2bc32-112">Breaking changes to AzureRM.Compute cmdlets</span></span>](#breaking-changes-to-azurermcompute-cmdlets)
+- [<span data-ttu-id="2bc32-113">AzureRM.DataLakeStore Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="2bc32-113">Breaking changes to AzureRM.DataLakeStore cmdlets</span></span>](#breaking-changes-to-azurermdatalakestore-cmdlets)
+- [<span data-ttu-id="2bc32-114">AzureRM.Dns Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="2bc32-114">Breaking changes to AzureRM.Dns cmdlets</span></span>](#breaking-changes-to-azurermdns-cmdlets)
+- [<span data-ttu-id="2bc32-115">AzureRM.Insights Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="2bc32-115">Breaking changes to AzureRM.Insights cmdlets</span></span>](#breaking-changes-to-azurerminsights-cmdlets)
+- [<span data-ttu-id="2bc32-116">AzureRM.KeyVault Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="2bc32-116">Breaking changes to AzureRM.KeyVault cmdlets</span></span>](#breaking-changes-to-azurermkeyvault-cmdlets)
+- [<span data-ttu-id="2bc32-117">AzureRM.Network Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="2bc32-117">Breaking changes to AzureRM.Network cmdlets</span></span>](#breaking-changes-to-azurermnetwork-cmdlets)
+- [<span data-ttu-id="2bc32-118">AzureRM.RedisCache Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="2bc32-118">Breaking changes to AzureRM.RedisCache cmdlets</span></span>](#breaking-changes-to-azurermrediscache-cmdlets)
+- [<span data-ttu-id="2bc32-119">AzureRM.Resources Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="2bc32-119">Breaking changes to AzureRM.Resources cmdlets</span></span>](#breaking-changes-to-azurermresources-cmdlets)
+- [<span data-ttu-id="2bc32-120">AzureRM.Storage Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="2bc32-120">Breaking changes to AzureRM.Storage cmdlets</span></span>](#breaking-changes-to-azurermstorage-cmdlets)
+- [<span data-ttu-id="2bc32-121">移除的模組</span><span class="sxs-lookup"><span data-stu-id="2bc32-121">Removed modules</span></span>](#removed-modules)
     - [`AzureRM.ServerManagement`](#azurermservermanagement)
     - [`AzureRM.SiteRecovery`](#azurermsiterecovery)
 
-## <a name="general-breaking-changes"></a><span data-ttu-id="3aae6-122">一般重大變更</span><span class="sxs-lookup"><span data-stu-id="3aae6-122">General breaking changes</span></span>
+## <a name="general-breaking-changes"></a><span data-ttu-id="2bc32-122">一般重大變更</span><span class="sxs-lookup"><span data-stu-id="2bc32-122">General breaking changes</span></span>
 
-### <a name="minimum-powershell-version-required-bumped-to-50"></a><span data-ttu-id="3aae6-123">移至 5.0 所需的最低 PowerShell 版本</span><span class="sxs-lookup"><span data-stu-id="3aae6-123">Minimum PowerShell version required bumped to 5.0</span></span>
+### <a name="minimum-powershell-version-required-bumped-to-50"></a><span data-ttu-id="2bc32-123">移至 5.0 所需的最低 PowerShell 版本</span><span class="sxs-lookup"><span data-stu-id="2bc32-123">Minimum PowerShell version required bumped to 5.0</span></span>
 
-<span data-ttu-id="3aae6-124">以前，Azure PowerShell _至少需要_ PowerShell 版本 3.0，才能執行任何 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="3aae6-124">Previously, Azure PowerShell required _at least_ version 3.0 of PowerShell to run any cmdlet.</span></span> <span data-ttu-id="3aae6-125">日後，此需求將提升至 PowerShell 版本 5.0。</span><span class="sxs-lookup"><span data-stu-id="3aae6-125">Moving forward, this requirement will be raised to version 5.0 of PowerShell.</span></span> <span data-ttu-id="3aae6-126">如需升級至 PowerShell 5.0 的詳細資訊，請參閱[此表格](https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell)。</span><span class="sxs-lookup"><span data-stu-id="3aae6-126">For information on upgrading to PowerShell 5.0, please see [this table](https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).</span></span>
+<span data-ttu-id="2bc32-124">以前，Azure PowerShell _至少需要_ PowerShell 版本 3.0，才能執行任何 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="2bc32-124">Previously, Azure PowerShell required _at least_ version 3.0 of PowerShell to run any cmdlet.</span></span> <span data-ttu-id="2bc32-125">日後，此需求將提升至 PowerShell 版本 5.0。</span><span class="sxs-lookup"><span data-stu-id="2bc32-125">Moving forward, this requirement will be raised to version 5.0 of PowerShell.</span></span> <span data-ttu-id="2bc32-126">如需升級至 PowerShell 5.0 的詳細資訊，請參閱[此表格](https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell)。</span><span class="sxs-lookup"><span data-stu-id="2bc32-126">For information on upgrading to PowerShell 5.0, please see [this table](https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).</span></span>
 
-### <a name="context-autosave-enabled-by-default"></a><span data-ttu-id="3aae6-127">依預設啟用內容自動儲存</span><span class="sxs-lookup"><span data-stu-id="3aae6-127">Context autosave enabled by default</span></span>
+### <a name="context-autosave-enabled-by-default"></a><span data-ttu-id="2bc32-127">依預設啟用內容自動儲存</span><span class="sxs-lookup"><span data-stu-id="2bc32-127">Context autosave enabled by default</span></span>
 
-<span data-ttu-id="3aae6-128">內容自動儲存是 Azure 登入資訊的儲存體，可以在全新和不同的 PowerShell 工作階段之間使用。</span><span class="sxs-lookup"><span data-stu-id="3aae6-128">Context autosave is the storage of Azure sign in information that can be used between new and different PowerShell sessions.</span></span> <span data-ttu-id="3aae6-129">如需內容自動儲存的詳細資訊，請參閱[此文件](https://docs.microsoft.com/powershell/azure/context-persistence)。</span><span class="sxs-lookup"><span data-stu-id="3aae6-129">For more information on context autosave, please see [this document](https://docs.microsoft.com/powershell/azure/context-persistence).</span></span>
+<span data-ttu-id="2bc32-128">內容自動儲存是 Azure 登入資訊的儲存體，可以在全新和不同的 PowerShell 工作階段之間使用。</span><span class="sxs-lookup"><span data-stu-id="2bc32-128">Context autosave is the storage of Azure sign in information that can be used between new and different PowerShell sessions.</span></span> <span data-ttu-id="2bc32-129">如需內容自動儲存的詳細資訊，請參閱[此文件](https://docs.microsoft.com/powershell/azure/context-persistence)。</span><span class="sxs-lookup"><span data-stu-id="2bc32-129">For more information on context autosave, please see [this document](https://docs.microsoft.com/powershell/azure/context-persistence).</span></span>
 
-<span data-ttu-id="3aae6-130">之前，內容自動儲存會依預設停用，這表示在使用者執行 `Enable-AzureRmContextAutosave` Cmdlet 開啟內容持續性之前，系統不會儲存工作階段之間的使用者 Azure 驗證資訊。</span><span class="sxs-lookup"><span data-stu-id="3aae6-130">Previously by default, context autosave was disabled, which meant the user's Azure authentication information was not stored between sessions until they ran the `Enable-AzureRmContextAutosave` cmdlet to turn on context persistence.</span></span> <span data-ttu-id="3aae6-131">未來，內容自動儲存將會依預設啟用，這表示若使用者_並未針對已儲存的內容設定自動儲存_，會在他們下次登入時儲存內容。</span><span class="sxs-lookup"><span data-stu-id="3aae6-131">Moving forward, context autosave will be enabled by default, which means that users _with no saved context autosave settings_ will have their context stored the next time they sign in.</span></span> <span data-ttu-id="3aae6-132">使用者可以藉由使用 `Disable-AzureRmContextAutosave` Cmdlet 來選擇退出此功能。</span><span class="sxs-lookup"><span data-stu-id="3aae6-132">Users can opt out of this functionality by using the `Disable-AzureRmContextAutosave` cmdlet.</span></span>
+<span data-ttu-id="2bc32-130">之前，內容自動儲存會依預設停用，這表示在使用者執行 `Enable-AzureRmContextAutosave` Cmdlet 開啟內容持續性之前，系統不會儲存工作階段之間的使用者 Azure 驗證資訊。</span><span class="sxs-lookup"><span data-stu-id="2bc32-130">Previously by default, context autosave was disabled, which meant the user's Azure authentication information was not stored between sessions until they ran the `Enable-AzureRmContextAutosave` cmdlet to turn on context persistence.</span></span> <span data-ttu-id="2bc32-131">未來，內容自動儲存將會依預設啟用，這表示若使用者_並未針對已儲存的內容設定自動儲存_，會在他們下次登入時儲存內容。</span><span class="sxs-lookup"><span data-stu-id="2bc32-131">Moving forward, context autosave will be enabled by default, which means that users _with no saved context autosave settings_ will have their context stored the next time they sign in.</span></span> <span data-ttu-id="2bc32-132">使用者可以藉由使用 `Disable-AzureRmContextAutosave` Cmdlet 來選擇退出此功能。</span><span class="sxs-lookup"><span data-stu-id="2bc32-132">Users can opt out of this functionality by using the `Disable-AzureRmContextAutosave` cmdlet.</span></span>
 
-<span data-ttu-id="3aae6-133">_注意_：先前已停用內容自動儲存或已啟用內容自動儲存的使用者，以及現有的內容將不會受到此變更影響</span><span class="sxs-lookup"><span data-stu-id="3aae6-133">_Note_: users that previously disabled context autosave or users with context autosave enabled and existing contexts will not be affected by this change</span></span>
+<span data-ttu-id="2bc32-133">_注意_：先前已停用內容自動儲存或已啟用內容自動儲存的使用者，以及現有的內容將不會受到此變更影響</span><span class="sxs-lookup"><span data-stu-id="2bc32-133">_Note_: users that previously disabled context autosave or users with context autosave enabled and existing contexts will not be affected by this change</span></span>
 
-### <a name="removal-of-tags-alias"></a><span data-ttu-id="3aae6-134">移除標記別名</span><span class="sxs-lookup"><span data-stu-id="3aae6-134">Removal of Tags alias</span></span>
+### <a name="removal-of-tags-alias"></a><span data-ttu-id="2bc32-134">移除標記別名</span><span class="sxs-lookup"><span data-stu-id="2bc32-134">Removal of Tags alias</span></span>
 
-<span data-ttu-id="3aae6-135">已在多個 Cmdlet 中移除 `Tag` 參數的別名 `Tags`。</span><span class="sxs-lookup"><span data-stu-id="3aae6-135">The alias `Tags` for the `Tag` parameter has been removed across numerous cmdlets.</span></span> <span data-ttu-id="3aae6-136">以下是受此影響的模組清單 (以及對應的 Cmdlet)：</span><span class="sxs-lookup"><span data-stu-id="3aae6-136">Below is a list of modules (and the corresponding cmdlets) affected by this:</span></span>
+<span data-ttu-id="2bc32-135">已在多個 Cmdlet 中移除 `Tag` 參數的別名 `Tags`。</span><span class="sxs-lookup"><span data-stu-id="2bc32-135">The alias `Tags` for the `Tag` parameter has been removed across numerous cmdlets.</span></span> <span data-ttu-id="2bc32-136">以下是受此影響的模組清單 (以及對應的 Cmdlet)：</span><span class="sxs-lookup"><span data-stu-id="2bc32-136">Below is a list of modules (and the corresponding cmdlets) affected by this:</span></span>
 
 #### `AzureRM.ApiManagement`
 
@@ -94,10 +96,10 @@ ms.locfileid: "56153059"
 - `Set-AzureRmOperationalInsightsSavedSearch`
 - `Set-AzureRmOperationalInsightsWorkspace`
 
-## <a name="breaking-changes-to-azurermcompute-cmdlets"></a><span data-ttu-id="3aae6-137">AzureRM.Compute Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="3aae6-137">Breaking changes to AzureRM.Compute cmdlets</span></span>
+## <a name="breaking-changes-to-azurermcompute-cmdlets"></a><span data-ttu-id="2bc32-137">AzureRM.Compute Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="2bc32-137">Breaking changes to AzureRM.Compute cmdlets</span></span>
 
-<span data-ttu-id="3aae6-138">**其他**</span><span class="sxs-lookup"><span data-stu-id="3aae6-138">**Miscellaneous**</span></span>
-- <span data-ttu-id="3aae6-139">在類型 `PSDisk` 和 `PSSnapshot` 中形成巢狀的 SKU 名稱屬性，已分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="3aae6-139">The sku name property nested in types `PSDisk` and `PSSnapshot` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
+<span data-ttu-id="2bc32-138">**其他**</span><span class="sxs-lookup"><span data-stu-id="2bc32-138">**Miscellaneous**</span></span>
+- <span data-ttu-id="2bc32-139">在類型 `PSDisk` 和 `PSSnapshot` 中形成巢狀的 SKU 名稱屬性，已分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="2bc32-139">The sku name property nested in types `PSDisk` and `PSSnapshot` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
 
 ```powershell-interactive
 $disk = Get-AzureRmDisk -ResourceGroupName "MyResourceGroup" -DiskName "MyDiskName"
@@ -107,24 +109,24 @@ $snapshot = Get-AzureRmSnapshot -ResourceGroupName "MyResourceGroup" -SnapshotNa
 $snapshot.Sku.Name   # This will now return Standard_LRS or Premium_LRS
 ```
 
-- <span data-ttu-id="3aae6-140">在類型 `PSVirtualMachine`、`PSVirtualMachineScaleSet` 和 `PSImage` 中形成巢狀的儲存體帳戶類型，已分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="3aae6-140">The storage account type property nested in types `PSVirtualMachine`, `PSVirtualMachineScaleSet` and `PSImage` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
+- <span data-ttu-id="2bc32-140">在類型 `PSVirtualMachine`、`PSVirtualMachineScaleSet` 和 `PSImage` 中形成巢狀的儲存體帳戶類型，已分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="2bc32-140">The storage account type property nested in types `PSVirtualMachine`, `PSVirtualMachineScaleSet` and `PSImage` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
 
 ```powershell-interactive
 $vm = Get-AzureRmVM -ResourceGroupName "MyResourceGroup" -Name "MyVM"
 $vm.StorageProfile.DataDisks[0].ManagedDisk.StorageAccountType   # This will now return Standard_LRS or Premium_LRS
 ```
 
-<span data-ttu-id="3aae6-141">**Add-AzureRmImageDataDisk**</span><span class="sxs-lookup"><span data-stu-id="3aae6-141">**Add-AzureRmImageDataDisk**</span></span>
-- <span data-ttu-id="3aae6-142">參數 `StorageAccountType` 可接受的值分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="3aae6-142">The accepted values for parameter `StorageAccountType` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
+<span data-ttu-id="2bc32-141">**Add-AzureRmImageDataDisk**</span><span class="sxs-lookup"><span data-stu-id="2bc32-141">**Add-AzureRmImageDataDisk**</span></span>
+- <span data-ttu-id="2bc32-142">參數 `StorageAccountType` 可接受的值分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="2bc32-142">The accepted values for parameter `StorageAccountType` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
 
-<span data-ttu-id="3aae6-143">**Add-AzureRmVMDataDisk**</span><span class="sxs-lookup"><span data-stu-id="3aae6-143">**Add-AzureRmVMDataDisk**</span></span>
-- <span data-ttu-id="3aae6-144">參數 `StorageAccountType` 可接受的值分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="3aae6-144">The accepted values for parameter `StorageAccountType` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
+<span data-ttu-id="2bc32-143">**Add-AzureRmVMDataDisk**</span><span class="sxs-lookup"><span data-stu-id="2bc32-143">**Add-AzureRmVMDataDisk**</span></span>
+- <span data-ttu-id="2bc32-144">參數 `StorageAccountType` 可接受的值分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="2bc32-144">The accepted values for parameter `StorageAccountType` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
 
-<span data-ttu-id="3aae6-145">**Add-AzureRmVmssDataDisk**</span><span class="sxs-lookup"><span data-stu-id="3aae6-145">**Add-AzureRmVmssDataDisk**</span></span>
-- <span data-ttu-id="3aae6-146">參數 `StorageAccountType` 可接受的值分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="3aae6-146">The accepted values for parameter `StorageAccountType` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
+<span data-ttu-id="2bc32-145">**Add-AzureRmVmssDataDisk**</span><span class="sxs-lookup"><span data-stu-id="2bc32-145">**Add-AzureRmVmssDataDisk**</span></span>
+- <span data-ttu-id="2bc32-146">參數 `StorageAccountType` 可接受的值分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="2bc32-146">The accepted values for parameter `StorageAccountType` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
 
-<span data-ttu-id="3aae6-147">**New-AzureRmAvailabilitySet**</span><span class="sxs-lookup"><span data-stu-id="3aae6-147">**New-AzureRmAvailabilitySet**</span></span>
-- <span data-ttu-id="3aae6-148">已移除參數 `Managed` 以支持 `Sku`</span><span class="sxs-lookup"><span data-stu-id="3aae6-148">The parameter `Managed` was removed in favor of `Sku`</span></span>
+<span data-ttu-id="2bc32-147">**New-AzureRmAvailabilitySet**</span><span class="sxs-lookup"><span data-stu-id="2bc32-147">**New-AzureRmAvailabilitySet**</span></span>
+- <span data-ttu-id="2bc32-148">已移除參數 `Managed` 以支持 `Sku`</span><span class="sxs-lookup"><span data-stu-id="2bc32-148">The parameter `Managed` was removed in favor of `Sku`</span></span>
 
 ```powershell-interactive
 # Old
@@ -134,41 +136,41 @@ New-AzureRmAvailabilitySet -ResourceGroupName "MyRG" -Name "MyAvailabilitySet" -
 New-AzureRmAvailabilitySet -ResourceGroupName "MyRG" -Name "MyAvailabilitySet" -Location "West US" -Sku "Aligned"
 ```
 
-<span data-ttu-id="3aae6-149">**New-AzureRmDiskConfig**</span><span class="sxs-lookup"><span data-stu-id="3aae6-149">**New-AzureRmDiskConfig**</span></span>
-- <span data-ttu-id="3aae6-150">參數 `SkuName` 可接受的值分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="3aae6-150">The accepted values for parameter `SkuName` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
+<span data-ttu-id="2bc32-149">**New-AzureRmDiskConfig**</span><span class="sxs-lookup"><span data-stu-id="2bc32-149">**New-AzureRmDiskConfig**</span></span>
+- <span data-ttu-id="2bc32-150">參數 `SkuName` 可接受的值分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="2bc32-150">The accepted values for parameter `SkuName` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
 
-<span data-ttu-id="3aae6-151">**New-AzureRmDiskUpdateConfig**</span><span class="sxs-lookup"><span data-stu-id="3aae6-151">**New-AzureRmDiskUpdateConfig**</span></span>
-- <span data-ttu-id="3aae6-152">參數 `SkuName` 可接受的值分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="3aae6-152">The accepted values for parameter `SkuName` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
+<span data-ttu-id="2bc32-151">**New-AzureRmDiskUpdateConfig**</span><span class="sxs-lookup"><span data-stu-id="2bc32-151">**New-AzureRmDiskUpdateConfig**</span></span>
+- <span data-ttu-id="2bc32-152">參數 `SkuName` 可接受的值分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="2bc32-152">The accepted values for parameter `SkuName` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
 
-<span data-ttu-id="3aae6-153">**New-AzureRmSnapshotConfig**</span><span class="sxs-lookup"><span data-stu-id="3aae6-153">**New-AzureRmSnapshotConfig**</span></span>
-- <span data-ttu-id="3aae6-154">參數 `SkuName` 可接受的值分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="3aae6-154">The accepted values for parameter `SkuName` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
+<span data-ttu-id="2bc32-153">**New-AzureRmSnapshotConfig**</span><span class="sxs-lookup"><span data-stu-id="2bc32-153">**New-AzureRmSnapshotConfig**</span></span>
+- <span data-ttu-id="2bc32-154">參數 `SkuName` 可接受的值分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="2bc32-154">The accepted values for parameter `SkuName` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
 
-<span data-ttu-id="3aae6-155">**New-AzureRmSnapshotUpdateConfig**</span><span class="sxs-lookup"><span data-stu-id="3aae6-155">**New-AzureRmSnapshotUpdateConfig**</span></span>
-- <span data-ttu-id="3aae6-156">參數 `SkuName` 可接受的值分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="3aae6-156">The accepted values for parameter `SkuName` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
+<span data-ttu-id="2bc32-155">**New-AzureRmSnapshotUpdateConfig**</span><span class="sxs-lookup"><span data-stu-id="2bc32-155">**New-AzureRmSnapshotUpdateConfig**</span></span>
+- <span data-ttu-id="2bc32-156">參數 `SkuName` 可接受的值分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="2bc32-156">The accepted values for parameter `SkuName` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
 
-<span data-ttu-id="3aae6-157">**Set-AzureRmImageOsDisk**</span><span class="sxs-lookup"><span data-stu-id="3aae6-157">**Set-AzureRmImageOsDisk**</span></span>
-- <span data-ttu-id="3aae6-158">參數 `StorageAccountType` 可接受的值分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="3aae6-158">The accepted values for parameter `StorageAccountType` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
+<span data-ttu-id="2bc32-157">**Set-AzureRmImageOsDisk**</span><span class="sxs-lookup"><span data-stu-id="2bc32-157">**Set-AzureRmImageOsDisk**</span></span>
+- <span data-ttu-id="2bc32-158">參數 `StorageAccountType` 可接受的值分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="2bc32-158">The accepted values for parameter `StorageAccountType` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
 
-<span data-ttu-id="3aae6-159">**Set-AzureRmVMAEMExtension**</span><span class="sxs-lookup"><span data-stu-id="3aae6-159">**Set-AzureRmVMAEMExtension**</span></span>
-- <span data-ttu-id="3aae6-160">已移除參數 `DisableWAD`</span><span class="sxs-lookup"><span data-stu-id="3aae6-160">The parameter `DisableWAD` was removed</span></span>
-    -  <span data-ttu-id="3aae6-161">Windows Azure 診斷預設為停用</span><span class="sxs-lookup"><span data-stu-id="3aae6-161">Windows Azure Diagnostics is disabled by default</span></span>
+<span data-ttu-id="2bc32-159">**Set-AzureRmVMAEMExtension**</span><span class="sxs-lookup"><span data-stu-id="2bc32-159">**Set-AzureRmVMAEMExtension**</span></span>
+- <span data-ttu-id="2bc32-160">已移除參數 `DisableWAD`</span><span class="sxs-lookup"><span data-stu-id="2bc32-160">The parameter `DisableWAD` was removed</span></span>
+    -  <span data-ttu-id="2bc32-161">Windows Azure 診斷預設為停用</span><span class="sxs-lookup"><span data-stu-id="2bc32-161">Windows Azure Diagnostics is disabled by default</span></span>
 
-<span data-ttu-id="3aae6-162">**Set-AzureRmVMDataDisk**</span><span class="sxs-lookup"><span data-stu-id="3aae6-162">**Set-AzureRmVMDataDisk**</span></span>
-- <span data-ttu-id="3aae6-163">參數 `StorageAccountType` 可接受的值分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="3aae6-163">The accepted values for parameter `StorageAccountType` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
+<span data-ttu-id="2bc32-162">**Set-AzureRmVMDataDisk**</span><span class="sxs-lookup"><span data-stu-id="2bc32-162">**Set-AzureRmVMDataDisk**</span></span>
+- <span data-ttu-id="2bc32-163">參數 `StorageAccountType` 可接受的值分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="2bc32-163">The accepted values for parameter `StorageAccountType` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
 
-<span data-ttu-id="3aae6-164">**Set-AzureRmVMOSDisk**</span><span class="sxs-lookup"><span data-stu-id="3aae6-164">**Set-AzureRmVMOSDisk**</span></span>
-- <span data-ttu-id="3aae6-165">參數 `StorageAccountType` 可接受的值分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="3aae6-165">The accepted values for parameter `StorageAccountType` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
+<span data-ttu-id="2bc32-164">**Set-AzureRmVMOSDisk**</span><span class="sxs-lookup"><span data-stu-id="2bc32-164">**Set-AzureRmVMOSDisk**</span></span>
+- <span data-ttu-id="2bc32-165">參數 `StorageAccountType` 可接受的值分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="2bc32-165">The accepted values for parameter `StorageAccountType` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
 
-<span data-ttu-id="3aae6-166">**Set-AzureRmVmssStorageProfile**</span><span class="sxs-lookup"><span data-stu-id="3aae6-166">**Set-AzureRmVmssStorageProfile**</span></span>
-- <span data-ttu-id="3aae6-167">參數 `ManagedDisk` 可接受的值分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="3aae6-167">The accepted values for parameter `ManagedDisk` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
+<span data-ttu-id="2bc32-166">**Set-AzureRmVmssStorageProfile**</span><span class="sxs-lookup"><span data-stu-id="2bc32-166">**Set-AzureRmVmssStorageProfile**</span></span>
+- <span data-ttu-id="2bc32-167">參數 `ManagedDisk` 可接受的值分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="2bc32-167">The accepted values for parameter `ManagedDisk` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
 
-<span data-ttu-id="3aae6-168">**Update-AzureRmVmss**</span><span class="sxs-lookup"><span data-stu-id="3aae6-168">**Update-AzureRmVmss**</span></span>
-- <span data-ttu-id="3aae6-169">參數 `ManagedDiskStorageAccountType` 可接受的值分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="3aae6-169">The accepted values for parameter `ManagedDiskStorageAccountType` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
+<span data-ttu-id="2bc32-168">**Update-AzureRmVmss**</span><span class="sxs-lookup"><span data-stu-id="2bc32-168">**Update-AzureRmVmss**</span></span>
+- <span data-ttu-id="2bc32-169">參數 `ManagedDiskStorageAccountType` 可接受的值分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="2bc32-169">The accepted values for parameter `ManagedDiskStorageAccountType` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
 
-## <a name="breaking-changes-to-azurermdatalakestore-cmdlets"></a><span data-ttu-id="3aae6-170">AzureRM.DataLakeStore Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="3aae6-170">Breaking changes to AzureRM.DataLakeStore cmdlets</span></span>
+## <a name="breaking-changes-to-azurermdatalakestore-cmdlets"></a><span data-ttu-id="2bc32-170">AzureRM.DataLakeStore Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="2bc32-170">Breaking changes to AzureRM.DataLakeStore cmdlets</span></span>
 
-<span data-ttu-id="3aae6-171">**Export-AzureRmDataLakeStoreItem**</span><span class="sxs-lookup"><span data-stu-id="3aae6-171">**Export-AzureRmDataLakeStoreItem**</span></span>
-- <span data-ttu-id="3aae6-172">已移除參數 `PerFileThreadCount` 和 `ConcurrentFileCount`。</span><span class="sxs-lookup"><span data-stu-id="3aae6-172">Parameters `PerFileThreadCount` and `ConcurrentFileCount` were removed.</span></span> <span data-ttu-id="3aae6-173">未來請使用 `Concurrency` 參數</span><span class="sxs-lookup"><span data-stu-id="3aae6-173">Please use the `Concurrency` parameter moving forward</span></span>
+<span data-ttu-id="2bc32-171">**Export-AzureRmDataLakeStoreItem**</span><span class="sxs-lookup"><span data-stu-id="2bc32-171">**Export-AzureRmDataLakeStoreItem**</span></span>
+- <span data-ttu-id="2bc32-172">已移除參數 `PerFileThreadCount` 和 `ConcurrentFileCount`。</span><span class="sxs-lookup"><span data-stu-id="2bc32-172">Parameters `PerFileThreadCount` and `ConcurrentFileCount` were removed.</span></span> <span data-ttu-id="2bc32-173">未來請使用 `Concurrency` 參數</span><span class="sxs-lookup"><span data-stu-id="2bc32-173">Please use the `Concurrency` parameter moving forward</span></span>
 
 ```powershell-interactive
 # Old
@@ -178,8 +180,8 @@ Export-AzureRmDataLakeStoreItem -Account contoso -Path /test -Destination C:\tes
 Export-AzureRmDataLakeStoreItem -Account contoso -Path /test -Destination C:\test -Recurse -Resume -Concurrency 160
 ```
 
-<span data-ttu-id="3aae6-174">**Import-AzureRmDataLakeStoreItem**</span><span class="sxs-lookup"><span data-stu-id="3aae6-174">**Import-AzureRmDataLakeStoreItem**</span></span>
-- <span data-ttu-id="3aae6-175">已移除參數 `PerFileThreadCount` 和 `ConcurrentFileCount`。</span><span class="sxs-lookup"><span data-stu-id="3aae6-175">Parameters `PerFileThreadCount` and `ConcurrentFileCount` were removed.</span></span> <span data-ttu-id="3aae6-176">未來請使用 `Concurrency` 參數</span><span class="sxs-lookup"><span data-stu-id="3aae6-176">Please use the `Concurrency` parameter moving forward</span></span>
+<span data-ttu-id="2bc32-174">**Import-AzureRmDataLakeStoreItem**</span><span class="sxs-lookup"><span data-stu-id="2bc32-174">**Import-AzureRmDataLakeStoreItem**</span></span>
+- <span data-ttu-id="2bc32-175">已移除參數 `PerFileThreadCount` 和 `ConcurrentFileCount`。</span><span class="sxs-lookup"><span data-stu-id="2bc32-175">Parameters `PerFileThreadCount` and `ConcurrentFileCount` were removed.</span></span> <span data-ttu-id="2bc32-176">未來請使用 `Concurrency` 參數</span><span class="sxs-lookup"><span data-stu-id="2bc32-176">Please use the `Concurrency` parameter moving forward</span></span>
 
 ```powershell-interactive
 # Old
@@ -189,8 +191,8 @@ Import-AzureRmDataLakeStoreItem -Account contoso -Path C:\test -Destination /tes
 Import-AzureRmDataLakeStoreItem -Account contoso -Path C:\test -Destination /test -Recurse -Resume -ForceBinary -Concurrency 160
 ```
 
-<span data-ttu-id="3aae6-177">**Remove-AzureRmDataLakeStoreItem**</span><span class="sxs-lookup"><span data-stu-id="3aae6-177">**Remove-AzureRmDataLakeStoreItem**</span></span>
-- <span data-ttu-id="3aae6-178">已移除參數 `Clean`</span><span class="sxs-lookup"><span data-stu-id="3aae6-178">Parameter `Clean` was removed</span></span>
+<span data-ttu-id="2bc32-177">**Remove-AzureRmDataLakeStoreItem**</span><span class="sxs-lookup"><span data-stu-id="2bc32-177">**Remove-AzureRmDataLakeStoreItem**</span></span>
+- <span data-ttu-id="2bc32-178">已移除參數 `Clean`</span><span class="sxs-lookup"><span data-stu-id="2bc32-178">Parameter `Clean` was removed</span></span>
 
 ```powershell-interactive
 # Old
@@ -200,63 +202,63 @@ Remove-AzureRmDataLakeStoreItem -Account "ContosoADL" -path /myFolder -Recurse -
 Remove-AzureRmDataLakeStoreItem -Account "ContosoADL" -path /myFolder -Recurse
 ```
 
-## <a name="breaking-changes-to-azurermdns-cmdlets"></a><span data-ttu-id="3aae6-179">AzureRM.Dns Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="3aae6-179">Breaking changes to AzureRM.Dns cmdlets</span></span>
+## <a name="breaking-changes-to-azurermdns-cmdlets"></a><span data-ttu-id="2bc32-179">AzureRM.Dns Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="2bc32-179">Breaking changes to AzureRM.Dns cmdlets</span></span>
 
-<span data-ttu-id="3aae6-180">**New-AzureRmDnsRecordSet**</span><span class="sxs-lookup"><span data-stu-id="3aae6-180">**New-AzureRmDnsRecordSet**</span></span>
-- <span data-ttu-id="3aae6-181">已移除參數 `Force`</span><span class="sxs-lookup"><span data-stu-id="3aae6-181">The parameter `Force` was removed</span></span>
+<span data-ttu-id="2bc32-180">**New-AzureRmDnsRecordSet**</span><span class="sxs-lookup"><span data-stu-id="2bc32-180">**New-AzureRmDnsRecordSet**</span></span>
+- <span data-ttu-id="2bc32-181">已移除參數 `Force`</span><span class="sxs-lookup"><span data-stu-id="2bc32-181">The parameter `Force` was removed</span></span>
 
-<span data-ttu-id="3aae6-182">**Remove-AzureRmDnsRecordSet**</span><span class="sxs-lookup"><span data-stu-id="3aae6-182">**Remove-AzureRmDnsRecordSet**</span></span>
-- <span data-ttu-id="3aae6-183">已移除參數 `Force`</span><span class="sxs-lookup"><span data-stu-id="3aae6-183">The parameter `Force` was removed</span></span>
+<span data-ttu-id="2bc32-182">**Remove-AzureRmDnsRecordSet**</span><span class="sxs-lookup"><span data-stu-id="2bc32-182">**Remove-AzureRmDnsRecordSet**</span></span>
+- <span data-ttu-id="2bc32-183">已移除參數 `Force`</span><span class="sxs-lookup"><span data-stu-id="2bc32-183">The parameter `Force` was removed</span></span>
 
-<span data-ttu-id="3aae6-184">**Remove-AzureRmDnsZone**</span><span class="sxs-lookup"><span data-stu-id="3aae6-184">**Remove-AzureRmDnsZone**</span></span>
-- <span data-ttu-id="3aae6-185">已移除參數 `Force`</span><span class="sxs-lookup"><span data-stu-id="3aae6-185">The parameter `Force` was removed</span></span>
+<span data-ttu-id="2bc32-184">**Remove-AzureRmDnsZone**</span><span class="sxs-lookup"><span data-stu-id="2bc32-184">**Remove-AzureRmDnsZone**</span></span>
+- <span data-ttu-id="2bc32-185">已移除參數 `Force`</span><span class="sxs-lookup"><span data-stu-id="2bc32-185">The parameter `Force` was removed</span></span>
 
-## <a name="breaking-changes-to-azurerminsights-cmdlets"></a><span data-ttu-id="3aae6-186">AzureRM.Insights Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="3aae6-186">Breaking changes to AzureRM.Insights cmdlets</span></span>
+## <a name="breaking-changes-to-azurerminsights-cmdlets"></a><span data-ttu-id="2bc32-186">AzureRM.Insights Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="2bc32-186">Breaking changes to AzureRM.Insights cmdlets</span></span>
 
-<span data-ttu-id="3aae6-187">**Add-AzureRmAutoscaleSetting**</span><span class="sxs-lookup"><span data-stu-id="3aae6-187">**Add-AzureRmAutoscaleSetting**</span></span>
-- <span data-ttu-id="3aae6-188">已移除參數別名 `AutoscaleProfiles` 和 `Notifications`</span><span class="sxs-lookup"><span data-stu-id="3aae6-188">The parameter aliases `AutoscaleProfiles` and `Notifications` were removed</span></span>
+<span data-ttu-id="2bc32-187">**Add-AzureRmAutoscaleSetting**</span><span class="sxs-lookup"><span data-stu-id="2bc32-187">**Add-AzureRmAutoscaleSetting**</span></span>
+- <span data-ttu-id="2bc32-188">已移除參數別名 `AutoscaleProfiles` 和 `Notifications`</span><span class="sxs-lookup"><span data-stu-id="2bc32-188">The parameter aliases `AutoscaleProfiles` and `Notifications` were removed</span></span>
 
-<span data-ttu-id="3aae6-189">**Add-AzureRmLogProfile**</span><span class="sxs-lookup"><span data-stu-id="3aae6-189">**Add-AzureRmLogProfile**</span></span>
-- <span data-ttu-id="3aae6-190">已移除參數別名 `Categories` 和 `Locations`</span><span class="sxs-lookup"><span data-stu-id="3aae6-190">The parameter aliases `Categories` and `Locations` were removed</span></span>
+<span data-ttu-id="2bc32-189">**Add-AzureRmLogProfile**</span><span class="sxs-lookup"><span data-stu-id="2bc32-189">**Add-AzureRmLogProfile**</span></span>
+- <span data-ttu-id="2bc32-190">已移除參數別名 `Categories` 和 `Locations`</span><span class="sxs-lookup"><span data-stu-id="2bc32-190">The parameter aliases `Categories` and `Locations` were removed</span></span>
 
-<span data-ttu-id="3aae6-191">**Add-AzureRmMetricAlertRule**</span><span class="sxs-lookup"><span data-stu-id="3aae6-191">**Add-AzureRmMetricAlertRule**</span></span>
-- <span data-ttu-id="3aae6-192">已移除參數別名 `Actions`</span><span class="sxs-lookup"><span data-stu-id="3aae6-192">The parameter alias `Actions` was removed</span></span>
+<span data-ttu-id="2bc32-191">**Add-AzureRmMetricAlertRule**</span><span class="sxs-lookup"><span data-stu-id="2bc32-191">**Add-AzureRmMetricAlertRule**</span></span>
+- <span data-ttu-id="2bc32-192">已移除參數別名 `Actions`</span><span class="sxs-lookup"><span data-stu-id="2bc32-192">The parameter alias `Actions` was removed</span></span>
 
-<span data-ttu-id="3aae6-193">**Add-AzureRmWebtestAlertRule**</span><span class="sxs-lookup"><span data-stu-id="3aae6-193">**Add-AzureRmWebtestAlertRule**</span></span>
-- <span data-ttu-id="3aae6-194">已移除參數別名 `Actions`</span><span class="sxs-lookup"><span data-stu-id="3aae6-194">The parameter alias `Actions` was removed</span></span>
+<span data-ttu-id="2bc32-193">**Add-AzureRmWebtestAlertRule**</span><span class="sxs-lookup"><span data-stu-id="2bc32-193">**Add-AzureRmWebtestAlertRule**</span></span>
+- <span data-ttu-id="2bc32-194">已移除參數別名 `Actions`</span><span class="sxs-lookup"><span data-stu-id="2bc32-194">The parameter alias `Actions` was removed</span></span>
 
-<span data-ttu-id="3aae6-195">**Get-AzureRmLog**</span><span class="sxs-lookup"><span data-stu-id="3aae6-195">**Get-AzureRmLog**</span></span>
-- <span data-ttu-id="3aae6-196">已移除參數別名 `MaxRecords` 和 `MaxEvents`</span><span class="sxs-lookup"><span data-stu-id="3aae6-196">The parameter aliases `MaxRecords` and `MaxEvents` were removed</span></span>
+<span data-ttu-id="2bc32-195">**Get-AzureRmLog**</span><span class="sxs-lookup"><span data-stu-id="2bc32-195">**Get-AzureRmLog**</span></span>
+- <span data-ttu-id="2bc32-196">已移除參數別名 `MaxRecords` 和 `MaxEvents`</span><span class="sxs-lookup"><span data-stu-id="2bc32-196">The parameter aliases `MaxRecords` and `MaxEvents` were removed</span></span>
 
-<span data-ttu-id="3aae6-197">**Get-AzureRmMetricDefinition**</span><span class="sxs-lookup"><span data-stu-id="3aae6-197">**Get-AzureRmMetricDefinition**</span></span>
-- <span data-ttu-id="3aae6-198">已移除參數別名 `MetricNames`</span><span class="sxs-lookup"><span data-stu-id="3aae6-198">The parameter alias `MetricNames` was removed</span></span>
+<span data-ttu-id="2bc32-197">**Get-AzureRmMetricDefinition**</span><span class="sxs-lookup"><span data-stu-id="2bc32-197">**Get-AzureRmMetricDefinition**</span></span>
+- <span data-ttu-id="2bc32-198">已移除參數別名 `MetricNames`</span><span class="sxs-lookup"><span data-stu-id="2bc32-198">The parameter alias `MetricNames` was removed</span></span>
 
-<span data-ttu-id="3aae6-199">**New-AzureRmAlertRuleEmail**</span><span class="sxs-lookup"><span data-stu-id="3aae6-199">**New-AzureRmAlertRuleEmail**</span></span>
-- <span data-ttu-id="3aae6-200">已移除參數別名 `CustomEmails` 和 `SendToServiceOwners`</span><span class="sxs-lookup"><span data-stu-id="3aae6-200">The parameter aliases `CustomEmails` and `SendToServiceOwners` were removed</span></span>
+<span data-ttu-id="2bc32-199">**New-AzureRmAlertRuleEmail**</span><span class="sxs-lookup"><span data-stu-id="2bc32-199">**New-AzureRmAlertRuleEmail**</span></span>
+- <span data-ttu-id="2bc32-200">已移除參數別名 `CustomEmails` 和 `SendToServiceOwners`</span><span class="sxs-lookup"><span data-stu-id="2bc32-200">The parameter aliases `CustomEmails` and `SendToServiceOwners` were removed</span></span>
 
-<span data-ttu-id="3aae6-201">**New-AzureRmAlertRuleWebhook**</span><span class="sxs-lookup"><span data-stu-id="3aae6-201">**New-AzureRmAlertRuleWebhook**</span></span>
-- <span data-ttu-id="3aae6-202">已移除參數別名 `Properties`</span><span class="sxs-lookup"><span data-stu-id="3aae6-202">The parameter alias `Properties` was removed</span></span>
+<span data-ttu-id="2bc32-201">**New-AzureRmAlertRuleWebhook**</span><span class="sxs-lookup"><span data-stu-id="2bc32-201">**New-AzureRmAlertRuleWebhook**</span></span>
+- <span data-ttu-id="2bc32-202">已移除參數別名 `Properties`</span><span class="sxs-lookup"><span data-stu-id="2bc32-202">The parameter alias `Properties` was removed</span></span>
 
-<span data-ttu-id="3aae6-203">**New-AzureRmAutoscaleNotification**</span><span class="sxs-lookup"><span data-stu-id="3aae6-203">**New-AzureRmAutoscaleNotification**</span></span>
-- <span data-ttu-id="3aae6-204">已移除參數別名 `CustomEmails`、`SendEmailToSubscriptionCoAdministrators` 和 `Webhooks`</span><span class="sxs-lookup"><span data-stu-id="3aae6-204">The parameter aliases `CustomEmails`, `SendEmailToSubscriptionCoAdministrators` and `Webhooks` were removed</span></span>
+<span data-ttu-id="2bc32-203">**New-AzureRmAutoscaleNotification**</span><span class="sxs-lookup"><span data-stu-id="2bc32-203">**New-AzureRmAutoscaleNotification**</span></span>
+- <span data-ttu-id="2bc32-204">已移除參數別名 `CustomEmails`、`SendEmailToSubscriptionCoAdministrators` 和 `Webhooks`</span><span class="sxs-lookup"><span data-stu-id="2bc32-204">The parameter aliases `CustomEmails`, `SendEmailToSubscriptionCoAdministrators` and `Webhooks` were removed</span></span>
 
-<span data-ttu-id="3aae6-205">**New-AzureRmAutoscaleProfile**</span><span class="sxs-lookup"><span data-stu-id="3aae6-205">**New-AzureRmAutoscaleProfile**</span></span>
-- <span data-ttu-id="3aae6-206">已移除參數別名 `Rules`、`ScheduleDays`、`ScheduleHours` 和 `ScheduleMinutes`</span><span class="sxs-lookup"><span data-stu-id="3aae6-206">The parameter aliases `Rules`, `ScheduleDays`, `ScheduleHours` and `ScheduleMinutes` were removed</span></span>
+<span data-ttu-id="2bc32-205">**New-AzureRmAutoscaleProfile**</span><span class="sxs-lookup"><span data-stu-id="2bc32-205">**New-AzureRmAutoscaleProfile**</span></span>
+- <span data-ttu-id="2bc32-206">已移除參數別名 `Rules`、`ScheduleDays`、`ScheduleHours` 和 `ScheduleMinutes`</span><span class="sxs-lookup"><span data-stu-id="2bc32-206">The parameter aliases `Rules`, `ScheduleDays`, `ScheduleHours` and `ScheduleMinutes` were removed</span></span>
 
-<span data-ttu-id="3aae6-207">**New-AzureRmAutoscaleWebhook**</span><span class="sxs-lookup"><span data-stu-id="3aae6-207">**New-AzureRmAutoscaleWebhook**</span></span>
-- <span data-ttu-id="3aae6-208">已移除參數別名 `Properties`</span><span class="sxs-lookup"><span data-stu-id="3aae6-208">The parameter alias `Properties` was removed</span></span>
+<span data-ttu-id="2bc32-207">**New-AzureRmAutoscaleWebhook**</span><span class="sxs-lookup"><span data-stu-id="2bc32-207">**New-AzureRmAutoscaleWebhook**</span></span>
+- <span data-ttu-id="2bc32-208">已移除參數別名 `Properties`</span><span class="sxs-lookup"><span data-stu-id="2bc32-208">The parameter alias `Properties` was removed</span></span>
 
-## <a name="breaking-changes-to-azurermkeyvault-cmdlets"></a><span data-ttu-id="3aae6-209">AzureRM.KeyVault Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="3aae6-209">Breaking changes to AzureRM.KeyVault cmdlets</span></span>
+## <a name="breaking-changes-to-azurermkeyvault-cmdlets"></a><span data-ttu-id="2bc32-209">AzureRM.KeyVault Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="2bc32-209">Breaking changes to AzureRM.KeyVault cmdlets</span></span>
 
-<span data-ttu-id="3aae6-210">**Add-AzureKeyVaultCertificate**</span><span class="sxs-lookup"><span data-stu-id="3aae6-210">**Add-AzureKeyVaultCertificate**</span></span>
-- <span data-ttu-id="3aae6-211">`CertificatePolicy` 參數已變成強制參數。</span><span class="sxs-lookup"><span data-stu-id="3aae6-211">The `CertificatePolicy` parameter has become mandatory.</span></span>
+<span data-ttu-id="2bc32-210">**Add-AzureKeyVaultCertificate**</span><span class="sxs-lookup"><span data-stu-id="2bc32-210">**Add-AzureKeyVaultCertificate**</span></span>
+- <span data-ttu-id="2bc32-211">`CertificatePolicy` 參數已變成強制參數。</span><span class="sxs-lookup"><span data-stu-id="2bc32-211">The `CertificatePolicy` parameter has become mandatory.</span></span>
 
-<span data-ttu-id="3aae6-212">**Set-AzureKeyVaultManagedStorageSasDefinition**</span><span class="sxs-lookup"><span data-stu-id="3aae6-212">**Set-AzureKeyVaultManagedStorageSasDefinition**</span></span>
-- <span data-ttu-id="3aae6-213">此 Cmdlet 不再接受組成存取權杖的個別參數；相反地，Cmdlet 會取代明確的存取權杖參數，例如 `Service` 或 `Permissions`，並使用泛型 `TemplateUri` 參數，對應至在其他位置定義的範例存取權杖 (假定使用的是儲存體 PowerShell Cmdlet，或是依據儲存體文件手動組成。)此 Cmdlet 會保留 `ValidityPeriod` 參數。</span><span class="sxs-lookup"><span data-stu-id="3aae6-213">The cmdlet no longer accepts individual parameters that compose the access token; instead, the cmdlet replaces explicit token parameters, such as `Service` or `Permissions`, with a generic `TemplateUri` parameter, corresponding to a sample access token defined elsewhere (presumably using Storage PowerShell cmdlets, or composed manually according to the Storage documentation.) The cmdlet retains the `ValidityPeriod` parameter.</span></span>
+<span data-ttu-id="2bc32-212">**Set-AzureKeyVaultManagedStorageSasDefinition**</span><span class="sxs-lookup"><span data-stu-id="2bc32-212">**Set-AzureKeyVaultManagedStorageSasDefinition**</span></span>
+- <span data-ttu-id="2bc32-213">此 Cmdlet 不再接受組成存取權杖的個別參數；相反地，Cmdlet 會取代明確的存取權杖參數，例如 `Service` 或 `Permissions`，並使用泛型 `TemplateUri` 參數，對應至在其他位置定義的範例存取權杖 (假定使用的是儲存體 PowerShell Cmdlet，或是依據儲存體文件手動組成。)此 Cmdlet 會保留 `ValidityPeriod` 參數。</span><span class="sxs-lookup"><span data-stu-id="2bc32-213">The cmdlet no longer accepts individual parameters that compose the access token; instead, the cmdlet replaces explicit token parameters, such as `Service` or `Permissions`, with a generic `TemplateUri` parameter, corresponding to a sample access token defined elsewhere (presumably using Storage PowerShell cmdlets, or composed manually according to the Storage documentation.) The cmdlet retains the `ValidityPeriod` parameter.</span></span>
 
-<span data-ttu-id="3aae6-214">如需撰寫 Azure 儲存體共用存取權杖的詳細資訊，請分別參閱以下文件頁面：</span><span class="sxs-lookup"><span data-stu-id="3aae6-214">For more information on composing shared access tokens for Azure Storage, please refer to the documentation pages, respectively:</span></span>
-- [<span data-ttu-id="3aae6-215">建構服務 SAS</span><span class="sxs-lookup"><span data-stu-id="3aae6-215">Constructing a Service SAS</span></span>](https://docs.microsoft.com/rest/api/storageservices/Constructing-a-Service-SAS)
-- [<span data-ttu-id="3aae6-216">建構帳戶 SAS</span><span class="sxs-lookup"><span data-stu-id="3aae6-216">Constructing an Account SAS</span></span>](https://docs.microsoft.com/rest/api/storageservices/constructing-an-account-sas)
+<span data-ttu-id="2bc32-214">如需撰寫 Azure 儲存體共用存取權杖的詳細資訊，請分別參閱以下文件頁面：</span><span class="sxs-lookup"><span data-stu-id="2bc32-214">For more information on composing shared access tokens for Azure Storage, please refer to the documentation pages, respectively:</span></span>
+- [<span data-ttu-id="2bc32-215">建構服務 SAS</span><span class="sxs-lookup"><span data-stu-id="2bc32-215">Constructing a Service SAS</span></span>](https://docs.microsoft.com/rest/api/storageservices/Constructing-a-Service-SAS)
+- [<span data-ttu-id="2bc32-216">建構帳戶 SAS</span><span class="sxs-lookup"><span data-stu-id="2bc32-216">Constructing an Account SAS</span></span>](https://docs.microsoft.com/rest/api/storageservices/constructing-an-account-sas)
 
 ```powershell-interactive
 # Old
@@ -270,20 +272,20 @@ $at=New-AzureStorageAccountSasToken -Service blob -ResourceType Service,Containe
 $sas=Set-AzureKeyVaultManagedStorageSasDefinition -AccountName $sa.StorageAccountName -VaultName $kv.VaultName -Name accountsas -TemplateUri $at -SasType 'account' -ValidityPeriod ([System.Timespan]::FromDays(30))
 ```
 
-<span data-ttu-id="3aae6-217">**Set-AzureKeyVaultCertificateIssuer**</span><span class="sxs-lookup"><span data-stu-id="3aae6-217">**Set-AzureKeyVaultCertificateIssuer**</span></span>
-- <span data-ttu-id="3aae6-218">`IssuerProvider` 參數已變成強制參數。</span><span class="sxs-lookup"><span data-stu-id="3aae6-218">The `IssuerProvider` parameter has become mandatory.</span></span>
+<span data-ttu-id="2bc32-217">**Set-AzureKeyVaultCertificateIssuer**</span><span class="sxs-lookup"><span data-stu-id="2bc32-217">**Set-AzureKeyVaultCertificateIssuer**</span></span>
+- <span data-ttu-id="2bc32-218">`IssuerProvider` 參數已變成強制參數。</span><span class="sxs-lookup"><span data-stu-id="2bc32-218">The `IssuerProvider` parameter has become mandatory.</span></span>
 
-<span data-ttu-id="3aae6-219">**Undo-AzureKeyVaultCertificateRemoval**</span><span class="sxs-lookup"><span data-stu-id="3aae6-219">**Undo-AzureKeyVaultCertificateRemoval**</span></span>
-- <span data-ttu-id="3aae6-220">此 Cmdlet 的輸出已從 `CertificateBundle` 變更為 `PSKeyVaultCertificate`。</span><span class="sxs-lookup"><span data-stu-id="3aae6-220">The output of this cmdlet has changed from `CertificateBundle` to `PSKeyVaultCertificate`.</span></span>
+<span data-ttu-id="2bc32-219">**Undo-AzureKeyVaultCertificateRemoval**</span><span class="sxs-lookup"><span data-stu-id="2bc32-219">**Undo-AzureKeyVaultCertificateRemoval**</span></span>
+- <span data-ttu-id="2bc32-220">此 Cmdlet 的輸出已從 `CertificateBundle` 變更為 `PSKeyVaultCertificate`。</span><span class="sxs-lookup"><span data-stu-id="2bc32-220">The output of this cmdlet has changed from `CertificateBundle` to `PSKeyVaultCertificate`.</span></span>
 
-<span data-ttu-id="3aae6-221">**Undo-AzureRmKeyVaultRemoval**</span><span class="sxs-lookup"><span data-stu-id="3aae6-221">**Undo-AzureRmKeyVaultRemoval**</span></span>
-- <span data-ttu-id="3aae6-222">已從 `InputObject` 參數集移除 `ResourceGroupName`，並改為從 `InputObject` 參數的 `ResourceId` 屬性取得。</span><span class="sxs-lookup"><span data-stu-id="3aae6-222">`ResourceGroupName` has been removed from the `InputObject` parameter set, and is instead obtained from the `InputObject` parameter's `ResourceId` property.</span></span>
+<span data-ttu-id="2bc32-221">**Undo-AzureRmKeyVaultRemoval**</span><span class="sxs-lookup"><span data-stu-id="2bc32-221">**Undo-AzureRmKeyVaultRemoval**</span></span>
+- <span data-ttu-id="2bc32-222">已從 `InputObject` 參數集移除 `ResourceGroupName`，並改為從 `InputObject` 參數的 `ResourceId` 屬性取得。</span><span class="sxs-lookup"><span data-stu-id="2bc32-222">`ResourceGroupName` has been removed from the `InputObject` parameter set, and is instead obtained from the `InputObject` parameter's `ResourceId` property.</span></span>
 
-<span data-ttu-id="3aae6-223">**Set-AzureRmKeyVaultAccessPolicy**</span><span class="sxs-lookup"><span data-stu-id="3aae6-223">**Set-AzureRmKeyVaultAccessPolicy**</span></span>
-- <span data-ttu-id="3aae6-224">已從 `PermissionsToKeys`、`PermissionsToSecrets` 和 `PermissionsToCertificates` 中移除 `all` 權限。</span><span class="sxs-lookup"><span data-stu-id="3aae6-224">The `all` permission was removed from `PermissionsToKeys`, `PermissionsToSecrets`, and `PermissionsToCertificates`.</span></span>
+<span data-ttu-id="2bc32-223">**Set-AzureRmKeyVaultAccessPolicy**</span><span class="sxs-lookup"><span data-stu-id="2bc32-223">**Set-AzureRmKeyVaultAccessPolicy**</span></span>
+- <span data-ttu-id="2bc32-224">已從 `PermissionsToKeys`、`PermissionsToSecrets` 和 `PermissionsToCertificates` 中移除 `all` 權限。</span><span class="sxs-lookup"><span data-stu-id="2bc32-224">The `all` permission was removed from `PermissionsToKeys`, `PermissionsToSecrets`, and `PermissionsToCertificates`.</span></span>
 
-<span data-ttu-id="3aae6-225">**一般**</span><span class="sxs-lookup"><span data-stu-id="3aae6-225">**General**</span></span>
-- <span data-ttu-id="3aae6-226">已從已啟用 `InputObject` 管線的所有 Cmdlet 中移除 `ValueFromPipelineByPropertyName` 屬性。</span><span class="sxs-lookup"><span data-stu-id="3aae6-226">The `ValueFromPipelineByPropertyName` property was removed from all cmdlets where piping by `InputObject` was enabled.</span></span>  <span data-ttu-id="3aae6-227">受影響的 Cmdlet 為：</span><span class="sxs-lookup"><span data-stu-id="3aae6-227">The cmdlets affected are:</span></span>
+<span data-ttu-id="2bc32-225">**一般**</span><span class="sxs-lookup"><span data-stu-id="2bc32-225">**General**</span></span>
+- <span data-ttu-id="2bc32-226">已從已啟用 `InputObject` 管線的所有 Cmdlet 中移除 `ValueFromPipelineByPropertyName` 屬性。</span><span class="sxs-lookup"><span data-stu-id="2bc32-226">The `ValueFromPipelineByPropertyName` property was removed from all cmdlets where piping by `InputObject` was enabled.</span></span>  <span data-ttu-id="2bc32-227">受影響的 Cmdlet 為：</span><span class="sxs-lookup"><span data-stu-id="2bc32-227">The cmdlets affected are:</span></span>
     - `Add-AzureKeyVaultCertificate`
     - `Add-AzureKeyVaultCertificateContact`
     - `Add-AzureKeyVaultKey`
@@ -326,7 +328,7 @@ $sas=Set-AzureKeyVaultManagedStorageSasDefinition -AccountName $sa.StorageAccoun
     - `Update-AzureKeyVaultManagedStorageAccount`
     - `Update-AzureKeyVaultManagedStorageAccountKey`
 
-- <span data-ttu-id="3aae6-228">已從所有 Cmdlet 中移除 `ConfirmImpact` 層級。</span><span class="sxs-lookup"><span data-stu-id="3aae6-228">`ConfirmImpact` levels were removed from all cmdlets.</span></span>  <span data-ttu-id="3aae6-229">受影響的 Cmdlet 為：</span><span class="sxs-lookup"><span data-stu-id="3aae6-229">The cmdlets affected are:</span></span>
+- <span data-ttu-id="2bc32-228">已從所有 Cmdlet 中移除 `ConfirmImpact` 層級。</span><span class="sxs-lookup"><span data-stu-id="2bc32-228">`ConfirmImpact` levels were removed from all cmdlets.</span></span>  <span data-ttu-id="2bc32-229">受影響的 Cmdlet 為：</span><span class="sxs-lookup"><span data-stu-id="2bc32-229">The cmdlets affected are:</span></span>
     - `Remove-AzureRmKeyVault`
     - `Remove-AzureKeyVaultCertificate`
     - `Remove-AzureKeyVaultCertificateIssuer`
@@ -338,7 +340,7 @@ $sas=Set-AzureKeyVaultManagedStorageSasDefinition -AccountName $sa.StorageAccoun
     - `Stop-AzureKeyVaultCertificateOperation`
     - `Update-AzureKeyVaultManagedStorageAccountKey`
 
-- <span data-ttu-id="3aae6-230">`IKeyVaultDataServiceClient` 已更新，使得所有憑證作業會傳回 PSTypes 而不是 SDK 類型。</span><span class="sxs-lookup"><span data-stu-id="3aae6-230">The `IKeyVaultDataServiceClient` was updated so all Certificate operations return PSTypes instead of SDK types.</span></span> <span data-ttu-id="3aae6-231">其中包括：</span><span class="sxs-lookup"><span data-stu-id="3aae6-231">This includes:</span></span>
+- <span data-ttu-id="2bc32-230">`IKeyVaultDataServiceClient` 已更新，使得所有憑證作業會傳回 PSTypes 而不是 SDK 類型。</span><span class="sxs-lookup"><span data-stu-id="2bc32-230">The `IKeyVaultDataServiceClient` was updated so all Certificate operations return PSTypes instead of SDK types.</span></span> <span data-ttu-id="2bc32-231">其中包括：</span><span class="sxs-lookup"><span data-stu-id="2bc32-231">This includes:</span></span>
     - `SetCertificateContacts`
     - `GetCertificateContacts`
     - `GetCertificate`
@@ -358,27 +360,27 @@ $sas=Set-AzureKeyVaultManagedStorageSasDefinition -AccountName $sa.StorageAccoun
     - `SetCertificateIssuer`
     - `DeleteCertificateIssuer`
 
-## <a name="breaking-changes-to-azurermnetwork-cmdlets"></a><span data-ttu-id="3aae6-232">AzureRM.Network Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="3aae6-232">Breaking changes to AzureRM.Network cmdlets</span></span>
+## <a name="breaking-changes-to-azurermnetwork-cmdlets"></a><span data-ttu-id="2bc32-232">AzureRM.Network Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="2bc32-232">Breaking changes to AzureRM.Network cmdlets</span></span>
 
 
-<span data-ttu-id="3aae6-233">**Add-AzureRmApplicationGatewayBackendHttpSettings**</span><span class="sxs-lookup"><span data-stu-id="3aae6-233">**Add-AzureRmApplicationGatewayBackendHttpSettings**</span></span>
-- <span data-ttu-id="3aae6-234">已移除參數 `ProbeEnabled`</span><span class="sxs-lookup"><span data-stu-id="3aae6-234">The parameter `ProbeEnabled` was removed</span></span>
+<span data-ttu-id="2bc32-233">**Add-AzureRmApplicationGatewayBackendHttpSettings**</span><span class="sxs-lookup"><span data-stu-id="2bc32-233">**Add-AzureRmApplicationGatewayBackendHttpSettings**</span></span>
+- <span data-ttu-id="2bc32-234">已移除參數 `ProbeEnabled`</span><span class="sxs-lookup"><span data-stu-id="2bc32-234">The parameter `ProbeEnabled` was removed</span></span>
 
-<span data-ttu-id="3aae6-235">**Add-AzureRmVirtualNetworkPeering**</span><span class="sxs-lookup"><span data-stu-id="3aae6-235">**Add-AzureRmVirtualNetworkPeering**</span></span>
-- <span data-ttu-id="3aae6-236">已移除參數別名 `AlloowGatewayTransit`</span><span class="sxs-lookup"><span data-stu-id="3aae6-236">The parameter alias `AlloowGatewayTransit` was removed</span></span>
+<span data-ttu-id="2bc32-235">**Add-AzureRmVirtualNetworkPeering**</span><span class="sxs-lookup"><span data-stu-id="2bc32-235">**Add-AzureRmVirtualNetworkPeering**</span></span>
+- <span data-ttu-id="2bc32-236">已移除參數別名 `AlloowGatewayTransit`</span><span class="sxs-lookup"><span data-stu-id="2bc32-236">The parameter alias `AlloowGatewayTransit` was removed</span></span>
 
-<span data-ttu-id="3aae6-237">**New-AzureRmApplicationGatewayBackendHttpSettings**</span><span class="sxs-lookup"><span data-stu-id="3aae6-237">**New-AzureRmApplicationGatewayBackendHttpSettings**</span></span>
-- <span data-ttu-id="3aae6-238">已移除參數 `ProbeEnabled`</span><span class="sxs-lookup"><span data-stu-id="3aae6-238">The parameter `ProbeEnabled` was removed</span></span>
+<span data-ttu-id="2bc32-237">**New-AzureRmApplicationGatewayBackendHttpSettings**</span><span class="sxs-lookup"><span data-stu-id="2bc32-237">**New-AzureRmApplicationGatewayBackendHttpSettings**</span></span>
+- <span data-ttu-id="2bc32-238">已移除參數 `ProbeEnabled`</span><span class="sxs-lookup"><span data-stu-id="2bc32-238">The parameter `ProbeEnabled` was removed</span></span>
 
-<span data-ttu-id="3aae6-239">**Set-AzureRmApplicationGatewayBackendHttpSettings**</span><span class="sxs-lookup"><span data-stu-id="3aae6-239">**Set-AzureRmApplicationGatewayBackendHttpSettings**</span></span>
-- <span data-ttu-id="3aae6-240">已移除參數 `ProbeEnabled`</span><span class="sxs-lookup"><span data-stu-id="3aae6-240">The parameter `ProbeEnabled` was removed</span></span>
+<span data-ttu-id="2bc32-239">**Set-AzureRmApplicationGatewayBackendHttpSettings**</span><span class="sxs-lookup"><span data-stu-id="2bc32-239">**Set-AzureRmApplicationGatewayBackendHttpSettings**</span></span>
+- <span data-ttu-id="2bc32-240">已移除參數 `ProbeEnabled`</span><span class="sxs-lookup"><span data-stu-id="2bc32-240">The parameter `ProbeEnabled` was removed</span></span>
 
-## <a name="breaking-changes-to-azurermrediscache-cmdlets"></a><span data-ttu-id="3aae6-241">AzureRM.RedisCache Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="3aae6-241">Breaking changes to AzureRM.RedisCache cmdlets</span></span>
+## <a name="breaking-changes-to-azurermrediscache-cmdlets"></a><span data-ttu-id="2bc32-241">AzureRM.RedisCache Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="2bc32-241">Breaking changes to AzureRM.RedisCache cmdlets</span></span>
 
-<span data-ttu-id="3aae6-242">**New-AzureRmRedisCache**</span><span class="sxs-lookup"><span data-stu-id="3aae6-242">**New-AzureRmRedisCache**</span></span>
-- <span data-ttu-id="3aae6-243">已移除參數 `Subnet` 和 `VirtualNetwork` 以支持 `SubnetId`</span><span class="sxs-lookup"><span data-stu-id="3aae6-243">The parameters `Subnet` and `VirtualNetwork` were removed in favor of `SubnetId`</span></span>
-- <span data-ttu-id="3aae6-244">已移除參數 `RedisVersion`</span><span class="sxs-lookup"><span data-stu-id="3aae6-244">The parameter `RedisVersion` was removed</span></span>
-- <span data-ttu-id="3aae6-245">已移除參數 `MaxMemoryPolicy` 以支持 `RedisConfiguration`</span><span class="sxs-lookup"><span data-stu-id="3aae6-245">The parameter `MaxMemoryPolicy` was removed in favor of `RedisConfiguration`</span></span>
+<span data-ttu-id="2bc32-242">**New-AzureRmRedisCache**</span><span class="sxs-lookup"><span data-stu-id="2bc32-242">**New-AzureRmRedisCache**</span></span>
+- <span data-ttu-id="2bc32-243">已移除參數 `Subnet` 和 `VirtualNetwork` 以支持 `SubnetId`</span><span class="sxs-lookup"><span data-stu-id="2bc32-243">The parameters `Subnet` and `VirtualNetwork` were removed in favor of `SubnetId`</span></span>
+- <span data-ttu-id="2bc32-244">已移除參數 `RedisVersion`</span><span class="sxs-lookup"><span data-stu-id="2bc32-244">The parameter `RedisVersion` was removed</span></span>
+- <span data-ttu-id="2bc32-245">已移除參數 `MaxMemoryPolicy` 以支持 `RedisConfiguration`</span><span class="sxs-lookup"><span data-stu-id="2bc32-245">The parameter `MaxMemoryPolicy` was removed in favor of `RedisConfiguration`</span></span>
 
 ```powershell-interactive
 # Old
@@ -388,8 +390,8 @@ New-AzureRmRedisCache -ResourceGroupName "MyRG" -Name "MyRedisCache" -Location "
 New-AzureRmRedisCache -ResourceGroupName "MyRG" -Name "MyRedisCache" -Location "North Central US" -RedisConfiguration @{"maxmemory-policy" = "allkeys-lru"}
 ```
 
-<span data-ttu-id="3aae6-246">**Set-AzureRmRedisCache**</span><span class="sxs-lookup"><span data-stu-id="3aae6-246">**Set-AzureRmRedisCache**</span></span>
-- <span data-ttu-id="3aae6-247">已移除參數 `MaxMemoryPolicy` 以支持 `RedisConfiguration`</span><span class="sxs-lookup"><span data-stu-id="3aae6-247">The parameter `MaxMemoryPolicy` was removed in favor of `RedisConfiguration`</span></span>
+<span data-ttu-id="2bc32-246">**Set-AzureRmRedisCache**</span><span class="sxs-lookup"><span data-stu-id="2bc32-246">**Set-AzureRmRedisCache**</span></span>
+- <span data-ttu-id="2bc32-247">已移除參數 `MaxMemoryPolicy` 以支持 `RedisConfiguration`</span><span class="sxs-lookup"><span data-stu-id="2bc32-247">The parameter `MaxMemoryPolicy` was removed in favor of `RedisConfiguration`</span></span>
 
 ```powershell-interactive
 # Old
@@ -399,10 +401,10 @@ Set-AzureRmRedisCache -ResourceGroupName "MyRG" -Name "MyRedisCache" -MaxMemoryP
 Set-AzureRmRedisCache -ResourceGroupName "MyRG" -Name "MyRedisCache" -RedisConfiguration @{"maxmemory-policy" = "allkeys-lru"}
 ```
 
-## <a name="breaking-changes-to-azurermresources-cmdlets"></a><span data-ttu-id="3aae6-248">AzureRM.Resources Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="3aae6-248">Breaking changes to AzureRM.Resources cmdlets</span></span>
+## <a name="breaking-changes-to-azurermresources-cmdlets"></a><span data-ttu-id="2bc32-248">AzureRM.Resources Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="2bc32-248">Breaking changes to AzureRM.Resources cmdlets</span></span>
 
-<span data-ttu-id="3aae6-249">**Find-AzureRmResource**</span><span class="sxs-lookup"><span data-stu-id="3aae6-249">**Find-AzureRmResource**</span></span>
-- <span data-ttu-id="3aae6-250">已移除此 Cmdlet，並將功能移至 `Get-AzureRmResource`</span><span class="sxs-lookup"><span data-stu-id="3aae6-250">This cmdlet was removed and the functionality was moved into `Get-AzureRmResource`</span></span>
+<span data-ttu-id="2bc32-249">**Find-AzureRmResource**</span><span class="sxs-lookup"><span data-stu-id="2bc32-249">**Find-AzureRmResource**</span></span>
+- <span data-ttu-id="2bc32-250">已移除此 Cmdlet，並將功能移至 `Get-AzureRmResource`</span><span class="sxs-lookup"><span data-stu-id="2bc32-250">This cmdlet was removed and the functionality was moved into `Get-AzureRmResource`</span></span>
 
 ```powershell-interactive
 # Old
@@ -414,8 +416,8 @@ Get-AzureRmResource -ResourceType "Microsoft.Web/sites" -ResourceGroupName "*Res
 Get-AzureRmResource -ResourceType "Microsoft.Web/sites" -Name "*test*"
 ```
 
-<span data-ttu-id="3aae6-251">**Find-AzureRmResourceGroup**</span><span class="sxs-lookup"><span data-stu-id="3aae6-251">**Find-AzureRmResourceGroup**</span></span>
-- <span data-ttu-id="3aae6-252">已移除此 Cmdlet，並將功能移至 `Get-AzureRmResourceGroup`</span><span class="sxs-lookup"><span data-stu-id="3aae6-252">This cmdlet was removed and the functionality was moved into `Get-AzureRmResourceGroup`</span></span>
+<span data-ttu-id="2bc32-251">**Find-AzureRmResourceGroup**</span><span class="sxs-lookup"><span data-stu-id="2bc32-251">**Find-AzureRmResourceGroup**</span></span>
+- <span data-ttu-id="2bc32-252">已移除此 Cmdlet，並將功能移至 `Get-AzureRmResourceGroup`</span><span class="sxs-lookup"><span data-stu-id="2bc32-252">This cmdlet was removed and the functionality was moved into `Get-AzureRmResourceGroup`</span></span>
 
 ```powershell-interactive
 # Old
@@ -429,8 +431,8 @@ Get-AzureRmResourceGroup -Tag @{ "testtag" = $null }
 Get-AzureRmResourceGroup -Tag @{ "testtag" = "testval" }
 ```
 
-<span data-ttu-id="3aae6-253">**Get-AzureRmRoleDefinition**</span><span class="sxs-lookup"><span data-stu-id="3aae6-253">**Get-AzureRmRoleDefinition**</span></span>
-- <span data-ttu-id="3aae6-254">已移除參數 `AtScopeAndBelow`。</span><span class="sxs-lookup"><span data-stu-id="3aae6-254">Parameter `AtScopeAndBelow` was removed.</span></span>
+<span data-ttu-id="2bc32-253">**Get-AzureRmRoleDefinition**</span><span class="sxs-lookup"><span data-stu-id="2bc32-253">**Get-AzureRmRoleDefinition**</span></span>
+- <span data-ttu-id="2bc32-254">已移除參數 `AtScopeAndBelow`。</span><span class="sxs-lookup"><span data-stu-id="2bc32-254">Parameter `AtScopeAndBelow` was removed.</span></span>
 
 ```powershell-interactive
 
@@ -441,25 +443,25 @@ Get-AzureRmRoleDefinition [other required parameters] -AtScopeAndBelow
 Get-AzureRmRoleDefinition [other required parameters]
 ```
 
-## <a name="breaking-changes-to-azurermstorage-cmdlets"></a><span data-ttu-id="3aae6-255">AzureRM.Storage Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="3aae6-255">Breaking changes to AzureRM.Storage cmdlets</span></span>
+## <a name="breaking-changes-to-azurermstorage-cmdlets"></a><span data-ttu-id="2bc32-255">AzureRM.Storage Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="2bc32-255">Breaking changes to AzureRM.Storage cmdlets</span></span>
 
-<span data-ttu-id="3aae6-256">**New-AzureRmStorageAccount**</span><span class="sxs-lookup"><span data-stu-id="3aae6-256">**New-AzureRmStorageAccount**</span></span>
-- <span data-ttu-id="3aae6-257">已移除參數 `EnableEncryptionService`</span><span class="sxs-lookup"><span data-stu-id="3aae6-257">The parameter `EnableEncryptionService` was removed</span></span>
+<span data-ttu-id="2bc32-256">**New-AzureRmStorageAccount**</span><span class="sxs-lookup"><span data-stu-id="2bc32-256">**New-AzureRmStorageAccount**</span></span>
+- <span data-ttu-id="2bc32-257">已移除參數 `EnableEncryptionService`</span><span class="sxs-lookup"><span data-stu-id="2bc32-257">The parameter `EnableEncryptionService` was removed</span></span>
 
-<span data-ttu-id="3aae6-258">**Set-AzureRmStorageAccount**</span><span class="sxs-lookup"><span data-stu-id="3aae6-258">**Set-AzureRmStorageAccount**</span></span>
-- <span data-ttu-id="3aae6-259">已移除參數 `EnableEncryptionService` 和 `DisableEncryptionService`</span><span class="sxs-lookup"><span data-stu-id="3aae6-259">The parameters `EnableEncryptionService` and `DisableEncryptionService` were removed</span></span>
+<span data-ttu-id="2bc32-258">**Set-AzureRmStorageAccount**</span><span class="sxs-lookup"><span data-stu-id="2bc32-258">**Set-AzureRmStorageAccount**</span></span>
+- <span data-ttu-id="2bc32-259">已移除參數 `EnableEncryptionService` 和 `DisableEncryptionService`</span><span class="sxs-lookup"><span data-stu-id="2bc32-259">The parameters `EnableEncryptionService` and `DisableEncryptionService` were removed</span></span>
 
-## <a name="removed-modules"></a><span data-ttu-id="3aae6-260">移除的模組</span><span class="sxs-lookup"><span data-stu-id="3aae6-260">Removed modules</span></span>
+## <a name="removed-modules"></a><span data-ttu-id="2bc32-260">移除的模組</span><span class="sxs-lookup"><span data-stu-id="2bc32-260">Removed modules</span></span>
 
 ### `AzureRM.ServerManagement`
 
-<span data-ttu-id="3aae6-261">伺服器管理工具服務已在[去年淘汰](https://blogs.technet.microsoft.com/servermanagement/2017/05/17/smt-preview-service-is-being-retired-on-june-30-2017/)；因此，SMT 的對應模組 `AzureRM.ServerManagement`已從 `AzureRM` 移除，並將在日後停止傳送。</span><span class="sxs-lookup"><span data-stu-id="3aae6-261">The Server Management Tools service was [retired last year](https://blogs.technet.microsoft.com/servermanagement/2017/05/17/smt-preview-service-is-being-retired-on-june-30-2017/), and as a result, the corresponding module for SMT, `AzureRM.ServerManagement`, was removed from `AzureRM` and will stop shipping moving forward.</span></span>
+<span data-ttu-id="2bc32-261">伺服器管理工具服務已在[去年淘汰](https://blogs.technet.microsoft.com/servermanagement/2017/05/17/smt-preview-service-is-being-retired-on-june-30-2017/)；因此，SMT 的對應模組 `AzureRM.ServerManagement`已從 `AzureRM` 移除，並將在日後停止傳送。</span><span class="sxs-lookup"><span data-stu-id="2bc32-261">The Server Management Tools service was [retired last year](https://blogs.technet.microsoft.com/servermanagement/2017/05/17/smt-preview-service-is-being-retired-on-june-30-2017/), and as a result, the corresponding module for SMT, `AzureRM.ServerManagement`, was removed from `AzureRM` and will stop shipping moving forward.</span></span>
 
 ### `AzureRM.SiteRecovery`
 
-<span data-ttu-id="3aae6-262">已由 `AzureRM.RecoveryServices.SiteRecovery` 取代的 `AzureRM.SiteRecovery` 模組，是 `AzureRM.SiteRecovery` 模組的功能超集，並包含一組新的對等 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="3aae6-262">The `AzureRM.SiteRecovery` module is being superseded by `AzureRM.RecoveryServices.SiteRecovery`, which is a functional superset of the `AzureRM.SiteRecovery` module and includes a new set of equivalent cmdlets.</span></span> <span data-ttu-id="3aae6-263">您可以在下方找到從舊到新 Cmdlet 對應的完整清單：</span><span class="sxs-lookup"><span data-stu-id="3aae6-263">The full list of mappings from old to new cmdlets can be found below:</span></span>
+<span data-ttu-id="2bc32-262">已由 `AzureRM.RecoveryServices.SiteRecovery` 取代的 `AzureRM.SiteRecovery` 模組，是 `AzureRM.SiteRecovery` 模組的功能超集，並包含一組新的對等 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="2bc32-262">The `AzureRM.SiteRecovery` module is being superseded by `AzureRM.RecoveryServices.SiteRecovery`, which is a functional superset of the `AzureRM.SiteRecovery` module and includes a new set of equivalent cmdlets.</span></span> <span data-ttu-id="2bc32-263">您可以在下方找到從舊到新 Cmdlet 對應的完整清單：</span><span class="sxs-lookup"><span data-stu-id="2bc32-263">The full list of mappings from old to new cmdlets can be found below:</span></span>
 
-| <span data-ttu-id="3aae6-264">已取代的 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="3aae6-264">Deprecated cmdlet</span></span>                                        | <span data-ttu-id="3aae6-265">對等的 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="3aae6-265">Equivalent cmdlet</span></span>                                                | <span data-ttu-id="3aae6-266">別名</span><span class="sxs-lookup"><span data-stu-id="3aae6-266">Aliases</span></span>                                  |
+| <span data-ttu-id="2bc32-264">已取代的 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="2bc32-264">Deprecated cmdlet</span></span>                                        | <span data-ttu-id="2bc32-265">對等的 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="2bc32-265">Equivalent cmdlet</span></span>                                                | <span data-ttu-id="2bc32-266">別名</span><span class="sxs-lookup"><span data-stu-id="2bc32-266">Aliases</span></span>                                  |
 |----------------------------------------------------------|------------------------------------------------------------------|------------------------------------------|
 | `Edit-AzureRmSiteRecoveryRecoveryPlan`                   | `Edit-AzureRmRecoveryServicesAsrRecoveryPlan`                    | `Edit-ASRRecoveryPlan`                   |
 | `Get-AzureRmSiteRecoveryFabric`                          | `Get-AzureRmRecoveryServicesAsrFabric`                           | `Get-ASRFabric`                          |
