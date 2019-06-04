@@ -7,14 +7,16 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: a0afae1ba51fdb34425c91049e08d7388f434d7d
-ms.sourcegitcommit: 0b5b0434fba7a752b0199256e04fa34f06aaf33a
+ms.openlocfilehash: 79c34ea74887113be3683e32ab9a03ed4c7daa7c
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56464973"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534475"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>將 Azure PowerShell 模組解除安裝
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 本文說明如何將較舊版的 Azure PowerShell 解除安裝，或從您的系統將它完全移除。 如果您已決定要將 Azure PowerShell 完全解除安裝，請透過 [Send-Feedback](/powershell/module/azurerm.profile/send-feedback) Cmdlet 提供意見反應給我們。
 如果發生錯誤 (bug)，希望您[提出 GitHub 問題](https://github.com/azure/azure-powershell/issues)，非常感謝您。
