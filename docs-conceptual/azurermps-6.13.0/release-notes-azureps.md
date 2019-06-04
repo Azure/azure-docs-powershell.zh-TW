@@ -8,14 +8,16 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 08/28/2018
-ms.openlocfilehash: 7f517f0b3768a2075557b131158ee1264ea9ab3f
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: eecd66ddf433cc2543ceeaef1519d69179f2f099
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153034"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534462"
 ---
 # <a name="release-notes"></a>版本資訊
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 這是此版本中對 Azure PowerShell 所做的變更清單。
 

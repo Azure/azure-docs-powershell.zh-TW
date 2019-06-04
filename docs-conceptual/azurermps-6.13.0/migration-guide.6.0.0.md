@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: 39d9fa6e354c3c3448053c9cdc98fdc7f55b068d
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 1fbd24996da2fbc7d4e95c2a63f828aea6cb3145
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153059"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534932"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Microsoft Azure PowerShell 6.0.0 的重大變更
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 本文件為 Microsoft Azure PowerShell Cmdlet 的客戶提供重大變更通知和移轉指南。 每一節都會說明促成重大變更的原因和阻力最小的移轉路徑。 如需深入了解內容，請參閱與每次變更相關聯的提取要求。
 

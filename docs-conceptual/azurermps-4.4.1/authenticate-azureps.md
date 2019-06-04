@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: d3e467714b1a9e4840f2a34b57eabfa5a2c6eaec
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: fbafc345b50fb86cc277bd5418549f91d7124933
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153077"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65535173"
 ---
 # <a name="sign-in-with-azure-powershell"></a>使用 Azure PowerShell 登入
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 Azure PowerShell 支援多種驗證方法。 最簡單的入門方法是在命令列以互動方式登入。
 

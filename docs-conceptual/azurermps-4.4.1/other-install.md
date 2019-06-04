@@ -7,18 +7,18 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/06/2017
-ms.openlocfilehash: 8049b156e1c881ed2d4fe35a0d29c9dcd48e6e97
-ms.sourcegitcommit: b37b8bb6f8e39ecea5b50ceec48601eed313add7
+ms.openlocfilehash: d41e7ce2faac6a82b63ed173b5b64b85b56577c0
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65511611"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65535078"
 ---
 # <a name="other-installation-methods"></a>其他安裝方法
 
-Azure PowerShell 有多種安裝方法。 慣用方法是搭配使用 PowerShellGet 和 PowerShell 資源庫。 您可以使用 Web Platform Installer (WebPI) 將 Azure PowerShell 安裝在 Windows 上，也可以用 GitHub 中的 MSI 檔案安裝。
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
-[!INCLUDE[az-replacing-azurerm.md](../includes/az-replacing-azurerm.md)]
+Azure PowerShell 有多種安裝方法。 慣用方法是搭配使用 PowerShellGet 和 PowerShell 資源庫。 您可以使用 Web Platform Installer (WebPI) 將 Azure PowerShell 安裝在 Windows 上，也可以用 GitHub 中的 MSI 檔案安裝。
 
 ## <a name="install-on-windows-using-the-web-platform-installer"></a>使用 Web Platform Installer 安裝在 Windows 上
 

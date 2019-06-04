@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 85de158cd2a4c3a38f653a530db8e6fae50cb37f
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 442dfed6175f2f5e2f386df3cb2bcea4871bcc01
+ms.sourcegitcommit: 0fdccb57a356b6e7c35a77b1f76e01fb96ef582b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56144217"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854176"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>在 PowerShell 工作階段之間保存使用者認證
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 Azure PowerShell 提供了稱為 **Azure 內容自動儲存**的功能，可提供下列功能：
 
@@ -25,14 +27,14 @@ Azure PowerShell 提供了稱為 **Azure 內容自動儲存**的功能，可提�
 
 ## <a name="azure-contexts-defined"></a>定義的 Azure 內容
 
-Azure 內容是一組資訊，可定義 Azure PowerShell Cmdlet 的目標。 內容是由五個部分所組成：
+Azure 內容  是一組資訊，可定義 Azure PowerShell Cmdlet 的目標。 內容是由五個部分所組成：
 
-- 帳戶 - 用來驗證與 Azure 通訊的使用者名稱或服務主體
-- 訂用帳戶 - 包含要進行處理之資源的 Azure 訂用帳戶。
-- 租用戶 - 包含您訂用帳戶的 Azure Active Directory 租用戶。 租用戶對於 ServicePrincipal 驗證較為重要。
-- 環境 - 作為目標的特定 Azure 雲端，通常是 Azure 的全域雲端。
+- 帳戶  - 用來驗證與 Azure 通訊的使用者名稱或服務主體
+- 訂用帳戶  - 包含要進行處理之資源的 Azure 訂用帳戶。
+- 租用戶  - 包含您訂用帳戶的 Azure Active Directory 租用戶。 租用戶對於 ServicePrincipal 驗證較為重要。
+- 環境  - 作為目標的特定 Azure 雲端，通常是 Azure 的全域雲端。
   不過，環境設定也可讓您將國家/地區、政府和內部部署 (Azure Stack) 雲端作為目標。
-- 認證 - Azure 用來確認您的身分識別，並確定您在 Azure 中存取資源之授權的資訊
+- 認證  - Azure 用來確認您的身分識別，並確定您在 Azure 中存取資源之授權的資訊
 
 在舊版中，您每次開啟新的 PowerShell 工作階段時都必須建立 Azure 內容。 從 Azure PowerShell v4.4.0 開始，您在每次開啟新的 PowerShell 工作階段時，可以啟用自動儲存和重複使用 Azure 內容。
 
@@ -45,7 +47,7 @@ Azure 內容是一組資訊，可定義 Azure PowerShell Cmdlet 的目標。 內
 
 若要將 PowerShell 設定為忘記您的內容和認證，請使用 `Disable-AzureRmContextAutoSave`。 您每次開啟 PowerShell 工作階段時，都必須登入 Azure。
 
-可讓您管理 Azure 內容的 Cmdlet 也能讓您進行更細緻的控制。 您是否僅需要將變更套用到目前的 PowerShell 工作階段 (`Process` 範圍) 還是要套用到每個 PowerShell 工作階段 (`CurrentUser` 範圍)。 這些選項將在[使用內容範圍](#Using-Context-Scopes)中深入討論。
+可讓您管理 Azure 內容的 Cmdlet 也能讓您進行更細緻的控制。 您是否僅需要將變更套用到目前的 PowerShell 工作階段 (`Process` 範圍) 還是要套用到每個 PowerShell 工作階段 (`CurrentUser` 範圍)。 這些選項將在[使用內容範圍](#using-context-scopes)中深入討論。
 
 ## <a name="running-azure-powershell-cmdlets-as-background-jobs"></a>將 Azure PowerShell Cmdlet 作為背景作業執行
 

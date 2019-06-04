@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/07/2018
-ms.openlocfilehash: e3f603b69aa7fef2de034416b9e352b05bea71b6
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 982073768a04bf31c14f9e89665822014cb72a9e
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56156193"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534736"
 ---
 # <a name="format-azurepowershell-cmdlet-output"></a>格式化 Azure PowerShell Cmdlet 輸出
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 根據預設，每個 Azure PowerShell Cmdlet 都已預先定義輸出的格式，以方便您閱讀輸出內容。  PowerShell 也會賦予您彈性，讓您可以使用下列 Cmdlet 來調整輸出或將 Cmdlet 輸出轉換成不同格式：
 

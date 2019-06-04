@@ -8,14 +8,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/09/2018
-ms.openlocfilehash: 2db1ada32e5a9285c27ec3f569b622c9c33a06b0
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 38bb4345a9e4d2d9e450e74f99fb2c320c3ca4d8
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56144133"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534906"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>使用 Azure PowerShell 來建立 Azure 服務主體
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 如果您打算使用 Azure PowerShell 來管理應用程式或服務，請根據 Azure Active Directory (AAD) 服務主體 (而非您自己的認證) 來執行它。 本文會逐步引導您使用 Azure PowerShell 建立安全性主體。
 
@@ -87,7 +89,7 @@ $password = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
 
 ### <a name="sign-in-using-the-service-principal"></a>使用服務主體來登入
 
-您現在可以使用所提供的 appId 和自動產生的密碼，以應用程式的新服務主體登入。 您的服務主體也需要租用戶識別碼。 當您使用個人認證來登入 Azure 時，系統會顯示您的租用戶識別碼。 若要使用服務主體登入，請使用下列命令：
+您現在可以使用所提供的 appId  和自動產生的密碼  ，以應用程式的新服務主體登入。 您的服務主體也需要租用戶識別碼。 當您使用個人認證來登入 Azure 時，系統會顯示您的租用戶識別碼。 若要使用服務主體登入，請使用下列命令：
 
 ```azurepowershell-interactive
 $cred = New-Object System.Management.Automation.PSCredential ("00c01aaa-1603-49fc-b6df-b78c4e5138b4", $servicePrincipal.Secret)
@@ -119,7 +121,7 @@ Azure PowerShell 提供下列 Cmdlet 以供您管理角色指派︰
 * [Remove-AzureRmRoleAssignment](/powershell/module/azurerm.resources/remove-azurermroleassignment)
 
 服務主體的預設角色是**參與者**。 視應用程式與 Azure 服務的互動範圍而定，此角色可能並非最佳選擇，因為它所提供的權限很廣泛。
-角色的權限較為侷限，因此很適合唯讀應用程式使用。 您可以透過 Azure 入口網站來檢視角色專屬權限的詳細資料或建立自訂角色。
+ 角色的權限較為侷限，因此很適合唯讀應用程式使用。 您可以透過 Azure 入口網站來檢視角色專屬權限的詳細資料或建立自訂角色。
 
 在此範例中，我們會對先前的範例新增**讀取者**角色，並刪除**參與者**角色︰
 

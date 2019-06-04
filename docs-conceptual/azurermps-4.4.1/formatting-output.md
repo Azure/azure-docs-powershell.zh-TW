@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 9ae0d661630bf4e080b3bbaa7f357c384ef68cc4
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 0e94d30467c5a11bccfa71630f736bedf0d93112
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56144204"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65535042"
 ---
 # <a name="formatting-query-results"></a>將查詢結果格式化
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 根據預設，每個 PowerShell Cmdlet 都已預先定義輸出的格式，以方便您閱讀輸出內容。  PowerShell 也會賦予您彈性，讓您可以使用下列 Cmdlet 來調整輸出或將 Cmdlet 輸出轉換成不同格式：
 

@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/11/2017
-ms.openlocfilehash: 827bf06cfafc43e6cabdd504b7cfff5ce353072c
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: d2ffd6cc4c5e70c53ab60b1280384faac9b45867
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56156199"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534735"
 ---
 # <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a>使用 PowerShell 作業平行執行 Cmdlet
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 PowerShell 支援 [PowerShell 作業](/powershell/module/microsoft.powershell.core/about/about_jobs)的非同步動作。
 Azure PowerShell 高度相依於進行或等待對 Azure 進行網路呼叫。 身為開發人員，您可能會經常需要在指令碼中對 Azure 進行多個非封鎖呼叫；或是在並未封鎖目前工作階段的情況下在 REPL 中建立 Azure 資源。 若您有這些需求，Azure PowerShell 提供最佳的 [PSJob](/powershell/module/microsoft.powershell.core/about/about_jobs) 支援。
