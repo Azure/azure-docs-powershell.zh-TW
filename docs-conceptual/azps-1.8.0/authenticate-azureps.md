@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/20/2019
 ms.openlocfilehash: 1e25d4650cc20d7b6613e0efb12ec60d424608c4
-ms.sourcegitcommit: 020c69430358b13cbd99fedd5d56607c9b10047b
+ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66375731"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67345350"
 ---
 # <a name="sign-in-with-azure-powershell"></a>使用 Azure PowerShell 登入
 
@@ -33,7 +33,7 @@ Azure PowerShell 支援數種驗證方法。 要開始使用的最簡單方法�
 Connect-AzAccount
 ```
 
-執行時，此 Cmdlet 會出示權杖字串。 若要登入，請複製這個字串並將它貼至瀏覽器中的 https://microsoft.com/devicelogin。 PowerShell 工作階段會進行驗證以便連線至 Azure。
+執行時，此 Cmdlet 會出示權杖字串。 若要登入，請複製這個字串並將它貼至瀏覽器中的 https://microsoft.com/devicelogin 。 PowerShell 工作階段會進行驗證以便連線至 Azure。
 
 > [!IMPORTANT]
 >
