@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 01/14/2019
-ms.openlocfilehash: 0c3b749cb2ac7f11dacafca76b65944f523f727d
-ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
+ms.openlocfilehash: c60036ba8be6282007aa34a0bb9c0d9e33197072
+ms.sourcegitcommit: fd62a6376eef9b6ca76df766de1edcd7938c7a30
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67346606"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67388915"
 ---
 # <a name="get-started-with-azure-powershell"></a>開始使用 Azure PowerShell
 
@@ -52,7 +52,7 @@ Connect-AzAccount -Environment AzureChinaCloud
 
 ## <a name="find-commands"></a>尋找命令
 
-Azure PowerShell Cmdlet 會遵循 PowerShell 的標準命名慣例：`VERB-NOUN`。 動詞描述動作 (例如 `Create`、`Get`、`Set`、`Delete`)，而名詞描述資源類型 (例如 `AzVM`、`AzKeyVaultCertificate`、`AzFirewall`、`AzVirtualNetworkGateway`)。 Azure PowerShell 中的名詞一律具有前置詞：`Az`。 如需標準動詞命令的完整清單，請參閱 [PowerShell 命令的已核准動詞](/powershell/developer/cmdlet/approved-verbs-for-windows-powershell-commands)。
+Azure PowerShell Cmdlet 會遵循 PowerShell 的標準命名慣例：`VERB-NOUN`。 動詞描述動作 (例如 `New`、`Get`、`Set`、`Remove`)，而名詞描述資源類型 (例如 `AzVM`、`AzKeyVaultCertificate`、`AzFirewall`、`AzVirtualNetworkGateway`)。 Azure PowerShell 中的名詞一律具有前置詞：`Az`。 如需標準動詞命令的完整清單，請參閱 [PowerShell 命令的已核准動詞](/powershell/developer/cmdlet/approved-verbs-for-windows-powershell-commands)。
 
 了解可用的名詞、動詞和 Azure PowerShell 模組可協助您透過 [Get-Command](/powershell/module/microsoft.powershell.core/get-command) Cmdlet 來尋找命令。 例如，若要尋找使用 `Get` 動詞的所有 VM 相關命令：
 
