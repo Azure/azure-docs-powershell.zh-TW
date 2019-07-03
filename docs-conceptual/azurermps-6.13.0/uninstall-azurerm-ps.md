@@ -1,18 +1,18 @@
 ---
 title: 將 Azure PowerShell 解除安裝
 description: 如何執行 Azure PowerShell 完全解除安裝
-ms.date: 11/30/2018
+ms.date: 06/10/2019
 author: sptramer
 ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: 79c34ea74887113be3683e32ab9a03ed4c7daa7c
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.openlocfilehash: 17197b77e26ccf0e41b5faf3cbbde34338b28167
+ms.sourcegitcommit: febbbd3f75c8dd1a296281d265289f015b6cb537
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65534475"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67037733"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>將 Azure PowerShell 模組解除安裝
 
@@ -71,19 +71,20 @@ function Uninstall-AllModules {
   'Creating list of dependencies...'
   $target = Find-Module $TargetModule -RequiredVersion $version
   $target.Dependencies | ForEach-Object {
-    if ($_.requiredVersion) {
+    if ($_.PSObject.Properties.Name -contains 'requiredVersion') {
       $AllModules += New-Object -TypeName psobject -Property @{name=$_.name; version=$_.requiredVersion}
     }
     else { # Assume minimum version
       # Minimum version actually reports the installed dependency
       # which is used, not the actual "minimum dependency." Check to
       # see if the requested version was installed as a dependency earlier.
-      $candidate = Get-InstalledModule $_.name -RequiredVersion $version
+      $candidate = Get-InstalledModule $_.name -RequiredVersion $version -ErrorAction Ignore
       if ($candidate) {
         $AllModules += New-Object -TypeName psobject -Property @{name=$_.name; version=$version}
       }
       else {
-        Write-Warning ("Could not find uninstall candidate for {0}:{1} - module may require manual uninstall" -f $_.name,$version)
+        $availableModules = Get-InstalledModule $_.name -AllVersions
+        Write-Warning ("Could not find uninstall candidate for {0}:{1} - module may require manual uninstall. Available versions are: {2}" -f $_.name,$version,($availableModules.Version -join ', '))
       }
     }
   }
@@ -117,9 +118,14 @@ Uninstalling Azure.AnalysisServices version 0.4.7
 ...
 ```
 
+> [!NOTE]
+> 若此指令碼與要解除安裝之相同版本的相依性不完全相符，系統不會解除安裝該相依性的_任何_版本。 這是因為您的系統上可能有其他版本的目標模組需要使用這些相依性。 在此情況下，會列出可用的相依性版本。
+> 然後您就可以使用 `Uninstall-Module` 手動移除任何舊版本。
+
+
 請針對您要解除安裝的 Azure PowerShell 每個版本執行此命令。 為了方便起見，下列指令碼會將所有版本的 AzureRM 解除安裝，__只留下__最新版本。
 
 ```powershell-interactive
 $versions = (get-installedmodule AzureRM -AllVersions | Select-Object Version)
-$versions[1..($versions.Length-1)]  | foreach { Uninstall-AllModules -TargetModule AzureRM -Version ($_.Version) -Force }
+$versions[0..($versions.Length-2)]  | foreach { Uninstall-AllModules -TargetModule AzureRM -Version ($_.Version) -Force }
 ```
