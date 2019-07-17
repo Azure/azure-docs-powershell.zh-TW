@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 01/10/2019
-ms.openlocfilehash: 710decaf8fcc0ba57e1e978a665474047393adc7
-ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
+ms.openlocfilehash: 1978ba5415a27349ac68175144cca0d89fa26d96
+ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67345237"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67863894"
 ---
 # <a name="overview-of-azure-powershell"></a>Azure PowerShell 的概觀
 
@@ -49,7 +49,6 @@ AzureRM 仍可取得 Bug 修正，但不會再獲得新的功能。
 * [安裝 PowerShell](/powershell/scripting/install/installing-powershell)
 * [使用 PowerShell 編寫指令碼](/powershell/scripting/powershell-scripting)
 * [PowerShell 基本概念：(第 1 部份) 開始使用 PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1)
-* Microsoft Virtual Academy 的[開始使用 PowerShell Jumpstart](https://mva.microsoft.com/liveevents/powershell-jumpstart)
 
 下列範例說明 Azure 的一些常見用法：
 
