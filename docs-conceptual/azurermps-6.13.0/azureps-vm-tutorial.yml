@@ -16,12 +16,12 @@ metadata:
   ms.technology: azure-powershell
   ms.topic: tutorial
   clicktale: true
-  ms.openlocfilehash: a037b16eef107ecfab9a8df9de0b085b0c9a9ae2
-  ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+  ms.openlocfilehash: d161f0467c2371ce004a895eb12ebd8d257399a5
+  ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 05/11/2019
-  ms.locfileid: "65534771"
+  ms.lasthandoff: 07/13/2019
+  ms.locfileid: "67863875"
 items:
 - durationInMinutes: 1
   content: "\n[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]\n\n在本教學課程中，您將了解使用 Azure PowerShell 設定虛擬機器所需的所有步驟。 本教學課程也涵蓋輸出查詢、Azure 資源重複使用和資源清除。\n\n您可以透過 Azure Cloud Shell 提供的互動式體驗完成本教學課程，也可以在本機[安裝 Azure PowerShell](install-azurerm-ps.md)。\n\n使用 __ctrl-shift-v__ (__在 macOS 上使用 cmd shift hyper-v__) 將教學課程的文字貼到 Azure Cloud Shell。"
