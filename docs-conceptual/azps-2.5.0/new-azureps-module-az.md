@@ -7,16 +7,16 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: da1d7ec9a196068db237d871834b92f8b077b42c
-ms.sourcegitcommit: 6c0d296bfec7c1c35a1d15074ca5eacda6684ea4
+ms.openlocfilehash: 8dc5a7d3b47870455213aa01aebc1d215ad640a7
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657598"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807452"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>新的 Azure PowerShell Az 模組簡介
 
-從 2018 年 12 月開始，Azure PowerShell Az 模組已正式運作，並已成為與 Azure 互動時的預期 PowerShell 模組。 Az 可提供較短的命令、改進的穩定性和跨平台支援。 Az 也提供功能同位以及從 AzureRM 遷移的簡單路徑。
+從 2018 年 12 月開始，Azure PowerShell Az 模組已正式運作，並已成為與 Azure 互動時的預期 PowerShell 模組。 Az 可提供較短的命令、改進的穩定性和跨平台支援。 Az 也具有與 AzureRM 的功能同位，提供簡單的移轉路徑。
 
 透過 Az 模組，Azure PowerShell 現已相容於 Windows 上的 PowerShell 5.1 以及所有支援平台上的 PowerShell Core 6.x 和更新版本，包括 Windows、macOS 和 Linux。
 
@@ -67,6 +67,4 @@ Az 是新模組，因此版本已重設為 1.0.0。
 
 ## <a name="continued-support-for-azurerm"></a>對 AzureRM 的持續支援
 
-現有 AzureRM 模組不會再收到新的 Cmdlet 或功能。 不過，我們仍會正式維護 AzureRM，且最晚會在 2020 年 12 月之前提供錯誤修正。
-
-如果您對 Az 模組的功能完整性、是否經過測試或可供實際運作之用有所疑慮：過去著力於 AzureRM 的所有工程工作現在都已轉移至 Az，包括盡可能重複使用現有模組的程式碼，以及經由廣泛的測試達到新模組的功能相容性。 是否移至 Az 應完全取決於組織的排程，而無須等候特定功能出現。
+AzureRM 不會再收到新的 Cmdlet 或功能。 不過，我們仍會正式維護 AzureRM 模組，並在 2020 年 12 月之前都會提供錯誤修正。

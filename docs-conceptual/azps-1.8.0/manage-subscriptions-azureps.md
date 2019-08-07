@@ -7,16 +7,18 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/04/2019
-ms.openlocfilehash: 29d7c84d0ca9ae8d3e4e22f407b007d2d582f8bc
-ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
+ms.openlocfilehash: 778fdb463a42b609d3a94c910a2c0f9553ef4eb9
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67346555"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807515"
 ---
 # <a name="use-multiple-azure-subscriptions"></a>使用多個 Azure 訂用帳戶
 
 大部分的 Azure 使用者永遠只會有單一訂用帳戶。 不過，如果您是多個組織的成員，或貴組織跨多個群組分割了特定資源的存取權，您可能會在 Azure 中擁有多個訂用帳戶。 CLI 支援全域及依命令選取訂用帳戶。
+
+如需訂用帳戶、帳單與成本管理的詳細資訊，請參閱[帳單與成本管理文件](/azure/billing/)。
 
 ## <a name="tenants-users-and-subscriptions"></a>租用戶、使用者和訂用帳戶
 

@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: abb85d3d3f6a20697510447cda2c02b2703ef921
-ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
+ms.openlocfilehash: 6d9df4a62238f1e3b9cc9a62864f5d4d9337d6a7
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67345366"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807388"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>使用 Azure PowerShell 來建立 Azure 服務主體
 
@@ -40,7 +40,14 @@ Azure 服務主體是一種身分識別，建立目的是為了搭配應用程�
 $sp = New-AzADServicePrincipal -DisplayName ServicePrincipalName
 ```
 
-傳回的物件包含 `Secret` 成員，其為包含所產生密碼的 `SecureString`。 請確定您將此值儲存在安全的位置，以便驗證服務主體。 該值__不會__顯示在主控台輸出。 如果您遺失密碼，[請重設服務主體認證](#reset-credentials)。 
+傳回的物件包含 `Secret` 成員，其為包含所產生密碼的 `SecureString`。 請確定您將此值儲存在安全的位置，以便驗證服務主體。 該值__不會__顯示在主控台輸出。 如果您遺失密碼，[請重設服務主體認證](#reset-credentials)。
+
+下列程式碼可讓您匯出祕密：
+
+```azurepowershell-interactive
+$BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($sp.Secret)
+$UnsecureSecret = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
+```
 
 對於使用者提供的密碼，`-PasswordCredential` 引數會採用 `Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential` 物件。 這些物件必須具有有效的 `StartDate` 和 `EndDate`，並採取純文字 `Password`。 建立密碼時，請務必遵循 [Azure Active Directory 密碼規則和限制](/azure/active-directory/active-directory-passwords-policy)。 請勿使用弱式密碼或重複使用密碼。
 

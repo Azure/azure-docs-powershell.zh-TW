@@ -1,18 +1,18 @@
 ---
 title: 將 Azure PowerShell 解除安裝
 description: 如何執行 Azure PowerShell 完全解除安裝
-ms.date: 05/10/2019
+ms.date: 06/10/2019
 author: sptramer
 ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: b32547e9c3df0df7495d1631a43be6934e1f62dc
-ms.sourcegitcommit: febbbd3f75c8dd1a296281d265289f015b6cb537
+ms.openlocfilehash: e71b4d0d662b29a32610fecb36351532040428e4
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67037760"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807430"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>將 Azure PowerShell 模組解除安裝
 
@@ -106,7 +106,8 @@ Uninstalling Az.AnalysisServices version 0.7.0
 ```
 
 > [!NOTE]
-> 若此指令碼與要解除安裝的相依模組版本不完全相符，系統不會解除安裝該模組的_任何_版本。 這是因為您的系統上可能有其他版本的 `Az` 需要使用這些相依性。 在此情況下，若有任何已安裝的模組，系統會列出這些找不到的模組版本。 然後您就可以使用 `Uninstall-Module` 手動移除任何舊版本。
+> 若此指令碼與要解除安裝之相同版本的相依性不完全相符，系統不會解除安裝該相依性的_任何_版本。 這是因為您的系統上可能有其他版本的目標模組需要使用這些相依性。 在此情況下，會列出可用的相依性版本。
+> 然後您就可以使用 `Uninstall-Module` 手動移除任何舊版本。
 
 請針對您要解除安裝的 Azure PowerShell 每個版本執行此命令。 為了方便起見，下列指令碼會將所有版本的 Az 解除安裝，__只留下__最新版本。
 

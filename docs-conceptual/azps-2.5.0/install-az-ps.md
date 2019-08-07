@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
-ms.openlocfilehash: ead6c48496c646b5184f88aeac64fbe650be17c4
-ms.sourcegitcommit: 6c0d296bfec7c1c35a1d15074ca5eacda6684ea4
+ms.openlocfilehash: 8e63e3efb2671eef435498063010d5704c793060
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657972"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807473"
 ---
 # <a name="install-the-azure-powershell-module"></a>安裝 Azure PowerShell 模組
 
@@ -40,16 +40,16 @@ $PSVersionTable.PSVersion
 > [!WARNING]
 > 您__無法__同時為 PowerShell 5.1 for Windows 安裝 AzureRM 和 Az 模組。 如果您需要在系統上保留可用的 AzureRM，請安裝適用於 PowerShell Core 6.x 或更新版本的 Az 模組。 若要這樣做，請[安裝 PowerShell Core 6.x 或更新版本](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows)，然後在 PowerShell Core 終端機中依照這些指示操作。
 
-若要在全域範圍安裝模組，您需要較高的權限，以從 PowerShell 資源庫安裝模組。 若要安裝 Azure PowerShell，請在提升權限的工作階段中執行下列命令 (在 Windows 上「以系統管理員身分執行」，或在 macOS 或 Linux 上使用超級使用者權限執行)：
-
-```powershell-interactive
-Install-Module -Name Az -AllowClobber
-```
-
-如果您沒有系統管理員權限，藉由新增 `-Scope` 引數，即可為目前使用者進行安裝。
+建議的安裝方法是僅供活躍使用者安裝：
 
 ```powershell-interactive
 Install-Module -Name Az -AllowClobber -Scope CurrentUser
+```
+
+如果您希望供系統中的所有使用者安裝，則需要系統管理員權限。 在提高權限的 PowerShell 工作階段中以系統管理員身份執行；若使用 macOS 或 Linux 則使用 `sudo` 命令執行：
+
+```powershell-interactive
+Install-Module -Name Az -AllowClobber -Scope AllUsers
 ```
 
 根據預設，PowerShell 資源庫未設為 PowerShellGet 的信任存放庫。 第一次使用 PSGallery 時，您會看到下列提示：

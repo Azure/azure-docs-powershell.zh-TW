@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
-ms.openlocfilehash: d99265c7f156622d876d700106e2b06dd729e8b8
-ms.sourcegitcommit: 020c69430358b13cbd99fedd5d56607c9b10047b
+ms.openlocfilehash: 8e63e3efb2671eef435498063010d5704c793060
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365727"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807513"
 ---
 # <a name="install-the-azure-powershell-module"></a>安裝 Azure PowerShell 模組
 
@@ -37,23 +37,19 @@ $PSVersionTable.PSVersion
 
 ## <a name="install-the-azure-powershell-module"></a>安裝 Azure PowerShell 模組
 
-> [!IMPORTANT]
->
-> 您可以同時安裝 AzureRM 和 Az 模組。 若您已安裝了兩個模組，__請勿啟用別名__。
-> 啟用別名會讓 AzureRM Cmdlet 和 Az 命令別名產生衝突，且可能導致未預期的行為。
-> 建議您在安裝 Az 模組之前，先將 AzureRM 解除安裝。 您可以隨時將 AzureRM 解除安裝，或啟用別名。 若要了解 AzureRM 命令別名，請參閱[從 AzureRM 遷移至 Az](migrate-from-azurerm-to-az.md)。
-> 如需解除安裝作的指示，請參閱[將 AzureRM 模組解除安裝](uninstall-az-ps.md#uninstall-the-azurerm-module)。 
+> [!WARNING]
+> 您__無法__同時為 PowerShell 5.1 for Windows 安裝 AzureRM 和 Az 模組。 如果您需要在系統上保留可用的 AzureRM，請安裝適用於 PowerShell Core 6.x 或更新版本的 Az 模組。 若要這樣做，請[安裝 PowerShell Core 6.x 或更新版本](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows)，然後在 PowerShell Core 終端機中依照這些指示操作。
 
-若要在全域範圍安裝模組，您需要較高的權限，以從 PowerShell 資源庫安裝模組。 若要安裝 Azure PowerShell，請在提升權限的工作階段中執行下列命令 (在 Windows 上「以系統管理員身分執行」，或在 macOS 或 Linux 上使用超級使用者權限執行)：
-
-```powershell-interactive
-Install-Module -Name Az -AllowClobber
-```
-
-如果您沒有系統管理員權限，藉由新增 `-Scope` 引數，即可為目前使用者進行安裝。
+建議的安裝方法是僅供活躍使用者安裝：
 
 ```powershell-interactive
 Install-Module -Name Az -AllowClobber -Scope CurrentUser
+```
+
+如果您希望供系統中的所有使用者安裝，則需要系統管理員權限。 在提高權限的 PowerShell 工作階段中以系統管理員身份執行；若使用 macOS 或 Linux 則使用 `sudo` 命令執行：
+
+```powershell-interactive
+Install-Module -Name Az -AllowClobber -Scope AllUsers
 ```
 
 根據預設，PowerShell 資源庫未設為 PowerShellGet 的信任存放庫。 第一次使用 PSGallery 時，您會看到下列提示：
@@ -71,6 +67,28 @@ Are you sure you want to install the modules from 'PSGallery'?
 請回答 `Yes` 或 `Yes to All` 以繼續安裝。
 
 Az 模組是 Azure PowerShell Cmdlet 的彙總套件模組。 安裝此項目會下載所有可用的 Azure Resource Manager 模組，並使這些模組的 Cmdlet 可供使用。
+
+## <a name="troubleshooting"></a>疑難排解
+
+以下是安裝 Azure PowerShell 模組時常見的一些問題。 如果您遇到此處未列出的問題，請[在 GitHub 上提出問題](https://github.com/azure/azure-powershell/issues)。
+
+### <a name="proxy-blocks-connection"></a>Proxy 封鎖連線
+
+如果 `Install-Module` 顯示錯誤指出無法連線到 PowerShell 資源庫，表示您可能在 Proxy 後方。 不同的作業系統在設定全系統的 Proxy 時會有不同的需求，此處並未詳盡說明。 請連絡系統管理員以取得您的 Proxy 設定，並詢問如何為您的 OS 進行其設定。
+
+PowerShell 本身不一定會設定為自動使用此 Proxy。 使用 PowerShell 5.1 和更新版本時，請使用下列命令，設定要用於 PowerShell 工作階段的 Proxy：
+
+```powershell
+(New-Object System.Net.WebClient).Proxy.Credentials = `
+  [System.Net.CredentialCache]::DefaultNetworkCredentials
+```
+
+如果您的作業系統認證已正確設定，此時將會透過 Proxy 路由傳送 PowerShell 要求。
+若要在工作階段之間保存此設定，請將命令新增至 [PowerShell 設定檔](/powershell/module/microsoft.powershell.core/about/about_profiles)。
+
+若要安裝套件，您的 Proxy 必須允許下列位址的 HTTPS 連線：
+
+* `https://www.powershellgallery.com`
 
 ## <a name="sign-in"></a>登入
 
