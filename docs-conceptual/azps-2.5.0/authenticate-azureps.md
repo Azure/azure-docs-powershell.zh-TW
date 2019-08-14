@@ -7,57 +7,57 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/20/2019
-ms.openlocfilehash: 1e25d4650cc20d7b6613e0efb12ec60d424608c4
-ms.sourcegitcommit: 6c0d296bfec7c1c35a1d15074ca5eacda6684ea4
+ms.openlocfilehash: 0b7a6fa4278d95a69b21f570ac6fb22b70f073f6
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68658091"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68861334"
 ---
-# <a name="sign-in-with-azure-powershell"></a><span data-ttu-id="84c4d-103">使用 Azure PowerShell 登入</span><span class="sxs-lookup"><span data-stu-id="84c4d-103">Sign in with Azure PowerShell</span></span>
+# <a name="sign-in-with-azure-powershell"></a><span data-ttu-id="2c803-103">使用 Azure PowerShell 登入</span><span class="sxs-lookup"><span data-stu-id="2c803-103">Sign in with Azure PowerShell</span></span>
 
-<span data-ttu-id="84c4d-104">Azure PowerShell 支援數種驗證方法。</span><span class="sxs-lookup"><span data-stu-id="84c4d-104">Azure PowerShell supports several authentication methods.</span></span> <span data-ttu-id="84c4d-105">要開始使用的最簡單方法是透過 [Azure Cloud Shell](/azure/cloud-shell/overview)，這會自動將您登入。</span><span class="sxs-lookup"><span data-stu-id="84c4d-105">The easiest way to get started is with [Azure Cloud Shell](/azure/cloud-shell/overview), which automatically logs you in.</span></span> <span data-ttu-id="84c4d-106">您可以使用本機安裝，以互動方式透過瀏覽器登入。</span><span class="sxs-lookup"><span data-stu-id="84c4d-106">With a local install, you can sign in interactively through your browser.</span></span> <span data-ttu-id="84c4d-107">在撰寫自動化指令碼時，建議的方法是使用[服務主體](create-azure-service-principal-azureps.md)搭配必要權限。</span><span class="sxs-lookup"><span data-stu-id="84c4d-107">When writing scripts for automation, the recommended approach is to use a [service principal](create-azure-service-principal-azureps.md) with the necessary permissions.</span></span> <span data-ttu-id="84c4d-108">當您依自身的使用案例儘可能地限制登入權限時，同時也是在協助維護 Azure 資源的安全。</span><span class="sxs-lookup"><span data-stu-id="84c4d-108">When you restrict sign-in permissions as much as possible for your use case, you help keep your Azure resources secure.</span></span>
+<span data-ttu-id="2c803-104">Azure PowerShell 支援數種驗證方法。</span><span class="sxs-lookup"><span data-stu-id="2c803-104">Azure PowerShell supports several authentication methods.</span></span> <span data-ttu-id="2c803-105">要開始使用的最簡單方法是透過 [Azure Cloud Shell](/azure/cloud-shell/overview)，這會自動將您登入。</span><span class="sxs-lookup"><span data-stu-id="2c803-105">The easiest way to get started is with [Azure Cloud Shell](/azure/cloud-shell/overview), which automatically logs you in.</span></span> <span data-ttu-id="2c803-106">您可以使用本機安裝，以互動方式透過瀏覽器登入。</span><span class="sxs-lookup"><span data-stu-id="2c803-106">With a local install, you can sign in interactively through your browser.</span></span> <span data-ttu-id="2c803-107">在撰寫自動化指令碼時，建議的方法是使用[服務主體](create-azure-service-principal-azureps.md)搭配必要權限。</span><span class="sxs-lookup"><span data-stu-id="2c803-107">When writing scripts for automation, the recommended approach is to use a [service principal](create-azure-service-principal-azureps.md) with the necessary permissions.</span></span> <span data-ttu-id="2c803-108">當您依自身的使用案例儘可能地限制登入權限時，同時也是在協助維護 Azure 資源的安全。</span><span class="sxs-lookup"><span data-stu-id="2c803-108">When you restrict sign-in permissions as much as possible for your use case, you help keep your Azure resources secure.</span></span>
 
-<span data-ttu-id="84c4d-109">在登入之後，系統會針對您的預設訂用帳戶來執行命令。</span><span class="sxs-lookup"><span data-stu-id="84c4d-109">After signing in, commands are run against your default subscription.</span></span> <span data-ttu-id="84c4d-110">若要變更工作階段作用中的訂用帳戶，請使用 [Set-AzContext](/powershell/module/az.accounts/set-azcontext) Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="84c4d-110">To change your active subscription for a session, use the [Set-AzContext](/powershell/module/az.accounts/set-azcontext) cmdlet.</span></span> <span data-ttu-id="84c4d-111">若要變更登入 Azure PowerShell 時使用的預設訂用帳戶，請使用 [Set-AzDefault](/powershell/module/az.accounts/set-azdefault)。</span><span class="sxs-lookup"><span data-stu-id="84c4d-111">To change the default subscription used when logging in with Azure PowerShell, use [Set-AzDefault](/powershell/module/az.accounts/set-azdefault).</span></span>
+<span data-ttu-id="2c803-109">在登入之後，系統會針對您的預設訂用帳戶來執行命令。</span><span class="sxs-lookup"><span data-stu-id="2c803-109">After signing in, commands are run against your default subscription.</span></span> <span data-ttu-id="2c803-110">若要變更工作階段作用中的訂用帳戶，請使用 [Set-AzContext](/powershell/module/az.accounts/set-azcontext) Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="2c803-110">To change your active subscription for a session, use the [Set-AzContext](/powershell/module/az.accounts/set-azcontext) cmdlet.</span></span> <span data-ttu-id="2c803-111">若要變更登入 Azure PowerShell 時使用的預設訂用帳戶，請使用 [Set-AzDefault](/powershell/module/az.accounts/set-azdefault)。</span><span class="sxs-lookup"><span data-stu-id="2c803-111">To change the default subscription used when logging in with Azure PowerShell, use [Set-AzDefault](/powershell/module/az.accounts/set-azdefault).</span></span>
 
 > [!IMPORTANT]
 >
-> <span data-ttu-id="84c4d-112">只要您保持登入，認證就會在多個 PowerShell 工作階段之間共用。</span><span class="sxs-lookup"><span data-stu-id="84c4d-112">Your credentials are shared among multiple PowerShell sessions as long as you remain signed in.</span></span>
-> <span data-ttu-id="84c4d-113">如需詳細資訊，請參閱[持續性認證](context-persistence.md)中的文章。</span><span class="sxs-lookup"><span data-stu-id="84c4d-113">For more information, see the article on [Persistent Credentials](context-persistence.md).</span></span>
+> <span data-ttu-id="2c803-112">只要您保持登入，認證就會在多個 PowerShell 工作階段之間共用。</span><span class="sxs-lookup"><span data-stu-id="2c803-112">Your credentials are shared among multiple PowerShell sessions as long as you remain signed in.</span></span>
+> <span data-ttu-id="2c803-113">如需詳細資訊，請參閱[持續性認證](context-persistence.md)中的文章。</span><span class="sxs-lookup"><span data-stu-id="2c803-113">For more information, see the article on [Persistent Credentials](context-persistence.md).</span></span>
 
-## <a name="sign-in-interactively"></a><span data-ttu-id="84c4d-114">以互動方式登入</span><span class="sxs-lookup"><span data-stu-id="84c4d-114">Sign in interactively</span></span>
+## <a name="sign-in-interactively"></a><span data-ttu-id="2c803-114">以互動方式登入</span><span class="sxs-lookup"><span data-stu-id="2c803-114">Sign in interactively</span></span>
 
-<span data-ttu-id="84c4d-115">若要以互動方式登入，請使用 [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="84c4d-115">To sign in interactively, use the [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) cmdlet.</span></span>
+<span data-ttu-id="2c803-115">若要以互動方式登入，請使用 [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="2c803-115">To sign in interactively, use the [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) cmdlet.</span></span>
 
 ```azurepowershell-interactive
 Connect-AzAccount
 ```
 
-<span data-ttu-id="84c4d-116">執行時，此 Cmdlet 會出示權杖字串。</span><span class="sxs-lookup"><span data-stu-id="84c4d-116">When run, this cmdlet will present a token string.</span></span> <span data-ttu-id="84c4d-117">若要登入，請複製這個字串並將它貼至瀏覽器中的 https://microsoft.com/devicelogin 。</span><span class="sxs-lookup"><span data-stu-id="84c4d-117">To sign in, copy this string and paste it into https://microsoft.com/devicelogin in a browser.</span></span> <span data-ttu-id="84c4d-118">PowerShell 工作階段會進行驗證以便連線至 Azure。</span><span class="sxs-lookup"><span data-stu-id="84c4d-118">Your PowerShell session will be authenticated to connect to Azure.</span></span>
+<span data-ttu-id="2c803-116">執行時，此 Cmdlet 會出示權杖字串。</span><span class="sxs-lookup"><span data-stu-id="2c803-116">When run, this cmdlet will present a token string.</span></span> <span data-ttu-id="2c803-117">若要登入，請複製這個字串並將它貼至瀏覽器中的 https://microsoft.com/devicelogin 。</span><span class="sxs-lookup"><span data-stu-id="2c803-117">To sign in, copy this string and paste it into https://microsoft.com/devicelogin in a browser.</span></span> <span data-ttu-id="2c803-118">PowerShell 工作階段會進行驗證以便連線至 Azure。</span><span class="sxs-lookup"><span data-stu-id="2c803-118">Your PowerShell session will be authenticated to connect to Azure.</span></span>
 
 > [!IMPORTANT]
 >
-> <span data-ttu-id="84c4d-119">由於 Active Directory 授權實作與安全性考量中的變更，已在 Azure PowerShell 中移除使用者名稱/密碼認證授權。</span><span class="sxs-lookup"><span data-stu-id="84c4d-119">Username/password credential authorization has been removed in Azure PowerShell due to changes in Active Directory authorization implementations and security concerns.</span></span>
-> <span data-ttu-id="84c4d-120">如果您將認證授權用於自動化用途，請[建立服務主體](create-azure-service-principal-azureps.md)。</span><span class="sxs-lookup"><span data-stu-id="84c4d-120">If you use credential authorization for automation purposes, instead [create a service principal](create-azure-service-principal-azureps.md).</span></span>
+> <span data-ttu-id="2c803-119">由於 Active Directory 授權實作與安全性考量中的變更，已在 Azure PowerShell 中移除使用者名稱/密碼認證授權。</span><span class="sxs-lookup"><span data-stu-id="2c803-119">Username/password credential authorization has been removed in Azure PowerShell due to changes in Active Directory authorization implementations and security concerns.</span></span>
+> <span data-ttu-id="2c803-120">如果您將認證授權用於自動化用途，請[建立服務主體](create-azure-service-principal-azureps.md)。</span><span class="sxs-lookup"><span data-stu-id="2c803-120">If you use credential authorization for automation purposes, instead [create a service principal](create-azure-service-principal-azureps.md).</span></span>
 
-## <a name="sign-in-with-a-service-principal-a-namesp-signin"></a><span data-ttu-id="84c4d-121">使用服務主體 <a name="sp-signin"/> 來登入</span><span class="sxs-lookup"><span data-stu-id="84c4d-121">Sign in with a service principal <a name="sp-signin"/></span></span>
+## <a name="sign-in-with-a-service-principal-a-namesp-signin"></a><span data-ttu-id="2c803-121">使用服務主體 <a name="sp-signin"/> 來登入</span><span class="sxs-lookup"><span data-stu-id="2c803-121">Sign in with a service principal <a name="sp-signin"/></span></span>
 
-<span data-ttu-id="84c4d-122">服務主體為非互動式 Azure 帳戶。</span><span class="sxs-lookup"><span data-stu-id="84c4d-122">Service principals are non-interactive Azure accounts.</span></span> <span data-ttu-id="84c4d-123">如同其他使用者帳戶，其權限也受到 Azure Active Directory 的管理。</span><span class="sxs-lookup"><span data-stu-id="84c4d-123">Like other user accounts, their permissions are managed with Azure Active Directory.</span></span> <span data-ttu-id="84c4d-124">藉由僅為服務主體授與其所需的權限，您的自動化指令碼得以受到保護。</span><span class="sxs-lookup"><span data-stu-id="84c4d-124">By granting a service principal only the permissions it needs, your automation scripts stay secure.</span></span>
+<span data-ttu-id="2c803-122">服務主體為非互動式 Azure 帳戶。</span><span class="sxs-lookup"><span data-stu-id="2c803-122">Service principals are non-interactive Azure accounts.</span></span> <span data-ttu-id="2c803-123">如同其他使用者帳戶，其權限也受到 Azure Active Directory 的管理。</span><span class="sxs-lookup"><span data-stu-id="2c803-123">Like other user accounts, their permissions are managed with Azure Active Directory.</span></span> <span data-ttu-id="2c803-124">藉由僅為服務主體授與其所需的權限，您的自動化指令碼得以受到保護。</span><span class="sxs-lookup"><span data-stu-id="2c803-124">By granting a service principal only the permissions it needs, your automation scripts stay secure.</span></span>
 
-<span data-ttu-id="84c4d-125">若要了解如何建立與 Azure PowerShell 搭配使用的服務主體，請參閱[使用 Azure PowerShell 建立 Azure 服務主體](create-azure-service-principal-azureps.md)。</span><span class="sxs-lookup"><span data-stu-id="84c4d-125">To learn how to create a service principal for use with Azure PowerShell, see [Create an Azure service principal with Azure PowerShell](create-azure-service-principal-azureps.md).</span></span>
+<span data-ttu-id="2c803-125">若要了解如何建立與 Azure PowerShell 搭配使用的服務主體，請參閱[使用 Azure PowerShell 建立 Azure 服務主體](create-azure-service-principal-azureps.md)。</span><span class="sxs-lookup"><span data-stu-id="2c803-125">To learn how to create a service principal for use with Azure PowerShell, see [Create an Azure service principal with Azure PowerShell](create-azure-service-principal-azureps.md).</span></span>
 
-<span data-ttu-id="84c4d-126">若要使用服務主體來登入，請使用 `-ServicePrincipal` 引數和 `Connect-AzAccount` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="84c4d-126">To sign in with a service principal, use the `-ServicePrincipal` argument with the `Connect-AzAccount` cmdlet.</span></span> <span data-ttu-id="84c4d-127">您也需要服務主體的應用程式識別碼、登入認證，以及與服務主體相關聯的租用戶識別碼。</span><span class="sxs-lookup"><span data-stu-id="84c4d-127">You'll also need the service principal's application ID, sign-in credentials, and the tenant ID associate with the service principal.</span></span> <span data-ttu-id="84c4d-128">您使用服務主體登入的方式將取決於其設定為密碼式或憑證式驗證。</span><span class="sxs-lookup"><span data-stu-id="84c4d-128">How you sign in with a service principal will depend on whether it's configured for password-based or certificate-based authentication.</span></span>
+<span data-ttu-id="2c803-126">若要使用服務主體來登入，請使用 `-ServicePrincipal` 引數和 `Connect-AzAccount` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="2c803-126">To sign in with a service principal, use the `-ServicePrincipal` argument with the `Connect-AzAccount` cmdlet.</span></span> <span data-ttu-id="2c803-127">您也需要服務主體的應用程式識別碼、登入認證，以及與服務主體相關聯的租用戶識別碼。</span><span class="sxs-lookup"><span data-stu-id="2c803-127">You'll also need the service principal's application ID, sign-in credentials, and the tenant ID associate with the service principal.</span></span> <span data-ttu-id="2c803-128">您使用服務主體登入的方式將取決於其設定為密碼式或憑證式驗證。</span><span class="sxs-lookup"><span data-stu-id="2c803-128">How you sign in with a service principal will depend on whether it's configured for password-based or certificate-based authentication.</span></span>
 
-### <a name="password-based-authentication"></a><span data-ttu-id="84c4d-129">密碼式驗證</span><span class="sxs-lookup"><span data-stu-id="84c4d-129">Password-based authentication</span></span>
+### <a name="password-based-authentication"></a><span data-ttu-id="2c803-129">密碼式驗證</span><span class="sxs-lookup"><span data-stu-id="2c803-129">Password-based authentication</span></span>
 
-<span data-ttu-id="84c4d-130">若要取得服務主體的認證作為適當物件，請使用 [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential) Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="84c4d-130">To get the service principal's credentials as the appropriate object, use the [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential) cmdlet.</span></span> <span data-ttu-id="84c4d-131">此 Cmdlet 會顯示使用者名稱和密碼的提示。</span><span class="sxs-lookup"><span data-stu-id="84c4d-131">This cmdlet will present a prompt for a username and password.</span></span> <span data-ttu-id="84c4d-132">使用使用者名稱的服務主體識別碼。</span><span class="sxs-lookup"><span data-stu-id="84c4d-132">Use the service principal ID for the username.</span></span>
+<span data-ttu-id="2c803-130">若要取得服務主體的認證作為適當物件，請使用 [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential) Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="2c803-130">To get the service principal's credentials as the appropriate object, use the [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential) cmdlet.</span></span> <span data-ttu-id="2c803-131">此 Cmdlet 會顯示使用者名稱和密碼的提示。</span><span class="sxs-lookup"><span data-stu-id="2c803-131">This cmdlet will present a prompt for a username and password.</span></span> <span data-ttu-id="2c803-132">使用使用者名稱的服務主體識別碼。</span><span class="sxs-lookup"><span data-stu-id="2c803-132">Use the service principal ID for the username.</span></span>
 
 ```azurepowershell-interactive
 $pscredential = Get-Credential
 Connect-AzAccount -ServicePrincipal -Credential $pscredential -TenantId $tenantId
 ```
 
-<span data-ttu-id="84c4d-133">在自動化的情況下，您需要從使用者名稱和安全字串建立認證：</span><span class="sxs-lookup"><span data-stu-id="84c4d-133">For automation scenarios, you need to create credentials from a user name and secure string:</span></span>
+<span data-ttu-id="2c803-133">在自動化的情況下，您需要從使用者名稱和安全字串建立認證：</span><span class="sxs-lookup"><span data-stu-id="2c803-133">For automation scenarios, you need to create credentials from a user name and secure string:</span></span>
 
 ```azurepowershell-interactive
 $passwd = ConvertTo-SecureString <use a secure password here> -AsPlainText -Force
@@ -65,18 +65,18 @@ $pscredential = New-Object System.Management.Automation.PSCredential('service pr
 Connect-AzAccount -ServicePrincipal -Credential $pscredential -TenantId $tenantId
 ```
 
-<span data-ttu-id="84c4d-134">請確定在自動化服務主體連線時，您使用安全的密碼儲存體做法。</span><span class="sxs-lookup"><span data-stu-id="84c4d-134">Make sure that you use good password storage practices when automating service principal connections.</span></span>
+<span data-ttu-id="2c803-134">請確定在自動化服務主體連線時，您使用安全的密碼儲存體做法。</span><span class="sxs-lookup"><span data-stu-id="2c803-134">Make sure that you use good password storage practices when automating service principal connections.</span></span>
 
-### <a name="certificate-based-authentication"></a><span data-ttu-id="84c4d-135">憑證式驗證</span><span class="sxs-lookup"><span data-stu-id="84c4d-135">Certificate-based authentication</span></span>
+### <a name="certificate-based-authentication"></a><span data-ttu-id="2c803-135">憑證式驗證</span><span class="sxs-lookup"><span data-stu-id="2c803-135">Certificate-based authentication</span></span>
 
-<span data-ttu-id="84c4d-136">憑證式驗證要求 Azure PowerShell 可從以憑證指紋為基礎的本機憑證存放區擷取資訊。</span><span class="sxs-lookup"><span data-stu-id="84c4d-136">Certificate-based authentication requires that Azure PowerShell can retrieve information from a local certificate store based on a certificate thumbprint.</span></span>
+<span data-ttu-id="2c803-136">憑證式驗證要求 Azure PowerShell 可從以憑證指紋為基礎的本機憑證存放區擷取資訊。</span><span class="sxs-lookup"><span data-stu-id="2c803-136">Certificate-based authentication requires that Azure PowerShell can retrieve information from a local certificate store based on a certificate thumbprint.</span></span>
 ```azurepowershell-interactive
 Connect-AzAccount -ServicePrincipal -TenantId $tenantId -CertificateThumbprint <thumbprint>
 ```
 
-<span data-ttu-id="84c4d-137">在 PowerShell 5.1 中，憑證存放區可透過 [PKI](/powershell/module/pkiclient) 模組進行管理及檢查。</span><span class="sxs-lookup"><span data-stu-id="84c4d-137">In PowerShell 5.1, the certificate store can be managed and inspected with the [PKI](/powershell/module/pkiclient) module.</span></span> <span data-ttu-id="84c4d-138">PowerShell Core 6.x 和更新版本的程序更複雜。</span><span class="sxs-lookup"><span data-stu-id="84c4d-138">For PowerShell Core 6.x and later, the process is more complicated.</span></span> <span data-ttu-id="84c4d-139">下列指令碼會示範如何將現有憑證匯入至 PowerShell 可存取的憑證存放區。</span><span class="sxs-lookup"><span data-stu-id="84c4d-139">The following scripts show you how to import an existing certificate into the certificate store accessible by PowerShell.</span></span>
+<span data-ttu-id="2c803-137">在 PowerShell 5.1 中，憑證存放區可透過 [PKI](/powershell/module/pkiclient) 模組進行管理及檢查。</span><span class="sxs-lookup"><span data-stu-id="2c803-137">In PowerShell 5.1, the certificate store can be managed and inspected with the [PKI](/powershell/module/pkiclient) module.</span></span> <span data-ttu-id="2c803-138">PowerShell Core 6.x 和更新版本的程序更複雜。</span><span class="sxs-lookup"><span data-stu-id="2c803-138">For PowerShell Core 6.x and later, the process is more complicated.</span></span> <span data-ttu-id="2c803-139">下列指令碼會示範如何將現有憑證匯入至 PowerShell 可存取的憑證存放區。</span><span class="sxs-lookup"><span data-stu-id="2c803-139">The following scripts show you how to import an existing certificate into the certificate store accessible by PowerShell.</span></span>
 
-#### <a name="import-a-certificate-in-powershell-51"></a><span data-ttu-id="84c4d-140">在 PowerShell 5.1 中匯入憑證</span><span class="sxs-lookup"><span data-stu-id="84c4d-140">Import a certificate in PowerShell 5.1</span></span>
+#### <a name="import-a-certificate-in-powershell-51"></a><span data-ttu-id="2c803-140">在 PowerShell 5.1 中匯入憑證</span><span class="sxs-lookup"><span data-stu-id="2c803-140">Import a certificate in PowerShell 5.1</span></span>
 
 ```azurepowershell-interactive
 # Import a PFX
@@ -84,7 +84,7 @@ $credentials = Get-Credential -Message "Provide PFX private key password"
 Import-PfxCertificate -FilePath <path to certificate> -Password $credentials.Password -CertStoreLocation cert:\CurrentUser\My
 ```
 
-#### <a name="import-a-certificate-in-powershell-core-6x-and-later"></a><span data-ttu-id="84c4d-141">在 PowerShell Core 6.x 和更新版本中匯入憑證</span><span class="sxs-lookup"><span data-stu-id="84c4d-141">Import a certificate in PowerShell Core 6.x and later</span></span>
+#### <a name="import-a-certificate-in-powershell-core-6x-and-later"></a><span data-ttu-id="2c803-141">在 PowerShell Core 6.x 和更新版本中匯入憑證</span><span class="sxs-lookup"><span data-stu-id="2c803-141">Import a certificate in PowerShell Core 6.x and later</span></span>
 
 ```azurepowershell-interactive
 # Import a PFX
@@ -100,33 +100,33 @@ $store.Add($Certificate)
 $store.Close()
 ```
 
-## <a name="sign-in-using-a-managed-identity"></a><span data-ttu-id="84c4d-142">使用受控識別登入</span><span class="sxs-lookup"><span data-stu-id="84c4d-142">Sign in using a managed identity</span></span> 
+## <a name="sign-in-using-a-managed-identity"></a><span data-ttu-id="2c803-142">使用受控識別登入</span><span class="sxs-lookup"><span data-stu-id="2c803-142">Sign in using a managed identity</span></span> 
 
-<span data-ttu-id="84c4d-143">受控識別是 Azure Active Directory 的功能。</span><span class="sxs-lookup"><span data-stu-id="84c4d-143">Managed identities are a feature of Azure Active Directory.</span></span> <span data-ttu-id="84c4d-144">受控識別是指派給在 Azure 中執行之資源的服務主體。</span><span class="sxs-lookup"><span data-stu-id="84c4d-144">Managed identities are service principals assigned to resources that run in Azure.</span></span> <span data-ttu-id="84c4d-145">您可以使用受控識別服務主體進行登入，並取得僅限應用程式的存取權杖來存取其他資源。</span><span class="sxs-lookup"><span data-stu-id="84c4d-145">You can use a managed identity service principal for sign-in, and acquire an app-only access token to access other resources.</span></span> <span data-ttu-id="84c4d-146">只有在 Azure 雲端中執行的虛擬機器才能使用受控識別。</span><span class="sxs-lookup"><span data-stu-id="84c4d-146">Managed identities are only available on resources running in an Azure cloud.</span></span>
+<span data-ttu-id="2c803-143">受控識別是 Azure Active Directory 的功能。</span><span class="sxs-lookup"><span data-stu-id="2c803-143">Managed identities are a feature of Azure Active Directory.</span></span> <span data-ttu-id="2c803-144">受控識別是指派給在 Azure 中執行之資源的服務主體。</span><span class="sxs-lookup"><span data-stu-id="2c803-144">Managed identities are service principals assigned to resources that run in Azure.</span></span> <span data-ttu-id="2c803-145">您可以使用受控識別服務主體進行登入，並取得僅限應用程式的存取權杖來存取其他資源。</span><span class="sxs-lookup"><span data-stu-id="2c803-145">You can use a managed identity service principal for sign-in, and acquire an app-only access token to access other resources.</span></span> <span data-ttu-id="2c803-146">只有在 Azure 雲端中執行的虛擬機器才能使用受控識別。</span><span class="sxs-lookup"><span data-stu-id="2c803-146">Managed identities are only available on resources running in an Azure cloud.</span></span>
 
-<span data-ttu-id="84c4d-147">若想進一步了解適用於 Azure 資源的受控識別，請參閱[如何在 Azure VM 上使用適用於 Azure 資源的受控識別取得存取權杖](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token)。</span><span class="sxs-lookup"><span data-stu-id="84c4d-147">To learn more about managed identities for Azure resources, see [How to use managed identities for Azure resources on an Azure VM to acquire an access token](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token).</span></span>
+<span data-ttu-id="2c803-147">若想進一步了解適用於 Azure 資源的受控識別，請參閱[如何在 Azure VM 上使用適用於 Azure 資源的受控識別取得存取權杖](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token)。</span><span class="sxs-lookup"><span data-stu-id="2c803-147">To learn more about managed identities for Azure resources, see [How to use managed identities for Azure resources on an Azure VM to acquire an access token](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token).</span></span>
 
-## <a name="sign-in-with-a-non-default-tenant-or-as-a-cloud-solution-provider-csp"></a><span data-ttu-id="84c4d-148">以非預設租用戶或雲端解決方案提供者 (CSP) 登入</span><span class="sxs-lookup"><span data-stu-id="84c4d-148">Sign in with a non-default tenant or as a Cloud Solution Provider (CSP)</span></span>
+## <a name="sign-in-with-a-non-default-tenant-or-as-a-cloud-solution-provider-csp"></a><span data-ttu-id="2c803-148">以非預設租用戶或雲端解決方案提供者 (CSP) 登入</span><span class="sxs-lookup"><span data-stu-id="2c803-148">Sign in with a non-default tenant or as a Cloud Solution Provider (CSP)</span></span>
 
-<span data-ttu-id="84c4d-149">如果您的帳戶與多個租用戶相關聯，則需要使用連線時的 `-TenantId` 參數方可登入。</span><span class="sxs-lookup"><span data-stu-id="84c4d-149">If your account is associated with more than one tenant, sign-in requires the use of the `-TenantId` parameter when connecting.</span></span> <span data-ttu-id="84c4d-150">此參數可使用任何其他登入方法。</span><span class="sxs-lookup"><span data-stu-id="84c4d-150">This parameter will work with any other sign-in method.</span></span> <span data-ttu-id="84c4d-151">登入時，此參數值可以是租用戶的 Azure 物件識別碼 (租用戶識別碼)，或租用戶的完整的網域名稱。</span><span class="sxs-lookup"><span data-stu-id="84c4d-151">When logging in, this parameter value can either be the Azure object ID of the tenant (Tenant ID) or the fully qualified domain name of the tenant.</span></span>
+<span data-ttu-id="2c803-149">如果您的帳戶與多個租用戶相關聯，則需要使用連線時的 `-TenantId` 參數方可登入。</span><span class="sxs-lookup"><span data-stu-id="2c803-149">If your account is associated with more than one tenant, sign-in requires the use of the `-TenantId` parameter when connecting.</span></span> <span data-ttu-id="2c803-150">此參數可使用任何其他登入方法。</span><span class="sxs-lookup"><span data-stu-id="2c803-150">This parameter will work with any other sign-in method.</span></span> <span data-ttu-id="2c803-151">登入時，此參數值可以是租用戶的 Azure 物件識別碼 (租用戶識別碼)，或租用戶的完整的網域名稱。</span><span class="sxs-lookup"><span data-stu-id="2c803-151">When logging in, this parameter value can either be the Azure object ID of the tenant (Tenant ID) or the fully qualified domain name of the tenant.</span></span>
 
-<span data-ttu-id="84c4d-152">如果您是[雲端解決方案提供者 (CSP)](https://azure.microsoft.com/en-us/offers/ms-azr-0145p/)，則 `-TenantId` 值**必須**是租用戶的識別碼。</span><span class="sxs-lookup"><span data-stu-id="84c4d-152">If you're a [Cloud Solution Provider (CSP)](https://azure.microsoft.com/en-us/offers/ms-azr-0145p/), the `-TenantId` value **must** be a tenant ID.</span></span>
+<span data-ttu-id="2c803-152">如果您是[雲端解決方案提供者 (CSP)](https://azure.microsoft.com/offers/ms-azr-0145p/)，則 `-TenantId` 值**必須**是租用戶的識別碼。</span><span class="sxs-lookup"><span data-stu-id="2c803-152">If you're a [Cloud Solution Provider (CSP)](https://azure.microsoft.com/offers/ms-azr-0145p/), the `-TenantId` value **must** be a tenant ID.</span></span>
 
 ```azurepowershell-interactive
 Connect-AzAccount -TenantId 'xxxx-xxxx-xxxx-xxxx'
 ```
 
-## <a name="sign-in-to-another-cloud"></a><span data-ttu-id="84c4d-153">登入其他雲端</span><span class="sxs-lookup"><span data-stu-id="84c4d-153">Sign in to another Cloud</span></span>
+## <a name="sign-in-to-another-cloud"></a><span data-ttu-id="2c803-153">登入其他雲端</span><span class="sxs-lookup"><span data-stu-id="2c803-153">Sign in to another Cloud</span></span>
 
-<span data-ttu-id="84c4d-154">Azure 雲端服務提供符合區域資料處理法規的環境。</span><span class="sxs-lookup"><span data-stu-id="84c4d-154">Azure cloud services offer environments compliant with regional data-handling laws.</span></span>
-<span data-ttu-id="84c4d-155">針對區域雲端中的帳戶，使用 `-Environment` 引數設定您登入時的環境。</span><span class="sxs-lookup"><span data-stu-id="84c4d-155">For accounts in a regional cloud, set the environment when you sign in with the `-Environment` argument.</span></span>
-<span data-ttu-id="84c4d-156">例如，如果您的帳戶位於中國雲端：</span><span class="sxs-lookup"><span data-stu-id="84c4d-156">For example, if your account is in the China cloud:</span></span>
+<span data-ttu-id="2c803-154">Azure 雲端服務提供符合區域資料處理法規的環境。</span><span class="sxs-lookup"><span data-stu-id="2c803-154">Azure cloud services offer environments compliant with regional data-handling laws.</span></span>
+<span data-ttu-id="2c803-155">針對區域雲端中的帳戶，使用 `-Environment` 引數設定您登入時的環境。</span><span class="sxs-lookup"><span data-stu-id="2c803-155">For accounts in a regional cloud, set the environment when you sign in with the `-Environment` argument.</span></span>
+<span data-ttu-id="2c803-156">例如，如果您的帳戶位於中國雲端：</span><span class="sxs-lookup"><span data-stu-id="2c803-156">For example, if your account is in the China cloud:</span></span>
 
 ```azurepowershell-interactive
 Connect-AzAccount -Environment AzureChinaCloud
 ```
 
-<span data-ttu-id="84c4d-157">下列命令可取得可用環境的清單：</span><span class="sxs-lookup"><span data-stu-id="84c4d-157">The following command gets a list of available environments:</span></span>
+<span data-ttu-id="2c803-157">下列命令可取得可用環境的清單：</span><span class="sxs-lookup"><span data-stu-id="2c803-157">The following command gets a list of available environments:</span></span>
 
 ```azurepowershell-interactive
 Get-AzEnvironment | Select-Object Name
