@@ -7,12 +7,12 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: 8dc5a7d3b47870455213aa01aebc1d215ad640a7
-ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
+ms.openlocfilehash: 21d41b6e14d1b39a78e40daee74b80de3a80c2a0
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68807493"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68861283"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>新的 Azure PowerShell Az 模組簡介
 
@@ -39,7 +39,7 @@ Az 是新模組，因此版本已重設為 1.0.0。
 
 為了運用 PowerShell 中的最新 Azure 功能，您應盡速移轉至 Az 模組。 若您尚未準備好要安裝 Az 模組來取代 AzureRM，您可以透過下列方式試用 Az：
 
-* 在 `PowerShell` 環境中使用 [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview)。
+* 在 `PowerShell` 環境中使用 [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview)。
   Azure Cloud Shell 是一種以瀏覽器為基礎的殼層環境，隨附有已安裝的 Az 模組，且已啟用 `Enable-AzureRM` 相容性別名。
 * 保留隨著 PowerShell 5.1 for Windows 而安裝的 AzureRM 模組，但安裝適用於 PowerShell Core 6.x 或更新版本的 Az 模組。 PowerShell 5.1 for Windows 和 PowerShell Core 分別使用不同的模組集合。 請依照指示從 PowerShell Core 終端機[安裝 PowerShell Core](/powershell/scripting/install/installing-powershell-core-on-windows)，然後[安裝 Az 模組](install-az-ps.md)。
 

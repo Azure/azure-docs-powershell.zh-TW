@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
-ms.openlocfilehash: ee9fb7e777d06f50514c6b4ba39805936b867045
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.openlocfilehash: 61ab0f91c3d6fffdbffd336fa0d6ed9b0ab8f6ec
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65535060"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68863286"
 ---
 # <a name="release-notes"></a>版本資訊
 
@@ -669,7 +669,7 @@ Update-Module -Name AzureRM
   - 新增 Update-AzureRmPowerBIEmbeddedCapacity Cmdlet - 修改 PowerBI Embedded 容量的執行個體
 * 設定檔
   - 已將 USGovernmentActiveDirectoryEndpoint 更新為 https://login.microsoftonline.us/
-    - 如需更多關於 Azure Government 端點對應的資訊，請參閱以下文章： https://docs.microsoft.com/en-us/azure/azure-government/documentation-government-developer-guide#endpoint-mapping
+    - 如需更多關於 Azure Government 端點對應的資訊，請參閱以下文章： https://docs.microsoft.com/azure/azure-government/documentation-government-developer-guide#endpoint-mapping
     - 新增 Cmdlet 的 -AsJob 支援，讓選取的 Cmdlet 可在背景中執行並傳回作業以追蹤和控制進度
     - 將 -AsJob 參數新增至 Get-AzureRmSubscription Cmdlet
 * RecoveryServices.Backup
@@ -723,7 +723,7 @@ Update-Module -Name AzureRM
   - AzureRM.StreamAnalytics
 
 ## <a name="2017118---version-500"></a>2017.11.8 - 版本 5.0.0
-* 注意：這是重大變更版本。 有關導入的重大變更完整清單，請參閱移轉指南 (https://aka.ms/azps-migration-guide)。
+* 注意：這是重大變更版本。 有關導入的重大變更完整清單，請參閱移轉指南 (https://aka.ms/azps-migration-guide) 。
 * AzureRM 中所有的 Cmdlet 現在都支援線上說明
   - 執行 Get-Help 搭配 -Online 參數，以在您的預設網際網路瀏覽器中開啟線上說明
 * AnalysisServices

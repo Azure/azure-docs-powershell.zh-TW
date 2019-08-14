@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e72aae940b48543d6a99801032186112748ea48b
-ms.sourcegitcommit: 6c0d296bfec7c1c35a1d15074ca5eacda6684ea4
+ms.openlocfilehash: 77cb28e47d8dddcf3936edff23f794de3b78442b
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657955"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68861196"
 ---
 ## <a name="250---july-2019"></a>2.5.0 - 2019 年 7 月
 #### <a name="azaccounts"></a>Az.Accounts
@@ -536,7 +536,7 @@ ms.locfileid: "68657955"
     - Set-AzScheduledQueryRule
     - Update-AzScheduledQueryRule
     - Remove-AzScheduledQueryRule
-    - [更多](https://docs.microsoft.com/en-us/rest/api/monitor/scheduledqueryrules) SQR API 的相關資訊
+    - [更多](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) SQR API 的相關資訊
     - 更新 Az.Monitor.md，以包含用於 GenV2 (非傳統) 計量式警示規則的 Cmdlet
 
 #### <a name="aznetwork"></a>Az.Network
@@ -589,7 +589,7 @@ ms.locfileid: "68657955"
 ### <a name="highlights-since-the-last-major-release"></a>上次發佈主要版本之後的更新重點
 * `Az` 模組的一般可用性
 * 如需 `Az` 模組的詳細資訊，請造訪： https://aka.ms/azps-announce
-* 新增的 Location、ResourceGroup 和 ResourceName Completer： https://azure.microsoft.com/en-us/blog/completers-in-azure-powershell/
+* 新增的 Location、ResourceGroup 和 ResourceName Completer： https://azure.microsoft.com/blog/completers-in-azure-powershell/
 * 新增了適用於 Az.Compute 和 Az.Network 的 Get Cmdlet 萬用字元支援
 * 新增僅適用於 Windows PowerShell 5.1 的互動式和使用者名稱/密碼驗證
 * 新增了 Az.Automation 中 Python 2 Runbook 的支援
@@ -693,7 +693,7 @@ ms.locfileid: "68657955"
 ### <a name="highlights-since-the-last-major-release"></a>上次發佈主要版本之後的更新重點
 * `Az` 模組的一般可用性
 * 如需 `Az` 模組的詳細資訊，請造訪： https://aka.ms/azps-announce
-* 新增的 Location、ResourceGroup 和 ResourceName Completer： https://azure.microsoft.com/en-us/blog/completers-in-azure-powershell/
+* 新增的 Location、ResourceGroup 和 ResourceName Completer： https://azure.microsoft.com/blog/completers-in-azure-powershell/
 * 新增了適用於 Az.Compute 和 Az.Network 的 Get Cmdlet 萬用字元支援
 * 新增僅適用於 Windows PowerShell 5.1 的互動式和使用者名稱/密碼驗證
 * 新增了 Az.Automation 中 Python 2 Runbook 的支援
@@ -750,7 +750,7 @@ ms.locfileid: "68657955"
 ### <a name="highlights-since-the-last-major-release"></a>上次發佈主要版本之後的更新重點
 * `Az` 模組的一般可用性
 * 如需 `Az` 模組的詳細資訊，請造訪： https://aka.ms/azps-announce
-* 新增的 Location、ResourceGroup 和 ResourceName Completer： https://azure.microsoft.com/en-us/blog/completers-in-azure-powershell/
+* 新增的 Location、ResourceGroup 和 ResourceName Completer： https://azure.microsoft.com/blog/completers-in-azure-powershell/
 * 新增了適用於 Az.Compute 和 Az.Network 的 Get Cmdlet 萬用字元支援
 * 新增僅適用於 Windows PowerShell 5.1 的互動式和使用者名稱/密碼驗證
 * 新增了 Az.Automation 中 Python 2 Runbook 的支援

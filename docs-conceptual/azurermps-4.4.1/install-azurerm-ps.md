@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: 39bf3c879135989bdd9a7382eb003a8f69e5bdbb
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.openlocfilehash: dc11af0fff84899ca1b3ad3abf8760dd8c59e6f6
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65534841"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68863277"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>使用 PowerShellGet 在 Windows 上安裝 Azure PowerShell
 
@@ -114,7 +114,7 @@ Import-Module -Name AzureRM
 |作業系統版本|安裝指示|
 |---|---|
 |我有 Windows 10 或 Windows Server 2016|內建於 OS 包含的 Windows Management Framework (WMF) 5.0|
-|我想要升級至 PowerShell 5|[安裝最新版的 WMF](https://www.microsoft.com/en-us/download/details.aspx?id=54616)|
+|我想要升級至 PowerShell 5|[安裝最新版的 WMF](https://www.microsoft.com/download/details.aspx?id=54616)|
 |我是在採用 PowerShell 3 或 PowerShell 4 的 Windows 版本上執行|[取得 PackageManagement 模組](http://go.microsoft.com/fwlink/?LinkID=746217)|
 
 ### <a name="div-idhelpmechoosechecking-the-version-of-azure-powershell"></a><div id="helpmechoose"/>檢查 Azure PowerShell 的版本
@@ -170,7 +170,7 @@ Import-Module -Name AzureRM -RequiredVersion 2.3.0
 ```
 
 > [!NOTE]
-> 2.1.0 版和 1.2.6 版是第一批設計成可並存安裝及使用的模組版本。 載入舊版的 Azure PowerShell 時，會載入不相容的 **AzureRM.Profile** 模組版本。 這會導致每當您執行某個 Cmdlet 時，Cmdlet 都會提示您登入。
+> 2\.1.0 版和 1.2.6 版是第一批設計成可並存安裝及使用的模組版本。 載入舊版的 Azure PowerShell 時，會載入不相容的 **AzureRM.Profile** 模組版本。 這會導致每當您執行某個 Cmdlet 時，Cmdlet 都會提示您登入。
 
 ### <a name="other-installation-methods"></a>其他安裝方法
 

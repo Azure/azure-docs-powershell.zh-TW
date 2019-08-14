@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
-ms.openlocfilehash: 8e63e3efb2671eef435498063010d5704c793060
-ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
+ms.openlocfilehash: 21345445efc89ab54bb7483cfe81f439f0a887a3
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68807473"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68861222"
 ---
 # <a name="install-the-azure-powershell-module"></a>安裝 Azure PowerShell 模組
 
@@ -38,7 +38,7 @@ $PSVersionTable.PSVersion
 ## <a name="install-the-azure-powershell-module"></a>安裝 Azure PowerShell 模組
 
 > [!WARNING]
-> 您__無法__同時為 PowerShell 5.1 for Windows 安裝 AzureRM 和 Az 模組。 如果您需要在系統上保留可用的 AzureRM，請安裝適用於 PowerShell Core 6.x 或更新版本的 Az 模組。 若要這樣做，請[安裝 PowerShell Core 6.x 或更新版本](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows)，然後在 PowerShell Core 終端機中依照這些指示操作。
+> 您__無法__同時為 PowerShell 5.1 for Windows 安裝 AzureRM 和 Az 模組。 如果您需要在系統上保留可用的 AzureRM，請安裝適用於 PowerShell Core 6.x 或更新版本的 Az 模組。 若要這樣做，請[安裝 PowerShell Core 6.x 或更新版本](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows)，然後在 PowerShell Core 終端機中依照這些指示操作。
 
 建議的安裝方法是僅供活躍使用者安裝：
 
