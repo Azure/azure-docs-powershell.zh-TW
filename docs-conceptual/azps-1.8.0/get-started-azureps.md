@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 01/14/2019
-ms.openlocfilehash: c60036ba8be6282007aa34a0bb9c0d9e33197072
-ms.sourcegitcommit: fd62a6376eef9b6ca76df766de1edcd7938c7a30
+ms.openlocfilehash: a4c8792f2ff27e1b6d3cee97144c26455356b7fd
+ms.sourcegitcommit: e5b029312d17e12257b2b5351b808fdab0b4634c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67388915"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70386827"
 ---
 # <a name="get-started-with-azure-powershell"></a>開始使用 Azure PowerShell
 
@@ -43,7 +43,8 @@ Connect-AzAccount
 Connect-AzAccount -Environment AzureChinaCloud
 ```
 
-您會獲得在 https://microsoft.com/devicelogin 上使用的權杖。 在瀏覽器中開啟此頁面並輸入權杖，使用 Azure 帳戶認證來登入，然後授權 Azure PowerShell。 
+您會在 PowerShell 5.1 環境中看到登入對話方塊，請提供您 Azure 帳戶的使用者名稱和密碼。 若使用其他版本的 PowerShell，則您會在 [https://microsoft.com/devicelogin ] 中取得要使用的權杖。
+在瀏覽器中開啟此頁面並輸入權杖，使用 Azure 帳戶認證來登入，然後授權 Azure PowerShell。
 
 登入之後，您會看到指出哪一個 Azure 訂用帳戶為作用中的資訊。 如果您的帳戶中有多個 Azure 訂用帳戶，且想要選取不同訂用帳戶，請使用 [Get-AzSubscription](/powershell/module/az.accounts/get-azsubscription) 取得可用的訂用帳戶，並透過訂用帳戶識別碼使用 [Set-AzContext](/powershell/module/az.accounts/set-azcontext) Cmdlet。
 如需管理 Azure PowerShell 中的 Azure 訂用帳戶詳細資訊，請參閱[使用多個 Azure 訂用帳戶](manage-subscriptions-azureps.md)。

@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
-ms.openlocfilehash: 21345445efc89ab54bb7483cfe81f439f0a887a3
-ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
+ms.openlocfilehash: e302e49d95b6bc15750366c9eb960a6fec80c1a4
+ms.sourcegitcommit: e5b029312d17e12257b2b5351b808fdab0b4634c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68861309"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70386796"
 ---
 # <a name="install-the-azure-powershell-module"></a>安裝 Azure PowerShell 模組
 
@@ -101,13 +101,14 @@ Connect-AzAccount
 
 > [!NOTE]
 >
-> 如果您已停用自動載入模組功能，則必須透過 `Import-Module Az` 來手動匯入模組。 因為模組的結構化方式，這可能需要幾秒鐘的時間。
+> 如果您已停用自動載入模組功能，則必須透過 `Import-Module Az` 手動匯入模組。 因為模組的結構化方式，這可能需要幾秒鐘的時間。
 
 您必須針對每個啟動的新 PowerShell 工作階段重複這些步驟。 若要了解如何在 PowerShell 工作階段之間保存您的 Azure 登入，請參閱[在 PowerShell 工作階段之間保存使用者認證](context-persistence.md)。
 
 ## <a name="update-the-azure-powershell-module"></a>更新 Azure PowerShell 模組
 
-由於 Az 模組的封裝方式，[Update-module](/powershell/module/powershellget/update-module) 命令將不會正確更新您的安裝。 Az 在技術上是中繼模組，其中包含與 Azure 服務互動的 Cmdlet 所屬的所有子模組。 這表示，若要更新 Azure PowerShell 模組，您必須__重新安裝__，而不只是__更新__。 其操作方式與安裝相同，但您可能需要新增 `-Force` 引數：
+由於 Az 模組的封裝方式，[Update-module](/powershell/module/powershellget/update-module) 命令將不會正確更新您的安裝。 安裝 Az 模組時，此模組實際上會收集並安裝其所有相依的子模組；這些子模組會提供每個服務的 Cmdlet。
+這表示，若要更新 Azure PowerShell 模組，您必須__重新安裝__，而不只是__更新__。 其操作方式與安裝相同，但您可能需要新增 `-Force` 引數：
 
 ```powershell
 Install-Module -Name Az -AllowClobber -Force

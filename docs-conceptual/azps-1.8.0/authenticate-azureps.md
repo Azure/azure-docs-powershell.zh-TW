@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 02/20/2019
-ms.openlocfilehash: 0b7a6fa4278d95a69b21f570ac6fb22b70f073f6
-ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
+ms.date: 09/04/2019
+ms.openlocfilehash: 21d87bd35da74f09b70976e7b395e7b987fbd3f5
+ms.sourcegitcommit: e5b029312d17e12257b2b5351b808fdab0b4634c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68861228"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70386804"
 ---
 # <a name="sign-in-with-azure-powershell"></a>使用 Azure PowerShell 登入
 
@@ -54,7 +54,7 @@ Connect-AzAccount
 
 ```azurepowershell-interactive
 $pscredential = Get-Credential
-Connect-AzAccount -ServicePrincipal -Credential $pscredential -TenantId $tenantId
+Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $tenantId
 ```
 
 在自動化的情況下，您需要從使用者名稱和安全字串建立認證：
@@ -62,7 +62,7 @@ Connect-AzAccount -ServicePrincipal -Credential $pscredential -TenantId $tenantI
 ```azurepowershell-interactive
 $passwd = ConvertTo-SecureString <use a secure password here> -AsPlainText -Force
 $pscredential = New-Object System.Management.Automation.PSCredential('service principal name/id', $passwd)
-Connect-AzAccount -ServicePrincipal -Credential $pscredential -TenantId $tenantId
+Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $tenantId
 ```
 
 請確定在自動化服務主體連線時，您使用安全的密碼儲存體做法。
@@ -71,7 +71,13 @@ Connect-AzAccount -ServicePrincipal -Credential $pscredential -TenantId $tenantI
 
 憑證式驗證要求 Azure PowerShell 可從以憑證指紋為基礎的本機憑證存放區擷取資訊。
 ```azurepowershell-interactive
-Connect-AzAccount -ServicePrincipal -TenantId $tenantId -CertificateThumbprint <thumbprint>
+Connect-AzAccount -ApplicationId $appId -Tenant $tenantId -CertificateThumbprint <thumbprint>
+```
+
+若使用的是服務主體而非已註冊的應用程式，請新增 `-ServicePrincipal` 引數並提供服務主體的識別碼作為 `-ApplicationId` 參數值。
+
+```azurepowershell-interactive
+Connect-AzAccount -ServicePrincipal -ApplicationId $servicePrincipalId -Tenant $tenantId -CertificateThumbprint <thumbprint>
 ```
 
 在 PowerShell 5.1 中，憑證存放區可透過 [PKI](/powershell/module/pkiclient) 模組進行管理及檢查。 PowerShell Core 6.x 和更新版本的程序更複雜。 下列指令碼會示範如何將現有憑證匯入至 PowerShell 可存取的憑證存放區。
@@ -100,7 +106,7 @@ $store.Add($Certificate)
 $store.Close()
 ```
 
-## <a name="sign-in-using-a-managed-identity"></a>使用受控識別登入 
+## <a name="sign-in-using-a-managed-identity"></a>使用受控識別登入
 
 受控識別是 Azure Active Directory 的功能。 受控識別是指派給在 Azure 中執行之資源的服務主體。 您可以使用受控識別服務主體進行登入，並取得僅限應用程式的存取權杖來存取其他資源。 只有在 Azure 雲端中執行的虛擬機器才能使用受控識別。
 
@@ -108,19 +114,19 @@ $store.Close()
 
 ## <a name="sign-in-with-a-non-default-tenant-or-as-a-cloud-solution-provider-csp"></a>以非預設租用戶或雲端解決方案提供者 (CSP) 登入
 
-如果您的帳戶與多個租用戶相關聯，則需要使用連線時的 `-TenantId` 參數方可登入。 此參數可使用任何其他登入方法。 登入時，此參數值可以是租用戶的 Azure 物件識別碼 (租用戶識別碼)，或租用戶的完整的網域名稱。
+如果您的帳戶與多個租用戶相關聯，則需要使用連線時的 `-Tenant` 參數方可登入。 此參數也適用於其他所有登入方法。 登入時，此參數值可以是租用戶的 Azure 物件識別碼 (租用戶識別碼)，或租用戶的完整的網域名稱。
 
-如果您是[雲端解決方案提供者 (CSP)](https://azure.microsoft.com/offers/ms-azr-0145p/)，則 `-TenantId` 值**必須**是租用戶的識別碼。
+如果您是[雲端解決方案提供者 (CSP)](https://azure.microsoft.com/offers/ms-azr-0145p/)，則 `-Tenant` 值**必須**是租用戶的識別碼。
 
 ```azurepowershell-interactive
-Connect-AzAccount -TenantId 'xxxx-xxxx-xxxx-xxxx'
+Connect-AzAccount -Tenant 'xxxx-xxxx-xxxx-xxxx'
 ```
 
 ## <a name="sign-in-to-another-cloud"></a>登入其他雲端
 
 Azure 雲端服務提供符合區域資料處理法規的環境。
 針對區域雲端中的帳戶，使用 `-Environment` 引數設定您登入時的環境。
-例如，如果您的帳戶位於中國雲端：
+此參數也適用於其他所有登入方法。 例如，如果您的帳戶位於中國雲端：
 
 ```azurepowershell-interactive
 Connect-AzAccount -Environment AzureChinaCloud
