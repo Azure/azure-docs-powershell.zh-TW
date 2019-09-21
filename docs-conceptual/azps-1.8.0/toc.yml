@@ -1,5 +1,5 @@
 - name: Azure PowerShell
-  href: overview.md
+  href: index.yml
 - name: 新的 Az 模組簡介
   href: new-azureps-module-az.md
   displayName: 'intro, introduction, azurerm'
