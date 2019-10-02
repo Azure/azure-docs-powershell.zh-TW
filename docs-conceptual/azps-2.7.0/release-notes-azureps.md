@@ -1,10 +1,18 @@
 ---
-ms.openlocfilehash: 96e6d7bc0cc29adc1c0e49ba344d27349454c214
-ms.sourcegitcommit: 92722d603b60dc769660e7517da60110133d9959
+title: Azure PowerShell 版本資訊
+description: 了解 Azure PowerShell 模組的最新更新資訊。
+author: sptramer
+ms.author: sttramer
+manager: carmonm
+ms.devlang: powershell
+ms.topic: conceptual
+ms.date: 09/25/2019
+ms.openlocfilehash: b879d970d3237098e481dba0419ee65efa8d51cd
+ms.sourcegitcommit: f0f09eee03ef9dd7fe07432252a3dc8ca93e3a7b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71226434"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71319321"
 ---
 ## <a name="270---september-2019"></a>2.7.0 - 2019 年 9 月
 #### <a name="azapimanagement"></a>Az.ApiManagement
