@@ -1,150 +1,76 @@
 ---
-title: 使用 PowerShell 作業平行執行 Cmdlet
-description: 如何使用 -AsJob 參數平行執行 Cmdlet。
+title: 在 PowerShell 作業中執行 Azure PowerShell Cmdlet
+description: 了解如何使用 -AsJob 和 Start-Job，以平行方式或在背景工作中執行 Azure PowerShell Cmdlet。
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/11/2018
-ms.openlocfilehash: 825a07e01194a07b747712a62384c7f162e63d7d
-ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
+ms.date: 10/21/2019
+ms.openlocfilehash: d74d3681794398534fe2c75a0c8fc314767ffa85
+ms.sourcegitcommit: 1cdff856d1d559b978aac6bc034dd2f99ac04afe
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67346674"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72791475"
 ---
-# <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a>使用 PowerShell 作業平行執行 Cmdlet
+# <a name="run-azure-powershell-cmdlets-in-powershell-jobs"></a>在 PowerShell 作業中執行 Azure PowerShell Cmdlet
 
-PowerShell 支援 [PowerShell 作業](/powershell/module/microsoft.powershell.core/about/about_jobs)的非同步動作。
-Azure PowerShell 高度相依於進行或等待對 Azure 進行網路呼叫。 您常有可能需要進行非封鎖式呼叫。 為了因應這項需求，Azure PowerShell 提供了絕佳的 [PSJob](/powershell/module/microsoft.powershell.core/about/about_jobs) 支援。
+使用 Azure PowerShell 時，必須連線至 Azure 雲端並等候回應，因此這些 Cmdlet 在取得雲端的回應之前，大多都會封鎖您的 PowerShell 工作階段。
+Powershell 作業可讓您在背景中執行 Cmdlet，或從單一 PowerShell 工作階段中同時執行多個 Azure 工作。
 
-## <a name="context-persistence-and-psjobs"></a>內容持續性和 PSJobs
+本文將概略說明如何以 PowerShell 作業的形式執行 Azure PowerShell Cmdlet，並檢查作業是否完成。 要在 Azure PowerShell 中執行命令必須使用 Azure PowerShell 內容，其詳細說明請見 [Azure 內容和登入認證](context-persistence.md)。
+若要深入了解 PowerShell 作業，請參閱[關於 PowerShell 作業](/powershell/module/microsoft.powershell.core/about/about_jobs)。
 
-PSJobs 會以個別程序的形式執行，因此您的 Azure 連線必須與它們共用。 使用 `Connect-AzAccount` 登入您的 Azure 帳戶後，請將內容傳至作業。
+## <a name="azure-contexts-with-powershell-jobs"></a>PowerShell 作業的 Azure 內容
+
+PowerShell 作業會以個別程序執行，而不會連結 PowerShell 工作階段，因此您的 Azure 認證必須與這些作業共用。 認證可使用下列其中一種方法以 Azure 內容物件的形式傳遞：
+
+* 自動內容持續性。 內容持續性會預設為啟用，並且跨多個工作階段保留您的登入資訊。 內容持續性啟用時，會將目前的 Azure 內容傳至新的程序：
+
+  ```azurepowershell-interactive
+  Enable-AzContextAutosave # Enables context autosave if not already on
+  $creds = Get-Credential
+  $job = Start-Job { param($vmadmin) New-AzVM -Name MyVm -Credential $vmadmin } -ArgumentList $creds
+  ```
+
+* 使用 `-AzContext` 參數搭配任何 Azure PowerShell Cmdlet，以提供 Azure 內容物件：
+
+  ```azurepowershell-interactive
+  $context = Get-AzContext -Name 'mycontext' # Get an Azure context object
+  $creds = Get-Credential
+  $job = Start-Job { param($context, $vmadmin) New-AzVM -Name MyVm -AzContext $context -Credential $vmadmin} -ArgumentList $context,$creds }
+  ```
+
+  如果內容持續性停用，則需要 `-AzContext` 引數。
+
+* 請使用部分 Azure PowerShell Cmdlet 所提供的 `-AsJob` 參數。 此參數會使用目前有效的 Azure 內容，自動以 PowerShell 作業的形式啟動 Cmdlet：
+
+  ```azurepowershell-interactive
+  $creds = Get-Credential
+  $job = New-AzVM -Name MyVm -Credential $creds -AsJob
+  ```
+
+  若要確認 Cmdlet 是否支援 `-AsJob`，請查看其參考文件。 `-AsJob` 參數不需要啟用內容自動儲存。
+
+您可以使用 [Get-Job](/powershell/module/microsoft.powershell.core/get-job) Cmdlet 來檢查執行中作業的狀態。 若要取得作業到目前為止的輸出，請使用 [Receive-Job](/powershell/module/microsoft.powershell.core/receive-job) Cmdlet。
+
+若要在 Azure 上從遠端檢查作業進度，請使用與作業所修改的資源類型相關聯的 `Get-` Cmdlet：
 
 ```azurepowershell-interactive
 $creds = Get-Credential
-$job = Start-Job { param($context,$vmadmin) New-AzVM -Name MyVm -AzContext $context -Credential $vmadmin} -ArgumentList (Get-AzContext),$creds
-```
+$context = Get-AzContext -Name 'mycontext'
+$vmName = "MyVm"
 
-但是，若您已選擇使用 `Enable-AzContextAutosave` 自動儲存內容，則該內容會自動與您建立的所有作業共用。
+$job = Start-Job { param($context, $vmName, $vmadmin) New-AzVM -Name $vmName -AzContext $context -Credential $vmadmin} -ArgumentList $context,$vmName,$creds }
 
-```azurepowershell-interactive
-Enable-AzContextAutosave
-$creds = Get-Credential
-$job = Start-Job { param($vmadmin) New-AzVM -Name MyVm -Credential $vmadmin} -ArgumentList $creds
-```
-
-## <a name="automatic-jobs-with--asjob"></a>使用 `-AsJob` 將作業自動化
-
-為了便於作業， Azure PowerShell 也會在某些長期執行的 Cmdlet 中提供 `-AsJob` 開關。
-`-AsJob` 開關能讓您更輕鬆地建立 PSJobs。
-
-```azurepowershell-interactive
-$creds = Get-Credential
-$job = New-AzVM -Name MyVm -Credential $creds -AsJob
-```
-
-您可以使用 `Get-Job` 和 `Get-AzVM`，隨時檢查作業和進度。
-
-```azurepowershell-interactive
 Get-Job $job
-Get-AzVM MyVm
+Get-AzVM -Name $vmName
 ```
 
-```output
-Id Name                                       PSJobTypeName         State   HasMoreData Location  Command
--- ----                                       -------------         -----   ----------- --------  -------
-1  Long Running Operation for 'New-AzVM' AzureLongRunningJob`1 Running True        localhost New-AzVM
+## <a name="see-also"></a>另請參閱
 
-ResourceGroupName    Name Location          VmSize  OsType     NIC ProvisioningState Zone
------------------    ---- --------          ------  ------     --- ----------------- ----
-MyVm                 MyVm   eastus Standard_DS1_v2 Windows    MyVm          Creating
-```
-
-作業完成後，請使用 `Receive-Job` 取得作業的結果。
-
-> [!NOTE]
-> 若 `Receive-Job` 旗標並未顯示，`-AsJob` 會從 Cmdlet 傳回結果。
-> 例如，`Do-Action -AsJob` 的 `Receive-Job` 結果與 `Do-Action` 結果的類型相同。
-
-```azurepowershell-interactive
-$vm = Receive-Job $job
-$vm
-```
-
-```output
-ResourceGroupName        : MyVm
-Id                       : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/MyVm/providers/Microsoft.Compute/virtualMachines/MyVm
-VmId                     : dff1f79e-a8f7-4664-ab72-0ec28b9fbb5b
-Name                     : MyVm
-Type                     : Microsoft.Compute/virtualMachines
-Location                 : eastus
-Tags                     : {}
-HardwareProfile          : {VmSize}
-NetworkProfile           : {NetworkInterfaces}
-OSProfile                : {ComputerName, AdminUsername, WindowsConfiguration, Secrets}
-ProvisioningState        : Succeeded
-StorageProfile           : {ImageReference, OsDisk, DataDisks}
-FullyQualifiedDomainName : myvmmyvm.eastus.cloudapp.azure.com
-```
-
-## <a name="example-scenarios"></a>範例案例
-
-一次建立數個 VM：
-
-```azurepowershell-interactive
-$creds = Get-Credential
-# Create 10 jobs.
-for($k = 0; $k -lt 10; $k++) {
-    New-AzVm -Name MyVm$k  -Credential $creds -AsJob
-}
-
-# Get all jobs and wait on them.
-Get-Job | Wait-Job
-"All jobs completed"
-Get-AzVM
-```
-
-在此範例中，`Wait-Job` Cmdlet 會在作業執行時暫停指令碼。 一旦所有作業完成之後，指令碼會繼續執行。 以平行方式執行數個作業，指令碼即會等待作業完成再繼續。
-
-```output
-Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
---     ----            -------------   -----         -----------     --------             -------
-2      Long Running... AzureLongRun... Running       True            localhost            New-AzVM
-3      Long Running... AzureLongRun... Running       True            localhost            New-AzVM
-4      Long Running... AzureLongRun... Running       True            localhost            New-AzVM
-5      Long Running... AzureLongRun... Running       True            localhost            New-AzVM
-6      Long Running... AzureLongRun... Running       True            localhost            New-AzVM
-7      Long Running... AzureLongRun... Running       True            localhost            New-AzVM
-8      Long Running... AzureLongRun... Running       True            localhost            New-AzVM
-9      Long Running... AzureLongRun... Running       True            localhost            New-AzVM
-10     Long Running... AzureLongRun... Running       True            localhost            New-AzVM
-11     Long Running... AzureLongRun... Running       True            localhost            New-AzVM
-2      Long Running... AzureLongRun... Completed     True            localhost            New-AzVM
-3      Long Running... AzureLongRun... Completed     True            localhost            New-AzVM
-4      Long Running... AzureLongRun... Completed     True            localhost            New-AzVM
-5      Long Running... AzureLongRun... Completed     True            localhost            New-AzVM
-6      Long Running... AzureLongRun... Completed     True            localhost            New-AzVM
-7      Long Running... AzureLongRun... Completed     True            localhost            New-AzVM
-8      Long Running... AzureLongRun... Completed     True            localhost            New-AzVM
-9      Long Running... AzureLongRun... Completed     True            localhost            New-AzVM
-10     Long Running... AzureLongRun... Completed     True            localhost            New-AzVM
-11     Long Running... AzureLongRun... Completed     True            localhost            New-AzVM
-All Jobs completed.
-
-ResourceGroupName        Name   Location          VmSize  OsType           NIC ProvisioningState Zone
------------------        ----   --------          ------  ------           --- ----------------- ----
-MYVM                     MyVm     eastus Standard_DS1_v2 Windows          MyVm         Succeeded
-MYVM0                   MyVm0     eastus Standard_DS1_v2 Windows         MyVm0         Succeeded
-MYVM1                   MyVm1     eastus Standard_DS1_v2 Windows         MyVm1         Succeeded
-MYVM2                   MyVm2     eastus Standard_DS1_v2 Windows         MyVm2         Succeeded
-MYVM3                   MyVm3     eastus Standard_DS1_v2 Windows         MyVm3         Succeeded
-MYVM4                   MyVm4     eastus Standard_DS1_v2 Windows         MyVm4         Succeeded
-MYVM5                   MyVm5     eastus Standard_DS1_v2 Windows         MyVm5         Succeeded
-MYVM6                   MyVm6     eastus Standard_DS1_v2 Windows         MyVm6         Succeeded
-MYVM7                   MyVm7     eastus Standard_DS1_v2 Windows         MyVm7         Succeeded
-MYVM8                   MyVm8     eastus Standard_DS1_v2 Windows         MyVm8         Succeeded
-MYVM9                   MyVm9     eastus Standard_DS1_v2 Windows         MyVm9         Succeeded
-```
+* [Azure PowerShell 內容](context-persistence.md)
+* [關於 PowerShell 作業](/powershell/module/microsoft.powershell.core/about/about_jobs)
+* [Get-Job 參考](/powershell/module/microsoft.powershell.core/get-job)
+* [Receive-Job 參考](/powershell/module/microsoft.powershell.core/receive-job)

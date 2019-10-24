@@ -1,150 +1,161 @@
 ---
-title: 在 PowerShell 工作階段之間保存 Azure 認證
+title: Azure 內容和登入認證
 description: 了解如何重覆使用 Azure 認證及多個 PowerShell 工作階段之間的其他資訊。
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 12/13/2018
-ms.openlocfilehash: 02b8090aa1868f24445ddff3a95c0d0c376e2cb8
-ms.sourcegitcommit: 020c69430358b13cbd99fedd5d56607c9b10047b
+ms.date: 10/21/2019
+ms.openlocfilehash: 0e8dd4f766307d9ab2e27e2cf8bec6bbd34f5e51
+ms.sourcegitcommit: 1cdff856d1d559b978aac6bc034dd2f99ac04afe
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365766"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72791408"
 ---
-# <a name="persist-azure-user-credentials-across-powershell-sessions"></a>在 PowerShell 工作階段之間保存 Azure 使用者認證
+# <a name="azure-powershell-context-objects"></a>Azure PowerShell 內容物件
 
-Azure PowerShell 提供了稱為 **Azure 內容自動儲存**的功能，可提供下列功能：
+Azure PowerShell 會使用 _Azure PowerShell 內容物件_ (Azure 內容) 來保存訂用帳戶和驗證資訊。 如果您有多個訂用帳戶，Azure 內容可讓您選取要執行 Azure PowerShell Cmdlet 的訂用帳戶。 Azure 內容也可用來跨多個 PowerShell 工作階段儲存登入資訊，以及執行背景工作。
 
-- 在新的 PowerShell 工作階段中重複使用的登入資訊保留。
-- 更易於使用的背景工作，可長時間執行 Cmdlet。
-- 在帳戶、訂用帳戶及環境之間進行切換，而無須個別登入。
-- 使用不同的認證和訂用帳戶，同時從相同的 PowerShell 工作階段執行工作。
+本文將說明如何管理 Azure 內容，而非管理訂用帳戶或帳戶。 如果您想要管理使用者、訂用帳戶、租用戶或其他帳戶資訊，請參閱 [Azure Active Directory](/azure/active-directory) 文件。 若要了解如何使用內容來執行背景或平行工作，請在熟悉 Azure 內容後，參閱[在 PowerShell 作業中使用 Azure PowerShell Cmdlet](using-psjobs.md)。
 
-## <a name="azure-contexts-defined"></a>定義的 Azure 內容
+## <a name="overview-of-azure-context-objects"></a>Azure 內容物件概觀
 
-Azure 內容  是一組資訊，可定義 Azure PowerShell Cmdlet 的目標。 內容是由五個部分所組成：
+Azure 內容是 PowerShell 物件，代表您對其執行命令的有效訂用帳戶，以及連線至 Azure 雲端所需的驗證資訊。 透過 Azure 內容，Azure PowerShell 就不需要在您每次切換訂用帳戶時重新驗證您的帳戶。 Azure 內容包含下列各項：
 
-- 帳戶  - 用來驗證與 Azure 通訊的使用者名稱或服務主體
-- 訂用帳戶  - 要進行處理的資源所屬的 Azure 訂用帳戶。
-- 租用戶  - 包含您訂用帳戶的 Azure Active Directory 租用戶。 租用戶對於 ServicePrincipal 驗證較為重要。
-- 環境  - 作為目標的特定 Azure 雲端，通常是 Azure 的全域雲端。
-  不過，環境設定也可讓您將國家/地區、政府和內部部署 (Azure Stack) 雲端作為目標。
-- 認證  - Azure 用來確認您的身分識別，並確定您有權對 Azure 中的資源進行存取的資訊
+* 用來透過 [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) 登入 Azure 的_帳戶_。 就帳戶的觀點而言，Azure 內容會將使用者、應用程式識別碼和服務主體等同視之。
+* 有效_訂用帳戶_是 Microsoft 提供的服務合約，用來建立和執行與_租用戶_相關聯的 Azure 資源。 租用戶在文件中或使用 Active Directory 時，通常稱為_組織_。
+* _權杖快取_的參考是用來存取 Azure 雲端的預存驗證權杖。 此權杖的儲存位置及其保存的時間長度，取決於[內容自動儲存設定](#save-azure-contexts-across-powershell-sessions)。
 
-若使用最新版的 Azure PowerShell，便可在每次開啟新的 PowerShell 工作階段時自動儲存 Azure 內容。
+如需這些字詞的詳細資訊，請參閱 [Azure Active Directory 術語](/azure/active-directory/fundamentals/active-directory-whatis#terminology)。 Azure 內容所使用的驗證權杖與持續性工作階段中其他已儲存的權杖相同。 
 
-## <a name="automatically-save-the-context-for-the-next-sign-in"></a>自動儲存內容以供下一次登入使用
+當您使用 `Connect-AzAccount` 登入時，系統會為您的預設訂用帳戶建立至少一個 Azure 內容。 `Connect-AzAccount` 傳回的物件是預設的 Azure 內容，用於其餘的 PowerShell 工作階段。
 
-Azure PowerShell 會自動保留工作階段之間的內容資訊。 若要將 PowerShell 設定為忘記您的內容和認證，請使用 `Disable-AzContextAutoSave`。 若停用內容儲存功能，您每次開啟 PowerShell 工作階段時，都必須登入 Azure。
+## <a name="get-azure-contexts"></a>取得 Azure 內容
 
-若要讓 Azure PowerShell 在 PowerShell 工作階段關閉之後記住您的內容，請使用 `Enable-AzContextAutosave`。 內容與認證資訊會自動儲存在您使用者目錄中的特殊隱藏資料夾中 (在 Windows 上為 `$env:USERPROFILE\.Azure`，在其他平台上則為 `$HOME/.Azure`)。 每個新的 PowerShell 工作階段都會將您最後一個工作階段中使用的內容作為目標。
+可用的 Azure 內容可使用 [Get-AzContext](/powershell/module/az.accounts/get-azcontext) Cmdlet 來擷取。 您可以使用 `-ListAvailable` 列出所有可用的內容：
 
-可讓您管理 Azure 內容的 Cmdlet 也能讓您進行更細緻的控制。 您是否僅需要將變更套用到目前的 PowerShell 工作階段 (`Process` 範圍) 還是要套用到每個 PowerShell 工作階段 (`CurrentUser` 範圍)。 這些選項將在[使用內容範圍](#using-context-scopes)中深入討論。
+```azurepowershell-interactive
+Get-AzContext -ListAvailable
+```
 
-## <a name="running-azure-powershell-cmdlets-as-background-jobs"></a>將 Azure PowerShell Cmdlet 作為背景作業執行
+或依名稱取得內容：
 
-**Azure 內容自動儲存**功能也可讓您與 PowerShell 背景作業共用內容。 PowerShell 可讓您以背景作業形式啟動並監視長時間執行的工作，而不必等候工作完成。 您可以利用兩種不同的方式來與背景作業共用認證：
+```azurepowershell-interactive
+$context = Get-Context -Name "mycontext"
+```
 
-- 傳遞內容作為引數
+內容名稱可能與相關聯的訂用帳戶名稱不同。
 
-  大部分的 AzureRM Cmdlet 可讓您將內容作為參數傳遞至 Cmdlet。 您可以將內容傳遞至背景作業，如下列範例所示：
+> [!IMPORTANT]
+> 可用的 Azure 內容__不一定__是您可用的訂用帳戶。 Azure 內容僅代表本機儲存的資訊。 您可以使用 [Get-AzSubscription](/powershell/module/Az.Accounts/Get-AzSubscription?view=azps-1.8.0) Cmdlet 取得訂用帳戶。
 
-  ```powershell-interactive
-  PS C:\> $job = Start-Job { param ($ctx) New-AzVm -AzureRmContext $ctx [... Additional parameters ...]} -ArgumentList (Get-AzContext)
+## <a name="create-a-new-azure-context-from-subscription-information"></a>從訂用帳戶資訊建立新的 Azure 內容
+
+[Set-AzContext](/powershell/module/Az.Accounts/Set-AzContext?view=azps-1.8.0) Cmdlet 可用來建立新的 Azure 內容，並將其設定為有效內容。
+要建立新的 Azure 內容，最簡單的方式是使用現有的訂用帳戶資訊。 此 Cmdlet 依設計會使用 `Get-AzSubscription` 的輸出物件作為管線值，並設定新的 Azure 內容：
+
+```azurepowershell-interactive
+Get-AzSubscription -SubscriptionName 'MySubscriptionName' | Set-AzContext -Name 'MyContextName'
+```
+
+或者，視需要提供訂用帳戶名稱或識別碼和租用戶識別碼：
+
+```azurepowershell-interactive
+Set-AzContext -Name 'MyContextName' -Subscription 'MySubscriptionName' -Tenant '.......'
+```
+
+如果省略 `-Name` 引數，則會以訂用帳戶的名稱和識別碼作為 `Subscription Name (subscription-id)` 格式的內容名稱。
+
+## <a name="change-the-active-azure-context"></a>變更有效的 Azure 內容
+
+`Set-AzContext` 和 [Select-AzContext](/powershell/module/az.accounts/set-azcontext?view=azps-1.8.0) 都可用來變更有效的 Azure 內容。 如[建立新的 Azure 內容](#create-a-new-azure-context-from-subscription-information)中所說明，`Set-AzContext` 會為訂用帳戶建立新的 Azure 內容 (如果沒有的話)，然後切換為以該內容作為有效內容。
+
+`Select-AzContext` 僅適用於現有的 Azure 內容，且其運作方式與使用 `Set-AzContext -Context` 時類似，但正規用途為管線輸送：
+
+```azurepowershell-interactive
+Set-AzContext -Context $(Get-AzContext -Name "mycontext") # Set a context with an inline Azure context object
+Get-AzContext -Name "mycontext" | Select-AzContext # Set a context with a piped Azure context object
+```
+
+如同 Azure PowerShell 中的許多其他帳戶和內容管理命令，`Set-AzContext` 和 `Select-AzContext` 均支援 `-Scope` 引數，讓您可以控制內容的有效期間。 `-Scope` 可讓您直接變更單一工作階段的有效內容，而無須變更預設值：
+
+```azurepowershell-interactive
+Get-AzContext -Name "mycontext" | Select-AzContext -Scope Process
+```
+
+若要避免切換整個 PowerShell 工作階段的內容，您可以使用 `-AzContext` 引數對指定內容執行所有的 Azure PowerShell 命令：
+
+```azurepowershell-interactive
+$context = Get-AzContext -Name "mycontext"
+New-AzVM -Name ExampleVM -AzContext $context
+```
+
+以 Azure PowerShell Cmdlet 處理內容的另一項主要用途，是執行背景命令。 若要深入了解如何使用 Azure PowerShell 執行 PowerShell 作業，請參閱[在 PowerShell 作業中執行 Azure PowerShell Cmdlet](using-psjobs.md)。
+
+## <a name="save-azure-contexts-across-powershell-sessions"></a>跨 PowerShell 工作階段儲存 Azure 內容
+
+根據預設，Azure 內容會儲存起來以在 PowerShell 工作階段之間使用。 您可以透過下列方式變更此行為︰
+
+* 搭配使用 `-Scope Process` 與 `Connect-AzAccount` 登入。
+
+  ```azurepowershell
+  Connect-AzAccount -Scope Process
   ```
 
-- 使用預設內容，並啟用自動儲存
+  在此登入的過程中傳回的 Azure 內容，有效性_僅_及於目前的工作階段，且無論 Azure PowerShell 內容自動儲存設定為何，都不會自動儲存。
+* 使用 [Disable-AzCoNtextAutosave](/powershell/module/az.accounts/disable-azcontextautosave) Cmdlet 將 AzurePowershell 的內容自動儲存停用。
+  停用內容自動儲存並__不會__清除任何已儲存的權杖。 若要了解如何清除已儲存的 Azure 內容資訊，請參閱[移除 Azure 內容和認證](#remove-azure-contexts-and-stored-credentials)。
+* 若要明確啟用 Azure 內容自動儲存，可以使用 [Enable-AzCoNtextAutosave](/powershell/module/az.accounts/enable-azcontextautosave) Cmdlet 來啟用。 自動儲存啟用時，所有使用者內容都會儲存在本機，以供後續的 PowerShell 工作階段使用。
+* 使用 [Save-AzContext](/powershell/module/az.accounts/save-azcontext) 手動儲存內容以供未來的 PowerShell 工作階段使用，並可在 [Import-AzContext](/powershell/module/az.accounts/import-azcontext) 來載入：
 
-  如果您已啟用**內容自動儲存**，背景作業就會自動使用預設儲存的內容。
-
-  ```powershell-interactive
-  PS C:\> $job = Start-Job { New-AzVm [... Additional parameters ...]}
+  ```azurepowershell
+  Save-AzContext -Path current-context.json # Save the current context
+  Save-AzContext -Profile $profileObject -Path other-context.json # Save a context object
+  Import-AzContext -Path other-context.json # Load the context from a file and set it to the current context
   ```
 
-當您需要知道背景工作的結果時，請使用 `Get-Job` 來檢查作業狀態，並使用 `Wait-Job` 等候作業完成。 使用 `Receive-Job` 可擷取或顯示背景作業的輸出。 如需詳細資訊，請參閱 [about_Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs)。
+> [!WARNING]
+> 停用內容自動儲存並__不會__清除任何已儲存的預存內容資訊。 若要移除已儲存的資訊，請使用 [Clear-AzContext](/powershell/module/az.accounts/Clear-AzContext) Cmdlet。 如需移除已儲存內容的詳細資訊，請參閱[移除內容和認證](#remove-azure-contexts-and-stored-credentials)。
 
-## <a name="creating-selecting-renaming-and-removing-contexts"></a>建立、選取、重新命名和移除內容
-
-若要建立內容，您必須登入 Azure。 `Connect-AzAccount` Cmdlet (或其別名 `Login-AzAccount`) 會設定 Azure PowerShell Cmdlet 所使用的預設內容，並可讓您存取認證所允許的任何租用戶或訂用帳戶。
-
-若要在登入之後新增內容，請使用 `Set-AzContext` (或其別名 `Select-AzSubscription`)。
+前述每個命令都支援 `-Scope` 參數，此參數可使用 `Process` 值而僅套用至目前執行中的程序。 例如，若要確保在結束 PowerShell 工作階段之後不會儲存新建立的內容：
 
 ```azurepowershell-interactive
-PS C:\> Set-AzContext -Subscription "Contoso Subscription 1" -Name "Contoso1"
+Disable-AzContextAutosave -Scope Process
+$context2 = Set-AzContext -Subscription "sub-id" -Tenant "other-tenant"
 ```
 
-上一個範例會使用目前的認證來新增目標為 'Contoso Subscription 1' 的新內容。 新的內容名為 'Contoso1'。 如果您未提供內容的名稱，就會使用使用帳戶識別碼和訂用帳戶識別碼的預設名稱。
+內容資訊和權杖都會儲存在 Windows 上的 `$env:USERPROFILE\.Azure` 目錄中，以及其他平台的 `$HOME/.Azure` 中。 敏感性資訊 (例如訂用帳戶識別碼和租用戶識別碼) 可能仍會透過記錄或已儲存的內容公開於已儲存的資訊中。 若要了解如何清除已儲存的資訊，請參閱[移除內容和認證](#remove-azure-contexts-and-stored-credentials)一節。
 
-若要將現有的內容重新命名，請使用 `Rename-AzContext` Cmdlet。 例如︰
+## <a name="remove-azure-contexts-and-stored-credentials"></a>移除 Azure 內容和已儲存的認證
 
-```azurepowershell-interactive
-PS C:\> Rename-AzContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Contoso2'
-```
+若要清除 Azure 內容和認證：
 
-這個範例會將包含自動名稱 `[user1@contoso.org; 123456-7890-1234-564321]` 的內容重新命名為簡單名稱 'Contoso2'。 管理內容的 Cmdlet 也會使用索引標籤完成，讓您能快速選取內容。
+* 使用 [Disconnect-AzAccount](/powershell/module/az.accounts/disconnect-azaccount) 登出帳戶。
+  您可以透過帳戶或內容登出任何帳戶：
 
-最後，若要移除內容，請使用 `Remove-AzContext` Cmdlet。  例如︰
+  ```azurepowershell-interactive
+  Disconnect-AzAccount # Disconnect active account 
+  Disconnect-AzAccount -Username "user@contoso.com" # Disconnect by account name
 
-```azurepowershell-interactive
-PS C:\> Remove-AzContext Contoso2
-```
+  Disconnect-AzAccount -ContextName "subscription2" # Disconnect by context name
+  Disconnect-AzAccount -AzureContext $contextObject # Disconnect using context object information
+  ```
 
-忘記名為 'Contoso2' 的內容。 您可以使用 `Set-AzContext` 來重新建立此內容
+  中斷連線後一律會移除已儲存的驗證權杖，並清除與中斷連線的使用者或內容相關聯的已儲存內容。
+* 使用 [Clear-AzContext](/powershell/module/az.accounts/Clear-AzContext)。 此 Cmdlet 一律會移除已儲存的內容和驗證權杖，而且也會將您登出。
+* 使用 [Remove-AzContext](/powershell/module/az.accounts/remove-azcontext) 移除內容：
+  
+  ```azurepowershell-interactive
+  Remove-AzContext -Name "mycontext" # Remove by name
+  Get-AzContext -Name "mycontext" | Remove-AzContext # Remove by piping Azure context object
+  ```
 
-## <a name="removing-credentials"></a>移除認證
+  如果您移除有效內容，您將會與 Azure 中斷連線，而需要使用 `Connect-AzAccount` 重新進行驗證。
 
-您可以使用 `Disconnect-AzAccount` (也稱為 `Logout-AzAccount`) 來移除使用者或服務主體的所有憑證和相關聯內容。 在無參數的情況下執行時，`Disconnect-AzAccount` Cmdlet 會移除目前內容中與使用者或服務主體相關聯的所有認證和內容。 您可以傳入使用者名稱、服務主體名稱或內容，將特定的主體作為目標。
+## <a name="see-also"></a>另請參閱
 
-```azurepowershell-interactive
-Disconnect-AzAccount user1@contoso.org
-```
-
-## <a name="using-context-scopes"></a>使用內容範圍
-
-有時候，您需要在不影響其他工作階段的情況下，選取、變更或移除 PowerShell 工作階段中的內容。 若要變更內容 Cmdlet 的預設行為，請使用 `Scope` 參數。 `Process` 範圍會覆寫預設行為，方法是僅使其套用於目前的工作階段。 相反地，`CurrentUser` 範圍會變更所有工作階段，而非只有目前工作階段中的內容。
-
-例如，若要在不影響其他視窗的情況下，變更目前 PowerShell 工作階段中的預設內容，或是下次開啟工作階段時使用的內容，請使用：
-
-```azurepowershell-interactive
-PS C:\> Select-AzContext Contoso1 -Scope Process
-```
-
-## <a name="how-the-context-autosave-setting-is-remembered"></a>會記住內容自動儲存設定的方式
-
-內容自動儲存設定會儲存到使用者 Azure PowerShell 目錄 (在 Windows 上為 `$env:USERPROFILE\.Azure`，在其他平台上則為 `$HOME/.Azure`)。 部分類型的電腦帳戶可能無法存取此目錄。 如需這類的情節，您可以使用環境變數
-
-```azurepowershell-interactive
-$env:AzureRmContextAutoSave="true" | "false"
-```
-
-設為 'true' 時，就會自動儲存內容。 如果設為 'false'，就不會自動儲存內容。
-
-## <a name="context-management-cmdlets"></a>內容管理 Cmdlet
-
-- [Enable-AzContextAutosave][enable] - 可在 Powershell 工作階段之間儲存內容。
-  任何變更都會改變全域內容。
-- [Disable-AzContextAutosave][disable] - 關閉自動儲存內容。 需要每個新的 PowerShell 工作階段才能再次登入。
-- [Select-AzContext][select] - 選取內容作為預設值。 所有 Cmdlet 都會使用此內容中的認證來進行驗證。
-- [Disconnect-AzAccount][remove-cred] - 移除與帳戶相關聯的所有認證和內容。
-- [Remove-AzContext][remove-context] - 將已命名的內容移除。
-- [Rename-AzContext][rename] - 將現有的內容重新命名。
-- [Add-AzAccount][login] - 允許登入程序或目前使用者的範圍。
-  允許驗證之後命名預設內容。
-- [Import-AzContext][import] - 允許登入程序或目前使用者的範圍。
-- [Set-AzContext][set-context] - 允許選取現有的已命名內容，以及對程序或目前使用者的範圍變更。
-
-<!-- Hyperlinks -->
-[enable]: /powershell/module/az.accounts/Enable-AzureRmContextAutosave
-[disable]: /powershell/module/az.accounts/Disable-AzContextAutosave
-[select]: /powershell/module/az.accounts/Select-AzContext
-[remove-cred]: /powershell/module/az.accounts/Disconnect-AzAccount
-[remove-context]: /powershell/module/az.accounts/Remove-AzContext
-[rename]: /powershell/module/az.accounts/Rename-AzContext
-
-<!-- Updated cmdlets -->
-[login]: /powershell/module/az.accounts/Connect-AzAccount
-[import]:  /powershell/module/az.accounts/Import-AzContext
-[set-context]: /powershell/module/az.accounts/Set-AzContext
+* [在 PowerShell 作業中執行 Azure PowerShell Cmdlet](using-psjobs.md)
+* [Azure Active Directory 術語](/azure/active-directory/fundamentals/active-directory-whatis#terminology)
+* [Az.Accounts 參考](/powershell/module/az.accounts)
