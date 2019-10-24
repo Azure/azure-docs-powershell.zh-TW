@@ -28,9 +28,9 @@
     - name: 建立服務主體
       href: create-azure-service-principal-azureps.md
       displayName: 'automation, application, web app, script, certificate, sign in, signin, log in, login, devops, dev ops, itpro, it pro, role, aad, authentication, authenticate'
-    - name: 持續性認證
+    - name: 認證內容
       href: context-persistence.md
-      displayName: 'sign in, signin, log in, login, process, session'
+      displayName: 'sign in, signin, log in, login, process, session, context, persist, jobs, background, automation, scripting, task'
 - name: 查詢
   href: queries-azureps.md
   displayName: 'filter, search, format, output, variable, scripting, array, dictionary, map, object'
@@ -52,7 +52,7 @@
   items:
     - name: PowerShell 工作
       href: using-psjobs.md
-      displayName: 'background, task, scripting, automation'
+      displayName: 'background, task, scripting, automation, context, process'
 - name: 教學課程
   items:
     - name: 建立虛擬機器
