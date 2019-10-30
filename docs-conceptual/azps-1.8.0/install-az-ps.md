@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 12/13/2018
-ms.openlocfilehash: e302e49d95b6bc15750366c9eb960a6fec80c1a4
-ms.sourcegitcommit: e5b029312d17e12257b2b5351b808fdab0b4634c
+ms.date: 10/22/2019
+ms.openlocfilehash: 7f22a420068db87fa2c3c007bd36f515384162fb
+ms.sourcegitcommit: ad7677d703a8512d371d3123dc7e541156b95cb8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70386796"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72814381"
 ---
 # <a name="install-the-azure-powershell-module"></a>安裝 Azure PowerShell 模組
 
@@ -67,6 +67,18 @@ Are you sure you want to install the modules from 'PSGallery'?
 請回答 `Yes` 或 `Yes to All` 以繼續安裝。
 
 Az 模組是 Azure PowerShell Cmdlet 的彙總套件模組。 安裝此項目會下載所有可用的 Azure Resource Manager 模組，並使這些模組的 Cmdlet 可供使用。
+
+## <a name="install-offline"></a>離線安裝
+
+在某些環境中，無法連線到 PowerShell 資源庫。 在這些情況下，您仍然可以使用下列其中一種方法來離線安裝：
+
+* 將模組下載到另一個位置，並使用該位置做為網路上的安裝來源。 這項流程十分複雜，但可讓您將單一伺服器或檔案共用上的 PowerShell 模組 (已使用 PowerShellGet 部署) 快取到任何已中斷連線的系統上。 了解如何透過[使用本機 PowerShellGet 存放庫](/powershell/scripting/gallery/how-to/working-with-local-psrepositories)設定本機存放庫，並安裝在中斷連線的系統上。
+* [將 Azure PowerShell MSI 下載到連線至網路的電腦](install-az-ps-msi.md)，然後將安裝程式複製到系統，無需存取 PowerShell 資源庫。 請記住，MSI 安裝程式僅適用於 Windows 上的 PowerShell 5.1。
+* 使用 [Save-Module](/powershell/module/PowershellGet/Save-Module) 將模組儲存至檔案共用，或將儲存至另一個來源，並手動將模組複製到其他電腦：
+  
+  ```powershell-interactive
+  Save-Module -Name Az -Path '\\someshare\PowerShell\modules' -Force
+  ```
 
 ## <a name="troubleshooting"></a>疑難排解
 
