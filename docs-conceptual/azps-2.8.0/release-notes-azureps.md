@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/15/2019
-ms.openlocfilehash: 83e6039153bcc2b8ccb7ceddfa91609f0d6c7b3f
-ms.sourcegitcommit: b4ee3fbaaa2a329ea28308bd1902ae83a34db698
+ms.openlocfilehash: 8c1369cdedf8848f3c62ca6b6bc4eb3d2d78be95
+ms.sourcegitcommit: f9445d1525eac8c165637e1a80fbc92b1ab005c2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72380191"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74656820"
 ---
 ## <a name="280---october-2019"></a>2.8.0 - 2019 年10月
 ### <a name="general"></a>一般
@@ -56,7 +56,7 @@ ms.locfileid: "72380191"
 * 次要錯誤修正：Get-AzIothub 未傳回 subscriptionId 
 
 #### <a name="azmonitor"></a>Az.Monitor
-* 已針對動作群組新增新的動作群組接收器   -ItsmReceiver   -VoiceReceiver   -ArmRoleReceiver   -AzureFunctionReceiver   -LogicAppReceiver   -AutomationRunbookReceiver   -AzureAppPushReceiver
+* 已針對 New-AzActionGroupReceiver:   -ItsmReceiver   -VoiceReceiver   -ArmRoleReceiver   -AzureFunctionReceiver   -LogicAppReceiver   -AutomationRunbookReceiver   -AzureAppPushReceiver 新增了新的動作群組接收器
 * 針對接收器使用已啟用的一般警示結構描述。 這不適用於 SMS、Azure App 撨送、ITSM 和 Voice 接收器
 * Webhooks 現在支援 Azure Active Directory 驗證。
 
@@ -64,8 +64,8 @@ ms.locfileid: "72380191"
 * 新增新的 Cmdlet Get-AzAvailableServiceAlias 以便進行呼叫並取得可用於服務端點原則的別名。
 * 已在虛擬網路閘道連線新增了流量選取器的支援
     - 已新增新的 Cmdlet：
-        - New-AzureRmTrafficSelectorPolicy
-    - 已更新選用參數的 Cmdlet -TrafficSelectorPolicies   -New-AzureRmVirtualNetworkGatewayConnection   -Set-AzureRmVirtualNetworkGatewayConnection
+        - New-AzIpsecTrafficSelectorPolicy
+    - 已更新選用參數的 Cmdlet -TrafficSelectorPolicies   -New-AzVirtualNetworkGatewayConnection   -Set-AzVirtualNetworkGatewayConnection
 * 新增網路安全性規則組態中針對 ESP 和 AH 通訊協定的支援
     - 已更新的 Cmdlet：
         - Add-AzNetworkSecurityRuleConfig
@@ -220,7 +220,7 @@ ms.locfileid: "72380191"
     -  Remove-AzRmStorageShare
 
 #### <a name="azwebsites"></a>Az.Websites
-* 修正將應用程式遷移到新的 ASP 時系統會刪除 webapp 標籤的問題
+* 修正了將應用程式遷移到新的 ASP 時，webapp 標籤遭到刪除的問題
 * 修正 Publish-AzureWebapp 以在 Linux 和 Windows 上運作
 * 更新 'Get-AzWebAppPublishingProfile' 參考文件中的範例
 
