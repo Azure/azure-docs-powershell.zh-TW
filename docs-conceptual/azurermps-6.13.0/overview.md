@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 12/20/2018
-ms.openlocfilehash: bdb63ce4bb614920582460ae707d8594977e8f71
-ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
+ms.openlocfilehash: a5c5504aa4c2932582df9e4a40b4950d5f999cbd
+ms.sourcegitcommit: f9445d1525eac8c165637e1a80fbc92b1ab005c2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67863589"
+ms.lasthandoff: 12/16/2019
+ms.locfileid: "75035841"
 ---
 # <a name="overview-of-azure-powershell"></a>Azure PowerShell 的概觀
 
@@ -34,7 +34,7 @@ Azure PowerShell 提供了一組 Cmdlet，它們會使用 [Azure Resource Manage
 
 如果您不熟悉 PowerShell，PowerShell 的簡介可能會有所幫助。
 
-* [安裝 PowerShell](/powershell/scripting/setup/installing-windows-powershell)
+* [安裝 PowerShell](/powershell/scripting/install/installing-windows-powershell)
 * [使用 PowerShell 編寫指令碼](/powershell/scripting/powershell-scripting)
 
 您也可以觀看這段影片：[PowerShell 基本概念：(第 1 部份) 開始使用 PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1)。
