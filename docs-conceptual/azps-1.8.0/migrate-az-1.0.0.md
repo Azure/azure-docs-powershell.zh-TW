@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2019
-ms.openlocfilehash: 04c520a3171d0b06ceaaa96f1c77bda6b03952ae
-ms.sourcegitcommit: 020c69430358b13cbd99fedd5d56607c9b10047b
+ms.openlocfilehash: ea7593cf2b753b210ff2955b7bd450030ad83596
+ms.sourcegitcommit: f9445d1525eac8c165637e1a80fbc92b1ab005c2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365721"
+ms.lasthandoff: 12/16/2019
+ms.locfileid: "75035824"
 ---
 # <a name="breaking-changes-for-az-100"></a>Az 1.0.0 的重大變更
 
@@ -227,7 +227,7 @@ RequiredModules = @(@{ModuleName="Az.Profile"; ModuleVersion="1.0.0"})
 - `PSVirtualMachineScaleSetVM` 物件的 `InstanceView` 屬性，其類型已從 `VirtualMachineInstanceView` 變更為 `VirtualMachineScaleSetVMInstanceView`
 - 已從 `UpgradePolicy` 屬性移除 `AutoOSUpgradePolicy` 和 `AutomaticOSUpgrade` 屬性
 - `PSSnapshotUpdate` 物件中的 `Sku` 屬性，其類型已從 `DiskSku` 變更為 `SnapshotSku`
-- 已從 `Add-AzVMDataDisk` Cmdlet 移除 `VmScaleSetVMParameterSet`，您無法再將資料磁碟個別地新增至擴展集 VM。
+- 已從 `Add-AzVMDataDisk` Cmdlet 移除 `VmScaleSetVMParameterSet`，您無法再個別地將資料磁碟新增至擴展集 VM。
 
 ### <a name="azdatafactory-previously-azurermdatafactories-and-azurermdatafactoryv2"></a>Az.DataFactory (先前是 AzureRM.DataFactories 和 AzureRM.DataFactoryV2)
 
@@ -272,7 +272,7 @@ RequiredModules = @(@{ModuleName="Az.Profile"; ModuleVersion="1.0.0"})
 
   應變更為
   ```azurepowershell-interactive
-  New-AzMMediaService -Tag @{TagName="TagValue"}
+  New-AzMediaService -Tag @{TagName="TagValue"}
   ```
 
 ### <a name="azmonitor-previously-azurerminsights"></a>Az.Monitor (先前是 AzureRM.Insights)
@@ -292,7 +292,7 @@ RequiredModules = @(@{ModuleName="Az.Profile"; ModuleVersion="1.0.0"})
 - 已從 `Get-AzServiceEndpointPolicyDefinition` Cmdlet 移除淘汰的 `ResourceId` 參數
 - 已從 `PSVirtualNetwork` 物件移除淘汰的 `EnableVmProtection` 屬性
 - 已移除淘汰的 `Set-AzVirtualNetworkGatewayVpnClientConfig` Cmdlet
-  
+
 指令碼不應再根據這些欄位的值來決定處理方式。
 
 ### <a name="azoperationalinsights-previously-azurermoperationalinsights"></a>Az.OperationalInsights (先前是 AzureRM.OperationalInsights)
