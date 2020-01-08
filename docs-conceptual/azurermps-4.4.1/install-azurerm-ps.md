@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: dc11af0fff84899ca1b3ad3abf8760dd8c59e6f6
-ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
+ms.openlocfilehash: 7b099fead7cb985fc8f7e6fed55b8c1107caa0d9
+ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68863277"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75720373"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>使用 PowerShellGet 在 Windows 上安裝 Azure PowerShell
 
@@ -25,7 +25,7 @@ ms.locfileid: "68863277"
 > [!IMPORTANT]
 > AzureRM 模組不支援 macOS 或 Linux。 若要在這些平台上使用 Azure PowerShell Cmdlet，請[安裝 Az 模組](/powershell/azure/install-az-ps)。
 
-## <a name="step-1-install-powershellget"></a>步驟 1：安裝 PowerShellGet
+## <a name="step-1-install-powershellget"></a>步驟 1:安裝 PowerShellGet
 
 從 PowerShell 資源庫安裝項目需要有 PowerShellGet 模組。 確定您有適當版本的 PowerShellGet 及其他系統需求。 執行下列命令，以查看您的系統上是否已安裝 PowerShellGet。
 
@@ -59,7 +59,7 @@ Install-Module PowerShellGet -Force
 > [!IMPORTANT]
 > 本文件中所述的模組 AzureRM 會使用 .NET Framework。 這會造成與使用 .NET Core 的 PowerShell 6.0 不相容。 如果您使用 PowerShell 6.0，請遵循[適用於 macOS 和 Linux 的安裝指示](install-azurermps-maclinux.md)。
 
-## <a name="step-2-install-azure-powershell"></a>步驟 2：安裝 Azure PowerShell
+## <a name="step-2-install-azure-powershell"></a>步驟 2:安裝 Azure PowerShell
 
 從 PowerShell 資源庫安裝 Azure PowerShell 需要提高的權限。 從提高權限的 PowerShell 工作階段執行下列命令︰
 
@@ -115,7 +115,7 @@ Import-Module -Name AzureRM
 |---|---|
 |我有 Windows 10 或 Windows Server 2016|內建於 OS 包含的 Windows Management Framework (WMF) 5.0|
 |我想要升級至 PowerShell 5|[安裝最新版的 WMF](https://www.microsoft.com/download/details.aspx?id=54616)|
-|我是在採用 PowerShell 3 或 PowerShell 4 的 Windows 版本上執行|[取得 PackageManagement 模組](http://go.microsoft.com/fwlink/?LinkID=746217)|
+|我是在採用 PowerShell 3 或 PowerShell 4 的 Windows 版本上執行|[取得 PackageManagement 模組](https://go.microsoft.com/fwlink/?LinkID=746217)|
 
 ### <a name="div-idhelpmechoosechecking-the-version-of-azure-powershell"></a><div id="helpmechoose"/>檢查 Azure PowerShell 的版本
 

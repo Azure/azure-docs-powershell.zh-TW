@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/20/2018
-ms.openlocfilehash: fe35fccd7994d7c3c3587096263a50af598e8651
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.openlocfilehash: aaba0ce38129b96e3d691f1a9d9cfdc929188ffd
+ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65535032"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75722402"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi-or-web-platform-installer"></a>使用 MSI 或 Web Platform Installer 在 Windows 上安裝 Azure PowerShell
 
@@ -42,7 +42,7 @@ Connect-AzureRmAccount
 
 ## <a name="install-or-update-on-windows-using-the-web-platform-installer"></a>使用 Web Platform Installer 在 Windows 上安裝或更新
 
-請下載 [Azure PowerShell WebPI 套件](http://aka.ms/webpi-azps)並開始安裝。 如果您已從 MSI 或使用 Web PI 安裝舊版的 Azure 模組，安裝程式會自動移除這些模組。 模組會安裝至 `${env:ProgramFiles}\WindowsPowerShell\Modules`。 `AzureRM` 和 `Azure` 模組都已安裝。
+請下載 [Azure PowerShell WebPI 套件](https://aka.ms/webpi-azps)並開始安裝。 如果您已從 MSI 或使用 Web PI 安裝舊版的 Azure 模組，安裝程式會自動移除這些模組。 模組會安裝至 `${env:ProgramFiles}\WindowsPowerShell\Modules`。 `AzureRM` 和 `Azure` 模組都已安裝。
 
 > [!NOTE]
 > 僅在您使用 Azure 傳統部署模型時，才使用 `Azure` 模組。

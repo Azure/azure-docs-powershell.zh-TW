@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/06/2017
-ms.openlocfilehash: d41e7ce2faac6a82b63ed173b5b64b85b56577c0
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.openlocfilehash: c0ac4f6cfb803519b8dd711d3cca0d4a4f7e6f8b
+ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65535078"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75722453"
 ---
 # <a name="other-installation-methods"></a>其他安裝方法
 
@@ -23,7 +23,7 @@ Azure PowerShell 有多種安裝方法。 慣用方法是搭配使用 PowerShell
 ## <a name="install-on-windows-using-the-web-platform-installer"></a>使用 Web Platform Installer 安裝在 Windows 上
 
 從 WebPI 來安裝最新版 Azure PowerShell 的方法和安裝舊版的方法一樣。
-請下載 [Azure PowerShell WebPI 套件](http://aka.ms/webpi-azps)並開始安裝。
+請下載 [Azure PowerShell WebPI 套件](https://aka.ms/webpi-azps)並開始安裝。
 
 > [!NOTE]
 > 如果您之前已從 PowerShell 資源庫安裝 Azure 模組，安裝程式會自動移除這些模組。 這麼做會簡化您的環境，因為它會確保您只有安裝一個 Azure PowerShell 版本。 不過，在某些情況下，您可能需要同時安裝多個版本。
@@ -56,7 +56,7 @@ At line:1 char:1
     + FullyQualifiedErrorId : CommandNotFoundException
 ```
 
-若要修正此錯誤，請重新啟動電腦或使用完整路徑來匯入模組。 例如︰
+若要修正此錯誤，請重新啟動電腦或使用完整路徑來匯入模組。 例如：
 
 ```powershell-interactive
 Import-Module "$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\AzureRM.psd1"

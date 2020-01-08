@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/15/2018
-ms.openlocfilehash: ff50c676d42cad515aea74ea960105ed76f418a6
-ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
+ms.openlocfilehash: 5a4ccd67433fe3716df42075a4e2fd035a12af2b
+ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68863300"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75722436"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>使用 PowerShellGet 在 Windows 上安裝 Azure PowerShell
 
@@ -52,11 +52,11 @@ Install-Module PowerShellGet -Force
 
 若您尚未安裝 PowerShellGet，請遵循下表中適用您系統的指示。
 
-|案例|安裝指示|
+|狀況|安裝指示|
 |---|---|
 |Windows 10<br/>Windows Server 2016|內建於 OS 包含的 Windows Management Framework (WMF) 5.0|
 |升級至 PowerShell 5| <ol><li>[安裝最新版的 WMF](https://www.microsoft.com/download/details.aspx?id=54616)</li><li>執行以下命令：<br/>```Install-Module PowerShellGet -Force```</li></ol>|
-|Windows 與 PowerShell 3 或 PowerShell 4|<ol><il>[取得 PackageManagement 模組](http://go.microsoft.com/fwlink/?LinkID=746217)</il><li>執行以下命令：<br/>```Install-Module PowerShellGet -Force```</li></ol>|
+|Windows 與 PowerShell 3 或 PowerShell 4|<ol><il>[取得 PackageManagement 模組](https://go.microsoft.com/fwlink/?LinkID=746217)</il><li>執行以下命令：<br/>```Install-Module PowerShellGet -Force```</li></ol>|
 
 > [!NOTE]
 > 若要使用 PowerShellGet，需要有可讓您執行指令碼的執行原則。 如需 PowerShell 的執行原則詳細資訊，請參閱[關於執行原則](/powershell/module/microsoft.powershell.core/about/about_execution_policies)。

@@ -12,7 +12,7 @@ ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 01/07/2020
-ms.locfileid: "75720552"
+ms.locfileid: "75721933"
 ---
 # <a name="migration-guide-for-az-200"></a>Az 2.0.0 的移轉指南
 
