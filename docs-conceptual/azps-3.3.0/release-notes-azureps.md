@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 10/15/2019
-ms.openlocfilehash: fb934ed0f8bef5e2aff715debe5d406d54abf24f
-ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
+ms.date: 01/09/2020
+ms.openlocfilehash: 3806a1c609a71c53c0bddc5bafd51d845c0c296e
+ms.sourcegitcommit: 16904e0a72c55fb81248e0252769defb86c50f36
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75718979"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75831639"
 ---
 # <a name="azure-powershell-release-notes"></a>Azure PowerShell 版本資訊
 
@@ -74,7 +74,7 @@ ms.locfileid: "75718979"
   - Update-AzMlOpClusterSystemService
 
 #### <a name="aznetwork"></a>Az.Network
-* 將 Microsoft.Azure.Management.Sql 相依性從 1.36-preivew 升級到 1.37-preview
+* 將 Microsoft.Azure.Management.Sql 相依性從 1.36-preview 升級到 1.37-preview
 
 #### <a name="azrecoveryservices"></a>Az.RecoveryServices
 * Azure Site Recovery 對使用 Azure 至 Azure 提供者的客戶受控 ley 進行待用加密的受控磁碟 VM 支援變更。
