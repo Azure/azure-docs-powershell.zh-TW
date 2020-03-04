@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/22/2019
-ms.openlocfilehash: 9bb2a0d611c4cc39172fc6c51d375a1b47f834ed
-ms.sourcegitcommit: a321ef9d134c684fa24ababcbd898f86b00d9364
+ms.openlocfilehash: 9f161d6a2bbe696bca5d2a63d39ab734cfc25cb8
+ms.sourcegitcommit: a6f2fc500242de6248224278d743fd09aac2fafd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77477279"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78264361"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi"></a>使用 MSI 在 Windows 上安裝 Azure PowerShell
 
@@ -34,7 +34,7 @@ $PSVersionTable.PSVersion
 
 ## <a name="install-or-update-on-windows-using-the-msi-package"></a>使用 MSI 套件在 Windows 上安裝或更新
 
-使用 MSI 檔案 (可從 [GitHub](https://github.com/Azure/azure-powershell/releases/tag/v3.3.0-January2020) 取得) 安裝適用於 Windows 的 Azure PowerShell。 如果您已透過 MSI 安裝舊版的 Azure 模組，安裝程式會自動移除這些模組。 MSI 套件會在 `${env:ProgramFiles}\WindowsPowerShell\Modules` 中安裝模組。
+使用 MSI 檔案 (可從 [GitHub](https://github.com/Azure/azure-powershell/releases/tag/v3.5.0-February2020) 取得) 安裝適用於 Windows 的 Azure PowerShell。 如果您已透過 MSI 安裝舊版的 Azure 模組，安裝程式會自動移除這些模組。 MSI 套件會在 `${env:ProgramFiles}\WindowsPowerShell\Modules` 中安裝模組。
 
 若要開始使用 Azure PowerShell，請使用您的 Azure 認證登入。
 
