@@ -5,7 +5,7 @@
   displayName: 'intro, introduction, azurerm'
 - name: 安裝
   items:
-    - name: 使用 PowerShell Get 進行安裝
+    - name: 使用 PowerShellGet 安裝
       href: install-az-ps.md
     - name: 使用 MSI 安裝
       href: install-az-ps-msi.md
@@ -24,6 +24,8 @@
   displayName: 'sign in, signin, log in, login, find, feedback, intro, introduction'
 - name: Cloud Shell
   href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
+- name: Docker 中的 Azure PowerShell
+  href: azureps-in-docker.md
 - name: 登入
   items:
     - name: 驗證方法
