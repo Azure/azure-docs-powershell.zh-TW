@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/04/2019
-ms.openlocfilehash: 21d87bd35da74f09b70976e7b395e7b987fbd3f5
+ms.openlocfilehash: 0de487cc34593ceac05aa2077358d692470dc23e
 ms.sourcegitcommit: fb95591c45bb5f12b98e0690938d18f2ec611897
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/15/2020
-ms.locfileid: "79402777"
+ms.locfileid: "79402743"
 ---
 # <a name="sign-in-with-azure-powershell"></a>使用 Azure PowerShell 登入
 
@@ -70,11 +70,12 @@ Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $tenantId
 ### <a name="certificate-based-authentication"></a>憑證式驗證
 
 憑證式驗證要求 Azure PowerShell 可從以憑證指紋為基礎的本機憑證存放區擷取資訊。
+
 ```azurepowershell-interactive
 Connect-AzAccount -ApplicationId $appId -Tenant $tenantId -CertificateThumbprint <thumbprint>
 ```
 
-若使用的是服務主體而非已註冊的應用程式，請新增 `-ServicePrincipal` 引數並提供服務主體的識別碼作為 `-ApplicationId` 參數值。
+若使用的是服務主體而非已註冊的應用程式，請新增 `-ServicePrincipal` 引數並提供服務主體的應用程式識別碼作為 `-ApplicationId` 參數值。
 
 ```azurepowershell-interactive
 Connect-AzAccount -ServicePrincipal -ApplicationId $servicePrincipalId -Tenant $tenantId -CertificateThumbprint <thumbprint>
@@ -110,7 +111,11 @@ $store.Close()
 
 受控識別是 Azure Active Directory 的功能。 受控識別是指派給在 Azure 中執行之資源的服務主體。 您可以使用受控識別服務主體進行登入，並取得僅限應用程式的存取權杖來存取其他資源。 只有在 Azure 雲端中執行的虛擬機器才能使用受控識別。
 
-若想進一步了解適用於 Azure 資源的受控識別，請參閱[如何在 Azure VM 上使用適用於 Azure 資源的受控識別取得存取權杖](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token)。
+此命令會使用主機環境的受控識別來連線。 例如，如果在具有指派受控服務識別的 VirtualMachine 上執行，這可讓程式碼使用該指派的身分識別來登入。
+
+```azurepowershell-interactive
+ Connect-AzAccount -Identity 
+```
 
 ## <a name="sign-in-with-a-non-default-tenant-or-as-a-cloud-solution-provider-csp"></a>以非預設租用戶或雲端解決方案提供者 (CSP) 登入
 
