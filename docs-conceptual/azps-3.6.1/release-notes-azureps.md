@@ -1,18 +1,15 @@
 ---
 title: Azure PowerShell 版本資訊
 description: 了解 Azure PowerShell 模組的最新更新資訊。
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 01/09/2020
-ms.openlocfilehash: 4c7ea19a225d63307ecf4a6fe5ebfa14ccd78d7e
+ms.date: 03/10/2020
+ms.openlocfilehash: f24e5ef66f9c49976c550c9847903bd0608c5123
 ms.sourcegitcommit: f6fa6543be1e0f6330b1598f01528b2928cc426c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79036156"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79111038"
 ---
 # <a name="azure-powershell-release-notes"></a>Azure PowerShell 版本資訊
 
@@ -72,14 +69,14 @@ ms.locfileid: "79036156"
     - Remove-AzTag -ResourceId
 * 已新增標籤 Cmdlet
     - Update-AzTag -ResourceId
-* 從 SDK 3.3.0 引進 ScopedDeployment 
+* 從 SDK 3.3.0 引進 ScopedDeployment
 
 #### <a name="azsql"></a>Az.Sql
 * 已將 PublicNetworkAccess 新增至 'New-AzSqlServer' 和 'Set-AzSqlServer'
 * 已針對受控資料庫新增對於長期保留備份設定的支援
-    - 在受控資料庫上取得/設定 LTR 原則 
-    - 依受控資料庫、受控執行個體或位置取得 LTR 備份 
-    - 移除 LTR 備份 
+    - 在受控資料庫上取得/設定 LTR 原則
+    - 依受控資料庫、受控執行個體或位置取得 LTR 備份
+    - 移除 LTR 備份
     - 還原 LTR 備份以建立新的受控資料庫
 * 已將 MinimalTlsVersion 新增至 New-AzSqlServer 和 Set-AzSqlServer
 * 已將 MinimalTlsVersion 新增至 New-AzSqlInstance 和 Set-AzSqlInstance
@@ -323,7 +320,7 @@ ms.locfileid: "79036156"
 #### <a name="azstorage"></a>Az.Storage
 * 在後續版本中新增 DefaultAction 值變更的重大變更警告訊息
     - Update-AzStorageAccountNetworkRuleSet
-* 使用參數 -IncludeGeoReplicationStats 執行 get-AzureRMStorageAccount，支援取得儲存體帳戶的上次同步處理時間 
+* 使用參數 -IncludeGeoReplicationStats 執行 get-AzureRMStorageAccount，支援取得儲存體帳戶的上次同步處理時間
     - Get-AzureRMStorageAccount
 
 ## <a name="320---december-2019"></a>3.2.0 - 2019 年 12 月
@@ -373,7 +370,7 @@ ms.locfileid: "79036156"
 * 支援撤銷儲存體帳戶使用者委派金鑰，因此會撤銷所有 Idenity SAS 權杖
     - Revoke-AzStorageAccountUserDelegationKeys
 * 升級至 Microsoft.Azure.Management.Storage 14.2.0，以支援新的 API 版本 2019-06-01。
-* 針對檔案共用 Cmdlet 的管理平面中超過 5120 的值支援 QuotaGiB (Gibibye 中的共用配額)，並將 'Quota' 參數別名新增到 'QuotaGiB' 參數中。 
+* 針對檔案共用 Cmdlet 的管理平面中超過 5120 的值支援 QuotaGiB (Gibibye 中的共用配額)，並將 'Quota' 參數別名新增到 'QuotaGiB' 參數中。
     - New-AzRmStorageShare
     - Update-AzRmStorageShare
 * 在參數 'Quota' 中新增參數別名 'QuotaGiB'
@@ -491,7 +488,7 @@ ms.locfileid: "79036156"
 * 已從下列 `PSCloudServiceConfiguration` 中移除 `TargetOSVersion`。
 * 已將 `PSCloudServiceConfiguration` 上的 `CurrentOSVersion` 重新命名為 `OSVersion`。
 * 已從 `PSPoolUsageMetrics` 移除 `DataEgressGiB` 和 `DataIngressGiB`。
-* 已移除 **AzBatchNodeAgentSku**，並以 **AzBatchSupportedImage** 取代。 
+* 已移除 **AzBatchNodeAgentSku**，並以 **AzBatchSupportedImage** 取代。
   - **AzBatchSupportedImage** 會傳回與 **AzBatchNodeAgentSku** 相同但格式較好用的資料。
   - 系統現在也會傳回新的未驗證映像。 此外，也包含每個映像的 `Capabilities` 和 `BatchSupportEndOfLife` 的其他相關資訊。
 * 新增了一項功能，可透過 **New-azbatchpool** 的新 `MountConfiguration` 參數，在集區的每個節點上裝載遠端檔案系統。
@@ -508,8 +505,7 @@ ms.locfileid: "79036156"
 #### <a name="azcompute"></a>Az.Compute
 * 磁碟加密集功能
     - 新的 Cmdlet： New-AzDiskEncryptionSetConfig   New-AzDiskEncryptionSet   Get-AzDiskEncryptionSet   Remove-AzDiskEncryptionSet
-    - DiskEncryptionSetId 參數已新增至下列 Cmdlet：Set-AzImageOSDisk Set-AzVMOSDisk Set-AzVmssStorageProfile        
-        Add-AzImageDataDisk New-AzVMDataDisk Set-AzVMDataDisk Add-AzVMDataDisk Add-AzVmssDataDisk Add-AzVmssVMDataDisk
+    - DiskEncryptionSetId 參數已新增至下列 Cmdlet： Set-AzImageOSDisk   Set-AzVMOSDisk   Set-AzVmssStorageProfile   Add-AzImageDataDisk   New-AzVMDataDisk   Set-AzVMDataDisk   Add-AzVMDataDisk   Add-AzVmssDataDisk   Add-AzVmssVMDataDisk
     - DiskEncryptionSetId 和 EncryptionType 參數已新增至下列 Cmdlet： New-AzDiskConfig   New-AzSnapshotConfig
 * 將 PublicIPAddressVersion 參數新增至 New-AzVmssIPConfig
 * 將自訂指令碼擴充功能的 FileUris 從公用設定移至受保護的設定
@@ -660,7 +656,7 @@ ms.locfileid: "79036156"
 * Get-AzSqlDatabaseRestorePoints (改為使用 Get-AzSqlDatabaseRestorePoint)
 * 移除 Get-AzSqlDatabaseSecureConnectionPolicy Cmdlet
 * 移除已淘汰的弱點評估設定 Cmdlet 的別名
-* 淘汰進階威脅偵測設定 Cmdlet 
+* 淘汰進階威脅偵測設定 Cmdlet
 * 在 Disable 中新增 Cmdlet 以啟用資料庫中資料行的敏感度建議。
 
 #### <a name="azstorage"></a>Az.Storage
@@ -670,7 +666,7 @@ ms.locfileid: "79036156"
 * 當關閉/取得檔案控制代碼時，跳過檢查輸入路徑是否為檔案目錄或檔案，以避免物件處於 DeletePending 狀態時失敗
     -  Get-AzStorageFileHandle
     -  Close-AzStorageFileHandle
-    
+
 ## <a name="280---october-2019"></a>2.8.0 - 2019 年10月
 ### <a name="general"></a>一般
 * Az.HealthcareApis 1.0.0 版本
@@ -683,7 +679,7 @@ ms.locfileid: "79036156"
     - 修正 https://github.com/Azure/azure-powershell/issues/10068 的問題
 
 #### <a name="azautomation"></a>Az.Automation
-* 已針對 Linux 重新啟動設定參數修正了 New-AzureAutomationSoftwareUpdateConfiguration Cmdlet。 
+* 已針對 Linux 重新啟動設定參數修正了 New-AzureAutomationSoftwareUpdateConfiguration Cmdlet。
 
 #### <a name="azbatch"></a>Az.Batch
 * **Get-AzBatchNodeAgentSku** 已被取代，在版本 2.0.0 中會由 **Get-AzBatchSupportImage** 取代。
@@ -691,7 +687,7 @@ ms.locfileid: "79036156"
 #### <a name="azcompute"></a>Az.Compute
 * 在 New-AzVM 和 New-AzVmss Cmdlet 中新增 Priority、EvictionPolicy 和 MaxPrice 參數
 * 修正 Add-AzVMAdditionalUnattendContent 和 Add-AzVMSshPublicKey Cmdlet 的警告訊息和說明文件
-* 修正 Linux VM 的 -skipVmBackup 例外狀況，以及 Set-AzVMDiskEncryptionExtension 的受控磁碟。 
+* 修正 Linux VM 的 -skipVmBackup 例外狀況，以及 Set-AzVMDiskEncryptionExtension 的受控磁碟。
 * 修正 Set-AzVMDiskEncryptionExtension 中更新加密設定中的錯誤 (bug)，兩種傳遞案例。
 
 #### <a name="azdatafactory"></a>Az.DataFactory
@@ -710,7 +706,7 @@ ms.locfileid: "79036156"
 
 #### <a name="aziothub"></a>Az.IotHub
 * 新增新的路由來源：DigitalTwinChangeEvents
-* 次要錯誤修正：Get-AzIothub 未傳回 subscriptionId 
+* 次要錯誤修正：Get-AzIothub 未傳回 subscriptionId
 
 #### <a name="azmonitor"></a>Az.Monitor
 * 已針對動作群組新增新的動作群組接收器   -ItsmReceiver   -VoiceReceiver   -ArmRoleReceiver   -AzureFunctionReceiver   -LogicAppReceiver   -AutomationRunbookReceiver   -AzureAppPushReceiver
@@ -806,7 +802,7 @@ ms.locfileid: "79036156"
 * 修正判斷 'Set-AzActionRule' 範圍類型的錯誤
 
 #### <a name="aznetwork"></a>Az.Network
-* 修正 'New-AzApplicationGateway' 參考文件中不正確的範例 
+* 修正 'New-AzApplicationGateway' 參考文件中不正確的範例
 * 在 'Get-AzNetworkWatcherPacketCapture' 參考文件中新增註解，說明擷取封包取得之所有屬性的相關資訊
 * 已修正 'Test-AzNetworkWatcherIPFlow' 參考文件中的範例，以便正確地列舉 NIC
 * 改善了雲端例外狀況剖析，以便顯示其他詳細資料 (若有)
@@ -942,7 +938,7 @@ ms.locfileid: "79036156"
     - 取代了 'PublicIpAddress' 參數，因為伺服器端從未使用過此參數。
     - 新增了選用參數 'Primary'，指出正確的 IP 設定是否為主要。
 * 改善了 SDK 要求錯誤例外狀況的處理方式 - 修正了之前未正確處理的 SDK 例外狀況而導致金鑰錯誤詳細資料並未顯示的問題
-* 調整了 Ipv6 IP 首碼的驗證邏輯，以便檢查正確的 IPv6 前置長度。 
+* 調整了 Ipv6 IP 首碼的驗證邏輯，以便檢查正確的 IPv6 前置長度。
 * 更新了 Get-AzVirtualNetworkSubnetConfig：依子網路 ID 新增了要取得的參數集。
 * 對 AzNetworkServiceTag 新增位置參數的描述
 
@@ -965,7 +961,7 @@ ms.locfileid: "79036156"
 #### <a name="azservicebus"></a>Az.ServiceBus
 * 修正 #9658 的問題：Set-AzServiceBusNetworkRuleSet 中 VirtualNetworkRule 參數的錯字
 * 修正 #9786 的問題：無法建立僅限接聽權限的規則
-* 新增了 'Test-AzServiceBusNameAvailability' 命令以檢查佇列和主題的名稱可用性 
+* 新增了 'Test-AzServiceBusNameAvailability' 命令以檢查佇列和主題的名稱可用性
 
 #### <a name="azservicefabric"></a>Az.ServiceFabric
 * 修正新增節點類型 Cmdlet 錯誤 (bug)：
@@ -992,10 +988,10 @@ ms.locfileid: "79036156"
 * 更新通用程式碼，以使用最新版 ClientRuntime
 
 #### <a name="azapplicationinsights"></a>Az.ApplicationInsights
-* 修正 'Remove-AzApplicationInsightsApiKey' 文件中範例的錯字 
+* 修正 'Remove-AzApplicationInsightsApiKey' 文件中範例的錯字
 
 #### <a name="azautomation"></a>Az.Automation
-* 修正資源字串中的錯字 
+* 修正資源字串中的錯字
 
 #### <a name="azcognitiveservices"></a>Az.CognitiveServices
 * 新增了 NetworkRuleSet 支援。
@@ -1056,7 +1052,7 @@ ms.locfileid: "79036156"
     - 更新了 New-AzApplicationGatewayProbeConfig：新增了用來探查後端伺服器的選用參數 Port。 此參數適用於 Standard_V2 和 WAF_V2 SKU。
 
 #### <a name="azoperationalinsights"></a>Az.OperationalInsights
-* 更新了預設版本，讓已儲存的搜尋為 1。 
+* 更新了預設版本，讓已儲存的搜尋為 1。
 * 修正了自訂記錄 Null 處理
 
 #### <a name="azrecoveryservices"></a>Az.RecoveryServices
@@ -1210,7 +1206,7 @@ ms.locfileid: "79036156"
     - New-AzureRmEventGridDomainTopic：
         - 建立新的 Azure事件方格網域主題。
     - Get-AzureRmEventGridDomainTopic
-        - 取得事件方格網域主題的詳細資料，或取得目前 Azure 中特定事件方格網域下的所有事件方格網域主題清單 
+        - 取得事件方格網域主題的詳細資料，或取得目前 Azure 中特定事件方格網域下的所有事件方格網域主題清單
     - Remove-AzureRmEventGridDomainTopic：
         - 移除現有的 Azure 事件方格網域主題。
 * 已更新的 Cmdlet：
@@ -1222,7 +1218,7 @@ ms.locfileid: "79036156"
             - 事件訂用帳戶過期日期，
             - 進階篩選參數。
         - 為 servicebusqueue 新增新的列舉成為目的地。
-        - 不允許使用 'All' in -IncludedEventType 選項並取代為 
+        - 不允許使用 'All' in -IncludedEventType 選項並取代為
     - Get-AzEventGridTopic、Get-AzEventGridDomain、Get-AzEventGridDomainTopic、Get-AzEventGridSubscription：
         - 新增新的選用參數 (Top、ODataQuery 和 NextLink) 以支援結果分頁和篩選條件。
     - Remove-AzureRmEventGridSubscription
@@ -1240,11 +1236,11 @@ ms.locfileid: "79036156"
     - 新的 Cmdlet
         - Get-AzVirtualNetworkGatewayVpnClientConnectionHealth
 * 新增 AvailablePrivateEndpointType
-    - 新的 Cmdlet 
+    - 新的 Cmdlet
         - Get-AzAvailablePrivateEndpointType
 * 新增 PrivatePrivateLinkService
-    - 新的 Cmdlet 
-        - Get-AzPrivateLinkService 
+    - 新的 Cmdlet
+        - Get-AzPrivateLinkService
         - New-AzPrivateLinkService
         - Remove-AzPrivateLinkService
         - New-AzPrivateLinkServiceIpConfig
@@ -1273,8 +1269,8 @@ ms.locfileid: "79036156"
         - 新增了參數 -PublicIpAddress 以接受一或多個 Public IP Address 物件
         - 新增了參數 -VirtualNetwork 以接受虛擬網路物件
         - 在防火牆物件中新增了 AddPublicIpAddress 和 RemovePublicIpAddress 方法 - 以接受 Public IP Address 物件作為輸入
-        - 參數 -PublicIpName 和 -VirtualNetworkName 已被取代 
-* 已更新下列功能命令：將 VpnClient AAD 驗證選項設為虛擬網路閘道資源。 
+        - 參數 -PublicIpName 和 -VirtualNetworkName 已被取代
+* 已更新下列功能命令：將 VpnClient AAD 驗證選項設為虛擬網路閘道資源。
     - 已更新 New-AzVirtualNetworkGateway：新增了選用參數 AadTenantUri,AadAudienceId,AadIssuerUri 以在閘道上設定 VpnClient AAD 驗證選項。
     - 已更新 Set-AzVirtualNetworkGateway：新增了選用參數 AadTenantUri,AadAudienceId,AadIssuerUri 以在閘道上設定 VpnClient AAD 驗證選項。
     - 已更新 Set-AzVirtualNetworkGateway：新增了選用的切換參數 RemoveAadAuthentication 以從閘道移除 VpnClient AAD 驗證選項。
@@ -1369,17 +1365,17 @@ ms.locfileid: "79036156"
     - **Get-AzApiManagementSchema** - 取得在 API 中設定的結構描述
     - **Remove-AzApiManagementSchema** - 移除在 API 中設定的結構描述
     - **Set-AzApiManagementSchema** - 更新在 API 中設定的結構描述
-* 已建立新的 Cmdlet 用以產生使用者權杖。 
+* 已建立新的 Cmdlet 用以產生使用者權杖。
     - **New-AzApiManagementUserToken** - 產生預設有效期為 8 小時的新使用者權杖。'GIT' 使用者的權杖可使用此 Cmdlet 產生。/
 * 已建立新的 Cmdlet 用以擷取網路狀態
     - **Get-AzApiManagementNetworkStatus** - 取得 API 管理服務相依資源的網路狀態連線。 這在將 ApiManagement 服務部署到虛擬網路和驗證是否有任何相依性中斷時，將可發揮效用。
-* 已更新 Cmdlet **New-AzApiManagement**，用以管理 ApiManagement 服務 
+* 已更新 Cmdlet **New-AzApiManagement**，用以管理 ApiManagement 服務
     - 已加入新的「使用量」SKU 的支援
     - 已加入為「使用量」SKU 開啟 'EnableClientCertificate' 旗標的支援
     - 新的 Cmdlet **New-AzApiManagementSslSetting** 允許在「後端」和「前端」設定 'TLS/SSL' 設定。 這也可用來在 ApiManagement 服務的「前端」設定「編碼器」 (例如 '3DES') 和 'ServerProtocols' (例如 'Http2')。
     - 已加入在 ApiManagement 服務上設定 'DeveloperPortal' 主機名稱的支援。
 * 已更新 Cmdlet **Get-AzApiManagementSsoToken**，以使用 'PsApiManagement' 物件作為輸入
-* 已更新 Cmdlet 以顯示內嵌錯誤訊息 
+* 已更新 Cmdlet 以顯示內嵌錯誤訊息
      > PS D:\github\azure-powershell> Set-AzApiManagementPolicy -Context  -PolicyFilePath C:\wrongpolicy.xml -ApiId httpbin Set-AzApiManagementPolicy :錯誤碼：ValidationError 錯誤訊息：有一或多個欄位包含不正確的值：錯誤詳細資料：[Code=ValidationError, Message=Error in element 'log-to-eventhub' on line 3, column 10:Logger not found, Target=log-to-eventhub]
 * 已更新 Cmdlet **Export-AzApiManagementApi**，以採用 'OpenApi 3.0' 格式匯出 API
 * 已更新 Cmdlet **Import-AzApiManagementApi**
@@ -1388,15 +1384,15 @@ ms.locfileid: "79036156"
     - 以覆寫任何文件中指定的 'ServiceUrl' 屬性。
 * 已更新 Cmdlet **Get-AzApiManagementPolicy**，以透過使用 'rawxml' 的非 XML 逸出「格式」傳回原則
 * 已更新 Cmdlet **Set-AzApiManagementPolicy**，以接受使用 'rawxml' 的非 XML 逸出「格式」和使用 'xml' 溢出的 XML 格式的原則
-* 已更新 Cmdlet **New-AzApiManagementApi** 
+* 已更新 Cmdlet **New-AzApiManagementApi**
     - 以透過 'OpenId' 授權伺服器設定 API。
     - 以在 'ApiVersionSet' 中建立 API
     - 以使用 'SourceApiId' 和 'SourceApiRevision' 複製 API。
-    - 能夠在 API 範圍設定 'SubscriptionRequired'。 
+    - 能夠在 API 範圍設定 'SubscriptionRequired'。
 * 已更新 Cmdlet **Set-AzApiManagementApi**
     - 以透過 'OpenId' 授權伺服器設定 API。
-    - 以在 'ApiVersionSet' 中更新 API    
-    - 能夠在 API 範圍設定 'SubscriptionRequired'。 
+    - 以在 'ApiVersionSet' 中更新 API
+    - 能夠在 API 範圍設定 'SubscriptionRequired'。
 * 已更新 Cmdlet **New-AzApiManagementRevision**
     - 以使用 'SourceApiRevision' 複製 (複製標記、產品、作業和原則) 現有的修訂。 新的修訂會採用父代的 'ApiId'。
     - 以提供 'ApiRevisionDescription'
@@ -1422,7 +1418,7 @@ ms.locfileid: "79036156"
     - 'Get-AzApiManagementAuthorizationServer'
     - 'Get-AzApiManagementBackend'
         > Get-AzApiManagementBackend -ResourceId /subscriptions/subid/resourceGroups/rgName/providers/Microsoft.ApiManagement/service/contoso/backends/servicefabric
-    - 'Get-AzApiManagementCertificate' 
+    - 'Get-AzApiManagementCertificate'
     - 'Remove-AzApiManagementApiVersionSet'
     - 'Remove-AzApiManagementSubscription'
 
@@ -1470,7 +1466,7 @@ ms.locfileid: "79036156"
     - 將新參數 ProximityPlacementGroupId 新增至下列 Cmdlet： New-AzAvailabilitySet   New-AzVMConfig   New-AzVmssConfig
 * 將 StorageAccountType 參數新增至 New-AzGalleryImageVersion。
 * New-AzGalleryImageVersion 的 TargetRegion 可包含 StorageAccountType。
-* 將 SkipShutdown 切換參數新增至 Stop-AzVM 和 Stop-AzVmss       
+* 將 SkipShutdown 切換參數新增至 Stop-AzVM 和 Stop-AzVmss
 * 重大變更
     - 將 Set-AzVMBootDiagnostics 變更為 Set-AzVMBootDiagnostic。
     - 將 Export-AzLogAnalyticThrottledRequests 變更為 Export-AzLogAnalyticThrottledRequests。
@@ -1505,7 +1501,7 @@ ms.locfileid: "79036156"
     - 具有 HDInsight 操作員角色的使用者不會受到影響。
 
 #### <a name="azmonitor"></a>Az.Monitor
-* SQR API 的新 Cmdlet (已排程的查詢規則)  
+* SQR API 的新 Cmdlet (已排程的查詢規則)
     - New-AzScheduledQueryRuleAlertingAction
     - New-AzScheduledQueryRuleAznsActionGroup
     - New-AzScheduledQueryRuleLogMetricTrigger
@@ -1603,7 +1599,7 @@ ms.locfileid: "79036156"
 * 已更新端點的說明文字，指出應該先建立資源，才能使用建立/更新事件訂用帳戶 Cmdlet。
 
 #### <a name="azeventhub"></a>Az.EventHub
-* 已針對命名空間的 NetworkRuleSet 新增 Cmdlet 
+* 已針對命名空間的 NetworkRuleSet 新增 Cmdlet
 
 #### <a name="azhdinsight"></a>Az.HDInsight
 * 已將 Cmdlet 中的複數名詞更新為單數，並已取代複數名稱。
@@ -1693,7 +1689,7 @@ ms.locfileid: "79036156"
 
 #### <a name="azcompute"></a>Az.Compute
 * 將 HyperVGeneration 參數新增至 New-AzDiskConfig 和 New-AzSnapshotConfig
-* 允許使用其他租用戶的資源庫映像來建立 VM。 
+* 允許使用其他租用戶的資源庫映像來建立 VM。
 
 #### <a name="azcontainerinstance"></a>Az.ContainerInstance
 * 已修正 New-AzContainerGroup 的 -Command 參數問題，其加入了尾端空白的引數
@@ -1775,7 +1771,7 @@ ms.locfileid: "79036156"
     - New-AzStorageAccountManagementPolicyRule
 
 #### <a name="azwebsites"></a>Az.Websites
-* 修正 ARM 範本錯誤 (bug)，防正使用 'New-AzWebApp -IncludeSourceWebAppSlots' 時發生中斷複製所有位置的情況 
+* 修正 ARM 範本錯誤 (bug)，防正使用 'New-AzWebApp -IncludeSourceWebAppSlots' 時發生中斷複製所有位置的情況
 
 ## <a name="150---march-2019"></a>1.5.0 - 2019 年 3 月
 #### <a name="azaccounts"></a>Az.Accounts
@@ -1844,7 +1840,7 @@ ms.locfileid: "79036156"
 * 為 ADL 刪除的項目列舉和還原新增 Cmdlet
 
 #### <a name="azeventhub"></a>Az.EventHub
-* 在 Eventhub 的 CaptureDescription 類別中，已將新的布林值屬性 SkipEmptyArchives 新增至 Skip Empty Archives 
+* 在 Eventhub 的 CaptureDescription 類別中，已將新的布林值屬性 SkipEmptyArchives 新增至 Skip Empty Archives
 
 #### <a name="azkeyvault"></a>Az.KeyVault
 * 修正 Set-AzKeyVaultSecret 的標記
@@ -1872,8 +1868,8 @@ ms.locfileid: "79036156"
 
 #### <a name="azoperationalinsights"></a>Az.OperationalInsights
 * 取得 ApplicationInsights 與新資料來源的其他支援。
-    - 已新增新 'ApplicationInsights' 類型，以支援指定工作區的取得特定和取得所有 ApplicationInsights 資料來源。 
-    - 已新增 New-AzOperationalInsightsApplicationInsightsDataSource Cmdlet 用來建立資料來源，透過指定的 Application-Insights 資源參數：訂用帳戶識別碼、resourceGroupName 和名稱。 
+    - 已新增新 'ApplicationInsights' 類型，以支援指定工作區的取得特定和取得所有 ApplicationInsights 資料來源。
+    - 已新增 New-AzOperationalInsightsApplicationInsightsDataSource Cmdlet 用來建立資料來源，透過指定的 Application-Insights 資源參數：訂用帳戶識別碼、resourceGroupName 和名稱。
 
 #### <a name="azresources"></a>Az.Resources
 * 修正 https://github.com/Azure/azure-powershell/issues/8166 的問題
@@ -1904,9 +1900,9 @@ Az.AnalysisServices 模組的正式運作。
 Az.RecoveryServices 模組的正式運作。
 
 #### <a name="azresources"></a>Az.Resources
-* 修正資源群組標記 
+* 修正資源群組標記
     - 如需詳細資訊，請參閱這裡： https://github.com/Azure/azure-powershell/issues/8166
-* 修正 `Get-AzureRmRoleAssignment`不遵守 -ErrorAction 的問題 
+* 修正 `Get-AzureRmRoleAssignment`不遵守 -ErrorAction 的問題
     - 如需詳細資訊，請參閱這裡： https://github.com/Azure/azure-powershell/issues/8235
 
 #### <a name="azsql"></a>Az.Sql
@@ -2211,7 +2207,7 @@ Az.RecoveryServices 模組的正式運作。
 
 ### <a name="azwebsites"></a>Az.Websites
 
-* Set-AzureRmWebApp 和 Set-AzureRmWebAppSlot 
+* Set-AzureRmWebApp 和 Set-AzureRmWebAppSlot
     - 已新增新的參數 (-AzureStoragePath)，指定要將 Azure 儲存體路徑掛接至 Windows 和 Linux 容器應用程式中。 使用新 Cmdlet New-AzureRmWebAppAzureStoragePath 的輸出作為參數來設定 Azure 儲存體路徑。
 
 ## <a name="061---november-2018"></a>0.6.1 - 2018 年 11 月
@@ -2239,7 +2235,7 @@ Az.RecoveryServices 模組的正式運作。
 ### <a name="aznetwork"></a>Az.Network
 * 已新增 Cmdlet：New-AzureRmApplicationGatewayCustomError、Add-AzureRmApplicationGatewayCustomError、Get-AzureRmApplicationGatewayCustomError、Set-AzureRmApplicationGatewayCustomError、Remove-AzureRmApplicationGatewayCustomError、Add-AzureRmApplicationGatewayHttpListenerCustomError、Get-AzureRmApplicationGatewayHttpListenerCustomError、Set-AzureRmApplicationGatewayHttpListenerCustomError、Remove-AzureRmApplicationGatewayHttpListenerCustomError
 * 已將 ICMP 加回支援的 AzureFirewall 網路通訊協定
-* 更新 Test-AzureRmNetworkWatcherConnectivity Cmdlet，在目的地識別碼、位址和連接埠上新增驗證。 
+* 更新 Test-AzureRmNetworkWatcherConnectivity Cmdlet，在目的地識別碼、位址和連接埠上新增驗證。
 * 修正 VirtualNetwork 對應中的記憶體使用量問題
 
 ### <a name="azrecoveryservicesbackup"></a>Az.RecoveryServices.Backup
@@ -2371,7 +2367,7 @@ Az.RecoveryServices 模組的正式運作。
     - Start-AzureStorageFileCopy
 * 支援取得特定位置的儲存體資源使用量，並針對取得全域儲存體資源使用量已過時的情況新增警告訊息。
     - Get-AzStorageUsage
-    
+
 #### <a name="azcognitiveservices"></a>Az.CognitiveServices
 * 在沒有現有帳戶的情況下支援 Get-AzCognitiveServicesAccountSkus。
 
