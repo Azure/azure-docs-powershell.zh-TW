@@ -3,13 +3,13 @@ title: 使用 Docker 中的 Azure PowerShell
 description: 如何使用預先安裝在 Docker 映像中的 Azure PowerShell。
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 03/10/2020
-ms.openlocfilehash: a5746b71cfc41f7c6283b0e95b0940ca4b594ec7
-ms.sourcegitcommit: fb95591c45bb5f12b98e0690938d18f2ec611897
+ms.date: 03/20/2020
+ms.openlocfilehash: b5ad201abcabbdc1a88db241b028d88f05054a14
+ms.sourcegitcommit: 104c90600e0c5eeb841b5a596ba7ebe60cc7f4fa
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79402675"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "79990543"
 ---
 # <a name="using-azure-powershell-in-docker"></a>使用 Docker 中的 Azure PowerShell
 
@@ -19,13 +19,13 @@ ms.locfileid: "79402675"
 
 發行的映像需要 Docker 17.05 或更新版本。 您也應該要能在沒有 `sudo` 或本機系統管理員權限的情況下執行 Docker。 請遵循 Docker 的官方[指示][install]以正確安裝 `docker`。
 
-已發行的容器是從官方 PowerShell 容器建置，然後新增一層 Az 模組。
+最新的容器映像包含最新版的 PowerShell，以及 Az 模組支援的最新 Azure PowerShell 模組。
 
-最新穩定映像包括：
+對於 Az 模組的每個新版本，我們會發行下列作業系統的映射：
 
-- Ubuntu 18.04
-- PowerShell 6.2.4 版
-- Azure PowerShell 最新 Az 模組
+- Ubuntu 18.04 (預設)
+- Debian 9
+- CentOs 7
 
 您可以在我們的 [Docker 映像][az image]頁面上找到可用映像的完整清單。
 
@@ -44,6 +44,8 @@ ms.locfileid: "79402675"
    ```console
    docker run -it mcr.microsoft.com/azure-powershell pwsh
    ```
+
+對於 Windows Docker 主機，必須啟用 Docker 檔案共用，才能讓 Windows 上的本機磁碟機與 Linux 容器共用。 如需詳細資訊，請參閱[開始使用適用於 Windows 的 Docker][file-sharing]。
 
 ### <a name="run-the-azure-powershell-container-interactively-using-host-authentication"></a>使用主機驗證以互動方式執行 azure-powershell 容器
 
@@ -71,3 +73,4 @@ docker rmi mcr.microsoft.com/azure-powershell
 [install]: https://docs.docker.com/engine/installation/
 [powershell image]: https://hub.docker.com/_/microsoft-powershell
 [az image]: https://hub.docker.com/_/microsoft-azure-powershell
+[file-sharing]: https://docs.docker.com/docker-for-windows/#file-sharing
