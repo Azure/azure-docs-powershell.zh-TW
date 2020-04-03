@@ -1341,7 +1341,7 @@ ms.locfileid: "80440498"
 * 修正了 New-AzApplicationGatewayPathRuleConfig 中的錯誤，防止進行重寫規則集合設定。
 * 修正了在 NetworkInterfaceIpConfiguration 中顯示 VirtualNetworkTaps 的問題
 * 修正了 Cortex Get Cmdlet 以列出所有部分
-* 修正了 ExpressRouteGateways 和 VpnGateway 的 VirtualHub 參考建立
+* 修正了 ExpressRouteGateways 和 VpnGatewayVirtualHub 的參考建立
 * 新增了 AzureFirewall 和 NatGateway 中對可用性區域的支援
 * 新增了 Cmdlet Get-AzNetworkServiceTag
 * 新增針對 Azure 防火牆的多個公用 IP 位址的支援
