@@ -4,14 +4,19 @@ description: 了解 Azure PowerShell 模組的最新更新資訊。
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: bee24af99da4b36e89cff9852c77214e2e09a542
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: a9c5394a5fac8a8a3de96925b3563776783ea9fe
+ms.sourcegitcommit: de813e8a4e3629a6fee6e87a0208c1f0362a16ca
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81740536"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82080193"
 ---
+# <a name="azure-powershell-release-notes"></a>Azure PowerShell 版本資訊
+
 ## <a name="380---april-2020"></a>3.8.0 - 2020 年 4 月
+### <a name="highlights-since-the-last-release"></a>上次發佈版本之後的更新重點
+* Az.Storage 支援的 PowerShell 版本：Windows PowerShell 5.1、PowerShell Core 6.2.4+、PowerShell 7
+
 #### <a name="azaccounts"></a>Az.Accounts
 * 更新 'Resolve-AzError' 中的 Azure PowerShell 問卷 URL [#11507]
 
@@ -23,7 +28,7 @@ ms.locfileid: "81740536"
 * 已修正 ChinaCDN 相關的定價 SKU 顯示
 
 #### <a name="azcognitiveservices"></a>Az.CognitiveServices
-* 支援身分識別、加密、UserOwnedStorage 
+* 支援身分識別、加密、UserOwnedStorage
 
 #### <a name="azcompute"></a>Az.Compute
 * 已新增 'Set-AzVmssOrchestrationServiceState' Cmdlet。
@@ -97,7 +102,7 @@ ms.locfileid: "81740536"
 * 建立/更新儲存體帳戶時，支援新的 SkuName StandardGZRS、StandardRAGZRS
     - 'New-AzStorageAccount'
     - 'Set-AzStorageAccount'
-* 支援 DataLake Gen2 
+* 支援 DataLake Gen2
     - 'New-AzDataLakeGen2Item'
     - 'Get-AzDataLakeGen2Item'
     - 'Get-AzDataLakeGen2ChildItem'
@@ -107,13 +112,31 @@ ms.locfileid: "81740536"
     - 'Get-AzDataLakeGen2ItemContent'
     - 'Remove-AzDataLakeGen2Item'
 
-# <a name="azure-powershell-release-notes"></a>Azure PowerShell 版本資訊
+## <a name="0100-preview---april-2020"></a>0.10.0-preview - 2020 年 4 月
+### <a name="general"></a>一般
+* Az 模組現已在 Azure Stack Hub 中提供預覽。 此模組具有 Linux 和 macOs 的跨平台相容性。 Azure Stack Hub 現在支援使用 Az 模組的 PowerShell Core，如需詳細資訊，請參閱[這裡](https://aka.ms/az4AzureStack)
+* Az 模組支援 2019-03-01-hybrid 設定檔：
+  - Az.Billing
+  - Az.Compute
+  - Az.DataBoxEdge
+  - Az.EventHub
+  - Az.IotHub
+  - Az.KeyVault
+  - Az.Monitor
+  - Az.Network
+  - Az.Resources
+  - Az.Storage
+  - Az.Websites
+* 已引進三個可搭配 Azure Stack Hub 且適用於 az 的新 PowerShell 模組，包括 Az.Databox、Az.IotHub 和 Az. EventHub
+* 命令維持不變，但有次要變更，例如將 AzureRM 變更為 Az
+* 您可以在[這裡](https://aka.ms/InstallASHPowerShell)找到 Azure Stack Hub 的 PowerShell 文件更新連結
+
 ## <a name="370---march-2020"></a>3.7.0 - 2020 年 3 月
 #### <a name="azaccounts"></a>Az.Accounts
 * 已修正 'Get-AzTenant'/'Get-AzDefault'/'Set-AzDefault' 在未登入時擲回 NullReferenceException [#10292]
 
 #### <a name="azcompute"></a>Az.Compute
-* 已將下列參數新增至 'New-AzDiskConfig' Cmdlet： 
+* 已將下列參數新增至 'New-AzDiskConfig' Cmdlet：
     - DiskIOPSReadOnly、DiskMBpsReadOnly、MaxSharesCount、GalleryImageReference
 * 允許 'New-AzGalleryImageVersion' Cmdlet 目標參數的加密屬性。
 * 已修正 'Set-AzVmss' -Reimage 和 'Invoke-AzVMReimage' Cmdlet 的 tempDisk 問題。 [#11354]
