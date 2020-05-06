@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.openlocfilehash: f54e982cd65513de4f64634f535cd70a9ec7b8a3
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "65534553"
 ---
 # <a name="sign-in-with-azure-powershell"></a>使用 Azure PowerShell 登入

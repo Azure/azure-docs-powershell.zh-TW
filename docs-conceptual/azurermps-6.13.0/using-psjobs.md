@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
 ms.openlocfilehash: beb7f0a89d2e254b348b79daf4f8d3bfdc562de5
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "65534198"
 ---
 # <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a>使用 PowerShell 作業平行執行 Cmdlet
@@ -69,7 +69,7 @@ MyVm                 MyVm   eastus Standard_DS1_v2 Windows    MyVm          Crea
 
 > [!NOTE]
 > 若 `Receive-Job` 旗標並未顯示，`-AsJob` 會從 Cmdlet 傳回結果。
-> 例如，`Do-Action -AsJob` 的 `Receive-Job` 結果與 `Do-Action` 結果的類型相同。
+> 例如，`Receive-Job` 的 `Do-Action -AsJob` 結果與 `Do-Action` 結果的類型相同。
 
 ```azurepowershell-interactive
 $vm = Receive-Job $job

@@ -9,25 +9,25 @@ ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
 ms.openlocfilehash: afa83a6258e57e961576b328e67fad634704dddf
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153142"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "63053353"
 ---
 # <a name="azure-stack-module-150"></a>Azure Stack 模組 1.5.0
 
 ## <a name="requirements"></a>需求：
 支援的最低 Azure Stack 版本為 1808 版。
 
-注意：如果您使用的是舊版，請安裝版本 1.4.0
+請注意：如果您使用的是舊版，請安裝版本 1.4.0
 
 ## <a name="known-issues"></a>已知問題：
 
 - New-AzsOffer 不允許建立具公用狀態的供應項目。 Set-AzsOffer Cmdlet 之後需要呼叫以變更狀態。
 - 必須重新部署才能移除 IP 集區
 
-## <a name="install"></a>Install
+## <a name="install"></a>安裝
 ```
 # Remove previous versions of AzureStack modules
 Uninstall-Module -Name AzureStack -Force 
@@ -91,7 +91,7 @@ Azure Stack 網狀架構管理員模組的預覽版本可讓系統管理員檢�
 - 建立新的 IP 集區
 
 
-### <a name="gallery"></a>資源庫
+### <a name="gallery"></a>主機庫
 Azure Stack 資源庫管理員模組的預覽版本可提供功能來管理 Azure Stack 市集中的資源庫項目。
 
 ### <a name="infrastructure-insights"></a>基礎結構深入解析

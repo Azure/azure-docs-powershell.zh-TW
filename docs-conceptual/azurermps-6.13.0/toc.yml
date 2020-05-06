@@ -1,6 +1,6 @@
 - name: Azure PowerShell
   href: overview.md
-- name: Install
+- name: 安裝
   items:
     - name: 使用 PowerShellGet 安裝
       href: install-azurerm-ps.md

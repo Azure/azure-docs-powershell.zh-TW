@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 07/26/2017
 ms.openlocfilehash: 1491f3f23deb767b754a98b3fab616356daa71f3
-ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "67863773"
 ---
 # <a name="release-notes"></a>版本資訊
@@ -43,7 +43,7 @@ ms.locfileid: "67863773"
     - 新的 cmdlet：'Get-AzureRmVMRunCommandDocument' 會顯示可用的執行命令文件
   * 將 'StorageAccountType' 參數新增至 Set-AzureRmDataDisk
   * 可用性區域支援虛擬機器、VM 擴展集和磁碟
-    - 新的 參數：'Zone' 已新增至 New-AzureRmVM、New-AzureRmVMConfig、New-AzureRmVmssConfig、New-AzureRmDiskConfig
+    - 新的參數：'Zone' 已新增至 New-AzureRmVM、New-AzureRmVMConfig、New-AzureRmVmssConfig、New-AzureRmDiskConfig
   * VM 擴展集輪流升級功能：
     - 新的 cmdlet：'Start-AzureRmVmssRollingOSUpgrade' 會叫用 VM 擴展集的 OS 輪流升級
     - 新的 cmdlet：'Set-AzureRmVmssRollingUpgradePolicy' 會設定 VM 擴展集輪流升級的升級原則。
@@ -55,7 +55,7 @@ ms.locfileid: "67863773"
     - 新的 cmdlet：'Set-AzureRmVmssDiskEncryptionExtension' 會啟用 VM 擴展集上的磁碟加密
     - 新的 cmdlet：'Disable-AzureRmVmssDiskEncryption' 會停用 VM 擴展集上的磁碟加密
     - 新的 cmdlet：'Get-AzureRmVmssDiskEncryptionStatus' 會顯示 VM 擴展集的磁碟加密狀態
-    - 新的 cmdlet：'Get-AzureRmVmssVMDiskEncryptionStatus' 會顯示 VM 擴展集的磁碟加密狀態
+    - 新的 cmdlet：'Get-AzureRmVmssVMDiskEncryptionStatus' 會顯示 VM 擴展集中 VM 的磁碟加密狀態
 * ContainerInstance
   * 新增 Azure Container 執行個體的 PowerShell Cmdlet
     - New-AzureRmContainerGroup
@@ -96,9 +96,9 @@ ms.locfileid: "67863773"
     * Undo-AzureKeyVaultCertificateRemoval
 * 網路
   * 已將端點服務的支援新增至虛擬網路子網路
-    - 更新了 Add-AzureRmVirtualSubnetConfig：已新增選用參數 -ServiceEndpoint
-    - 更新了 New-AzureRmVirtualSubnetConfig：已新增選用參數 -ServiceEndpoint
-    - 更新了 Set-AzureRmVirtualSubnetConfig：已新增選用參數 -ServiceEndpoint
+    - 已更新 Add-AzureRmVirtualSubnetConfig：已新增可選的參數 -ServiceEndpoint
+    - 已更新 New-AzureRmVirtualSubnetConfig：已新增可選的參數 -ServiceEndpoint
+    - 已更新 Set-AzureRmVirtualSubnetConfig：已新增可選的參數 -ServiceEndpoint
   * 已新增可列出位置中可用端點服務的 cmdlet
     - Get-AzureRmVirtualNetworkAvailableEndpointService
   * 已將可設定以 RADIUS 作為基礎的外部 P2S 驗證新增至下列 commandlet
@@ -109,41 +109,41 @@ ms.locfileid: "67863773"
     - New-AzureRmVpnClientConfiguration
     - Get-AzureRmVpnClientConfiguration
   * 已將 SKU 參數的支援新增至公用 IP 位址與 Load Balancer
-    - 更新了 New-AzureRMLoadBalancer：已新增選用參數 -Sku
-    - 更新了 New-AzureRMPublicIpAddress：已新增選用參數 -Sku
+    - 已更新 New-AzureRMLoadBalancer：已新增選擇性的參數 -Sku
+    - 已更新 New-AzureRMPublicIpAddress：已新增選擇性的參數 -Sku
   * 已將 DisableOutboundSNAT 的支援新增至 Load Balancer 規則
-    - 更新了 New-AzureRMLoadBalancerRuleConfig：已新增選用參數 DisableOutboundSNAT
-    - 更新了 Add-AzureRMLoadBalancerRuleConfig：已新增選用參數 DisableOutboundSNAT
-    - 更新了 Set-AzureRMLoadBalancerRuleConfig：已新增選用參數 DisableOutboundSNAT
+    - 已更新 New-AzureRMLoadBalancerRuleConfig：已新增選擇性參數 DisableOutboundSNAT
+    - 已更新 Add-AzureRMLoadBalancerRuleConfig：已新增選擇性參數 DisableOutboundSNAT
+    - 已更新 Set-AzureRMLoadBalancerRuleConfig：已新增選擇性參數 DisableOutboundSNAT
   * 已新增 IkeV2 P2S 的支援
-    - 更新了 New-AzureRmVirtualNetworkGateway：已將選用參數 -VpnClientProtocol 預設新增至 [ "SSTP", "IkeV2" ]
-    - 更新了 Set-AzureRmVirtualNetworkGateway：已新增選用參數 -VpnClientProtocol
+    - 已更新 New-AzureRmVirtualNetworkGateway：已將選擇性參數 -VpnClientProtocol, 預設新增至 [ "SSTP", "IkeV2" ]
+    - 已更新 Set-AzureRmVirtualNetworkGateway：已新增選擇性參數 -VpnClientProtocol
   * 已在網路安全性規則和有效網路安全性規則中新增多重值規則的支援
-    - 更新了 Add-AzureRmNetworkSecurityRuleConfig：已更新 SourcePortRange、DestinationPortRange、SourceAddressPrefix 參數以接受字串清單
-    - 更新了 New-AzureRmNetworkSecurityRuleConfig：已更新 SourcePortRange、DestinationPortRange、SourceAddressPrefix 參數以接受字串清單
-    - 更新了 Set-AzureRmNetworkSecurityRuleConfig：已更新 SourcePortRange、DestinationPortRange、SourceAddressPrefix 參數以接受字串清單
-    - 更新了 Add-AzureRmNetworkSecurityRuleConfig：已更新 SourcePortRange、DestinationPortRange、SourceAddressPrefix 參數以接受字串清單
-    - 更新了 New-AzureRmNetworkSecurityGroup：已更新 SecurityRules 參數以接受 SourcePortRange、DestinationPortRange、SourceAddressPrefix 參數，這些是 PSSecurityRule 物件中的字串清單
-    - 更新了 Get-AzureRmEffectiveNetworkSecurityGroup：已新增 TagMap 參數
-    - 更新了 Get-AzureRmEffectiveNetworkSecurityGroup：已使用 SourcePortRange、DestinationPortRange、SourceAddressPrefix 參數更新傳回的 PSEffectiveSecurityRule 物件，這些是字串清單。
+    - 已更新 Add-AzureRmNetworkSecurityRuleConfig：已更新 SourcePortRange、DestinationPortRange、SourceAddressPrefix 參數以接受字串清單
+    - 已更新 New-AzureRmNetworkSecurityRuleConfig：已更新 SourcePortRange、DestinationPortRange、SourceAddressPrefix 參數以接受字串清單
+    - 已更新 Set-AzureRmNetworkSecurityRuleConfig：已更新 SourcePortRange、DestinationPortRange、SourceAddressPrefix 參數以接受字串清單
+    - 已更新 Add-AzureRmNetworkSecurityRuleConfig：已更新 SourcePortRange、DestinationPortRange、SourceAddressPrefix 參數以接受字串清單
+    - 已更新 New-AzureRmNetworkSecurityGroup：已更新 SecurityRules 參數以接受 SourcePortRange、DestinationPortRange、SourceAddressPrefix 參數，這些是 PSSecurityRule 物件中的字串清單
+    - 已更新 Get-AzureRmEffectiveNetworkSecurityGroup：已新增參數 TagMap
+    - 已更新 Get-AzureRmEffectiveNetworkSecurityGroup：已使用 SourcePortRange、DestinationPortRange、SourceAddressPrefix 參數更新傳回的 PSEffectiveSecurityRule 物件，這些是字串清單。
   * 已新增虛擬網路 DDoS 保護的支援
-    - 更新了 New-AzureRmVirtualNetwork：已新增切換參數 EnableDDoSProtection 和 EnableVmProtection
+    - 已更新 New-AzureRmVirtualNetwork：已新增切換參數 EnableDDoSProtection 和 EnableVmProtection
     - 已新增 PSVirtualNetwork 物件中的 EnableDDoSProtection 和 EnableVmProtection 屬性
   * 已新增高可用內部 Load Balancer 的支援
-    - 更新了 Add-AzureRmLoadBalancerRuleConfig：已將 All 新增為通訊協定參數可接受的值
-    - 更新了 New-AzureRmLoadBalancerRuleConfig：已將 All 新增為通訊協定參數可接受的值
-    - 更新了 Set-AzureRmLoadBalancerRuleConfig：已將 All 新增為通訊協定參數可接受的值
+    - 已更新 Add-AzureRmLoadBalancerRuleConfig：已新增 All 作為通訊協定參數的可接受值
+    - 已更新 New-AzureRmLoadBalancerRuleConfig：已新增 All 作為通訊協定參數的可接受值
+    - 已更新 Set-AzureRmLoadBalancerRuleConfig：已新增 All 作為通訊協定參數的可接受值
   * 已新增應用程式安全性群組的支援
     - 已新增 New-AzureRmApplicationSecurityGroup
     - 已新增 Get-AzureRmApplicationSecurityGroup
     - 已新增 Remove-AzureRmApplicationSecurityGroup
-    - 更新了 New-AzureRmNetworkInterface：已新增 ApplicationSecurityGroup 和 ApplicationSecurityGroupId 選擇性參數
-    - 更新了 New-AzureRmNetworkInterfaceIpConfig：已新增 ApplicationSecurityGroup 和 ApplicationSecurityGroupId 選擇性參數
-    - 更新了 Add-AzureRmNetworkInterfaceIpConfig：已新增 ApplicationSecurityGroup 和 ApplicationSecurityGroupId 選擇性參數
-    - 更新了 Set-AzureRmNetworkInterfaceIpConfig：已新增 ApplicationSecurityGroup 和 ApplicationSecurityGroupId 選擇性參數
-    - 更新了 New-AzureRmNetworkSecurityRuleConfig：已新增 SourceApplicationSecurityGroup、SourceApplicationSecurityGroupId、DestinationApplicationSecurityGroup 和 DestinationApplicationSecurityGroupId 選擇性參數
-    - 更新了 Add-AzureRmNetworkSecurityRuleConfig：已新增 SourceApplicationSecurityGroup、SourceApplicationSecurityGroupId、DestinationApplicationSecurityGroup 和 DestinationApplicationSecurityGroupId 選擇性參數
-    - 更新了 Set-AzureRmNetworkSecurityRuleConfig：已新增 SourceApplicationSecurityGroup、SourceApplicationSecurityGroupId、DestinationApplicationSecurityGroup 和 DestinationApplicationSecurityGroupId 選擇性參數
+    - 已更新 New-AzureRmNetworkInterface：已新增 ApplicationSecurityGroup 和 ApplicationSecurityGroupId 選擇性參數
+    - 已更新 New-AzureRmNetworkInterfaceIpConfig：已新增 ApplicationSecurityGroup 和 ApplicationSecurityGroupId 選擇性參數
+    - 已更新 Add-AzureRmNetworkInterfaceIpConfig：已新增 ApplicationSecurityGroup 和 ApplicationSecurityGroupId 選擇性參數
+    - 已更新 Set-AzureRmNetworkInterfaceIpConfig：已新增 ApplicationSecurityGroup 和 ApplicationSecurityGroupId 選擇性參數
+    - 已更新 New-AzureRmNetworkSecurityRuleConfig：已新增 SourceApplicationSecurityGroup、SourceApplicationSecurityGroupId、DestinationApplicationSecurityGroup 和 DestinationApplicationSecurityGroupId 選擇性參數
+    - 已更新 Add-AzureRmNetworkSecurityRuleConfig：已新增 SourceApplicationSecurityGroup、SourceApplicationSecurityGroupId、DestinationApplicationSecurityGroup 和 DestinationApplicationSecurityGroupId 選擇性參數
+    - 已更新 New-AzureRmNetworkSecurityRuleConfig：已新增 SourceApplicationSecurityGroup、SourceApplicationSecurityGroupId、DestinationApplicationSecurityGroup 和 DestinationApplicationSecurityGroupId 選擇性參數
   * 已新增 VpnDeviceConfiguration 指令碼的新命令
     - Get-AzureRmVirtualNetworkGatewaySupportedVpnDevices
     - Get-AzureRmVirtualNetworkGatewayConnectionVpnDeviceConfigScript
@@ -221,8 +221,8 @@ ms.locfileid: "67863773"
   * 支援在 StartAzureAutomationDscCompilationJob 與 ImportAzureAutomationDscNodeConfiguration 中新增的 NodeConfiguration 組建版本設定
   * 修正現有問題的錯誤 (bug) - 修正別名問題 #3775，以及修正 runOn 別名和 HybridWorkers 的支援。
 * 計算
-  * Set-AzureRmVMAEMExtension：針對新的進階磁碟大小新增支援
-  * Set-AzureRmVMAEMExtension：新增 M 系列的支援
+  * Set-AzureRmVMAEMExtension：新增對新高階磁碟大小的支援
+  * Set-AzureRmVMAEMExtension：新增對 M 系列的支援
   * 將 ForceUpdateTag 參數新增至 Add-AzureRmVmssExtension
   * 將 Primary 參數新增至 New-AzureRmVmssIpConfig
   * 將 EnableAcceleratedNetworking 參數新增至 Add-AzureRmVmssNetworkInterfaceConfig
@@ -244,8 +244,8 @@ ms.locfileid: "67863773"
 * 網路
     * 新增了 IPv6 支援與新的選擇性參數 -PeerAddressType
       * New-AzureRmExpressRouteCircuitPeeringConfig：
-      * Set-AzureRmExpressRouteCircuitPeeringConfig：已新增 IPv6 支援。 新增了新的選擇性參數
-      * Remove-AzureRmExpressRouteCircuitPeeringConfig：已新增 IPv6 支援。 新增了新的選擇性參數
+      * Set-AzureRmExpressRouteCircuitPeeringConfig：新增了 IPv6 支援。 新增了新的選擇性參數
+      * Remove-AzureRmExpressRouteCircuitPeeringConfig：新增了 IPv6 支援。 新增了新的選擇性參數
     * 將參數 -ProbeEnabled 標示為已淘汰
       - Add-AzureRmApplicationGatewayBackendHttpSettings
       - New-AzureRmApplicationGatewayBackendHttpSettings
@@ -385,10 +385,10 @@ ms.locfileid: "67863773"
 * 深入解析
     * 問題 #4215 (變更要求) 移除 Get-AzureRmLog Cmdlet 的 15 天期間限制。 此外亦小幅變更了單元測試名稱。
     * 已針對 Get-AzureRmLog 修正問題 #3957
-        - 問題 1：後端傳回的記錄，每頁 200 筆，透過接續 Token 連結下一頁。 客戶會看到 Cmdlet 只傳回 200 筆記錄，但確知應還有更多記錄。 除非 MaxEvents 小於 200，否則不論客戶設定的值為何，都會發生這種情形。
-        - 問題 2：文件包含不正確的 Cmdlet 相關資料，例如：預設期間是 1 小時。
-        - 修正問題 1：Cmdlet 現在會遵循後端傳回的接續 Token，直到達到 MaxEvents 或集合的結束為止。<br>MaxEvents 的預設值為 1000，最大值為 100000。 凡 MaxEvents 值小於 1 都會忽略，並改為使用預設值。 這些值和行為並未變更，現在都已正確地記錄。<br>由於 Cmdlet 名稱未說明相關事件，而只提供了記錄，因此已新增 MaxEvents 別名 -MaxRecords-。
-        - 修正問題 2：文件包含正確及更詳細的資訊：新的別名、正確的期間、正確的預設值、最小值和最大值。
+        - 問題 #1：後端傳回的記錄，每頁 200 筆，透過接續 Token 連結下一頁。 客戶會看到 Cmdlet 只傳回 200 筆記錄，但確知應還有更多記錄。 除非 MaxEvents 小於 200，否則不論客戶設定的值為何，都會發生這種情形。
+        - 問題 #2：文件包含不正確的 Cmdlet 相關資料，例如：預設期間是 1 小時。
+        - 修正 #1：Cmdlet 現在會遵循後端傳回的接續 Token，直到達到 MaxEvents 或集合的結束為止。<br>MaxEvents 的預設值為 1000，最大值為 100000。 凡 MaxEvents 值小於 1 都會忽略，並改為使用預設值。 這些值和行為並未變更，現在都已正確地記錄。<br>由於 Cmdlet 名稱未說明相關事件，而只提供了記錄，因此已新增 MaxEvents 別名 -MaxRecords-。
+        - 修正 #2：文件包含正確及更詳細的資訊：新的別名、正確的期間、正確的預設值、最小值和最大值。
 * KeyVault
     * 將 -UserPrincipalName 指定到 Set-AzureRMKeyVaultAccessPolicy 和 Remove-AzureRMKeyVaultAccessPolicy Cmdlet 時，請從目錄查詢中移除電子郵件地址。
       - 兩個 Cmdlet 現在會有適當的 -EmailAddress 參數，在需要查詢電子郵件地址時可供使用，而不使用 -UserPrincipalName 參數。  如果目錄中有多個相符的電子郵件地址，則此 Cmdlet 的電子郵件地址將會失效。
@@ -401,8 +401,8 @@ ms.locfileid: "67863773"
             - Add-AzureRmApplicationGatewaySslPolicy
             - New-AzureRmApplicationGatewaySslPolicy
             - Set-AzureRmApplicationGatewaySslPolicy
-        - 已新增 Get-AzureRmApplicationGatewayAvailableSslOptions (別名：List-AzureRmApplicationGatewayAvailableSslOptions)
-        - 已新增 Get-AzureRmApplicationGatewaySslPredefinedPolicy (別名：List-AzureRmApplicationGatewaySslPredefinedPolicy)
+        - 新增 Get-AzureRmApplicationGatewayAvailableSslOptions (別名：List-AzureRmApplicationGatewayAvailableSslOptions)
+        - 新增 Get AzureRmApplicationGatewaySslPredefinedPolicy (別名：List-AzureRmApplicationGatewaySslPredefinedPolicy)
     * 應用程式閘道中新增重新導向支援
         - 新增 Add-AzureRmApplicationGatewayRedirectConfiguration
         - 新增 Get-AzureRmApplicationGatewayRedirectConfiguration
@@ -461,13 +461,13 @@ ms.locfileid: "67863773"
 ## <a name="20170607---version-410"></a>2017.06.07 - 版本 4.1.0
 * AnalysisServices
     * 新增的 SKU：B1、B2、S0
-    * 新增相應增加/減少支援
+    * 新增擴大/縮小支援
 * CognitiveServices
     * 更新在建立認知服務資源時的授權合約詳細顯示內容
 * 計算
     * 針對具有多個受控磁碟的虛擬機器，修正 Test-AzureRmVMAEMExtension
-    * 已更新 Set-AzureRmVMAEMExtension：新增進階受控磁碟的快取資訊
-    * Add-AzureRmVhd：VHD 大小限制已增加至 4TB。
+    * 更新 Set-AzureRmVMAEMExtension：新增進階受控磁碟的快取資訊
+    * Add-AzureRmVhd：vhd 的大小限制會增加至 4TB。
     * Stop-AzureRmVM：釐清 STayProvisioned 參數的文件
     * New-AzureRmDiskUpdateConfig
       * 已取代的參數 CreateOption、StorageAccountId、ImageReference、SourceUri、SourceResourceId
@@ -524,7 +524,7 @@ ms.locfileid: "67863773"
     * 新監視器設定「MonitorIntervalInSeconds」、「MonitorTimeoutInSeconds」、「MonitorToleratedNumberOfFailures」
     * 新監視器通訊協定「TCP」
 * ServiceManagement
-    * Add-AzureVhd：VHD 大小限制已增加至 4TB。
+    * Add-AzureVhd：vhd 的大小限制會增加至 4TB。
     * New-AzureBGPPeering：支援 LegacyMode
 * Azure.Storage
     * 針對可接受萬用字元的參數更新說明，並更新 StorageContext 類型
@@ -575,7 +575,7 @@ ms.locfileid: "67863773"
 * DataLakeAnalytics
   - 新增取得和列出目錄套件的支援
   - 新增從更深層的上階列出下列目錄項目的支援：
-    + 資料表
+    + Table
     + TVF
     + 檢視
     + 統計資料
@@ -597,7 +597,7 @@ ms.locfileid: "67863773"
     + 現在會傳回包含 statusCode、requestId，以及最近所建立/更新資源的單一物件 (而非先前的清單)。
     + 狀態碼會遵循要求所傳回的狀態，先前一律是「良好」。
   - New-AzureRmAutoscaleRule
-    + 已擴充 ScaleActionType 參數，現在它會接收下列值：ChangeCount、PercentChangeCount 和 ExactCount。
+    + 已擴充 ScaleActionType 參數，現在它會接收下列值：ChangeCount、PercentChangeCount、ExactCount。
   - Remove-AzureRmAutoscaleSetting
     + 輸出中的 statusCode 會遵循要求所傳回的 statusCode。 先前一律是「良好」。
   - Get-AzureRMLogProfile
@@ -609,14 +609,14 @@ ms.locfileid: "67863773"
   - Get-AzureRmMetricDefinition
     + 輸出仍是清單，但清單的結構已變更。
   - Get-AzureRmMetric
-    + 呼叫已變更。 新的語法為：Get-AzureRmMetric ResourceId [MetricNames [TimeGrain] [AggregationType] [StartTime] [EndTime]] [DetailedOutput]
+    + 呼叫已變更。 新的語法如下：Get-AzureRmMetric ResourceId [MetricNames [TimeGrain] [AggregationType] [StartTime] [EndTime]] [DetailedOutput]
     + 輸出是清單，但其元素的結構已變更。
 * KeyVault
   - 新增備份/還原 KeyVault 密碼的支援
     + 可以對密碼進行備份和還原，以符合目前對於金鑰所支援的功能
 
   - 金鑰和密碼的備份 Cmdlet 現在接受以對應的物件做為輸入參數
-    + 呼叫端可鏈結擷取和備份作業：Get-AzureKeyVaultKey -VaultName myVault -Name myKey | Backup-AzureKeyVaultKey
+    + 呼叫端可鏈結擷取和備份作業︰Get-AzureKeyVaultKey -VaultName myVault -Name myKey | Backup-AzureKeyVaultKey
 
   - 備份 Cmdlet 現在支援用於覆寫現有檔案的 -Force 參數
     + 請注意，嘗試覆寫現有檔案將不再會擲回，而是改為提示使用者選擇繼續的方式。
@@ -663,7 +663,7 @@ ms.locfileid: "67863773"
     + 使用者現在可以使用巢狀部署以部署至不同的資源群組。
 * ServiceBus
 
-  - 錯誤 (bug) 修正：ServiceBus 佇列物件屬性值已設為 Null，該物件是做為 Set-AzureRmServiceBusQueue Cmdlet 中的輸入參數使用以更新佇列。
+  - 錯誤修正：ServiceBus 佇列物件屬性值已設為 Null，該物件是做為 Set-AzureRmServiceBusQueue Cmdlet 中的輸入參數使用以更新佇列。
     - 受影響的屬性包括 LockDuration、EntityAvailabilityStatus、DuplicateDetectionHistoryTimeWindow、MaxDeliveryCount 和 MessageCount
 * ServiceFabric
 

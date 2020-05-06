@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/22/2019
 ms.openlocfilehash: 7f22a420068db87fa2c3c007bd36f515384162fb
-ms.sourcegitcommit: ad7677d703a8512d371d3123dc7e541156b95cb8
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "72814236"
 ---
 # <a name="install-the-azure-powershell-module"></a>安裝 Azure PowerShell 模組
@@ -139,7 +139,7 @@ Get-InstalledModule -Name Az -AllVersions | select Name,Version
 
 若想移除 Azure PowerShell 版本，請參閱[解除安裝 Azure PowerShell 模組](uninstall-az-ps.md)。
 
-您可使用 `-RequiredVersion` 引數來安裝或載入特定版本的 `Az` 模組：
+您可使用 `Az` 引數來安裝或載入特定版本的 `-RequiredVersion` 模組：
 
 ```powershell-interactive
 # Install Az version 0.7.0

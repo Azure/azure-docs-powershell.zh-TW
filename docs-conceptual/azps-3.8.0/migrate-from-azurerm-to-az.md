@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/10/2019
 ms.openlocfilehash: 02b39653ebb4aa0f74d2340a7be7b35e08d5e44d
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81740094"
 ---
 # <a name="migrate-azure-powershell-from-azurerm-to-az"></a>將 Azure PowerShell 從 AzureRM 移轉至 Az
@@ -62,7 +62,7 @@ Enable-AzureRmAlias -Scope CurrentUser
 ```
 
 別名讓您能夠使用舊的 Cmdlet 名稱搭配已安裝的 Az 模組。 這些別名會寫入至所選範圍的設定檔。 如果沒有設定檔存在，則會建立一個。
-使用大於 `CurrentUser` 的 `-Scope` 時，必須具備適當的權限，才能建立或更新對應的設定檔。
+使用大於 `-Scope` 的 `CurrentUser` 時，必須具備適當的權限，才能建立或更新對應的設定檔。
 
 > [!IMPORTANT]
 > __只有__ Cmdlet 名稱會使用別名 - 模組名稱並不會。 如果您使用 `#Requires`、`Import-Module`、`.psd1` 中的相依性清單，或完整的 Cmdlet 名稱，此時請確實依照[重大變更清單](migrate-az-1.0.0.md)中列出的模組名稱相關程序加以移轉。
@@ -87,4 +87,4 @@ Az 模組已變更、新增部分參數名稱，或將其設為必要項目。 C
 一旦您完成移轉，且不再依賴別名行為時，建議您停用別名。 此作業可透過 [Disable-AzureRmAlias](/powershell/module/az.accounts/disable-azurermalias) Cmdlet 來完成。
 
 > [!IMPORTANT]
-> 執行此 Cmdlet 時，請__確實__針對您已為其叫用 `Enable-AzureRmAlias` 的每個 `-Scope` 叫用 Cmdlet，否則您的系統上仍可能會有依賴別名行為的指令碼。
+> 執行此 Cmdlet 時，請__確實__針對您已為其叫用 `-Scope` 的每個 `Enable-AzureRmAlias` 叫用 Cmdlet，否則您的系統上仍可能會有依賴別名行為的指令碼。

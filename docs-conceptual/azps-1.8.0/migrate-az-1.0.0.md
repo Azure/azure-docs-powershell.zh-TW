@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2019
 ms.openlocfilehash: ea7593cf2b753b210ff2955b7bd450030ad83596
-ms.sourcegitcommit: f9445d1525eac8c165637e1a80fbc92b1ab005c2
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/16/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "75035824"
 ---
 # <a name="breaking-changes-for-az-100"></a>Az 1.0.0 的重大變更
@@ -55,7 +55,7 @@ ms.locfileid: "75035824"
 
 ### <a name="cmdlet-noun-prefix-changes"></a>Cmdlet 名詞前置詞的變更
 
-在 AzureRM 模組中，Cmdlet 使用 `AzureRM` 或 `Azure` 作為名詞前置詞。  Az 則將 Cmdlet 名稱予以簡化和標準化，讓所有 Cmdlet皆使用 'Az' 作為其 Cmdlet 名詞前置詞。 例如︰
+在 AzureRM 模組中，Cmdlet 使用 `AzureRM` 或 `Azure` 作為名詞前置詞。  Az 則將 Cmdlet 名稱予以簡化和標準化，讓所有 Cmdlet皆使用 'Az' 作為其 Cmdlet 名詞前置詞。 例如：
 
 ```azurepowershell-interactive
 Get-AzureRMVM
@@ -122,7 +122,7 @@ Get-AzureRmStorageAccount | Get-AzureStorageContainer | Get-AzureStorageBlob
 
 #### <a name="migrating-requires-and-import-module-statements"></a>移轉 #Requires 和 Import-Module 陳述式
 
-使用 `#Requires` 或 `Import-Module` 來宣告 AzureRM 模組相依性的指令碼，必須更新為使用新的模組名稱。 例如︰
+使用 `#Requires` 或 `Import-Module` 來宣告 AzureRM 模組相依性的指令碼，必須更新為使用新的模組名稱。 例如：
 
 ```azurepowershell-interactive
 #Requires -Module AzureRM.Compute
@@ -209,31 +209,31 @@ RequiredModules = @(@{ModuleName="Az.Profile"; ModuleVersion="1.0.0"})
   - Import-AzureRmApiManagementHostnameCertificate
   - 請改為使用 **Set-AzApiManagement** Cmdlet 來設定這些屬性
 - 已移除下列屬性：
-  - 已從 `PsApiManagementContext` 移除 `PsApiManagementHostnameConfiguration` 類型的 `PortalHostnameConfiguration`、`ProxyHostnameConfiguration`、`ManagementHostnameConfiguration` 和 `ScmHostnameConfiguration` 屬性。 請改為使用 `PsApiManagementCustomHostNameConfiguration` 類型的 `PortalCustomHostnameConfiguration`、`ProxyCustomHostnameConfiguration`、`ManagementCustomHostnameConfiguration` 和 `ScmCustomHostnameConfiguration`。
+  - 已從 `PortalHostnameConfiguration` 移除 `ProxyHostnameConfiguration` 類型的 `ManagementHostnameConfiguration`、`ScmHostnameConfiguration`、`PsApiManagementHostnameConfiguration` 和 `PsApiManagementContext` 屬性。 請改為使用 `PortalCustomHostnameConfiguration` 類型的 `ProxyCustomHostnameConfiguration`、`ManagementCustomHostnameConfiguration`、`ScmCustomHostnameConfiguration` 和 `PsApiManagementCustomHostNameConfiguration`。
   - 已從 PsApiManagementContext 移除 `StaticIPs` 屬性。 此屬性已分割為 `PublicIPAddresses` 和 `PrivateIPAddresses`。
   - 已從 New-AzureApiManagementVirtualNetwork Cmdlet 移除必要的 `Location` 屬性。
 
 ### <a name="azbilling-previously-azurermbilling-azurermconsumption-and-azurermusageaggregates"></a>Az.Billing (先前是 AzureRM.Billing、AzureRM.Consumption 和 AzureRM.UsageAggregates)
 
-- 已從 `Get-AzConsumptionUsageDetail` Cmdlet 移除 `InvoiceName` 參數。  指令碼必須針對發票使用其他身分識別參數。
+- 已從 `InvoiceName` Cmdlet 移除 `Get-AzConsumptionUsageDetail` 參數。  指令碼必須針對發票使用其他身分識別參數。
 
 ### <a name="azcognitiveservices-previously-azurermcognitiveservices"></a>Az.CognitiveServices (先前是 AzureRM.CognitiveServices)
 
-- 已從 `Get-AzCognitiveServicesAccountSkus` Cmdlet 移除 `GetSkusWithAccountParamSetName` 參數集。  您必須依帳戶類型和位置來取得 SKU，而非使用 ResourceGroupName 和帳戶名稱來取得。
+- 已從 `GetSkusWithAccountParamSetName` Cmdlet 移除 `Get-AzCognitiveServicesAccountSkus` 參數集。  您必須依帳戶類型和位置來取得 SKU，而非使用 ResourceGroupName 和帳戶名稱來取得。
 
 ### <a name="azcompute-previously-azurermcompute"></a>Az.Compute (先前是 AzureRM.Compute)
 
-- 已從 `PSVirtualMachine` 和 `PSVirtualMachineScaleSet` 物件中的 `Identity` 屬性移除 `IdentityIds`。指令碼不應再使用這個欄位的值來決定處理方式。
-- `PSVirtualMachineScaleSetVM` 物件的 `InstanceView` 屬性，其類型已從 `VirtualMachineInstanceView` 變更為 `VirtualMachineScaleSetVMInstanceView`
-- 已從 `UpgradePolicy` 屬性移除 `AutoOSUpgradePolicy` 和 `AutomaticOSUpgrade` 屬性
-- `PSSnapshotUpdate` 物件中的 `Sku` 屬性，其類型已從 `DiskSku` 變更為 `SnapshotSku`
-- 已從 `Add-AzVMDataDisk` Cmdlet 移除 `VmScaleSetVMParameterSet`，您無法再個別地將資料磁碟新增至擴展集 VM。
+- 已從 `IdentityIds` 和 `Identity` 物件中的 `PSVirtualMachine` 屬性移除 `PSVirtualMachineScaleSet`。指令碼不應再使用這個欄位的值來決定處理方式。
+- `InstanceView` 物件的 `PSVirtualMachineScaleSetVM` 屬性，其類型已從 `VirtualMachineInstanceView` 變更為 `VirtualMachineScaleSetVMInstanceView`
+- 已從 `AutoOSUpgradePolicy` 屬性移除 `AutomaticOSUpgrade` 和 `UpgradePolicy` 屬性
+- `Sku` 物件中的 `PSSnapshotUpdate` 屬性，其類型已從 `DiskSku` 變更為 `SnapshotSku`
+- 已從 `VmScaleSetVMParameterSet` Cmdlet 移除 `Add-AzVMDataDisk`，您無法再個別地將資料磁碟新增至擴展集 VM。
 
 ### <a name="azdatafactory-previously-azurermdatafactories-and-azurermdatafactoryv2"></a>Az.DataFactory (先前是 AzureRM.DataFactories 和 AzureRM.DataFactoryV2)
 
 - `GatewayName` 已成為 `New-AzDataFactoryEncryptValue` Cmdlet 的必要參數
 - 已移除 `New-AzDataFactoryGatewayKey` Cmdlet
-- 已從 `Get-AzDataFactoryV2ActivityRun` Cmdlet 移除 `LinkedServiceName` 參數。指令碼不應再使用這個欄位的值來決定處理方式。
+- 已從 `LinkedServiceName` Cmdlet 移除 `Get-AzDataFactoryV2ActivityRun` 參數。指令碼不應再使用這個欄位的值來決定處理方式。
 
 ### <a name="azdatalakeanalytics-previously-azurermdatalakeanalytics"></a>Az.DataLakeAnalytics (先前是 AzureRM.DataLakeAnalytics)
 
@@ -245,7 +245,7 @@ RequiredModules = @(@{ModuleName="Az.Profile"; ModuleVersion="1.0.0"})
   - New-AzureRmDataLakeStoreItem
   - Add-AzureRmDataLakeStoreItemContent
   - Get-AzureRmDataLakeStoreItemContent
-- 已從 `New-AzDataLakeStoreAccount` 和 `Set-AzDataLakeStoreAccount` Cmdlet 移除淘汰的 `Tags` 屬性別名
+- 已從 `Tags` 和 `New-AzDataLakeStoreAccount` Cmdlet 移除淘汰的 `Set-AzDataLakeStoreAccount` 屬性別名
 
   使用下列 Cmdlet 的指令碼
   ```azurepowershell-interactive
@@ -257,7 +257,7 @@ RequiredModules = @(@{ModuleName="Az.Profile"; ModuleVersion="1.0.0"})
   New-AzDataLakeStoreAccount -Tag @{TagName="TagValue"}
   ```
 
-- 已從 `PSDataLakeStoreAccountBasic` 物件移除淘汰的 `Identity`、`EncryptionState`、`EncryptionProvisioningState`、`EncryptionConfig`、`FirewallState`、`FirewallRules`、`VirtualNetworkRules`、`TrustedIdProviderState`、`TrustedIdProviders`、`DefaultGroup`、`NewTier`、`CurrentTier`、`FirewallAllowAzureIps` 屬性。  指令碼若使用 `Get-AzDataLakeStoreAccount` 所傳回的 `PSDatalakeStoreAccount`，則不應參考這些屬性。
+- 已從 `Identity` 物件移除淘汰的 `EncryptionState`、`EncryptionProvisioningState`、`EncryptionConfig`、`FirewallState`、`FirewallRules`、`VirtualNetworkRules`、`TrustedIdProviderState`、`TrustedIdProviders`、`DefaultGroup`、`NewTier`、`CurrentTier`、`FirewallAllowAzureIps`、`PSDataLakeStoreAccountBasic` 屬性。  指令碼若使用 `PSDatalakeStoreAccount` 所傳回的 `Get-AzDataLakeStoreAccount`，則不應參考這些屬性。
 
 ### <a name="azkeyvault-previously-azurermkeyvault"></a>Az.KeyVault (先前是 AzureRM.KeyVault)
 
@@ -265,7 +265,7 @@ RequiredModules = @(@{ModuleName="Az.Profile"; ModuleVersion="1.0.0"})
 
 ### <a name="azmedia-previously-azurermmedia"></a>Az.Media (先前是 AzureRM.Media)
 
-- 已從 `New-AzMediaService` Cmdlet 移除淘汰的 `Tags` 屬性別名。使用下列 Cmdlet 的指令碼
+- 已從 `Tags` Cmdlet 移除淘汰的 `New-AzMediaService` 屬性別名。使用下列 Cmdlet 的指令碼
   ```azurepowershell-interactive
   New-AzureRMMediaService -Tags @{TagName="TagValue"}
   ```
@@ -277,7 +277,7 @@ RequiredModules = @(@{ModuleName="Az.Profile"; ModuleVersion="1.0.0"})
 
 ### <a name="azmonitor-previously-azurerminsights"></a>Az.Monitor (先前是 AzureRM.Insights)
 
-- 已從 `Set-AzDiagnosticSetting` Cmdlet 移除複數名稱 `Categories` 和 `Timegrains` 參數，以便支援單一參數名稱。使用下列 Cmdlet 的指令碼
+- 已從 `Categories` Cmdlet 移除複數名稱 `Timegrains` 和 `Set-AzDiagnosticSetting` 參數，以便支援單一參數名稱。使用下列 Cmdlet 的指令碼
   ```azurepowershell-interactive
   Set-AzureRmDiagnosticSetting -Timegrains PT1M -Categories Category1, Category2
   ```
@@ -289,8 +289,8 @@ RequiredModules = @(@{ModuleName="Az.Profile"; ModuleVersion="1.0.0"})
 
 ### <a name="aznetwork-previously-azurermnetwork"></a>Az.Network (先前是 AzureRM.Network)
 
-- 已從 `Get-AzServiceEndpointPolicyDefinition` Cmdlet 移除淘汰的 `ResourceId` 參數
-- 已從 `PSVirtualNetwork` 物件移除淘汰的 `EnableVmProtection` 屬性
+- 已從 `ResourceId` Cmdlet 移除淘汰的 `Get-AzServiceEndpointPolicyDefinition` 參數
+- 已從 `EnableVmProtection` 物件移除淘汰的 `PSVirtualNetwork` 屬性
 - 已移除淘汰的 `Set-AzVirtualNetworkGatewayVpnClientConfig` Cmdlet
 
 指令碼不應再根據這些欄位的值來決定處理方式。
@@ -311,15 +311,15 @@ RequiredModules = @(@{ModuleName="Az.Profile"; ModuleVersion="1.0.0"})
 
 ### <a name="azrecoveryservices-previously-azurermrecoveryservices-azurermrecoveryservicesbackup-and-azurermrecoveryservicessiterecovery"></a>Az.RecoveryServices (先前是 AzureRM.RecoveryServices、AzureRM.RecoveryServices.Backup 和 AzureRM.RecoveryServices.SiteRecovery)
 
-- 已從 `New/Set-AzRecoveryServicesAsrPolicy` Cmdlet 移除 `Encryption` 參數
+- 已從 `Encryption` Cmdlet 移除 `New/Set-AzRecoveryServicesAsrPolicy` 參數
 - `TargetStorageAccountName` 現在是 `Restore-AzRecoveryServicesBackupItem` Cmdlet 中用於還原受控磁碟的必要參數
-- 已在 `Restore-AzRecoveryServicesBackupItem` Cmdlet 中移除 `StorageAccountName` 和 `StorageAccountResourceGroupName` 參數
-- 已在 `Get-AzRecoveryServicesBackupContainer` Cmdlet 中移除 `Name` 參數
+- 已在 `StorageAccountName` Cmdlet 中移除 `StorageAccountResourceGroupName` 和 `Restore-AzRecoveryServicesBackupItem` 參數
+- 已在 `Name` Cmdlet 中移除 `Get-AzRecoveryServicesBackupContainer` 參數
 
 ### <a name="azresources-previously-azurermresources"></a>Az.Resources (先前是 AzureRM.Resources)
 
-- 已從 `New/Set-AzPolicyAssignment` Cmdlet 移除 `Sku` 參數
-- 已從 `New-AzADServicePrincipal` 和 `New-AzADSpCredential` Cmdlet 移除 `Password` 參數。密碼會自動產生，提供密碼的指令碼：
+- 已從 `Sku` Cmdlet 移除 `New/Set-AzPolicyAssignment` 參數
+- 已從 `Password` 和 `New-AzADServicePrincipal` Cmdlet 移除 `New-AzADSpCredential` 參數。密碼會自動產生，提供密碼的指令碼：
 
   ```azurepowershell-interactive
   New-AzAdSpCredential -ObjectId 1f99cf81-0146-4f4e-beae-2007d0668476 -Password $secPassword
@@ -335,9 +335,9 @@ RequiredModules = @(@{ModuleName="Az.Profile"; ModuleVersion="1.0.0"})
 ### <a name="azservicefabric-previously-azurermservicefabric"></a>Az.ServiceFabric (先前是 AzureRM.ServiceFabric)
 
 - 已變更下列 Cmdlet 的傳回類型：
-  - 已移除 `ApplicationHealthPolicy` 類型的 `ServiceTypeHealthPolicies` 屬性。
-  - 已移除 `ClusterUpgradeDeltaHealthPolicy` 類型的 `ApplicationHealthPolicies` 屬性。
-  - 已移除 `ClusterUpgradePolicy` 類型的 `OverrideUserUpgradePolicy` 屬性。
+  - 已移除 `ServiceTypeHealthPolicies` 類型的 `ApplicationHealthPolicy` 屬性。
+  - 已移除 `ApplicationHealthPolicies` 類型的 `ClusterUpgradeDeltaHealthPolicy` 屬性。
+  - 已移除 `OverrideUserUpgradePolicy` 類型的 `ClusterUpgradePolicy` 屬性。
   - 這些變更會影響下列 Cmdlet：
     - Add-AzServiceFabricClientCertificate
     - Add-AzServiceFabricClusterCertificate
@@ -356,11 +356,11 @@ RequiredModules = @(@{ModuleName="Az.Profile"; ModuleVersion="1.0.0"})
 
 ### <a name="azsql-previously-azurermsql"></a>Az.Sql (previously AzureRM.Sql)
 
-- 已從 `Set-AzSqlDatabaseBackupLongTermRetentionPolicy` Cmdlet 移除 `State` 和 `ResourceId` 參數
+- 已從 `State` Cmdlet 移除 `ResourceId` 和 `Set-AzSqlDatabaseBackupLongTermRetentionPolicy` 參數
 - 已移除淘汰的 Cmdlet：`Get/Set-AzSqlServerBackupLongTermRetentionVault`、`Get/Start/Stop-AzSqlServerUpgrade`、`Get/Set-AzSqlDatabaseAuditingPolicy`、`Get/Set-AzSqlServerAuditingPolicy`、`Remove-AzSqlDatabaseAuditing`、`Remove-AzSqlServerAuditing`
-- 已從 `Get-AzSqlDatabaseBackupLongTermRetentionPolicy` Cmdlet 移除淘汰的 `Current` 參數
-- 已從 `Get-AzSqlServerServiceObjective` Cmdlet 移除淘汰的 `DatabaseName` 參數
-- 已從 `Set-AzSqlDatabaseDataMaskingPolicy` Cmdlet 移除淘汰的 `PrivilegedLogin` 參數
+- 已從 `Current` Cmdlet 移除淘汰的 `Get-AzSqlDatabaseBackupLongTermRetentionPolicy` 參數
+- 已從 `DatabaseName` Cmdlet 移除淘汰的 `Get-AzSqlServerServiceObjective` 參數
+- 已從 `PrivilegedLogin` Cmdlet 移除淘汰的 `Set-AzSqlDatabaseDataMaskingPolicy` 參數
 
 ### <a name="azstorage-previously-azurestorage-and-azurermstorage"></a>Az.Storage (先前是 Azure.Storage 和 AzureRM.Storage)
 

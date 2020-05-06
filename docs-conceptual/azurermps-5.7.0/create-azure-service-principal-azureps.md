@@ -9,10 +9,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.openlocfilehash: dd2528cf91495361343ff562b7a602e7c115d13b
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "65534700"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>使用 Azure PowerShell 來建立 Azure 服務主體
@@ -118,7 +118,7 @@ CurrentStorageAccount :
 ## <a name="managing-roles"></a>管理角色
 
 > [!NOTE]
-> Azure 角色型存取控制 (RBAC) 是一種可定義及管理使用者和服務主體角色的模型。 角色會有一組相關聯的權限，以決定主體可以讀取、存取、寫入或管理的資源。 如需 RBAC 和角色的詳細資訊，請參閱 [RBAC：內建角色](/azure/active-directory/role-based-access-built-in-roles)
+> Azure 角色型存取控制 (RBAC) 是一種可定義及管理使用者和服務主體角色的模型。 角色會有一組相關聯的權限，以決定主體可以讀取、存取、寫入或管理的資源。 如需 RBAC 和角色的詳細資訊，請參閱 [RBAC：內建角色](/azure/active-directory/role-based-access-built-in-roles)。
 
 Azure PowerShell 提供下列 Cmdlet 以供您管理角色指派︰
 

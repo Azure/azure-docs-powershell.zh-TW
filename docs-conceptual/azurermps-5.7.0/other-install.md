@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/20/2018
 ms.openlocfilehash: aaba0ce38129b96e3d691f1a9d9cfdc929188ffd
-ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "75722402"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi-or-web-platform-installer"></a>使用 MSI 或 Web Platform Installer 在 Windows 上安裝 Azure PowerShell
@@ -28,7 +28,7 @@ ms.locfileid: "75722402"
 > [!NOTE]
 > 僅在您使用 Azure 傳統部署模型時，才使用 `Azure` 模組。
 
-若要開始使用 Azure PowerShell，您必須使用 [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 將 `AzureRM` 載入您目前的 PowerShell 工作階段，然後使用您的 Azure 認證登入。
+若要開始使用 Azure PowerShell，您必須使用 `AzureRM`Import-Module[ Cmdlet 將 ](/powershell/module/Microsoft.PowerShell.Core/Import-Module) 載入您目前的 PowerShell 工作階段，然後使用您的 Azure 認證登入。
 
 ```powershell-interactive
 # Import the module into the PowerShell session
@@ -47,7 +47,7 @@ Connect-AzureRmAccount
 > [!NOTE]
 > 僅在您使用 Azure 傳統部署模型時，才使用 `Azure` 模組。
 
-若要開始使用 Azure PowerShell，您必須使用 [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 將 `AzureRM` 載入您目前的 PowerShell 工作階段，然後使用您的 Azure 認證登入。
+若要開始使用 Azure PowerShell，您必須使用 `AzureRM`Import-Module[ Cmdlet 將 ](/powershell/module/Microsoft.PowerShell.Core/Import-Module) 載入您目前的 PowerShell 工作階段，然後使用您的 Azure 認證登入。
 
 ```powershell-interactive
 # Import the module into the PowerShell session

@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/21/2019
 ms.openlocfilehash: 0e8dd4f766307d9ab2e27e2cf8bec6bbd34f5e51
-ms.sourcegitcommit: 1cdff856d1d559b978aac6bc034dd2f99ac04afe
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "72791408"
 ---
 # <a name="azure-powershell-context-objects"></a>Azure PowerShell 內容物件
@@ -24,7 +24,7 @@ Azure PowerShell 會使用 _Azure PowerShell 內容物件_ (Azure 內容) 來保
 
 Azure 內容是 PowerShell 物件，代表您對其執行命令的有效訂用帳戶，以及連線至 Azure 雲端所需的驗證資訊。 透過 Azure 內容，Azure PowerShell 就不需要在您每次切換訂用帳戶時重新驗證您的帳戶。 Azure 內容包含下列各項：
 
-* 用來透過 [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) 登入 Azure 的_帳戶_。 就帳戶的觀點而言，Azure 內容會將使用者、應用程式識別碼和服務主體等同視之。
+* 用來透過 _Connect-AzAccount_ 登入 Azure 的[帳戶](/powershell/module/az.accounts/connect-azaccount)。 就帳戶的觀點而言，Azure 內容會將使用者、應用程式識別碼和服務主體等同視之。
 * 有效_訂用帳戶_是 Microsoft 提供的服務合約，用來建立和執行與_租用戶_相關聯的 Azure 資源。 租用戶在文件中或使用 Active Directory 時，通常稱為_組織_。
 * _權杖快取_的參考是用來存取 Azure 雲端的預存驗證權杖。 此權杖的儲存位置及其保存的時間長度，取決於[內容自動儲存設定](#save-azure-contexts-across-powershell-sessions)。
 

@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/22/2019
 ms.openlocfilehash: d16aea3fa2059cd32f584134e2da43e01e3def31
-ms.sourcegitcommit: ad7677d703a8512d371d3123dc7e541156b95cb8
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "72821464"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi"></a>使用 MSI 在 Windows 上安裝 Azure PowerShell
@@ -34,7 +34,7 @@ $PSVersionTable.PSVersion
 
 ## <a name="install-or-update-on-windows-using-the-msi-package"></a>使用 MSI 套件在 Windows 上安裝或更新
 
-可以使用 MSI 檔案 (可從 [GitHub](https://github.com/Azure/azure-powershell/releases/tag/v2.8.0-October2019) 取得) 來安裝適用於 Windows 的 Azure PowerShell。 如果您已透過 MSI 安裝舊版的 Azure 模組，安裝程式會自動移除這些模組。 MSI 套件會在 `${env:ProgramFiles}\WindowsPowerShell\Modules` 中安裝模組。
+使用 MSI 檔案 (可從 [GitHub](https://github.com/Azure/azure-powershell/releases/tag/v2.8.0-October2019) 取得) 安裝適用於 Windows 的 Azure PowerShell。 如果您已透過 MSI 安裝舊版的 Azure 模組，安裝程式會自動移除這些模組。 MSI 套件會在 `${env:ProgramFiles}\WindowsPowerShell\Modules` 中安裝模組。
 
 若要開始使用 Azure PowerShell，請使用您的 Azure 認證登入。
 

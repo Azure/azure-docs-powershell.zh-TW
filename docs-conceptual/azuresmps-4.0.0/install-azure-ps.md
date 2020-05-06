@@ -8,17 +8,17 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/06/2017
 ms.openlocfilehash: a4911e72f687c07b31805c07fd23263a6b7f33b4
-ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "75718792"
 ---
 # <a name="installing-the-azure-powershell-service-management-module"></a>安裝 Azure PowerShell 服務管理模組
 
 從 [PowerShell 資源庫](https://www.powershellgallery.com/)安裝 Azure PowerShell 是慣用的安裝方法。
 
-## <a name="step-1-install-powershellget"></a>步驟 1:安裝 PowerShellGet
+## <a name="step-1-install-powershellget"></a>步驟 1：安裝 PowerShellGet
 
 從 PowerShell 資源庫安裝項目需要有 PowerShellGet 模組。 確定您有適當版本的 PowerShellGet 及其他系統需求。 執行下列命令，以查看您的系統上是否已安裝 PowerShellGet。
 
@@ -36,7 +36,7 @@ PowerShellGet 1.0.0.1 C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1
 
 如果您未安裝 PowerShellGet，請參閱[如何取得 PowerShellGet](#how-to-get-powershellget)。
 
-## <a name="step-2-install-azure-powershell"></a>步驟 2:安裝 Azure PowerShell
+## <a name="step-2-install-azure-powershell"></a>步驟 2：安裝 Azure PowerShell
 
 從執行身分為系統管理員的 Windows PowerShell 主控台來執行下列命令︰
 

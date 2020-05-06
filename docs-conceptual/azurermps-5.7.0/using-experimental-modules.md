@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
 ms.openlocfilehash: 9cd88919b51f24d19579b865d9f3d5cc779b62d9
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "65534789"
 ---
 # <a name="using-experimental-azure-powershell-modules"></a>使用實驗性 Azure PowerShell 模組
@@ -69,9 +69,9 @@ Azure CLI 2.0 使用一系列的智慧型預設值，讓終端使用者能更輕
 
 - 簡短名稱 - 包含 Cmdlet 的名稱 (例如，`New-AzureRmVM` => `New-AzVm`) 以及參數的名稱 (例如，`-ResourceGroupName` => `-Rg`)。 使用別名可與「舊的」Cmdlet 相容。 提供_回溯相容性_參數集。
 
-- 智慧型預設值 - 建立智慧型預設值以填入「必要」資訊。 例如︰
+- 智慧型預設值 - 建立智慧型預設值以填入「必要」資訊。 例如：
   - 資源群組
-  - 位置
+  - Location
   - 相依資源
 
 ### <a name="experimental-improvements"></a>實驗性增強功能
