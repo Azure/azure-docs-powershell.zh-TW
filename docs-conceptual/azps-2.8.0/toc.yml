@@ -3,7 +3,7 @@
 - name: 新的 Az 模組簡介
   href: new-azureps-module-az.md
   displayName: 'intro, introduction, azurerm'
-- name: Install
+- name: 安裝
   items:
     - name: 使用 PowerShell Get 進行安裝
       href: install-az-ps.md
