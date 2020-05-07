@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
 ms.openlocfilehash: 55f19ac5e6767df1312e0b531184e8621b60a011
-ms.sourcegitcommit: febbbd3f75c8dd1a296281d265289f015b6cb537
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "67038188"
 ---
 # <a name="azurerm-module-250"></a>AzureRM Module 2.5.0
@@ -20,10 +20,10 @@ ms.locfileid: "67038188"
 ## <a name="requirements"></a>需求：
 最低支援的 Azure Stack 版本為 1904 版。
 
-注意：如果您使用的是舊版，請安裝版本 1.2.11
+請注意：如果您使用的是舊版，請安裝版本 1.2.11
 
 
-## <a name="install"></a>Install
+## <a name="install"></a>安裝
 ```powershell-interactive
 # Remove previous versions of AzureStack modules
 Uninstall-Module -Name AzureStack -Force 
@@ -65,7 +65,7 @@ Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 ### <a name="azure-bridge"></a>Azure Bridge
 Azure Stack AzureBridge 管理員模組的預覽版本可讓您從 Azure 同步發佈映像。
 
-### <a name="backup"></a>Backup
+### <a name="backup"></a>Backup 
 備份管理員模組的預覽版本可允許管理員：
 - 設定備份的儲存位置
 - 執行備份
@@ -87,7 +87,7 @@ Azure Stack 網狀架構管理員模組的預覽版本可讓系統管理員檢�
 - 建立新的 IP 集區
 
 
-### <a name="gallery"></a>資源庫
+### <a name="gallery"></a>主機庫
 Azure Stack 資源庫管理員模組的預覽版本可提供功能來管理 Azure Stack 市集中的資源庫項目。
 
 ### <a name="infrastructure-insights"></a>基礎結構深入解析

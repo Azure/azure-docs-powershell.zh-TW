@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
 ms.openlocfilehash: 61ab0f91c3d6fffdbffd336fa0d6ed9b0ab8f6ec
-ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/09/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "68863286"
 ---
 # <a name="release-notes"></a>版本資訊
@@ -149,7 +149,7 @@ Update-Module -Name AzureRM
     - Update-AzureRmRecoveryServicesAsrProtectionDirection
 
 #### <a name="azurermstorage"></a>AzureRM.Storage
-* 新版本中已淘汰以下參數，並設定儲存體帳戶 Cmdlet：EnableEncryptionService 和 DisableEncryptionService，由於待用加密預設為已啟用且無法停用。
+* 在新的和設定的儲存體帳戶 Cmdlet 中淘汰下列參數：EnableEncryptionService 和 DisableEncryptionService，因為預設會啟用待用加密，且無法加以停用。
     - New-AzureRmStorageAccount
     - Set-AzureRmStorageAccount
 
@@ -185,8 +185,8 @@ Update-Module -Name AzureRM
 * 'New-AzureRmVmss' 支援公用 IP 位址、載入平衡規則、傳入的 NAT 規則。
 * WriteAccelerator 功能
     - 已將 WriteAccelerator 切換參數新增至下列 Cmdlet：Set-AzureRmVMOSDisk Set-AzureRmVMDataDisk Add-AzureRmVMDataDisk Add-AzureRmVmssDataDisk
-    - 已將 OsDiskWriteAccelerator 切換參數新增至下列 Cmdlet：   Set-AzureRmVmssStorageProfile。
-    - 已將 OsDiskWriteAccelerator 布林值參數新增至下列 Cmdlet：   Update-AzureRmVM     Update-AzureRmVmss
+    - 已將 OsDiskWriteAccelerator 切換參數新增至下列 Cmdlet：Set-AzureRmVmssStorageProfile。
+    - 已將 OsDiskWriteAccelerator 布林值參數新增至下列 Cdlets：Update-AzureRmVM     Update-AzureRmVmss
 
 #### <a name="azurermdatafactories"></a>AzureRM.DataFactories
 * 修正會造成部分加密作業生產無意義錯誤的認證加密問題
@@ -275,9 +275,9 @@ Update-Module -Name AzureRM
     - Remove-AzureRmNetworkWatcherConnectionMonitor
 * 已更新 Set-AzureRmApplicationGatewayBackendAddressPool 文件從而移除已淘汰的範例
 * 已對應用程式閘道新增 EnableHttp2 旗標
-    - Updated New-AzureRmApplicationGateway：已新增選用參數 -EnableHttp2
+    - 已更新 New-AzureRmApplicationGateway：已新增選擇性參數 -EnableHttp2
 * 將 IpTags 新增至 PublicIpAddress
-    - 更新了 New-AzureRmPublicIpAddress：已新增 IpTags
+    - 已更新 New-AzureRmPublicIpAddress：已新增 IpTags
     - New-AzureRmPublicIpTag 以新增 Iptag
 * 在 RouteTable 和 effectiveRoute 中新增 DisableBgpRoutePropagation 屬性。
 
@@ -286,7 +286,7 @@ Update-Module -Name AzureRM
 * Register-AzureRmResourceProvider：已在文件中新增遺漏的範例
 
 #### <a name="azurermstorage"></a>AzureRM.Storage
-* 新版本中已淘汰以下參數，並設定儲存體帳戶 Cmdlet：EnableEncryptionService 和 DisableEncryptionService，由於待用加密預設為已啟用且無法停用。
+* 在新的和設定的儲存體帳戶 Cmdlet 中淘汰下列參數：EnableEncryptionService 和 DisableEncryptionService，因為預設會啟用待用加密，且無法加以停用。
     - New-AzureRmStorageAccount
     - Set-AzureRmStorageAccount
 
@@ -297,7 +297,7 @@ Update-Module -Name AzureRM
 * `Add-AzureRmAccount` 已重新命名為 `Connect-AzureRmAccount`；舊的 Cmdlet 名稱已新增別名，而其他別名 (`Login-AzAccount` 和 `Login-AzureRmAccount`) 已重新導向至新的 Cmdlet 名稱。
 * `Remove-AzureRmAccount` 已重新命名為 `Disconnect-AzureRmAccount`；舊的 Cmdlet 名稱已新增別名，而其他別名 (`Logout-AzAccount` 和 `Logout-AzureRmAccount`) 已重新導向至新的 Cmdlet 名稱。
 * 已更正資源字串使用 `Connect-AzureRmAccount`，而不是 `Login-AzureRmAccount`
-* `Add-AzureRmEnvironment`和`Set-AzureRmEnvironment`
+* `Add-AzureRmEnvironment` 和 `Set-AzureRmEnvironment`
   - 已將 `-AzureOperationalInsightsEndpoint` 和 `-AzureOperationalInsightsEndpointResourceId`新增為參數，搭配 OperationalInsights 資料平面 RP 使用。
 
 ### <a name="azurermanalysisservices"></a>AzureRM.AnalysisServices
@@ -308,15 +308,15 @@ Update-Module -Name AzureRM
 * 已更正 `Login-AzureRmAccount` 的使用方式來使用 `Connect-AzureRmAccount`
 * 適用於 VM 和 VM 擴展集的使用者指派識別身分支援
     - 已將 `-IdentityType` 和 `-IdentityId` 參數新增至 `New-AzureRmVMConfig`、`New-AzureRmVmssConfig`、`Update-AzureRmVM` 和 `Update-AzureRmVmss`
-* 在 `Add-AzureRmVmssNetworkInterfaceConfig` 中新增 `-EnableIPForwarding` 參數
-* 在 `New-AzureRmVmssConfig` 中新增 `-Priority` 參數
+* 在 `-EnableIPForwarding` 中新增 `Add-AzureRmVmssNetworkInterfaceConfig` 參數
+* 在 `-Priority` 中新增 `New-AzureRmVmssConfig` 參數
 
 ### <a name="azurermdatalakeanalytics"></a>AzureRM.DataLakeAnalytics
 * 已更正 `Login-AzureRmAccount` 的使用方式來使用 `Connect-AzureRmAccount`
 
 ### <a name="azurermdatalakestore"></a>AzureRM.DataLakeStore
 * 已更正 `Login-AzureRmAccount` 的使用方式來使用 `Connect-AzureRmAccount`
-* 已更正執行此 Cmdlet 而不需要登入 `Login-AzureRmAccount` 時的 `Test-AzureRmDataLakeStoreAccount` 錯誤訊息
+* 已更正執行此 Cmdlet 而不需要登入 `Test-AzureRmDataLakeStoreAccount` 時的 `Login-AzureRmAccount` 錯誤訊息
 
 ### <a name="azurermeventgrid"></a>AzureRM.EventGrid
 * 已更新使用 2018-01-01 API 版本。
@@ -493,7 +493,7 @@ Update-Module -Name AzureRM
 * 已將 Location 完成碼新增到 -Location 參數中，以便透過有效的位置來實現 Tab 鍵自動完成
 * 已將 ResourceGroup 完成碼新增到 -ResourceGroup 參數中，以便在目前的訂用帳戶中透過資源群組實現 Tab 鍵自動完成
 * 已針對長時間執行的 KeyVault Cmdlet 新增 -AsJob 支援。 允許選取的 Cmdlet 在背景中執行，並傳回作業以追蹤及控制進度。
-  * 受影響的 cmdlet 為：Remove-AzureRmKeyVault
+  * 受影響的 Cmdlet 是：Remove-AzureRmKeyVault
 * 修正了 Set-AzureRmKeyVaultAccessPolicy 中，AAD 篩選器會將 SPN 設為提供的 UPN 而非設定 UPN 本身的錯誤
   - 請參閱下列問題以取得更多資訊： https://github.com/Azure/azure-powershell/issues/5201
 
@@ -625,7 +625,7 @@ Update-Module -Name AzureRM
   - Get-AzureRmComputeResourceSku 會顯示區域資訊。
   - 更新 Disable-AzureRmVmssDiskEncryption 以修正問題 https://github.com/Azure/azure-powershell/issues/5038
   - 針對長時間執行的計算 Cmdlet 新增 -AsJob 支援。 允許選取的 Cmdlet 在背景中執行，並傳回作業以追蹤及控制進度。
-    - 受影響的 cmdlet 包括：適用於虛擬機器和虛擬機器擴展集的 New-、Update-、Set-、Remove-、Start-、Restart- 和 Stop- Cmdlet
+    - 受影響的 Cmdlet 包括：適用於虛擬機器和虛擬機器擴展集的 New-、Update-、Set-、Remove-、Start-、Restart- 和 Stop- Cmdlet
     - 將簡化的參數集新增至 New-AzureRmVM，New-AzureRmVM 可使用智慧型預設值建立虛擬機器和所有必要的資源
 * ContainerInstance
   - 套用 Azure 容器執行個體 SDK 2017-10-01
@@ -639,7 +639,7 @@ Update-Module -Name AzureRM
 * DataFactories
     - 認證加密功能現在可與啟用的「遠端存取」(透過網路) 和停用的「遠端存取」(本機電腦) 搭配使用。
 * DataFactoryV2
-  - 已新增兩個新的 Cmdlet：Update-AzureRmDataFactoryV2 和 Stop-AzureRmDataFactoryV2PipelineRun
+  - 新增兩個 Cmdlet：Update-AzureRmDataFactoryV2 和 Stop-AzureRmDataFactoryV2PipelineRun
 * DataLakeAnalytics
   - 將名為 ScriptParameter 的參數新增至 Submit-AzureRmDataLakeAnalyticsJob
     - 可在 Submit-AzureRmDataLakeAnalyticsJob 上使用 Get-help 找到 ScriptParameter 的詳細資訊
@@ -753,8 +753,8 @@ Update-Module -Name AzureRM
 * AzureBatch
   * 將新參數新增至 `New-AzureRmBatchAccount`。
     - `PoolAllocationMode`：在 Batch 帳戶中建立集區所使用的配置模式。 若要在使用者的訂用帳戶中建立配置集區節點的 Batch 帳戶，請將此設為 `UserSubscription`。
-    - `KeyVaultId`：與 Batch 帳戶相關的 Azure Key Vault 資源識別碼。
-    - `KeyVaultUrl`：與 Batch 帳戶相關的 Azure Key Vault URL。
+    - `KeyVaultId`：與 Batch 帳戶相關的 Azure 金鑰保存庫之資源識別碼。
+    - `KeyVaultUrl`：與 Batch 帳戶相關的 Azure 金鑰保存庫之 URL。
   * 將參數更新為 `New-AzureBatchTask`。
     - 移除 `RunElevated` 參數。 已新增 `UserIdentity` 參數來取代 `RunElevated`，且對等的行為可藉由建構 `PSUserIdentity` 來達成，如下所示：
       - $autoUser = New-Object Microsoft.Azure.Commands.Batch.Models.PSAutoUserSpecification -ArgumentList @("Task", "Admin")
@@ -768,7 +768,7 @@ Update-Module -Name AzureRM
     - 新增 `UserAccounts` 參數。
       - 這個參數可定義集區中每個節點上所建立的使用者帳戶。
     - 新增 `TargetLowPriorityComputeNodes` 並將 `TargetDedicated` 重新命名為 `TargetDedicatedComputeNodes`。
-      - 針對 `TargetDedicatedComputeNodes` 參數已建立 `TargetDedicated` 別名。
+      - 針對 `TargetDedicated` 參數已建立 `TargetDedicatedComputeNodes` 別名。
     - 新增 `NetworkConfiguration` 參數。
       - 這個參數可讓您設定集區的網路設定。
   * 將參數更新為 `New-AzureBatchCertificate`。
@@ -777,13 +777,13 @@ Update-Module -Name AzureRM
     - `Password` 參數現在是 `SecureString`。
   * 將參數更新為 `Set-AzureBatchComputeNodeUser`。
     - `Password` 參數現在是 `SecureString`。
-  * 在 `Get-AzureBatchNodeFile`、`Get-AzureBatchNodeFileContent` 和 `Remove-AzureBatchNodeFile` 上將 `Name` 參數重新命名為 `Path`。
-    - 針對 `Path` 參數已建立 `Name` 別名。
+  * 在 `Name`、`Path` 和 `Get-AzureBatchNodeFile` 上將 `Get-AzureBatchNodeFileContent` 參數重新命名為 `Remove-AzureBatchNodeFile`。
+    - 針對 `Name` 參數已建立 `Path` 別名。
   * 物件的變更
     - 請參閱 Batch 變更記錄取得完整清單
   * 新增 Azure Active Directory 型驗證支援。
-    - 若要使用 Azure Active Directory 驗證，請使用 `Get-AzureRmBatchAccount` Cmdlet 擷取 `BatchAccountContext` 物件，並將此 `BatchAccountContext` 提供至 Batch 服務 Cmdlet 的 `-BatchContext` 參數。 對於具有 `PoolAllocationMode = UserSubscription` 的帳戶，Azure Active Directory 驗證為必要。
-    - 對於現有帳戶或以 `PoolAllocationMode = BatchService` 建立的新帳戶，您可以藉由使用 `Get-AzureRmBatchAccoutKeys` Cmdlet 擷取 `BatchAccountContext` 物件，繼續使用共用金鑰驗證。
+    - 若要使用 Azure Active Directory 驗證，請使用 `BatchAccountContext` Cmdlet 擷取 `Get-AzureRmBatchAccount` 物件，並將此 `BatchAccountContext` 提供至 Batch 服務 Cmdlet 的 `-BatchContext` 參數。 對於具有 `PoolAllocationMode = UserSubscription` 的帳戶，Azure Active Directory 驗證為必要。
+    - 對於現有帳戶或以 `PoolAllocationMode = BatchService` 建立的新帳戶，您可以藉由使用 `BatchAccountContext` Cmdlet 擷取 `Get-AzureRmBatchAccoutKeys` 物件，繼續使用共用金鑰驗證。
 * 計算
   * Azure 磁碟加密延伸模組命令
     - 'Set-AzureRmVmDiskEncryptionExtension' 的新參數：'-EncryptFormatAll' 加密格式資料磁碟

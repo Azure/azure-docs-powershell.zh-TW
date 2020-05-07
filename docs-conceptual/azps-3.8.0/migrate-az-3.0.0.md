@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: e88752e0c997efc4f49161e358072803cb63450a
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81740128"
 ---
 # <a name="migration-guide-for-az-300"></a>Az 3.0.0 的移轉指南
@@ -113,7 +113,7 @@ Get-AzBatchSupportedImage -BatchContext $Context
 ## <a name="compute"></a>計算
 
 ### `New-AzDiskConfig`
-上傳 CreateOption 時，已使用 `UploadSizeInBytes` 參數而非 `New-AzDiskConfig` 的 `DiskSizeGB`
+上傳 CreateOption 時，已使用 `UploadSizeInBytes` 參數而非 `DiskSizeGB` 的 `New-AzDiskConfig`
 
 #### <a name="before"></a>之前
 ```powershell

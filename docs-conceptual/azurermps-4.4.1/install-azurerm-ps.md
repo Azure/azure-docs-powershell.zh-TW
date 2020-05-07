@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
 ms.openlocfilehash: 7b099fead7cb985fc8f7e6fed55b8c1107caa0d9
-ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "75720373"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>使用 PowerShellGet 在 Windows 上安裝 Azure PowerShell
@@ -25,7 +25,7 @@ ms.locfileid: "75720373"
 > [!IMPORTANT]
 > AzureRM 模組不支援 macOS 或 Linux。 若要在這些平台上使用 Azure PowerShell Cmdlet，請[安裝 Az 模組](/powershell/azure/install-az-ps)。
 
-## <a name="step-1-install-powershellget"></a>步驟 1:安裝 PowerShellGet
+## <a name="step-1-install-powershellget"></a>步驟 1：安裝 PowerShellGet
 
 從 PowerShell 資源庫安裝項目需要有 PowerShellGet 模組。 確定您有適當版本的 PowerShellGet 及其他系統需求。 執行下列命令，以查看您的系統上是否已安裝 PowerShellGet。
 
@@ -59,7 +59,7 @@ Install-Module PowerShellGet -Force
 > [!IMPORTANT]
 > 本文件中所述的模組 AzureRM 會使用 .NET Framework。 這會造成與使用 .NET Core 的 PowerShell 6.0 不相容。 如果您使用 PowerShell 6.0，請遵循[適用於 macOS 和 Linux 的安裝指示](install-azurermps-maclinux.md)。
 
-## <a name="step-2-install-azure-powershell"></a>步驟 2:安裝 Azure PowerShell
+## <a name="step-2-install-azure-powershell"></a>步驟 2：安裝 Azure PowerShell
 
 從 PowerShell 資源庫安裝 Azure PowerShell 需要提高的權限。 從提高權限的 PowerShell 工作階段執行下列命令︰
 
@@ -89,7 +89,7 @@ AzureRM 模組是 Azure Resource Manager Cmdlet 的彙總套件模組。 當您�
 
 若有安裝舊版的 Azure PowerShell，則可能會出現錯誤。 若要解決此問題，請參閱本文的[更新為新版的 Azure PowerShell](#update-azps) 小節。
 
-## <a name="step-3-load-the-azurerm-module"></a>步驟 3：載入 AzureRM 模組
+## <a name="step-3-load-the-azurerm-module"></a>步驟 3︰載入 AzureRM 模組
 
 安裝模組後，您需要將模組載入您的 PowerShell 工作階段。 您應該在一般 (未提高權限) PowerShell 工作階段中執行此動作。 使用 `Import-Module`Cmdlet 載入模組，如下所示︰
 

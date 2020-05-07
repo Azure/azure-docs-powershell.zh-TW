@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/10/2019
-ms.openlocfilehash: 9141f5640467722608cb7748f425ce3942668fb8
-ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
+ms.openlocfilehash: 4f74df6acaa05babc712b7b35737ce3001170b87
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67346572"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82587987"
 ---
 # <a name="query-output-of-azure-powershell"></a>查詢 Azure PowerShell 的輸出 
 
@@ -73,10 +73,10 @@ TestVM 711d8ed1-b888-4c52-8ab9-66f07b87eb6b Succeeded
 
 ## <a name="select-nested-properties"></a>選取巢狀屬性
 
-Azure PowerShell Cmdlet 輸出中的某些屬性會使用巢狀物件，例如 `Get-AzVM` 輸出的 `StorageProfile` 屬性。 若要從巢狀屬性中取得要檢查的值，需提供值的顯示名稱和完整路徑，以作為 `Select-Object` 中字典引數的一部份：
+Azure PowerShell Cmdlet 輸出中的某些屬性會使用巢狀物件，例如 `StorageProfile` 輸出的 `Get-AzVM` 屬性。 若要從巢狀屬性中取得要檢查的值，需提供值的顯示名稱和完整路徑，以作為 `Select-Object` 中字典引數的一部份：
 
 ```azurepowershell-interactive
-Get-AzVM -ResourceGroupName TestGroup | `
+Get-AzVM -ResourceGroupName TestGroup |
     Select-Object Name,@{Name="OSType"; Expression={$_.StorageProfile.OSDisk.OSType}}
 ```
 
@@ -95,7 +95,7 @@ WinVM   Windows
 `Where-Object` Cmdlet 可讓您根據任何屬性值 (包括巢狀屬性) 來篩選結果。 下一個範例會示範如何使用 `Where-Object` 來尋找資源群組中的 Linux VM。
 
 ```azurepowershell-interactive
-Get-AzVM -ResourceGroupName TestGroup | `
+Get-AzVM -ResourceGroupName TestGroup |
     Where-Object {$_.StorageProfile.OSDisk.OSType -eq "Linux"}
 ```
 
@@ -109,8 +109,8 @@ TestGroup         TestVM2  westus2 Standard_D2s_v3  Linux testvm2669         Suc
 您可以使用管道將 `Select-Object` 和 `Where-Object` 的結果傳送給彼此。 基於效能目的，我們一律建議將 `Where-Object` 作業放在 `Select-Object` 之前：
 
 ```azurepowershell-interactive
-Get-AzVM -ResourceGroupName TestGroup | `
-    Where-Object {$_.StorageProfile.OsDisk.OsType -eq "Linux"} | `
+Get-AzVM -ResourceGroupName TestGroup |
+    Where-Object {$_.StorageProfile.OsDisk.OsType -eq "Linux"} |
     Select-Object Name,VmID,ProvisioningState
 ```
 

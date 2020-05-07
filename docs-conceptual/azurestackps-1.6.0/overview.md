@@ -9,20 +9,20 @@ ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
 ms.openlocfilehash: b0e85bec82b9b7c876b2bbf337b603c8d68cf6a3
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153018"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "63053310"
 ---
 # <a name="azure-stack-module-160"></a>Azure Stack 模組 1.6.0
 
 ## <a name="requirements"></a>需求：
 支援的最低 Azure Stack 版本為 1811 版。
 
-注意：如果您使用的是舊版，請安裝版本 1.6.0
+注意:如果您使用的是舊版，請安裝版本 1.6.0
 
-## <a name="install"></a>Install
+## <a name="install"></a>安裝
 ```
 # Remove previous versions of AzureStack and AzureRM modules
 Uninstall-Module -Name AzureRM -Force

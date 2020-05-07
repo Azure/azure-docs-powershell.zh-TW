@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
 ms.openlocfilehash: 2f61e41b701dfc263df18064f6ac2cc4c6e4021e
-ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "67863544"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-400"></a>Microsoft Azure PowerShell 4.0.0 的重大變更
@@ -35,7 +35,7 @@ ms.locfileid: "67863544"
 受到此版本影響的輸出類型如下：
 
 ### <a name="psvirtualmachine"></a>PSVirtualMachine
-- `PSVirtualMachine` 物件的最上層屬性 `DataDiskNames` 和 `NetworkInterfaceIDs` 已從輸出類型中移除。 這些屬性已一律可在 `PSVirtualMachine` 物件的 `StorageProfile` 和 `NetworkProfile` 屬性中使用，並需要繼續透過存取方式取得。
+- `DataDiskNames` 物件的最上層屬性 `NetworkInterfaceIDs` 和 `PSVirtualMachine` 已從輸出類型中移除。 這些屬性已一律可在 `StorageProfile` 物件的 `NetworkProfile` 和 `PSVirtualMachine` 屬性中使用，並需要繼續透過存取方式取得。
 - 這項變更會影響下列 Cmdlet：
     - `Add-AzureRmVMDataDisk`
     - `Add-AzureRmVMNetworkInterface`

@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.openlocfilehash: 9141f5640467722608cb7748f425ce3942668fb8
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81740417"
 ---
 # <a name="query-output-of-azure-powershell"></a>查詢 Azure PowerShell 的輸出 
@@ -73,7 +73,7 @@ TestVM 711d8ed1-b888-4c52-8ab9-66f07b87eb6b Succeeded
 
 ## <a name="select-nested-properties"></a>選取巢狀屬性
 
-Azure PowerShell Cmdlet 輸出中的某些屬性會使用巢狀物件，例如 `Get-AzVM` 輸出的 `StorageProfile` 屬性。 若要從巢狀屬性中取得要檢查的值，需提供值的顯示名稱和完整路徑，以作為 `Select-Object` 中字典引數的一部份：
+Azure PowerShell Cmdlet 輸出中的某些屬性會使用巢狀物件，例如 `StorageProfile` 輸出的 `Get-AzVM` 屬性。 若要從巢狀屬性中取得要檢查的值，需提供值的顯示名稱和完整路徑，以作為 `Select-Object` 中字典引數的一部份：
 
 ```azurepowershell-interactive
 Get-AzVM -ResourceGroupName TestGroup | `

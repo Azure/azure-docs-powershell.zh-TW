@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.openlocfilehash: 21d87bd35da74f09b70976e7b395e7b987fbd3f5
-ms.sourcegitcommit: fb95591c45bb5f12b98e0690938d18f2ec611897
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "79402777"
 ---
 # <a name="sign-in-with-azure-powershell"></a>使用 Azure PowerShell 登入
@@ -40,7 +40,7 @@ Connect-AzAccount
 > 由於 Active Directory 授權實作與安全性考量中的變更，已在 Azure PowerShell 中移除使用者名稱/密碼認證授權。
 > 如果您將認證授權用於自動化用途，請[建立服務主體](create-azure-service-principal-azureps.md)。
 
-## <a name="sign-in-with-a-service-principal-a-namesp-signin"></a>使用服務主體 <a name="sp-signin"/> 來登入
+## <a name="sign-in-with-a-service-principal"></a>使用服務主體 <a name="sp-signin"/> 來登入
 
 服務主體為非互動式 Azure 帳戶。 如同其他使用者帳戶，其權限也受到 Azure Active Directory 的管理。 藉由僅為服務主體授與其所需的權限，您的自動化指令碼得以受到保護。
 

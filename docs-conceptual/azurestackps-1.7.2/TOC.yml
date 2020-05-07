@@ -1,7 +1,7 @@
 - name: Azure Stack PowerShell
   href: overview.md
   items:
-    - name: Install
+    - name: 安裝
       href: 'https://docs.microsoft.com/azure/azure-stack/azure-stack-powershell-install?toc=/powershell/azure/azure-stack/toc.json'
     - name: 連線 - 雲端操作員
       href: 'https://docs.microsoft.com/azure/azure-stack/azure-stack-powershell-configure-admin'
