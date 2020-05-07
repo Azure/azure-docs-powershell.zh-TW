@@ -4,16 +4,16 @@ description: 如何使用 PowerShellGet 安裝 Azure PowerShell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/26/2020
-ms.openlocfilehash: 7a25270566f5e856ee44c4c191a47a3e7334508b
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: af088f428ce383faa7df6be2cc7d48350893be5b
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81740247"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82587953"
 ---
 # <a name="install-azure-powershell"></a>安裝 Azure PowerShell
 
-本文說明如何使用 PowerShellGet 安裝 Azure PowerShell 模組。 這些指示適用於 Windows、macOS 和 Linux 平台。
+本文說明如何使用 [PowerShellGet](/powershell/scripting/gallery/installing-psget) 安裝 Azure PowerShell 模組。 這些指示適用於 Windows、macOS 和 Linux 平台。
 
 Azure PowerShell 也可在 Azure [Cloud Shell](/azure/cloud-shell/overview) 取得，且現在已預先安裝在 [Docker 映像](azureps-in-docker.md)中。
 
@@ -31,7 +31,7 @@ $PSVersionTable.PSVersion
 
 1. 視需要更新至 [Windows PowerShell 5.1](/powershell/scripting/install/installing-windows-powershell#upgrading-existing-windows-powershell)。 如果您是在 Windows 10 上，則已安裝 PowerShell 5.1。
 2. 安裝 [.NET Framework 4.7.2 或更新版本](/dotnet/framework/install)。
-3. 確定您有最新版的 PowerShellGet。 執行 `Update-Module PowerShellGet -Force`。
+3. 確定您有最新版的 PowerShellGet。 執行 `Install-Module -Name PowerShellGet -Force`。
 
 ## <a name="install-the-azure-powershell-module"></a>安裝 Azure PowerShell 模組
 

@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
 ms.openlocfilehash: f8dc413a91876e53e62d25cc38ac3b3ef6afda8e
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "65534599"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-500"></a>Microsoft Azure PowerShell 5.0.0 的重大變更
@@ -641,7 +641,7 @@ Set-AzureRmADUser [other required parameters] -Password $SecureStringVariable
 
 ### <a name="type-namespaceattributes"></a>**NamespaceAttributes 類型**
 - 下列屬性已移除
-    - 已啟用
+    - 啟用
     - 狀態
    
 ```powershell-interactive
@@ -679,7 +679,7 @@ $queue = Get-AzureRmServiceBusQueue <parameters>
    
 ### <a name="type-topicattribute"></a>**TopicAttribute 類型**
 - 下列屬性會標示為已淘汰：
-    - 位置
+    - Location
     - IsExpress
     - IsAnonymousAccessible
     - FilteringMessagesBeforePublishing
@@ -707,7 +707,7 @@ $topic = Get-AzureRmServiceBusTopic <parameters>
     - DeadLetteringOnFilterEvaluationExceptions
     - EntityAvailabilityStatus
     - IsReadOnly
-    - 位置
+    - Location
    
 ```powershell-interactive
 # Old
