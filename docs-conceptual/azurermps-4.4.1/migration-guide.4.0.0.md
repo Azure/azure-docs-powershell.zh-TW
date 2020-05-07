@@ -8,35 +8,35 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
 ms.openlocfilehash: 2f61e41b701dfc263df18064f6ac2cc4c6e4021e
-ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "67863544"
 ---
-# <a name="breaking-changes-for-microsoft-azure-powershell-400"></a><span data-ttu-id="4e183-103">Microsoft Azure PowerShell 4.0.0 的重大變更</span><span class="sxs-lookup"><span data-stu-id="4e183-103">Breaking changes for Microsoft Azure PowerShell 4.0.0</span></span>
+# <a name="breaking-changes-for-microsoft-azure-powershell-400"></a><span data-ttu-id="9287a-103">Microsoft Azure PowerShell 4.0.0 的重大變更</span><span class="sxs-lookup"><span data-stu-id="9287a-103">Breaking changes for Microsoft Azure PowerShell 4.0.0</span></span>
 
 [!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
-<span data-ttu-id="4e183-104">本文件為 Microsoft Azure PowerShell Cmdlet 的客戶提供重大變更通知和移轉指南。</span><span class="sxs-lookup"><span data-stu-id="4e183-104">This document serves as both a breaking change notification and migration guide for consumers of the Microsoft Azure PowerShell cmdlets.</span></span> <span data-ttu-id="4e183-105">每一節都會說明促成重大變更的原因和阻力最小的移轉路徑。</span><span class="sxs-lookup"><span data-stu-id="4e183-105">Each section describes both the impetus for the breaking change and the migration path of least resistance.</span></span> <span data-ttu-id="4e183-106">如需深入了解內容，請參閱與每次變更相關聯的提取要求。</span><span class="sxs-lookup"><span data-stu-id="4e183-106">For in-depth context, please refer to the pull request associated with each change.</span></span>
+<span data-ttu-id="9287a-104">本文件為 Microsoft Azure PowerShell Cmdlet 的客戶提供重大變更通知和移轉指南。</span><span class="sxs-lookup"><span data-stu-id="9287a-104">This document serves as both a breaking change notification and migration guide for consumers of the Microsoft Azure PowerShell cmdlets.</span></span> <span data-ttu-id="9287a-105">每一節都會說明促成重大變更的原因和阻力最小的移轉路徑。</span><span class="sxs-lookup"><span data-stu-id="9287a-105">Each section describes both the impetus for the breaking change and the migration path of least resistance.</span></span> <span data-ttu-id="9287a-106">如需深入了解內容，請參閱與每次變更相關聯的提取要求。</span><span class="sxs-lookup"><span data-stu-id="9287a-106">For in-depth context, please refer to the pull request associated with each change.</span></span>
 
-## <a name="table-of-contents"></a><span data-ttu-id="4e183-107">目錄</span><span class="sxs-lookup"><span data-stu-id="4e183-107">Table of Contents</span></span>
+## <a name="table-of-contents"></a><span data-ttu-id="9287a-107">目錄</span><span class="sxs-lookup"><span data-stu-id="9287a-107">Table of Contents</span></span>
 
-- [<span data-ttu-id="4e183-108">Compute Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="4e183-108">Breaking changes to Compute cmdlets</span></span>](#breaking-changes-to-compute-cmdlets)
-- [<span data-ttu-id="4e183-109">EventHub Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="4e183-109">Breaking changes to EventHub cmdlets</span></span>](#breaking-changes-to-eventhub-cmdlets)
-- [<span data-ttu-id="4e183-110">Insights Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="4e183-110">Breaking changes to Insights cmdlets</span></span>](#breaking-changes-to-insights-cmdlets)
-- [<span data-ttu-id="4e183-111">Network Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="4e183-111">Breaking changes to Network cmdlets</span></span>](#breaking-changes-to-network-cmdlets)
-- [<span data-ttu-id="4e183-112">ServiceBus Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="4e183-112">Breaking changes to ServiceBus cmdlets</span></span>](#breaking-changes-to-servicebus-cmdlets)
-- [<span data-ttu-id="4e183-113">Sql Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="4e183-113">Breaking changes to Sql cmdlets</span></span>](#breaking-changes-to-sql-cmdlets)
-- [<span data-ttu-id="4e183-114">Storage Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="4e183-114">Breaking changes to Storage cmdlets</span></span>](#breaking-changes-to-storage-cmdlets)
-- [<span data-ttu-id="4e183-115">Profile Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="4e183-115">Breaking Changes to Profile Cmdlets</span></span>](#breaking-changes-to-profile-cmdlets)
-  ## <a name="breaking-changes-to-compute-cmdlets"></a><span data-ttu-id="4e183-116">Compute Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="4e183-116">Breaking changes to Compute cmdlets</span></span>
+- [<span data-ttu-id="9287a-108">Compute Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="9287a-108">Breaking changes to Compute cmdlets</span></span>](#breaking-changes-to-compute-cmdlets)
+- [<span data-ttu-id="9287a-109">EventHub Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="9287a-109">Breaking changes to EventHub cmdlets</span></span>](#breaking-changes-to-eventhub-cmdlets)
+- [<span data-ttu-id="9287a-110">Insights Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="9287a-110">Breaking changes to Insights cmdlets</span></span>](#breaking-changes-to-insights-cmdlets)
+- [<span data-ttu-id="9287a-111">Network Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="9287a-111">Breaking changes to Network cmdlets</span></span>](#breaking-changes-to-network-cmdlets)
+- [<span data-ttu-id="9287a-112">ServiceBus Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="9287a-112">Breaking changes to ServiceBus cmdlets</span></span>](#breaking-changes-to-servicebus-cmdlets)
+- [<span data-ttu-id="9287a-113">Sql Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="9287a-113">Breaking changes to Sql cmdlets</span></span>](#breaking-changes-to-sql-cmdlets)
+- [<span data-ttu-id="9287a-114">Storage Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="9287a-114">Breaking changes to Storage cmdlets</span></span>](#breaking-changes-to-storage-cmdlets)
+- [<span data-ttu-id="9287a-115">Profile Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="9287a-115">Breaking Changes to Profile Cmdlets</span></span>](#breaking-changes-to-profile-cmdlets)
+  ## <a name="breaking-changes-to-compute-cmdlets"></a><span data-ttu-id="9287a-116">Compute Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="9287a-116">Breaking changes to Compute cmdlets</span></span>
 
-<span data-ttu-id="4e183-117">受到此版本影響的輸出類型如下：</span><span class="sxs-lookup"><span data-stu-id="4e183-117">The following output types were affected this release:</span></span>
+<span data-ttu-id="9287a-117">受到此版本影響的輸出類型如下：</span><span class="sxs-lookup"><span data-stu-id="9287a-117">The following output types were affected this release:</span></span>
 
-### <a name="psvirtualmachine"></a><span data-ttu-id="4e183-118">PSVirtualMachine</span><span class="sxs-lookup"><span data-stu-id="4e183-118">PSVirtualMachine</span></span>
-- <span data-ttu-id="4e183-119">`PSVirtualMachine` 物件的最上層屬性 `DataDiskNames` 和 `NetworkInterfaceIDs` 已從輸出類型中移除。</span><span class="sxs-lookup"><span data-stu-id="4e183-119">Top level properties `DataDiskNames` and `NetworkInterfaceIDs` of nthe `PSVirtualMachine` object have been removed from the output type.</span></span> <span data-ttu-id="4e183-120">這些屬性已一律可在 `PSVirtualMachine` 物件的 `StorageProfile` 和 `NetworkProfile` 屬性中使用，並需要繼續透過存取方式取得。</span><span class="sxs-lookup"><span data-stu-id="4e183-120">These properties have always been available in the `StorageProfile` and `NetworkProfile` properties of the `PSVirtualMachine` object and will be the way they will need to be accessed going forward.</span></span>
-- <span data-ttu-id="4e183-121">這項變更會影響下列 Cmdlet：</span><span class="sxs-lookup"><span data-stu-id="4e183-121">This change affects the following cmdlets:</span></span>
+### <a name="psvirtualmachine"></a><span data-ttu-id="9287a-118">PSVirtualMachine</span><span class="sxs-lookup"><span data-stu-id="9287a-118">PSVirtualMachine</span></span>
+- <span data-ttu-id="9287a-119">`DataDiskNames` 物件的最上層屬性 `NetworkInterfaceIDs` 和 `PSVirtualMachine` 已從輸出類型中移除。</span><span class="sxs-lookup"><span data-stu-id="9287a-119">Top level properties `DataDiskNames` and `NetworkInterfaceIDs` of nthe `PSVirtualMachine` object have been removed from the output type.</span></span> <span data-ttu-id="9287a-120">這些屬性已一律可在 `StorageProfile` 物件的 `NetworkProfile` 和 `PSVirtualMachine` 屬性中使用，並需要繼續透過存取方式取得。</span><span class="sxs-lookup"><span data-stu-id="9287a-120">These properties have always been available in the `StorageProfile` and `NetworkProfile` properties of the `PSVirtualMachine` object and will be the way they will need to be accessed going forward.</span></span>
+- <span data-ttu-id="9287a-121">這項變更會影響下列 Cmdlet：</span><span class="sxs-lookup"><span data-stu-id="9287a-121">This change affects the following cmdlets:</span></span>
     - `Add-AzureRmVMDataDisk`
     - `Add-AzureRmVMNetworkInterface`
     - `Get-AzureRmVM`
@@ -54,25 +54,25 @@ $vm.StorageProfile.DataDisks | Select -Property Name
 $vm.NetworkProfile.NetworkInterfaces | Select -Property Id
 ```
 
-## <a name="breaking-changes-to-eventhub-cmdlets"></a><span data-ttu-id="4e183-122">EventHub Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="4e183-122">Breaking changes to EventHub cmdlets</span></span>
+## <a name="breaking-changes-to-eventhub-cmdlets"></a><span data-ttu-id="9287a-122">EventHub Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="9287a-122">Breaking changes to EventHub cmdlets</span></span>
 
-<span data-ttu-id="4e183-123">受到此版本影響的 Cmdlet 如下：</span><span class="sxs-lookup"><span data-stu-id="4e183-123">The following cmdlets were affected this release:</span></span>
+<span data-ttu-id="9287a-123">受到此版本影響的 Cmdlet 如下：</span><span class="sxs-lookup"><span data-stu-id="9287a-123">The following cmdlets were affected this release:</span></span>
 
-### <a name="get-azurermeventhubnamespace"></a><span data-ttu-id="4e183-124">Get-AzureRmEventHubNamespace</span><span class="sxs-lookup"><span data-stu-id="4e183-124">Get-AzureRmEventHubNamespace</span></span>
-- <span data-ttu-id="4e183-125">`ResourceGroupName` 屬性已從輸出類型 `NamespaceAttributes` 中移除</span><span class="sxs-lookup"><span data-stu-id="4e183-125">The property `ResourceGroupName` has been removed from the output type `NamespaceAttributes`</span></span>
+### <a name="get-azurermeventhubnamespace"></a><span data-ttu-id="9287a-124">Get-AzureRmEventHubNamespace</span><span class="sxs-lookup"><span data-stu-id="9287a-124">Get-AzureRmEventHubNamespace</span></span>
+- <span data-ttu-id="9287a-125">`ResourceGroupName` 屬性已從輸出類型 `NamespaceAttributes` 中移除</span><span class="sxs-lookup"><span data-stu-id="9287a-125">The property `ResourceGroupName` has been removed from the output type `NamespaceAttributes`</span></span>
 
-### <a name="new-azurermeventhubnamespace"></a><span data-ttu-id="4e183-126">New-AzureRmEventHubNamespace</span><span class="sxs-lookup"><span data-stu-id="4e183-126">New-AzureRmEventHubNamespace</span></span>
-- <span data-ttu-id="4e183-127">`ResourceGroupName` 屬性已從輸出類型 `NamespaceAttributes` 中移除</span><span class="sxs-lookup"><span data-stu-id="4e183-127">The property `ResourceGroupName` has been removed from the output type `NamespaceAttributes`</span></span>
+### <a name="new-azurermeventhubnamespace"></a><span data-ttu-id="9287a-126">New-AzureRmEventHubNamespace</span><span class="sxs-lookup"><span data-stu-id="9287a-126">New-AzureRmEventHubNamespace</span></span>
+- <span data-ttu-id="9287a-127">`ResourceGroupName` 屬性已從輸出類型 `NamespaceAttributes` 中移除</span><span class="sxs-lookup"><span data-stu-id="9287a-127">The property `ResourceGroupName` has been removed from the output type `NamespaceAttributes`</span></span>
 
-## <a name="breaking-changes-to-insights-cmdlets"></a><span data-ttu-id="4e183-128">Insights Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="4e183-128">Breaking changes to Insights cmdlets</span></span>
+## <a name="breaking-changes-to-insights-cmdlets"></a><span data-ttu-id="9287a-128">Insights Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="9287a-128">Breaking changes to Insights cmdlets</span></span>
 
-<span data-ttu-id="4e183-129">受到此版本影響的 Cmdlet 如下：</span><span class="sxs-lookup"><span data-stu-id="4e183-129">The following cmdlets were affected this release:</span></span>
+<span data-ttu-id="9287a-129">受到此版本影響的 Cmdlet 如下：</span><span class="sxs-lookup"><span data-stu-id="9287a-129">The following cmdlets were affected this release:</span></span>
     
-### <a name="get-azurermusage"></a><span data-ttu-id="4e183-130">Get-AzureRmUsage</span><span class="sxs-lookup"><span data-stu-id="4e183-130">Get-AzureRmUsage</span></span>
-- <span data-ttu-id="4e183-131">此 Cmdlet 已受到取代。</span><span class="sxs-lookup"><span data-stu-id="4e183-131">This cmdlet has been deprecated.</span></span>
+### <a name="get-azurermusage"></a><span data-ttu-id="9287a-130">Get-AzureRmUsage</span><span class="sxs-lookup"><span data-stu-id="9287a-130">Get-AzureRmUsage</span></span>
+- <span data-ttu-id="9287a-131">此 Cmdlet 已受到取代。</span><span class="sxs-lookup"><span data-stu-id="9287a-131">This cmdlet has been deprecated.</span></span>
 
-### <a name="remove-azurermalertrule"></a><span data-ttu-id="4e183-132">Remove-AzureRmAlertRule</span><span class="sxs-lookup"><span data-stu-id="4e183-132">Remove-AzureRmAlertRule</span></span>
-- <span data-ttu-id="4e183-133">此 Cmdlet 的輸出已從具有單一物件的清單變更為單一物件，此物件包含 requestId 和狀態碼。</span><span class="sxs-lookup"><span data-stu-id="4e183-133">The output of this cmdlet has changed from a list with a single object to a single object; this object includes the requestId, and status code.</span></span>
+### <a name="remove-azurermalertrule"></a><span data-ttu-id="9287a-132">Remove-AzureRmAlertRule</span><span class="sxs-lookup"><span data-stu-id="9287a-132">Remove-AzureRmAlertRule</span></span>
+- <span data-ttu-id="9287a-133">此 Cmdlet 的輸出已從具有單一物件的清單變更為單一物件，此物件包含 requestId 和狀態碼。</span><span class="sxs-lookup"><span data-stu-id="9287a-133">The output of this cmdlet has changed from a list with a single object to a single object; this object includes the requestId, and status code.</span></span>
     
 ```powershell-interactive
 # Old  
@@ -89,11 +89,11 @@ $r = $s1.RequestId
 $s = $s1.StatusCode
 ```
     
-### <a name="add-azurermlogalertrule"></a><span data-ttu-id="4e183-134">Add-AzureRmLogAlertRule</span><span class="sxs-lookup"><span data-stu-id="4e183-134">Add-AzureRmLogAlertRule</span></span>
-- <span data-ttu-id="4e183-135">此 Cmdlet 已受到取代。</span><span class="sxs-lookup"><span data-stu-id="4e183-135">This cmdlet has been deprecated.</span></span>
+### <a name="add-azurermlogalertrule"></a><span data-ttu-id="9287a-134">Add-AzureRmLogAlertRule</span><span class="sxs-lookup"><span data-stu-id="9287a-134">Add-AzureRmLogAlertRule</span></span>
+- <span data-ttu-id="9287a-135">此 Cmdlet 已受到取代。</span><span class="sxs-lookup"><span data-stu-id="9287a-135">This cmdlet has been deprecated.</span></span>
     
-### <a name="get-azurermalertrule"></a><span data-ttu-id="4e183-136">Get-AzureRmAlertRule</span><span class="sxs-lookup"><span data-stu-id="4e183-136">Get-AzureRmAlertRule</span></span>
-- <span data-ttu-id="4e183-137">此 Cmdlet 輸出 (物件清單) 的每個元素會經過壓平合併，也就是並非以 `{ Id, Location, Name, Tags, Properties }` 結構傳回物件，而是以 `{ Id, Location, Name, Tags, Type, Description, IsEnabled, Condition, Actions, LastUpdatedTime, ...}` 結構傳回物件，該結構是 Azure Resource 的所有屬性和最上層 AlertRuleResource 的所有屬性。</span><span class="sxs-lookup"><span data-stu-id="4e183-137">Each element of the output (a list of objects) of this cmdlet is flattened, i.e. instead of returning objects with the structure `{ Id, Location, Name, Tags, Properties }` it will return objects with the structure `{ Id, Location, Name, Tags, Type, Description, IsEnabled, Condition, Actions, LastUpdatedTime, ...}`, which is all of the attributes of an Azure Resource plus all of the attributes of an AlertRuleResource at the top level.</span></span>
+### <a name="get-azurermalertrule"></a><span data-ttu-id="9287a-136">Get-AzureRmAlertRule</span><span class="sxs-lookup"><span data-stu-id="9287a-136">Get-AzureRmAlertRule</span></span>
+- <span data-ttu-id="9287a-137">此 Cmdlet 輸出 (物件清單) 的每個元素會經過壓平合併，也就是並非以 `{ Id, Location, Name, Tags, Properties }` 結構傳回物件，而是以 `{ Id, Location, Name, Tags, Type, Description, IsEnabled, Condition, Actions, LastUpdatedTime, ...}` 結構傳回物件，該結構是 Azure Resource 的所有屬性和最上層 AlertRuleResource 的所有屬性。</span><span class="sxs-lookup"><span data-stu-id="9287a-137">Each element of the output (a list of objects) of this cmdlet is flattened, i.e. instead of returning objects with the structure `{ Id, Location, Name, Tags, Properties }` it will return objects with the structure `{ Id, Location, Name, Tags, Type, Description, IsEnabled, Condition, Actions, LastUpdatedTime, ...}`, which is all of the attributes of an Azure Resource plus all of the attributes of an AlertRuleResource at the top level.</span></span>
     
 ```powershell-interactive
 # Old
@@ -124,8 +124,8 @@ if ($rules -and $rules.count -ge 1)
 }
 ```
     
-### <a name="get-azurermautoscalesetting"></a><span data-ttu-id="4e183-138">Get-AzureRmAutoscaleSetting</span><span class="sxs-lookup"><span data-stu-id="4e183-138">Get-AzureRmAutoscaleSetting</span></span>
-- <span data-ttu-id="4e183-139">`AutoscaleSettingResourceName` 欄位會受到取代，因為它一律與 `Name` 欄位有相同的值。</span><span class="sxs-lookup"><span data-stu-id="4e183-139">The `AutoscaleSettingResourceName` field is deprecated since it always has the same value as the `Name` field.</span></span>
+### <a name="get-azurermautoscalesetting"></a><span data-ttu-id="9287a-138">Get-AzureRmAutoscaleSetting</span><span class="sxs-lookup"><span data-stu-id="9287a-138">Get-AzureRmAutoscaleSetting</span></span>
+- <span data-ttu-id="9287a-139">`AutoscaleSettingResourceName` 欄位會受到取代，因為它一律與 `Name` 欄位有相同的值。</span><span class="sxs-lookup"><span data-stu-id="9287a-139">The `AutoscaleSettingResourceName` field is deprecated since it always has the same value as the `Name` field.</span></span>
 
 ```powershell-interactive
 # Old  
@@ -142,8 +142,8 @@ $s1 = Get-AzureRmAutoscaleSetting -ResourceGroup $resourceGroup -Name MySetting
 Write-Host $s1.Name
 ```
     
-### <a name="remove-azurermlogprofile"></a><span data-ttu-id="4e183-140">Remove-AzureRmLogProfile</span><span class="sxs-lookup"><span data-stu-id="4e183-140">Remove-AzureRmLogProfile</span></span>
-- <span data-ttu-id="4e183-141">此 Cmdlet 的輸出將會從 `Boolean` 變更為物件，其中包含 `RequestId` 和 `StatusCode`</span><span class="sxs-lookup"><span data-stu-id="4e183-141">The output of this cmdlet will change from `Boolean` to and object containing `RequestId` and `StatusCode`</span></span>
+### <a name="remove-azurermlogprofile"></a><span data-ttu-id="9287a-140">Remove-AzureRmLogProfile</span><span class="sxs-lookup"><span data-stu-id="9287a-140">Remove-AzureRmLogProfile</span></span>
+- <span data-ttu-id="9287a-141">此 Cmdlet 的輸出將會從 `Boolean` 變更為物件，其中包含 `RequestId` 和 `StatusCode`</span><span class="sxs-lookup"><span data-stu-id="9287a-141">The output of this cmdlet will change from `Boolean` to and object containing `RequestId` and `StatusCode`</span></span>
 
 ```powershell-interactive
 # Old  
@@ -163,8 +163,8 @@ $r = $s1.RequestId
 $s = $s1.StatusCode
 ```
     
-### <a name="add-azurermlogprofile"></a><span data-ttu-id="4e183-142">Add-AzureRmLogProfile</span><span class="sxs-lookup"><span data-stu-id="4e183-142">Add-AzureRmLogProfile</span></span>
-- <span data-ttu-id="4e183-143">此 Cmdlet 的輸出會變更為包含 requestId、狀態碼和已更新或新建立資源的物件</span><span class="sxs-lookup"><span data-stu-id="4e183-143">The output of this cmdlet will change from an object that includes the requestId, status code, and the updated or newly created resource</span></span>
+### <a name="add-azurermlogprofile"></a><span data-ttu-id="9287a-142">Add-AzureRmLogProfile</span><span class="sxs-lookup"><span data-stu-id="9287a-142">Add-AzureRmLogProfile</span></span>
+- <span data-ttu-id="9287a-143">此 Cmdlet 的輸出會變更為包含 requestId、狀態碼和已更新或新建立資源的物件</span><span class="sxs-lookup"><span data-stu-id="9287a-143">The output of this cmdlet will change from an object that includes the requestId, status code, and the updated or newly created resource</span></span>
     
 ```powershell-interactive
 # Old  
@@ -179,8 +179,8 @@ $a = $s1.NewResource.ServiceBusRuleId
     
 ```
     
-### <a name="set-azurermdiagnosticsettings"></a><span data-ttu-id="4e183-144">Set-AzureRmDiagnosticSettings</span><span class="sxs-lookup"><span data-stu-id="4e183-144">Set-AzureRmDiagnosticSettings</span></span>
-- <span data-ttu-id="4e183-145">此命令將重新命名為 `Update-AzureRmDiagnosticSettings`</span><span class="sxs-lookup"><span data-stu-id="4e183-145">The command is going to be renamed to `Update-AzureRmDiagnosticSettings`</span></span>
+### <a name="set-azurermdiagnosticsettings"></a><span data-ttu-id="9287a-144">Set-AzureRmDiagnosticSettings</span><span class="sxs-lookup"><span data-stu-id="9287a-144">Set-AzureRmDiagnosticSettings</span></span>
+- <span data-ttu-id="9287a-145">此命令將重新命名為 `Update-AzureRmDiagnosticSettings`</span><span class="sxs-lookup"><span data-stu-id="9287a-145">The command is going to be renamed to `Update-AzureRmDiagnosticSettings`</span></span>
 
 ```powershell-interactive
 # Old
@@ -190,12 +190,12 @@ Set-AzureRmDiagnosticSettings
 Update-AzureRmDiagnosticSettings
 ```
 
-## <a name="breaking-changes-to-network-cmdlets"></a><span data-ttu-id="4e183-146">Network Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="4e183-146">Breaking changes to Network cmdlets</span></span>
+## <a name="breaking-changes-to-network-cmdlets"></a><span data-ttu-id="9287a-146">Network Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="9287a-146">Breaking changes to Network cmdlets</span></span>
 
-<span data-ttu-id="4e183-147">受到此版本影響的 Cmdlet 如下：</span><span class="sxs-lookup"><span data-stu-id="4e183-147">The following cmdlets were affected this release:</span></span>
+<span data-ttu-id="9287a-147">受到此版本影響的 Cmdlet 如下：</span><span class="sxs-lookup"><span data-stu-id="9287a-147">The following cmdlets were affected this release:</span></span>
 
-### <a name="new-azurermvirtualnetworkgatewayconnection"></a><span data-ttu-id="4e183-148">New-AzureRmVirtualNetworkGatewayConnection</span><span class="sxs-lookup"><span data-stu-id="4e183-148">New-AzureRmVirtualNetworkGatewayConnection</span></span>
-- <span data-ttu-id="4e183-149">`EnableBgp` 參數已變更為採用 `boolean`，而不是採用 `string`</span><span class="sxs-lookup"><span data-stu-id="4e183-149">`EnableBgp` parameter has been changed to take a `boolean` instead of a `string`</span></span>
+### <a name="new-azurermvirtualnetworkgatewayconnection"></a><span data-ttu-id="9287a-148">New-AzureRmVirtualNetworkGatewayConnection</span><span class="sxs-lookup"><span data-stu-id="9287a-148">New-AzureRmVirtualNetworkGatewayConnection</span></span>
+- <span data-ttu-id="9287a-149">`EnableBgp` 參數已變更為採用 `boolean`，而不是採用 `string`</span><span class="sxs-lookup"><span data-stu-id="9287a-149">`EnableBgp` parameter has been changed to take a `boolean` instead of a `string`</span></span>
 
 ```powershell-interactive
 # Old
@@ -205,24 +205,24 @@ New-AzureRmVirtualNetworkGatewayConnection -ResourceGroupName "RG" -name "conn1"
 New-AzureRmVirtualNetworkGatewayConnection -ResourceGroupName "RG" -name "conn1" -VirtualNetworkGateway1 $vnetGateway -LocalNetworkGateway2 $localnetGateway -ConnectionType IPsec -SharedKey "key" -EnableBgp $true
 ```
 
-## <a name="breaking-changes-to-servicebus-cmdlets"></a><span data-ttu-id="4e183-150">ServiceBus Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="4e183-150">Breaking changes to ServiceBus cmdlets</span></span>
+## <a name="breaking-changes-to-servicebus-cmdlets"></a><span data-ttu-id="9287a-150">ServiceBus Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="9287a-150">Breaking changes to ServiceBus cmdlets</span></span>
 
-<span data-ttu-id="4e183-151">受到此版本影響的 Cmdlet 如下：</span><span class="sxs-lookup"><span data-stu-id="4e183-151">The following cmdlets were affected this release:</span></span>
+<span data-ttu-id="9287a-151">受到此版本影響的 Cmdlet 如下：</span><span class="sxs-lookup"><span data-stu-id="9287a-151">The following cmdlets were affected this release:</span></span>
 
-### <a name="get-azurermservicebusnamespace"></a><span data-ttu-id="4e183-152">Get-AzureRmServiceBusNamespace</span><span class="sxs-lookup"><span data-stu-id="4e183-152">Get-AzureRmServiceBusNamespace</span></span>
-- <span data-ttu-id="4e183-153">`ResourceGroupName` 屬性已從輸出類型 `NamespaceAttributes` 中移除</span><span class="sxs-lookup"><span data-stu-id="4e183-153">The property `ResourceGroupName` has been removed from the output type `NamespaceAttributes`</span></span>
+### <a name="get-azurermservicebusnamespace"></a><span data-ttu-id="9287a-152">Get-AzureRmServiceBusNamespace</span><span class="sxs-lookup"><span data-stu-id="9287a-152">Get-AzureRmServiceBusNamespace</span></span>
+- <span data-ttu-id="9287a-153">`ResourceGroupName` 屬性已從輸出類型 `NamespaceAttributes` 中移除</span><span class="sxs-lookup"><span data-stu-id="9287a-153">The property `ResourceGroupName` has been removed from the output type `NamespaceAttributes`</span></span>
 
-### <a name="new-azurermservicebusnamespace"></a><span data-ttu-id="4e183-154">New-AzureRmServiceBusNamespace</span><span class="sxs-lookup"><span data-stu-id="4e183-154">New-AzureRmServiceBusNamespace</span></span>
+### <a name="new-azurermservicebusnamespace"></a><span data-ttu-id="9287a-154">New-AzureRmServiceBusNamespace</span><span class="sxs-lookup"><span data-stu-id="9287a-154">New-AzureRmServiceBusNamespace</span></span>
 
-- <span data-ttu-id="4e183-155">`ResourceGroupName` 屬性已從輸出類型 `NamespaceAttributes` 中移除</span><span class="sxs-lookup"><span data-stu-id="4e183-155">The property `ResourceGroupName` has been removed from the output type `NamespaceAttributes`</span></span>
+- <span data-ttu-id="9287a-155">`ResourceGroupName` 屬性已從輸出類型 `NamespaceAttributes` 中移除</span><span class="sxs-lookup"><span data-stu-id="9287a-155">The property `ResourceGroupName` has been removed from the output type `NamespaceAttributes`</span></span>
 
-## <a name="breaking-changes-to-sql-cmdlets"></a><span data-ttu-id="4e183-156">Sql Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="4e183-156">Breaking changes to Sql cmdlets</span></span>
+## <a name="breaking-changes-to-sql-cmdlets"></a><span data-ttu-id="9287a-156">Sql Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="9287a-156">Breaking changes to Sql cmdlets</span></span>
 
-<span data-ttu-id="4e183-157">受到此版本影響的 Cmdlet 如下：</span><span class="sxs-lookup"><span data-stu-id="4e183-157">The following cmdlets were affected this release:</span></span>
+<span data-ttu-id="9287a-157">受到此版本影響的 Cmdlet 如下：</span><span class="sxs-lookup"><span data-stu-id="9287a-157">The following cmdlets were affected this release:</span></span>
 
-### <a name="new-azurermsqldatabasefailovergroup"></a><span data-ttu-id="4e183-158">New-AzureRmSqlDatabaseFailoverGroup</span><span class="sxs-lookup"><span data-stu-id="4e183-158">New-AzureRmSqlDatabaseFailoverGroup</span></span>
-- <span data-ttu-id="4e183-159">`Tag` 參數已移除</span><span class="sxs-lookup"><span data-stu-id="4e183-159">`Tag` parameter has been removed</span></span>
-- <span data-ttu-id="4e183-160">`GracePeriodWithDataLossHour` 參數已重新命名為 `GracePeriodWithDataLossHours`</span><span class="sxs-lookup"><span data-stu-id="4e183-160">`GracePeriodWithDataLossHour` parameter has been renamed to `GracePeriodWithDataLossHours`</span></span>
+### <a name="new-azurermsqldatabasefailovergroup"></a><span data-ttu-id="9287a-158">New-AzureRmSqlDatabaseFailoverGroup</span><span class="sxs-lookup"><span data-stu-id="9287a-158">New-AzureRmSqlDatabaseFailoverGroup</span></span>
+- <span data-ttu-id="9287a-159">`Tag` 參數已移除</span><span class="sxs-lookup"><span data-stu-id="9287a-159">`Tag` parameter has been removed</span></span>
+- <span data-ttu-id="9287a-160">`GracePeriodWithDataLossHour` 參數已重新命名為 `GracePeriodWithDataLossHours`</span><span class="sxs-lookup"><span data-stu-id="9287a-160">`GracePeriodWithDataLossHour` parameter has been renamed to `GracePeriodWithDataLossHours`</span></span>
 
 ```powershell-interactive
 # Old
@@ -232,9 +232,9 @@ New-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1 -F
 New-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1 -FailoverGroupName fg -PartnerServerName server2 -FailoverPolicy Automatic -GracePeriodWithDataLossHours 1
 ```
 
-### <a name="set-azurermsqldatabasefailovergroup"></a><span data-ttu-id="4e183-161">Set-AzureRmSqlDatabaseFailoverGroup</span><span class="sxs-lookup"><span data-stu-id="4e183-161">Set-AzureRmSqlDatabaseFailoverGroup</span></span>
-- <span data-ttu-id="4e183-162">`Tag` 參數已移除</span><span class="sxs-lookup"><span data-stu-id="4e183-162">`Tag` parameter has been removed</span></span>
-- <span data-ttu-id="4e183-163">`GracePeriodWithDataLossHour` 參數已重新命名為 `GracePeriodWithDataLossHours`</span><span class="sxs-lookup"><span data-stu-id="4e183-163">`GracePeriodWithDataLossHour` parameter has been renamed to `GracePeriodWithDataLossHours`</span></span>
+### <a name="set-azurermsqldatabasefailovergroup"></a><span data-ttu-id="9287a-161">Set-AzureRmSqlDatabaseFailoverGroup</span><span class="sxs-lookup"><span data-stu-id="9287a-161">Set-AzureRmSqlDatabaseFailoverGroup</span></span>
+- <span data-ttu-id="9287a-162">`Tag` 參數已移除</span><span class="sxs-lookup"><span data-stu-id="9287a-162">`Tag` parameter has been removed</span></span>
+- <span data-ttu-id="9287a-163">`GracePeriodWithDataLossHour` 參數已重新命名為 `GracePeriodWithDataLossHours`</span><span class="sxs-lookup"><span data-stu-id="9287a-163">`GracePeriodWithDataLossHour` parameter has been renamed to `GracePeriodWithDataLossHours`</span></span>
 
 ```powershell-interactive
 # Old
@@ -244,8 +244,8 @@ Set-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1 -F
 Set-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1 -FailoverGroupName fg -FailoverPolicy Automatic -GracePeriodWithDataLossHours 1
 ```
 
-### <a name="add-azurermsqldatabasetofailovergroup"></a><span data-ttu-id="4e183-164">Add-AzureRmSqlDatabaseToFailoverGroup</span><span class="sxs-lookup"><span data-stu-id="4e183-164">Add-AzureRmSqlDatabaseToFailoverGroup</span></span>
-- <span data-ttu-id="4e183-165">`Tag` 參數已移除</span><span class="sxs-lookup"><span data-stu-id="4e183-165">`Tag` parameter has been removed</span></span>
+### <a name="add-azurermsqldatabasetofailovergroup"></a><span data-ttu-id="9287a-164">Add-AzureRmSqlDatabaseToFailoverGroup</span><span class="sxs-lookup"><span data-stu-id="9287a-164">Add-AzureRmSqlDatabaseToFailoverGroup</span></span>
+- <span data-ttu-id="9287a-165">`Tag` 參數已移除</span><span class="sxs-lookup"><span data-stu-id="9287a-165">`Tag` parameter has been removed</span></span>
 
 ```powershell-interactive
 # Old
@@ -255,8 +255,8 @@ Add-AzureRmSqlDatabaseToFailoverGroup -ResourceGroupName rg -ServerName server1 
 Add-AzureRmSqlDatabaseToFailoverGroup -ResourceGroupName rg -ServerName server1 -FailoverGroupName fg -Database $db1
 ```
 
-###  <a name="remove-azurermsqldatabasefromfailovergroup"></a><span data-ttu-id="4e183-166">Remove-AzureRmSqlDatabaseFromFailoverGroup</span><span class="sxs-lookup"><span data-stu-id="4e183-166">Remove-AzureRmSqlDatabaseFromFailoverGroup</span></span>
-- <span data-ttu-id="4e183-167">`Tag` 參數已移除</span><span class="sxs-lookup"><span data-stu-id="4e183-167">`Tag` parameter has been removed</span></span>
+###  <a name="remove-azurermsqldatabasefromfailovergroup"></a><span data-ttu-id="9287a-166">Remove-AzureRmSqlDatabaseFromFailoverGroup</span><span class="sxs-lookup"><span data-stu-id="9287a-166">Remove-AzureRmSqlDatabaseFromFailoverGroup</span></span>
+- <span data-ttu-id="9287a-167">`Tag` 參數已移除</span><span class="sxs-lookup"><span data-stu-id="9287a-167">`Tag` parameter has been removed</span></span>
 
 ```powershell-interactive
 # Old
@@ -266,9 +266,9 @@ Remove-AzureRmSqlDatabaseFromFailoverGroup -ResourceGroupName rg -ServerName ser
 Remove-AzureRmSqlDatabaseFromFailoverGroup -ResourceGroupName rg -ServerName server1 -FailoverGroupName fg -Database $db1
 ```
 
-### <a name="remove-azurermsqldatabasefailovergroup"></a><span data-ttu-id="4e183-168">Remove-AzureRmSqlDatabaseFailoverGroup</span><span class="sxs-lookup"><span data-stu-id="4e183-168">Remove-AzureRmSqlDatabaseFailoverGroup</span></span>
-- <span data-ttu-id="4e183-169">`PartnerResourceGroupName` 參數已移除</span><span class="sxs-lookup"><span data-stu-id="4e183-169">`PartnerResourceGroupName` parameter has been removed</span></span>
-- <span data-ttu-id="4e183-170">`PartnerServerName` 參數已移除</span><span class="sxs-lookup"><span data-stu-id="4e183-170">`PartnerServerName` parameter has been removed</span></span>
+### <a name="remove-azurermsqldatabasefailovergroup"></a><span data-ttu-id="9287a-168">Remove-AzureRmSqlDatabaseFailoverGroup</span><span class="sxs-lookup"><span data-stu-id="9287a-168">Remove-AzureRmSqlDatabaseFailoverGroup</span></span>
+- <span data-ttu-id="9287a-169">`PartnerResourceGroupName` 參數已移除</span><span class="sxs-lookup"><span data-stu-id="9287a-169">`PartnerResourceGroupName` parameter has been removed</span></span>
+- <span data-ttu-id="9287a-170">`PartnerServerName` 參數已移除</span><span class="sxs-lookup"><span data-stu-id="9287a-170">`PartnerServerName` parameter has been removed</span></span>
 
 ```powershell-interactive
 # Old
@@ -278,24 +278,24 @@ Remove-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1
 Remove-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1 -FailoverGroupName fg
 ```
 
-### <a name="set-azurermsqldatabasethreatdetectionpolicy"></a><span data-ttu-id="4e183-171">Set-AzureRmSqlDatabaseThreatDetectionPolicy</span><span class="sxs-lookup"><span data-stu-id="4e183-171">Set-AzureRmSqlDatabaseThreatDetectionPolicy</span></span>
-- <span data-ttu-id="4e183-172">`Usage_Anomaly` 值已不再是 `ExcludedDetectionType` 參數的有效值</span><span class="sxs-lookup"><span data-stu-id="4e183-172">The value `Usage_Anomaly` is no longer valid for the parameter `ExcludedDetectionType`</span></span>
+### <a name="set-azurermsqldatabasethreatdetectionpolicy"></a><span data-ttu-id="9287a-171">Set-AzureRmSqlDatabaseThreatDetectionPolicy</span><span class="sxs-lookup"><span data-stu-id="9287a-171">Set-AzureRmSqlDatabaseThreatDetectionPolicy</span></span>
+- <span data-ttu-id="9287a-172">`Usage_Anomaly` 值已不再是 `ExcludedDetectionType` 參數的有效值</span><span class="sxs-lookup"><span data-stu-id="9287a-172">The value `Usage_Anomaly` is no longer valid for the parameter `ExcludedDetectionType`</span></span>
 
-### <a name="set-azurermsqlserverthreatdetectionpolicy"></a><span data-ttu-id="4e183-173">Set-AzureRmSqlServerThreatDetectionPolicy</span><span class="sxs-lookup"><span data-stu-id="4e183-173">Set-AzureRmSqlServerThreatDetectionPolicy</span></span>
-- <span data-ttu-id="4e183-174">`Usage_Anomaly` 值已不再是 `ExcludedDetectionType` 參數的有效值</span><span class="sxs-lookup"><span data-stu-id="4e183-174">The value `Usage_Anomaly` is no longer valid for the parameter `ExcludedDetectionType`</span></span>
+### <a name="set-azurermsqlserverthreatdetectionpolicy"></a><span data-ttu-id="9287a-173">Set-AzureRmSqlServerThreatDetectionPolicy</span><span class="sxs-lookup"><span data-stu-id="9287a-173">Set-AzureRmSqlServerThreatDetectionPolicy</span></span>
+- <span data-ttu-id="9287a-174">`Usage_Anomaly` 值已不再是 `ExcludedDetectionType` 參數的有效值</span><span class="sxs-lookup"><span data-stu-id="9287a-174">The value `Usage_Anomaly` is no longer valid for the parameter `ExcludedDetectionType`</span></span>
 
-## <a name="breaking-changes-to-storage-cmdlets"></a><span data-ttu-id="4e183-175">Storage Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="4e183-175">Breaking changes to Storage cmdlets</span></span>
+## <a name="breaking-changes-to-storage-cmdlets"></a><span data-ttu-id="9287a-175">Storage Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="9287a-175">Breaking changes to Storage cmdlets</span></span>
 
-<span data-ttu-id="4e183-176">受到此版本影響的輸出類型參數如下：</span><span class="sxs-lookup"><span data-stu-id="4e183-176">The following output type properties were affected this release:</span></span>
+<span data-ttu-id="9287a-176">受到此版本影響的輸出類型參數如下：</span><span class="sxs-lookup"><span data-stu-id="9287a-176">The following output type properties were affected this release:</span></span>
 
-### <a name="azurestorageblobicloudblobserviceclient"></a><span data-ttu-id="4e183-177">AzureStorageBlob.ICloudBlob.ServiceClient</span><span class="sxs-lookup"><span data-stu-id="4e183-177">AzureStorageBlob.ICloudBlob.ServiceClient</span></span>
-- <span data-ttu-id="4e183-178">下列屬性已從此類型中移除 (_注意_：這些屬性還是可以在 `DefaultRequestOptions` 屬性中找到):</span><span class="sxs-lookup"><span data-stu-id="4e183-178">The following properties were removed from this type (_note_: they can still be found in `DefaultRequestOptions` property):</span></span>
+### <a name="azurestorageblobicloudblobserviceclient"></a><span data-ttu-id="9287a-177">AzureStorageBlob.ICloudBlob.ServiceClient</span><span class="sxs-lookup"><span data-stu-id="9287a-177">AzureStorageBlob.ICloudBlob.ServiceClient</span></span>
+- <span data-ttu-id="9287a-178">下列屬性已從此類型中移除 (_注意_：這些屬性還是可以在 `DefaultRequestOptions` 屬性中找到):</span><span class="sxs-lookup"><span data-stu-id="9287a-178">The following properties were removed from this type (_note_: they can still be found in `DefaultRequestOptions` property):</span></span>
     - `LocationMode`
     - `MaximumExecutionTime`
     - `ServerTimeout`
     - `ParallelOperationThreadCount`
     - `SingleBlobUploadThresholdInBytes`
-- <span data-ttu-id="4e183-179">這項變更會影響下列 Cmdlet：</span><span class="sxs-lookup"><span data-stu-id="4e183-179">This change affects the following cmdlets:</span></span>
+- <span data-ttu-id="9287a-179">這項變更會影響下列 Cmdlet：</span><span class="sxs-lookup"><span data-stu-id="9287a-179">This change affects the following cmdlets:</span></span>
     - `Get-AzureStorageBlob`
     - `Get-AzureStorageBlobContent`
     - `Get-AzureStorageBlobCopyState`
@@ -303,36 +303,36 @@ Remove-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1
     - `Start-AzureStorageBlobCopy`
     - `Stop-AzureStorageBlobCopy`
     
-### <a name="azurestoragecontainercloudblobcontainerserviceclient"></a><span data-ttu-id="4e183-180">AzureStorageContainer.CloudBlobContainer.ServiceClient</span><span class="sxs-lookup"><span data-stu-id="4e183-180">AzureStorageContainer.CloudBlobContainer.ServiceClient</span></span>
-- <span data-ttu-id="4e183-181">下列屬性已從此類型中移除 (_注意_：這些屬性還是可以在 `DefaultRequestOptions` 屬性中找到)：</span><span class="sxs-lookup"><span data-stu-id="4e183-181">The following properties were removed from this type (_note_: they can still be found in the `DefaultRequestOptions` property):</span></span>
+### <a name="azurestoragecontainercloudblobcontainerserviceclient"></a><span data-ttu-id="9287a-180">AzureStorageContainer.CloudBlobContainer.ServiceClient</span><span class="sxs-lookup"><span data-stu-id="9287a-180">AzureStorageContainer.CloudBlobContainer.ServiceClient</span></span>
+- <span data-ttu-id="9287a-181">下列屬性已從此類型中移除 (_注意_：這些屬性還是可以在 `DefaultRequestOptions` 屬性中找到)：</span><span class="sxs-lookup"><span data-stu-id="9287a-181">The following properties were removed from this type (_note_: they can still be found in the `DefaultRequestOptions` property):</span></span>
     - `LocationMode`
     - `MaximumExecutionTime`
     - `ServerTimeout`
     - `ParallelOperationThreadCount`
     - `SingleBlobUploadThresholdInBytes`
-- <span data-ttu-id="4e183-182">這項變更會影響下列 Cmdlet：</span><span class="sxs-lookup"><span data-stu-id="4e183-182">This change affects the following cmdlets:</span></span>
+- <span data-ttu-id="9287a-182">這項變更會影響下列 Cmdlet：</span><span class="sxs-lookup"><span data-stu-id="9287a-182">This change affects the following cmdlets:</span></span>
     - `Get-AzureStorageContainer`
     - `New-AzureStorageContainer`
     - `Set-AzureStorageContainerAcl`
     
-### <a name="azurestoragequeuecloudqueueserviceclient"></a><span data-ttu-id="4e183-183">AzureStorageQueue.CloudQueue.ServiceClient</span><span class="sxs-lookup"><span data-stu-id="4e183-183">AzureStorageQueue.CloudQueue.ServiceClient</span></span>
-- <span data-ttu-id="4e183-184">下列屬性已從此類型中移除 (_注意_：這些屬性還是可以在 `DefaultRequestOptions` 屬性中找到)：</span><span class="sxs-lookup"><span data-stu-id="4e183-184">The following properties were removed from this type (_note_: they can still be found in the `DefaultRequestOptions` property):</span></span>
+### <a name="azurestoragequeuecloudqueueserviceclient"></a><span data-ttu-id="9287a-183">AzureStorageQueue.CloudQueue.ServiceClient</span><span class="sxs-lookup"><span data-stu-id="9287a-183">AzureStorageQueue.CloudQueue.ServiceClient</span></span>
+- <span data-ttu-id="9287a-184">下列屬性已從此類型中移除 (_注意_：這些屬性還是可以在 `DefaultRequestOptions` 屬性中找到)：</span><span class="sxs-lookup"><span data-stu-id="9287a-184">The following properties were removed from this type (_note_: they can still be found in the `DefaultRequestOptions` property):</span></span>
     - `LocationMode`
     - `MaximumExecutionTime`
     - `RetryPolicy`
     - `ServerTimeout`
-- <span data-ttu-id="4e183-185">這項變更會影響下列 Cmdlet：</span><span class="sxs-lookup"><span data-stu-id="4e183-185">This change affects the following cmdlets:</span></span>
+- <span data-ttu-id="9287a-185">這項變更會影響下列 Cmdlet：</span><span class="sxs-lookup"><span data-stu-id="9287a-185">This change affects the following cmdlets:</span></span>
     - `Get-AzureStorageQueue`
     - `New-AzureStorageQueue`
     
-### <a name="azurestoragetablecloudtableserviceclient"></a><span data-ttu-id="4e183-186">AzureStorageTable.CloudTable.ServiceClient</span><span class="sxs-lookup"><span data-stu-id="4e183-186">AzureStorageTable.CloudTable.ServiceClient</span></span>
-- <span data-ttu-id="4e183-187">下列屬性已從此類型中移除 (_注意_：這些屬性還是可以在 `DefaultRequestOptions` 屬性中找到)：</span><span class="sxs-lookup"><span data-stu-id="4e183-187">The following properties were removed from this type (_note_: they can still be found in the `DefaultRequestOptions` property):</span></span>
+### <a name="azurestoragetablecloudtableserviceclient"></a><span data-ttu-id="9287a-186">AzureStorageTable.CloudTable.ServiceClient</span><span class="sxs-lookup"><span data-stu-id="9287a-186">AzureStorageTable.CloudTable.ServiceClient</span></span>
+- <span data-ttu-id="9287a-187">下列屬性已從此類型中移除 (_注意_：這些屬性還是可以在 `DefaultRequestOptions` 屬性中找到)：</span><span class="sxs-lookup"><span data-stu-id="9287a-187">The following properties were removed from this type (_note_: they can still be found in the `DefaultRequestOptions` property):</span></span>
     - `LocationMode`
     - `MaximumExecutionTime`
     - `PayloadFormat`
     - `RetryPolicy`
     - `ServerTimeout`
-- <span data-ttu-id="4e183-188">這項變更會影響下列 Cmdlet：</span><span class="sxs-lookup"><span data-stu-id="4e183-188">This change affects the following cmdlets:</span></span>
+- <span data-ttu-id="9287a-188">這項變更會影響下列 Cmdlet：</span><span class="sxs-lookup"><span data-stu-id="9287a-188">This change affects the following cmdlets:</span></span>
     - `Get-AzureStorageTable`
     - `New-AzureStorageTable`
     
@@ -350,13 +350,13 @@ $PayloadFormat = (Get-AzureStorageTable -Name $tablename).CloudTable.ServiceClie
 $RetryPolicy = (Get-AzureStorageQueue -Name $queuename).CloudQueue.ServiceClient.DefaultRequestOptions.RetryPolicy
 ```
 
-## <a name="breaking-changes-to-profile-cmdlets"></a><span data-ttu-id="4e183-189">Profile Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="4e183-189">Breaking Changes to Profile Cmdlets</span></span>
+## <a name="breaking-changes-to-profile-cmdlets"></a><span data-ttu-id="9287a-189">Profile Cmdlet 的重大變更</span><span class="sxs-lookup"><span data-stu-id="9287a-189">Breaking Changes to Profile Cmdlets</span></span>
 
-<span data-ttu-id="4e183-190">下列 Cmdlet 與 Cmdlet 輸出類型已在此版本中變更。</span><span class="sxs-lookup"><span data-stu-id="4e183-190">The following cmdlets and cmdlet output types were changed in this release.</span></span>
+<span data-ttu-id="9287a-190">下列 Cmdlet 與 Cmdlet 輸出類型已在此版本中變更。</span><span class="sxs-lookup"><span data-stu-id="9287a-190">The following cmdlets and cmdlet output types were changed in this release.</span></span>
 
-### <a name="add-azurermaccount-breaking-changes"></a><span data-ttu-id="4e183-191">Add-AzureRmAccount 重大變更</span><span class="sxs-lookup"><span data-stu-id="4e183-191">Add-AzureRmAccount breaking changes</span></span>
+### <a name="add-azurermaccount-breaking-changes"></a><span data-ttu-id="9287a-191">Add-AzureRmAccount 重大變更</span><span class="sxs-lookup"><span data-stu-id="9287a-191">Add-AzureRmAccount breaking changes</span></span>
 
-- <span data-ttu-id="4e183-192">```EnvironmentName``` 已移除，並以 ```Environment``` 加以取代，```Environment``` 現在會採用字串，而不是採用 ```AzureEnvironment``` 物件</span><span class="sxs-lookup"><span data-stu-id="4e183-192">```EnvironmentName``` parameter has been removed and replaced with ```Environment```, the ```Environment``` now takes a string and not an ```AzureEnvironment``` object</span></span>
+- <span data-ttu-id="9287a-192">```EnvironmentName``` 已移除，並以 ```Environment``` 加以取代，```Environment``` 現在會採用字串，而不是採用 ```AzureEnvironment``` 物件</span><span class="sxs-lookup"><span data-stu-id="9287a-192">```EnvironmentName``` parameter has been removed and replaced with ```Environment```, the ```Environment``` now takes a string and not an ```AzureEnvironment``` object</span></span>
 
 ```powershell-interactive
 # Old
@@ -366,9 +366,9 @@ Add-AzureRmAccount -EnvironmentName AzureChinaCloud
 Add-AzureRmAccount -Environment AzureChinaCloud
 ```
 
-### <a name="select-azurermprofile-was-renamed-to-import-azurermcontext"></a><span data-ttu-id="4e183-193">Select-AzureRmProfile 已重新命名為 Import-AzureRmContext</span><span class="sxs-lookup"><span data-stu-id="4e183-193">Select-AzureRmProfile was renamed to Import-AzureRmContext</span></span>
+### <a name="select-azurermprofile-was-renamed-to-import-azurermcontext"></a><span data-ttu-id="9287a-193">Select-AzureRmProfile 已重新命名為 Import-AzureRmContext</span><span class="sxs-lookup"><span data-stu-id="9287a-193">Select-AzureRmProfile was renamed to Import-AzureRmContext</span></span>
 
-<span data-ttu-id="4e183-194">```Select-AzureRmProfile``` 已重新命名為 ```Import-AzureRmContext```</span><span class="sxs-lookup"><span data-stu-id="4e183-194">```Select-AzureRmProfile``` was renamed to ```Import-AzureRmContext```</span></span>
+<span data-ttu-id="9287a-194">```Select-AzureRmProfile``` 已重新命名為 ```Import-AzureRmContext```</span><span class="sxs-lookup"><span data-stu-id="9287a-194">```Select-AzureRmProfile``` was renamed to ```Import-AzureRmContext```</span></span>
 
 ```powershell-interactive
 # Old
@@ -378,9 +378,9 @@ Select-AzureRmProfile -Path c:\mydir\myprofile.json
 Import-AzureRmContext -Path c:\mydir\myprofile.json
 ```
 
-### <a name="save-azurermprofile-was-renamed-to-save-azurermcontext"></a><span data-ttu-id="4e183-195">Save-AzureRmProfile 已重新命名為 Save-AzureRmContext</span><span class="sxs-lookup"><span data-stu-id="4e183-195">Save-AzureRmProfile was renamed to Save-AzureRmContext</span></span>
+### <a name="save-azurermprofile-was-renamed-to-save-azurermcontext"></a><span data-ttu-id="9287a-195">Save-AzureRmProfile 已重新命名為 Save-AzureRmContext</span><span class="sxs-lookup"><span data-stu-id="9287a-195">Save-AzureRmProfile was renamed to Save-AzureRmContext</span></span>
 
-<span data-ttu-id="4e183-196">```Save-AzureRmProfile``` 已重新命名為 ```Save-AzureRmContext```</span><span class="sxs-lookup"><span data-stu-id="4e183-196">```Save-AzureRmProfile``` was renamed to ```Save-AzureRmContext```</span></span>
+<span data-ttu-id="9287a-196">```Save-AzureRmProfile``` 已重新命名為 ```Save-AzureRmContext```</span><span class="sxs-lookup"><span data-stu-id="9287a-196">```Save-AzureRmProfile``` was renamed to ```Save-AzureRmContext```</span></span>
 
 ```powershell-interactive
 # Old
@@ -389,9 +389,9 @@ Save-AzureRmProfile -Path c:\mydir\myprofile.json
 # New
 Save-AzureRmContext -Path c:\mydir\myprofile.json
 ```
-### <a name="breaking-changes-to-output-psazurecontext-type"></a><span data-ttu-id="4e183-197">PSAzureContext 類型輸出的重大變更</span><span class="sxs-lookup"><span data-stu-id="4e183-197">Breaking Changes to output PSAzureContext Type</span></span>
+### <a name="breaking-changes-to-output-psazurecontext-type"></a><span data-ttu-id="9287a-197">PSAzureContext 類型輸出的重大變更</span><span class="sxs-lookup"><span data-stu-id="9287a-197">Breaking Changes to output PSAzureContext Type</span></span>
 
-- <span data-ttu-id="4e183-198">```TokenCache``` 屬性已變更為實作 ```IAzureTokenCache``` 的類型，而不是實作 ```byte[]``` 的類型</span><span class="sxs-lookup"><span data-stu-id="4e183-198">The ```TokenCache``` property changed to a type that implements ```IAzureTokenCache``` instead of a ```byte[]```</span></span>
+- <span data-ttu-id="9287a-198">```TokenCache``` 屬性已變更為實作 ```IAzureTokenCache``` 的類型，而不是實作 ```byte[]``` 的類型</span><span class="sxs-lookup"><span data-stu-id="9287a-198">The ```TokenCache``` property changed to a type that implements ```IAzureTokenCache``` instead of a ```byte[]```</span></span>
 
 ```powershell-interactive
 # Old
@@ -405,9 +405,9 @@ $bytes = (Set-AzureRmContext -SubscriptionId xxx-xxx-xxx-xxx).TokenCache.CacheDa
 $bytes = (Add-AzureRmAccount).Context.TokenCache.CacheData
 ```
 
-### <a name="breaking-changes-to-the-output-psazureaccount-type"></a><span data-ttu-id="4e183-199">PSAzureAccount 類型輸出的重大變更</span><span class="sxs-lookup"><span data-stu-id="4e183-199">Breaking Changes to the output PSAzureAccount Type</span></span>
+### <a name="breaking-changes-to-the-output-psazureaccount-type"></a><span data-ttu-id="9287a-199">PSAzureAccount 類型輸出的重大變更</span><span class="sxs-lookup"><span data-stu-id="9287a-199">Breaking Changes to the output PSAzureAccount Type</span></span>
 
-- <span data-ttu-id="4e183-200">```AccountType``` 屬性已變更為 ```Type```</span><span class="sxs-lookup"><span data-stu-id="4e183-200">The ```AccountType``` property was changed to ```Type```</span></span>
+- <span data-ttu-id="9287a-200">```AccountType``` 屬性已變更為 ```Type```</span><span class="sxs-lookup"><span data-stu-id="9287a-200">The ```AccountType``` property was changed to ```Type```</span></span>
 
 ```powershell-interactive
 # Old
@@ -421,8 +421,8 @@ $type = (Set-AzureRmContext -SubscriptionId xxx-xxx-xxx-xxx).Account.Type
 $type = (Add-AzureRmAccount).Context.Account.Type
 ```
 
-### <a name="breaking-changes-to-the-output-psazuresubscription-type"></a><span data-ttu-id="4e183-201">PSAzureSubscription 類型輸出的重大變更</span><span class="sxs-lookup"><span data-stu-id="4e183-201">Breaking Changes to the output PSAzureSubscription Type</span></span>
-- <span data-ttu-id="4e183-202">```SubscriptionId``` 屬性已變更為 ```Id```</span><span class="sxs-lookup"><span data-stu-id="4e183-202">The ```SubscriptionId``` property was changed to ```Id```</span></span>
+### <a name="breaking-changes-to-the-output-psazuresubscription-type"></a><span data-ttu-id="9287a-201">PSAzureSubscription 類型輸出的重大變更</span><span class="sxs-lookup"><span data-stu-id="9287a-201">Breaking Changes to the output PSAzureSubscription Type</span></span>
+- <span data-ttu-id="9287a-202">```SubscriptionId``` 屬性已變更為 ```Id```</span><span class="sxs-lookup"><span data-stu-id="9287a-202">The ```SubscriptionId``` property was changed to ```Id```</span></span>
 
 ```powershell-interactive
 # Old
@@ -438,7 +438,7 @@ $id =(Get-AzureRmContext -SubscriptionId xxxx-xxxx-xxxx-xxxx).Subscription.Id
 $id =(Set-AzureRmContext -SubscriptionId xxxx-xxxx-xxxx-xxxx).Subscription.Id
 ```
 
-- <span data-ttu-id="4e183-203">```SubscriptionName``` 屬性已變更為 ```Name```</span><span class="sxs-lookup"><span data-stu-id="4e183-203">The ```SubscriptionName``` property was changed to ```Name```</span></span>
+- <span data-ttu-id="9287a-203">```SubscriptionName``` 屬性已變更為 ```Name```</span><span class="sxs-lookup"><span data-stu-id="9287a-203">The ```SubscriptionName``` property was changed to ```Name```</span></span>
 
 ```powershell-interactive
 # Old
@@ -454,9 +454,9 @@ $name =(Get-AzureRmContext -SubscriptionId xxxx-xxxx-xxxx-xxxx).Subscription.Nam
 $name =(Set-AzureRmContext -SubscriptionId xxxx-xxxx-xxxx-xxxx).Subscription.Name
 ```
 
-### <a name="breaking-changes-to-the-output-psazuretenant-type"></a><span data-ttu-id="4e183-204">PSAzureTenant 類型輸出的重大變更</span><span class="sxs-lookup"><span data-stu-id="4e183-204">Breaking Changes to the output PSAzureTenant Type</span></span>
+### <a name="breaking-changes-to-the-output-psazuretenant-type"></a><span data-ttu-id="9287a-204">PSAzureTenant 類型輸出的重大變更</span><span class="sxs-lookup"><span data-stu-id="9287a-204">Breaking Changes to the output PSAzureTenant Type</span></span>
 
-- <span data-ttu-id="4e183-205">```TenantId``` 屬性已變更為 ```Id```</span><span class="sxs-lookup"><span data-stu-id="4e183-205">The ```TenantId``` property was changed to ```Id```</span></span>
+- <span data-ttu-id="9287a-205">```TenantId``` 屬性已變更為 ```Id```</span><span class="sxs-lookup"><span data-stu-id="9287a-205">The ```TenantId``` property was changed to ```Id```</span></span>
 
 ```powershell-interactive
 # Old
@@ -472,7 +472,7 @@ $id =(Get-AzureRmContext -SubscriptionId xxxx-xxxx-xxxx-xxxx).Tenant.Id
 $id =(Set-AzureRmContext -SubscriptionId xxxx-xxxx-xxxx-xxxx).Tenant.Id
 ```
 
-- <span data-ttu-id="4e183-206">```Domain``` 屬性已變更為 ```Directory```</span><span class="sxs-lookup"><span data-stu-id="4e183-206">The ```Domain``` property was changed to ```Directory```</span></span>
+- <span data-ttu-id="9287a-206">```Domain``` 屬性已變更為 ```Directory```</span><span class="sxs-lookup"><span data-stu-id="9287a-206">The ```Domain``` property was changed to ```Directory```</span></span>
 
 ```powershell-interactive
 # Old
