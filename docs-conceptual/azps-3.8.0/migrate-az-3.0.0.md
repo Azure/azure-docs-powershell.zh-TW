@@ -113,7 +113,7 @@ Get-AzBatchSupportedImage -BatchContext $Context
 ## <a name="compute"></a>計算
 
 ### `New-AzDiskConfig`
-上傳 CreateOption 時，已使用 `UploadSizeInBytes` 參數而非 `DiskSizeGB` 的 `New-AzDiskConfig`
+上傳 CreateOption 時，已使用 `UploadSizeInBytes` 參數而非 `New-AzDiskConfig` 的 `DiskSizeGB`
 
 #### <a name="before"></a>之前
 ```powershell

@@ -146,7 +146,7 @@ Get-InstalledModule -Name Az -AllVersions | select Name,Version
 
 如果您安裝了多個模組版本，模組會自動載入，`Import-Module` 則預設會載入最新的版本。
 
-您可使用 `Az` 參數來安裝或載入特定版本的 `-RequiredVersion` 模組：
+您可使用 `-RequiredVersion` 參數來安裝或載入特定版本的 `Az` 模組：
 
 ```powershell-interactive
 # Install Az version 3.6.1

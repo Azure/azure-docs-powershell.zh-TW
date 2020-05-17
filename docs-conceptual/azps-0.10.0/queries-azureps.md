@@ -73,7 +73,7 @@ TestVM 711d8ed1-b888-4c52-8ab9-66f07b87eb6b Succeeded
 
 ## <a name="select-nested-properties"></a>選取巢狀屬性
 
-Azure PowerShell Cmdlet 輸出中的某些屬性會使用巢狀物件，例如 `StorageProfile` 輸出的 `Get-AzVM` 屬性。 若要從巢狀屬性中取得要檢查的值，需提供值的顯示名稱和完整路徑，以作為 `Select-Object` 中字典引數的一部份：
+Azure PowerShell Cmdlet 輸出中的某些屬性會使用巢狀物件，例如 `Get-AzVM` 輸出的 `StorageProfile` 屬性。 若要從巢狀屬性中取得要檢查的值，需提供值的顯示名稱和完整路徑，以作為 `Select-Object` 中字典引數的一部份：
 
 ```azurepowershell-interactive
 Get-AzVM -ResourceGroupName TestGroup | `
