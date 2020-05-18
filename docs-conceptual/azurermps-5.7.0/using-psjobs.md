@@ -69,7 +69,7 @@ MyVm                 MyVm   eastus Standard_DS1_v2 Windows    MyVm          Crea
 
 > [!NOTE]
 > 若 `Receive-Job` 旗標並未顯示，`-AsJob` 會從 Cmdlet 傳回結果。
-> 例如，`Receive-Job` 的 `Do-Action -AsJob` 結果與 `Do-Action` 結果的類型相同。
+> 例如，`Do-Action -AsJob` 的 `Receive-Job` 結果與 `Do-Action` 結果的類型相同。
 
 ```azurepowershell-interactive
 $vm = Receive-Job $job

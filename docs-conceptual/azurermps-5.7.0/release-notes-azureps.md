@@ -308,15 +308,15 @@ Update-Module -Name AzureRM
 * 已更正 `Login-AzureRmAccount` 的使用方式來使用 `Connect-AzureRmAccount`
 * 適用於 VM 和 VM 擴展集的使用者指派識別身分支援
     - 已將 `-IdentityType` 和 `-IdentityId` 參數新增至 `New-AzureRmVMConfig`、`New-AzureRmVmssConfig`、`Update-AzureRmVM` 和 `Update-AzureRmVmss`
-* 在 `-EnableIPForwarding` 中新增 `Add-AzureRmVmssNetworkInterfaceConfig` 參數
-* 在 `-Priority` 中新增 `New-AzureRmVmssConfig` 參數
+* 在 `Add-AzureRmVmssNetworkInterfaceConfig` 中新增 `-EnableIPForwarding` 參數
+* 在 `New-AzureRmVmssConfig` 中新增 `-Priority` 參數
 
 ### <a name="azurermdatalakeanalytics"></a>AzureRM.DataLakeAnalytics
 * 已更正 `Login-AzureRmAccount` 的使用方式來使用 `Connect-AzureRmAccount`
 
 ### <a name="azurermdatalakestore"></a>AzureRM.DataLakeStore
 * 已更正 `Login-AzureRmAccount` 的使用方式來使用 `Connect-AzureRmAccount`
-* 已更正執行此 Cmdlet 而不需要登入 `Test-AzureRmDataLakeStoreAccount` 時的 `Login-AzureRmAccount` 錯誤訊息
+* 已更正執行此 Cmdlet 而不需要登入 `Login-AzureRmAccount` 時的 `Test-AzureRmDataLakeStoreAccount` 錯誤訊息
 
 ### <a name="azurermeventgrid"></a>AzureRM.EventGrid
 * 已更新使用 2018-01-01 API 版本。
@@ -768,7 +768,7 @@ Update-Module -Name AzureRM
     - 新增 `UserAccounts` 參數。
       - 這個參數可定義集區中每個節點上所建立的使用者帳戶。
     - 新增 `TargetLowPriorityComputeNodes` 並將 `TargetDedicated` 重新命名為 `TargetDedicatedComputeNodes`。
-      - 針對 `TargetDedicated` 參數已建立 `TargetDedicatedComputeNodes` 別名。
+      - 針對 `TargetDedicatedComputeNodes` 參數已建立 `TargetDedicated` 別名。
     - 新增 `NetworkConfiguration` 參數。
       - 這個參數可讓您設定集區的網路設定。
   * 將參數更新為 `New-AzureBatchCertificate`。
@@ -777,13 +777,13 @@ Update-Module -Name AzureRM
     - `Password` 參數現在是 `SecureString`。
   * 將參數更新為 `Set-AzureBatchComputeNodeUser`。
     - `Password` 參數現在是 `SecureString`。
-  * 在 `Name`、`Path` 和 `Get-AzureBatchNodeFile` 上將 `Get-AzureBatchNodeFileContent` 參數重新命名為 `Remove-AzureBatchNodeFile`。
-    - 針對 `Name` 參數已建立 `Path` 別名。
+  * 在 `Get-AzureBatchNodeFile`、`Get-AzureBatchNodeFileContent` 和 `Remove-AzureBatchNodeFile` 上將 `Name` 參數重新命名為 `Path`。
+    - 針對 `Path` 參數已建立 `Name` 別名。
   * 物件的變更
     - 請參閱 Batch 變更記錄取得完整清單
   * 新增 Azure Active Directory 型驗證支援。
-    - 若要使用 Azure Active Directory 驗證，請使用 `BatchAccountContext` Cmdlet 擷取 `Get-AzureRmBatchAccount` 物件，並將此 `BatchAccountContext` 提供至 Batch 服務 Cmdlet 的 `-BatchContext` 參數。 對於具有 `PoolAllocationMode = UserSubscription` 的帳戶，Azure Active Directory 驗證為必要。
-    - 對於現有帳戶或以 `PoolAllocationMode = BatchService` 建立的新帳戶，您可以藉由使用 `BatchAccountContext` Cmdlet 擷取 `Get-AzureRmBatchAccoutKeys` 物件，繼續使用共用金鑰驗證。
+    - 若要使用 Azure Active Directory 驗證，請使用 `Get-AzureRmBatchAccount` Cmdlet 擷取 `BatchAccountContext` 物件，並將此 `BatchAccountContext` 提供至 Batch 服務 Cmdlet 的 `-BatchContext` 參數。 對於具有 `PoolAllocationMode = UserSubscription` 的帳戶，Azure Active Directory 驗證為必要。
+    - 對於現有帳戶或以 `PoolAllocationMode = BatchService` 建立的新帳戶，您可以藉由使用 `Get-AzureRmBatchAccoutKeys` Cmdlet 擷取 `BatchAccountContext` 物件，繼續使用共用金鑰驗證。
 * 計算
   * Azure 磁碟加密延伸模組命令
     - 'Set-AzureRmVmDiskEncryptionExtension' 的新參數：'-EncryptFormatAll' 加密格式資料磁碟

@@ -28,7 +28,7 @@ ms.locfileid: "75722402"
 > [!NOTE]
 > 僅在您使用 Azure 傳統部署模型時，才使用 `Azure` 模組。
 
-若要開始使用 Azure PowerShell，您必須使用 `AzureRM`Import-Module[ Cmdlet 將 ](/powershell/module/Microsoft.PowerShell.Core/Import-Module) 載入您目前的 PowerShell 工作階段，然後使用您的 Azure 認證登入。
+若要開始使用 Azure PowerShell，您必須使用 [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 將 `AzureRM` 載入您目前的 PowerShell 工作階段，然後使用您的 Azure 認證登入。
 
 ```powershell-interactive
 # Import the module into the PowerShell session
@@ -47,7 +47,7 @@ Connect-AzureRmAccount
 > [!NOTE]
 > 僅在您使用 Azure 傳統部署模型時，才使用 `Azure` 模組。
 
-若要開始使用 Azure PowerShell，您必須使用 `AzureRM`Import-Module[ Cmdlet 將 ](/powershell/module/Microsoft.PowerShell.Core/Import-Module) 載入您目前的 PowerShell 工作階段，然後使用您的 Azure 認證登入。
+若要開始使用 Azure PowerShell，您必須使用 [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 將 `AzureRM` 載入您目前的 PowerShell 工作階段，然後使用您的 Azure 認證登入。
 
 ```powershell-interactive
 # Import the module into the PowerShell session

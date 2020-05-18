@@ -35,7 +35,7 @@ ms.locfileid: "67863544"
 受到此版本影響的輸出類型如下：
 
 ### <a name="psvirtualmachine"></a>PSVirtualMachine
-- `DataDiskNames` 物件的最上層屬性 `NetworkInterfaceIDs` 和 `PSVirtualMachine` 已從輸出類型中移除。 這些屬性已一律可在 `StorageProfile` 物件的 `NetworkProfile` 和 `PSVirtualMachine` 屬性中使用，並需要繼續透過存取方式取得。
+- `PSVirtualMachine` 物件的最上層屬性 `DataDiskNames` 和 `NetworkInterfaceIDs` 已從輸出類型中移除。 這些屬性已一律可在 `PSVirtualMachine` 物件的 `StorageProfile` 和 `NetworkProfile` 屬性中使用，並需要繼續透過存取方式取得。
 - 這項變更會影響下列 Cmdlet：
     - `Add-AzureRmVMDataDisk`
     - `Add-AzureRmVMNetworkInterface`

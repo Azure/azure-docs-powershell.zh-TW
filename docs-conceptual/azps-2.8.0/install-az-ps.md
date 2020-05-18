@@ -139,7 +139,7 @@ Get-InstalledModule -Name Az -AllVersions | select Name,Version
 
 若想移除 Azure PowerShell 版本，請參閱[解除安裝 Azure PowerShell 模組](uninstall-az-ps.md)。
 
-您可使用 `Az` 引數來安裝或載入特定版本的 `-RequiredVersion` 模組：
+您可使用 `-RequiredVersion` 引數來安裝或載入特定版本的 `Az` 模組：
 
 ```powershell-interactive
 # Install Az version 0.7.0

@@ -30,7 +30,7 @@ Azure PowerShell 有多種安裝方法。 慣用方法是搭配使用 PowerShell
 >
 > PowerShell 資源庫模組會在 `$env:ProgramFiles\WindowsPowerShell\Modules` 中安裝模組。 相較之下，WebPI 安裝程式會在 `$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\` 中安裝 Azure 模組。
 >
-> 如果安裝期間發生錯誤，請手動移除 \* 資料來中的 Azure`$env:ProgramFiles\WindowsPowerShell\Modules` 資料夾，再重試安裝。
+> 如果安裝期間發生錯誤，請手動移除 `$env:ProgramFiles\WindowsPowerShell\Modules` 資料來中的 Azure\* 資料夾，再重試安裝。
 
 一旦完成安裝，您的 `$env:PSModulePath` 設定中應會有包含 Azure PowerShell Cmdlet 的目錄。 下列命令可用來確認系統是否已正確安裝 Azure PowerShell。
 
