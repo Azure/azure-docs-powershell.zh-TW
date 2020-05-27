@@ -1,18 +1,15 @@
 ---
 title: 從 AzureRM 到 Azure PowerShell Az 1.0.0 的所有變更
 description: 本移轉指南包含在 Az 第 1 版發行中對 Azure PowerShell 進行重大變更的清單。
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2019
-ms.openlocfilehash: ea7593cf2b753b210ff2955b7bd450030ad83596
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: d2e67ada70fed91a939dc72935e2fa639c731002
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "75035824"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387015"
 ---
 # <a name="breaking-changes-for-az-100"></a>Az 1.0.0 的重大變更
 

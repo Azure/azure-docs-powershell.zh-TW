@@ -2,18 +2,15 @@
 title: 使用 Azure PowerShell 來建立 Azure 服務主體
 description: 了解如何使用 Azure PowerShell 來為應用程式或服務建立服務主體。
 keywords: Azure PowerShell, Azure Active Directory, Azure Active directory, AD, RBAC
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: dd2528cf91495361343ff562b7a602e7c115d13b
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: df39f34ac4f0ff6d9d2fa0de71719877f198bdb2
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65534700"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83384797"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>使用 Azure PowerShell 來建立 Azure 服務主體
 
@@ -95,7 +92,7 @@ Type                  : ServicePrincipal
 
 ### <a name="sign-in-using-the-service-principal"></a>使用服務主體來登入
 
-您現在可以使用您提供的「應用程式識別碼」  和「密碼」  ，來登入成為應用程式的新服務主體。 您需要提供帳戶的租用戶識別碼。 當您使用個人認證來登入 Azure 時，系統會顯示您的租用戶識別碼。
+您現在可以使用您提供的「應用程式識別碼」和「密碼」，來登入成為應用程式的新服務主體。 您需要提供帳戶的租用戶識別碼。 當您使用個人認證來登入 Azure 時，系統會顯示您的租用戶識別碼。
 
 ```azurepowershell-interactive
 $cred = Get-Credential -UserName $svcprincipal.ApplicationId -Message "Enter Password"
@@ -127,7 +124,7 @@ Azure PowerShell 提供下列 Cmdlet 以供您管理角色指派︰
 * [Remove-AzureRmRoleAssignment](/powershell/module/azurerm.resources/remove-azurermroleassignment)
 
 服務主體的預設角色是**參與者**。 視應用程式與 Azure 服務的互動範圍而定，此角色可能並非最佳選擇，因為它所提供的權限很廣泛。
- 角色的權限較為侷限，因此很適合唯讀應用程式使用。 您可以透過 Azure 入口網站來檢視角色專屬權限的詳細資料或建立自訂角色。
+角色的權限較為侷限，因此很適合唯讀應用程式使用。 您可以透過 Azure 入口網站來檢視角色專屬權限的詳細資料或建立自訂角色。
 
 在此範例中，我們會對先前的範例新增**讀取者**角色，並刪除**參與者**角色︰
 

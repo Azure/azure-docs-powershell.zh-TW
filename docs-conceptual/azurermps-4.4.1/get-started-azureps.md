@@ -1,18 +1,15 @@
 ---
 title: 開始使用 Azure PowerShell | Microsoft Docs
 description: ''
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/15/2017
-ms.openlocfilehash: 564a3e70e3f6d1803cdff9976bace119f6e20f48
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: e7735d6f60e7f62376dbd7bdcd5e4897d177dcd7
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "75720390"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83386794"
 ---
 # <a name="getting-started-with-azure-powershell"></a>開始使用 Azure PowerShell
 

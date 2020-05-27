@@ -1,18 +1,15 @@
 ---
 title: 使用實驗性 Azure PowerShell 模組
 description: 了解實驗性 Azure PowerShell 模組的原理和使用方式。
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
-ms.openlocfilehash: 7867adeac41444c81c31b7ee44b910ab40d873f8
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 35e704b21e0034dffc2c9edc23977d8d6ef44661
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65534768"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387372"
 ---
 # <a name="using-experimental-azure-powershell-modules"></a>使用實驗性 Azure PowerShell 模組
 

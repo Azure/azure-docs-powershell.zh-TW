@@ -1,18 +1,15 @@
 ---
 title: 格式化 Azure PowerShell Cmdlet 輸出
 description: 如何格式化 Azure PowerShell 的 Cmdlet 輸出。
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/09/2018
-ms.openlocfilehash: 6a35024e1bac819fa9b69174195e5245361cb7cc
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 059b00194de2e9369f7c8e39d22049035bd7b814
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65535007"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83388035"
 ---
 # <a name="format-azurepowershell-cmdlet-output"></a>格式化 Azure PowerShell Cmdlet 輸出
 

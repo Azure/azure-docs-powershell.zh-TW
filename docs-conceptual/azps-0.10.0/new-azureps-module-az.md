@@ -2,17 +2,14 @@
 title: Azure PowerShell Az 模組簡介
 description: 介紹新的 Azure PowerShell 模組 Az，也就是 AzureRM 模組的替代項目。
 ms.date: 05/10/2019
-author: sptramer
-ms.author: sttramer
-ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: 36bb0074694947f48d703aebc9119f90b508da57
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: a74b7fecdb108d45c09edb9939e9a8fa04a15bff
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81445504"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387627"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>新的 Azure PowerShell Az 模組簡介
 
