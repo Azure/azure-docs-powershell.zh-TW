@@ -1,15 +1,18 @@
 ---
 title: Azure 內容和登入認證
 description: 了解如何重覆使用 Azure 認證及多個 PowerShell 工作階段之間的其他資訊。
+author: sptramer
+ms.author: sttramer
+manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/21/2019
-ms.openlocfilehash: c79d1d634d5b76b2c6ab6b6ab309c2d49f9f7678
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: f14583e7c24d0355d778607bab52c81ae22598b8
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83385196"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "81445742"
 ---
 # <a name="azure-powershell-context-objects"></a>Azure PowerShell 內容物件
 

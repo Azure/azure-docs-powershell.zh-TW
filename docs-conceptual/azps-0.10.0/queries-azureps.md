@@ -1,15 +1,18 @@
 ---
 title: 查詢 Azure PowerShell Cmdlet 的輸出
 description: 如何查詢 Azure 中的資源，並將結果格式化。
+author: sptramer
+ms.author: sttramer
+manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/10/2019
-ms.openlocfilehash: ebd108a2c13bdb376213d054fb72188e6205a565
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: 9141f5640467722608cb7748f425ce3942668fb8
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387610"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "81445453"
 ---
 # <a name="query-output-of-azure-powershell"></a>查詢 Azure PowerShell 的輸出 
 

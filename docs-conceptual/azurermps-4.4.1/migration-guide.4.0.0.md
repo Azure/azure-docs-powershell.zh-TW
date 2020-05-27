@@ -1,15 +1,18 @@
 ---
 title: Microsoft Azure PowerShell 4.0.0 的重大變更
 description: 本移轉指南包含在第 4 版發行中對 Azure PowerShell 進行重大變更的清單。
+author: sptramer
+ms.author: sttramer
+manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: 47d7ab67a6b1d092bb07405e7dc925d844cac5ab
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: 2f61e41b701dfc263df18064f6ac2cc4c6e4021e
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83386709"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "67863544"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-400"></a>Microsoft Azure PowerShell 4.0.0 的重大變更
 

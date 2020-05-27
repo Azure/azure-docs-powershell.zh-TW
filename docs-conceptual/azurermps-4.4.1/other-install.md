@@ -1,15 +1,18 @@
 ---
 title: Azure PowerShell 的其他安裝方式 | Microsoft Docs
 description: 如何使用 MSI 套件或 Web Platform Installer 來安裝 Azure PowerShell。
+author: sptramer
+ms.author: sttramer
+manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/06/2017
-ms.openlocfilehash: 3f8963c98b26f971c1259dc89d5da1f35ce3015a
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: c0ac4f6cfb803519b8dd711d3cca0d4a4f7e6f8b
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83386692"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "75722453"
 ---
 # <a name="other-installation-methods"></a>其他安裝方法
 
