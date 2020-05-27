@@ -1,18 +1,15 @@
 ---
 title: 使用 Azure PowerShell 登入
 description: 如何使用 Azure PowerShell 以使用者身分登入、使用服務主體登入，或使用適用於 Azure 資源的受控識別登入。
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/04/2019
-ms.openlocfilehash: 0de487cc34593ceac05aa2077358d692470dc23e
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: f0354c67295b425b03c9780bf76ffef11d477951
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81740604"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83386030"
 ---
 # <a name="sign-in-with-azure-powershell"></a>使用 Azure PowerShell 登入
 

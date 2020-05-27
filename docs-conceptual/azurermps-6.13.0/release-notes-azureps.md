@@ -1,19 +1,16 @@
 ---
 title: Azure PowerShell 變更記錄 | Microsoft Docs
 description: 這是在最新版中對 Azure powershell 所做的變更歷程記錄。
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 08/28/2018
-ms.openlocfilehash: eecd66ddf433cc2543ceeaef1519d69179f2f099
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 8aa0462af97877e0d20fe898ddd927a6d2850dea
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65534462"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387321"
 ---
 # <a name="release-notes"></a>版本資訊
 
@@ -168,10 +165,10 @@ ms.locfileid: "65534462"
 
 #### <a name="azurermdatalakestore"></a>AzureRM.DataLakeStore
 * 新增虛擬網路規則的支援
-    - Get-AzureRmDataLakeStoreVirtualNetworkRule：取得或列出 Azure Data Lake Store 虛擬網路規則。
+    - Get-AzureRmDataLakeStoreVirtualNetworkRule：取得或列出 Azure Data Lake Store 的虛擬網路規則。
     - Add-AzureRmDataLakeStoreVirtualNetworkRule：將虛擬網路規則新增至指定的 Data Lake Store 帳戶。
-    - Set-AzureRmDataLakeStoreVirtualNetworkRule：在指定的 Data Lake Store 帳戶中修改指定的虛擬網路規則。
-    - Remove-AzureRmDataLakeStoreVirtualNetworkRule：刪除 Azure Data Lake Store 虛擬網路規則。
+    - Set-AzureRmDataLakeStoreVirtualNetworkRule：修改指定 Data Lake Store 帳戶中的特定虛擬網路規則。
+    - Remove-AzureRmDataLakeStoreVirtualNetworkRule：刪除 Azure Data Lake Store 的虛擬網路規則。
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * 更新 Cmdlet Test-AzureRmNetworkWatcherConnectivity，將通訊協定值傳遞至後端。
@@ -273,7 +270,7 @@ ms.locfileid: "65534462"
   - Set-AzureRmLoadBalancerOutboundRuleConfig
   - Remove-AzureRmLoadBalancerOutboundRuleConfig
 * 已為 PSNetworkInterface 新增 HostedWorkloads 屬性
-* 已為以下功能新增 Cmdlet：由 ARM 支援的 Azure 防火牆
+* 已新增功能的新 Cmdlet：透過 ARM 的 Azure 防火牆
   - 已新增 Get-AzureRmFirewall
   - 已新增 Set-AzureRmFirewall
   - 已新增 New-AzureRmFirewall
@@ -366,7 +363,7 @@ ms.locfileid: "65534462"
     - Lock-AzureRmStorageContainerImmutabilityPolicy
 
 #### <a name="azurermwebsites"></a>AzureRM.Websites
-* 已新增兩個 Cmdlet：Get-AzureRmDeletedWebApp 和 Restore-AzureRmDeletedWebApp
+* 已新增兩個新的 Cmdlet：Get-AzureRmDeletedWebApp 和 Restore-AzureRmDeletedWebApp
 * New-AzureRmAppServicePlan - 已新增 HyperV 切換以使用 Windows 容器建立 App Service 方案
 * New-AzureRmWebApp/ New-AzureRmWebAppSlot/ Set-AzureRmWebApp/ Set-AzureRmWebAppSlot - 已新增參數 (–ContainerRegistryUser string -ContainerRegistryPassword secureString -EnableContainerContinuousDeployment) 來建立和管理 Windows 容器應用程式
 
@@ -778,9 +775,9 @@ ms.locfileid: "65534462"
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * 針對 Set/Add-AzureRmVirtualNetworkPeering 在多租用戶中的虛擬網路之間啟用對等互連
 * 已更新應用程式閘道的下列 Cmdlet
-    - New-AzureRmApplicationGateway：已新增 EnableFIPS 旗標和區域支援
-    - New-AzureRmApplicationGatewaySku：已新增 SKU Standard_v2 和 WAF_v2
-    - Set-AzureRmApplicationGatewaySku：已新增 SKU Standard_v2 和 WAF_v2
+    - New-AzureRmApplicationGateway：已新增 EnableFIPS 旗標和 Zones 支援
+    - New-AzureRmApplicationGatewaySku：已新增新的 SKU Standard_v2 和 WAF_v2
+    - Set-AzureRmApplicationGatewaySku：已新增新的 SKU Standard_v2 和 WAF_v2
 * 已使用最新的產生器版本重新產生 RouteTable Cmdlet
 
 #### <a name="azurermrelay"></a>AzureRM.Relay
@@ -854,7 +851,7 @@ ms.locfileid: "65534462"
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * 針對區域備援 VirtualNetworkGateways 公開新的 SKU
-* 已透過 ARM 新增功能：ExpressRoute 合作夥伴 API 的新命令
+* 已新增功能的新命令：透過 ARM 的 ExpressRoute 合作夥伴
     - 已新增 Get-AzureRmExpressRouteCrossConnection
     - 已新增 Set-AzureRmExpressRouteCrossConnection
     - 已新增 Add-AzureRmExpressRouteCrossConnectionPeering
@@ -1008,7 +1005,7 @@ ms.locfileid: "65534462"
 * 已針對安裝由私人 CA 發出的憑證做為根或 CA 新增支援
 * 已針對透過 KeyVault 和多個 Proxy 主機名稱接受自訂 SSL 憑證新增支援
 * 已新增 MSI 身分識別支援
-* 已新增透過 URL 接受原則的支援 附註：下列 Cmdlet 會在未來的版本中淘汰
+* 已新增透過URL 接受原則的支援注意：下列 Cmdlet 將於未來版本中加以取代
    - Import-AzureRmApiManagementHostnameCertificate
    - New-AzureRmApiManagementHostnameConfiguration
    - Set-AzureRmApiManagementHostnames

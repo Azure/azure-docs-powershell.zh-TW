@@ -1,18 +1,15 @@
 ---
 title: 使用 PowerShell 作業平行執行 Cmdlet
 description: 如何使用 -AsJob 參數平行執行 Cmdlet。
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
-ms.openlocfilehash: beb7f0a89d2e254b348b79daf4f8d3bfdc562de5
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: d312812ff3c9e4934ed2bfa7371a9e420668e852
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65534198"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83384978"
 ---
 # <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a>使用 PowerShell 作業平行執行 Cmdlet
 

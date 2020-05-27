@@ -1,18 +1,15 @@
 ---
 title: 使用 MSI 安裝 Azure PowerShell
 description: 如何使用 MSI，但不使用 PowerShellGet 來安裝 Azure PowerShell
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/22/2019
-ms.openlocfilehash: 566ea4b9ac9398b063cc3567c482a67834de36f5
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: d51a65d3e8600e8b381da0f485725c0345e37215
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "72821498"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387066"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi"></a>使用 MSI 在 Windows 上安裝 Azure PowerShell
 
@@ -20,7 +17,7 @@ ms.locfileid: "72821498"
 
 ## <a name="requirements"></a>需求
 
-適用於 Azure PowerShell 的 MSI 安裝程式「僅」  適用於 Windows 上的 PowerShell 5.1。 若要在非 Windows 平台或較新版本的 PowerShell 上安裝，請[以 PowerShellGet 安裝](install-az-ps.md)。
+適用於 Azure PowerShell 的 MSI 安裝程式「僅」適用於 Windows 上的 PowerShell 5.1。 若要在非 Windows 平台或較新版本的 PowerShell 上安裝，請[以 PowerShellGet 安裝](install-az-ps.md)。
 若要檢查 PowerShell 版本，請執行下列命令：
 
 ```powershell-interactive

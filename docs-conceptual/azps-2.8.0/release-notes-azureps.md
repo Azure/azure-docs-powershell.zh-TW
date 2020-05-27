@@ -1,18 +1,15 @@
 ---
 title: Azure PowerShell 版本資訊
 description: 了解 Azure PowerShell 模組的最新更新資訊。
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/15/2019
-ms.openlocfilehash: 98a24c805fbf43dd899119d43301b4261c1f60dc
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 0fc897579e8caef999c337303428fd12740c3606
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "75035756"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83386097"
 ---
 ## <a name="280---october-2019"></a>2.8.0 - 2019 年10月
 ### <a name="general"></a>一般

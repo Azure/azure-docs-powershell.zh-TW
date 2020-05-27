@@ -1,18 +1,15 @@
 ---
 title: 在 PowerShell 工作階段之間保存使用者認證
 description: 了解如何重覆使用 Azure 認證及多個 PowerShell 工作階段之間的其他資訊。
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/09/2018
-ms.openlocfilehash: 1e5c89a43886343bfc0a1affb5133a7cb6af0bcc
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 946920c22d7f6faeae8d3192e9f37a276a34d11f
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65854155"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83388018"
 ---
 # <a name="persist-user-credentials-across-powershell-sessions"></a>在 PowerShell 工作階段之間保存使用者認證
 
@@ -27,14 +24,14 @@ Azure PowerShell 提供了稱為 **Azure 內容自動儲存**的功能，可提�
 
 ## <a name="azure-contexts-defined"></a>定義的 Azure 內容
 
-Azure 內容  是一組資訊，可定義 Azure PowerShell Cmdlet 的目標。 內容是由五個部分所組成：
+Azure 內容是一組資訊，可定義 Azure PowerShell Cmdlet 的目標。 內容是由五個部分所組成：
 
-- 帳戶  - 用來驗證與 Azure 通訊的使用者名稱或服務主體
-- 訂用帳戶  - 要進行處理的資源所屬的 Azure 訂用帳戶。
-- 租用戶  - 包含您訂用帳戶的 Azure Active Directory 租用戶。 租用戶對於 ServicePrincipal 驗證較為重要。
-- 環境  - 作為目標的特定 Azure 雲端，通常是 Azure 的全域雲端。
+- 帳戶 - 用來驗證與 Azure 通訊的使用者名稱或服務主體
+- 訂用帳戶 - 要進行處理的資源所屬的 Azure 訂用帳戶。
+- 租用戶 - 包含您訂用帳戶的 Azure Active Directory 租用戶。 租用戶對於 ServicePrincipal 驗證較為重要。
+- 環境 - 作為目標的特定 Azure 雲端，通常是 Azure 的全域雲端。
   不過，環境設定也可讓您將國家/地區、政府和內部部署 (Azure Stack) 雲端作為目標。
-- 認證  - Azure 用來確認您的身分識別，並確定您有權對 Azure 中的資源進行存取的資訊
+- 認證 - Azure 用來確認您的身分識別，並確定您有權對 Azure 中的資源進行存取的資訊
 
 在舊版中，您每次開啟新的 PowerShell 工作階段時都必須建立 Azure 內容。 從 Azure PowerShell v4.4.0 開始，已可在每次開啟新的 PowerShell 工作階段時自動儲存 Azure 內容。
 

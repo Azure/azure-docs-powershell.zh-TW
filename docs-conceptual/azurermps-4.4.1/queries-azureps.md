@@ -1,18 +1,15 @@
 ---
 title: 查詢 Azure 資源以及將結果格式化 | Microsoft Docs
 description: 如何查詢 Azure 中的資源，並將結果格式化。
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: db161bb0ec1b25b1cb7445724cc5758599dbc674
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 23cc0d13e9ecb17bef04cedc8a0f395a04e89390
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65534666"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83386437"
 ---
 # <a name="querying-for-azure-resources"></a>查詢 Azure 資源
 
