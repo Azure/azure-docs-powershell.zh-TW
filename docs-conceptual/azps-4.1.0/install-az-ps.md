@@ -4,12 +4,12 @@ description: 如何使用 PowerShellGet 安裝 Azure PowerShell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/14/2020
-ms.openlocfilehash: 9cc681a56270c0894348a0eb6789ded3fa294f54
-ms.sourcegitcommit: 80c3188500fd174f5c5484302360ad87ace0fb9b
+ms.openlocfilehash: d3bed5a96af6bed16cda971a1a40b8416a1b115b
+ms.sourcegitcommit: 10ec909100a70acec94d42f6084e7bf0342c6854
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/19/2020
-ms.locfileid: "83554586"
+ms.locfileid: "83630753"
 ---
 # <a name="install-azure-powershell"></a>安裝 Azure PowerShell
 
@@ -22,7 +22,7 @@ Azure PowerShell 也可在 Azure [Cloud Shell](/azure/cloud-shell/overview) 取�
 > [!NOTE]
 > PowerShell 7.x 和更新版本是在所有平台上與 Azure PowerShell 搭配使用的 PowerShell 建議版本。
 
-Azure PowerShell 適用於所有平台上的 PowerShell 6.2.4 和更新版本。 也支援其在 Windows 上與 PowerShell 5.1 搭配。 建議安裝可供您作業系統使用的[最新版 PowerShell](/powershell/scripting/install/installing-powershell)。 在 PowerShell 6.2.4 和更新版本上執行時，Azure PowerShell 沒有額外的需求。
+Azure PowerShell 適用於所有平台上的 PowerShell 6.2.4 和更新版本。 也支援其在 Windows 上與 PowerShell 5.1 搭配。 安裝可供您作業系統使用的[最新版 PowerShell](/powershell/scripting/install/installing-powershell)。 在 PowerShell 6.2.4 和更新版本上執行時，Azure PowerShell 沒有額外的需求。
 
 若要檢查 PowerShell 版本，請執行下列命令：
 
@@ -35,7 +35,7 @@ $PSVersionTable.PSVersion
 1. 更新至 [Windows PowerShell 5.1](/powershell/scripting/install/installing-windows-powershell#upgrading-existing-windows-powershell)。
    如果您是在 Windows 10 版本 1607 或更高版本上，則已安裝 PowerShell 5.1。
 2. 安裝 [.NET Framework 4.7.2 或更新版本](/dotnet/framework/install)。
-3. 確定您有最新版的 PowerShellGet。 使用 **[以系統管理員身分執行]** 啟動 PowerShell 5.1 工作階段，然後執行 `Install-Module -Name PowerShellGet -AllowClobber -Force`。
+3. 確定您有最新版的 PowerShellGet。 執行 `Install-Module -Name PowerShellGet -Force`。
 
 ## <a name="install-the-azure-powershell-module"></a>安裝 Azure PowerShell 模組
 
@@ -45,7 +45,7 @@ $PSVersionTable.PSVersion
 使用 PowerShellGet Cmdlet 是慣用的安裝方法。 僅安裝適用於目前使用者的 Az 模組。 這是建議的安裝範圍。 這個方法在 Windows、macOS、Linux 平台上的做法相同。 從 PowerShell 工作階段執行下列命令：
 
 ```powershell-interactive
-if ($PSVersionTable.PSEdition -eq 'Desktop' -and (Get-Module -Name AzureRM -ListAvailable)) {
+if (Get-Module -Name AzureRM -ListAvailable) {
     Write-Warning -Message 'Az module not installed. Having both the AzureRM and Az modules installed at the same time is not supported.'
 } else {
     Install-Module -Name Az -AllowClobber -Scope CurrentUser
@@ -69,7 +69,7 @@ Are you sure you want to install the modules from 'PSGallery'?
 為系統上的所有使用者安裝模組需要較高的權限。 在 Windows 中使用 **Run as administrator**，在 macOS 或 Linux 上使用 `sudo` 命令，以啟動 PowerShell 工作階段：
 
 ```powershell-interactive
-if ($PSVersionTable.PSEdition -eq 'Desktop' -and (Get-Module -Name AzureRM -ListAvailable)) {
+if (Get-Module -Name AzureRM -ListAvailable) {
     Write-Warning -Message 'Az module not installed. Having both the AzureRM and Az modules installed at the same time is not supported.'
 } else {
     Install-Module -Name Az -AllowClobber -Scope AllUsers
@@ -134,7 +134,7 @@ Connect-AzAccount
 PowerShellGet Cmdlet 無法更新從 MSI 套件安裝的模組。 MSI 套件不會更新使用 PowerShellGet 安裝的模組。 如果您有任何使用 PowershellGet 進行更新的問題，請**重新安裝**，不要只是**更新**。 重新安裝的操作方式與安裝相同，但您可能需要新增 `-Force` 參數：
 
 ```powershell
-if ($PSVersionTable.PSEdition -eq 'Desktop' -and (Get-Module -Name AzureRM -ListAvailable)) {
+if (Get-Module -Name AzureRM -ListAvailable) {
     Write-Warning -Message 'Az module not installed. Having both the AzureRM and Az modules installed at the same time is not supported.'
 } else {
     Install-Module -Name Az -AllowClobber -Force
@@ -162,18 +162,6 @@ Get-InstalledModule -Name Az -AllVersions | Select-Object -Property Name, Versio
 Install-Module -Name Az -RequiredVersion 3.6.1
 # Load Az version 3.6.1
 Import-Module -Name Az -RequiredVersion 3.6.1
-```
-
-## <a name="use-multiple-repositories-with-powershellget"></a>搭配 PowerShellGet 使用多個存放庫
-
-如果您已在系統上新增其他存放庫至 PowerShellGet，而且可以在多個存放庫中找到 Az 模組，則需要 **Repository** 參數。
-
-```powershell-interactive
-if ($PSVersionTable.PSEdition -eq 'Desktop' -and (Get-Module -Name AzureRM -ListAvailable)) {
-    Write-Warning -Message 'Az module not installed. Having both the AzureRM and Az modules installed at the same time is not supported.'
-} else {
-    Install-Module -Name Az -Repository PSGallery -AllowClobber -Force
-}
 ```
 
 ## <a name="provide-feedback"></a>提供意見反應

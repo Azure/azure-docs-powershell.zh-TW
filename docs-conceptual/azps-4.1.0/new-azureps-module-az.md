@@ -4,12 +4,12 @@ description: 介紹新的 Azure PowerShell 模組 Az，也就是 AzureRM 模組�
 ms.date: 05/20/2020
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: a50592c65c52eab005a6531572dbbfc144a0e43a
+ms.openlocfilehash: 5bc5e1230427289ec1d61971d6cab52ce2e099ac
 ms.sourcegitcommit: 308ebca475d1c37624d7a10a2c02047594f44cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/22/2020
-ms.locfileid: "83778137"
+ms.locfileid: "83778107"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>新的 Azure PowerShell Az 模組簡介
 
@@ -18,7 +18,7 @@ ms.locfileid: "83778137"
 > [!NOTE]
 > PowerShell 7.x 和更新版本是在所有平台上與 Azure PowerShell 搭配使用的 PowerShell 建議版本。
 
-搭配最新的 Az 模組，Azure PowerShell 可以在所有平台 (包括 Windows、macOS 和 Linux) 上使用 PowerShell 6.x 和更新版本。 其也與 Windows 上的 PowerShell 5.1 相容。
+搭配最新的 Az 模組，Azure PowerShell 可以在所有平台 (包括 Windows、macOS 和 Linux) 上使用 PowerShell 6.2.4 和更新版本。 其也與 Windows 上的 PowerShell 5.1 相容。
 
 Az 是新模組，因此版本已重設為 1.0.0。
 
@@ -26,7 +26,7 @@ Az 是新模組，因此版本已重設為 1.0.0。
 
 重大更新可能不便執行，因此我們必須讓您了解我們為何決定導入一組附有新 Cmdlet 的新模組，供您從 PowerShell 與 Azure 互動。
 
-最大且最重要的變更是，自從引進 [PowerShell Core 6.x](/powershell/scripting/overview) (以 .NET Standard 程式庫為基礎) 後，PowerShell 已成為跨平台產品。 我們致力於將 Azure 支援帶至所有平台。 這表示需要更新 Azure PowerShell 模組，才能使用 .NET Standard 並與 PowerShell 6.x 和更新版本相容。
+最大且最重要的變更是，自從引進 [PowerShell Core 6.x](/powershell/scripting/overview) (以 .NET Standard 程式庫為基礎) 後，PowerShell 已成為跨平台產品。 我們致力於將 Azure 支援帶至所有平台。 這表示需要更新 Azure PowerShell 模組，才能使用 .NET Standard 並與 PowerShell 6.2.4 和更新版本相容。
 我們決定不以現有的 AzureRM 模組導入複雜的變更來加入這項支援，而是建立了 Az 模組。
 
 建立新模組也讓我們的工程師可將 Cmdlet 和模組的設計與命名趨於一致。 現在，所有模組皆以 `Az.` 前置詞開頭，且 Cmdlet 全都採用_動詞_-`Az`_名詞_的格式。 過去，Cmdlet 名稱不僅較長，這些名稱也有不一致的情況。
@@ -40,7 +40,7 @@ Az 是新模組，因此版本已重設為 1.0.0。
 為了運用 PowerShell 中的最新 Azure 功能，您應盡速移轉至 Az 模組。 若您尚未準備好要安裝 Az 模組來取代 AzureRM，您可以透過下列方式試用 Az：
 
 - 在 `PowerShell` 環境中使用 [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview)。 Azure Cloud Shell 是一種以瀏覽器為基礎的殼層環境，隨附有已安裝的 Az 模組，且已啟用 `Enable-AzureRM` 相容性別名。
-- 保留隨著 PowerShell 5.1 for Windows 而安裝的 AzureRM 模組，但安裝適用於 PowerShell 6.x 或更新版本的 Az 模組。 PowerShell 5.1 for Windows 以及 PowerShell 6.x 和更新版本分別使用不同的模組集合。 請依照指示安裝[最新版 PowerShell](/powershell/scripting/install/installing-powershell)，然後從 PowerShell 6.x 或更新版本[安裝 Az 模組](install-az-ps.md)。
+- 保留隨著 PowerShell 5.1 for Windows 而安裝的 AzureRM 模組，但安裝適用於 PowerShell 6.2.4 或更新版本的 Az 模組。 PowerShell 5.1 for Windows 以及 PowerShell 6.2.4 和更新版本分別使用不同的模組集合。 請依照指示安裝[最新版 PowerShell](/powershell/scripting/install/installing-powershell)，然後從 PowerShell 6.2.4 或更新版本[安裝 Az 模組](install-az-ps.md)。
 
 若要從現有的 AzureRM 安裝升級：
 
