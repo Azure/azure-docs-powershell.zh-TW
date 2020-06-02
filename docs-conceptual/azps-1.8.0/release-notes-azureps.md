@@ -4,13 +4,14 @@ description: 了解 Azure PowerShell 模組的最新更新資訊。
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/30/2019
-ms.openlocfilehash: 287e9e1f066d0768e7f572ca7f5f2ee2b78931d9
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: 34b21292ccc47bb53b6609cd637ef18338a45cd3
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83386964"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84121465"
 ---
+# <a name="azure-powershell-release-notes"></a>Azure PowerShell 版本資訊
 ## <a name="180---april-2019"></a>1.8.0 - 2019 年 4 月
 ### <a name="highlights-since-the-last-major-release"></a>上次發佈主要版本之後的更新重點
 * `Az` 模組的一般可用性
@@ -48,7 +49,7 @@ ms.locfileid: "83386964"
 * 已更新端點的說明文字，指出應該先建立資源，才能使用建立/更新事件訂用帳戶 Cmdlet。
 
 #### <a name="azeventhub"></a>Az.EventHub
-* 已針對命名空間的 NetworkRuleSet 新增 Cmdlet 
+* 已針對命名空間的 NetworkRuleSet 新增 Cmdlet
 
 #### <a name="azhdinsight"></a>Az.HDInsight
 * 已將 Cmdlet 中的複數名詞更新為單數，並已取代複數名稱。
@@ -138,7 +139,7 @@ ms.locfileid: "83386964"
 
 #### <a name="azcompute"></a>Az.Compute
 * 將 HyperVGeneration 參數新增至 New-AzDiskConfig 和 New-AzSnapshotConfig
-* 允許使用其他租用戶的資源庫映像來建立 VM。 
+* 允許使用其他租用戶的資源庫映像來建立 VM。
 
 #### <a name="azcontainerinstance"></a>Az.ContainerInstance
 * 已修正 New-AzContainerGroup 的 -Command 參數問題，其加入了尾端空白的引數
@@ -220,7 +221,7 @@ ms.locfileid: "83386964"
     - New-AzStorageAccountManagementPolicyRule
 
 #### <a name="azwebsites"></a>Az.Websites
-* 修正 ARM 範本錯誤 (bug)，防正使用 'New-AzWebApp -IncludeSourceWebAppSlots' 時發生中斷複製所有位置的情況 
+* 修正 ARM 範本錯誤 (bug)，防正使用 'New-AzWebApp -IncludeSourceWebAppSlots' 時發生中斷複製所有位置的情況
 
 ## <a name="150---march-2019"></a>1.5.0 - 2019 年 3 月
 #### <a name="azaccounts"></a>Az.Accounts
@@ -289,7 +290,7 @@ ms.locfileid: "83386964"
 * 為 ADL 刪除的項目列舉和還原新增 Cmdlet
 
 #### <a name="azeventhub"></a>Az.EventHub
-* 在 Eventhub 的 CaptureDescription 類別中，已將新的布林值屬性 SkipEmptyArchives 新增至 Skip Empty Archives 
+* 在 Eventhub 的 CaptureDescription 類別中，已將新的布林值屬性 SkipEmptyArchives 新增至 Skip Empty Archives
 
 #### <a name="azkeyvault"></a>Az.KeyVault
 * 修正 Set-AzKeyVaultSecret 的標記
@@ -317,8 +318,8 @@ ms.locfileid: "83386964"
 
 #### <a name="azoperationalinsights"></a>Az.OperationalInsights
 * 取得 ApplicationInsights 與新資料來源的其他支援。
-    - 已新增新 'ApplicationInsights' 類型，以支援指定工作區的取得特定和取得所有 ApplicationInsights 資料來源。 
-    - 已新增 New-AzOperationalInsightsApplicationInsightsDataSource Cmdlet 用來建立資料來源，透過指定的 Application-Insights 資源參數：訂用帳戶識別碼、resourceGroupName 和名稱。 
+    - 已新增新 'ApplicationInsights' 類型，以支援指定工作區的取得特定和取得所有 ApplicationInsights 資料來源。
+    - 已新增 New-AzOperationalInsightsApplicationInsightsDataSource Cmdlet 用來建立資料來源，透過指定的 Application-Insights 資源參數：訂用帳戶識別碼、resourceGroupName 和名稱。
 
 #### <a name="azresources"></a>Az.Resources
 * 修正 https://github.com/Azure/azure-powershell/issues/8166 的問題
@@ -349,9 +350,9 @@ Az.AnalysisServices 模組的正式運作。
 Az.RecoveryServices 模組的正式運作。
 
 #### <a name="azresources"></a>Az.Resources
-* 修正資源群組標記 
+* 修正資源群組標記
     - 如需詳細資訊，請參閱這裡： https://github.com/Azure/azure-powershell/issues/8166
-* 修正 `Get-AzureRmRoleAssignment`不遵守 -ErrorAction 的問題 
+* 修正 `Get-AzureRmRoleAssignment`不遵守 -ErrorAction 的問題
     - 如需詳細資訊，請參閱這裡： https://github.com/Azure/azure-powershell/issues/8235
 
 #### <a name="azsql"></a>Az.Sql
@@ -656,7 +657,7 @@ Az.RecoveryServices 模組的正式運作。
 
 ### <a name="azwebsites"></a>Az.Websites
 
-* Set-AzureRmWebApp 和 Set-AzureRmWebAppSlot 
+* Set-AzureRmWebApp 和 Set-AzureRmWebAppSlot
     - 已新增新的參數 (-AzureStoragePath)，指定要將 Azure 儲存體路徑掛接至 Windows 和 Linux 容器應用程式中。 使用新 Cmdlet New-AzureRmWebAppAzureStoragePath 的輸出作為參數來設定 Azure 儲存體路徑。
 
 ## <a name="061---november-2018"></a>0.6.1 - 2018 年 11 月
@@ -684,7 +685,7 @@ Az.RecoveryServices 模組的正式運作。
 ### <a name="aznetwork"></a>Az.Network
 * 已新增 Cmdlet：New-AzureRmApplicationGatewayCustomError、Add-AzureRmApplicationGatewayCustomError、Get-AzureRmApplicationGatewayCustomError、Set-AzureRmApplicationGatewayCustomError、Remove-AzureRmApplicationGatewayCustomError、Add-AzureRmApplicationGatewayHttpListenerCustomError、Get-AzureRmApplicationGatewayHttpListenerCustomError、Set-AzureRmApplicationGatewayHttpListenerCustomError、Remove-AzureRmApplicationGatewayHttpListenerCustomError
 * 已將 ICMP 加回支援的 AzureFirewall 網路通訊協定
-* 更新 Test-AzureRmNetworkWatcherConnectivity Cmdlet，在目的地識別碼、位址和連接埠上新增驗證。 
+* 更新 Test-AzureRmNetworkWatcherConnectivity Cmdlet，在目的地識別碼、位址和連接埠上新增驗證。
 * 修正 VirtualNetwork 對應中的記憶體使用量問題
 
 ### <a name="azrecoveryservicesbackup"></a>Az.RecoveryServices.Backup
@@ -816,7 +817,7 @@ Az.RecoveryServices 模組的正式運作。
     - Start-AzureStorageFileCopy
 * 支援取得特定位置的儲存體資源使用量，並針對取得全域儲存體資源使用量已過時的情況新增警告訊息。
     - Get-AzStorageUsage
-    
+
 #### <a name="azcognitiveservices"></a>Az.CognitiveServices
 * 在沒有現有帳戶的情況下支援 Get-AzCognitiveServicesAccountSkus。
 
