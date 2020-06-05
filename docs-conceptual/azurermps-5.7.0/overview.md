@@ -4,12 +4,12 @@ description: Azure PowerShell 的概觀以及有關安裝和設定的連結。
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 97afd1d9f7792540e94d79023c0450b192cb2fb8
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: 09980972f913bbfd822df38f23f92b35ee64e458
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83384791"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84122083"
 ---
 # <a name="overview-of-azure-powershell"></a>Azure PowerShell 的概觀
 
@@ -21,23 +21,23 @@ Azure PowerShell 提供了一組 Cmdlet，它們會使用 [Azure Resource Manage
 
 下列範例可協助您了解如何使用 Azure PowerShell 來執行常見案例：
 
-* [Linux 虛擬機器](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=/powershell/azure/toc.json)
-* [Windows 虛擬機器](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=/powershell/azure/toc.json)
-* [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
-* [SQL Databases](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
+- [Linux 虛擬機器](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=/powershell/azure/toc.json)
+- [Windows 虛擬機器](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=/powershell/azure/toc.json)
+- [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
+- [SQL Databases](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
 
 ## <a name="learn-powershell-basics"></a>了解 PowerShell 基本概念
 
 如果您不熟悉 PowerShell，則 PowerShell 的簡介會很有幫助。
 
-* [安裝 PowerShell](/powershell/scripting/installing-windows-powershell)
-* [使用 PowerShell 編寫指令碼](/powershell/scripting/scripting-with-windows-powershell)
+- [安裝 PowerShell](/powershell/scripting/install/installing-powershell)
+- [PowerShell 學習資源](/powershell/scripting/learn/more-powershell-learning)
 
 您也可以觀看這段影片：[PowerShell 基本概念：(第 1 部份) 開始使用 PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1)。
 
 ## <a name="other-azure-powershell-modules"></a>其他 Azure Powershell 模組
 
-* [Azure Active Directory](/powershell/azure/active-directory/)
-* [Azure 資訊保護](/powershell/azure/aip/)
-* [Azure Service Fabric](/powershell/azure/service-fabric/)
-* [Azure ElasticDB](/powershell/azure/elasticdbjobs/)
+- [Azure Active Directory](/powershell/azure/active-directory/)
+- [Azure 資訊保護](/powershell/azure/aip/)
+- [Azure Service Fabric](/powershell/azure/service-fabric/)
+- [Azure ElasticDB](/powershell/azure/elasticdbjobs/)

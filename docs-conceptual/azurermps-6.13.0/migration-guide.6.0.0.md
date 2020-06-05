@@ -4,12 +4,12 @@ description: 本移轉指南包含在第 6 版發行中對 Azure PowerShell 進�
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: 629cbb31f086c569d2b8961497d0255663602f54
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: ab20dd07fb0c14d8066ad12185f8245be291e7ec
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387202"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84122242"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Microsoft Azure PowerShell 6.0.0 的重大變更
 
@@ -20,9 +20,9 @@ ms.locfileid: "83387202"
 ## <a name="table-of-contents"></a>目錄
 
 - [一般重大變更](#general-breaking-changes)
-    - [移至 5.0 所需的最低 PowerShell 版本](#minimum-powershell-version-required-bumped-to-50)
-    - [依預設啟用內容自動儲存](#context-autosave-enabled-by-default)
-    - [移除標記別名](#removal-of-tags-alias)
+  - [移至 5.0 所需的最低 PowerShell 版本](#minimum-powershell-version-required-bumped-to-50)
+  - [依預設啟用內容自動儲存](#context-autosave-enabled-by-default)
+  - [移除標記別名](#removal-of-tags-alias)
 - [AzureRM.Compute Cmdlet 的重大變更](#breaking-changes-to-azurermcompute-cmdlets)
 - [AzureRM.DataLakeStore Cmdlet 的重大變更](#breaking-changes-to-azurermdatalakestore-cmdlets)
 - [AzureRM.Dns Cmdlet 的重大變更](#breaking-changes-to-azurermdns-cmdlets)
@@ -33,22 +33,23 @@ ms.locfileid: "83387202"
 - [AzureRM.Resources Cmdlet 的重大變更](#breaking-changes-to-azurermresources-cmdlets)
 - [AzureRM.Storage Cmdlet 的重大變更](#breaking-changes-to-azurermstorage-cmdlets)
 - [移除的模組](#removed-modules)
-    - [`AzureRM.ServerManagement`](#azurermservermanagement)
-    - [`AzureRM.SiteRecovery`](#azurermsiterecovery)
+  - [`AzureRM.ServerManagement`](#azurermservermanagement)
+  - [`AzureRM.SiteRecovery`](#azurermsiterecovery)
 
 ## <a name="general-breaking-changes"></a>一般重大變更
 
 ### <a name="minimum-powershell-version-required-bumped-to-50"></a>移至 5.0 所需的最低 PowerShell 版本
 
-以前，Azure PowerShell _至少需要_ PowerShell 版本 3.0，才能執行任何 Cmdlet。 日後，此需求將提升至 PowerShell 版本 5.0。 如需升級至 PowerShell 5.0 的詳細資訊，請參閱[此表格](https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell)。
+以前，Azure PowerShell _至少需要_ PowerShell 版本 3.0，才能執行任何 Cmdlet。 日後，此需求將提升至 PowerShell 版本 5.0。 如需升級至 PowerShell 5.0 的詳細資訊，請參閱[此表格](/powershell/scripting/windows-powershell/install/installing-windows-powershell#upgrading-existing-windows-powershell)。
 
 ### <a name="context-autosave-enabled-by-default"></a>依預設啟用內容自動儲存
 
-內容自動儲存是 Azure 登入資訊的儲存體，可以在全新和不同的 PowerShell 工作階段之間使用。 如需內容自動儲存的詳細資訊，請參閱[此文件](https://docs.microsoft.com/powershell/azure/context-persistence)。
+內容自動儲存是 Azure 登入資訊的儲存體，可以在全新和不同的 PowerShell 工作階段之間使用。 如需內容自動儲存的詳細資訊，請參閱[此文件](/powershell/azure/context-persistence)。
 
 之前，內容自動儲存會依預設停用，這表示在使用者執行 `Enable-AzureRmContextAutosave` Cmdlet 開啟內容持續性之前，系統不會儲存工作階段之間的使用者 Azure 驗證資訊。 未來，內容自動儲存將會依預設啟用，這表示若使用者_並未針對已儲存的內容設定自動儲存_，會在他們下次登入時儲存內容。 使用者可以藉由使用 `Disable-AzureRmContextAutosave` Cmdlet 來選擇退出此功能。
 
-_注意_：先前已停用內容自動儲存或已啟用內容自動儲存的使用者，以及現有的內容將不會受到此變更影響
+> [!NOTE]
+> 先前已停用內容自動儲存或已啟用內容自動儲存的使用者，以及現有的內容將不會受到此變更影響。
 
 ### <a name="removal-of-tags-alias"></a>移除標記別名
 
@@ -96,6 +97,7 @@ _注意_：先前已停用內容自動儲存或已啟用內容自動儲存的使
 ## <a name="breaking-changes-to-azurermcompute-cmdlets"></a>AzureRM.Compute Cmdlet 的重大變更
 
 **其他**
+
 - 在類型 `PSDisk` 和 `PSSnapshot` 中形成巢狀的 SKU 名稱屬性，已分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`
 
 ```powershell-interactive
@@ -114,12 +116,15 @@ $vm.StorageProfile.DataDisks[0].ManagedDisk.StorageAccountType   # This will now
 ```
 
 **Add-AzureRmImageDataDisk**
+
 - 參數 `StorageAccountType` 可接受的值分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`
 
 **Add-AzureRmVMDataDisk**
+
 - 參數 `StorageAccountType` 可接受的值分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`
 
 **Add-AzureRmVmssDataDisk**
+
 - 參數 `StorageAccountType` 可接受的值分別從 `StandardLRS` 和 `PremiumLRS` 變更為 `Standard_LRS` 和 `Premium_LRS`
 
 **New-AzureRmAvailabilitySet**
@@ -254,8 +259,9 @@ Remove-AzureRmDataLakeStoreItem -Account "ContosoADL" -path /myFolder -Recurse
 - 此 Cmdlet 不再接受組成存取權杖的個別參數；相反地，Cmdlet 會取代明確的存取權杖參數，例如 `Service` 或 `Permissions`，並使用泛型 `TemplateUri` 參數，對應至在其他位置定義的範例存取權杖 (假定使用的是儲存體 PowerShell Cmdlet，或是依據儲存體文件手動組成。)此 Cmdlet 會保留 `ValidityPeriod` 參數。
 
 如需撰寫 Azure 儲存體共用存取權杖的詳細資訊，請分別參閱以下文件頁面：
-- [建構服務 SAS](https://docs.microsoft.com/rest/api/storageservices/Constructing-a-Service-SAS)
-- [建構帳戶 SAS](https://docs.microsoft.com/rest/api/storageservices/constructing-an-account-sas)
+
+- [建構服務 SAS](/rest/api/storageservices/Constructing-a-Service-SAS)
+- [建構帳戶 SAS](/rest/api/storageservices/constructing-an-account-sas)
 
 ```powershell-interactive
 # Old
@@ -282,7 +288,7 @@ $sas=Set-AzureKeyVaultManagedStorageSasDefinition -AccountName $sa.StorageAccoun
 - 已從 `PermissionsToKeys`、`PermissionsToSecrets` 和 `PermissionsToCertificates` 中移除 `all` 權限。
 
 **一般**
-- 已從已啟用 `InputObject` 管線的所有 Cmdlet 中移除 `ValueFromPipelineByPropertyName` 屬性。  受影響的 Cmdlet 為：
+- 已從已啟用 `InputObject` 管線的所有 Cmdlet 中移除 `ValueFromPipelineByPropertyName` 屬性。 受影響的 Cmdlet 為：
     - `Add-AzureKeyVaultCertificate`
     - `Add-AzureKeyVaultCertificateContact`
     - `Add-AzureKeyVaultKey`

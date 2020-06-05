@@ -4,12 +4,12 @@ description: 介紹新的 Azure PowerShell 模組 Az，也就是 AzureRM 模組�
 ms.date: 05/10/2019
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: a74b7fecdb108d45c09edb9939e9a8fa04a15bff
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: bef3ae8344a13e170a30889c1954fd2e9b29dcdf
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387627"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84121944"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>新的 Azure PowerShell Az 模組簡介
 
@@ -23,7 +23,7 @@ Az 是新模組，因此版本已重設為 1.0.0。
 
 重大更新可能不便執行，因此我們必須讓您了解我們為何決定導入一組附有新 Cmdlet 的新模組，供您從 PowerShell 與 Azure 互動。
 
-最顯著而重要的變更是，隨著 [PowerShell Core 6.x](/powershell/scripting/overview) 的導入 (以 .NET Standard 程式庫為基礎)，PowerShell 已成為跨平台產品。
+最大且最重要的變更是，自從引進 [PowerShell](/powershell/scripting/overview) (以 .NET Standard 程式庫為基礎) 後，PowerShell 已成為跨平台產品。
 我們致力於將 Azure 支援導入所有平台，而這意味著 Azure PowerShell 模組必須進行更新，以使用 .NET Standard 並且與 PowerShell Core 相容。 我們決定不以現有的 AzureRM 模組導入複雜的變更來加入這項支援，而是建立了 Az 模組。
 
 建立新模組也讓我們的工程師有機會可將 Cmdlet 和模組的設計與命名趨於一致。 現在，所有模組皆以 `Az.` 前置詞開頭，且 Cmdlet 全都採用_動詞_-`Az`_名詞_的格式。 過去，Cmdlet 名稱不僅較長，這些名稱也有不一致的情況。
@@ -36,15 +36,14 @@ Az 是新模組，因此版本已重設為 1.0.0。
 
 為了運用 PowerShell 中的最新 Azure 功能，您應盡速移轉至 Az 模組。 若您尚未準備好要安裝 Az 模組來取代 AzureRM，您可以透過下列方式試用 Az：
 
-* 在 `PowerShell` 環境中使用 [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview)。
-  Azure Cloud Shell 是一種以瀏覽器為基礎的殼層環境，隨附有已安裝的 Az 模組，且已啟用 `Enable-AzureRM` 相容性別名。
+* 在 `PowerShell` 環境中使用 [Azure Cloud Shell](/azure/cloud-shell/overview)。 Azure Cloud Shell 是一種以瀏覽器為基礎的殼層環境，隨附有已安裝的 Az 模組，且已啟用 `Enable-AzureRM` 相容性別名。
 * 保留隨著 PowerShell 5.1 for Windows 而安裝的 AzureRM 模組，但安裝適用於 PowerShell Core 6.x 或更新版本的 Az 模組。 PowerShell 5.1 for Windows 和 PowerShell Core 分別使用不同的模組集合。 請依照指示從 PowerShell Core 終端機[安裝 PowerShell Core](/powershell/scripting/install/installing-powershell-core-on-windows)，然後[安裝 Az 模組](install-az-ps.md)。
 
 若要從現有的 AzureRM 安裝升級：
 
 1. [將 Azure PowerShell AzureRM 模組解除安裝](/powershell/azure/uninstall-az-ps#uninstall-the-azurerm-module)
 2. [安裝 Azure PowerShell Az 模組](install-az-ps.md)
-3. __選擇性__：當您熟悉新的命令集時，請使用 [Enable-AzureRMAlias](/powershell/module/az.accounts/enable-azurermalias) 啟用相容性模式來新增 AzureRM Cmdlet 的別名。 如需詳細資訊，請參閱下一節或[開始從 AzureRM 移轉至 Az](migrate-from-azurerm-to-az.md)。
+3. **選擇性**：當您熟悉新的命令集時，請使用 [Enable-AzureRMAlias](/powershell/module/az.accounts/enable-azurermalias) 啟用相容性模式來新增 AzureRM Cmdlet 的別名。 如需詳細資訊，請參閱下一節或[開始從 AzureRM 移轉至 Az](migrate-from-azurerm-to-az.md)。
 
 ## <a name="migrate-existing-scripts-to-az"></a>將現有指令碼遷移至 Az
 
