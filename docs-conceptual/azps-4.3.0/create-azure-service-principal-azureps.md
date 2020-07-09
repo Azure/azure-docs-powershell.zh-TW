@@ -4,12 +4,12 @@ description: 了解如何搭配 Azure PowerShell 來建立和使用服務主體�
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/17/2020
-ms.openlocfilehash: ebdc0783c43ccecbbeb315de5b5baebc9539b40e
-ms.sourcegitcommit: 747769a143ddebff39e78c2cc62a182401adddb9
+ms.openlocfilehash: 9d1f0e3be894a592bdf105c2070e9db0cf882921
+ms.sourcegitcommit: e324ad44921c9d8228ec7b91f3f8b333d2c520d4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85267873"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86127763"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>使用 Azure PowerShell 來建立 Azure 服務主體
 
@@ -149,7 +149,7 @@ Connect-AzAccount -ServicePrincipal -Credential $credentials -Tenant <tenant ID>
 憑證式驗證要求 Azure PowerShell 可從以憑證指紋為基礎的本機憑證存放區擷取資訊。
 
 ```azurepowershell-interactive
-Connect-AzAccount -ServicePrincipal -Tenant <tenant ID> -CertificateThumbprint <thumbprint>
+Connect-AzAccount -ServicePrincipal -Tenant <TenantId> -CertificateThumbprint <Thumbprint> -ApplicationId <ApplicationId>
 ```
 
 如需將憑證匯入 PowerShell 可存取的認證存放區指示，請參閱[使用 Azure PowerShell 登入](authenticate-azureps.md#sp-signin)
