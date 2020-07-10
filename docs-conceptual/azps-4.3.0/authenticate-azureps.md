@@ -3,19 +3,19 @@ title: 使用 Azure PowerShell 登入
 description: 如何使用 Azure PowerShell 以使用者身分登入、使用服務主體登入，或使用適用於 Azure 資源的受控識別登入。
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 06/18/2020
-ms.openlocfilehash: f82a9e373806f2f071ae59f6aee7e0a0bd4ea13d
-ms.sourcegitcommit: 747769a143ddebff39e78c2cc62a182401adddb9
+ms.date: 7/7/2020
+ms.openlocfilehash: 7ac723202ca9e81c8ef4cba5e844d46b98ba4b67
+ms.sourcegitcommit: 7b368a9be1cea2ac4e7d269e1a51529271269a42
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85267883"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86098790"
 ---
 # <a name="sign-in-with-azure-powershell"></a>使用 Azure PowerShell 登入
 
 Azure PowerShell 支援數種驗證方法。 要開始使用的最簡單方法是透過 [Azure Cloud Shell](/azure/cloud-shell/overview)，這會自動將您登入。 您可以使用本機安裝，以互動方式透過瀏覽器登入。 在撰寫自動化指令碼時，建議的方法是使用[服務主體](create-azure-service-principal-azureps.md)搭配必要權限。 當您依自身的使用案例儘可能地限制登入權限時，同時也是在協助維護 Azure 資源的安全。
 
-在登入之後，系統會針對您的預設訂用帳戶來執行命令。 若要變更工作階段作用中的訂用帳戶，請使用 [Set-AzContext](/powershell/module/az.accounts/set-azcontext) Cmdlet。 若要變更登入 Azure PowerShell 時使用的預設訂用帳戶，請使用 [Set-AzDefault](/powershell/module/az.accounts/set-azdefault)。
+如果您一開始有多個訂用帳戶的存取權，則您會登入第一個 Azure 傳回的訂用帳戶。 依據預設會針對此訂用帳戶執行命令。 若要變更工作階段作用中的訂用帳戶，請使用 [Set-AzContext](/powershell/module/az.accounts/set-azcontext) Cmdlet。 若要變更使用中的訂用帳戶，並將其保存在相同系統上的工作階段之間，請使用 [Select-AzContext](/powershell/module/az.accounts/select-azcontext) Cmdlet。
 
 > [!IMPORTANT]
 > 只要您保持登入，認證就會在多個 PowerShell 工作階段之間共用。
