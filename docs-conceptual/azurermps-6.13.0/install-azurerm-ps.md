@@ -4,12 +4,12 @@ description: 如何使用 PowerShellGet 安裝 Azure PowerShell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/16/2018
-ms.openlocfilehash: b04d4070e420f2d1e64f233eda6b3e250f8bb68c
-ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
+ms.openlocfilehash: 2615d1efef05c892552d7ccbea6fcff37f871039
+ms.sourcegitcommit: c19bf5a96a82a56e2b1fa9ab5e106690f850cedf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84122041"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87177453"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>使用 PowerShellGet 在 Windows 上安裝 Azure PowerShell
 
@@ -33,7 +33,7 @@ $PSVersionTable.PSVersion
 如果您的版本過期，請參閱[升級現有的 Windows PowerShell](/powershell/scripting/windows-powershell/install/installing-windows-powershell#upgrading-existing-windows-powershell)。
 
 > [!IMPORTANT]
-> 本文件中所述的模組 AzureRM 會使用 .NET Framework。 這會造成與使用 .NET Core 的 PowerShell 6.0 不相容。 如果您使用 PowerShell 6.0，請遵循[適用於 macOS 和 Linux 的安裝指示](install-azurermps-maclinux.md)。
+> 本文件中所述的模組 AzureRM 會使用 .NET Framework。 這會造成與使用 .NET Core 的 PowerShell 6.0 不相容。 如果您使用 PowerShell 6.0，請遵循[適用於 macOS 和 Linux 的安裝指示](/powershell/azure/install-az-ps)。
 
 ## <a name="install-the-azure-powershell-module"></a>安裝 Azure PowerShell 模組
 
