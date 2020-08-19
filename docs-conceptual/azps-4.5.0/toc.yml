@@ -56,6 +56,8 @@
       href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
 - name: 概念
   items:
+    - name: 使用 Invoke-AzRestMethod 管理 Azure 資源
+      href: manage-azure-resources-invoke-azrestmethod.md
     - name: PowerShell 工作
       href: using-psjobs.md
       displayName: 'background, task, scripting, automation, context, process'
@@ -88,3 +90,5 @@
       href: migrate-az-3.0.0.md
     - name: Az 4.1.0 重大變更
       href: migrate-az-4.1.0.md
+- name: 常見問題集
+  href: faq.md
