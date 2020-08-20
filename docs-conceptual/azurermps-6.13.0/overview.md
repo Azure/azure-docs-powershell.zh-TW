@@ -4,45 +4,45 @@ description: Azure PowerShell 的概觀以及有關安裝和設定的連結。
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/20/2018
-ms.openlocfilehash: 9d1b9c35829facc34cd7c252cb450fcce18685b2
-ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
+ms.openlocfilehash: 0ebbb504111c54fb42415f4084ba6828d47958d2
+ms.sourcegitcommit: 7546b8bcca0a6381248ecbb9d9bd6b2ef34b70e6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84122232"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88584402"
 ---
-# <a name="overview-of-azure-powershell"></a><span data-ttu-id="755d2-103">Azure PowerShell 的概觀</span><span class="sxs-lookup"><span data-stu-id="755d2-103">Overview of Azure PowerShell</span></span>
+# <a name="overview-of-azure-powershell"></a><span data-ttu-id="c0993-103">Azure PowerShell 的概觀</span><span class="sxs-lookup"><span data-stu-id="c0993-103">Overview of Azure PowerShell</span></span>
 
 [!INCLUDE[az-replacing-azurerm](../includes/az-replacing-azurerm.md)]
 
-<span data-ttu-id="755d2-104">Azure PowerShell 提供了一組 Cmdlet，它們會使用 [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) 模型來管理 Azure 資源。</span><span class="sxs-lookup"><span data-stu-id="755d2-104">Azure PowerShell provides a set of cmdlets that use the [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) model for managing your Azure resources.</span></span> <span data-ttu-id="755d2-105">您可以在瀏覽器中將它與 [Azure Cloud Shell](/azure/cloud-shell/overview) 搭配使用，或可將它安裝在本機電腦上，並在任何 PowerShell 工作階段中使用它。</span><span class="sxs-lookup"><span data-stu-id="755d2-105">You can use it in your browser with [Azure Cloud Shell](/azure/cloud-shell/overview), or you can install it on your local machine and use it in any PowerShell session.</span></span>
+<span data-ttu-id="c0993-104">Azure PowerShell 提供了一組 Cmdlet，它們會使用 [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) 模型來管理 Azure 資源。</span><span class="sxs-lookup"><span data-stu-id="c0993-104">Azure PowerShell provides a set of cmdlets that use the [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) model for managing your Azure resources.</span></span> <span data-ttu-id="c0993-105">您可以在瀏覽器中將它與 [Azure Cloud Shell](/azure/cloud-shell/overview) 搭配使用，或可將它安裝在本機電腦上，並在任何 PowerShell 工作階段中使用它。</span><span class="sxs-lookup"><span data-stu-id="c0993-105">You can use it in your browser with [Azure Cloud Shell](/azure/cloud-shell/overview), or you can install it on your local machine and use it in any PowerShell session.</span></span>
 
-<span data-ttu-id="755d2-106">使用 [Cloud Shell](/azure/cloud-shell/overview) 在您的瀏覽器中執行 Azure PowerShell，或在您自己的電腦上加以[安裝](install-azurerm-ps.md)。</span><span class="sxs-lookup"><span data-stu-id="755d2-106">Use the [Cloud Shell](/azure/cloud-shell/overview) to run the Azure PowerShell in your browser, or [install](install-azurerm-ps.md) it on own computer.</span></span> <span data-ttu-id="755d2-107">接著請閱讀[開始](get-started-azureps.md)文件以開始使用它。</span><span class="sxs-lookup"><span data-stu-id="755d2-107">Then read the [Get Started](get-started-azureps.md) article to begin using it.</span></span> <span data-ttu-id="755d2-108">如需最新版本的相關資訊，請參閱[版本資訊](release-notes-azureps.md)。</span><span class="sxs-lookup"><span data-stu-id="755d2-108">For information about the latest release, see the [release notes](release-notes-azureps.md).</span></span>
+<span data-ttu-id="c0993-106">使用 [Cloud Shell](/azure/cloud-shell/overview) 在您的瀏覽器中執行 Azure PowerShell，或在您自己的電腦上加以[安裝](install-azurerm-ps.md)。</span><span class="sxs-lookup"><span data-stu-id="c0993-106">Use the [Cloud Shell](/azure/cloud-shell/overview) to run the Azure PowerShell in your browser, or [install](install-azurerm-ps.md) it on own computer.</span></span> <span data-ttu-id="c0993-107">接著請閱讀[開始](get-started-azureps.md)文件以開始使用它。</span><span class="sxs-lookup"><span data-stu-id="c0993-107">Then read the [Get Started](get-started-azureps.md) article to begin using it.</span></span> <span data-ttu-id="c0993-108">如需最新版本的相關資訊，請參閱[版本資訊](release-notes-azureps.md)。</span><span class="sxs-lookup"><span data-stu-id="c0993-108">For information about the latest release, see the [release notes](release-notes-azureps.md).</span></span>
 
-<span data-ttu-id="755d2-109">下列範例可協助您了解如何使用 Azure PowerShell 來執行常見案例：</span><span class="sxs-lookup"><span data-stu-id="755d2-109">The following samples can help you learn how to perform common scenarios with Azure PowerShell:</span></span>
+<span data-ttu-id="c0993-109">下列範例可協助您了解如何使用 Azure PowerShell 來執行常見案例：</span><span class="sxs-lookup"><span data-stu-id="c0993-109">The following samples can help you learn how to perform common scenarios with Azure PowerShell:</span></span>
 
-- [<span data-ttu-id="755d2-110">Linux 虛擬機器</span><span class="sxs-lookup"><span data-stu-id="755d2-110">Linux Virtual Machines</span></span>](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=/powershell/azure/toc.json)
-- [<span data-ttu-id="755d2-111">Windows 虛擬機器</span><span class="sxs-lookup"><span data-stu-id="755d2-111">Windows Virtual Machines</span></span>](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=/powershell/azure/toc.json)
-- [<span data-ttu-id="755d2-112">Web Apps</span><span class="sxs-lookup"><span data-stu-id="755d2-112">Web Apps</span></span>](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
-- [<span data-ttu-id="755d2-113">SQL Databases</span><span class="sxs-lookup"><span data-stu-id="755d2-113">SQL Databases</span></span>](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
+- [<span data-ttu-id="c0993-110">Linux 虛擬機器</span><span class="sxs-lookup"><span data-stu-id="c0993-110">Linux Virtual Machines</span></span>](https://docs.microsoft.com/azure/virtual-machines/linux/powershell-samples)
+- [<span data-ttu-id="c0993-111">Windows 虛擬機器</span><span class="sxs-lookup"><span data-stu-id="c0993-111">Windows Virtual Machines</span></span>](https://docs.microsoft.com/azure/virtual-machines/windows/powershell-samples)
+- [<span data-ttu-id="c0993-112">Web Apps</span><span class="sxs-lookup"><span data-stu-id="c0993-112">Web Apps</span></span>](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
+- [<span data-ttu-id="c0993-113">SQL Databases</span><span class="sxs-lookup"><span data-stu-id="c0993-113">SQL Databases</span></span>](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
 
-## <a name="learn-powershell-basics"></a><span data-ttu-id="755d2-114">了解 PowerShell 基本概念</span><span class="sxs-lookup"><span data-stu-id="755d2-114">Learn PowerShell basics</span></span>
+## <a name="learn-powershell-basics"></a><span data-ttu-id="c0993-114">了解 PowerShell 基本概念</span><span class="sxs-lookup"><span data-stu-id="c0993-114">Learn PowerShell basics</span></span>
 
-<span data-ttu-id="755d2-115">如果您不熟悉 PowerShell，則 PowerShell 的簡介會很有幫助。</span><span class="sxs-lookup"><span data-stu-id="755d2-115">If you are unfamiliar with PowerShell, you may find an introduction to PowerShell helpful.</span></span>
+<span data-ttu-id="c0993-115">如果您不熟悉 PowerShell，則 PowerShell 的簡介會很有幫助。</span><span class="sxs-lookup"><span data-stu-id="c0993-115">If you are unfamiliar with PowerShell, you may find an introduction to PowerShell helpful.</span></span>
 
-- [<span data-ttu-id="755d2-116">安裝 PowerShell</span><span class="sxs-lookup"><span data-stu-id="755d2-116">Installing PowerShell</span></span>](/powershell/scripting/install/installing-powershell)
-- [<span data-ttu-id="755d2-117">PowerShell 學習資源</span><span class="sxs-lookup"><span data-stu-id="755d2-117">PowerShell learning resources</span></span>](/powershell/scripting/learn/more-powershell-learning)
+- [<span data-ttu-id="c0993-116">安裝 PowerShell</span><span class="sxs-lookup"><span data-stu-id="c0993-116">Installing PowerShell</span></span>](/powershell/scripting/install/installing-powershell)
+- [<span data-ttu-id="c0993-117">PowerShell 學習資源</span><span class="sxs-lookup"><span data-stu-id="c0993-117">PowerShell learning resources</span></span>](/powershell/scripting/learn/more-powershell-learning)
 
-<span data-ttu-id="755d2-118">您也可以觀看這段影片：[PowerShell 基本概念：(第 1 部份) 開始使用 PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1)。</span><span class="sxs-lookup"><span data-stu-id="755d2-118">You can also watch this video: [PowerShell Basics: (Part 1) Getting Started with PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1).</span></span>
+<span data-ttu-id="c0993-118">您也可以觀看這段影片：[PowerShell 基本概念：(第 1 部份) 開始使用 PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1)。</span><span class="sxs-lookup"><span data-stu-id="c0993-118">You can also watch this video: [PowerShell Basics: (Part 1) Getting Started with PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1).</span></span>
 
-## <a name="build-your-skills-with-microsoft-learn"></a><span data-ttu-id="755d2-119">透過 Microsoft Learn 增進您的技巧</span><span class="sxs-lookup"><span data-stu-id="755d2-119">Build your skills with Microsoft Learn</span></span>
+## <a name="build-your-skills-with-microsoft-learn"></a><span data-ttu-id="c0993-119">透過 Microsoft Learn 增進您的技巧</span><span class="sxs-lookup"><span data-stu-id="c0993-119">Build your skills with Microsoft Learn</span></span>
 
-- [<span data-ttu-id="755d2-120">使用 PowerShell 指令碼將 Azure 工作自動化</span><span class="sxs-lookup"><span data-stu-id="755d2-120">Automate Azure tasks using scripts with PowerShell</span></span>](/learn/modules/automate-azure-tasks-with-powershell/)
-- [<span data-ttu-id="755d2-121">更多互動式學習...</span><span class="sxs-lookup"><span data-stu-id="755d2-121">More interactive learning...</span></span>](/learn/browse/?term=powershell)
+- [<span data-ttu-id="c0993-120">使用 PowerShell 指令碼將 Azure 工作自動化</span><span class="sxs-lookup"><span data-stu-id="c0993-120">Automate Azure tasks using scripts with PowerShell</span></span>](/learn/modules/automate-azure-tasks-with-powershell/)
+- [<span data-ttu-id="c0993-121">更多互動式學習...</span><span class="sxs-lookup"><span data-stu-id="c0993-121">More interactive learning...</span></span>](/learn/browse/?term=powershell)
 
-## <a name="other-azure-powershell-modules"></a><span data-ttu-id="755d2-122">其他 Azure Powershell 模組</span><span class="sxs-lookup"><span data-stu-id="755d2-122">Other Azure PowerShell modules</span></span>
+## <a name="other-azure-powershell-modules"></a><span data-ttu-id="c0993-122">其他 Azure Powershell 模組</span><span class="sxs-lookup"><span data-stu-id="c0993-122">Other Azure PowerShell modules</span></span>
 
-- [<span data-ttu-id="755d2-123">Azure Active Directory</span><span class="sxs-lookup"><span data-stu-id="755d2-123">Azure Active Directory</span></span>](/powershell/azure/active-directory/)
-- [<span data-ttu-id="755d2-124">Azure 資訊保護</span><span class="sxs-lookup"><span data-stu-id="755d2-124">Azure Information Protection</span></span>](/powershell/azure/aip/)
-- [<span data-ttu-id="755d2-125">Azure Service Fabric</span><span class="sxs-lookup"><span data-stu-id="755d2-125">Azure Service Fabric</span></span>](/powershell/azure/service-fabric/)
-- [<span data-ttu-id="755d2-126">Azure ElasticDB</span><span class="sxs-lookup"><span data-stu-id="755d2-126">Azure ElasticDB</span></span>](/powershell/azure/elasticdbjobs/)
+- [<span data-ttu-id="c0993-123">Azure Active Directory</span><span class="sxs-lookup"><span data-stu-id="c0993-123">Azure Active Directory</span></span>](/powershell/azure/active-directory/)
+- [<span data-ttu-id="c0993-124">Azure 資訊保護</span><span class="sxs-lookup"><span data-stu-id="c0993-124">Azure Information Protection</span></span>](/powershell/azure/aip/)
+- [<span data-ttu-id="c0993-125">Azure Service Fabric</span><span class="sxs-lookup"><span data-stu-id="c0993-125">Azure Service Fabric</span></span>](/powershell/azure/service-fabric/)
+- [<span data-ttu-id="c0993-126">Azure ElasticDB</span><span class="sxs-lookup"><span data-stu-id="c0993-126">Azure ElasticDB</span></span>](/powershell/azure/elasticdbjobs/)
