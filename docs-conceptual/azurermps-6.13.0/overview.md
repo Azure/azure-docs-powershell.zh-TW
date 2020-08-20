@@ -4,12 +4,12 @@ description: Azure PowerShell 的概觀以及有關安裝和設定的連結。
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/20/2018
-ms.openlocfilehash: 9d1b9c35829facc34cd7c252cb450fcce18685b2
-ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
+ms.openlocfilehash: 0ebbb504111c54fb42415f4084ba6828d47958d2
+ms.sourcegitcommit: 7546b8bcca0a6381248ecbb9d9bd6b2ef34b70e6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84122232"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88584402"
 ---
 # <a name="overview-of-azure-powershell"></a>Azure PowerShell 的概觀
 
@@ -21,8 +21,8 @@ Azure PowerShell 提供了一組 Cmdlet，它們會使用 [Azure Resource Manage
 
 下列範例可協助您了解如何使用 Azure PowerShell 來執行常見案例：
 
-- [Linux 虛擬機器](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=/powershell/azure/toc.json)
-- [Windows 虛擬機器](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=/powershell/azure/toc.json)
+- [Linux 虛擬機器](https://docs.microsoft.com/azure/virtual-machines/linux/powershell-samples)
+- [Windows 虛擬機器](https://docs.microsoft.com/azure/virtual-machines/windows/powershell-samples)
 - [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
 - [SQL Databases](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
 
