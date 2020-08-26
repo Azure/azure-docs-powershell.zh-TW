@@ -1,0 +1,90 @@
+- name: Azure PowerShell
+  href: index.yml
+- name: 新的 Az 模組簡介
+  href: new-azureps-module-az.md
+  displayName: 'intro, introduction, azurerm'
+- name: 安裝
+  items:
+    - name: 使用 PowerShellGet 安裝
+      href: install-az-ps.md
+    - name: 使用 MSI 安裝
+      href: install-az-ps-msi.md
+    - name: Docker 中的 Azure PowerShell
+      href: azureps-in-docker.md
+- name: 解除安裝
+  href: uninstall-az-ps.md
+- name: 從 AzureRM 遷移
+  items:
+    - name: 移轉步驟
+      href: migrate-from-azurerm-to-az.md
+      displayName: 'migrate, azurerm, az'
+    - name: AzureRM 和 Az 之間的變更
+      href: migrate-az-1.0.0.md
+      displayName: 'breaking, cmdlet, module, names'
+- name: 開始使用
+  href: get-started-azureps.md
+  displayName: 'sign in, signin, log in, login, find, feedback, intro, introduction'
+- name: Cloud Shell
+  href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
+- name: 登入
+  items:
+    - name: 驗證方法
+      href: authenticate-azureps.md
+      displayName: 'sign in, signin, log in, login, credentials, msi, managed identity, tenant, subscription, region, certificate, service principal, authenticate'
+    - name: 建立服務主體
+      href: create-azure-service-principal-azureps.md
+      displayName: 'automation, application, web app, script, certificate, sign in, signin, log in, login, devops, dev ops, itpro, it pro, role, aad, authentication, authenticate'
+    - name: 認證內容
+      href: context-persistence.md
+      displayName: 'sign in, signin, log in, login, process, session, context, persist, jobs, background, automation, scripting, task'
+- name: 查詢
+  href: queries-azureps.md
+  displayName: 'filter, search, format, output, variable, scripting, array, dictionary, map, object'
+- name: 格式化輸出
+  href: formatting-output.md
+  displayName: 'object, table, yaml, json, xml, csv, html, list'
+- name: 管理訂用帳戶
+  href: manage-subscriptions-azureps.md
+  displayName: 'tenant, user, sign in, signin, log in, login, authenticate, authentication, accounts'
+- name: 部署
+  items:
+    - name: 部署 Resource Manager 範本
+      href: /azure/azure-resource-manager/resource-group-template-deploy
+    - name: 匯出 Resource Manager 範本
+      href: /azure/azure-resource-manager/resource-manager-export-template-powershell
+    - name: 部署私人 Resource Manager 範本
+      href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
+- name: 概念
+  items:
+    - name: PowerShell 工作
+      href: using-psjobs.md
+      displayName: 'background, task, scripting, automation, context, process'
+- name: 教學課程
+  items:
+    - name: 建立虛擬機器
+      href: azureps-vm-tutorial.yml
+- name: 指令碼範例
+  items:
+    - name: Linux 虛擬機器
+      href: /azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+      displayName: vms
+    - name: Windows 虛擬機器
+      href: /azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+      displayName: vms
+    - name: Web Apps
+      href: /azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+    - name: SQL Database
+      href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+    - name: Cosmos DB
+      href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
+      displayName: 'database, nosql, mongodb, couchdb'
+- name: 版本資訊
+  items:
+    - name: 版本資訊
+      href: release-notes-azureps.md
+    - name: Az 2.0.0 重大變更
+      href: migrate-az-2.0.0.md
+    - name: Az 3.0.0 重大變更
+      href: migrate-az-3.0.0.md
+    - name: Az 4.1.0 重大變更
+      href: migrate-az-4.1.0.md
