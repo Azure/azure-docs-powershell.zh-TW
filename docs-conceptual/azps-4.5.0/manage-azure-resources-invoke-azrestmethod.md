@@ -3,13 +3,13 @@ title: 使用 Invoke-AzRestMethod 管理 Azure 資源
 description: 如何使用 Azure PowerShell 透過 Invoke-AzRestMethod Cmdlet 來管理資源。
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 08/17/2020
-ms.openlocfilehash: 380fd818a3af2474ce192c7a1da8a6798795cf21
-ms.sourcegitcommit: bd7edc4d48b6a8a8bec864edc876e16af0a49505
+ms.date: 08/24/2020
+ms.openlocfilehash: 6a267e28ec8e2540ce7d6431ffd9aab0b2090c6a
+ms.sourcegitcommit: b94a3f00c147144b0ef7f8cf8d0f151e04674b89
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88512954"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88821358"
 ---
 # <a name="manage-azure-resources-with-invoke-azrestmethod"></a>使用 Invoke-AzRestMethod 管理 Azure 資源
 
@@ -19,8 +19,7 @@ ms.locfileid: "88512954"
 
 ## <a name="how-to-use-invoke-azrestmethod"></a>如何使用 Invoke-AzRestMethod
 
-舉例來說，您可以只允許存取特定網路的 Azure Container Registry (ACR)，或拒絕公用存取。 [Az.ContainerRegistry PowerShell 模組](/powershell/module/Az.ContainerRegistry/)中尚未提供此功能。
-不過，此功能可以在過渡期中使用 `Invoke-AzRestMethod` 進行管理。
+舉例來說，您可以只允許存取特定網路的 Azure Container Registry (ACR)，或拒絕公用存取。 截至 Az PowerShell 模組 4.5.0 版，這項功能尚無法在 [Az.ContainerRegistry PowerShell 模組](/powershell/module/Az.ContainerRegistry/)中使用。 不過，此功能可以在過渡期中使用 `Invoke-AzRestMethod` 進行管理。
 
 ## <a name="using-invoke-azrestmethod-with-get-operations"></a>搭配 GET 作業使用 Invoke-AzRestMethod
 
@@ -51,7 +50,7 @@ Invoke-AzRestMethod @getParams
 
 ## <a name="using-invoke-azrestmethod-with-patch-operations"></a>搭配 PATCH 作業使用 Invoke-AzRestMethod
 
-您可以使用 Invoke-AzRestMethod Cmdlet 在 `myresourcegroup` 資源群組中停用名為 `myacr` 的現有 ACR 公用存取。
+您可以使用 `Invoke-AzRestMethod` Cmdlet 在 `myresourcegroup` 資源群組中停用名為 `myacr` 的現有 ACR 公用存取。
 
 若要停用公用網路存取，您需要對 API 進行 **PATCH** 呼叫，變更 `publicNetwokAccess` 參數的值，如下列範例所示：
 
@@ -100,11 +99,11 @@ Invoke-AzRestMethod @specificIpParams
 
 ## <a name="comparison-to-get-azresource-new-azresource-and-remove-azresource"></a>與 Get-AzResource、New-AzResource 和 Remove-AzResource 的比較
 
-`*-AzResource` Cmdlet 可讓您藉由指定資源類型、API 版本和要更新的屬性，自訂對 Azure 的 REST API 呼叫。 不過，這些屬性必須是 `PSObject`，這可能會變得很複雜而難以建立。
+`*-AzResource` Cmdlet 可讓您藉由指定資源類型、API 版本和要更新的屬性，自訂對 Azure 的 REST API 呼叫。 不過，您必須先將屬性建立為 `PSObject`。 此程序會使複雜度提高一層，而且很容易就會變得複雜。
 
-`Invoke-AzRestMethod` 提供更簡單的管理 Azure 資源方式。 在上述範例中，可以看到承載是 JSON 字串。 您不需為 JSON 和 `PSObjects` 之間的轉換而煩惱。
+`Invoke-AzRestMethod` 提供簡單的 Azure 資源管理方式。 如先前範例所示，您可以建立 JSON 字串，並使用該字串來自訂 REST API 呼叫，而不需要預先建立任何 `PSObjects`。
 
-如果已經熟悉 `*-AzResource` Cmdlet，則可以繼續使用。 我們不打算停止支援。 在 `Invoke-AzRestMethod` 中，我們已將新的 Cmdlet 新增至系列。
+如果已經熟悉 `*-AzResource` Cmdlet，則可以繼續使用。 我們不打算停止支援。 在 `Invoke-AzRestMethod` 中，我們已將新的 Cmdlet 新增至您的工具組。
 
 ## <a name="see-also"></a>另請參閱
 
