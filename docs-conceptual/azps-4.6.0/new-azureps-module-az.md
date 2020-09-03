@@ -4,12 +4,13 @@ description: 介紹新的 Azure PowerShell 模組 Az，也就是 AzureRM 模組�
 ms.date: 05/20/2020
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: f051930132c6e1f1979a7cde1f75fd4856f83284
-ms.sourcegitcommit: b94a3f00c147144b0ef7f8cf8d0f151e04674b89
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 0771bc474f43d8bbf392f2eba10da2e320d30556
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88821449"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89242642"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>新的 Azure PowerShell Az 模組簡介
 

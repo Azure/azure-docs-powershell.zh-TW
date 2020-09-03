@@ -4,12 +4,13 @@ description: 了解如何搭配 Azure PowerShell 來建立和使用服務主體�
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: cf88eb5a477139a0ef5b756ca4e768bbce1b33b7
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: cc3215640e529d59935f5170df75f90bcd5c4436
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387134"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89242948"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>使用 Azure PowerShell 來建立 Azure 服務主體
 
@@ -121,7 +122,7 @@ Remove-AzRoleAssignment -ApplicationId <service principal application ID> -RoleD
 > [!NOTE]
 > 如果您的帳戶沒有足夠權限可指派角色，您會看到錯誤訊息，這表示您的帳戶「沒有執行 'Microsoft.Authorization/roleAssignments/write' 動作的權限」。請連絡您的 Azure Active Directory 管理員，以管理角色。
 
-新增角色「不會」  限制之前指派的權限。 限制服務主體的權限時，應移除「參與者」  角色。
+新增角色「不會」限制之前指派的權限。 限制服務主體的權限時，應移除「參與者」角色。
 
 列出指派的角色可以驗證變更：
 

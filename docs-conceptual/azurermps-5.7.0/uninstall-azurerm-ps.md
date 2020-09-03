@@ -4,16 +4,17 @@ description: 如何執行 Azure PowerShell 完全解除安裝
 ms.date: 06/10/2019
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: 6fc8ff8af0355ab705007f5df81d2aba8444c266
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 17a9b604da84f131c434e3001732a34f7d620fbd
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83388001"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89243577"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>將 Azure PowerShell 模組解除安裝
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 本文說明如何將較舊版的 Azure PowerShell 解除安裝，或從您的系統將它完全移除。 如果您已決定要將 Azure PowerShell 完全解除安裝，請透過 [Send-Feedback](/powershell/module/azurerm.profile/send-feedback) Cmdlet 提供一些意見反應給我們。
 如果發生錯誤 (bug)，希望您[提出 GitHub 問題](https://github.com/azure/azure-powershell/issues)，非常感謝您。
@@ -48,9 +49,9 @@ function Uninstall-AllModules {
 
     [switch]$WhatIf
   )
-  
+
   $AllModules = @()
-  
+
   'Creating list of dependencies...'
   $target = Find-Module $TargetModule -RequiredVersion $version
   $target.Dependencies | ForEach-Object {
