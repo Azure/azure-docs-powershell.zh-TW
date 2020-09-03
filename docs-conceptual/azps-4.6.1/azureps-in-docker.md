@@ -10,7 +10,7 @@ ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 09/01/2020
-ms.locfileid: "89241452"
+ms.locfileid: "89241758"
 ---
 # <a name="using-azure-powershell-in-docker"></a>使用 Docker 中的 Azure PowerShell
 

@@ -5,16 +5,17 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 08/28/2018
-ms.openlocfilehash: 8aa0462af97877e0d20fe898ddd927a6d2850dea
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 189b360f8825b7de93b67b0b2cbe670d00187327
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387321"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89241350"
 ---
 # <a name="release-notes"></a>版本資訊
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 這是此版本中對 Azure PowerShell 所做的變更清單。
 
@@ -46,7 +47,7 @@ ms.locfileid: "83387321"
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * 已新增 Cmdlet：New-AzureRmApplicationGatewayCustomError、Add-AzureRmApplicationGatewayCustomError、Get-AzureRmApplicationGatewayCustomError、Set-AzureRmApplicationGatewayCustomError、Remove-AzureRmApplicationGatewayCustomError、Add-AzureRmApplicationGatewayHttpListenerCustomError、Get-AzureRmApplicationGatewayHttpListenerCustomError、Set-AzureRmApplicationGatewayHttpListenerCustomError、Remove-AzureRmApplicationGatewayHttpListenerCustomError
 * 已將 ICMP 加回支援的 AzureFirewall 網路通訊協定
-* 更新 Test-AzureRmNetworkWatcherConnectivity Cmdlet，在目的地識別碼、位址和連接埠上新增驗證。 
+* 更新 Test-AzureRmNetworkWatcherConnectivity Cmdlet，在目的地識別碼、位址和連接埠上新增驗證。
 * 修正 VirtualNetwork 對應中的記憶體使用量問題
 
 #### <a name="azurermrecoveryservicesbackup"></a>AzureRM.RecoveryServices.Backup
@@ -231,14 +232,14 @@ ms.locfileid: "83387321"
 #### <a name="azurermprofile"></a>AzureRM.Profile
 * 儲存體通用程式碼的小幅變更
 * 已更新說明檔以包含完整的參數類型。
-* 已變更 - 非強制性的 ServicePrincipal 位在 ServicePrincipalCertificateWithSubscriptionId 參數集 
+* 已變更 - 非強制性的 ServicePrincipal 位在 ServicePrincipalCertificateWithSubscriptionId 參數集
 
 #### <a name="azurestorage"></a>Azure.Storage
-* 支援使用 OAuth 建立儲存體內容。 
+* 支援使用 OAuth 建立儲存體內容。
     - New-AzureStorageContext
 
 #### <a name="azurermcdn"></a>AzureRM.Cdn
-* 已在 CDN 定價 SKU 中新增 Standard_Microsoft。 
+* 已在 CDN 定價 SKU 中新增 Standard_Microsoft。
 
 #### <a name="azurermcompute"></a>AzureRM.Compute
 * 將金鑰保存庫和儲存體上的相依性移至一般相依性
@@ -349,7 +350,7 @@ ms.locfileid: "83387321"
 * 將版本欄位新增至 PSSignalRResource 物件，以及將連接字串新增至 PSSignalRKeys 物件。
 
 #### <a name="azurermstorage"></a>AzureRM.Storage
-* 在 AzureRm.Storage 中支援不變原則 
+* 在 AzureRm.Storage 中支援不變原則
     - Remove-AzureRmStorageAccountNetworkRule
     - Get-AzureRmStorageContainer
     - Update-AzureRmStorageContainer
@@ -685,7 +686,7 @@ ms.locfileid: "83387321"
 * 更新 New-AzureRmDisk 的範例
 * 新增 'New-AzureRmVM' 的範例
 * 更新 Set-AzureRmVMOSDisk 的說明
-* 更新 Set-AzureRmVMBginfoExtension 的範例 1 以更正拼字和前置詞。 
+* 更新 Set-AzureRmVMBginfoExtension 的範例 1 以更正拼字和前置詞。
 
 #### <a name="azurermdatafactoryv2"></a>AzureRM.DataFactoryV2
 * 已將 ADF .Net SDK 版本更新為 1.1.0。
@@ -897,7 +898,7 @@ ms.locfileid: "83387321"
 * 在說明檔中新增了關於 -Permissions 參數的其他資訊。
 
 #### <a name="azurermcompute"></a>AzureRM.Compute
-* 'Get-AzureRmVmDiskEncryptionStatus' 修正了沒有資料磁碟的 VM 所發生的問題 
+* 'Get-AzureRmVmDiskEncryptionStatus' 修正了沒有資料磁碟的 VM 所發生的問題
 * 更新 Compute 用戶端程式庫版本來修正下列 Cmdlet
     - Grant-AzureRmDiskAccess
     - Grant-AzureRmSnapshotAccess
@@ -1020,8 +1021,8 @@ ms.locfileid: "83387321"
 
 #### <a name="azurermdatalakestore"></a>AzureRM.DataLakeStore
 * 針對 Export-AzureRmDataLakeStoreChildItemProperties 修正範例
-* 修正 Set-AzureRmDataLakeStoreItemAclEntry 中 Recurse 案例的 Null 參數例外狀況 
-* 修正 Set-AzureRmDataLakeStoreItemAclEntry、Set-AzureRmDataLakeStoreItemAcl、Remove-AzureRmDataLakeStoreItemAclEntry 的說明檔 
+* 修正 Set-AzureRmDataLakeStoreItemAclEntry 中 Recurse 案例的 Null 參數例外狀況
+* 修正 Set-AzureRmDataLakeStoreItemAclEntry、Set-AzureRmDataLakeStoreItemAcl、Remove-AzureRmDataLakeStoreItemAclEntry 的說明檔
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * 將網路 SDK 版本從 18.0.0-預覽提高到 19.0.0-預覽
@@ -1041,7 +1042,7 @@ ms.locfileid: "83387321"
 * 已更新稽核 Cmdlet 以允許移除 AuditActions 或 AuditActionGroups
 * 已修正 Set-AzureRmSqlDatabaseBackupLongTermRetentionPolicy 在設定新的彈性保留原則時，命令會失敗的問題；錯誤為：使用 azure 復原服務保存庫設定長期保留原則，且不再支援原則。 請提交具有新彈性保留原則的要求。
 * 更新所有 Azure Sql Database/ElasticPool 建立/更新相關的 Cmdlet 以使用新的資料庫 API，其可支援縮放和階層相關屬性的 Sku 屬性。
-* 更新的 Cmdlet 包括： 
+* 更新的 Cmdlet 包括：
     - New-AzureRmSqlDatabase；Set-AzureRmSqlDatabase
     - New-AzureRmSqlElasticPool；Set-AzureRmSqlElasticPool
     - New-AzureRmSqlDatabaseCopy

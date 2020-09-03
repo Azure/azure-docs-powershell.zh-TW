@@ -3,23 +3,22 @@ title: 使用 Azure PowerShell 登入
 description: 如何使用 Azure PowerShell 以使用者身分登入、使用服務主體登入，或使用適用於 Azure 資源的受控識別登入。
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/04/2019
+ms.date: 7/7/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 1730d3f8d9fd2783b14c57c94bb3357803623b37
+ms.openlocfilehash: 8f18af8ed67ecf2aefd353208c07bf812df732d9
 ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 09/01/2020
-ms.locfileid: "89242030"
+ms.locfileid: "89242166"
 ---
 # <a name="sign-in-with-azure-powershell"></a>使用 Azure PowerShell 登入
 
 Azure PowerShell 支援數種驗證方法。 要開始使用的最簡單方法是透過 [Azure Cloud Shell](/azure/cloud-shell/overview)，這會自動將您登入。 您可以使用本機安裝，以互動方式透過瀏覽器登入。 在撰寫自動化指令碼時，建議的方法是使用[服務主體](create-azure-service-principal-azureps.md)搭配必要權限。 當您依自身的使用案例儘可能地限制登入權限時，同時也是在協助維護 Azure 資源的安全。
 
-在登入之後，系統會針對您的預設訂用帳戶來執行命令。 若要變更工作階段作用中的訂用帳戶，請使用 [Set-AzContext](/powershell/module/az.accounts/set-azcontext) Cmdlet。 若要變更登入 Azure PowerShell 時使用的預設訂用帳戶，請使用 [Set-AzDefault](/powershell/module/az.accounts/set-azdefault)。
+如果您一開始有多個訂用帳戶的存取權，則您會登入第一個 Azure 傳回的訂用帳戶。 依據預設會針對此訂用帳戶執行命令。 若要變更工作階段作用中的訂用帳戶，請使用 [Set-AzContext](/powershell/module/az.accounts/set-azcontext) Cmdlet。 若要變更使用中的訂用帳戶，並將其保存在相同系統上的工作階段之間，請使用 [Select-AzContext](/powershell/module/az.accounts/select-azcontext) Cmdlet。
 
 > [!IMPORTANT]
->
 > 只要您保持登入，認證就會在多個 PowerShell 工作階段之間共用。
 > 如需詳細資訊，請參閱[持續性認證](context-persistence.md)中的文章。
 
@@ -31,12 +30,16 @@ Azure PowerShell 支援數種驗證方法。 要開始使用的最簡單方法�
 Connect-AzAccount
 ```
 
-執行時，此 Cmdlet 會出示權杖字串。 若要登入，請複製這個字串並將它貼至瀏覽器中的 https://microsoft.com/devicelogin 。 PowerShell 工作階段會進行驗證以便連線至 Azure。
+從 PowerShell 第 6 版和更新版本執行時，此 Cmdlet 會呈現權杖字串。 若要登入，請複製此字串並將其貼入網頁瀏覽器中的 [microsoft.com/devicelogin](https://microsoft.com/devicelogin)。 PowerShell 工作階段會進行驗證以便連線至 Azure。 您可以指定 `UseDeviceAuthentication` 參數，以在 Windows PowerShell 上接收權杖字串。
 
 > [!IMPORTANT]
->
-> 由於 Active Directory 授權實作與安全性考量中的變更，已在 Azure PowerShell 中移除使用者名稱/密碼認證授權。
-> 如果您將認證授權用於自動化用途，請[建立服務主體](create-azure-service-principal-azureps.md)。
+> 由於 Active Directory 授權實作與安全性考量中的變更，已在 Azure PowerShell 中移除使用者名稱/密碼認證授權。 如果您將認證授權用於自動化用途，請[建立服務主體](create-azure-service-principal-azureps.md)。
+
+使用 [Get-AzContext](/powershell/module/az.accounts/get-azcontext) Cmdlet，將您的租用戶識別碼儲存在本文後續兩節所用的變數中。
+
+```azurepowershell-interactive
+$tenantId = (Get-AzContext).Tenant.Id
+```
 
 ## <a name="sign-in-with-a-service-principal"></a>使用服務主體 <a name="sp-signin"/> 來登入
 
@@ -48,18 +51,26 @@ Connect-AzAccount
 
 ### <a name="password-based-authentication"></a>密碼式驗證
 
-若要取得服務主體的認證作為適當物件，請使用 [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential) Cmdlet。 此 Cmdlet 會顯示使用者名稱和密碼的提示。 使用使用者名稱的服務主體識別碼。
+建立要在本節的範例中使用的服務主體。 如需有關建立服務主體的詳細資訊，請參閱[使用 Azure PowerShell 建立 Azure 服務主體](/powershell/azure/create-azure-service-principal-azureps)。
 
 ```azurepowershell-interactive
-$pscredential = Get-Credential
+$sp = New-AzADServicePrincipal -DisplayName ServicePrincipalName
+```
+
+若要取得服務主體的認證作為適當物件，請使用 [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential) Cmdlet。 此 Cmdlet 會顯示使用者名稱和密碼的提示。 使用服務主體的 `applicationID` 作為使用者名稱，並將其 `secret` 轉換為純文字以取得密碼。
+
+```azurepowershell-interactive
+# Retrieve the plain text password for use with `Get-Credential` in the next command.
+$sp.secret | ConvertFrom-SecureString -AsPlainText
+
+$pscredential = Get-Credential -UserName $sp.ApplicationId
 Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $tenantId
 ```
 
-在自動化的情況下，您需要從使用者名稱和安全字串建立認證：
+在自動化的情況下，您需要從服務主體的 `applicationId` 和 `secret` 建立認證：
 
 ```azurepowershell-interactive
-$passwd = ConvertTo-SecureString <use a secure password here> -AsPlainText -Force
-$pscredential = New-Object System.Management.Automation.PSCredential('service principal name/id', $passwd)
+$pscredential = New-Object -TypeName System.Management.Automation.PSCredential($sp.ApplicationId, $sp.Secret)
 Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $tenantId
 ```
 
@@ -93,15 +104,15 @@ Import-PfxCertificate -FilePath <path to certificate> -Password $credentials.Pas
 
 ```azurepowershell-interactive
 # Import a PFX
-$storeName = [System.Security.Cryptography.X509Certificates.StoreName]::My 
-$storeLocation = [System.Security.Cryptography.X509Certificates.StoreLocation]::CurrentUser 
-$store = [System.Security.Cryptography.X509Certificates.X509Store]::new($storeName, $storeLocation) 
+$storeName = [System.Security.Cryptography.X509Certificates.StoreName]::My
+$storeLocation = [System.Security.Cryptography.X509Certificates.StoreLocation]::CurrentUser
+$store = [System.Security.Cryptography.X509Certificates.X509Store]::new($storeName, $storeLocation)
 $certPath = <path to certificate>
 $credentials = Get-Credential -Message "Provide PFX private key password"
-$flag = [System.Security.Cryptography.X509Certificates.X509KeyStorageFlags]::Exportable 
-$certificate = [System.Security.Cryptography.X509Certificates.X509Certificate2]::new($certPath, $credentials.Password, $flag) 
-$store.Open([System.Security.Cryptography.X509Certificates.OpenFlags]::ReadWrite) 
-$store.Add($Certificate) 
+$flag = [System.Security.Cryptography.X509Certificates.X509KeyStorageFlags]::Exportable
+$certificate = [System.Security.Cryptography.X509Certificates.X509Certificate2]::new($certPath, $credentials.Password, $flag)
+$store.Open([System.Security.Cryptography.X509Certificates.OpenFlags]::ReadWrite)
+$store.Add($Certificate)
 $store.Close()
 ```
 
@@ -109,15 +120,15 @@ $store.Close()
 
 受控識別是 Azure Active Directory 的功能。 受控識別是指派給在 Azure 中執行之資源的服務主體。 您可以使用受控識別服務主體進行登入，並取得僅限應用程式的存取權杖來存取其他資源。 只有在 Azure 雲端中執行的虛擬機器才能使用受控識別。
 
-此命令會使用主機環境的受控識別來連線。 例如，如果在具有指派受控服務識別的 VirtualMachine 上執行，這可讓程式碼使用該指派的身分識別來登入。
+此範例會使用主機環境的受控識別來連線。 例如，如果在具有指派受控服務識別的 VirtualMachine 上執行，這可讓程式碼使用該指派的身分識別來登入。
 
 ```azurepowershell-interactive
- Connect-AzAccount -Identity 
+ Connect-AzAccount -Identity
 ```
 
 ## <a name="sign-in-with-a-non-default-tenant-or-as-a-cloud-solution-provider-csp"></a>以非預設租用戶或雲端解決方案提供者 (CSP) 登入
 
-如果您的帳戶與多個租用戶相關聯，則需要使用連線時的 `-Tenant` 參數方可登入。 此參數也適用於其他所有登入方法。 登入時，此參數值可以是租用戶的 Azure 物件識別碼 (租用戶識別碼)，或租用戶的完整的網域名稱。
+如果您的帳戶與多個租用戶相關聯，則需要使用連線時指定的 `-Tenant` 參數方可登入。 此參數適用於其他所有登入方法。 登入時，此參數值可以是租用戶的 Azure 物件識別碼 (租用戶識別碼)，或租用戶的完整的網域名稱。
 
 如果您是[雲端解決方案提供者 (CSP)](https://azure.microsoft.com/offers/ms-azr-0145p/)，則 `-Tenant` 值**必須**是租用戶的識別碼。
 
@@ -127,9 +138,7 @@ Connect-AzAccount -Tenant 'xxxx-xxxx-xxxx-xxxx'
 
 ## <a name="sign-in-to-another-cloud"></a>登入其他雲端
 
-Azure 雲端服務提供符合區域資料處理法規的環境。
-針對區域雲端中的帳戶，使用 `-Environment` 引數設定您登入時的環境。
-此參數也適用於其他所有登入方法。 例如，如果您的帳戶位於中國雲端：
+Azure 雲端服務提供符合區域資料處理法規的環境。 針對區域雲端中的帳戶，使用 `-Environment` 引數設定您登入時的環境。 此參數適用於其他所有登入方法。 例如，如果您的帳戶位於中國雲端：
 
 ```azurepowershell-interactive
 Connect-AzAccount -Environment AzureChinaCloud
@@ -138,5 +147,5 @@ Connect-AzAccount -Environment AzureChinaCloud
 下列命令可取得可用環境的清單：
 
 ```azurepowershell-interactive
-Get-AzEnvironment | Select-Object Name
+Get-AzEnvironment | Select-Object -Property Name
 ```

@@ -1,18 +1,16 @@
 ---
 title: Az 3.0.0 的移轉指南
 description: 本移轉指南包含在 Az 3.0 版發行中對 Azure PowerShell 進行重大變更的清單。
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: e88752e0c997efc4f49161e358072803cb63450a
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 727a74ef9cd0f6e1bf93b65c4776816c1aa23334
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81740128"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89240823"
 ---
 # <a name="migration-guide-for-az-300"></a>Az 3.0.0 的移轉指南
 
