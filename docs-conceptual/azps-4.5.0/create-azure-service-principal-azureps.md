@@ -4,12 +4,13 @@ description: 了解如何搭配 Azure PowerShell 來建立和使用服務主體�
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/17/2020
-ms.openlocfilehash: 9d1f0e3be894a592bdf105c2070e9db0cf882921
-ms.sourcegitcommit: edfe63c6949cd59127028ac8a13bb4a8827d555c
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 3c876454560e4ad421e6d32a8ca8b30a651fd8af
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87566144"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89239820"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>使用 Azure PowerShell 來建立 Azure 服務主體
 

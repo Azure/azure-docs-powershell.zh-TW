@@ -4,16 +4,17 @@ description: 如何使用 Azure PowerShell 以使用者身分登入、使用服�
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: c9a6a48d27a2c3b7f01e3bd7bd5bf82aa04dc587
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 7a79af082ac7c3ffe923a7f0a1c7854b7a562df7
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83386828"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89244359"
 ---
 # <a name="sign-in-with-azure-powershell"></a>使用 Azure PowerShell 登入
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 Azure PowerShell 支援多種驗證方法。 最簡單的入門方法是在命令列以互動方式登入。
 

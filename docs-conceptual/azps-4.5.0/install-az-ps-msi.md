@@ -4,12 +4,13 @@ description: 如何使用 MSI，但不使用 PowerShellGet 來安裝 Azure Power
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: 07abfc9a4277c0d658830c397ad5c1abfbe95abe
-ms.sourcegitcommit: edfe63c6949cd59127028ac8a13bb4a8827d555c
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 33d9214544ddb126b717685f9e7986bed926b149
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87566099"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89239752"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi"></a>使用 MSI 在 Windows 上安裝 Azure PowerShell
 

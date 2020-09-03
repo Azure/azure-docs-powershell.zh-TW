@@ -4,12 +4,13 @@ description: 了解將指令碼從 AzureRM 模組遷移至新 Az 模組所用的
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/10/2019
-ms.openlocfilehash: 0b0b951d540ed91e15472853bba46e4f302921bc
-ms.sourcegitcommit: edfe63c6949cd59127028ac8a13bb4a8827d555c
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 83860dd5abfbb1c3da94de6813bceca1bbb0fca7
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87566113"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89239497"
 ---
 # <a name="migrate-azure-powershell-from-azurerm-to-az"></a>將 Azure PowerShell 從 AzureRM 移轉至 Az
 

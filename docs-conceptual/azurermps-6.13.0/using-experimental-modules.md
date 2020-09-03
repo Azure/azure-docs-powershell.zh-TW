@@ -4,16 +4,17 @@ description: 了解實驗性 Azure PowerShell 模組的原理和使用方式。
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
-ms.openlocfilehash: 2c52dec39bdc656c7a2b17c547ec5f87ac659fa1
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 2a44d29cb0770bf1517993606358c3669b2ee982
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387287"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89244240"
 ---
 # <a name="use-experimental-azure-powershell-modules"></a>使用實驗性 Azure PowerShell 模組
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 Azure PowerShell 小組著重於 Azure 中的開發人員工具 (特別是 CLI)，正針對 Azure PowerShell 體驗的許多增強功能進行實驗。
 

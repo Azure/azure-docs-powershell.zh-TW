@@ -4,12 +4,13 @@ description: 了解如何重覆使用 Azure 認證及多個 PowerShell 工作階
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/21/2019
-ms.openlocfilehash: c79d1d634d5b76b2c6ab6b6ab309c2d49f9f7678
-ms.sourcegitcommit: edfe63c6949cd59127028ac8a13bb4a8827d555c
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: b6ac8b821f2d88431be67fd5fe1d50fc640d2b8f
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87566120"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89239786"
 ---
 # <a name="azure-powershell-context-objects"></a>Azure PowerShell 內容物件
 

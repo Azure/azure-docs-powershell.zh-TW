@@ -4,12 +4,13 @@ description: 如何使用預先安裝在 Docker 映像中的 Azure PowerShell。
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/20/2020
-ms.openlocfilehash: b5ad201abcabbdc1a88db241b028d88f05054a14
-ms.sourcegitcommit: edfe63c6949cd59127028ac8a13bb4a8827d555c
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 2b487abeecbffa6cd8b7b64276ab301619348385
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87566127"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89239854"
 ---
 # <a name="using-azure-powershell-in-docker"></a>使用 Docker 中的 Azure PowerShell
 

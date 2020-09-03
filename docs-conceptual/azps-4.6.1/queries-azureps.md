@@ -10,7 +10,7 @@ ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 09/01/2020
-ms.locfileid: "89239548"
+ms.locfileid: "89240500"
 ---
 # <a name="query-output-of-azure-powershell"></a>查詢 Azure PowerShell 的輸出 
 

@@ -10,7 +10,7 @@ ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 09/01/2020
-ms.locfileid: "89239667"
+ms.locfileid: "89240313"
 ---
 # <a name="install-azure-powershell"></a>安裝 Azure PowerShell
 

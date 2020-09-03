@@ -8,12 +8,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
-ms.openlocfilehash: 55f19ac5e6767df1312e0b531184e8621b60a011
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 4b72bbd1bda93767251e0ba3d488f798575d9115
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "67038188"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89244308"
 ---
 # <a name="azurerm-module-250"></a>AzureRM Module 2.5.0
 
@@ -65,13 +66,13 @@ Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 ### <a name="azure-bridge"></a>Azure Bridge
 Azure Stack AzureBridge 管理員模組的預覽版本可讓您從 Azure 同步發佈映像。
 
-### <a name="backup"></a>Backup 
+### <a name="backup"></a>Backup
 備份管理員模組的預覽版本可允許管理員：
 - 設定備份的儲存位置
 - 執行備份
 - 列出並還原已完成的備份
 
-### <a name="commerce"></a>商業
+### <a name="commerce"></a>商務
 Azure Stack 商務管理員模組的預覽版本可提供方法來檢視 Azure Stack 系統間的彙總資料使用量。
 
 ### <a name="compute"></a>計算

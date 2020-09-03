@@ -4,12 +4,13 @@ description: 了解 Azure PowerShell 模組的最新更新資訊。
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: a9c5394a5fac8a8a3de96925b3563776783ea9fe
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: c0f322fb0905bae96f89f41949bcc43ad81056c7
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82080193"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89239973"
 ---
 # <a name="azure-powershell-release-notes"></a>Azure PowerShell 版本資訊
 
