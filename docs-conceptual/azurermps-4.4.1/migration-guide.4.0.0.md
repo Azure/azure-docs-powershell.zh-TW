@@ -4,16 +4,17 @@ description: 本移轉指南包含在第 4 版發行中對 Azure PowerShell 進�
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: 47d7ab67a6b1d092bb07405e7dc925d844cac5ab
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 3e5be2d8279b28e683fbe8a03b812c658fcecf33
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83386709"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89243968"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-400"></a>Microsoft Azure PowerShell 4.0.0 的重大變更
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 本文件為 Microsoft Azure PowerShell Cmdlet 的客戶提供重大變更通知和移轉指南。 每一節都會說明促成重大變更的原因和阻力最小的移轉路徑。 如需深入了解內容，請參閱與每次變更相關聯的提取要求。
 
@@ -64,15 +65,15 @@ $vm.NetworkProfile.NetworkInterfaces | Select -Property Id
 ## <a name="breaking-changes-to-insights-cmdlets"></a>Insights Cmdlet 的重大變更
 
 受到此版本影響的 Cmdlet 如下：
-    
+
 ### <a name="get-azurermusage"></a>Get-AzureRmUsage
 - 此 Cmdlet 已受到取代。
 
 ### <a name="remove-azurermalertrule"></a>Remove-AzureRmAlertRule
 - 此 Cmdlet 的輸出已從具有單一物件的清單變更為單一物件，此物件包含 requestId 和狀態碼。
-    
+
 ```powershell-interactive
-# Old  
+# Old
 $s1 = Remove-AzureRmAlertRule -ResourceGroup $resourceGroup -name chiricutin
 if ($s1 -ne $null)
 {
@@ -85,20 +86,20 @@ $s1 = Remove-AzureRmAlertRule -ResourceGroup $resourceGroup -name chiricutin
 $r = $s1.RequestId
 $s = $s1.StatusCode
 ```
-    
+
 ### <a name="add-azurermlogalertrule"></a>Add-AzureRmLogAlertRule
 - 此 Cmdlet 已受到取代。
-    
+
 ### <a name="get-azurermalertrule"></a>Get-AzureRmAlertRule
 - 此 Cmdlet 輸出 (物件清單) 的每個元素會經過壓平合併，也就是並非以 `{ Id, Location, Name, Tags, Properties }` 結構傳回物件，而是以 `{ Id, Location, Name, Tags, Type, Description, IsEnabled, Condition, Actions, LastUpdatedTime, ...}` 結構傳回物件，該結構是 Azure Resource 的所有屬性和最上層 AlertRuleResource 的所有屬性。
-    
+
 ```powershell-interactive
 # Old
 $rules = Get-AzureRmAlertRule -ResourceGroup $resourceGroup
 if ($rules -and $rules.count -ge 1)
 {
     Write-Host -fore red "Error updating alert rule"
-      
+
     Write-Host $rules(0).Id
     Write-Host $rules(0).Properties.IsEnabled
     Write-Host $rules(0).Properties.Condition
@@ -109,23 +110,23 @@ $rules = Get-AzureRmAlertRule -ResourceGroup $resourceGroup
 if ($rules -and $rules.count -ge 1)
 {
     Write-Host -fore red "Error updating alert rule"
- 
+
     Write-Host $rules(0).Id
-      
+
     # Properties will remain for a while
     Write-Host $rules(0).Properties.IsEnabled
-      
+
     # But the properties will be at the top level too. Later Properties will be removed
     Write-Host $rules(0).IsEnabled
     Write-Host $rules(0).Condition
 }
 ```
-    
+
 ### <a name="get-azurermautoscalesetting"></a>Get-AzureRmAutoscaleSetting
 - `AutoscaleSettingResourceName` 欄位會受到取代，因為它一律與 `Name` 欄位有相同的值。
 
 ```powershell-interactive
-# Old  
+# Old
 $s1 = Get-AzureRmAutoscaleSetting -ResourceGroup $resourceGroup -Name MySetting
 if ($s1.AutoscaleSettingResourceName -ne $s1.Name)
 {
@@ -134,16 +135,16 @@ if ($s1.AutoscaleSettingResourceName -ne $s1.Name)
 
 # New
 $s1 = Get-AzureRmAutoscaleSetting -ResourceGroup $resourceGroup -Name MySetting
-    
+
 # There won't be a AutoscaleSettingResourceName
 Write-Host $s1.Name
 ```
-    
+
 ### <a name="remove-azurermlogprofile"></a>Remove-AzureRmLogProfile
 - 此 Cmdlet 的輸出將會從 `Boolean` 變更為物件，其中包含 `RequestId` 和 `StatusCode`
 
 ```powershell-interactive
-# Old  
+# Old
 $s1 = Remove-AzureRmLogProfile -Name myLogProfile
 if ($s1 -eq $true)
 {
@@ -159,12 +160,12 @@ $s1 = Remove-AzureRmLogProfile -Name myLogProfile
 $r = $s1.RequestId
 $s = $s1.StatusCode
 ```
-    
+
 ### <a name="add-azurermlogprofile"></a>Add-AzureRmLogProfile
 - 此 Cmdlet 的輸出會變更為包含 requestId、狀態碼和已更新或新建立資源的物件
-    
+
 ```powershell-interactive
-# Old  
+# Old
 $s1 = Add-AzureRmLogProfile -Name default -StorageAccountId /subscriptions/df602c9c-7aa0-407d-a6fb-eb20c8bd1192/resourceGroups/JohnKemTest/providers/Microsoft.Storage/storageAccounts/johnkemtest8162 -Locations Global -categ Delete, Write, Action -retention 3
 $r = $s1.ServiceBusRuleId
 
@@ -173,9 +174,9 @@ $s1 = Add-AzureRmLogProfile -Name default -StorageAccountId /subscriptions/df602
 $r = $s1.RequestId
 $s = $s1.StatusCode
 $a = $s1.NewResource.ServiceBusRuleId
-    
+
 ```
-    
+
 ### <a name="set-azurermdiagnosticsettings"></a>Set-AzureRmDiagnosticSettings
 - 此命令將重新命名為 `Update-AzureRmDiagnosticSettings`
 
@@ -299,7 +300,7 @@ Remove-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1
     - `Set-AzureStorageBlobContent`
     - `Start-AzureStorageBlobCopy`
     - `Stop-AzureStorageBlobCopy`
-    
+
 ### <a name="azurestoragecontainercloudblobcontainerserviceclient"></a>AzureStorageContainer.CloudBlobContainer.ServiceClient
 - 下列屬性已從此類型中移除 (_注意_：這些屬性還是可以在 `DefaultRequestOptions` 屬性中找到)：
     - `LocationMode`
@@ -311,7 +312,7 @@ Remove-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1
     - `Get-AzureStorageContainer`
     - `New-AzureStorageContainer`
     - `Set-AzureStorageContainerAcl`
-    
+
 ### <a name="azurestoragequeuecloudqueueserviceclient"></a>AzureStorageQueue.CloudQueue.ServiceClient
 - 下列屬性已從此類型中移除 (_注意_：這些屬性還是可以在 `DefaultRequestOptions` 屬性中找到)：
     - `LocationMode`
@@ -321,7 +322,7 @@ Remove-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1
 - 這項變更會影響下列 Cmdlet：
     - `Get-AzureStorageQueue`
     - `New-AzureStorageQueue`
-    
+
 ### <a name="azurestoragetablecloudtableserviceclient"></a>AzureStorageTable.CloudTable.ServiceClient
 - 下列屬性已從此類型中移除 (_注意_：這些屬性還是可以在 `DefaultRequestOptions` 屬性中找到)：
     - `LocationMode`
@@ -332,16 +333,16 @@ Remove-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1
 - 這項變更會影響下列 Cmdlet：
     - `Get-AzureStorageTable`
     - `New-AzureStorageTable`
-    
+
 ```powershell-interactive
 # Old
-$LocationMode = (Get-AzureStorageBlob -Container $containername)[0].ICloudBlob.ServiceClient.LocationMode       
+$LocationMode = (Get-AzureStorageBlob -Container $containername)[0].ICloudBlob.ServiceClient.LocationMode
 $ParallelOperationThreadCount = (Get-AzureStorageContainer -Container $containername).CloudBlobContainer.ServiceClient.ParallelOperationThreadCount
 $PayloadFormat = (Get-AzureStorageTable -Name $tablename).CloudTable.ServiceClient.PayloadFormat
 $RetryPolicy = (Get-AzureStorageQueue -Name $queuename).CloudQueue.ServiceClient.RetryPolicy
 
 # New
-$LocationMode = (Get-AzureStorageBlob -Container $containername)[0].ICloudBlob.ServiceClient.DefaultRequestOptions.LocationMode     
+$LocationMode = (Get-AzureStorageBlob -Container $containername)[0].ICloudBlob.ServiceClient.DefaultRequestOptions.LocationMode
 $ParallelOperationThreadCount = (Get-AzureStorageContainer -Container $containername).CloudBlobContainer.ServiceClient.DefaultRequestOptions.ParallelOperationThreadCount
 $PayloadFormat = (Get-AzureStorageTable -Name $tablename).CloudTable.ServiceClient.DefaultRequestOptions.PayloadFormat
 $RetryPolicy = (Get-AzureStorageQueue -Name $queuename).CloudQueue.ServiceClient.DefaultRequestOptions.RetryPolicy
@@ -412,7 +413,7 @@ $type = (Get-AzureRmContext).Account.AccountType
 $type = (Set-AzureRmContext -SubscriptionId xxx-xxx-xxx-xxx).Account.AccountType
 $type = (Add-AzureRmAccount).Context.Account.AccountType
 
-# New 
+# New
 $type = (Get-AzureRmContext).Account.Type
 $type = (Set-AzureRmContext -SubscriptionId xxx-xxx-xxx-xxx).Account.Type
 $type = (Add-AzureRmAccount).Context.Account.Type

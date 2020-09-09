@@ -4,12 +4,13 @@ description: 如何使用 PowerShellGet 安裝 Azure PowerShell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/22/2019
-ms.openlocfilehash: b62fdd051b59708cc2afb6d4cec925aa73af55d9
-ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 971ad8d70b4510d3d58669a0a9cdd250a3c0d0e2
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84121366"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89244087"
 ---
 # <a name="install-azure-powershell"></a>安裝 Azure PowerShell
 
