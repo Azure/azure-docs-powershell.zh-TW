@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/23/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 5f42bbb65313d1caa839443d463b61cc743ca0a5
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.openlocfilehash: c64541beb5eb0d3db38932fb3915de865919641b
+ms.sourcegitcommit: 2f1e3c275626fba1c4275cae8ef1d13b11f55735
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89240551"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89449954"
 ---
 # <a name="migration-guide-for-az-410"></a>Az 4.1.0 的移轉指南
 
@@ -135,19 +135,19 @@ ms.locfileid: "89240551"
 
 ### `Get-AzApiManagementProperty`
 
-Cmdlet `Get-AzApiManagementProperty` 已由 `Get-AzureApiManagementNamedValue` 取代。
+Cmdlet `Get-AzApiManagementProperty` 已由 `Get-AzApiManagementNamedValue` 取代。
 
 ### `New-AzApiManagementProperty`
 
-Cmdlet `New-AzApiManagementProperty` 已由 `New-AzureApiManagementNamedValue` 取代。
+Cmdlet `New-AzApiManagementProperty` 已由 `New-AzApiManagementNamedValue` 取代。
 
 ### `Remove-AzApiManagementProperty`
 
-Cmdlet `Remove-AzApiManagementProperty` 已由 `Remove-AzureApiManagementNamedValue` 取代。
+Cmdlet `Remove-AzApiManagementProperty` 已由 `Remove-AzApiManagementNamedValue` 取代。
 
 ### `Set-AzApiManagementProperty`
 
-Cmdlet `Set-AzApiManagementProperty` 已由 `Set-AzureApiManagementNamedValue` 取代。
+Cmdlet `Set-AzApiManagementProperty` 已由 `Set-AzApiManagementNamedValue` 取代。
 
 ## <a name="azbatch"></a>Az.Batch
 
