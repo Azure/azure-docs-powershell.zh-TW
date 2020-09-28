@@ -5,14 +5,176 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 52129f31202a8ae04bf80988b5aa07b12fe081b8
+ms.openlocfilehash: 98bae70dbd61c74aa92e69cb67afc89ebae23f70
 ms.sourcegitcommit: 15f21c40dcb7610e2fbaaabf264ad925e4224500
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 09/22/2020
-ms.locfileid: "90913383"
+ms.locfileid: "90928128"
 ---
 # <a name="azure-powershell-release-notes"></a>Azure PowerShell 版本資訊
+
+## <a name="470---september-2020"></a>4.7.0 - 2020 年 9 月
+#### <a name="azaccounts"></a>Az.Accounts
+* 已格式化即將推出的重大變更訊息
+* 已將 Azure.Core 更新為 1.4.1
+
+#### <a name="azaks"></a>Az.Aks
+* 已新增 'New-AzAksCluster'、'Set-AzAksCluster' 和 'New-AzAksNodePool' 的用戶端參數驗證邏輯。 [#12372]
+* 已新增對 'New-AzAksCluster' 中附加元件的支援。 [#11239]
+* 已為附加元件新增 Cmdlet 'Enable-AzAksAddOn' 和 'Disable-AzAksAddOn'。 [#11239]
+* 已為 'New-AzAksCluster' 新增參數 'GenerateSshKey'。 [#12371]
+* 已將 api 版本更新為 2020-06-01。
+
+#### <a name="azcognitiveservices"></a>Az.CognitiveServices
+* 已顯示特定 API 的其他法律條款。
+
+#### <a name="azcompute"></a>Az.Compute
+* 已將 '-EncryptionType' 選擇性參數新增至 'New-AzVmDiskEncryptionSetConfig'
+* 適用於新資源類型的新 Cmdlet：DiskAccess 'Get-AzDiskAccess'、'New-AzDiskAccess'、'Get-AzDiskAccess'
+* 已將選擇性參數 '-DiskAccessId' 和 '-NetworkAccessPolicy' 新增至 'New-AzSnapshotConfig'
+* 已將選擇性參數 '-DiskAccessId' 和 '-NetworkAccessPolicy' 新增至 'New-AzDiskConfig'
+* 已將 'PatchStatus' 屬性新增至 VirtualMachine 執行個體檢視
+* 已將 'VMHealth' 屬性新增至虛擬機器的執行個體檢視，這是以 '-Status' 叫用 'Get-AzVm' 時傳回的物件
+* 已將 'AssignedHost' 欄位新增至 'Get-AzVM' 和 'Get-AzVmss' 執行個體檢視。 此欄位會顯示虛擬機器執行個體的資源識別碼
+* 已將選擇性參數 '-SupportAutomaticPlacement' 新增至 'New-AzHostGroup' 
+* 已將 '-HostGroupId' 參數新增至 'New-AzVm' 和 'New-AzVmss'
+
+#### <a name="azdatafactory"></a>Az.DataFactory
+* 已將 ADF .Net SDK 版本更新為 4.11.0
+
+#### <a name="azeventhub"></a>Az.EventHub
+* 已新增叢集 Cmdlet - 'New-AzEventHubCluster'、'Set-AzEventHubCluster'、'Get-AzEventHubCluster'、'Remove-AzEventHubCluster'、'Get-AzEventHubClustersAvailableRegions'。
+* 已修正問題 #10722：已修正只將 'Listen' 指派給 AuthorizationRule 權限的問題。
+
+#### <a name="azfunctions"></a>Az.Functions
+* 已移除在不支援 v2 函式的區域中建立 v2 函式的功能。
+* 已取代 PowerShell 6.2。 已新增警告，在使用者建立 PowerShell 6.2 函式應用程式時，建議他們改為建立 PowerShell 7.0 函式應用程式。
+
+#### <a name="azhdinsight"></a>Az.HDInsight
+* 支援建立具有自動調整設定的叢集
+    - 已將新參數 'v2 Functions' 新增至 Cmdlet 'New-AzHDInsightCluster'
+* 支援操作叢集的自動調整設定
+    - 已新增 Cmdlet 'Get-AzHDInsihgtClusterAutoscaleConfiguration'
+    - 已新增 Cmdlet 'New-AzHDInsihgtClusterAutoscaleConfiguration'
+    - 已新增 Cmdlet 'Set-AzHDInsihgtClusterAutoscaleConfiguration'
+    - 已新增 Cmdlet 'Remove-AzHDInsihgtClusterAutoscaleConfiguration'
+    - 已新增 Cmdlet 'New-AzHDInsihgtClusterAutoscaleScheduleCondition'
+
+#### <a name="azkeyvault"></a>Az.KeyVault
+* 已新增對 RBAC 授權的支援 [#10557]
+* 已加強 'Set-AzKeyVaultAccessPolicy' 中的錯誤處理 [#4007]
+
+#### <a name="azkusto"></a>Az.Kusto
+* 正式發行 'Az.Kusto' 模組
+
+#### <a name="aznetwork"></a>Az.Network
+* [重大變更] 已更新下列 Cmdlet 以配合資源虛擬路由器和虛擬中樞
+    - 'New-AzVirtualRouter'： 
+        - 已新增 -HostedSubnet 參數來支援 IP 設定子資源
+        - 已刪除 -HostedGateway 和 -HostedGatewayId
+    - 'Get-AzVirtualRouter'：
+        - 已新增訂用帳戶層級參數集
+    - 'Remove-AzVirtualRouter'
+    - 'Add-AzVirtualRouterPeer'
+    - 'Get-AzVirtualRouterPeer'
+    - 'Remove-AzVirtualRouterPeer'
+* 已新增 Azure 快速路由連接埠的 Cmdlet
+    - 'New-AzExpressRoutePortLOA'
+* 已將 RemoteBgpCommunities 屬性新增至 VirtualNetwork 對等互連資源
+* 已修改 'New-AzLoadBalancerFrontendIpConfig'、'New-AzPublicIpAddress' 和 'New-AzPublicIpPrefix' 的警告訊息。
+* 已將 VpnGatewayIpConfigurations 新增至 'Get-AzVpnGateway' 輸出
+* 已修正 'Set-AzApplicationGatewaySslCertificate' 的錯誤 (bug) [#9488]
+* 已將 'AllowActiveFTP' 參數新增至 'AzureFirewall'
+* 已更新下列功能命令：在 VirtualWan P2SVpnGateway 上啟用網際網路安全性設定/移除。
+- 已更新 'New-AzP2sVpnGateway'：已新增選擇性切換參數 'EnableInternetSecurityFlag'，可讓客戶將其設定為 true，以在 P2SVpnGateway 上啟用網際網路安全性，這將適用於點對站用戶端。
+- 已更新 'Update-AzP2sVpnGateway'：已新增選擇性切換參數 'EnableInternetSecurityFlag' 或 'DisableInternetSecurityFlag'，可讓客戶將其設定為 true/false，以在 P2SVpnGateway 上啟用/停用網際網路安全性，這將適用於點對站用戶端。
+* 已新增 Cmdlet 'Reset-AzP2sVpnGateway'，可讓客戶重設/重新啟動其 VirtualWan P2SVpnGateway 進行疑難排解。
+* 已新增 Cmdlet 'Reset-AzVpnGateway'，可讓客戶重設/重新啟動其 VirtualWan VpnGateway 進行疑難排解。
+* 已更新 'Set-AzVirtualNetworkSubnetConfig'
+    - 如果已在參數中明確設定，請將子網路的 NSG 和路由表屬性設定為 null [#1548][#9718]
+
+#### <a name="azrecoveryservices"></a>Az.RecoveryServices
+* 已修正工作負載備份項目的刪除狀態。
+
+#### <a name="azresources"></a>Az.Resources
+* 已新增 Set-AzRoleAssignment 的遺漏檢查
+* 已將重大變更屬性新增至 'Get-AzResourceGroupDeploymentOperation' 的 'SubscriptionId' 參數
+* 已更新 ARM 範本 What-If Cmdlet，以顯示「忽略」上次資源變更
+* 已修正部署 Cmdlet 的安全和陣列參數序列化問題 [#12773]
+
+#### <a name="azservicefabric"></a>Az.ServiceFabric
+* 已新增適用於受控叢集和節點類型的 Cmdlet：
+    - 'New-AzServiceFabricManagedCluster'
+    - 'Get-AzServiceFabricManagedCluster'
+    - 'Set-AzServiceFabricManagedCluster'
+    - 'Remove-AzServiceFabricManagedCluster'
+    - 'Add-AzServiceFabricManagedClusterClientCertificate'
+    - 'Remove-AzServiceFabricManagedClusterClientCertificate'
+    - 'New-AzServiceFabricManagedNodeType'
+    - 'Get-AzServiceFabricManagedNodeType'
+    - 'Set-AzServiceFabricManagedNodeType'
+    - 'Remove-AzServiceFabricManagedNodeType'
+    - 'Add-AzServiceFabricManagedNodeTypeVMExtension'
+    - 'Add-AzServiceFabricManagedNodeTypeVMSecret'
+    - 'Remove-AzServiceFabricManagedNodeTypeVMExtension'
+    - 'Restart-AzServiceFabricManagedNodeTyp'
+* 已將 Service Fabric SDK 升級為版本 1.2.0，此版本將服務網狀架構資源提供者 api-version 2020-03-01 用於目前模型，以及將 2020-01-01-preview 用於受控叢集。
+
+#### <a name="azsql"></a>Az.Sql
+* 已將 BackupStorageRedundancy 新增至 'New-AzSqlInstance' 及 'Get-AzSqlInstance'
+* 已新增 Cmdlet 'Get-AzSqlServerActiveDirectoryOnlyAuthentication'
+* 已新增 Cmdlet 'Enable-AzSqlServerActiveDirectoryOnlyAuthentication'
+* 已將 Force 參數新增至 'New-AzSqlInstance'
+* 已新增受控資料庫記錄重新執行服務的 Cmdlet
+    - 'Start-AzSqlInstanceDatabaseLogReplay'
+    - 'Get-AzSqlInstanceDatabaseLogReplay'
+    - 'Complete-AzSqlInstanceDatabaseLogReplay'
+    - 'Stop-AzSqlInstanceDatabaseLogReplay'
+* 已新增 Cmdlet 'Get-AzSqlInstanceActiveDirectoryOnlyAuthentication'
+* 已新增 Cmdlet 'Enable-AzSqlInstanceActiveDirectoryOnlyAuthentication'
+* 已新增 Cmdlet 'Disable-AzSqlInstanceActiveDirectoryOnlyAuthentication'
+* 已更新 Cmdlet 'New-AzSqlDatabaseImport' 和 'New-AzSqlDatabaseExport' 以支援網路隔離功能
+* 已新增 Cmdlet 'New-AzSqlDatabaseImportExisting'
+* 已更新資料庫 Cmdlet 以支援備份儲存體類型規格
+* 已將 Force 參數新增至 'New-AzSqlDatabase'
+* 已 'New-AzSqlDatabase' 的選取區域中新增 BackupStorageRedundancy 設定的警告
+* 已更新伺服器和執行個體的 ActiveDirectoryOnlyAuthentication Cmdlet，以包含 ResourceId 和 InputObject
+
+#### <a name="azstorage"></a>Az.Storage
+* 已升級至 Microsoft.Azure.Storage.DataMovement 2.0.0 來修正上傳 blob 失敗 [#12220]
+* 支援時間點還原
+    - 'Enable-AzStorageBlobRestorePolicy'
+    - 'Disable-AzStorageBlobRestorePolicy'
+    - 'New-AzStorageBlobRangeToRestore'
+    - 'Restore-AzStorageBlobRange'
+* 支援執行 get-AzureRMStorageAccount 搭配參數 -IncludeGeoReplicationStats，取得儲存體帳戶的 blob 還原狀態 
+    - 'Get-AzureRMStorageAccount'
+* 已為即將進行的 Cmdlet 輸出變更新增重大變更警告訊息
+    - 'Get-AzStorageContainerStoredAccessPolicy'
+    - 'Set-AzStorageContainerStoredAccessPolicy'
+    - 'Set-AzStorageAccountManagementPolicy'
+    - 'Get-AzStorageAccountManagementPolicy'
+    - 'Add-AzStorageAccountManagementPolicyAction'
+    - 'New-AzStorageAccountManagementPolicyRule'
+* 已將 Microsoft.Azure.Cosmos.Table SDK 升級至 1.0.8
+
+### <a name="thanks-to-our-community-contributors"></a>感謝我們的社群參與者
+* Thomas Van Laere (@ThomVanL)，新增 Dockerfile-alpine-3.10 (#12911) 
+* Lohith Chowdary Chilukuri (@Lochiluk)，更新 Remove-AzNetworkInterfaceIpConfig.md (#12807) 
+* Roberth Strand (@roberthstrand)，Get-AzResourceGroup - 新範例和清除 (#12828) 
+* Ravi Mishra (@inmishrar)，將 Azure Web 應用程式執行階段堆疊更新為 DOTNETCORE (#12833) 
+* @jack-education，更新 New-azvirtualnetworksubnetconfig 以允許從子網移除 NSG 和路由表 (#12351) 
+* @hagop-globanet，更新 Add-AzApplicationGatewayCustomError.md (#12784) 
+* Joshua Van Daalen (@greenSacrifice)
+  * 將 Property 的拼寫更新為 Property (#12821) 
+  * 更新 New-AzResourceLock.md 範例 (#12806)
+* Eragon Riddle (@eragonriddle)，更正範例中的參數欄位名稱 (#12825) 
+* @rossifumax，修正 New-AzConfigurationAssignment.md 中的錯字 (#12701)
+
+## <a name="461---august-2020"></a>4.6.1 - 2020 年8 月
+#### <a name="azcompute"></a>Az.Compute
+* 已修補 'New-AzVm' 中的 '-EncryptionAtHost' 參數，以移除預設值 false [#12776]
 
 ## <a name="460---august-2020"></a>4.6.0 - 2020 年8 月
 #### <a name="azaccounts"></a>Az.Accounts
@@ -55,7 +217,7 @@ ms.locfileid: "90913383"
 * 已新增 'Get-AzDeploymentManagementGroupWhatIfResult'，以取得 ARM 範本在管理群組範圍的假設結果
 * 已新增 'Get-AzTenantWhatIfResult' Cmdlet，以取得 ARM 範本在租使用者範圍的假設結果
 * 已覆寫 'New-AzManagementGroupDeployment' 和 'New-AzTenantDeployment' 的 '-WhatIf' 和 '-Confirm'，以使用 ARM 範本 What-If 結果
-* 已修正新部署 Cmdlet 的 '-WhatIf' 和 '-Confirm' 行為，使其符合 $WhatIfPreference 和 $ConfirmPreference。
+* 已修正新部署 Cmdlet 的 '-WhatIf' 和 '-Confirm' 行為，使其符合 False 和 
 * 已修正 '-TemplateObject' 和 'TemplateParameterObject' 的序列化錯誤 [#1528] [#6292]
 * 已針對即將進行的輸出類型變更，對 'Get-AzResourceGroupDeploymentOperation' 新增中斷性變更屬性
 
