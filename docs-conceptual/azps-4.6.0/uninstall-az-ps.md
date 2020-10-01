@@ -1,16 +1,16 @@
 ---
 title: 將 Azure PowerShell 解除安裝
 description: 如何執行 Azure PowerShell 完全解除安裝
-ms.date: 05/28/2020
+ms.date: 09/15/2020
 ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 8b6a96c89b37708646b24f2f2f82a10537dd0ee5
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.openlocfilehash: 20859d6135676a3a4fb1e9f5d66909d157b38ac6
+ms.sourcegitcommit: 5fcf17330d6f335561640a5ee3d98c59f7baab94
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89241809"
+ms.lasthandoff: 09/26/2020
+ms.locfileid: "91381389"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>將 Azure PowerShell 模組解除安裝
 
@@ -43,8 +43,6 @@ Version             Name                           Repository           Descript
 3.8.0               Az                             PSGallery            Microsoft Azure PowerShell
 4.1.0               Az                             PSGallery            Microsoft Azure PowerShell
 ```
-
-<a name="uninstall-script"/>
 
 下列指令碼會查詢 PowerShell 資源庫來取得相依子模組的清單。 然後，指令碼會將每個子模組的正確版本解除安裝。 您需要擁有系統管理員權限，才能在**流程**或**目前使用者**以外的範圍執行此指令碼。
 
