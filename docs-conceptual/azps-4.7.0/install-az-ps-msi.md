@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 33d9214544ddb126b717685f9e7986bed926b149
-ms.sourcegitcommit: 15f21c40dcb7610e2fbaaabf264ad925e4224500
+ms.openlocfilehash: 193e8c5d14f1bf2fe9c84a9da2defac50be97ec7
+ms.sourcegitcommit: 3d16496984a0b9fd7631aa043726060ddae3624d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90927961"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91833261"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi"></a>使用 MSI 在 Windows 上安裝 Azure PowerShell
 
@@ -31,7 +31,14 @@ $PSVersionTable.PSVersion
 
 ## <a name="install-or-update-on-windows-using-the-msi-package"></a>使用 MSI 套件在 Windows 上安裝或更新
 
-可從 [GitHub](https://github.com/Azure/azure-powershell/releases/latest)取得 Azure PowerShell 的 MSI 套件。 如果您已使用 MSI 安裝舊版的 Azure PowerShell，安裝程式會自動移除這些模組。 MSI 套件會在 `${env:ProgramFiles}\WindowsPowerShell\Modules` 中安裝模組。
+可從 [GitHub](https://github.com/Azure/azure-powershell/releases) 取得 Azure PowerShell 的 MSI 套件：
+
+1. 前往 https://github.com/Azure/azure-powershell/releases。
+2. 尋找 Azure PowerShell 的最新資源庫模組 (依時間順序列出，而且通常只是沒有名稱的發行版本，例如 "4.7.0")。
+3. 向下捲動至修補程式附註的底部，然後按一下 [資產] 旁的箭號，以顯示 MSI 選項。
+4. 按一下您選擇的 Az Cmdlet MSI 以開始下載。
+
+如果您已使用 MSI 安裝舊版的 Azure PowerShell，安裝程式會自動移除這些模組。 MSI 套件會在 `${env:ProgramFiles}\WindowsPowerShell\Modules` 中安裝模組。
 
 若要開始使用 Azure PowerShell，請使用您的 Azure 認證登入。
 
