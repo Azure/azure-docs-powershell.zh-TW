@@ -1,14 +1,14 @@
 ###YamlMime:Landing
 title: Azure PowerShell 文件
 summary: |
-  Azure PowerShell 是一組 Cmdlet，可讓您直接從 PowerShell 命令列管理 Azure 資源。 Azure PowerShell 的設計可讓您輕鬆學習和開始使用，同時提供強大的自動化功能。 Azure PowerShell 以 .NET Standard 撰寫，適用於 Windows 上的 PowerShell 5.1，以及所有平台上的 PowerShell 6.x 和更新版本。
+  Azure PowerShell 是一組 Cmdlet，可直接從 PowerShell 命令列管理 Azure 資源。 Azure PowerShell 的設計可讓您輕鬆學習和開始使用，同時提供強大的自動化功能。 Azure PowerShell 以 .NET Standard 撰寫，適用於 Windows 上的 PowerShell 5.1，以及所有平台上的 PowerShell 7.x 和更新版本。
 metadata:
   title: Azure PowerShell 的概觀
   description: 藉由安裝和了解其特性和功能，開始使用 Azure PowerShell。
   ms.topic: landing-page
-  author: sptramer
-  ms.author: sttramer
-  ms.date: 9/19/2019
+  author: mikefrobbins
+  ms.author: mirobb
+  ms.date: 10/22/2020
 landingContent:
   - title: 開始使用 Azure PowerShell
     linkLists:
@@ -41,7 +41,7 @@ landingContent:
       - linkListType: concept
         links:
           - text: 虛擬機器的指令碼範例
-            url: /azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=/powershell/azure/toc.json
+            url: /azure/virtual-machines/linux/powershell-samples?toc=/powershell/azure/toc.json
           - text: Azure App Service 的指令碼範例
             url: /azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json
           - text: SQL 資料庫的指令碼範例
@@ -73,7 +73,7 @@ landingContent:
       - linkListType: reference
         links:
           - text: Cmdlet 參考
-            url: /powershell/module/?view=azps-2.7.0
+            url: /powershell/module/?view=azps-2.8.0
           - text: 版本資訊
             url: release-notes-azureps.md
           - text: Az 2.0.0 的重大變更
@@ -83,8 +83,8 @@ landingContent:
       - linkListType: overview
         links:
           - text: 適用於 PowerShell 的 Azure Active Directory
-            url: /powershell/azure/active-directory/
+            url: /powershell/module/azuread/
           - text: 適用於 PowerShell 的 Azure Service Fabric
-            url: /powershell/azure/service-fabric/
-          - text: 適用於 PowerShell 的 Azure ElasticDB
-            url: /powershell/azure/elasticdbjobs/
+            url: /powershell/module/servicefabric/
+          - text: Azure SQL Database Cmdlet
+            url: /powershell/module/az.sql/
