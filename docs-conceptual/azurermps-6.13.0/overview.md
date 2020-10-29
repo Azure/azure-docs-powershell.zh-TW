@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/20/2018
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 5b5d3a9ff1ebdd5b170d83510300b310e2061887
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.openlocfilehash: 4827b9be1dddb3cefcbbadbd0aed4298f45452e1
+ms.sourcegitcommit: 038cb42a3bd8c009bc57c8c1c252e66fa170c84b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89242217"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92523218"
 ---
 # <a name="overview-of-azure-powershell"></a>Azure PowerShell 的概觀
 
@@ -22,8 +22,8 @@ Azure PowerShell 提供了一組 Cmdlet，它們會使用 [Azure Resource Manage
 
 下列範例可協助您了解如何使用 Azure PowerShell 來執行常見案例：
 
-- [Linux 虛擬機器](https://docs.microsoft.com/azure/virtual-machines/linux/powershell-samples)
-- [Windows 虛擬機器](https://docs.microsoft.com/azure/virtual-machines/windows/powershell-samples)
+- [Linux 虛擬機器](/azure/virtual-machines/linux/powershell-samples?toc=/powershell/azure/toc.json)
+- [Windows 虛擬機器](/azure/virtual-machines/windows/powershell-samples?toc=/powershell/azure/toc.json)
 - [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
 - [SQL Databases](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
 
@@ -43,7 +43,5 @@ Azure PowerShell 提供了一組 Cmdlet，它們會使用 [Azure Resource Manage
 
 ## <a name="other-azure-powershell-modules"></a>其他 Azure Powershell 模組
 
-- [Azure Active Directory](/powershell/azure/active-directory/)
-- [Azure 資訊保護](/powershell/azure/aip/)
-- [Azure Service Fabric](/powershell/azure/service-fabric/)
-- [Azure ElasticDB](/powershell/azure/elasticdbjobs/)
+- [Azure Active Directory](/powershell/module/activedirectory/)
+- [Azure Service Fabric](/powershell/module/AzureRM.ServiceFabric/)

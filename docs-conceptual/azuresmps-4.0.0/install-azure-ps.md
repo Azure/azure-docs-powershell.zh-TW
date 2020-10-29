@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/06/2017
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 286288f83a0ad0b486cccb3543858c173a8eb087
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.openlocfilehash: 2860d5c7642b137c1cb14a38fa13d59ec2a4123c
+ms.sourcegitcommit: 038cb42a3bd8c009bc57c8c1c252e66fa170c84b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89241316"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92523201"
 ---
 # <a name="installing-the-azure-powershell-service-management-module"></a>安裝 Azure PowerShell 服務管理模組
 
@@ -72,7 +72,7 @@ Azure PowerShell 模組經常會更新。 如果您發現 Cmdlet 的線上說明
 
 如需相關指令碼範例來協助您在 Azure 中自動進行一些常見工作，請參閱 [Windows Azure 指令碼中心](http://www.windowsazure.com/documentation/scripts/)。
 
-如需有關安裝、學習、使用和自訂 Windows PowerShell 的一般資訊，請參閱[使用 Windows PowerShell 來編寫指令碼](https://go.microsoft.com/fwlink/p/?linkid=320210)。
+如需有關安裝、學習、使用和自訂 Windows PowerShell 的一般資訊，請參閱[使用 Windows PowerShell 來編寫指令碼](/powershell/scripting/learn/ps101/00-introduction)。
 
 ### <a name="how-to-get-powershellget"></a>如何取得 PowerShellGet
 
@@ -80,7 +80,6 @@ Azure PowerShell 模組經常會更新。 如果您發現 Cmdlet 的線上說明
 |---|---|
 |我有 Windows 10 或 Windows Server 2016|內建於 OS 包含的 Windows Management Framework (WMF) 5.0|
 |我想要升級至 PowerShell 5|[安裝最新版的 WMF](https://www.microsoft.com/download/details.aspx?id=54616)|
-|我是在採用 PowerShell 3 或 PowerShell 4 的 Windows 版本上執行|[取得 PackageManagement 模組](https://go.microsoft.com/fwlink/?LinkID=746217)|
 
 <div id="helpmechoose"/>
 

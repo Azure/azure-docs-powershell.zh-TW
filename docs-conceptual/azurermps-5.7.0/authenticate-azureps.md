@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: e0174439078ffed2db67800f6bd43ff7e98d324e
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.openlocfilehash: 326d4402b4f58f29c14129f32f5b5ffda2d762fa
+ms.sourcegitcommit: 038cb42a3bd8c009bc57c8c1c252e66fa170c84b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89243866"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92523417"
 ---
 # <a name="sign-in-with-azure-powershell"></a>使用 Azure PowerShell 登入
 
@@ -29,7 +29,7 @@ Connect-AzureRmAccount
 執行時，此 Cmdlet 會顯示對話方塊，提示您輸入與 Azure 帳戶相關聯的電子郵件地址和密碼。 驗證時，會針對目前的 PowerShell 工作階段儲存該資訊，關閉對話方塊，您就具有所有 Azure PowerShell Cmdlet 的存取權。
 
 > [!IMPORTANT]
-> 此登入_僅_適用於目前的 PowerShell 工作階段。 若要在多個工作階段之間保持驗證，請參閱[持續性認證](context-persistence.md)中的文章。
+> 此登入 _僅_ 適用於目前的 PowerShell 工作階段。 若要在多個工作階段之間保持驗證，請參閱[持續性認證](context-persistence.md)中的文章。
 
 ## <a name="sign-in-with-a-service-principal"></a>使用服務主體來登入
 
@@ -76,4 +76,4 @@ Get-AzureRmEnvironment | Select-Object Name
 * [New-AzureRmRoleDefinition](/powershell/module/AzureRM.Resources/New-AzureRmRoleDefinition)
 * [Remove-AzureRmRoleAssignment](/powershell/module/AzureRM.Resources/Remove-AzureRmRoleAssignment)
 * [Remove-AzureRmRoleDefinition](/powershell/module/AzureRM.Resources/Remove-AzureRmRoleDefinition)
-* [Set-AzureRmRoleDefinition](/powershell/moduel/AzureRM.Resources/Set-AzureRmRoleDefinition)
+* [Set-AzureRmRoleDefinition](/powershell/module/AzureRM.Resources/Set-AzureRmRoleDefinition)
