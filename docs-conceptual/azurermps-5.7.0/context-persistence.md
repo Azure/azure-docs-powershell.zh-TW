@@ -5,18 +5,18 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 73f8401fa3fe405d21b654bf8e7df628af9773e9
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.openlocfilehash: 2427e26700e975bfb6ce3d677a1af1a6130f10a9
+ms.sourcegitcommit: 038cb42a3bd8c009bc57c8c1c252e66fa170c84b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89243849"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92523388"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>在 PowerShell 工作階段之間保存使用者認證
 
 [!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
-Azure PowerShell 提供了稱為 **Azure 內容自動儲存**的功能，可提供下列功能：
+Azure PowerShell 提供了稱為 **Azure 內容自動儲存** 的功能，可提供下列功能：
 
 - 在新的 PowerShell 工作階段中重複使用的登入資訊保留。
 - 更易於使用的背景工作，可長時間執行 Cmdlet。
@@ -49,7 +49,7 @@ Azure 內容是一組資訊，可定義 Azure PowerShell Cmdlet 的目標。 內
 
 ## <a name="running-azure-powershell-cmdlets-as-background-jobs"></a>將 Azure PowerShell Cmdlet 作為背景作業執行
 
-**Azure 內容自動儲存**功能也可讓您與 PowerShell 背景作業共用內容。 PowerShell 可讓您以背景作業形式啟動並監視長時間執行的工作，而不必等候工作完成。 您可以利用兩種不同的方式來與背景作業共用認證：
+**Azure 內容自動儲存** 功能也可讓您與 PowerShell 背景作業共用內容。 PowerShell 可讓您以背景作業形式啟動並監視長時間執行的工作，而不必等候工作完成。 您可以利用兩種不同的方式來與背景作業共用認證：
 
 - 傳遞內容作為引數
 
@@ -61,7 +61,7 @@ Azure 內容是一組資訊，可定義 Azure PowerShell Cmdlet 的目標。 內
 
 - 使用預設內容，並啟用自動儲存
 
-  如果您已啟用**內容自動儲存**，背景作業就會自動使用預設儲存的內容。
+  如果您已啟用 **內容自動儲存** ，背景作業就會自動使用預設儲存的內容。
 
   ```powershell-interactive
   PS C:\> $job = Start-Job { New-AzureRmVm [... Additional parameters ...]}
@@ -154,5 +154,4 @@ $env:AzureRmContextAutoSave="true" | "false"
 
 <!-- Updated cmdlets -->
 [login]: /powershell/module/azurerm.profile/Connect-AzureRmAccount
-[import]: /powershell/module/azurerm.profile/Import-AzureRmAccount
 [set-context]: /powershell/module/azurerm.profile/Import-AzureRmContext
