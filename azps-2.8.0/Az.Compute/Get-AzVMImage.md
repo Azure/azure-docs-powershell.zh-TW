@@ -1,0 +1,234 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Compute.dll-Help.xml
+Module Name: Az.Compute
+ms.assetid: D5254218-8B3B-4DE2-9480-D65EE5483018
+online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/get-azvmimage
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMImage.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMImage.md
+ms.openlocfilehash: 13871100efbe2fe62de769adcc40ee434e86eb21
+ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "93613375"
+---
+# Get-AzVMImage
+
+## 摘要
+取得 VMImage 的所有版本。
+
+## 句法
+
+### ListVMImage
+```
+Get-AzVMImage -Location <String> -PublisherName <String> -Offer <String> -Skus <String>
+ [-FilterExpression <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### GetVMImageDetail
+```
+Get-AzVMImage -Location <String> -PublisherName <String> -Offer <String> -Skus <String> -Version <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## 說明
+**AzVMImage** Cmdlet 會取得 VMImage 的所有版本。
+
+## 示例
+
+### 範例1：取得 VMImage 物件
+```
+PS C:\> Get-AzVMImage -Location "Central US" -PublisherName "MicrosoftWindowsServer" -Offer "windowsserver" -Skus "2012-R2-Datacenter"
+
+Version        FilterExpression Skus               Offer         PublisherName          Location  Id
+-------        ---------------- ----               -----         -------------          --------  --
+4.127.20180315                  2012-R2-Datacenter windowsserver MicrosoftWindowsServer centralus /Subscriptions/9e2...
+4.127.20180510                  2012-R2-Datacenter windowsserver MicrosoftWindowsServer centralus /Subscriptions/9e2...
+4.127.20180815                  2012-R2-Datacenter windowsserver MicrosoftWindowsServer centralus /Subscriptions/9e2...
+4.127.20180912                  2012-R2-Datacenter windowsserver MicrosoftWindowsServer centralus /Subscriptions/9e2...
+4.127.20181010                  2012-R2-Datacenter windowsserver MicrosoftWindowsServer centralus /Subscriptions/9e2...
+4.127.20181125                  2012-R2-Datacenter windowsserver MicrosoftWindowsServer centralus /Subscriptions/9e2...
+4.127.20190104                  2012-R2-Datacenter windowsserver MicrosoftWindowsServer centralus /Subscriptions/9e2...
+4.127.20190115                  2012-R2-Datacenter windowsserver MicrosoftWindowsServer centralus /Subscriptions/9e2...
+4.127.20190204                  2012-R2-Datacenter windowsserver MicrosoftWindowsServer centralus /Subscriptions/9e2...
+4.127.20190218                  2012-R2-Datacenter windowsserver MicrosoftWindowsServer centralus /Subscriptions/9e2...
+```
+
+這個命令會取得符合指定值的所有 VMImage 版本。
+
+### 範例2：取得 VMImage 物件
+```
+PS C:\> Get-AzVMImage -Location "Central US" -PublisherName "MicrosoftWindowsServer" -Offer "windowsserver" -Skus "2012-R2-Datacenter" -Version 4.127.20180315
+
+Id               : /Subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/Providers/Microsoft.Compute/Locations/centralus/
+                   Publishers/MicrosoftWindowsServer/ArtifactTypes/VMImage/Offers/windowsserver/Skus/2012-R2-Datacenter
+                   /Versions/4.127.20180315
+Location         : centralus
+PublisherName    : MicrosoftWindowsServer
+Offer            : windowsserver
+Skus             : 2012-R2-Datacenter
+Version          : 4.127.20180315
+FilterExpression :
+Name             : 4.127.20180315
+OSDiskImage      : {
+                     "operatingSystem": "Windows"
+                   }
+PurchasePlan     : null
+DataDiskImages   : []
+```
+
+這個命令會取得符合指定值的特定 VMImage 版本。
+
+### 範例3：取得 VMImage 物件
+```
+PS C:\> Get-AzVMImage -Location "Central US" -PublisherName "MicrosoftWindowsServer" -Offer "windowsserver" -Skus "2012-R2-Datacenter" -Version 4.127.2018*
+
+Version        FilterExpression Skus               Offer         PublisherName          Location  Id
+-------        ---------------- ----               -----         -------------          --------  --
+4.127.20180315                  2012-R2-Datacenter windowsserver MicrosoftWindowsServer centralus /Subscriptions/9e2...
+4.127.20180510                  2012-R2-Datacenter windowsserver MicrosoftWindowsServer centralus /Subscriptions/9e2...
+4.127.20180815                  2012-R2-Datacenter windowsserver MicrosoftWindowsServer centralus /Subscriptions/9e2...
+4.127.20180912                  2012-R2-Datacenter windowsserver MicrosoftWindowsServer centralus /Subscriptions/9e2...
+4.127.20181010                  2012-R2-Datacenter windowsserver MicrosoftWindowsServer centralus /Subscriptions/9e2...
+4.127.20181125                  2012-R2-Datacenter windowsserver MicrosoftWindowsServer centralus /Subscriptions/9e2...
+```
+
+這個命令會從篩選版本中取得符合指定值的所有 VMImage 版本。
+
+## 參數
+
+### -DefaultProfile
+用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FilterExpression
+指定篩選運算式。
+
+```yaml
+Type: System.String
+Parameter Sets: ListVMImage
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -位置
+指定 VMImage 的位置。
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -優惠
+指定 VMImage 產品類型。
+若要取得影像優惠，請使用 Get-AzVMImageOffer Cmdlet。
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -PublisherName
+指定 VMImage 的發行者。
+若要取得影像發行商，請使用 Get-AzVMImagePublisher Cmdlet。
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Sku
+指定 VMImage SKU。
+若要取得 SKU，請使用 Get-AzVMImageSku Cmdlet。
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -版本
+指定 VMImage 的版本。
+
+```yaml
+Type: System.String
+Parameter Sets: GetVMImageDetail
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: True
+```
+
+### CommonParameters
+這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。
+
+## 輸入
+
+### System.object
+
+## 輸出
+
+### PSVirtualMachineImage 中的 [計算] 命令
+
+### PSVirtualMachineImageDetail 中的 [計算] 命令
+
+## 筆記
+
+## 相關連結
+
+[AzVMImageOffer](./Get-AzVMImageOffer.md)
+
+[AzVMImagePublisher](./Get-AzVMImagePublisher.md)
+
+[AzVMImageSku](./Get-AzVMImageSku.md)
+
+[儲存-AzVMImage](./Save-AzVMImage.md)
+
+

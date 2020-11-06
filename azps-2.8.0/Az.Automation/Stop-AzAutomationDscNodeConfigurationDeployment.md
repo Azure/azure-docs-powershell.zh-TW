@@ -1,0 +1,215 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Automation.dll-Help.xml
+Module Name: Az.Automation
+ms.assetid: 32CF9BF7-519F-4B5D-9F2B-3CC556A77A48
+online version: https://docs.microsoft.com/en-us/powershell/module/az.automation/stop-azautomationdscnodeconfigurationdeployment
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Stop-AzAutomationDscNodeConfigurationDeployment.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Stop-AzAutomationDscNodeConfigurationDeployment.md
+ms.openlocfilehash: 698f0354b9f67896c14b8bb19d3716fa9e9167c2
+ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "93613660"
+---
+# Stop-AzAutomationDscNodeConfigurationDeployment
+
+## 摘要
+在自動化中停止 DSC 節點配置部署。 它只會停止目前的部署作業，但不會取消指派已指派的節點配置。
+
+## 句法
+
+### ByJobId (預設) 
+```
+Stop-AzAutomationDscNodeConfigurationDeployment -JobId <Guid> [-Force] [-PassThru]
+ [-ResourceGroupName] <String> [-AutomationAccountName] <String> [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### ByInputObject
+```
+Stop-AzAutomationDscNodeConfigurationDeployment [-PassThru] -InputObject <NodeConfigurationDeployment>
+ [-ResourceGroupName] <String> [-AutomationAccountName] <String> [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## 說明
+**Stop-AzAutomationDscNodeConfigurationDeployment** Cmdlet 會在 Azure 自動化中停止部署所需的狀態設定 (DSC) 節點設定。 它會停止將節點配置指派給節點群組（如果有剩餘的指派），但不會取消指派已指派的節點。 若要登出排程作業，請在 JobScheduleId 中使用 [ [取消註冊] AzAutomationScheduledRunbook](./Unregister-AzAutomationScheduledRunbook.md) ，以取消指派現有的排程作業。
+
+## 示例
+
+### 範例1：在自動化中部署 Azure DSC 節點配置
+```
+PS C:\> Stop-AzAutomationDscNodeConfigurationDeployment -AutomationAccountName "Contoso01" -ResourceGroupName "ResourceGroup01" -JobId 00000000-0000-0000-0000-000000000000
+```
+
+上述命令會停止與已傳入作業 Id 的 DSC 節點配置部署作業。
+
+## 參數
+
+### -AutomationAccountName
+指定包含此 Cmdlet 編譯之 DSC 設定的自動化帳戶名稱
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Force
+ps_force
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: ByJobId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+管道的輸入物件
+
+```yaml
+Type: Microsoft.Azure.Commands.Automation.Model.NodeConfigurationDeployment
+Parameter Sets: ByInputObject
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -作業 Id
+指定現有部署作業的作業 id。
+
+```yaml
+Type: System.Guid
+Parameter Sets: ByJobId
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -PassThru
+傳回代表您正在使用之專案的物件。
+根據預設，這個 Cmdlet 不會產生任何輸出。
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+指定此 Cmdlet 在其中編譯配置的資源群組的名稱。
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -確認
+在執行 Cmdlet 之前提示您進行確認。
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+顯示在執行 Cmdlet 時會發生什麼情況。
+未執行 Cmdlet。
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。
+
+## 輸入
+
+### Guid.empty
+
+### NodeConfigurationDeployment 中的 [.]
+
+### System.object
+
+## 輸出
+
+### System.object
+
+## 筆記
+
+## 相關連結
+
+[開始-AzAutomationDscCompilationJob](./Start-AzAutomationDscCompilationJob.md)
+
+[匯入-AzAutomationDscNodeConfiguration](./Import-AzAutomationDscNodeConfiguration.md)
+
+[開始-AzAutomationDscNodeConfigurationDeployment](./Start-AzAutomationDscNodeConfigurationDeployment.md)
+
+[AzAutomationDscNodeConfigurationDeployment](./Get-AzAutomationDscNodeConfigurationDeployment.md)
+
+[AzAutomationDscNodeConfigurationDeploymentSchedule](./Get-AzAutomationDscNodeConfigurationDeploymentSchedule.md)
