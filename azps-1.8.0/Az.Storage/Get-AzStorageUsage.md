@@ -1,0 +1,95 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Storage.Management.dll-Help.xml
+Module Name: Az.Storage
+ms.assetid: 11AAA319-DDBB-4156-9BE7-4DE8B80A904C
+online version: https://docs.microsoft.com/en-us/powershell/module/az.storage/get-azstorageusage
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Get-AzStorageUsage.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Get-AzStorageUsage.md
+ms.openlocfilehash: 31729843425f2360f1716e2b0faffc72715b9a81
+ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "93614581"
+---
+# <span data-ttu-id="f82ad-101">Get-AzStorageUsage</span><span class="sxs-lookup"><span data-stu-id="f82ad-101">Get-AzStorageUsage</span></span>
+
+## <span data-ttu-id="f82ad-102">摘要</span><span class="sxs-lookup"><span data-stu-id="f82ad-102">SYNOPSIS</span></span>
+<span data-ttu-id="f82ad-103">取得目前訂閱的儲存資源使用量。</span><span class="sxs-lookup"><span data-stu-id="f82ad-103">Gets the Storage resource usage of the current subscription.</span></span>
+
+## <span data-ttu-id="f82ad-104">句法</span><span class="sxs-lookup"><span data-stu-id="f82ad-104">SYNTAX</span></span>
+
+```
+Get-AzStorageUsage -Location <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="f82ad-105">說明</span><span class="sxs-lookup"><span data-stu-id="f82ad-105">DESCRIPTION</span></span>
+<span data-ttu-id="f82ad-106">**AzStorageUsage** Cmdlet 會取得目前訂閱之 Azure 儲存空間的資源使用量。</span><span class="sxs-lookup"><span data-stu-id="f82ad-106">The **Get-AzStorageUsage** cmdlet gets the resource usage for Azure Storage for the current subscription.</span></span>
+
+## <span data-ttu-id="f82ad-107">示例</span><span class="sxs-lookup"><span data-stu-id="f82ad-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="f82ad-108">範例1：取得指定位置的儲存資源使用量</span><span class="sxs-lookup"><span data-stu-id="f82ad-108">Example 1: Get the storage resources usage of specified location</span></span>
+```
+PS C:\>Get-AzStorageUsage -Location 'West US'
+
+LocalizedName : Storage Accounts
+Name          : StorageAccounts
+Unit          : Count
+CurrentValue  : 18
+Limit         : 250
+```
+
+<span data-ttu-id="f82ad-109">這個命令會在目前的訂閱下，取得指定位置的儲存資源使用量。</span><span class="sxs-lookup"><span data-stu-id="f82ad-109">This command gets the Storage resources usage of the specified location under the current subscription.</span></span>
+
+## <span data-ttu-id="f82ad-110">參數</span><span class="sxs-lookup"><span data-stu-id="f82ad-110">PARAMETERS</span></span>
+
+### <span data-ttu-id="f82ad-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="f82ad-111">-DefaultProfile</span></span>
+<span data-ttu-id="f82ad-112">用於與 Azure 進行通訊的認證、帳戶、租使用者及訂閱。</span><span class="sxs-lookup"><span data-stu-id="f82ad-112">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f82ad-113">-位置</span><span class="sxs-lookup"><span data-stu-id="f82ad-113">-Location</span></span>
+<span data-ttu-id="f82ad-114">指示在指定位置取得儲存資源的使用量。</span><span class="sxs-lookup"><span data-stu-id="f82ad-114">Indicate to get Storage resources usage on the specified location.</span></span>
+<span data-ttu-id="f82ad-115">如果未指定，將會取得訂閱下所有位置的儲存資源使用量。</span><span class="sxs-lookup"><span data-stu-id="f82ad-115">If not specified, will get Storage resources usage on all locations under the subscription.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f82ad-116">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="f82ad-116">CommonParameters</span></span>
+<span data-ttu-id="f82ad-117">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="f82ad-117">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="f82ad-118">如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。</span><span class="sxs-lookup"><span data-stu-id="f82ad-118">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="f82ad-119">輸入</span><span class="sxs-lookup"><span data-stu-id="f82ad-119">INPUTS</span></span>
+
+### <span data-ttu-id="f82ad-120">System.object</span><span class="sxs-lookup"><span data-stu-id="f82ad-120">System.String</span></span>
+
+## <span data-ttu-id="f82ad-121">輸出</span><span class="sxs-lookup"><span data-stu-id="f82ad-121">OUTPUTS</span></span>
+
+### <span data-ttu-id="f82ad-122">PSUsage 中的 [管理]。</span><span class="sxs-lookup"><span data-stu-id="f82ad-122">Microsoft.Azure.Commands.Management.Storage.Models.PSUsage</span></span>
+
+## <span data-ttu-id="f82ad-123">筆記</span><span class="sxs-lookup"><span data-stu-id="f82ad-123">NOTES</span></span>
+
+## <span data-ttu-id="f82ad-124">相關連結</span><span class="sxs-lookup"><span data-stu-id="f82ad-124">RELATED LINKS</span></span>
+
+[<span data-ttu-id="f82ad-125">Azure 儲存管理器 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="f82ad-125">Azure Storage Manager Cmdlets</span></span>](./Az.Storage.md)
+
+
