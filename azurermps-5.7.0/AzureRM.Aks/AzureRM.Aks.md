@@ -1,0 +1,41 @@
+---
+Module Name: AzureRM.Aks
+Module Guid: a97e0c3e-e389-46a6-b73d-2b9bd6909bdb
+Download Help Link: https://docs.microsoft.com/en-us/powershell/module/azurerm.aks
+Help Version: 0.0.1.0
+Locale: en-US
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Aks/Commands.Aks/help/AzureRM.Aks.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Aks/Commands.Aks/help/AzureRM.Aks.md
+ms.openlocfilehash: 9a71a6e1129aa8e2cb472593786844eb93090274
+ms.sourcegitcommit: 43f4bdf2a59dd82fd881512aa9761bf72eb5703c
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "93441928"
+---
+# <span data-ttu-id="08f0a-101">AzureRM Aks Module</span><span class="sxs-lookup"><span data-stu-id="08f0a-101">AzureRM.Aks Module</span></span>
+## <span data-ttu-id="08f0a-102">說明</span><span class="sxs-lookup"><span data-stu-id="08f0a-102">Description</span></span>
+<span data-ttu-id="08f0a-103">與 Azure 管理的 Kubernetes 群集互動的命令。</span><span class="sxs-lookup"><span data-stu-id="08f0a-103">Commands to interact with Azure managed Kubernetes clusters.</span></span>
+
+## <span data-ttu-id="08f0a-104">AzureRM Aks Cmdlet</span><span class="sxs-lookup"><span data-stu-id="08f0a-104">AzureRM.Aks Cmdlets</span></span>
+### [<span data-ttu-id="08f0a-105">AzureRmAks</span><span class="sxs-lookup"><span data-stu-id="08f0a-105">Get-AzureRmAks</span></span>](Get-AzureRmAks.md)
+<span data-ttu-id="08f0a-106">清單 Kubernetes 受管理的群集。</span><span class="sxs-lookup"><span data-stu-id="08f0a-106">List Kubernetes managed clusters.</span></span>
+
+### [<span data-ttu-id="08f0a-107">匯入-AzureRmAksCredential</span><span class="sxs-lookup"><span data-stu-id="08f0a-107">Import-AzureRmAksCredential</span></span>](Import-AzureRmAksCredential.md)
+<span data-ttu-id="08f0a-108">匯入及合併 managed Kubernetes 群集的 Kubectl config。</span><span class="sxs-lookup"><span data-stu-id="08f0a-108">Import and merge Kubectl config for a managed Kubernetes Cluster.</span></span>
+
+### [<span data-ttu-id="08f0a-109">新-AzureRmAks</span><span class="sxs-lookup"><span data-stu-id="08f0a-109">New-AzureRmAks</span></span>](New-AzureRmAks.md)
+<span data-ttu-id="08f0a-110">建立新的 managed Kubernetes 群集。</span><span class="sxs-lookup"><span data-stu-id="08f0a-110">Create a new managed Kubernetes cluster.</span></span>
+
+### [<span data-ttu-id="08f0a-111">移除-AzureRmAks</span><span class="sxs-lookup"><span data-stu-id="08f0a-111">Remove-AzureRmAks</span></span>](Remove-AzureRmAks.md)
+<span data-ttu-id="08f0a-112">刪除受管理的 Kubernetes 群集。</span><span class="sxs-lookup"><span data-stu-id="08f0a-112">Delete a managed Kubernetes cluster.</span></span>
+
+### [<span data-ttu-id="08f0a-113">Set-AzureRmAks</span><span class="sxs-lookup"><span data-stu-id="08f0a-113">Set-AzureRmAks</span></span>](Set-AzureRmAks.md)
+<span data-ttu-id="08f0a-114">更新或建立受管理的 Kubernetes 群集。</span><span class="sxs-lookup"><span data-stu-id="08f0a-114">Update or create a managed Kubernetes cluster.</span></span>
+
+### [<span data-ttu-id="08f0a-115">開始-AzureRmAksDashboard</span><span class="sxs-lookup"><span data-stu-id="08f0a-115">Start-AzureRmAksDashboard</span></span>](Start-AzureRmAksDashboard.md)
+<span data-ttu-id="08f0a-116">建立 Kubectl SSH 隧道至 managed 群集的儀表板。</span><span class="sxs-lookup"><span data-stu-id="08f0a-116">Create a Kubectl SSH tunnel to the managed cluster's dashboard.</span></span>
+
+### [<span data-ttu-id="08f0a-117">停止 AzureRmAksDashboard</span><span class="sxs-lookup"><span data-stu-id="08f0a-117">Stop-AzureRmAksDashboard</span></span>](Stop-AzureRmAksDashboard.md)
+<span data-ttu-id="08f0a-118">停止在 Start-AzureRmKubernetesDashboard 中建立的 Kubectl SSH 隧道。</span><span class="sxs-lookup"><span data-stu-id="08f0a-118">Stop the Kubectl SSH tunnel created in Start-AzureRmKubernetesDashboard.</span></span>
+
