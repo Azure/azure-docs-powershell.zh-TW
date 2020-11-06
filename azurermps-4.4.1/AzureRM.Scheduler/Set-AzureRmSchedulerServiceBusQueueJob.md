@@ -1,0 +1,392 @@
+---
+external help file: Microsoft.Azure.Commands.Scheduler.dll-Help.xml
+Module Name: AzureRM.Scheduler
+ms.assetid: 2C8C98B8-7A3B-4F24-BDF1-0B7B81049956
+online version: ''
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Scheduler/Commands.Scheduler/help/Set-AzureRmSchedulerServiceBusQueueJob.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Scheduler/Commands.Scheduler/help/Set-AzureRmSchedulerServiceBusQueueJob.md
+ms.openlocfilehash: 6928347ab5d78a25d53636f73413f772b9beea4d
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93456384"
+---
+# <span data-ttu-id="287bc-101">Set-AzureRmSchedulerServiceBusQueueJob</span><span class="sxs-lookup"><span data-stu-id="287bc-101">Set-AzureRmSchedulerServiceBusQueueJob</span></span>
+
+## <span data-ttu-id="287bc-102">摘要</span><span class="sxs-lookup"><span data-stu-id="287bc-102">SYNOPSIS</span></span>
+<span data-ttu-id="287bc-103">修改服務匯流排佇列作業。</span><span class="sxs-lookup"><span data-stu-id="287bc-103">Modifies a service bus queue job.</span></span>
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## <span data-ttu-id="287bc-104">句法</span><span class="sxs-lookup"><span data-stu-id="287bc-104">SYNTAX</span></span>
+
+```
+Set-AzureRmSchedulerServiceBusQueueJob -ResourceGroupName <String> -JobCollectionName <String>
+ -JobName <String> [-ServiceBusQueueName <String>] -ServiceBusNamespace <String>
+ -ServiceBusTransportType <String> -ServiceBusMessage <String> -ServiceBusSasKeyName <String>
+ -ServiceBusSasKeyValue <String> [-StartTime <DateTime>] [-Interval <Int32>] [-Frequency <String>]
+ [-EndTime <DateTime>] [-ExecutionCount <Int32>] [-JobState <String>] [-ErrorActionType <String>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="287bc-105">說明</span><span class="sxs-lookup"><span data-stu-id="287bc-105">DESCRIPTION</span></span>
+<span data-ttu-id="287bc-106">**AzureRmSchedulerServiceBusQueueJob** Cmdlet 會修改 Azure 排程器中的服務匯流排佇列作業。</span><span class="sxs-lookup"><span data-stu-id="287bc-106">The **Set-AzureRmSchedulerServiceBusQueueJob** cmdlet modifies a service bus queue job in Azure Scheduler.</span></span>
+
+<span data-ttu-id="287bc-107">這個 Cmdlet 支援以 *ErrorActionType* 參數為基礎的動態參數。</span><span class="sxs-lookup"><span data-stu-id="287bc-107">This cmdlet supports dynamic parameters based on the *ErrorActionType* parameter.</span></span>
+<span data-ttu-id="287bc-108">動態參數會根據其他參數值提供。</span><span class="sxs-lookup"><span data-stu-id="287bc-108">Dynamic parameters become available based on other parameter values.</span></span>
+
+<span data-ttu-id="287bc-109">若要在指定其他參數之後發現動態參數的名稱，請輸入連字號 ( ) ，然後重複按 Tab 鍵，以迴圈流覽可用的參數。</span><span class="sxs-lookup"><span data-stu-id="287bc-109">To discover the names of dynamic parameters after you specify the other parameters, type a hyphen (-), and then press the Tab key repeatedly to cycle through the available parameters.</span></span>
+<span data-ttu-id="287bc-110">如果您省略必要的參數，Cmdlet 會提示您輸入值。</span><span class="sxs-lookup"><span data-stu-id="287bc-110">If you omit a required parameter, the cmdlet prompts you for the value.</span></span>
+
+## <span data-ttu-id="287bc-111">示例</span><span class="sxs-lookup"><span data-stu-id="287bc-111">EXAMPLES</span></span>
+
+## <span data-ttu-id="287bc-112">參數</span><span class="sxs-lookup"><span data-stu-id="287bc-112">PARAMETERS</span></span>
+
+### <span data-ttu-id="287bc-113">-EndTime</span><span class="sxs-lookup"><span data-stu-id="287bc-113">-EndTime</span></span>
+<span data-ttu-id="287bc-114">指定作業的結束時間（作為 **DateTime** 物件）。</span><span class="sxs-lookup"><span data-stu-id="287bc-114">Specifies an end time, as a **DateTime** object, for the job.</span></span>
+<span data-ttu-id="287bc-115">若要取得 **DateTime** 物件，請使用 Get-Date Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="287bc-115">To obtain a **DateTime** object, use the Get-Date cmdlet.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.DateTime]
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="287bc-116">-ErrorActionType</span><span class="sxs-lookup"><span data-stu-id="287bc-116">-ErrorActionType</span></span>
+<span data-ttu-id="287bc-117">指定作業的錯誤動作設定。</span><span class="sxs-lookup"><span data-stu-id="287bc-117">Specifies an error action setting for the job.</span></span>
+<span data-ttu-id="287bc-118">此參數可接受的值為：</span><span class="sxs-lookup"><span data-stu-id="287bc-118">The acceptable values for this parameter are:</span></span>
+
+- <span data-ttu-id="287bc-119">Http</span><span class="sxs-lookup"><span data-stu-id="287bc-119">Http</span></span> 
+- <span data-ttu-id="287bc-120">Ip-HTTPs</span><span class="sxs-lookup"><span data-stu-id="287bc-120">Https</span></span> 
+- <span data-ttu-id="287bc-121">StorageQueue</span><span class="sxs-lookup"><span data-stu-id="287bc-121">StorageQueue</span></span> 
+- <span data-ttu-id="287bc-122">ServiceBusQueue</span><span class="sxs-lookup"><span data-stu-id="287bc-122">ServiceBusQueue</span></span> 
+- <span data-ttu-id="287bc-123">ServiceBusTopic</span><span class="sxs-lookup"><span data-stu-id="287bc-123">ServiceBusTopic</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+Accepted values: Http, Https, StorageQueue, ServiceBusQueue, ServiceBusTopic
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="287bc-124">-ExecutionCount</span><span class="sxs-lookup"><span data-stu-id="287bc-124">-ExecutionCount</span></span>
+<span data-ttu-id="287bc-125">指定作業執行的次數。</span><span class="sxs-lookup"><span data-stu-id="287bc-125">Specifies how many times the job runs.</span></span>
+<span data-ttu-id="287bc-126">根據預設，作業會無限期地重複。</span><span class="sxs-lookup"><span data-stu-id="287bc-126">By default, a job recurs indefinitely.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="287bc-127">頻率</span><span class="sxs-lookup"><span data-stu-id="287bc-127">-Frequency</span></span>
+<span data-ttu-id="287bc-128">指定作業的頻率。</span><span class="sxs-lookup"><span data-stu-id="287bc-128">Specifies a frequency for the job.</span></span>
+<span data-ttu-id="287bc-129">此參數可接受的值為：</span><span class="sxs-lookup"><span data-stu-id="287bc-129">The acceptable values for this parameter are:</span></span>
+
+- <span data-ttu-id="287bc-130">數</span><span class="sxs-lookup"><span data-stu-id="287bc-130">Minute</span></span> 
+- <span data-ttu-id="287bc-131">每</span><span class="sxs-lookup"><span data-stu-id="287bc-131">Hour</span></span> 
+- <span data-ttu-id="287bc-132">之內</span><span class="sxs-lookup"><span data-stu-id="287bc-132">Day</span></span> 
+- <span data-ttu-id="287bc-133">周</span><span class="sxs-lookup"><span data-stu-id="287bc-133">Week</span></span> 
+- <span data-ttu-id="287bc-134">月</span><span class="sxs-lookup"><span data-stu-id="287bc-134">Month</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+Accepted values: Minute, Hour, Day, Week, Month
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="287bc-135">間隔</span><span class="sxs-lookup"><span data-stu-id="287bc-135">-Interval</span></span>
+<span data-ttu-id="287bc-136">指定作業的定期間隔。</span><span class="sxs-lookup"><span data-stu-id="287bc-136">Specifies an interval of recurrence for the job.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="287bc-137">-JobCollectionName</span><span class="sxs-lookup"><span data-stu-id="287bc-137">-JobCollectionName</span></span>
+<span data-ttu-id="287bc-138">指定作業所屬作業集合的名稱。</span><span class="sxs-lookup"><span data-stu-id="287bc-138">Specifies the name of the job collection to which the job belongs.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: Name, ResourceName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="287bc-139">-JobName</span><span class="sxs-lookup"><span data-stu-id="287bc-139">-JobName</span></span>
+<span data-ttu-id="287bc-140">指定此 Cmdlet 修改的作業名稱。</span><span class="sxs-lookup"><span data-stu-id="287bc-140">Specifies the name of the job that this cmdlet modifies.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="287bc-141">-JobState</span><span class="sxs-lookup"><span data-stu-id="287bc-141">-JobState</span></span>
+<span data-ttu-id="287bc-142">指定工作的狀態。</span><span class="sxs-lookup"><span data-stu-id="287bc-142">Specifies the state of the job.</span></span>
+<span data-ttu-id="287bc-143">此參數可接受的值為：</span><span class="sxs-lookup"><span data-stu-id="287bc-143">The acceptable values for this parameter are:</span></span>
+
+- <span data-ttu-id="287bc-144">後</span><span class="sxs-lookup"><span data-stu-id="287bc-144">Enabled</span></span> 
+- <span data-ttu-id="287bc-145">禁止</span><span class="sxs-lookup"><span data-stu-id="287bc-145">Disabled</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+Accepted values: Enabled, Disabled
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="287bc-146">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="287bc-146">-ResourceGroupName</span></span>
+<span data-ttu-id="287bc-147">指定作業所屬的資源群組。</span><span class="sxs-lookup"><span data-stu-id="287bc-147">Specifies the resource group to which the job belongs.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="287bc-148">-ServiceBusMessage</span><span class="sxs-lookup"><span data-stu-id="287bc-148">-ServiceBusMessage</span></span>
+<span data-ttu-id="287bc-149">指定服務匯流排佇列訊息。</span><span class="sxs-lookup"><span data-stu-id="287bc-149">Specifies a service bus queue message.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="287bc-150">-ServiceBusNamespace</span><span class="sxs-lookup"><span data-stu-id="287bc-150">-ServiceBusNamespace</span></span>
+<span data-ttu-id="287bc-151">指定服務匯流排命名空間。</span><span class="sxs-lookup"><span data-stu-id="287bc-151">Specifies a service bus namespace.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="287bc-152">-ServiceBusQueueName</span><span class="sxs-lookup"><span data-stu-id="287bc-152">-ServiceBusQueueName</span></span>
+<span data-ttu-id="287bc-153">指定服務匯流排佇列名稱。</span><span class="sxs-lookup"><span data-stu-id="287bc-153">Specifies a service bus queue name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="287bc-154">-ServiceBusSasKeyName</span><span class="sxs-lookup"><span data-stu-id="287bc-154">-ServiceBusSasKeyName</span></span>
+<span data-ttu-id="287bc-155">指定共用的 access 簽名金鑰名稱。</span><span class="sxs-lookup"><span data-stu-id="287bc-155">Specifies a shared access signature key name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="287bc-156">-ServiceBusSasKeyValue</span><span class="sxs-lookup"><span data-stu-id="287bc-156">-ServiceBusSasKeyValue</span></span>
+<span data-ttu-id="287bc-157">指定共用的存取簽名金鑰值。</span><span class="sxs-lookup"><span data-stu-id="287bc-157">Specifies a shared access signature key value.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="287bc-158">-ServiceBusTransportType</span><span class="sxs-lookup"><span data-stu-id="287bc-158">-ServiceBusTransportType</span></span>
+<span data-ttu-id="287bc-159">指定服務匯流排傳輸類型。</span><span class="sxs-lookup"><span data-stu-id="287bc-159">Specifies a service bus transport type.</span></span>
+<span data-ttu-id="287bc-160">此參數可接受的值為：</span><span class="sxs-lookup"><span data-stu-id="287bc-160">The acceptable values for this parameter are:</span></span>
+
+- <span data-ttu-id="287bc-161">NetMessaging</span><span class="sxs-lookup"><span data-stu-id="287bc-161">NetMessaging</span></span> 
+- <span data-ttu-id="287bc-162">AMQP</span><span class="sxs-lookup"><span data-stu-id="287bc-162">AMQP</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+Accepted values: NetMessaging, AMQP
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="287bc-163">-StartTime</span><span class="sxs-lookup"><span data-stu-id="287bc-163">-StartTime</span></span>
+<span data-ttu-id="287bc-164">指定作業的開始時間（作為 **DateTime** 物件）。</span><span class="sxs-lookup"><span data-stu-id="287bc-164">Specifies the start time, as a **DateTime** object, for the job.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.DateTime]
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="287bc-165">-確認</span><span class="sxs-lookup"><span data-stu-id="287bc-165">-Confirm</span></span>
+<span data-ttu-id="287bc-166">在執行 Cmdlet 之前提示您進行確認。</span><span class="sxs-lookup"><span data-stu-id="287bc-166">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="287bc-167">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="287bc-167">-WhatIf</span></span>
+<span data-ttu-id="287bc-168">顯示在執行 Cmdlet 時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="287bc-168">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="287bc-169">未執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="287bc-169">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="287bc-170">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="287bc-170">-DefaultProfile</span></span>
+<span data-ttu-id="287bc-171">用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。</span><span class="sxs-lookup"><span data-stu-id="287bc-171">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="287bc-172">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="287bc-172">CommonParameters</span></span>
+<span data-ttu-id="287bc-173">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="287bc-173">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="287bc-174">如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。</span><span class="sxs-lookup"><span data-stu-id="287bc-174">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="287bc-175">輸入</span><span class="sxs-lookup"><span data-stu-id="287bc-175">INPUTS</span></span>
+
+## <span data-ttu-id="287bc-176">輸出</span><span class="sxs-lookup"><span data-stu-id="287bc-176">OUTPUTS</span></span>
+
+### <span data-ttu-id="287bc-177">PSSchedulerJobDefinition 中的 [.]</span><span class="sxs-lookup"><span data-stu-id="287bc-177">Microsoft.Azure.Commands.Scheduler.Models.PSSchedulerJobDefinition</span></span>
+
+## <span data-ttu-id="287bc-178">筆記</span><span class="sxs-lookup"><span data-stu-id="287bc-178">NOTES</span></span>
+
+## <span data-ttu-id="287bc-179">相關連結</span><span class="sxs-lookup"><span data-stu-id="287bc-179">RELATED LINKS</span></span>
+
+[<span data-ttu-id="287bc-180">新-AzureRmSchedulerHttpJob</span><span class="sxs-lookup"><span data-stu-id="287bc-180">New-AzureRmSchedulerHttpJob</span></span>](./New-AzureRmSchedulerHttpJob.md)
+
+[<span data-ttu-id="287bc-181">新-AzureRmSchedulerJobCollection</span><span class="sxs-lookup"><span data-stu-id="287bc-181">New-AzureRmSchedulerJobCollection</span></span>](./New-AzureRmSchedulerJobCollection.md)
+
+[<span data-ttu-id="287bc-182">新-AzureRmSchedulerServiceBusQueueJob</span><span class="sxs-lookup"><span data-stu-id="287bc-182">New-AzureRmSchedulerServiceBusQueueJob</span></span>](./New-AzureRmSchedulerServiceBusQueueJob.md)
+
+[<span data-ttu-id="287bc-183">新-AzureRmSchedulerServiceBusTopicJob</span><span class="sxs-lookup"><span data-stu-id="287bc-183">New-AzureRmSchedulerServiceBusTopicJob</span></span>](./New-AzureRmSchedulerServiceBusTopicJob.md)
+
+[<span data-ttu-id="287bc-184">新-AzureRmSchedulerStorageQueueJob</span><span class="sxs-lookup"><span data-stu-id="287bc-184">New-AzureRmSchedulerStorageQueueJob</span></span>](./New-AzureRmSchedulerStorageQueueJob.md)
+
+[<span data-ttu-id="287bc-185">Set-AzureRmSchedulerHttpJob</span><span class="sxs-lookup"><span data-stu-id="287bc-185">Set-AzureRmSchedulerHttpJob</span></span>](./Set-AzureRmSchedulerHttpJob.md)
+
+[<span data-ttu-id="287bc-186">Set-AzureRmSchedulerJobCollection</span><span class="sxs-lookup"><span data-stu-id="287bc-186">Set-AzureRmSchedulerJobCollection</span></span>](./Set-AzureRmSchedulerJobCollection.md)
+
+[<span data-ttu-id="287bc-187">Set-AzureRmSchedulerServiceBusTopicJob</span><span class="sxs-lookup"><span data-stu-id="287bc-187">Set-AzureRmSchedulerServiceBusTopicJob</span></span>](./Set-AzureRmSchedulerServiceBusTopicJob.md)
+
+[<span data-ttu-id="287bc-188">Set-AzureRmSchedulerStorageQueueJob</span><span class="sxs-lookup"><span data-stu-id="287bc-188">Set-AzureRmSchedulerStorageQueueJob</span></span>](./Set-AzureRmSchedulerStorageQueueJob.md)
+
+
