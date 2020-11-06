@@ -1,0 +1,212 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.SignalR.dll-Help.xml
+Module Name: Az.SignalR
+online version: https://docs.microsoft.com/en-us/powershell/module/az.signalr/new-azsignalr
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/SignalR/SignalR/help/New-AzSignalR.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/SignalR/SignalR/help/New-AzSignalR.md
+ms.openlocfilehash: 8c8240ed1df30dface1bdb2ce0b649bacf17d08a
+ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "93620539"
+---
+# New-AzSignalR
+
+## 摘要
+建立 SignalR 服務。
+
+## 句法
+
+```
+New-AzSignalR [-ResourceGroupName <String>] [-Name] <String> [-Location <String>] [-Sku <String>]
+ [-UnitCount <Int32>] [-Tag <System.Collections.Generic.IDictionary`2[System.String,System.String]>] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## 說明
+建立 SignalR 服務。
+如果沒有指定，下列值將用於參數：
+* `ResourceGroupName`：預設資源群組的設定依據 `Set-AzDefault -ResourceGroupName` 。
+* `Location`：資源群組的位置
+* `Sku`: `Standard_S1`
+
+## 示例
+
+### 建立 SignalR 的
+```powershell
+PS C:\> New-AzSignalR -ResourceGroupName myResourceGroup1 -Name mysignalr1 -Location eastus -Sku Standard_S1
+
+HostName                                           Location       ServerPort PublicPort ProvisioningState Version
+--------                                           --------       ---------- ---------- ----------------- -------
+mysignalr1.service.signalr.net                     eastus         5002       5001       Succeeded         1.0-preview
+```
+
+## 參數
+
+### -AsJob
+在背景作業中執行 Cmdlet。
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+用於與 Azure 進行通訊的認證、帳戶、租使用者及訂閱。
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -位置
+SignalR 服務位置。 如果沒有指定，則會使用資源群組位置。
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -名稱
+SignalR 服務名稱。
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+資源群組的名稱。 如果沒有指定，則會使用預設值。
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Sku
+SignalR 服務 SKU。
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: Standard_S1
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tag
+SignalR 服務的標記。
+
+```yaml
+Type: System.Collections.Generic.IDictionary`2[System.String,System.String]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UnitCount
+SignalR 服務單位元數目（1到10）。 預設值為1。
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: 1
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -確認
+在執行 Cmdlet 之前提示您進行確認。
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+顯示在執行 Cmdlet 時會發生什麼情況。
+未執行 Cmdlet。
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。
+
+## 輸入
+
+### 所有
+
+## 輸出
+
+### PSSignalRResource 中的 SignalR。
+
+## 筆記
+
+## 相關連結
