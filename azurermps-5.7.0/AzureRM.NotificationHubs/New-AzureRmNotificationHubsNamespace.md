@@ -1,0 +1,216 @@
+---
+external help file: Microsoft.Azure.Commands.NotificationHubs.dll-Help.xml
+Module Name: AzureRM.NotificationHubs
+ms.assetid: 3BA94976-DE88-4F07-9C06-41FEEDE1B829
+online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.notificationhubs/new-azurermnotificationhubsnamespace
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/NotificationHubs/Commands.NotificationHubs/help/New-AzureRmNotificationHubsNamespace.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/NotificationHubs/Commands.NotificationHubs/help/New-AzureRmNotificationHubsNamespace.md
+ms.openlocfilehash: 504fe8b5aad0e2e028bf27cf08a29fd335edfa33
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93449258"
+---
+# <span data-ttu-id="f7c95-101">New-AzureRmNotificationHubsNamespace</span><span class="sxs-lookup"><span data-stu-id="f7c95-101">New-AzureRmNotificationHubsNamespace</span></span>
+
+## <span data-ttu-id="f7c95-102">摘要</span><span class="sxs-lookup"><span data-stu-id="f7c95-102">SYNOPSIS</span></span>
+<span data-ttu-id="f7c95-103">建立通知中心命名空間。</span><span class="sxs-lookup"><span data-stu-id="f7c95-103">Creates a notification hub namespace.</span></span>
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## <span data-ttu-id="f7c95-104">句法</span><span class="sxs-lookup"><span data-stu-id="f7c95-104">SYNTAX</span></span>
+
+```
+New-AzureRmNotificationHubsNamespace [-ResourceGroup] <String> [-Namespace] <String> [-Location] <String>
+ [[-Tag] <Hashtable>] [[-SkuTier] <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+## <span data-ttu-id="f7c95-105">說明</span><span class="sxs-lookup"><span data-stu-id="f7c95-105">DESCRIPTION</span></span>
+<span data-ttu-id="f7c95-106">**新的-AzureRmNotificationHubsNamespace** Cmdlet 會建立通知中心命名空間。</span><span class="sxs-lookup"><span data-stu-id="f7c95-106">The **New-AzureRmNotificationHubsNamespace** cmdlet creates a notification hub namespace.</span></span>
+
+<span data-ttu-id="f7c95-107">命名空間是邏輯容器，可協助您組織和管理通知中樞。</span><span class="sxs-lookup"><span data-stu-id="f7c95-107">Namespaces are logical containers that help you organize and manage your notification hubs.</span></span>
+<span data-ttu-id="f7c95-108">您至少必須有一個通知中樞命名空間。</span><span class="sxs-lookup"><span data-stu-id="f7c95-108">You must have at least one notification hub namespace.</span></span>
+<span data-ttu-id="f7c95-109">單一命名空間可以存放多個中心。</span><span class="sxs-lookup"><span data-stu-id="f7c95-109">A single namespace can house multiple hubs.</span></span>
+<span data-ttu-id="f7c95-110">您可以有多個命名空間來組織您的中樞，或提供特定的個人許可權來管理您的中樞的選取子集。</span><span class="sxs-lookup"><span data-stu-id="f7c95-110">You can have multiple namespaces to organize your hubs, or to give specific individuals permission to manage a selected subset of your hubs.</span></span>
+
+<span data-ttu-id="f7c95-111">若要建立命名空間，請確定您指定的是命名空間的唯一名稱;指定命名空間所在的資料中心;然後，指定要將命名空間指派給哪個資源群組。</span><span class="sxs-lookup"><span data-stu-id="f7c95-111">To create a namespace, make sure that you specify a unique name for the namespace; specify the datacenter where the namespace will be located; and, specify the resource group that the namespace will be assigned to.</span></span>
+<span data-ttu-id="f7c95-112">在命名空間建立之後，您可以使用 New-AzureRmNotificationHubsNamespaceAuthorizationRules Cmdlet 來將授權規則指派給該命名空間。</span><span class="sxs-lookup"><span data-stu-id="f7c95-112">After the namespace has been created you can use the New-AzureRmNotificationHubsNamespaceAuthorizationRules cmdlet to assign authorization rules to that namespace.</span></span>
+<span data-ttu-id="f7c95-113">授權規則是用來管理命名空間的許可權。</span><span class="sxs-lookup"><span data-stu-id="f7c95-113">Authorization rules are used to manage permissions to the namespace.</span></span>
+
+## <span data-ttu-id="f7c95-114">示例</span><span class="sxs-lookup"><span data-stu-id="f7c95-114">EXAMPLES</span></span>
+
+### <span data-ttu-id="f7c95-115">範例1：建立通知中樞</span><span class="sxs-lookup"><span data-stu-id="f7c95-115">Example 1: Create a notification hub</span></span>
+```
+PS C:\>New-AzureRmNotificationHubsNamespace -ResourceGroup "ContosoNotificationsGroup" -Location "West US" -Namespace "ContosoPartners"
+```
+
+<span data-ttu-id="f7c95-116">這個命令會建立名為 ContosoPartners 的通知中樞。</span><span class="sxs-lookup"><span data-stu-id="f7c95-116">This command creates a notification hub named ContosoPartners.</span></span>
+<span data-ttu-id="f7c95-117">該命名空間會位於 [西部美國資料中心]，並指派給 ContosoNotificationsGroup 資源群組。</span><span class="sxs-lookup"><span data-stu-id="f7c95-117">The namespace will be located in the West US datacenter and be assigned to the ContosoNotificationsGroup resource group.</span></span>
+
+### <span data-ttu-id="f7c95-118">範例2：使用標記建立通知中樞</span><span class="sxs-lookup"><span data-stu-id="f7c95-118">Example 2: Create a notification hub with tags</span></span>
+```
+PS C:\>New-AzureRmNotificationHubsNamespace -ResourceGroup "ContosoNotificationsGroup" -Location "West US" -Namespace "ContosoPartners" -Tags @{Name="Audience";Value="PartnerOrganizations"}
+```
+
+<span data-ttu-id="f7c95-119">這個命令會建立名為 ContosoPartners 的通知中樞。</span><span class="sxs-lookup"><span data-stu-id="f7c95-119">This command creates a notification hub named ContosoPartners.</span></span>
+<span data-ttu-id="f7c95-120">該命名空間會位於 [西部美國資料中心]，並指派給 ContosoNotificationsGroup 資源群組。</span><span class="sxs-lookup"><span data-stu-id="f7c95-120">The namespace will be located in the West US datacenter and be assigned to the ContosoNotificationsGroup resource group.</span></span>
+<span data-ttu-id="f7c95-121">此外，這個命令會建立一個含有名稱物件和值 PartnerOrganizations 的標記，並指派給命名空間。</span><span class="sxs-lookup"><span data-stu-id="f7c95-121">In addition, this command creates a tag with the name Audience and the value PartnerOrganizations and is assigned to the namespace.</span></span>
+<span data-ttu-id="f7c95-122">這可確保您在每次篩選物件都設定為 PartnerOrganizations 的專案時，都會顯示該命名空間。</span><span class="sxs-lookup"><span data-stu-id="f7c95-122">This ensures that the namespace will be displayed any time you filter for items where the Audience tag is set to PartnerOrganizations.</span></span>
+
+## <span data-ttu-id="f7c95-123">參數</span><span class="sxs-lookup"><span data-stu-id="f7c95-123">PARAMETERS</span></span>
+
+### <span data-ttu-id="f7c95-124">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="f7c95-124">-DefaultProfile</span></span>
+<span data-ttu-id="f7c95-125">用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱</span><span class="sxs-lookup"><span data-stu-id="f7c95-125">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f7c95-126">-位置</span><span class="sxs-lookup"><span data-stu-id="f7c95-126">-Location</span></span>
+<span data-ttu-id="f7c95-127">指定將主控命名空間的資料中心的顯示名稱。</span><span class="sxs-lookup"><span data-stu-id="f7c95-127">Specifies the display name of the datacenter that will host the Namespace.</span></span>
+<span data-ttu-id="f7c95-128">雖然您可以將此參數設定為任何有效的位置，但若要獲得最佳效能，您可能會想要使用靠近使用者的資料中心。</span><span class="sxs-lookup"><span data-stu-id="f7c95-128">Although you can set this parameter to any valid location, for optimal performance you might want to use a datacenter located near the majority of your users.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f7c95-129">-命名空間</span><span class="sxs-lookup"><span data-stu-id="f7c95-129">-Namespace</span></span>
+<span data-ttu-id="f7c95-130">指定新命名空間的名稱。</span><span class="sxs-lookup"><span data-stu-id="f7c95-130">Specifies the name of the new namespace.</span></span>
+<span data-ttu-id="f7c95-131">命名空間提供一種群組和分類通知中樞的方式。</span><span class="sxs-lookup"><span data-stu-id="f7c95-131">Namespaces provide a way to group and categorize notification hubs.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f7c95-132">-ResourceGroup</span><span class="sxs-lookup"><span data-stu-id="f7c95-132">-ResourceGroup</span></span>
+<span data-ttu-id="f7c95-133">指定要將命名空間指派給哪個資源群組。</span><span class="sxs-lookup"><span data-stu-id="f7c95-133">Specifies the resource group to which the namespace will be assigned.</span></span>
+<span data-ttu-id="f7c95-134">資源群組會以協助您輕鬆清點管理和管理的方式來組織諸如命名空間、通知中樞和授權規則等專案。</span><span class="sxs-lookup"><span data-stu-id="f7c95-134">Resource groups organize items such as namespaces, notification hubs, and authorization rules in ways that help simply inventory management and administration.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f7c95-135">-SkuTier</span><span class="sxs-lookup"><span data-stu-id="f7c95-135">-SkuTier</span></span>
+<span data-ttu-id="f7c95-136">命名空間的 Sku 層級</span><span class="sxs-lookup"><span data-stu-id="f7c95-136">Sku tier of the namespace</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f7c95-137">-Tag</span><span class="sxs-lookup"><span data-stu-id="f7c95-137">-Tag</span></span>
+<span data-ttu-id="f7c95-138">指定可用於分類及組織 Azure 專案的名稱-值對。</span><span class="sxs-lookup"><span data-stu-id="f7c95-138">Specifies name-value pairs that can be used to categorize and organize Azure items.</span></span>
+<span data-ttu-id="f7c95-139">標記的功能與關鍵字類似，且可在整個部署中運作。</span><span class="sxs-lookup"><span data-stu-id="f7c95-139">Tags function similar to keywords, and operate across a deployment.</span></span>
+<span data-ttu-id="f7c95-140">例如，如果您在所有專案中搜尋標籤部：這項搜尋將會傳回所有具有該標記的 Azure 專案，不論專案類型、位置或資源群組為何。</span><span class="sxs-lookup"><span data-stu-id="f7c95-140">For example, if you search for all items with the tag Department:IT the search will return all the Azure items that have that tag, regardless of such things as item type, location, or resource group.</span></span>
+
+<span data-ttu-id="f7c95-141">個別標籤由兩個部分組成： *名稱* 與（可選擇） *值* 。</span><span class="sxs-lookup"><span data-stu-id="f7c95-141">An individual tag consists of two parts: the *Name* and, optionally, the *Value*.</span></span>
+<span data-ttu-id="f7c95-142">例如，在 [部門] 中，標記名稱是 [部門]，而標記值是 [部門]。</span><span class="sxs-lookup"><span data-stu-id="f7c95-142">For instance, in Department:IT, the tag name is Department and the tag value is IT.</span></span>
+<span data-ttu-id="f7c95-143">若要新增標籤，請使用類似這個的雜湊資料表語法，這會建立 tag CalendarYear：2016：</span><span class="sxs-lookup"><span data-stu-id="f7c95-143">To add a tag, use hash table syntax similar to this, which creates the tag CalendarYear:2016:</span></span>
+
+```yaml
+Type: Hashtable
+Parameter Sets: (All)
+Aliases: Tags
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f7c95-144">-確認</span><span class="sxs-lookup"><span data-stu-id="f7c95-144">-Confirm</span></span>
+<span data-ttu-id="f7c95-145">在執行 Cmdlet 之前提示您進行確認。</span><span class="sxs-lookup"><span data-stu-id="f7c95-145">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f7c95-146">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="f7c95-146">-WhatIf</span></span>
+<span data-ttu-id="f7c95-147">顯示在執行 Cmdlet 時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="f7c95-147">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="f7c95-148">未執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="f7c95-148">The cmdlet is not run.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f7c95-149">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="f7c95-149">CommonParameters</span></span>
+<span data-ttu-id="f7c95-150">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="f7c95-150">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="f7c95-151">如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。</span><span class="sxs-lookup"><span data-stu-id="f7c95-151">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="f7c95-152">輸入</span><span class="sxs-lookup"><span data-stu-id="f7c95-152">INPUTS</span></span>
+
+### <span data-ttu-id="f7c95-153">所有</span><span class="sxs-lookup"><span data-stu-id="f7c95-153">None</span></span>
+<span data-ttu-id="f7c95-154">這個 Cmdlet 不接受任何輸入。</span><span class="sxs-lookup"><span data-stu-id="f7c95-154">This cmdlet does not accept any input.</span></span>
+
+## <span data-ttu-id="f7c95-155">輸出</span><span class="sxs-lookup"><span data-stu-id="f7c95-155">OUTPUTS</span></span>
+
+### <span data-ttu-id="f7c95-156">NamespaceAttributes 中的 NotificationHubs。</span><span class="sxs-lookup"><span data-stu-id="f7c95-156">Microsoft.Azure.Commands.NotificationHubs.Models.NamespaceAttributes</span></span>
+
+## <span data-ttu-id="f7c95-157">筆記</span><span class="sxs-lookup"><span data-stu-id="f7c95-157">NOTES</span></span>
+
+## <span data-ttu-id="f7c95-158">相關連結</span><span class="sxs-lookup"><span data-stu-id="f7c95-158">RELATED LINKS</span></span>
+
+[<span data-ttu-id="f7c95-159">AzureRmNotificationHubsNamespace</span><span class="sxs-lookup"><span data-stu-id="f7c95-159">Get-AzureRmNotificationHubsNamespace</span></span>](./Get-AzureRmNotificationHubsNamespace.md)
+
+[<span data-ttu-id="f7c95-160">移除-AzureRmNotificationHubsNamespace</span><span class="sxs-lookup"><span data-stu-id="f7c95-160">Remove-AzureRmNotificationHubsNamespace</span></span>](./Remove-AzureRmNotificationHubsNamespace.md)
+
+[<span data-ttu-id="f7c95-161">Set-AzureRmNotificationHubsNamespace</span><span class="sxs-lookup"><span data-stu-id="f7c95-161">Set-AzureRmNotificationHubsNamespace</span></span>](./Set-AzureRmNotificationHubsNamespace.md)
+
+
