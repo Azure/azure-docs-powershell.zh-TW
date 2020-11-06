@@ -1,0 +1,136 @@
+---
+external help file: Microsoft.Azure.Commands.Profile.dll-Help.xml
+online version: ''
+schema: 2.0.0
+ms.openlocfilehash: 06a78584437021df570bc5ff2b6ec19e332bffd8
+ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "93442972"
+---
+# Save-AzureRmProfile
+
+## 摘要
+儲存目前的驗證資訊以供在其他 PowerShell 會話中使用。
+
+## 句法
+
+```
+Save-AzureRmProfile [[-Profile] <AzureRMProfile>] [-Path] <String> [-Force] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+## 說明
+Save-AzureRmProfile Cmdlet 會儲存目前的驗證資訊，以供在其他 PowerShell 會話中使用。
+
+## 示例
+
+### 範例1：儲存目前會話的設定檔
+```
+PS C:\> Add-AzureRmAccount
+PS C:\> Save-AzureRmProfile -Path C:\test.json
+```
+
+這個範例會將目前會話的 Azure 設定檔儲存至提供的 JSON 檔案。
+
+### 範例2：儲存指定的設定檔
+```
+PS C:\> Save-AzureRmProfile -Profile (Add-AzureRmAccount) -Path C:\test.json
+```
+
+這個範例會將傳遞到 Cmdlet 的 Azure 設定檔儲存到提供的 JSON 檔案。
+
+## 參數
+
+### -Force
+覆寫指定的檔案（如果有的話）
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Path
+指定要儲存驗證資訊之檔案的路徑。
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -設定檔
+指定此 Cmdlet 讀取的 Azure 設定檔。
+如果您沒有指定設定檔，此 Cmdlet 會從本機預設設定檔讀取。
+
+```yaml
+Type: AzureRMProfile
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -確認
+在執行 Cmdlet 之前提示您進行確認。
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+顯示在執行 Cmdlet 時會發生什麼情況。 未執行 Cmdlet。
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。
+
+## 輸入
+
+## 輸出
+
+### PSAzureProfile
+
+## 筆記
+
+## 相關連結
+
+[選取-AzureRMProfile]()
+
