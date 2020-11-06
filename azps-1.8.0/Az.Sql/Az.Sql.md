@@ -1,0 +1,589 @@
+---
+Module Name: Az.Sql
+Module Guid: 150d9544-6348-4373-806f-10cd0b4de4cb
+Download Help Link: https://docs.microsoft.com/en-us/powershell/module/az.sql
+Help Version: 4.4.0.0
+Locale: en-US
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Az.Sql.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Az.Sql.md
+ms.openlocfilehash: b005f073f47ab9836a1ef9d1954dfb745aa6c1bb
+ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "93611410"
+---
+# Az. Sql 模組
+## 說明
+本主題顯示 Azure SQL Database Cmdlet 的說明主題。
+
+## Az. Sql Cmdlet
+### [附加 AzSqlDatabaseToFailoverGroup](Add-AzSqlDatabaseToFailoverGroup.md)
+將一或多個資料庫新增至 Azure SQL Database [容錯移轉] 群組。
+
+### [附加 AzSqlManagedInstanceTransparentDataEncryptionCertificate](Add-AzSqlManagedInstanceTransparentDataEncryptionCertificate.md)
+針對指定的受管理實例新增透明的資料加密憑證
+
+### [附加 AzSqlServerKeyVaultKey](Add-AzSqlServerKeyVaultKey.md)
+將主要保存庫金鑰新增至 SQL server。
+
+### [附加 AzSqlServerTransparentDataEncryptionCertificate](Add-AzSqlServerTransparentDataEncryptionCertificate.md)
+針對指定的 SQL Server 實例新增透明的資料加密憑證
+
+### [Clear-AzSqlDatabaseVulnerabilityAssessmentRuleBaseline](Clear-AzSqlDatabaseVulnerabilityAssessmentRuleBaseline.md)
+清除漏洞評估規則比較基準。
+
+### [Clear-AzSqlDatabaseVulnerabilityAssessmentSetting](Clear-AzSqlDatabaseVulnerabilityAssessmentSetting.md)
+清除資料庫的漏洞評估設定。
+
+### [Clear-AzSqlInstanceDatabaseVulnerabilityAssessmentRuleBaseline](Clear-AzSqlInstanceDatabaseVulnerabilityAssessmentRuleBaseline.md)
+清除漏洞評估規則比較基準。
+
+### [Clear-AzSqlInstanceDatabaseVulnerabilityAssessmentSetting](Clear-AzSqlInstanceDatabaseVulnerabilityAssessmentSetting.md)
+清除受管理資料庫的漏洞評估設定。
+
+### [Clear-AzSqlInstanceVulnerabilityAssessmentSetting](Clear-AzSqlInstanceVulnerabilityAssessmentSetting.md)
+清除受管理實例的漏洞評估設定。
+
+### [Clear-AzSqlServerVulnerabilityAssessmentSetting](Clear-AzSqlServerVulnerabilityAssessmentSetting.md)
+清除伺服器的漏洞評估設定。
+
+### [Convert-AzSqlDatabaseVulnerabilityAssessmentScan](Convert-AzSqlDatabaseVulnerabilityAssessmentScan.md)
+將漏洞評估掃描結果轉換成 Excel 格式。
+
+### [Convert-AzSqlInstanceDatabaseVulnerabilityAssessmentScan](Convert-AzSqlInstanceDatabaseVulnerabilityAssessmentScan.md)
+將漏洞評估掃描結果轉換成 Excel 格式。
+
+### [Disable-AzSqlInstanceAdvancedDataSecurity](Disable-AzSqlInstanceAdvancedDataSecurity.md)
+在受管理的實例上停用 [高級資料安全性]。
+
+### [Disable-AzSqlServerAdvancedThreatProtection](Disable-AzSqlServerAdvancedThreatProtection.md)
+在伺服器上停用 [高級威脅防護]。
+
+### [Enable-AzSqlInstanceAdvancedDataSecurity](Enable-AzSqlInstanceAdvancedDataSecurity.md)
+在受管理的實例上啟用 [高級資料安全性]。
+
+### [Enable-AzSqlServerAdvancedThreatProtection](Enable-AzSqlServerAdvancedThreatProtection.md)
+在伺服器上啟用高級威脅防護。
+
+### [AzSqlCapability](Get-AzSqlCapability.md)
+取得目前訂閱的 SQL 資料庫功能。
+
+### [AzSqlDatabase](Get-AzSqlDatabase.md)
+取得一或多個資料庫。
+
+### [AzSqlDatabaseActivity](Get-AzSqlDatabaseActivity.md)
+取得資料庫操作的狀態。
+
+### [AzSqlDatabaseAdvisor](Get-AzSqlDatabaseAdvisor.md)
+取得一或多個 Azure SQL 資料庫的顧問。
+
+### [AzSqlDatabaseAuditing](Get-AzSqlDatabaseAuditing.md)
+取得 Azure SQL 資料庫的審核設定。
+
+### [AzSqlDatabaseBackupLongTermRetentionPolicy](Get-AzSqlDatabaseBackupLongTermRetentionPolicy.md)
+取得資料庫長期保留原則。
+
+### [AzSqlDatabaseBackupShortTermRetentionPolicy](Get-AzSqlDatabaseBackupShortTermRetentionPolicy.md)
+取得備份短期保留原則。
+
+### [AzSqlDatabaseDataMaskingPolicy](Get-AzSqlDatabaseDataMaskingPolicy.md)
+取得資料庫的資料遮罩原則。
+
+### [AzSqlDatabaseDataMaskingRule](Get-AzSqlDatabaseDataMaskingRule.md)
+從資料庫取得資料遮罩規則。
+
+### [AzSqlDatabaseExpanded](Get-AzSqlDatabaseExpanded.md)
+取得資料庫及其展開的屬性值。
+
+### [AzSqlDatabaseFailoverGroup](Get-AzSqlDatabaseFailoverGroup.md)
+取得或列出 Azure SQL Database 容錯移轉群組。
+
+### [AzSqlDatabaseGeoBackup](Get-AzSqlDatabaseGeoBackup.md)
+取得資料庫的地域冗余備份。
+
+### [AzSqlDatabaseGeoBackupPolicy](Get-AzSqlDatabaseGeoBackupPolicy.md)
+取得資料庫地域備份原則。
+
+### [AzSqlDatabaseImportExportStatus](Get-AzSqlDatabaseImportExportStatus.md)
+取得 Azure SQL 資料庫匯入或匯出的詳細資料。
+
+### [AzSqlDatabaseIndexRecommendation](Get-AzSqlDatabaseIndexRecommendation.md)
+取得伺服器或資料庫的建議索引作業。
+
+### [AzSqlDatabaseLongTermRetentionBackup](Get-AzSqlDatabaseLongTermRetentionBackup.md)
+取得一或多個長期保留備份。
+
+### [AzSqlDatabaseRecommendedAction](Get-AzSqlDatabaseRecommendedAction.md)
+針對 Azure SQL Database Advisor 取得一或多個建議的動作。
+
+### [AzSqlDatabaseReplicationLink](Get-AzSqlDatabaseReplicationLink.md)
+取得 Azure SQL 資料庫與資源群組或 SQL Server 之間的異地複製連結。
+
+### [AzSqlDatabaseRestorePoint](Get-AzSqlDatabaseRestorePoint.md)
+檢索可還原 SQL 資料倉儲的不同還原點。
+
+### [AzSqlDatabaseSecureConnectionPolicy](Get-AzSqlDatabaseSecureConnectionPolicy.md)
+取得資料庫的安全連線原則。
+
+### [AzSqlDatabaseSensitivityClassification](Get-AzSqlDatabaseSensitivityClassification.md)
+取得資料庫中資料行的目前資訊類型及敏感度標籤。
+
+### [AzSqlDatabaseSensitivityRecommendation](Get-AzSqlDatabaseSensitivityRecommendation.md)
+取得資料庫中資料行的建議資訊類型及敏感度標籤。
+
+### [AzSqlDatabaseThreatDetectionPolicy](Get-AzSqlDatabaseThreatDetectionPolicy.md)
+取得資料庫的威脅偵測原則。
+
+### [AzSqlDatabaseTransparentDataEncryption](Get-AzSqlDatabaseTransparentDataEncryption.md)
+取得資料庫的 TDE 狀態。
+
+### [AzSqlDatabaseTransparentDataEncryptionActivity](Get-AzSqlDatabaseTransparentDataEncryptionActivity.md)
+取得資料庫 TDE 掃描的進度。
+
+### [AzSqlDatabaseUpgradeHint](Get-AzSqlDatabaseUpgradeHint.md)
+取得資料庫的定價層提示。
+
+### [AzSqlDatabaseVulnerabilityAssessmentRuleBaseline](Get-AzSqlDatabaseVulnerabilityAssessmentRuleBaseline.md)
+取得漏洞評估規則比較基準。
+
+### [AzSqlDatabaseVulnerabilityAssessmentScanRecord](Get-AzSqlDatabaseVulnerabilityAssessmentScanRecord.md)
+取得與指定資料庫相關的所有漏洞評估掃描記錄 (s) 。
+
+### [AzSqlDatabaseVulnerabilityAssessmentSetting](Get-AzSqlDatabaseVulnerabilityAssessmentSetting.md)
+取得資料庫的漏洞評估設定。
+
+### [AzSqlDeletedDatabaseBackup](Get-AzSqlDeletedDatabaseBackup.md)
+取得您可以還原的已刪除資料庫。
+
+### [AzSqlDeletedInstanceDatabaseBackup](Get-AzSqlDeletedInstanceDatabaseBackup.md)
+取得您可以還原的已刪除資料庫。
+
+### [AzSqlElasticPool](Get-AzSqlElasticPool.md)
+在 Azure SQL 資料庫中取得彈性池及其屬性值。
+
+### [AzSqlElasticPoolActivity](Get-AzSqlElasticPoolActivity.md)
+取得彈性池中作業的狀態。
+
+### [AzSqlElasticPoolAdvisor](Get-AzSqlElasticPoolAdvisor.md)
+取得 Azure SQL 彈性池的一個或多個顧問。
+
+### [AzSqlElasticPoolDatabase](Get-AzSqlElasticPoolDatabase.md)
+在彈性池中取得彈性資料庫及其屬性值。
+
+### [AzSqlElasticPoolRecommendation](Get-AzSqlElasticPoolRecommendation.md)
+取得彈性池建議。
+
+### [AzSqlElasticPoolRecommendedAction](Get-AzSqlElasticPoolRecommendedAction.md)
+針對 Azure SQL 彈性 Pool Advisor 取得一或多個建議的動作。
+
+### [AzSqlInstance](Get-AzSqlInstance.md)
+傳回有關 Azure SQL Managed 資料庫實例的資訊。
+
+### [AzSqlInstanceAdvancedDataSecurityPolicy](Get-AzSqlInstanceAdvancedDataSecurityPolicy.md)
+取得受管理實例的高級資料安全性原則。
+
+### [AzSqlInstanceDatabase](Get-AzSqlInstanceDatabase.md)
+傳回有關 Azure SQL Managed 實例資料庫的資訊。
+
+### [AzSqlInstanceDatabaseBackupShortTermRetentionPolicy](Get-AzSqlInstanceDatabaseBackupShortTermRetentionPolicy.md)
+取得備份短期保留原則。
+
+### [AzSqlInstanceDatabaseGeoBackup](Get-AzSqlInstanceDatabaseGeoBackup.md)
+傳回有關 Azure SQL Managed 實例資料庫冗余備份的資訊。
+
+### [AzSqlInstanceDatabaseSensitivityClassification](Get-AzSqlInstanceDatabaseSensitivityClassification.md)
+取得 Azure SQL managed 實例資料庫中資料行的目前資訊類型和敏感度標籤。
+
+### [AzSqlInstanceDatabaseSensitivityRecommendation](Get-AzSqlInstanceDatabaseSensitivityRecommendation.md)
+取得 Azure SQL managed 實例資料庫中資料行的建議資訊類型和敏感度標籤。
+
+### [AzSqlInstanceDatabaseVulnerabilityAssessmentRuleBaseline](Get-AzSqlInstanceDatabaseVulnerabilityAssessmentRuleBaseline.md)
+取得漏洞評估規則比較基準。
+
+### [AzSqlInstanceDatabaseVulnerabilityAssessmentScanRecord](Get-AzSqlInstanceDatabaseVulnerabilityAssessmentScanRecord.md)
+取得與指定的受管理資料庫相關的所有漏洞評估掃描記錄 (s) 。
+
+### [AzSqlInstanceDatabaseVulnerabilityAssessmentSetting](Get-AzSqlInstanceDatabaseVulnerabilityAssessmentSetting.md)
+取得受管理資料庫的漏洞評估設定。
+
+### [AzSqlInstanceVulnerabilityAssessmentSetting](Get-AzSqlInstanceVulnerabilityAssessmentSetting.md)
+取得受管理實例的漏洞評估設定。
+
+### [AzSqlServer](Get-AzSqlServer.md)
+傳回 SQL 資料庫伺服器的相關資訊。
+
+### [AzSqlServerActiveDirectoryAdministrator](Get-AzSqlServerActiveDirectoryAdministrator.md)
+取得有關 SQL Server Azure AD 管理員的資訊。
+
+### [AzSqlServerAdvancedThreatProtectionPolicy](Get-AzSqlServerAdvancedThreatProtectionPolicy.md)
+取得伺服器的高級威脅防護原則。
+
+### [AzSqlServerAdvisor](Get-AzSqlServerAdvisor.md)
+取得一或多個 Azure SQL Server 顧問。
+
+### [AzSqlServerAuditing](Get-AzSqlServerAuditing.md)
+取得 Azure SQL server 的審核設定。
+
+### [AzSqlServerCommunicationLink](Get-AzSqlServerCommunicationLink.md)
+取得資料庫伺服器間彈性資料庫事務的通訊連結。
+
+### [AzSqlServerDisasterRecoveryConfiguration](Get-AzSqlServerDisasterRecoveryConfiguration.md)
+取得資料庫伺服器系統復原設定。
+
+### [AzSqlServerDisasterRecoveryConfigurationActivity](Get-AzSqlServerDisasterRecoveryConfigurationActivity.md)
+取得資料庫伺服器系統復原設定的活動。
+
+### [AzSqlServerDnsAlias](Get-AzSqlServerDnsAlias.md)
+取得或列出 Azure SQL Server DNS 別名。
+
+### [AzSqlServerFirewallRule](Get-AzSqlServerFirewallRule.md)
+取得 SQL 資料庫伺服器的防火牆規則。
+
+### [AzSqlServerKeyVaultKey](Get-AzSqlServerKeyVaultKey.md)
+取得 SQL server 的主要保存庫金鑰。
+
+### [AzSqlServerRecommendedAction](Get-AzSqlServerRecommendedAction.md)
+針對 Azure SQL Server Advisor 取得一或多個建議的動作。
+
+### [AzSqlServerServiceObjective](Get-AzSqlServerServiceObjective.md)
+取得 Azure SQL 資料庫伺服器的服務目標。
+
+### [AzSqlServerThreatDetectionPolicy](Get-AzSqlServerThreatDetectionPolicy.md)
+取得伺服器的威脅偵測原則。
+
+### [AzSqlServerTransparentDataEncryptionProtector](Get-AzSqlServerTransparentDataEncryptionProtector.md)
+取得透明的資料加密 (TDE) 保護器
+
+### [AzSqlServerUpgradeHint](Get-AzSqlServerUpgradeHint.md)
+取得升級 Azure SQL 資料庫伺服器的定價層提示。
+
+### [AzSqlServerVirtualNetworkRule](Get-AzSqlServerVirtualNetworkRule.md)
+取得或列出 Azure SQL Server 虛擬網路規則。
+
+### [AzSqlServerVulnerabilityAssessmentSetting](Get-AzSqlServerVulnerabilityAssessmentSetting.md)
+取得伺服器的漏洞評估設定。
+
+### [AzSqlSyncAgent](Get-AzSqlSyncAgent.md)
+傳回有關 Azure SQL 同步處理代理程式的資訊。
+
+### [AzSqlSyncAgentLinkedDatabase](Get-AzSqlSyncAgentLinkedDatabase.md)
+傳回同步處理代理程式所連結之 SQL Server 資料庫的相關資訊。
+
+### [AzSqlSyncGroup](Get-AzSqlSyncGroup.md)
+傳回有關 Azure SQL 資料庫同步處理群組的資訊。
+
+### [AzSqlSyncGroupLog](Get-AzSqlSyncGroupLog.md)
+傳回 Azure SQL 資料庫同步處理群組的記錄。
+
+### [AzSqlSyncMember](Get-AzSqlSyncMember.md)
+傳回有關 Azure SQL 資料庫同步處理成員的資訊。
+
+### [AzSqlSyncSchema](Get-AzSqlSyncSchema.md)
+傳回成員資料庫或中心資料庫同步處理架構的相關資訊。
+
+### [AzSqlVirtualCluster](Get-AzSqlVirtualCluster.md)
+傳回有關 Azure SQL 虛擬叢集的資訊。
+
+### [新-AzSqlDatabase](New-AzSqlDatabase.md)
+建立資料庫或彈性資料庫。
+
+### [新-AzSqlDatabaseCopy](New-AzSqlDatabaseCopy.md)
+建立在目前時間使用快照的 SQL 資料庫複本。
+
+### [新-AzSqlDatabaseDataMaskingRule](New-AzSqlDatabaseDataMaskingRule.md)
+建立資料庫的資料遮罩規則。
+
+### [新-AzSqlDatabaseExport](New-AzSqlDatabaseExport.md)
+將 Azure SQL 資料庫作為 bacpac 檔案匯出至儲存空間帳戶。
+
+### [新-AzSqlDatabaseFailoverGroup](New-AzSqlDatabaseFailoverGroup.md)
+這個命令會建立新的 Azure SQL Database 容錯移轉群組。
+
+### [新-AzSqlDatabaseImport](New-AzSqlDatabaseImport.md)
+匯入 bacpac 檔案，然後在伺服器上建立新資料庫。
+
+### [新-AzSqlDatabaseRestorePoint](New-AzSqlDatabaseRestorePoint.md)
+建立可還原 SQL 資料庫的新還原點。
+
+### [新-AzSqlDatabaseSecondary](New-AzSqlDatabaseSecondary.md)
+建立現有資料庫的次要資料庫並開始資料複製。
+
+### [新-AzSqlElasticPool](New-AzSqlElasticPool.md)
+針對 SQL 資料庫建立彈性資料庫池。
+
+### [新-AzSqlInstance](New-AzSqlInstance.md)
+建立 Azure SQL Database Managed 實例。
+
+### [新-AzSqlInstanceDatabase](New-AzSqlInstanceDatabase.md)
+建立 Azure SQL Managed 實例資料庫。
+
+### [新-AzSqlServer](New-AzSqlServer.md)
+建立 SQL 資料庫伺服器。
+
+### [新-AzSqlServerCommunicationLink](New-AzSqlServerCommunicationLink.md)
+建立兩個 SQL 資料庫伺服器之間彈性資料庫交易的通訊連結。
+
+### [新-AzSqlServerDisasterRecoveryConfiguration](New-AzSqlServerDisasterRecoveryConfiguration.md)
+建立資料庫伺服器系統復原設定。
+
+### [新-AzSqlServerDnsAlias](New-AzSqlServerDnsAlias.md)
+這個命令會建立新的 Azure SQL Server DNS 別名。
+
+### [新-AzSqlServerFirewallRule](New-AzSqlServerFirewallRule.md)
+建立 SQL 資料庫伺服器的防火牆規則。
+
+### [新-AzSqlServerVirtualNetworkRule](New-AzSqlServerVirtualNetworkRule.md)
+建立 Azure SQL Server 虛擬網路規則。 
+
+### [新-AzSqlSyncAgent](New-AzSqlSyncAgent.md)
+建立 Azure SQL 同步處理代理程式。
+
+### [新-AzSqlSyncAgentKey](New-AzSqlSyncAgentKey.md)
+建立 Azure SQL 同步處理代理程式金鑰。
+
+### [新-AzSqlSyncGroup](New-AzSqlSyncGroup.md)
+建立 Azure SQL 資料庫同步處理群組。
+
+### [新-AzSqlSyncMember](New-AzSqlSyncMember.md)
+建立 Azure SQL 資料庫同步處理成員。
+
+### [移除-AzSqlDatabase](Remove-AzSqlDatabase.md)
+移除 Azure SQL 資料庫。
+
+### [移除-AzSqlDatabaseDataMaskingRule](Remove-AzSqlDatabaseDataMaskingRule.md)
+從資料庫移除資料遮罩規則。
+
+### [移除-AzSqlDatabaseFailoverGroup](Remove-AzSqlDatabaseFailoverGroup.md)
+移除 [Azure SQL 資料庫容錯移轉] 群組。
+
+### [移除-AzSqlDatabaseFromFailoverGroup](Remove-AzSqlDatabaseFromFailoverGroup.md)
+從 Azure SQL Database 容錯移轉群組中移除一或多個資料庫。
+
+### [移除-AzSqlDatabaseLongTermRetentionBackup](Remove-AzSqlDatabaseLongTermRetentionBackup.md)
+刪除長期保留備份。
+
+### [移除-AzSqlDatabaseRestorePoint](Remove-AzSqlDatabaseRestorePoint.md)
+從 SQL 資料庫移除指定的還原點。
+
+### [移除-AzSqlDatabaseSecondary](Remove-AzSqlDatabaseSecondary.md)
+終止 SQL 資料庫與指定的次要資料庫之間的資料複製。
+
+### [移除-AzSqlDatabaseSensitivityClassification](Remove-AzSqlDatabaseSensitivityClassification.md)
+移除資料庫中資料行的資訊類型及敏感度標籤。
+
+### [移除-AzSqlDatabaseThreatDetectionPolicy](Remove-AzSqlDatabaseThreatDetectionPolicy.md)
+從資料庫中移除威脅偵測原則。
+
+### [移除-AzSqlElasticPool](Remove-AzSqlElasticPool.md)
+刪除彈性資料庫池。
+
+### [移除-AzSqlInstance](Remove-AzSqlInstance.md)
+移除 Azure SQL Managed 資料庫實例。
+
+### [移除-AzSqlInstanceDatabase](Remove-AzSqlInstanceDatabase.md)
+移除 Azure SQL Managed 實例資料庫。
+
+### [移除-AzSqlInstanceDatabaseSensitivityClassification](Remove-AzSqlInstanceDatabaseSensitivityClassification.md)
+移除 Azure SQL managed 實例資料庫中資料行的資訊類型和敏感度標籤。
+
+### [移除-AzSqlServer](Remove-AzSqlServer.md)
+移除 Azure SQL 資料庫伺服器。
+
+### [移除-AzSqlServerActiveDirectoryAdministrator](Remove-AzSqlServerActiveDirectoryAdministrator.md)
+移除 SQL Server 的 Azure AD 管理員。
+
+### [移除-AzSqlServerCommunicationLink](Remove-AzSqlServerCommunicationLink.md)
+刪除兩個伺服器間彈性資料庫交易的通訊連結。
+
+### [移除-AzSqlServerDisasterRecoveryConfiguration](Remove-AzSqlServerDisasterRecoveryConfiguration.md)
+移除 SQL 資料庫伺服器系統復原設定。
+
+### [移除-AzSqlServerDnsAlias](Remove-AzSqlServerDnsAlias.md)
+移除 Azure SQL Server DNS 別名。
+
+### [移除-AzSqlServerFirewallRule](Remove-AzSqlServerFirewallRule.md)
+從 SQL 資料庫伺服器刪除防火牆規則。
+
+### [移除-AzSqlServerKeyVaultKey](Remove-AzSqlServerKeyVaultKey.md)
+從 SQL server 移除金鑰保存庫金鑰。
+
+### [移除-AzSqlServerThreatDetectionPolicy](Remove-AzSqlServerThreatDetectionPolicy.md)
+從伺服器移除威脅偵測原則。
+
+### [移除-AzSqlServerVirtualNetworkRule](Remove-AzSqlServerVirtualNetworkRule.md)
+刪除 Azure SQL Server 虛擬網路規則。
+
+### [移除-AzSqlSyncAgent](Remove-AzSqlSyncAgent.md)
+移除 Azure SQL 同步處理代理程式。
+
+### [移除-AzSqlSyncGroup](Remove-AzSqlSyncGroup.md)
+移除 Azure SQL 資料庫同步處理群組。
+
+### [移除-AzSqlSyncMember](Remove-AzSqlSyncMember.md)
+移除 Azure SQL 資料庫同步處理成員。
+
+### [移除-AzSqlVirtualCluster](Remove-AzSqlVirtualCluster.md)
+移除 Azure SQL 虛擬叢集。
+
+### [Restore-AzSqlDatabase](Restore-AzSqlDatabase.md)
+還原 SQL 資料庫。
+
+### [Restore-AzSqlInstanceDatabase](Restore-AzSqlInstanceDatabase.md)
+還原 Azure SQL Managed 實例資料庫。
+
+### [Resume-AzSqlDatabase](Resume-AzSqlDatabase.md)
+繼續 SQL 資料倉儲資料庫。
+
+### [Set-AzSqlDatabase](Set-AzSqlDatabase.md)
+為資料庫設定屬性，或將現有資料庫移至彈性池中。
+
+### [Set-AzSqlDatabaseAdvisorAutoExecuteStatus](Set-AzSqlDatabaseAdvisorAutoExecuteStatus.md)
+修改 Azure SQL Database Advisor 的自動執行狀態。
+
+### [Set-AzSqlDatabaseAuditing](Set-AzSqlDatabaseAuditing.md)
+變更 Azure SQL 資料庫的審核設定。
+
+### [Set-AzSqlDatabaseBackupLongTermRetentionPolicy](Set-AzSqlDatabaseBackupLongTermRetentionPolicy.md)
+設定伺服器的長期保留原則。
+
+### [Set-AzSqlDatabaseBackupShortTermRetentionPolicy](Set-AzSqlDatabaseBackupShortTermRetentionPolicy.md)
+設定 [備份短期保留原則]。
+
+### [Set-AzSqlDatabaseDataMaskingPolicy](Set-AzSqlDatabaseDataMaskingPolicy.md)
+為資料庫設定資料遮罩。
+
+### [Set-AzSqlDatabaseDataMaskingRule](Set-AzSqlDatabaseDataMaskingRule.md)
+為資料庫設定資料遮罩規則的屬性。
+
+### [Set-AzSqlDatabaseFailoverGroup](Set-AzSqlDatabaseFailoverGroup.md)
+修改 Azure SQL Database 容錯移轉群組的設定。
+
+### [Set-AzSqlDatabaseGeoBackupPolicy](Set-AzSqlDatabaseGeoBackupPolicy.md)
+設定資料庫地域備份原則。
+
+### [Set-AzSqlDatabaseRecommendedActionState](Set-AzSqlDatabaseRecommendedActionState.md)
+更新 Azure SQL Database 建議動作的狀態。
+
+### [Set-AzSqlDatabaseSecondary](Set-AzSqlDatabaseSecondary.md)
+將次要資料庫切換為主要資料庫，以便啟動容錯移轉。
+
+### [Set-AzSqlDatabaseSensitivityClassification](Set-AzSqlDatabaseSensitivityClassification.md)
+設定資料庫中資料行的資訊類型及敏感度標籤。
+
+### [Set-AzSqlDatabaseThreatDetectionPolicy](Set-AzSqlDatabaseThreatDetectionPolicy.md)
+在資料庫上設定威脅偵測原則。
+
+### [Set-AzSqlDatabaseTransparentDataEncryption](Set-AzSqlDatabaseTransparentDataEncryption.md)
+修改資料庫的 TDE 屬性。
+
+### [Set-AzSqlDatabaseVulnerabilityAssessmentRuleBaseline](Set-AzSqlDatabaseVulnerabilityAssessmentRuleBaseline.md)
+設定漏洞評估規則比較基準。
+
+### [Set-AzSqlElasticPool](Set-AzSqlElasticPool.md)
+修改 Azure SQL 資料庫中彈性資料庫池的屬性。
+
+### [Set-AzSqlElasticPoolAdvisorAutoExecuteStatus](Set-AzSqlElasticPoolAdvisorAutoExecuteStatus.md)
+更新 Azure SQL 彈性 Pool Advisor 的自動執行狀態。
+
+### [Set-AzSqlElasticPoolRecommendedActionState](Set-AzSqlElasticPoolRecommendedActionState.md)
+更新 Azure SQL 彈性池建議動作的狀態。
+
+### [Set-AzSqlInstance](Set-AzSqlInstance.md)
+設定 Azure SQL Database Managed 實例的屬性。
+
+### [Set-AzSqlInstanceDatabaseBackupShortTermRetentionPolicy](Set-AzSqlInstanceDatabaseBackupShortTermRetentionPolicy.md)
+設定 [備份短期保留原則]。
+
+### [Set-AzSqlInstanceDatabaseSensitivityClassification](Set-AzSqlInstanceDatabaseSensitivityClassification.md)
+在 Azure SQL managed 實例資料庫中設定欄的資訊類型和敏感度標籤。
+
+### [Set-AzSqlInstanceDatabaseVulnerabilityAssessmentRuleBaseline](Set-AzSqlInstanceDatabaseVulnerabilityAssessmentRuleBaseline.md)
+設定漏洞評估規則比較基準。
+
+### [Set-AzSqlServer](Set-AzSqlServer.md)
+修改 SQL 資料庫伺服器的屬性。
+
+### [Set-AzSqlServerActiveDirectoryAdministrator](Set-AzSqlServerActiveDirectoryAdministrator.md)
+為 SQL Server 置備 Azure AD 管理員。
+
+### [Set-AzSqlServerAdvisorAutoExecuteStatus](Set-AzSqlServerAdvisorAutoExecuteStatus.md)
+更新 Azure SQL Server Advisor 的自動執行狀態。
+
+### [Set-AzSqlServerAuditing](Set-AzSqlServerAuditing.md)
+變更 Azure SQL server 的審核設定。
+
+### [Set-AzSqlServerDisasterRecoveryConfiguration](Set-AzSqlServerDisasterRecoveryConfiguration.md)
+修改資料庫伺服器的恢復設定。
+
+### [Set-AzSqlServerDnsAlias](Set-AzSqlServerDnsAlias.md)
+修改 Azure SQL Server DNS 別名指向的目標伺服器
+
+### [Set-AzSqlServerFirewallRule](Set-AzSqlServerFirewallRule.md)
+修改 Azure SQL 資料庫伺服器中的防火牆規則。
+
+### [Set-AzSqlServerRecommendedActionState](Set-AzSqlServerRecommendedActionState.md)
+更新 Azure SQL Server 建議動作的狀態。
+
+### [Set-AzSqlServerThreatDetectionPolicy](Set-AzSqlServerThreatDetectionPolicy.md)
+在伺服器上設定威脅偵測原則。
+
+### [Set-AzSqlServerTransparentDataEncryptionProtector](Set-AzSqlServerTransparentDataEncryptionProtector.md)
+針對 SQL server 設定透明的資料加密 (TDE) 保護程式。
+
+### [Set-AzSqlServerVirtualNetworkRule](Set-AzSqlServerVirtualNetworkRule.md)
+修改 Azure SQL Server 虛擬網路規則的設定。
+
+### [開始-AzSqlDatabaseExecuteIndexRecommendation](Start-AzSqlDatabaseExecuteIndexRecommendation.md)
+啟動執行建議索引作業的工作流程。
+
+### [開始-AzSqlDatabaseVulnerabilityAssessmentScan](Start-AzSqlDatabaseVulnerabilityAssessmentScan.md)
+啟動漏洞評估掃描。
+
+### [開始-AzSqlInstanceDatabaseVulnerabilityAssessmentScan](Start-AzSqlInstanceDatabaseVulnerabilityAssessmentScan.md)
+啟動漏洞評估掃描。
+
+### [開始-AzSqlSyncGroupSync](Start-AzSqlSyncGroupSync.md)
+啟動同步處理群組同步處理。
+
+### [停止 AzSqlDatabaseActivity](Stop-AzSqlDatabaseActivity.md)
+取消資料庫上的非同步更新操作。
+
+### [停止 AzSqlDatabaseExecuteIndexRecommendation](Stop-AzSqlDatabaseExecuteIndexRecommendation.md)
+停止執行建議索引作業的工作流程。
+
+### [停止 AzSqlElasticPoolActivity](Stop-AzSqlElasticPoolActivity.md)
+取消彈性池中的非同步更新作業。
+
+### [停止 AzSqlSyncGroupSync](Stop-AzSqlSyncGroupSync.md)
+停止同步處理群組同步處理。
+
+### [暫停-AzSqlDatabase](Suspend-AzSqlDatabase.md)
+暫停 SQL 資料倉儲資料庫。
+
+### [切換 AzSqlDatabaseFailoverGroup](Switch-AzSqlDatabaseFailoverGroup.md)
+執行 Azure SQL Database 容錯移轉群組的容錯移轉。
+
+### [更新-AzSqlDatabaseVulnerabilityAssessmentSetting](Update-AzSqlDatabaseVulnerabilityAssessmentSetting.md)
+更新資料庫的漏洞評估設定。
+
+### [更新-AzSqlInstanceDatabaseVulnerabilityAssessmentSetting](Update-AzSqlInstanceDatabaseVulnerabilityAssessmentSetting.md)
+更新受管理資料庫的漏洞評估設定。
+
+### [更新-AzSqlInstanceVulnerabilityAssessmentSetting](Update-AzSqlInstanceVulnerabilityAssessmentSetting.md)
+更新受管理實例的漏洞評估設定。
+
+### [更新-AzSqlServerVulnerabilityAssessmentSetting](Update-AzSqlServerVulnerabilityAssessmentSetting.md)
+補救伺服器的漏洞評估設定。
+
+### [更新-AzSqlSyncGroup](Update-AzSqlSyncGroup.md)
+更新 Azure SQL 資料庫同步處理群組。
+
+### [更新-AzSqlSyncMember](Update-AzSqlSyncMember.md)
+更新 Azure SQL 資料庫同步處理成員。
+
+### [更新-AzSqlSyncSchema](Update-AzSqlSyncSchema.md)
+更新同步處理成員資料庫或同步處理中樞資料庫的同步處理架構。
+它會從真實資料庫取得最新的資料庫架構，然後使用它來重新整理同步處理中繼資料資料庫所緩存的架構。
+如果指定了 "SyncMemberName"，則會重新整理成員資料庫架構;如果不是，它會重新整理中心資料庫架構。
+
