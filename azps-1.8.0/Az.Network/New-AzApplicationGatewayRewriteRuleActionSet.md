@@ -1,0 +1,115 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
+Module Name: Az.Network
+online version: https://docs.microsoft.com/en-us/powershell/module/az.network/new-azapplicationgatewayrewriteruleactionset
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGatewayRewriteRuleActionSet.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGatewayRewriteRuleActionSet.md
+ms.openlocfilehash: f13591a92b52e00ed94e93fec480d810037f061d
+ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "93621834"
+---
+# <span data-ttu-id="14be0-101">New-AzApplicationGatewayRewriteRuleActionSet</span><span class="sxs-lookup"><span data-stu-id="14be0-101">New-AzApplicationGatewayRewriteRuleActionSet</span></span>
+
+## <span data-ttu-id="14be0-102">摘要</span><span class="sxs-lookup"><span data-stu-id="14be0-102">SYNOPSIS</span></span>
+<span data-ttu-id="14be0-103">為應用程式閘道建立重寫規則 actionset。</span><span class="sxs-lookup"><span data-stu-id="14be0-103">Creates a rewrite rule actionset for an application gateway.</span></span>
+
+## <span data-ttu-id="14be0-104">句法</span><span class="sxs-lookup"><span data-stu-id="14be0-104">SYNTAX</span></span>
+
+```
+New-AzApplicationGatewayRewriteRuleActionSet
+ [-RequestHeaderConfiguration <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayHeaderConfiguration]>]
+ [-ResponseHeaderConfiguration <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayHeaderConfiguration]>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="14be0-105">說明</span><span class="sxs-lookup"><span data-stu-id="14be0-105">DESCRIPTION</span></span>
+<span data-ttu-id="14be0-106">**新的-AzApplicationGatewayRewriteRuleActionSet** Cmdlet 會針對 Azure 應用程式閘道建立重寫規則 actionset。</span><span class="sxs-lookup"><span data-stu-id="14be0-106">**The New-AzApplicationGatewayRewriteRuleActionSet** cmdlet creates a rewrite rule actionset for an Azure application gateway.</span></span>
+
+## <span data-ttu-id="14be0-107">示例</span><span class="sxs-lookup"><span data-stu-id="14be0-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="14be0-108">範例1</span><span class="sxs-lookup"><span data-stu-id="14be0-108">Example 1</span></span>
+```powershell
+PS C:\> $action = New-AzApplicationGatewayRewriteRuleActionSet -ResponseHeaderConfiguration $hc
+```
+
+<span data-ttu-id="14be0-109">這個命令會建立重寫規則 actionset，並將結果儲存在名為 $action 的變數中。</span><span class="sxs-lookup"><span data-stu-id="14be0-109">This command creates a rewrite rule actionset and stores the result in the variable named $action.</span></span>
+
+## <span data-ttu-id="14be0-110">參數</span><span class="sxs-lookup"><span data-stu-id="14be0-110">PARAMETERS</span></span>
+
+### <span data-ttu-id="14be0-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="14be0-111">-DefaultProfile</span></span>
+<span data-ttu-id="14be0-112">用於與 Azure 進行通訊的認證、帳戶、租使用者及訂閱。</span><span class="sxs-lookup"><span data-stu-id="14be0-112">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="14be0-113">-RequestHeaderConfiguration</span><span class="sxs-lookup"><span data-stu-id="14be0-113">-RequestHeaderConfiguration</span></span>
+<span data-ttu-id="14be0-114">要求標頭設定清單</span><span class="sxs-lookup"><span data-stu-id="14be0-114">List of request header configurations</span></span>
+
+```yaml
+Type: System.Collections.Generic.List`1[Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayHeaderConfiguration]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="14be0-115">-ResponseHeaderConfiguration</span><span class="sxs-lookup"><span data-stu-id="14be0-115">-ResponseHeaderConfiguration</span></span>
+<span data-ttu-id="14be0-116">回應標頭設定清單</span><span class="sxs-lookup"><span data-stu-id="14be0-116">List of response header configurations</span></span>
+
+```yaml
+Type: System.Collections.Generic.List`1[Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayHeaderConfiguration]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="14be0-117">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="14be0-117">CommonParameters</span></span>
+<span data-ttu-id="14be0-118">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="14be0-118">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="14be0-119">如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。</span><span class="sxs-lookup"><span data-stu-id="14be0-119">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="14be0-120">輸入</span><span class="sxs-lookup"><span data-stu-id="14be0-120">INPUTS</span></span>
+
+### <span data-ttu-id="14be0-121">所有</span><span class="sxs-lookup"><span data-stu-id="14be0-121">None</span></span>
+
+## <span data-ttu-id="14be0-122">輸出</span><span class="sxs-lookup"><span data-stu-id="14be0-122">OUTPUTS</span></span>
+
+### <span data-ttu-id="14be0-123">PSApplicationGatewayRewriteRuleActionSet 中的 [.]</span><span class="sxs-lookup"><span data-stu-id="14be0-123">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRewriteRuleActionSet</span></span>
+
+## <span data-ttu-id="14be0-124">筆記</span><span class="sxs-lookup"><span data-stu-id="14be0-124">NOTES</span></span>
+
+## <span data-ttu-id="14be0-125">相關連結</span><span class="sxs-lookup"><span data-stu-id="14be0-125">RELATED LINKS</span></span>
+
+[<span data-ttu-id="14be0-126">附加 AzApplicationGatewayRewriteRuleSet</span><span class="sxs-lookup"><span data-stu-id="14be0-126">Add-AzApplicationGatewayRewriteRuleSet</span></span>](./Add-AzApplicationGatewayRewriteRuleSet.md)
+
+[<span data-ttu-id="14be0-127">AzApplicationGatewayRewriteRuleSet</span><span class="sxs-lookup"><span data-stu-id="14be0-127">Get-AzApplicationGatewayRewriteRuleSet</span></span>](./Get-AzApplicationGatewayRewriteRuleSet.md)
+
+[<span data-ttu-id="14be0-128">新-AzApplicationGatewayRewriteRuleSet</span><span class="sxs-lookup"><span data-stu-id="14be0-128">New-AzApplicationGatewayRewriteRuleSet</span></span>](./New-AzApplicationGatewayRewriteRuleSet.md)
+
+[<span data-ttu-id="14be0-129">移除-AzApplicationGatewayRewriteRuleSet</span><span class="sxs-lookup"><span data-stu-id="14be0-129">Remove-AzApplicationGatewayRewriteRuleSet</span></span>](./Remove-AzApplicationGatewayRewriteRuleSet.md)
+
+[<span data-ttu-id="14be0-130">Set-AzApplicationGatewayRewriteRuleSet</span><span class="sxs-lookup"><span data-stu-id="14be0-130">Set-AzApplicationGatewayRewriteRuleSet</span></span>](./Set-AzApplicationGatewayRewriteRuleSet.md)
+
+[<span data-ttu-id="14be0-131">新-AzApplicationGatewayRewriteRule</span><span class="sxs-lookup"><span data-stu-id="14be0-131">New-AzApplicationGatewayRewriteRule</span></span>](./New-AzApplicationGatewayRewriteRule.md)
+
+[<span data-ttu-id="14be0-132">新-AzApplicationGatewayRewriteRuleHeaderConfiguration</span><span class="sxs-lookup"><span data-stu-id="14be0-132">New-AzApplicationGatewayRewriteRuleHeaderConfiguration</span></span>](./New-AzApplicationGatewayRewriteRuleHeaderConfiguration.md)
