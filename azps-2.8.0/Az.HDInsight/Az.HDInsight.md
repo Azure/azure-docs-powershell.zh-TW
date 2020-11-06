@@ -1,0 +1,131 @@
+---
+Module Name: Az.HDInsight
+Module Guid: 3fd1475f-cb23-4ffb-bf08-33d94b7d1acb
+Download Help Link: https://docs.microsoft.com/en-us/powershell/module/az.hdinsight
+Help Version: 4.1.2.0
+Locale: en-US
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/HDInsight/HDInsight/help/Az.HDInsight.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/HDInsight/HDInsight/help/Az.HDInsight.md
+ms.openlocfilehash: 33e1e9ac0b62d378954280d8dd81361c0d075a1e
+ms.sourcegitcommit: 0b94b9566124331d0b15eb7f5a811305c254172e
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "93611476"
+---
+# <span data-ttu-id="d0f74-101">Az （HDInsight）模組</span><span class="sxs-lookup"><span data-stu-id="d0f74-101">Az.HDInsight Module</span></span>
+## <span data-ttu-id="d0f74-102">說明</span><span class="sxs-lookup"><span data-stu-id="d0f74-102">Description</span></span>
+<span data-ttu-id="d0f74-103">本節中的主題檔在 Azure 資源管理器中，將 Microsoft Azure HDInsight 的 Azure PowerShell Cmdlet 記錄在 (ARM) 架構中。</span><span class="sxs-lookup"><span data-stu-id="d0f74-103">The topics in this section document the Azure PowerShell cmdlets for Microsoft Azure HDInsight in the Azure Resource Manager (ARM) framework.</span></span> <span data-ttu-id="d0f74-104">這些 Cmdlet 可用來管理 HDInsight 群集以及在其上執行的作業。</span><span class="sxs-lookup"><span data-stu-id="d0f74-104">These cmdlets are used to manage HDInsight clusters and the jobs that run on them.</span></span> <span data-ttu-id="d0f74-105">Cmdlet 存在於 Microsoft Azure. 命令命名空間中。</span><span class="sxs-lookup"><span data-stu-id="d0f74-105">The cmdlets exist in the Microsoft.Azure.Commands.HDInsight namespace.</span></span>
+
+## <span data-ttu-id="d0f74-106">Az （HDInsight） Cmdlet</span><span class="sxs-lookup"><span data-stu-id="d0f74-106">Az.HDInsight Cmdlets</span></span>
+### [<span data-ttu-id="d0f74-107">附加 AzHDInsightClusterIdentity</span><span class="sxs-lookup"><span data-stu-id="d0f74-107">Add-AzHDInsightClusterIdentity</span></span>](Add-AzHDInsightClusterIdentity.md)
+<span data-ttu-id="d0f74-108">將群集身分識別新增至群集設定物件。</span><span class="sxs-lookup"><span data-stu-id="d0f74-108">Adds a cluster identity to a cluster configuration object.</span></span>
+
+### [<span data-ttu-id="d0f74-109">附加 AzHDInsightComponentVersion</span><span class="sxs-lookup"><span data-stu-id="d0f74-109">Add-AzHDInsightComponentVersion</span></span>](Add-AzHDInsightComponentVersion.md)
+<span data-ttu-id="d0f74-110">將在群集中執行的服務的版本新增至群集設定物件。</span><span class="sxs-lookup"><span data-stu-id="d0f74-110">Adds a version for a service running in a cluster to a cluster configuration object.</span></span>
+
+### [<span data-ttu-id="d0f74-111">附加 AzHDInsightConfigValue</span><span class="sxs-lookup"><span data-stu-id="d0f74-111">Add-AzHDInsightConfigValue</span></span>](Add-AzHDInsightConfigValue.md)
+<span data-ttu-id="d0f74-112">將 Hadoop 設定值自訂和/或配置單元共用文件庫自訂新增至群集設定物件。</span><span class="sxs-lookup"><span data-stu-id="d0f74-112">Adds a Hadoop configuration value customization and/or a Hive shared library customization to a cluster configuration object.</span></span>
+
+### [<span data-ttu-id="d0f74-113">附加 AzHDInsightMetastore</span><span class="sxs-lookup"><span data-stu-id="d0f74-113">Add-AzHDInsightMetastore</span></span>](Add-AzHDInsightMetastore.md)
+<span data-ttu-id="d0f74-114">新增 SQL 資料庫，以作為 Hive 或 Oozie metastore 至群集設定物件。</span><span class="sxs-lookup"><span data-stu-id="d0f74-114">Adds a SQL Database to serve as a Hive or Oozie metastore to a cluster configuration object.</span></span>
+
+### [<span data-ttu-id="d0f74-115">附加 AzHDInsightScriptAction</span><span class="sxs-lookup"><span data-stu-id="d0f74-115">Add-AzHDInsightScriptAction</span></span>](Add-AzHDInsightScriptAction.md)
+<span data-ttu-id="d0f74-116">在群集設定物件中加入腳本動作。</span><span class="sxs-lookup"><span data-stu-id="d0f74-116">Adds a script action to a cluster configuration object.</span></span>
+
+### [<span data-ttu-id="d0f74-117">附加 AzHDInsightSecurityProfile</span><span class="sxs-lookup"><span data-stu-id="d0f74-117">Add-AzHDInsightSecurityProfile</span></span>](Add-AzHDInsightSecurityProfile.md)
+<span data-ttu-id="d0f74-118">新增安全設定檔至群集設定物件。</span><span class="sxs-lookup"><span data-stu-id="d0f74-118">Adds a security profile to a cluster configuration object.</span></span>
+
+### [<span data-ttu-id="d0f74-119">附加 AzHDInsightStorage</span><span class="sxs-lookup"><span data-stu-id="d0f74-119">Add-AzHDInsightStorage</span></span>](Add-AzHDInsightStorage.md)
+<span data-ttu-id="d0f74-120">將 Azure 儲存空間金鑰新增至群集設定物件。</span><span class="sxs-lookup"><span data-stu-id="d0f74-120">Adds an Azure Storage key to a cluster configuration object.</span></span>
+
+### [<span data-ttu-id="d0f74-121">Disable-AzHDInsightOperationsManagementSuite</span><span class="sxs-lookup"><span data-stu-id="d0f74-121">Disable-AzHDInsightOperationsManagementSuite</span></span>](Disable-AzHDInsightOperationsManagementSuite.md)
+<span data-ttu-id="d0f74-122">在 HDInsight 群集中停用作業管理套件 (OMS) ，而相關的記錄將停止流入在啟用期間指定的 OMS 工作區。</span><span class="sxs-lookup"><span data-stu-id="d0f74-122">Disables Operations Management Suite (OMS) in a HDInsight cluster and relevant logs will stop flowing to the OMS workspace specified during enable.</span></span>
+
+### [<span data-ttu-id="d0f74-123">Enable-AzHDInsightOperationsManagementSuite</span><span class="sxs-lookup"><span data-stu-id="d0f74-123">Enable-AzHDInsightOperationsManagementSuite</span></span>](Enable-AzHDInsightOperationsManagementSuite.md)
+<span data-ttu-id="d0f74-124">在 HDInsight 群集中啟用操作管理套件 (OMS) ，而相關的記錄將會傳送到 enable 中指定的 OMS 工作區。</span><span class="sxs-lookup"><span data-stu-id="d0f74-124">Enables Operations Management Suite (OMS) in a HDInsight cluster and relevant logs will be sent to the OMS workspace specified during enable.</span></span>
+
+### [<span data-ttu-id="d0f74-125">AzHDInsightCluster</span><span class="sxs-lookup"><span data-stu-id="d0f74-125">Get-AzHDInsightCluster</span></span>](Get-AzHDInsightCluster.md)
+<span data-ttu-id="d0f74-126">取得並列出與目前的訂閱或指定的資源群組相關聯的所有 Azure HDInsight 群集，或檢索特定的群集。</span><span class="sxs-lookup"><span data-stu-id="d0f74-126">Gets and lists all of the Azure HDInsight clusters associated with the current subscription or a specified resource group, or retrieves a specific cluster.</span></span>
+
+### [<span data-ttu-id="d0f74-127">AzHDInsightJob</span><span class="sxs-lookup"><span data-stu-id="d0f74-127">Get-AzHDInsightJob</span></span>](Get-AzHDInsightJob.md)
+<span data-ttu-id="d0f74-128">從群集取得作業的清單，並以逆序的時間順序列出這些作業，或檢索特定作業。</span><span class="sxs-lookup"><span data-stu-id="d0f74-128">Gets the list of jobs from a cluster and lists them in reverse chronological order, or retrieves a specific job.</span></span>
+
+### [<span data-ttu-id="d0f74-129">AzHDInsightJobOutput</span><span class="sxs-lookup"><span data-stu-id="d0f74-129">Get-AzHDInsightJobOutput</span></span>](Get-AzHDInsightJobOutput.md)
+<span data-ttu-id="d0f74-130">從與指定群集相關聯的儲存空間帳戶取得作業的記錄輸出。</span><span class="sxs-lookup"><span data-stu-id="d0f74-130">Gets the log output for a job from the storage account associated with a specified cluster.</span></span>
+
+### [<span data-ttu-id="d0f74-131">AzHDInsightOperationsManagementSuite</span><span class="sxs-lookup"><span data-stu-id="d0f74-131">Get-AzHDInsightOperationsManagementSuite</span></span>](Get-AzHDInsightOperationsManagementSuite.md)
+<span data-ttu-id="d0f74-132">取得群集上 (OMS) 安裝的 Operations Management Suite 狀態。</span><span class="sxs-lookup"><span data-stu-id="d0f74-132">Gets the status of Operations Management Suite (OMS) installation on the cluster.</span></span>
+
+### [<span data-ttu-id="d0f74-133">AzHDInsightPersistedScriptAction</span><span class="sxs-lookup"><span data-stu-id="d0f74-133">Get-AzHDInsightPersistedScriptAction</span></span>](Get-AzHDInsightPersistedScriptAction.md)
+<span data-ttu-id="d0f74-134">取得群集的持續式腳本動作並依時間順序列出它們，或取得指定的持久化腳本動作的詳細資料。</span><span class="sxs-lookup"><span data-stu-id="d0f74-134">Gets the persisted script actions for a cluster and lists them in chronological order, or gets details for a specified persisted script action.</span></span>
+
+### [<span data-ttu-id="d0f74-135">AzHDInsightProperty</span><span class="sxs-lookup"><span data-stu-id="d0f74-135">Get-AzHDInsightProperty</span></span>](Get-AzHDInsightProperty.md)
+<span data-ttu-id="d0f74-136">取得 HDInsight 服務的相關屬性，例如可用的位置和容量。</span><span class="sxs-lookup"><span data-stu-id="d0f74-136">Gets properties about the HDInsight service, such as available locations and capacity.</span></span>
+
+### [<span data-ttu-id="d0f74-137">AzHDInsightScriptActionHistory</span><span class="sxs-lookup"><span data-stu-id="d0f74-137">Get-AzHDInsightScriptActionHistory</span></span>](Get-AzHDInsightScriptActionHistory.md)
+<span data-ttu-id="d0f74-138">取得群集的腳本動作歷程記錄，並以逆序的時間順序列出它，或是取得先前執行的腳本動作的詳細資料。</span><span class="sxs-lookup"><span data-stu-id="d0f74-138">Gets the script action history for a cluster and lists it in reverse chronological order, or gets details of a previously executed script action.</span></span>
+
+### [<span data-ttu-id="d0f74-139">授與 AzHDInsightRdpServicesAccess</span><span class="sxs-lookup"><span data-stu-id="d0f74-139">Grant-AzHDInsightRdpServicesAccess</span></span>](Grant-AzHDInsightRdpServicesAccess.md)
+<span data-ttu-id="d0f74-140">授與 Windows 群集的 RDP 存取權。</span><span class="sxs-lookup"><span data-stu-id="d0f74-140">Grants RDP access to the Windows cluster.</span></span>
+
+### [<span data-ttu-id="d0f74-141">Invoke-AzHDInsightHiveJob</span><span class="sxs-lookup"><span data-stu-id="d0f74-141">Invoke-AzHDInsightHiveJob</span></span>](Invoke-AzHDInsightHiveJob.md)
+<span data-ttu-id="d0f74-142">將 Hive 查詢提交至 HDInsight 群集，並以一個作業來檢索查詢結果。</span><span class="sxs-lookup"><span data-stu-id="d0f74-142">Submits a Hive query to an HDInsight cluster and retrieves query results in one operation.</span></span>
+
+### [<span data-ttu-id="d0f74-143">新-AzHDInsightCluster</span><span class="sxs-lookup"><span data-stu-id="d0f74-143">New-AzHDInsightCluster</span></span>](New-AzHDInsightCluster.md)
+<span data-ttu-id="d0f74-144">在指定的 [資源] 群組中，為目前的訂閱建立 Azure HDInsight 群集。</span><span class="sxs-lookup"><span data-stu-id="d0f74-144">Creates an Azure HDInsight cluster in the specified resource group for the current subscription.</span></span>
+
+### [<span data-ttu-id="d0f74-145">新-AzHDInsightClusterConfig</span><span class="sxs-lookup"><span data-stu-id="d0f74-145">New-AzHDInsightClusterConfig</span></span>](New-AzHDInsightClusterConfig.md)
+<span data-ttu-id="d0f74-146">建立描述 Azure HDInsight 群集設定的非持久化群集設定物件。</span><span class="sxs-lookup"><span data-stu-id="d0f74-146">Creates a non-persisted cluster configuration object that describes an Azure HDInsight cluster configuration.</span></span>
+
+### [<span data-ttu-id="d0f74-147">新-AzHDInsightHiveJobDefinition</span><span class="sxs-lookup"><span data-stu-id="d0f74-147">New-AzHDInsightHiveJobDefinition</span></span>](New-AzHDInsightHiveJobDefinition.md)
+<span data-ttu-id="d0f74-148">建立 Hive 工作物件。</span><span class="sxs-lookup"><span data-stu-id="d0f74-148">Creates a Hive job object.</span></span>
+
+### [<span data-ttu-id="d0f74-149">新-AzHDInsightMapReduceJobDefinition</span><span class="sxs-lookup"><span data-stu-id="d0f74-149">New-AzHDInsightMapReduceJobDefinition</span></span>](New-AzHDInsightMapReduceJobDefinition.md)
+<span data-ttu-id="d0f74-150">建立 MapReduce 工作物件。</span><span class="sxs-lookup"><span data-stu-id="d0f74-150">Creates a MapReduce job object.</span></span>
+
+### [<span data-ttu-id="d0f74-151">新-AzHDInsightPigJobDefinition</span><span class="sxs-lookup"><span data-stu-id="d0f74-151">New-AzHDInsightPigJobDefinition</span></span>](New-AzHDInsightPigJobDefinition.md)
+<span data-ttu-id="d0f74-152">建立豬工作物件。</span><span class="sxs-lookup"><span data-stu-id="d0f74-152">Creates a Pig job object.</span></span>
+
+### [<span data-ttu-id="d0f74-153">新-AzHDInsightSqoopJobDefinition</span><span class="sxs-lookup"><span data-stu-id="d0f74-153">New-AzHDInsightSqoopJobDefinition</span></span>](New-AzHDInsightSqoopJobDefinition.md)
+<span data-ttu-id="d0f74-154">建立 Sqoop 工作物件。</span><span class="sxs-lookup"><span data-stu-id="d0f74-154">Creates a Sqoop job object.</span></span>
+
+### [<span data-ttu-id="d0f74-155">新-AzHDInsightStreamingMapReduceJobDefinition</span><span class="sxs-lookup"><span data-stu-id="d0f74-155">New-AzHDInsightStreamingMapReduceJobDefinition</span></span>](New-AzHDInsightStreamingMapReduceJobDefinition.md)
+<span data-ttu-id="d0f74-156">建立流式處理 MapReduce 工作物件。</span><span class="sxs-lookup"><span data-stu-id="d0f74-156">Creates a Streaming MapReduce job object.</span></span>
+
+### [<span data-ttu-id="d0f74-157">移除-AzHDInsightCluster</span><span class="sxs-lookup"><span data-stu-id="d0f74-157">Remove-AzHDInsightCluster</span></span>](Remove-AzHDInsightCluster.md)
+<span data-ttu-id="d0f74-158">從目前的訂閱中移除指定的 HDInsight 群集。</span><span class="sxs-lookup"><span data-stu-id="d0f74-158">Removes the specified HDInsight cluster from the current subscription.</span></span>
+
+### [<span data-ttu-id="d0f74-159">移除-AzHDInsightPersistedScriptAction</span><span class="sxs-lookup"><span data-stu-id="d0f74-159">Remove-AzHDInsightPersistedScriptAction</span></span>](Remove-AzHDInsightPersistedScriptAction.md)
+<span data-ttu-id="d0f74-160">從 HDInsight 群集移除持久的腳本動作。</span><span class="sxs-lookup"><span data-stu-id="d0f74-160">Removes an persisted script action from an HDInsight cluster.</span></span>
+
+### [<span data-ttu-id="d0f74-161">吊銷-AzHDInsightRdpServicesAccess</span><span class="sxs-lookup"><span data-stu-id="d0f74-161">Revoke-AzHDInsightRdpServicesAccess</span></span>](Revoke-AzHDInsightRdpServicesAccess.md)
+<span data-ttu-id="d0f74-162">停用 RDP 對 Windows 群集的存取權。</span><span class="sxs-lookup"><span data-stu-id="d0f74-162">Disables RDP access to a Windows cluster.</span></span>
+
+### [<span data-ttu-id="d0f74-163">Set-AzHDInsightClusterSize</span><span class="sxs-lookup"><span data-stu-id="d0f74-163">Set-AzHDInsightClusterSize</span></span>](Set-AzHDInsightClusterSize.md)
+<span data-ttu-id="d0f74-164">設定指定群集中的工作人員節點數。</span><span class="sxs-lookup"><span data-stu-id="d0f74-164">Sets the number of Worker nodes in a specified cluster.</span></span>
+
+### [<span data-ttu-id="d0f74-165">Set-AzHDInsightDefaultStorage</span><span class="sxs-lookup"><span data-stu-id="d0f74-165">Set-AzHDInsightDefaultStorage</span></span>](Set-AzHDInsightDefaultStorage.md)
+<span data-ttu-id="d0f74-166">在群集設定物件中設定預設儲存空間帳戶設定。</span><span class="sxs-lookup"><span data-stu-id="d0f74-166">Sets the default Storage account setting in a cluster configuration object.</span></span>
+
+### [<span data-ttu-id="d0f74-167">Set-AzHDInsightGatewayCredential</span><span class="sxs-lookup"><span data-stu-id="d0f74-167">Set-AzHDInsightGatewayCredential</span></span>](Set-AzHDInsightGatewayCredential.md)
+<span data-ttu-id="d0f74-168">設定 Azure HDInsight 群集的閘道 HTTP 認證。</span><span class="sxs-lookup"><span data-stu-id="d0f74-168">Sets the gateway HTTP credentials of an Azure HDInsight cluster.</span></span>
+
+### [<span data-ttu-id="d0f74-169">Set-AzHDInsightPersistedScriptAction</span><span class="sxs-lookup"><span data-stu-id="d0f74-169">Set-AzHDInsightPersistedScriptAction</span></span>](Set-AzHDInsightPersistedScriptAction.md)
+<span data-ttu-id="d0f74-170">將先前執行的腳本動作設為持久化的腳本動作。</span><span class="sxs-lookup"><span data-stu-id="d0f74-170">Sets a previously executed script action to be a persisted script action.</span></span>
+
+### [<span data-ttu-id="d0f74-171">開始-AzHDInsightJob</span><span class="sxs-lookup"><span data-stu-id="d0f74-171">Start-AzHDInsightJob</span></span>](Start-AzHDInsightJob.md)
+<span data-ttu-id="d0f74-172">在指定的群集上啟動已定義的 Azure HDInsight 作業。</span><span class="sxs-lookup"><span data-stu-id="d0f74-172">Starts a defined Azure HDInsight job on a specified cluster.</span></span>
+
+### [<span data-ttu-id="d0f74-173">停止 AzHDInsightJob</span><span class="sxs-lookup"><span data-stu-id="d0f74-173">Stop-AzHDInsightJob</span></span>](Stop-AzHDInsightJob.md)
+<span data-ttu-id="d0f74-174">在群集上停止指定的執行作業。</span><span class="sxs-lookup"><span data-stu-id="d0f74-174">Stops a specified running job on a cluster.</span></span>
+
+### [<span data-ttu-id="d0f74-175">Submit-AzHDInsightScriptAction</span><span class="sxs-lookup"><span data-stu-id="d0f74-175">Submit-AzHDInsightScriptAction</span></span>](Submit-AzHDInsightScriptAction.md)
+<span data-ttu-id="d0f74-176">將新的腳本指令提交至 Azure HDInsight 群集。</span><span class="sxs-lookup"><span data-stu-id="d0f74-176">Submits a new script action to an Azure HDInsight cluster.</span></span>
+
+### [<span data-ttu-id="d0f74-177">使用-AzHDInsightCluster</span><span class="sxs-lookup"><span data-stu-id="d0f74-177">Use-AzHDInsightCluster</span></span>](Use-AzHDInsightCluster.md)
+<span data-ttu-id="d0f74-178">選取要與 Invoke-RmAzureHDInsightHiveJob Cmdlet 搭配使用的群集。</span><span class="sxs-lookup"><span data-stu-id="d0f74-178">Selects a cluster to be used with the Invoke-RmAzureHDInsightHiveJob cmdlet.</span></span>
+
+### [<span data-ttu-id="d0f74-179">稍候-AzHDInsightJob</span><span class="sxs-lookup"><span data-stu-id="d0f74-179">Wait-AzHDInsightJob</span></span>](Wait-AzHDInsightJob.md)
+<span data-ttu-id="d0f74-180">等待指定作業的完成或失敗。</span><span class="sxs-lookup"><span data-stu-id="d0f74-180">Waits for the completion or failure of a specified job.</span></span>
+
