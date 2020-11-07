@@ -1,0 +1,167 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
+Module Name: Az.Network
+online version: https://docs.microsoft.com/en-us/powershell/module/az.network/new-azserviceendpointpolicydefinition
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzServiceEndpointPolicyDefinition.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzServiceEndpointPolicyDefinition.md
+ms.openlocfilehash: 634beeaf33515ac5e89011ab47eaea34eccaa581
+ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "93790765"
+---
+# <span data-ttu-id="fe7e5-101">New-AzServiceEndpointPolicyDefinition</span><span class="sxs-lookup"><span data-stu-id="fe7e5-101">New-AzServiceEndpointPolicyDefinition</span></span>
+
+## <span data-ttu-id="fe7e5-102">摘要</span><span class="sxs-lookup"><span data-stu-id="fe7e5-102">SYNOPSIS</span></span>
+<span data-ttu-id="fe7e5-103">建立服務端點原則定義。</span><span class="sxs-lookup"><span data-stu-id="fe7e5-103">Creates a service endpoint policy definition.</span></span>
+
+## <span data-ttu-id="fe7e5-104">句法</span><span class="sxs-lookup"><span data-stu-id="fe7e5-104">SYNTAX</span></span>
+
+```
+New-AzServiceEndpointPolicyDefinition -Name <String> [-Description <String>] [-ServiceResource <String[]>]
+ [-Service <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="fe7e5-105">說明</span><span class="sxs-lookup"><span data-stu-id="fe7e5-105">DESCRIPTION</span></span>
+<span data-ttu-id="fe7e5-106">**AzServiceEndpointPolicyDefinition** Cmdlet 會建立服務端點原則定義。</span><span class="sxs-lookup"><span data-stu-id="fe7e5-106">The **New-AzServiceEndpointPolicyDefinition** cmdlet create a service endpoint policy definition.</span></span>
+
+## <span data-ttu-id="fe7e5-107">示例</span><span class="sxs-lookup"><span data-stu-id="fe7e5-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="fe7e5-108">範例1：建立服務端點原則</span><span class="sxs-lookup"><span data-stu-id="fe7e5-108">Example 1: Creates a service endpoint policy</span></span>
+```
+$policydef= New-AzServiceEndpointPolicyDefinition -Name "ServiceEndpointPolicyDefinition1" -ResourceGroupName "ResourceGroup01" -Service "Microsoft.Storage" -ServiceResources "subscriptions/sub1" -Description "New Definition"
+```
+
+<span data-ttu-id="fe7e5-109">這個命令會建立服務端點原則定義與 name ServiceEndpointPolicyDefinition1、service name、service 資源訂閱/sub1，以及將其儲存在 $policydef 變數中的資源群組。</span><span class="sxs-lookup"><span data-stu-id="fe7e5-109">This command creates the service endpoint policy definition with name ServiceEndpointPolicyDefinition1,  service Microsoft.Storage, service resources subscriptions/sub1 and description "New Definition" that belongs to the resource group named ResourceGroup01 and stores it in the $policydef variable.</span></span>
+
+## <span data-ttu-id="fe7e5-110">參數</span><span class="sxs-lookup"><span data-stu-id="fe7e5-110">PARAMETERS</span></span>
+
+### <span data-ttu-id="fe7e5-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="fe7e5-111">-DefaultProfile</span></span>
+<span data-ttu-id="fe7e5-112">用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。</span><span class="sxs-lookup"><span data-stu-id="fe7e5-112">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fe7e5-113">-描述</span><span class="sxs-lookup"><span data-stu-id="fe7e5-113">-Description</span></span>
+<span data-ttu-id="fe7e5-114">定義的描述</span><span class="sxs-lookup"><span data-stu-id="fe7e5-114">The description of the definition</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fe7e5-115">-名稱</span><span class="sxs-lookup"><span data-stu-id="fe7e5-115">-Name</span></span>
+<span data-ttu-id="fe7e5-116">服務端點原則的名稱</span><span class="sxs-lookup"><span data-stu-id="fe7e5-116">The name of the service endpoint policy</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fe7e5-117">-服務</span><span class="sxs-lookup"><span data-stu-id="fe7e5-117">-Service</span></span>
+<span data-ttu-id="fe7e5-118">服務名稱</span><span class="sxs-lookup"><span data-stu-id="fe7e5-118">Name of the service</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fe7e5-119">-ServiceResource</span><span class="sxs-lookup"><span data-stu-id="fe7e5-119">-ServiceResource</span></span>
+<span data-ttu-id="fe7e5-120">服務資源清單</span><span class="sxs-lookup"><span data-stu-id="fe7e5-120">List of service resources</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fe7e5-121">-確認</span><span class="sxs-lookup"><span data-stu-id="fe7e5-121">-Confirm</span></span>
+<span data-ttu-id="fe7e5-122">在執行 Cmdlet 之前提示您進行確認。</span><span class="sxs-lookup"><span data-stu-id="fe7e5-122">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fe7e5-123">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="fe7e5-123">-WhatIf</span></span>
+<span data-ttu-id="fe7e5-124">顯示在執行 Cmdlet 時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="fe7e5-124">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="fe7e5-125">未執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="fe7e5-125">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fe7e5-126">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="fe7e5-126">CommonParameters</span></span>
+<span data-ttu-id="fe7e5-127">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="fe7e5-127">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="fe7e5-128">如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。</span><span class="sxs-lookup"><span data-stu-id="fe7e5-128">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="fe7e5-129">輸入</span><span class="sxs-lookup"><span data-stu-id="fe7e5-129">INPUTS</span></span>
+
+### <span data-ttu-id="fe7e5-130">所有</span><span class="sxs-lookup"><span data-stu-id="fe7e5-130">None</span></span>
+
+## <span data-ttu-id="fe7e5-131">輸出</span><span class="sxs-lookup"><span data-stu-id="fe7e5-131">OUTPUTS</span></span>
+
+### <span data-ttu-id="fe7e5-132">PSServiceEndpointPolicyDefinition 中的 [.]</span><span class="sxs-lookup"><span data-stu-id="fe7e5-132">Microsoft.Azure.Commands.Network.Models.PSServiceEndpointPolicyDefinition</span></span>
+
+## <span data-ttu-id="fe7e5-133">筆記</span><span class="sxs-lookup"><span data-stu-id="fe7e5-133">NOTES</span></span>
+
+## <span data-ttu-id="fe7e5-134">相關連結</span><span class="sxs-lookup"><span data-stu-id="fe7e5-134">RELATED LINKS</span></span>
+
+[<span data-ttu-id="fe7e5-135">附加 AzServiceEndpointPolicyDefinition</span><span class="sxs-lookup"><span data-stu-id="fe7e5-135">Add-AzServiceEndpointPolicyDefinition</span></span>](./Add-AzServiceEndpointPolicyDefinition.md)
+
+[<span data-ttu-id="fe7e5-136">AzServiceEndpointPolicyDefinition</span><span class="sxs-lookup"><span data-stu-id="fe7e5-136">Get-AzServiceEndpointPolicyDefinition</span></span>](./Get-AzServiceEndpointPolicyDefinition.md)
+
+[<span data-ttu-id="fe7e5-137">移除-AzServiceEndpointPolicyDefinition</span><span class="sxs-lookup"><span data-stu-id="fe7e5-137">Remove-AzServiceEndpointPolicyDefinition</span></span>](./Remove-AzServiceEndpointPolicyDefinition.md)
+
+[<span data-ttu-id="fe7e5-138">Set-AzServiceEndpointPolicyDefinition</span><span class="sxs-lookup"><span data-stu-id="fe7e5-138">Set-AzServiceEndpointPolicyDefinition</span></span>](./Set-AzServiceEndpointPolicyDefinition.md)
