@@ -1,0 +1,373 @@
+---
+external help file: Microsoft.Azure.Commands.Batch.dll-Help.xml
+Module Name: AzureRM.Batch
+ms.assetid: 38ED2854-23D0-400E-A5C8-239346B2AF99
+online version: ''
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/AzureBatch/Commands.Batch/help/Get-AzureBatchNodeFile.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/AzureBatch/Commands.Batch/help/Get-AzureBatchNodeFile.md
+ms.openlocfilehash: 0a027bd15d4b207baf9c69fcb9104428c2881872
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93625533"
+---
+# Get-AzureBatchNodeFile
+
+## 摘要
+取得批節點檔案的屬性。
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## 句法
+
+### ComputeNode_Id (預設) 
+```
+Get-AzureBatchNodeFile [-PoolId] <String> [-ComputeNodeId] <String> [[-Name] <String>]
+ -BatchContext <BatchAccountContext> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### Task_Id
+```
+Get-AzureBatchNodeFile -JobId <String> -TaskId <String> [[-Name] <String>] -BatchContext <BatchAccountContext>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### Task_ODataFilter
+```
+Get-AzureBatchNodeFile -JobId <String> -TaskId <String> [-Filter <String>] [-MaxCount <Int32>] [-Recursive]
+ -BatchContext <BatchAccountContext> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### ParentTask
+```
+Get-AzureBatchNodeFile [[-Task] <PSCloudTask>] [-Filter <String>] [-MaxCount <Int32>] [-Recursive]
+ -BatchContext <BatchAccountContext> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### ComputeNode_ODataFilter
+```
+Get-AzureBatchNodeFile [-PoolId] <String> [-ComputeNodeId] <String> [-Filter <String>] [-MaxCount <Int32>]
+ [-Recursive] -BatchContext <BatchAccountContext> [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+### ParentComputeNode
+```
+Get-AzureBatchNodeFile [[-ComputeNode] <PSComputeNode>] [-Filter <String>] [-MaxCount <Int32>] [-Recursive]
+ -BatchContext <BatchAccountContext> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## 說明
+**AzureBatchNodeFile** Cmdlet 會取得任務或計算節點之 Azure Batch-節點檔案的屬性。
+若要縮小結果範圍，您可以指定開放資料通訊協定 (OData) 篩選。
+如果您指定工作，但不是篩選，此 Cmdlet 會傳回該工作所有節點檔案的屬性。
+如果您指定的是計算節點，但不是篩選，這個 Cmdlet 會傳回該計算節點之所有節點檔案的屬性。
+
+## 示例
+
+### 範例1：取得與任務相關聯之節點檔的屬性
+```
+PS C:\>Get-AzureBatchNodeFile -JobId "Job-000001" -TaskId "Task26" -Name "Stdout.txt" -BatchContext $Context
+IsDirectory Name          Properties                                      Url
+
+----------- ----          ----------                                      ---
+
+False       StdOut.txt    Microsoft.Azure.Commands.Batch.Models.PSFile... https://cmdletexample.westus.Batch.contoso...
+```
+
+這個命令會取得 StdOut.txt 節點檔案的屬性，該檔與具有 ID 作業的作業中具有識別碼 Task26 的任務000001。
+使用 Get-AzureRmBatchAccountKeys Cmdlet 將內容指派給 $CoNtext 變數。
+
+### 範例2：使用篩選來取得與任務相關聯之節點檔案的屬性
+```
+PS C:\>Get-AzureBatchNodeFile -JobId "Job-00002" -TaskId "Task26" -Filter "startswith(name,'St')" -BatchContext $Context
+IsDirectory Name        Properties                                      Url
+
+----------- ----        ----------                                      ---
+
+False       StdErr.txt  Microsoft.Azure.Commands.Batch.Models.PSFile... https://cmdletexample.westus.Batch.contoso... 
+False       StdOut.txt  Microsoft.Azure.Commands.Batch.Models.PSFile... https://cmdletexample.westus.Batch.contoso...
+```
+
+這個命令會取得名稱以 st 開頭，且與 ID 為 Task26 的工作（在作業中具有 ID 作業-00002）相關聯之節點檔案的屬性。
+
+### 範例3：遞迴取得與任務相關聯之節點檔案的屬性
+```
+PS C:\>Get-AzureBatchTask "Job-00003" "Task31" -BatchContext $Context | Get-AzureBatchNodeFile -Recursive -BatchContext $Context
+IsDirectory Name             Properties                                      Url
+
+----------- ----             ----------                                      ---
+
+False       ProcessEnv.cmd   Microsoft.Azure.Commands.Batch.Models.PSFile... https://cmdletexample.westus.Batch.contoso... 
+False       StdErr.txt       Microsoft.Azure.Commands.Batch.Models.PSFile... https://cmdletexample.westus.Batch.contoso... 
+False       StdOut.txt       Microsoft.Azure.Commands.Batch.Models.PSFile... https://cmdletexample.westus.Batch.contoso... 
+True        wd                                                               https://cmdletexample.westus.Batch.contoso... 
+False       wd\newFile.txt   Microsoft.Azure.Commands.Batch.Models.PSFile... https://cmdletexample.westus.Batch.contoso...
+```
+
+這個命令會取得與作業作業-00003 中具有識別碼 Task31 之任務相關聯之所有檔案的屬性。
+這個命令會指定 *Recursive* 參數。
+因此，此 Cmdlet 會執行遞迴檔案搜尋，並傳回 wd\newFile.txt 節點檔案。
+
+### 範例4：從計算節點取得單一檔案
+```
+PS C:\>Get-AzureBatchNodeFile -PoolId "Pool22" -ComputeNodeId "ComputeNode01" -Name "Startup\StdOut.txt" -BatchContext $Context
+IsDirectory Name                    Properties                                      Url
+----------- ----                    ----------                                      ---
+False       startup\stdout.txt      Microsoft.Azure.Commands.Batch.Models.PSFile... https://cmdletexample.westus.Batch.contoso...
+```
+
+這個命令會從具有 ID Pool22 的 ComputeNode01 中的計算節點，取得名 Startup\StdOut.txt 為的檔案。
+
+### 範例5：從計算節點取得資料夾下的所有檔案
+```
+PS C:\>Get-AzureBatchNodeFile -PoolId "Pool22" -ComputeNodeId "ComputeNode01" -Filter "startswith(name,'startup')" -Recursive -BatchContext $Context
+IsDirectory Name                      Properties                                      Url
+----------- ----                      ----------                                      ---
+True        startup                                                                   https://cmdletexample.westus.Batch.contoso... 
+False       startup\ProcessEnv.cmd    Microsoft.Azure.Commands.Batch.Models.PSFile... https://cmdletexample.westus.Batch.contoso... 
+False       startup\stderr.txt        Microsoft.Azure.Commands.Batch.Models.PSFile... https://cmdletexample.westus.Batch.contoso... 
+False       startup\stdout.txt        Microsoft.Azure.Commands.Batch.Models.PSFile... https://cmdletexample.westus.Batch.contoso... 
+True        startup\wd                                                                https://cmdletexample.westus.Batch.contoso...
+```
+
+這個命令會從擁有 ID Pool22 的 ComputeNode01 中的 [計算] 節點，取得 [啟動] 資料夾底下的所有檔案。
+這個 Cmdlet 會指定 *Recursive* 參數。
+
+### 範例6：從計算節點的根資料夾取得檔案
+```
+PS C:\>Get-AzureBatchComputeNode "Pool22" -Id "ComputeNode01" -BatchContext $Context | Get-AzureBatchNodeFile -BatchContext $Context
+IsDirectory Name           Properties       Url
+----------- ----           ----------       ---
+True        shared                          https://cmdletexample.westus.Batch.contoso... 
+True        startup                         https://cmdletexample.westus.Batch.contoso... 
+True        workitems                       https://cmdletexample.westus.Batch.contoso...
+```
+
+這個命令會在擁有 ID Pool22 的池中，取得具有識別碼 ComputeNode01 之 [計算] 節點根資料夾的所有檔案。
+
+## 參數
+
+### -BatchCoNtext
+指定此 Cmdlet 用來與批次服務互動的 **BatchAccountCoNtext** 實例。
+若要取得包含您訂閱之便捷鍵的 **BatchAccountCoNtext** 物件，請使用 Get-AzureRmBatchAccountKeys Cmdlet。
+
+```yaml
+Type: Microsoft.Azure.Commands.Batch.BatchAccountContext
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -ComputeNode
+指定包含批節點檔案的計算節點（作為 **PSComputeNode** 物件）。
+若要取得計算節點物件，請使用 Get-AzureBatchComputeNode Cmdlet。
+
+```yaml
+Type: Microsoft.Azure.Commands.Batch.Models.PSComputeNode
+Parameter Sets: ParentComputeNode
+Aliases: 
+
+Required: False
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -ComputeNodeId
+指定包含批節點檔案之計算節點的識別碼。
+
+```yaml
+Type: System.String
+Parameter Sets: ComputeNode_Id, ComputeNode_ODataFilter
+Aliases: 
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -篩選
+指定 OData 篩選子句。
+這個 Cmdlet 會傳回與此參數指定之篩選相符的節點檔案屬性。
+
+```yaml
+Type: System.String
+Parameter Sets: Task_ODataFilter, ParentTask, ComputeNode_ODataFilter, ParentComputeNode
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -作業 Id
+指定包含目標任務之作業的識別碼。
+
+```yaml
+Type: System.String
+Parameter Sets: Task_Id, Task_ODataFilter
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -MaxCount
+指定此 Cmdlet 傳回屬性的節點檔案數目上限。
+如果您指定的值為零 (0) 或更小，則 Cmdlet 不會使用上限。
+預設值為1000。
+
+```yaml
+Type: System.Int32
+Parameter Sets: Task_ODataFilter, ParentTask, ComputeNode_ODataFilter, ParentComputeNode
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -名稱
+指定此 Cmdlet 為其檢索屬性之節點檔案的名稱。
+您無法指定通配字元。
+
+```yaml
+Type: System.String
+Parameter Sets: ComputeNode_Id, Task_Id
+Aliases: 
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PoolId
+指定包含要取得節點檔案屬性之計算節點的池 ID。
+
+```yaml
+Type: System.String
+Parameter Sets: ComputeNode_Id, ComputeNode_ODataFilter
+Aliases: 
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Recursive
+表示這個 Cmdlet 會傳回一份遞迴的檔案清單。
+否則，它只會傳回根資料夾中的檔案。
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: Task_ODataFilter, ParentTask, ComputeNode_ODataFilter, ParentComputeNode
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -任務
+指定要與節點檔案相關聯的工作（ **PSCloudTask** 物件）。
+若要取得 task 物件，請使用 Get-AzureBatchTask Cmdlet。
+
+```yaml
+Type: Microsoft.Azure.Commands.Batch.Models.PSCloudTask
+Parameter Sets: ParentTask
+Aliases: 
+
+Required: False
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -TaskId
+指定此 Cmdlet 取得節點檔案屬性的任務識別碼。
+
+```yaml
+Type: System.String
+Parameter Sets: Task_Id, Task_ODataFilter
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。
+
+## 輸入
+
+### BatchAccountCoNtext
+形參 "BatchCoNtext" 接受管線中 "BatchAccountCoNtext" 類型的值
+
+### PSComputeNode
+形參 "ComputeNode" 接受管線中 "PSComputeNode" 類型的值
+
+### PSCloudTask
+形參 "Task" 接受管線中 "PSCloudTask" 類型的值
+
+## 輸出
+
+### PSNodeFile
+
+## 筆記
+
+## 相關連結
+
+[AzureRmBatchAccountKeys](./Get-AzureRmBatchAccountKeys.md)
+
+[AzureBatchComputeNode](./Get-AzureBatchComputeNode.md)
+
+[AzureBatchNodeFileContent](./Get-AzureBatchNodeFileContent.md)
+
+[AzureBatchTask](./Get-AzureBatchTask.md)
+
+[Azure 批次 Cmdlet](./AzureRM.Batch.md)
+
+
