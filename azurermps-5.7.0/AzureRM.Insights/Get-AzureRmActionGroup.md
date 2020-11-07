@@ -1,0 +1,143 @@
+---
+external help file: Microsoft.Azure.Commands.Insights.dll-Help.xml
+Module Name: AzureRM.Insights
+ms.assetid: 1CA26790-C791-4BFD-B986-70F28E3B095B
+online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.insights/get-azurermactiongroup
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Insights/Commands.Insights/help/Get-AzureRmActionGroup.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Insights/Commands.Insights/help/Get-AzureRmActionGroup.md
+ms.openlocfilehash: 08785d6fe4afe918ca593eeff7ee7aa9cfbfe578
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93624722"
+---
+# <span data-ttu-id="c4846-101">Get-AzureRmActionGroup</span><span class="sxs-lookup"><span data-stu-id="c4846-101">Get-AzureRmActionGroup</span></span>
+
+## <span data-ttu-id="c4846-102">摘要</span><span class="sxs-lookup"><span data-stu-id="c4846-102">SYNOPSIS</span></span>
+<span data-ttu-id="c4846-103">取得動作群組 (s) 。</span><span class="sxs-lookup"><span data-stu-id="c4846-103">Gets action group(s).</span></span>
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## <span data-ttu-id="c4846-104">句法</span><span class="sxs-lookup"><span data-stu-id="c4846-104">SYNTAX</span></span>
+
+### <span data-ttu-id="c4846-105">BySubscriptionOrResourceGroup (預設) </span><span class="sxs-lookup"><span data-stu-id="c4846-105">BySubscriptionOrResourceGroup (Default)</span></span>
+```
+Get-AzureRmActionGroup [-ResourceGroupName <String>] [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="c4846-106">ByName</span><span class="sxs-lookup"><span data-stu-id="c4846-106">ByName</span></span>
+```
+Get-AzureRmActionGroup -ResourceGroupName <String> -Name <String> [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+## <span data-ttu-id="c4846-107">說明</span><span class="sxs-lookup"><span data-stu-id="c4846-107">DESCRIPTION</span></span>
+<span data-ttu-id="c4846-108">**AzureRmActionGroup** Cmdlet 會取得一或多個動作群組。</span><span class="sxs-lookup"><span data-stu-id="c4846-108">The **Get-AzureRmActionGroup** cmdlet gets one or more action groups.</span></span>
+
+## <span data-ttu-id="c4846-109">示例</span><span class="sxs-lookup"><span data-stu-id="c4846-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="c4846-110">範例1：依訂閱識別碼取得動作群組</span><span class="sxs-lookup"><span data-stu-id="c4846-110">Example 1: Get an action group by subscription ID</span></span>
+```
+PS C:\>Get-AzureRmActionGroup
+```
+
+<span data-ttu-id="c4846-111">這個命令會列出目前訂閱的所有動作群組。</span><span class="sxs-lookup"><span data-stu-id="c4846-111">This command lists all the action group for the current subscription.</span></span>
+
+### <span data-ttu-id="c4846-112">範例2：取得指定資源群組的動作群組</span><span class="sxs-lookup"><span data-stu-id="c4846-112">Example 2: Get action groups for the given resource group</span></span>
+```
+PS C:\>Get-AzureRmActionGroup -ResourceGroup "Default-activityLogAlerts"
+```
+
+<span data-ttu-id="c4846-113">這個命令會列出指定資源群組的 [動作] 群組。</span><span class="sxs-lookup"><span data-stu-id="c4846-113">This command lists action groups for the given resource group.</span></span>
+
+### <span data-ttu-id="c4846-114">範例3：取得動作群組。</span><span class="sxs-lookup"><span data-stu-id="c4846-114">Example 3: Get an action group.</span></span>
+```
+PS C:\>Get-AzureRmActionGroup -ResourceGroup "Default-activityLogAlerts" -Name "actionGroup1"
+```
+
+<span data-ttu-id="c4846-115">這個命令會列出一個 (清單，其中只有一個元素) [動作] 群組。</span><span class="sxs-lookup"><span data-stu-id="c4846-115">This command lists one (a list with a single element) action group.</span></span>
+
+## <span data-ttu-id="c4846-116">參數</span><span class="sxs-lookup"><span data-stu-id="c4846-116">PARAMETERS</span></span>
+
+### <span data-ttu-id="c4846-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="c4846-117">-DefaultProfile</span></span>
+<span data-ttu-id="c4846-118">用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱</span><span class="sxs-lookup"><span data-stu-id="c4846-118">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c4846-119">-名稱</span><span class="sxs-lookup"><span data-stu-id="c4846-119">-Name</span></span>
+<span data-ttu-id="c4846-120">動作群組的名稱。</span><span class="sxs-lookup"><span data-stu-id="c4846-120">The name of the action group.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: ByName
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c4846-121">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="c4846-121">-ResourceGroupName</span></span>
+<span data-ttu-id="c4846-122">資源群組名稱</span><span class="sxs-lookup"><span data-stu-id="c4846-122">The resource group name</span></span>
+
+```yaml
+Type: String
+Parameter Sets: BySubscriptionOrResourceGroup
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+```yaml
+Type: String
+Parameter Sets: ByName
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c4846-123">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="c4846-123">CommonParameters</span></span>
+<span data-ttu-id="c4846-124">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="c4846-124">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="c4846-125">如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。</span><span class="sxs-lookup"><span data-stu-id="c4846-125">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="c4846-126">輸入</span><span class="sxs-lookup"><span data-stu-id="c4846-126">INPUTS</span></span>
+
+### <span data-ttu-id="c4846-127">所有</span><span class="sxs-lookup"><span data-stu-id="c4846-127">None</span></span>
+
+## <span data-ttu-id="c4846-128">輸出</span><span class="sxs-lookup"><span data-stu-id="c4846-128">OUTPUTS</span></span>
+
+### <span data-ttu-id="c4846-129"><System.object. 清單 ' 1 [PSActionGroupResource]。 OutputClasses.]</span><span class="sxs-lookup"><span data-stu-id="c4846-129"><System.Collections.Generic.List\`1[Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource]</span></span>
+
+### <span data-ttu-id="c4846-130">所有</span><span class="sxs-lookup"><span data-stu-id="c4846-130">None</span></span>
+
+## <span data-ttu-id="c4846-131">筆記</span><span class="sxs-lookup"><span data-stu-id="c4846-131">NOTES</span></span>
+
+## <span data-ttu-id="c4846-132">相關連結</span><span class="sxs-lookup"><span data-stu-id="c4846-132">RELATED LINKS</span></span>
+
+<span data-ttu-id="c4846-133">[Set-AzureRmActionGroup](./Set-AzureRmActionGroup.md) 
+[移除-AzureRmActionGroup](./Remove-AzureRmActionGroup.md) 
+[新-AzureRmActionGroupReceiver](./AzureRmActionGroupReceiver.md)</span><span class="sxs-lookup"><span data-stu-id="c4846-133">[Set-AzureRmActionGroup](./Set-AzureRmActionGroup.md)
+[Remove-AzureRmActionGroup](./Remove-AzureRmActionGroup.md)
+[New-AzureRmActionGroupReceiver](./AzureRmActionGroupReceiver.md)</span></span>
