@@ -1,0 +1,107 @@
+---
+external help file: Microsoft.Azure.Commands.Automation.dll-Help.xml
+ms.assetid: 4370FF88-E34F-499D-AF57-53C15B4EB6E9
+online version: ''
+schema: 2.0.0
+ms.openlocfilehash: e55d9e54dcaa0f547d64ec58b2772a581a8ec30a
+ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "93967930"
+---
+# <span data-ttu-id="3372d-101">Remove-AzureAutomationConnectionType</span><span class="sxs-lookup"><span data-stu-id="3372d-101">Remove-AzureAutomationConnectionType</span></span>
+
+## <span data-ttu-id="3372d-102">摘要</span><span class="sxs-lookup"><span data-stu-id="3372d-102">SYNOPSIS</span></span>
+
+<span data-ttu-id="3372d-103">移除連線類型。</span><span class="sxs-lookup"><span data-stu-id="3372d-103">Removes a connection type.</span></span>
+
+## <span data-ttu-id="3372d-104">句法</span><span class="sxs-lookup"><span data-stu-id="3372d-104">SYNTAX</span></span>
+
+```
+Remove-AzureAutomationConnectionType -Name <String> [-Force] -AutomationAccountName <String>
+ [-Profile <AzureSMProfile>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="3372d-105">說明</span><span class="sxs-lookup"><span data-stu-id="3372d-105">DESCRIPTION</span></span>
+
+[!INCLUDE [aa-deprecation](../include/aa-deprecation.md)]
+
+<span data-ttu-id="3372d-106">**AzureAutomationConnectionType** Cmdlet 會移除 Azure 自動化連線類型。</span><span class="sxs-lookup"><span data-stu-id="3372d-106">The **Remove-AzureAutomationConnectionType** cmdlet removes an Azure Automation connection type.</span></span>
+
+## <span data-ttu-id="3372d-107">示例</span><span class="sxs-lookup"><span data-stu-id="3372d-107">EXAMPLES</span></span>
+
+## <span data-ttu-id="3372d-108">參數</span><span class="sxs-lookup"><span data-stu-id="3372d-108">PARAMETERS</span></span>
+
+### <span data-ttu-id="3372d-109">-AutomationAccountName</span><span class="sxs-lookup"><span data-stu-id="3372d-109">-AutomationAccountName</span></span>
+<span data-ttu-id="3372d-110">指定自動化帳戶的名稱。</span><span class="sxs-lookup"><span data-stu-id="3372d-110">Specifies the name of an Automation account.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3372d-111">-Force</span><span class="sxs-lookup"><span data-stu-id="3372d-111">-Force</span></span>
+<span data-ttu-id="3372d-112">強制執行命令，而不要求使用者確認。</span><span class="sxs-lookup"><span data-stu-id="3372d-112">Forces the command to run without asking for user confirmation.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3372d-113">-名稱</span><span class="sxs-lookup"><span data-stu-id="3372d-113">-Name</span></span>
+<span data-ttu-id="3372d-114">指定要移除之連線類型的名稱。</span><span class="sxs-lookup"><span data-stu-id="3372d-114">Specifies the name of the connection type to remove.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3372d-115">-設定檔</span><span class="sxs-lookup"><span data-stu-id="3372d-115">-Profile</span></span>
+<span data-ttu-id="3372d-116">指定此 Cmdlet 讀取的 Azure 設定檔。</span><span class="sxs-lookup"><span data-stu-id="3372d-116">Specifies the Azure profile from which this cmdlet reads.</span></span>
+<span data-ttu-id="3372d-117">如果您沒有指定設定檔，此 Cmdlet 會從本機預設設定檔讀取。</span><span class="sxs-lookup"><span data-stu-id="3372d-117">If you do not specify a profile, this cmdlet reads from the local default profile.</span></span>
+
+```yaml
+Type: AzureSMProfile
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3372d-118">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="3372d-118">CommonParameters</span></span>
+<span data-ttu-id="3372d-119">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="3372d-119">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="3372d-120">如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。</span><span class="sxs-lookup"><span data-stu-id="3372d-120">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="3372d-121">輸入</span><span class="sxs-lookup"><span data-stu-id="3372d-121">INPUTS</span></span>
+
+## <span data-ttu-id="3372d-122">輸出</span><span class="sxs-lookup"><span data-stu-id="3372d-122">OUTPUTS</span></span>
+
+## <span data-ttu-id="3372d-123">筆記</span><span class="sxs-lookup"><span data-stu-id="3372d-123">NOTES</span></span>
+
+## <span data-ttu-id="3372d-124">相關連結</span><span class="sxs-lookup"><span data-stu-id="3372d-124">RELATED LINKS</span></span>
+
