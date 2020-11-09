@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 913532fa5a8937f7ba4cc1ce21c5879f3920fc7f
-ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.openlocfilehash: 4ab5639cfb997c5f9ee1286e6eacb97ef775239a
+ms.sourcegitcommit: 63181e0af0e4468b0530fdb0495ed4d44bdfd1c8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92753387"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93134857"
 ---
 # <a name="azure-powershell-release-notes"></a>Azure PowerShell 版本資訊
 
@@ -46,7 +46,7 @@ ms.locfileid: "92753387"
 * 已將 'Tier'、'MaxSharesCount'、'DiskIOPSReadOnly' 和 'DiskMBpsReadOnly' 選擇性參數新增至 'New-AzDiskUpdateConfig' Cmdlet。 
 
 #### <a name="azcontainerregistry"></a>Az.ContainerRegistry
-* [中斷性變更] 將 API 版本更新為 2020-05-01
+* [重大變更] 將 API 版本更新為 2019-05-01
 * [中斷性變更] 已從 'New-AzContainerRegistry' 中移除 SKU 'Classic' 和參數 'StorageAccountName'
 * 已新增 Cmdlet：'Connect-AzContainerRegistry'、'Import-AzContainerRegistry'、'Get-AzContainerRegistryUsage'、'New-AzContainerRegistryNetworkRule'、'Set-AzContainerRegistryNetworkRule'
 * 已將新參數 'NetworkRuleSet' 新增至 'Update-AzContainerRegistry'

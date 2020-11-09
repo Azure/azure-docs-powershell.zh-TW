@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/17/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 3c876454560e4ad421e6d32a8ca8b30a651fd8af
-ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.openlocfilehash: 20a58253e3f9435a9d33c700435f77fbb42df7ea
+ms.sourcegitcommit: 375232b84336ef5e13052504deaa43f5bd4b7f65
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92753532"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93365138"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>使用 Azure PowerShell 來建立 Azure 服務主體
 
@@ -19,6 +19,11 @@ ms.locfileid: "92753532"
 Azure 服務主體是一種身分識別，建立目的是為了搭配應用程式、託管服務及自動化工具來存取 Azure 資源。 此存取會受限於指派給服務主體的角色，以便您控制可存取的資源，以及在哪個層級上存取。 基於安全理由，我們建議您一律搭配自動化工具使用服務主體，而不是讓服務主體透過使用者身分識別來登入。
 
 本文會示範搭配 Azure PowerShell 建立服務主體，以及擷取其資訊和重設服務主體的步驟。
+
+> [!WARNING]
+> 當您使用 [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal) 命令建立服務主體時，輸出中會包含您必須保護的認證。 請務必不要在程式碼中包含這些認證，或是將認證簽入原始檔控制中。 或者，您也可以考慮使用[受控識別](/azure/active-directory/managed-identities-azure-resources/overview)以避免需要使用認證。
+>
+> 根據預設，[New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal) 會將[參與者](/azure/role-based-access-control/built-in-roles#contributor)角色指派給訂用帳戶範圍中的服務主體。 若要降低服務主體遭到入侵的風險，請指派更具體的角色，並將範圍縮小至資源或資源群組。 如需相關資訊，請參閱[新增角色指派的步驟](/azure/role-based-access-control/role-assignments-steps)。
 
 ## <a name="create-a-service-principal"></a>建立服務主體
 

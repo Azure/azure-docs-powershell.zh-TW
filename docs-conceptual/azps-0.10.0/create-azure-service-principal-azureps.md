@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 6e1fd342077afab22f921f3ae6bbf8e2740c5983
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.openlocfilehash: cea6b53a6780e6a3b73165a9af744b12c545013e
+ms.sourcegitcommit: 375232b84336ef5e13052504deaa43f5bd4b7f65
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89241928"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93365121"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>使用 Azure PowerShell 來建立 Azure 服務主體
 
@@ -21,6 +21,11 @@ Azure 服務主體是一種身分識別，建立目的是為了搭配應用程�
 本文會示範搭配 Azure PowerShell 建立服務主體，以及擷取其資訊和重設服務主體的步驟。
 
 ## <a name="create-a-service-principal"></a>建立服務主體
+
+> [!WARNING]
+> 當您使用 [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal) 命令建立服務主體時，輸出中會包含您必須保護的認證。 請務必不要在程式碼中包含這些認證，或是將認證簽入原始檔控制中。 或者，您也可以考慮使用[受控識別](/azure/active-directory/managed-identities-azure-resources/overview)以避免需要使用認證。
+>
+> 根據預設，[New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal) 會將[參與者](/azure/role-based-access-control/built-in-roles#contributor)角色指派給訂用帳戶範圍中的服務主體。 若要降低服務主體遭到入侵的風險，請指派更具體的角色，並將範圍縮小至資源或資源群組。 如需相關資訊，請參閱[新增角色指派的步驟](/azure/role-based-access-control/role-assignments-steps)。
 
 使用 [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal) Cmdlet 建立服務主體。 建立服務主體時，您可以選擇其所用的登入驗證類型。
 
@@ -38,7 +43,7 @@ Azure 服務主體是一種身分識別，建立目的是為了搭配應用程�
 $sp = New-AzADServicePrincipal -DisplayName ServicePrincipalName
 ```
 
-傳回的物件包含 `Secret` 成員，其為包含所產生密碼的 `SecureString`。 請確定您將此值儲存在安全的位置，以便驗證服務主體。 該值__不會__顯示在主控台輸出。 如果您遺失密碼，[請重設服務主體認證](#reset-credentials)。
+傳回的物件包含 `Secret` 成員，其為包含所產生密碼的 `SecureString`。 請確定您將此值儲存在安全的位置，以便驗證服務主體。 該值 __不會__ 顯示在主控台輸出。 如果您遺失密碼，[請重設服務主體認證](#reset-credentials)。
 
 下列程式碼可讓您匯出祕密：
 
@@ -59,7 +64,7 @@ $sp = New-AzAdServicePrincipal -DisplayName ServicePrincipalName -PasswordCreden
 
 > [!IMPORTANT]
 >
-> 使用服務主體登入需要在其下建立服務主體的租用戶識別碼。 若要在建立服務主體時取得作用中的租用戶，請在建立服務主體__之後立即__執行下列命令：
+> 使用服務主體登入需要在其下建立服務主體的租用戶識別碼。 若要在建立服務主體時取得作用中的租用戶，請在建立服務主體 __之後立即__ 執行下列命令：
 >
 > ```azurepowershell-interactive
 > (Get-AzContext).Tenant.Id
@@ -86,7 +91,7 @@ $sp = New-AzADServicePrincipal -DisplayName ServicePrincipalName -KeyCredential 
 
 > [!IMPORTANT]
 >
-> 使用服務主體登入需要在其下建立服務主體的租用戶識別碼。 若要在建立服務主體時取得作用中的租用戶，請在建立服務主體__之後立即__執行下列命令：
+> 使用服務主體登入需要在其下建立服務主體的租用戶識別碼。 若要在建立服務主體時取得作用中的租用戶，請在建立服務主體 __之後立即__ 執行下列命令：
 >
 > ```azurepowershell-interactive
 > (Get-AzContext).Tenant.Id
@@ -94,10 +99,10 @@ $sp = New-AzADServicePrincipal -DisplayName ServicePrincipalName -KeyCredential 
 
 ## <a name="get-an-existing-service-principal"></a>取得現有的服務主體
 
-您可以使用 [Get-AzADServicePrincipal](/powershell/module/az.resources/get-azadserviceprincipal) 擷取目前作用中租用戶的服務主體清單。 依預設，此命令會傳回租用戶中的__所有__服務主體，因此對於大型組織，可能需要長時間來傳回結果。 建議使用選擇性伺服器端篩選引數的其中一個：
+您可以使用 [Get-AzADServicePrincipal](/powershell/module/az.resources/get-azadserviceprincipal) 擷取目前作用中租用戶的服務主體清單。 依預設，此命令會傳回租用戶中的 __所有__ 服務主體，因此對於大型組織，可能需要長時間來傳回結果。 建議使用選擇性伺服器端篩選引數的其中一個：
 
-* `-DisplayNameBeginsWith` 會要求服務主體的_前置詞_符合所提供的值。 服務主體的顯示名稱是建立期間使用 `-DisplayName` 所設定的值。
-* `-DisplayName` 要求服務主體名稱_完全相符_。
+* `-DisplayNameBeginsWith` 會要求服務主體的 _前置詞_ 符合所提供的值。 服務主體的顯示名稱是建立期間使用 `-DisplayName` 所設定的值。
+* `-DisplayName` 要求服務主體名稱 _完全相符_ 。
 
 ## <a name="manage-service-principal-roles"></a>管理服務主體角色
 
@@ -107,9 +112,9 @@ Azure PowerShell 提供下列 Cmdlet 以供您管理角色指派：
 * [New-AzRoleAssignment](/powershell/module/az.resources/new-azroleassignment)
 * [Remove-AzRoleAssignment](/powershell/module/az.resources/remove-azroleassignment)
 
-服務主體的預設角色是**參與者**。 此角色具有讀取和寫入至 Azure 帳戶的完整權限。 **讀者**角色的權限較為侷限，僅有唯讀存取權。  如需角色型存取控制 (RBAC) 和角色的詳細資訊，請參閱 [RBAC：內建角色](/azure/active-directory/role-based-access-built-in-roles)。
+服務主體的預設角色是 **參與者** 。 此角色具有讀取和寫入至 Azure 帳戶的完整權限。 **讀者** 角色的權限較為侷限，僅有唯讀存取權。  如需角色型存取控制 (RBAC) 和角色的詳細資訊，請參閱 [RBAC：內建角色](/azure/active-directory/role-based-access-built-in-roles)。
 
-此範例會新增**讀者**角色，並移除**參與者**角色：
+此範例會新增 **讀者** 角色，並移除 **參與者** 角色：
 
 ```azurepowershell-interactive
 New-AzRoleAssignment -ApplicationId <service principal application ID> -RoleDefinitionName "Reader"
