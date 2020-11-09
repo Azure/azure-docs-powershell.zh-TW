@@ -1,0 +1,335 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Batch.dll-Help.xml
+Module Name: Az.Batch
+ms.assetid: C9E2D9EC-3B6A-492D-B183-9856185548CD
+online version: https://docs.microsoft.com/en-us/powershell/module/az.batch/get-azbatchnodefilecontent
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Get-AzBatchNodeFileContent.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Get-AzBatchNodeFileContent.md
+ms.openlocfilehash: 534919a404ad415963408816b78e9bbf1f349965
+ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "94287944"
+---
+# Get-AzBatchNodeFileContent
+
+## 摘要
+取得批節點檔案。
+
+## 句法
+
+### Task_Id_Path
+```
+Get-AzBatchNodeFileContent -JobId <String> -TaskId <String> [-Path] <String> -DestinationPath <String>
+ [-ByteRangeStart <Int64>] [-ByteRangeEnd <Int64>] -BatchContext <BatchAccountContext>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### Task_Id_Stream
+```
+Get-AzBatchNodeFileContent -JobId <String> -TaskId <String> [-Path] <String> -DestinationStream <Stream>
+ [-ByteRangeStart <Int64>] [-ByteRangeEnd <Int64>] -BatchContext <BatchAccountContext>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### ComputeNode_Id_Path
+```
+Get-AzBatchNodeFileContent [-PoolId] <String> [-ComputeNodeId] <String> [-Path] <String>
+ -DestinationPath <String> [-ByteRangeStart <Int64>] [-ByteRangeEnd <Int64>]
+ -BatchContext <BatchAccountContext> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### ComputeNode_Id_Stream
+```
+Get-AzBatchNodeFileContent [-PoolId] <String> [-ComputeNodeId] <String> [-Path] <String>
+ -DestinationStream <Stream> [-ByteRangeStart <Int64>] [-ByteRangeEnd <Int64>]
+ -BatchContext <BatchAccountContext> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### InputObject_Path
+```
+Get-AzBatchNodeFileContent [[-InputObject] <PSNodeFile>] -DestinationPath <String> [-ByteRangeStart <Int64>]
+ [-ByteRangeEnd <Int64>] -BatchContext <BatchAccountContext> [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+### InputObject_Stream
+```
+Get-AzBatchNodeFileContent [[-InputObject] <PSNodeFile>] -DestinationStream <Stream> [-ByteRangeStart <Int64>]
+ [-ByteRangeEnd <Int64>] -BatchContext <BatchAccountContext> [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+## 說明
+**AzBatchNodeFileContent** Cmdlet 會取得 Azure Batch-節點檔案，並將它儲存為檔案或資料流程。
+
+## 示例
+
+### 範例1：取得與任務相關聯的批節點檔案，並儲存檔案
+```
+PS C:\>Get-AzBatchNodeFileContent -JobId "Job01" -TaskId "Task01" -Path "StdOut.txt" -DestinationPath "E:\PowerShell\StdOut.txt" -BatchContext $Context
+```
+
+這個命令會取得名為 StdOut.txt 的節點檔案，並將它儲存到本機電腦上的 E:\PowerShell\StdOut.txt 檔路徑。
+StdOut.txt 節點檔案與具有 ID Job01 之作業的識別碼 Task01 相關聯。
+使用 Get-AzBatchAccountKey Cmdlet 將內容指派給 $CoNtext 變數。
+
+### 範例2：取得批節點檔案，並使用管線將它儲存到指定的檔案路徑
+```
+PS C:\>Get-AzBatchNodeFile -JobId "Job02" -TaskId "Task02" -Path "StdErr.txt" -BatchContext $Context | Get-AzBatchNodeFileContent -DestinationPath "E:\PowerShell\StdOut.txt" -BatchContext $Context
+```
+
+這個命令會透過使用 Get-AzBatchNodeFile Cmdlet 來取得名為 StdErr.txt 的節點檔案。
+命令會使用管線運算子，將該檔案傳遞至目前的 Cmdlet。
+目前的 Cmdlet 會將該檔案儲存到本機電腦上的 E:\PowerShell\StdOut.txt 檔路徑。
+StdOut.txt 節點檔案與具有 ID Job02 之作業的識別碼 Task02 相關聯。
+
+### 範例3：取得與任務相關聯的批節點檔案，並將它引導至資料流程
+```
+PS C:\>$Stream = New-Object -TypeName "System.IO.MemoryStream"
+PS C:\> Get-AzBatchNodeFileContent -JobId "Job03" -TaskId "Task11" -Path "StdOut.txt" -DestinationStream $Stream -BatchContext $Context
+```
+
+第一個命令會使用 New-Object Cmdlet 建立串流，然後將它儲存在 $Stream 變數中。
+第二個命令會從具有 ID Job03 之作業的識別碼 Task11 的任務中，取得名為 StdOut.txt 的節點檔案。
+命令會將檔案內容定向至 $Stream 中的資料流程。
+
+### 範例4：從計算節點取得節點檔案並儲存
+```
+PS C:\>Get-AzBatchNodeFileContent -PoolId "Pool01" -ComputeNodeId "ComputeNode01" -Path "Startup\StdOut.txt" -DestinationPath "E:\PowerShell\StdOut.txt" -BatchContext $Context
+```
+
+這個命令會在擁有 ID Pool01 的池中，從 ComputeNode01 ID 為的 compute 節點中取得 Startup\StdOut.txt 節點檔案。
+該命令會將檔案儲存到本機電腦上的 E:\PowerShell\StdOut.txt 檔路徑。
+
+### 範例5：從計算節點取得節點檔案，然後使用管線儲存該檔
+```
+PS C:\>Get-AzBatchNodeFile -PoolId "Pool01" -ComputeNodeId "ComputeNode01" -Path "Startup\StdOut.txt" -BatchContext $Context | Get-AzBatchNodeFileContent -DestinationPath "E:\PowerShell\StdOut.txt" -BatchContext $Context
+```
+
+此命令會從 ComputeNode01 ID 為的計算節點中，使用 Get-AzBatchNodeFile 來取得節點檔案 Startup\StdOut.txt。
+Compute 節點位於 ID 為 Pool01 的池中。
+命令會將該節點檔案傳遞至目前的 Cmdlet。
+該 Cmdlet 會將檔案儲存到本機電腦上的 E:\PowerShell\StdOut.txt 檔路徑。
+
+### 範例6：從計算節點取得節點檔案，並將它引導至資料流程
+```
+PS C:\>$Stream = New-Object -TypeName "System.IO.MemoryStream"
+PS C:\> Get-AzBatchNodeFileContent -PoolId "Pool01" -ComputeNodeId "ComputeNode01" -Path "startup\stdout.txt" -DestinationStream $Stream -BatchContext $Context
+```
+
+第一個命令會使用 New-Object Cmdlet 建立串流，然後將它儲存在 $Stream 變數中。
+第二個命令會從具有 ID Pool01 的 ComputeNode01 中的計算節點，取得名為 StdOut.txt 的節點檔案。
+命令會將檔案內容定向至 $Stream 中的資料流程。
+
+## 參數
+
+### -BatchCoNtext
+指定此 Cmdlet 用來與批次服務互動的 **BatchAccountCoNtext** 實例。
+如果您使用 Get-AzBatchAccount Cmdlet 來取得您的 BatchAccountCoNtext，則在與批次服務互動時，將會使用 Azure Active Directory 驗證。 若要改為使用共用金鑰驗證，請使用 Get-AzBatchAccountKey Cmdlet 來取得已填入其便捷鍵的 BatchAccountCoNtext 物件。 使用共用金鑰驗證時，預設會使用主要便捷鍵。 若要變更要使用的索引鍵，請設定 BatchAccountCoNtext 屬性。
+
+```yaml
+Type: Microsoft.Azure.Commands.Batch.BatchAccountContext
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -ByteRangeEnd
+要下載之位元組範圍的結尾。
+
+```yaml
+Type: System.Nullable`1[System.Int64]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ByteRangeStart
+要下載的位元組範圍起始。
+
+```yaml
+Type: System.Nullable`1[System.Int64]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ComputeNodeId
+指定包含此 Cmdlet 傳回之節點檔案之計算節點的識別碼。
+
+```yaml
+Type: System.String
+Parameter Sets: ComputeNode_Id_Path, ComputeNode_Id_Stream
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DestinationPath
+指定此 Cmdlet 儲存節點檔案的檔路徑。
+
+```yaml
+Type: System.String
+Parameter Sets: Task_Id_Path, ComputeNode_Id_Path, InputObject_Path
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DestinationStream
+指定此 Cmdlet 寫入節點檔內容的資料流程。
+這個 Cmdlet 不會關閉或倒帶此資料流程。
+
+```yaml
+Type: System.IO.Stream
+Parameter Sets: Task_Id_Stream, ComputeNode_Id_Stream, InputObject_Stream
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+指定此 Cmdlet 取得的檔案，做為 **PSNodeFile** 物件。
+若要取得節點檔物件，請使用 Get-AzBatchNodeFile Cmdlet。
+
+```yaml
+Type: Microsoft.Azure.Commands.Batch.Models.PSNodeFile
+Parameter Sets: InputObject_Path, InputObject_Stream
+Aliases:
+
+Required: False
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -作業 Id
+指定包含目標任務之作業的識別碼。
+
+```yaml
+Type: System.String
+Parameter Sets: Task_Id_Path, Task_Id_Stream
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Path
+要下載之節點檔案的路徑。
+
+```yaml
+Type: System.String
+Parameter Sets: Task_Id_Path, Task_Id_Stream, ComputeNode_Id_Path, ComputeNode_Id_Stream
+Aliases: Name
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PoolId
+指定包含此 Cmdlet 所取得之節點檔案之 [計算] 節點的池 ID。
+
+```yaml
+Type: System.String
+Parameter Sets: ComputeNode_Id_Path, ComputeNode_Id_Stream
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -TaskId
+指定任務的識別碼。
+
+```yaml
+Type: System.String
+Parameter Sets: Task_Id_Path, Task_Id_Stream
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### CommonParameters
+這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+
+## 輸入
+
+### System.object
+
+### Microsoft.Azure.Commands.Batch。PSNodeFile
+
+### Microsoft.Azure.Commands.Batch.BatchAccountCoNtext
+
+## 輸出
+
+### System.void
+
+## 筆記
+
+## 相關連結
+
+[AzBatchAccountKey](./Get-AzBatchAccountKey.md)
+
+[AzBatchNodeFile](./Get-AzBatchNodeFile.md)
+
+[Azure 批次 Cmdlet](/powershell/module/Az.Batch/)
