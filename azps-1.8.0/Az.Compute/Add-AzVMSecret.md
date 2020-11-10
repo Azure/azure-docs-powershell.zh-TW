@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/ad
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Add-AzVMSecret.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Add-AzVMSecret.md
-ms.openlocfilehash: b6d5d7b68726d1e5121491a6b4c5b371a9ec7cec
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 4c9a1c544b08f0bed4dbade12e0f75d28f3ba24a
+ms.sourcegitcommit: 7aaa37edc9681b643946505bcbc3cc6435f1d7ca
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93788585"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94395283"
 ---
 # Add-AzVMSecret
 
@@ -30,7 +30,7 @@ Add-AzVMSecret [-VM] <PSVirtualMachine> [[-SourceVaultId] <String>] [[-Certifica
 此值可讓您將憑證新增至虛擬機器。
 密碼必須儲存在金鑰保存庫中。
 如需有關主要保存庫的詳細資訊，請參閱 [什麼是 Azure 金鑰保存庫？](https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/)。
-如需有關 Cmdlet 的詳細資訊，請參閱 Microsoft 開發人員網路庫或[AzKeyVaultSecret](/powershell/module/az.keyvault/set-azkeyvaultsecret) Cmdlet 中的[Azure 金鑰保存庫 Cmdlet](https://msdn.microsoft.com/library/azure/dn868052.aspx) 。
+如需有關 Cmdlet 的詳細資訊，請參閱 [Azure 金鑰保存庫 Cmdlet](/powershell/module/az.keyvault) 或 [AzKeyVaultSecret](/powershell/module/az.keyvault/set-azkeyvaultsecret) Cmdlet。
 
 ## 示例
 
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 
 ### -CertificateUrl
 指定指向包含憑證之主要 Vault 機密的 URL。
-憑證是下列 JavaScript 物件)  (符號的 Base64 編碼，該物件是以 UTF-8 所編碼： {"data"： " \< Base64-編碼-檔案 \> "，"dataType"： " \< 檔案格式 \> "，"密碼"： " \< pfx-檔案密碼 \> "} 目前只有 dataType 可接受 .pfx 檔案。
+憑證是下列 JavaScript 物件符號的 Base64 編碼， (JSON) 物件是以 UTF-8： {"data"： " \<Base64-encoded-file\> "，"資料類型"： "" "" \<file-format\> 密碼 "：" \<pfx-file-password\> "" "，datatype 只能接受 .pfx 檔案。
 
 ```yaml
 Type: System.String
