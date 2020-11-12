@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/10/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 83860dd5abfbb1c3da94de6813bceca1bbb0fca7
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.service: azure-powershell
+ms.openlocfilehash: a0a6fcbc0a7bdae507ff5e16dd844e8425c929d5
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89244342"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93406995"
 ---
 # <a name="migrate-azure-powershell-from-azurerm-to-az"></a>將 Azure PowerShell 從 AzureRM 移轉至 Az
 
@@ -29,7 +30,7 @@ Az 模組有 AzureRM 的功能同位，但是會使用比較短且更一致的 C
 Get-InstalledModule -Name AzureRM -AllVersions
 ```
 
-AzureRM __最新的__可用版本為 __6.13.1__。 如果您未安裝此版本，您現有的指令碼可能需要進行其他修改，才能使用此處和[重大變更清單](migrate-az-1.0.0.md)中未列出的 Az 模組。
+AzureRM __最新的__ 可用版本為 __6.13.1__ 。 如果您未安裝此版本，您現有的指令碼可能需要進行其他修改，才能使用此處和[重大變更清單](migrate-az-1.0.0.md)中未列出的 Az 模組。
 
 如果您的指令碼無法使用 AzureRM 6.13.1，請根據[從 AzureRM 5.x 移轉至 6.x 的指南](/powershell/azure/azurerm/migration-guide.6.0.0)加以更新。
 如果您使用舊版的 AzureRM 模組，請參考各個主要版本適用的移轉指南。
@@ -85,4 +86,4 @@ Az 模組已變更、新增部分參數名稱，或將其設為必要項目。 C
 一旦您完成移轉，且不再依賴別名行為時，建議您停用別名。 此作業可透過 [Disable-AzureRmAlias](/powershell/module/az.accounts/disable-azurermalias) Cmdlet 來完成。
 
 > [!IMPORTANT]
-> 執行此 Cmdlet 時，請__確實__針對您已為其叫用 `Enable-AzureRmAlias` 的每個 `-Scope` 叫用 Cmdlet，否則您的系統上仍可能會有依賴別名行為的指令碼。
+> 執行此 Cmdlet 時，請 __確實__ 針對您已為其叫用 `Enable-AzureRmAlias` 的每個 `-Scope` 叫用 Cmdlet，否則您的系統上仍可能會有依賴別名行為的指令碼。

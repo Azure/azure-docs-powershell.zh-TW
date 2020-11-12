@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 01d09bf12c893fc5f9e27b7a2c68987d9e132c7f
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.service: azure-powershell
+ms.openlocfilehash: d2282c1c1be4f6618fd366e51eee82c39e072925
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89241112"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93408338"
 ---
 # <a name="query-output-of-azure-powershell"></a>查詢 Azure PowerShell 的輸出 
 

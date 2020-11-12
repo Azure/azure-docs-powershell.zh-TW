@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 4ab5639cfb997c5f9ee1286e6eacb97ef775239a
-ms.sourcegitcommit: 63181e0af0e4468b0530fdb0495ed4d44bdfd1c8
+ms.service: azure-powershell
+ms.openlocfilehash: 27073db862b83c5b95f2364355037c1ebd34a3b5
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2020
-ms.locfileid: "93134857"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93407488"
 ---
 # <a name="azure-powershell-release-notes"></a>Azure PowerShell 版本資訊
 
@@ -140,7 +141,6 @@ ms.locfileid: "93134857"
 * 已從 '*-AzDeployment' Cmdlet 中移除 '-ApiVersion' 參數。
 
 #### <a name="azsql"></a>Az.Sql
-* 已將 DiffBackupIntervalInHours 新增至 'Set-AzSqlDatabaseBackupShortTermRetentionPolicy' 
 * 已修正未指定 networkIsolation 時 New-AzSqlDatabaseExport 失敗的問題 [#13097]
 * 已修正 New-AzSqlDatabaseExport 和 New-AzSqlDatabaseImport 未在結果物件中傳回 OperationStatusLink 的問題 [#13097]
 * 在備份儲存體備援警告中更新 Azure 配對區域 URL 

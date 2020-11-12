@@ -5,12 +5,13 @@ ms.date: 05/10/2019
 ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: fbb2851b3ab6adc76219a3439157fc3c687dd89b
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.service: azure-powershell
+ms.openlocfilehash: 0856748290e2bdea79b9ef845f2c000e9fefcd62
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89241129"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93408372"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>新的 Azure PowerShell Az 模組簡介
 
@@ -27,7 +28,7 @@ Az 是新模組，因此版本已重設為 1.0.0。
 最大且最重要的變更是，自從引進 [PowerShell](/powershell/scripting/overview) (以 .NET Standard 程式庫為基礎) 後，PowerShell 已成為跨平台產品。
 我們致力於將 Azure 支援導入所有平台，而這意味著 Azure PowerShell 模組必須進行更新，以使用 .NET Standard 並且與 PowerShell Core 相容。 我們決定不以現有的 AzureRM 模組導入複雜的變更來加入這項支援，而是建立了 Az 模組。
 
-建立新模組也讓我們的工程師有機會可將 Cmdlet 和模組的設計與命名趨於一致。 現在，所有模組皆以 `Az.` 前置詞開頭，且 Cmdlet 全都採用_動詞_-`Az`_名詞_的格式。 過去，Cmdlet 名稱不僅較長，這些名稱也有不一致的情況。
+建立新模組也讓我們的工程師有機會可將 Cmdlet 和模組的設計與命名趨於一致。 現在，所有模組皆以 `Az.` 前置詞開頭，且 Cmdlet 全都採用 _動詞_-`Az`_名詞_ 的格式。 過去，Cmdlet 名稱不僅較長，這些名稱也有不一致的情況。
 
 模組數目也已減少：某些與相同服務搭配運作的模組已彙整在一起，且管理平面和資料平面 Cmdlet 現在也全都包含在其服務的單一模組中。 對於手動管理相依性和匯入的使用者，其作業將可因此而簡化。
 
@@ -44,7 +45,7 @@ Az 是新模組，因此版本已重設為 1.0.0。
 
 1. [將 Azure PowerShell AzureRM 模組解除安裝](/powershell/azure/uninstall-az-ps#uninstall-the-azurerm-module)
 2. [安裝 Azure PowerShell Az 模組](install-az-ps.md)
-3. **選擇性**：當您熟悉新的命令集時，請使用 [Enable-AzureRMAlias](/powershell/module/az.accounts/enable-azurermalias) 啟用相容性模式來新增 AzureRM Cmdlet 的別名。 如需詳細資訊，請參閱下一節或[開始從 AzureRM 移轉至 Az](migrate-from-azurerm-to-az.md)。
+3. **選擇性** ：當您熟悉新的命令集時，請使用 [Enable-AzureRMAlias](/powershell/module/az.accounts/enable-azurermalias) 啟用相容性模式來新增 AzureRM Cmdlet 的別名。 如需詳細資訊，請參閱下一節或[開始從 AzureRM 移轉至 Az](migrate-from-azurerm-to-az.md)。
 
 ## <a name="migrate-existing-scripts-to-az"></a>將現有指令碼遷移至 Az
 

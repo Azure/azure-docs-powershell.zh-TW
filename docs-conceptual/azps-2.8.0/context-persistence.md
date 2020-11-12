@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/21/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 99c3d594c6d774152a4594a2eed7c7c3209bdbe9
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.service: azure-powershell
+ms.openlocfilehash: e428106fcc525cc8836af954897faa3f6c169990
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89244155"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93408004"
 ---
 # <a name="azure-powershell-context-objects"></a>Azure PowerShell 內容物件
 
@@ -22,11 +23,11 @@ Azure PowerShell 會使用 _Azure PowerShell 內容物件_ (Azure 內容) 來保
 
 Azure 內容是 PowerShell 物件，代表您對其執行命令的有效訂用帳戶，以及連線至 Azure 雲端所需的驗證資訊。 透過 Azure 內容，Azure PowerShell 就不需要在您每次切換訂用帳戶時重新驗證您的帳戶。 Azure 內容包含下列各項：
 
-* 用來透過 [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) 登入 Azure 的_帳戶_。 就帳戶的觀點而言，Azure 內容會將使用者、應用程式識別碼和服務主體等同視之。
-* 有效_訂用帳戶_是 Microsoft 提供的服務合約，用來建立和執行與_租用戶_相關聯的 Azure 資源。 租用戶在文件中或使用 Active Directory 時，通常稱為_組織_。
-* _權杖快取_的參考是用來存取 Azure 雲端的預存驗證權杖。 此權杖的儲存位置及其保存的時間長度，取決於[內容自動儲存設定](#save-azure-contexts-across-powershell-sessions)。
+* 用來透過 [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) 登入 Azure 的 _帳戶_ 。 就帳戶的觀點而言，Azure 內容會將使用者、應用程式識別碼和服務主體等同視之。
+* 有效 _訂用帳戶_ 是 Microsoft 提供的服務合約，用來建立和執行與 _租用戶_ 相關聯的 Azure 資源。 租用戶在文件中或使用 Active Directory 時，通常稱為 _組織_ 。
+* _權杖快取_ 的參考是用來存取 Azure 雲端的預存驗證權杖。 此權杖的儲存位置及其保存的時間長度，取決於[內容自動儲存設定](#save-azure-contexts-across-powershell-sessions)。
 
-如需這些字詞的詳細資訊，請參閱 [Azure Active Directory 術語](/azure/active-directory/fundamentals/active-directory-whatis#terminology)。 Azure 內容所使用的驗證權杖與持續性工作階段中其他已儲存的權杖相同。 
+如需這些字詞的詳細資訊，請參閱 [Azure Active Directory 術語](/azure/active-directory/fundamentals/active-directory-whatis#terminology)。 Azure 內容所使用的驗證權杖與持續性工作階段中其他已儲存的權杖相同。
 
 當您使用 `Connect-AzAccount` 登入時，系統會為您的預設訂用帳戶建立至少一個 Azure 內容。 `Connect-AzAccount` 傳回的物件是預設的 Azure 內容，用於其餘的 PowerShell 工作階段。
 
@@ -47,7 +48,7 @@ $context = Get-Context -Name "mycontext"
 內容名稱可能與相關聯的訂用帳戶名稱不同。
 
 > [!IMPORTANT]
-> 可用的 Azure 內容__不一定__是您可用的訂用帳戶。 Azure 內容僅代表本機儲存的資訊。 您可以使用 [Get-AzSubscription](/powershell/module/Az.Accounts/Get-AzSubscription?view=azps-1.8.0) Cmdlet 取得訂用帳戶。
+> 可用的 Azure 內容 __不一定__ 是您可用的訂用帳戶。 Azure 內容僅代表本機儲存的資訊。 您可以使用 [Get-AzSubscription](/powershell/module/Az.Accounts/Get-AzSubscription) Cmdlet 取得訂用帳戶。
 
 ## <a name="create-a-new-azure-context-from-subscription-information"></a>從訂用帳戶資訊建立新的 Azure 內容
 
@@ -102,9 +103,9 @@ New-AzVM -Name ExampleVM -AzContext $context
   Connect-AzAccount -Scope Process
   ```
 
-  在此登入的過程中傳回的 Azure 內容，有效性_僅_及於目前的工作階段，且無論 Azure PowerShell 內容自動儲存設定為何，都不會自動儲存。
+  在此登入的過程中傳回的 Azure 內容，有效性 _僅_ 及於目前的工作階段，且無論 Azure PowerShell 內容自動儲存設定為何，都不會自動儲存。
 * 使用 [Disable-AzCoNtextAutosave](/powershell/module/az.accounts/disable-azcontextautosave) Cmdlet 將 AzurePowershell 的內容自動儲存停用。
-  停用內容自動儲存並__不會__清除任何已儲存的權杖。 若要了解如何清除已儲存的 Azure 內容資訊，請參閱[移除 Azure 內容和認證](#remove-azure-contexts-and-stored-credentials)。
+  停用內容自動儲存並 __不會__ 清除任何已儲存的權杖。 若要了解如何清除已儲存的 Azure 內容資訊，請參閱[移除 Azure 內容和認證](#remove-azure-contexts-and-stored-credentials)。
 * 若要明確啟用 Azure 內容自動儲存，可以使用 [Enable-AzCoNtextAutosave](/powershell/module/az.accounts/enable-azcontextautosave) Cmdlet 來啟用。 自動儲存啟用時，所有使用者內容都會儲存在本機，以供後續的 PowerShell 工作階段使用。
 * 使用 [Save-AzContext](/powershell/module/az.accounts/save-azcontext) 手動儲存內容以供未來的 PowerShell 工作階段使用，並可在 [Import-AzContext](/powershell/module/az.accounts/import-azcontext) 來載入：
 
@@ -115,7 +116,7 @@ New-AzVM -Name ExampleVM -AzContext $context
   ```
 
 > [!WARNING]
-> 停用內容自動儲存並__不會__清除任何已儲存的預存內容資訊。 若要移除已儲存的資訊，請使用 [Clear-AzContext](/powershell/module/az.accounts/Clear-AzContext) Cmdlet。 如需移除已儲存內容的詳細資訊，請參閱[移除內容和認證](#remove-azure-contexts-and-stored-credentials)。
+> 停用內容自動儲存並 __不會__ 清除任何已儲存的預存內容資訊。 若要移除已儲存的資訊，請使用 [Clear-AzContext](/powershell/module/az.accounts/Clear-AzContext) Cmdlet。 如需移除已儲存內容的詳細資訊，請參閱[移除內容和認證](#remove-azure-contexts-and-stored-credentials)。
 
 前述每個命令都支援 `-Scope` 參數，此參數可使用 `Process` 值而僅套用至目前執行中的程序。 例如，若要確保在結束 PowerShell 工作階段之後不會儲存新建立的內容：
 
@@ -134,7 +135,7 @@ $context2 = Set-AzContext -Subscription "sub-id" -Tenant "other-tenant"
   您可以透過帳戶或內容登出任何帳戶：
 
   ```azurepowershell-interactive
-  Disconnect-AzAccount # Disconnect active account 
+  Disconnect-AzAccount # Disconnect active account
   Disconnect-AzAccount -Username "user@contoso.com" # Disconnect by account name
 
   Disconnect-AzAccount -ContextName "subscription2" # Disconnect by context name
@@ -144,7 +145,7 @@ $context2 = Set-AzContext -Subscription "sub-id" -Tenant "other-tenant"
   中斷連線後一律會移除已儲存的驗證權杖，並清除與中斷連線的使用者或內容相關聯的已儲存內容。
 * 使用 [Clear-AzContext](/powershell/module/az.accounts/Clear-AzContext)。 此 Cmdlet 一律會移除已儲存的內容和驗證權杖，而且也會將您登出。
 * 使用 [Remove-AzContext](/powershell/module/az.accounts/remove-azcontext) 移除內容：
-  
+
   ```azurepowershell-interactive
   Remove-AzContext -Name "mycontext" # Remove by name
   Get-AzContext -Name "mycontext" | Remove-AzContext # Remove by piping Azure context object

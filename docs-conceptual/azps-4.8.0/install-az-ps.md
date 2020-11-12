@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/14/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: a263f1d363b3d1a1cce433a6112c55afe65262a4
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.service: azure-powershell
+ms.openlocfilehash: f7a1658cdcafd1e8d6cba51ead26f9ddaa8c4c56
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92001709"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93407379"
 ---
 # <a name="install-azure-powershell"></a>安裝 Azure PowerShell
 
@@ -63,12 +64,12 @@ You are installing the modules from an untrusted repository. If you trust this r
 its InstallationPolicy value by running the `Set-PSRepository` cmdlet.
 
 Are you sure you want to install the modules from 'PSGallery'?
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
 請回答 `Yes` 或 `Yes to All` 以繼續安裝。
 
-為系統上的所有使用者安裝模組需要較高的權限。 在 Windows 中使用 **Run as administrator**，在 macOS 或 Linux 上使用 `sudo` 命令，以啟動 PowerShell 工作階段：
+為系統上的所有使用者安裝模組需要較高的權限。 在 Windows 中使用 **Run as administrator** ，在 macOS 或 Linux 上使用 `sudo` 命令，以啟動 PowerShell 工作階段：
 
 ```powershell-interactive
 if ($PSVersionTable.PSEdition -eq 'Desktop' -and (Get-Module -Name AzureRM -ListAvailable)) {
@@ -134,7 +135,7 @@ Connect-AzAccount
 
 若要更新任何 PowerShell 模組，您應該使用先前安裝該模組的相同方法。 例如，如果您最初是使用 `Install-Module`，則應該使用 [Update-Module](/powershell/module/powershellget/update-module) 來取得最新版本。 如果您最初使用的是 MSI 套件，則應該下載並安裝新的 MSI 套件。
 
-PowerShellGet Cmdlet 無法更新從 MSI 套件安裝的模組。 MSI 套件不會更新使用 PowerShellGet 安裝的模組。 如果您有任何使用 PowershellGet 進行更新的問題，請**重新安裝**，不要只是**更新**。 重新安裝的操作方式與安裝相同，但您可能需要新增 `-Force` 參數：
+PowerShellGet Cmdlet 無法更新從 MSI 套件安裝的模組。 MSI 套件不會更新使用 PowerShellGet 安裝的模組。 如果您有任何使用 PowershellGet 進行更新的問題，請 **重新安裝** ，不要只是 **更新** 。 重新安裝的操作方式與安裝相同，但您可能需要新增 `-Force` 參數：
 
 ```powershell
 if ($PSVersionTable.PSEdition -eq 'Desktop' -and (Get-Module -Name AzureRM -ListAvailable)) {
