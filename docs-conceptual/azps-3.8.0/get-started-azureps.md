@@ -1,16 +1,17 @@
 ---
 title: 開始使用 Azure PowerShell
-description: ''
+description: 開始使用 Azure PowerShell
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 04/24/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 6281ac5f6ec8941e0d5c1755f90f99552db9aa92
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.service: azure-powershell
+ms.openlocfilehash: 68b2b50afdd2dc79bdbd8f8b203a7cd3664c4973
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89240755"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93409210"
 ---
 # <a name="get-started-with-azure-powershell"></a>開始使用 Azure PowerShell
 
@@ -33,7 +34,7 @@ Azure PowerShell 的設計訴求是從命令列管理 Azure 資源。
 Connect-AzAccount
 ```
 
-Azure 雲端服務提供符合區域資料處理法規的環境。 針對區域雲端中的帳戶，請使用**環境**參數來登入。 請使用 [Get-AzEnvironment](/powershell/module/Az.Accounts/Get-AzEnvironment) Cmdlet 取得您區域的環境名稱。
+Azure 雲端服務提供符合區域資料處理法規的環境。 針對區域雲端中的帳戶，請使用 **環境** 參數來登入。 請使用 [Get-AzEnvironment](/powershell/module/Az.Accounts/Get-AzEnvironment) Cmdlet 取得您區域的環境名稱。
 例如，若要登入 Azure China 21Vianet：
 
 ```azurepowershell-interactive

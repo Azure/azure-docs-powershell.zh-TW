@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 7/7/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 8f18af8ed67ecf2aefd353208c07bf812df732d9
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.service: azure-powershell
+ms.openlocfilehash: 2ec432ae2823bb59f32ca7801a44a9da48db9fac
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92001753"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93410106"
 ---
 # <a name="sign-in-with-azure-powershell"></a>使用 Azure PowerShell 登入
 
@@ -130,7 +131,7 @@ $store.Close()
 
 如果您的帳戶與多個租用戶相關聯，則需要使用連線時指定的 `-Tenant` 參數方可登入。 此參數適用於其他所有登入方法。 登入時，此參數值可以是租用戶的 Azure 物件識別碼 (租用戶識別碼)，或租用戶的完整的網域名稱。
 
-如果您是[雲端解決方案提供者 (CSP)](https://azure.microsoft.com/offers/ms-azr-0145p/)，則 `-Tenant` 值**必須**是租用戶的識別碼。
+如果您是 [雲端解決方案提供者 (CSP)](https://azure.microsoft.com/offers/ms-azr-0145p/)，則 `-Tenant` 值 **必須** 是租用戶的識別碼。
 
 ```azurepowershell-interactive
 Connect-AzAccount -Tenant 'xxxx-xxxx-xxxx-xxxx'

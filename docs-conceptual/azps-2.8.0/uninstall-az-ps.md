@@ -5,12 +5,13 @@ ms.date: 09/15/2020
 ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 20859d6135676a3a4fb1e9f5d66909d157b38ac6
-ms.sourcegitcommit: 5fcf17330d6f335561640a5ee3d98c59f7baab94
+ms.service: azure-powershell
+ms.openlocfilehash: ff9135839b01ad9a1bf10e5969cd3226fe492145
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2020
-ms.locfileid: "91381406"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93409460"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>將 Azure PowerShell 模組解除安裝
 
@@ -25,7 +26,7 @@ ms.locfileid: "91381406"
 | Windows 10               | [開始] > [設定] > [應用程式]                                |
 | Windows 7 </br>Windows 8 | [啟動] > [控制台] -> [程式集] -> [解除安裝程式] |
 
-您在此畫面上應該會看到程式清單中的 **Azure PowerShell**。 這是要解除安裝的應用程式。 如果並未列出此程式，而您是透過 PowerShellGet 安裝，則應遵循下一組指示。
+您在此畫面上應該會看到程式清單中的 **Azure PowerShell** 。 這是要解除安裝的應用程式。 如果並未列出此程式，而您是透過 PowerShellGet 安裝，則應遵循下一組指示。
 
 ## <a name="uninstall-the-az-powershell-module-from-powershellget"></a>透過 PowerShellGet 解除安裝 Az PowerShell 模組
 
@@ -44,7 +45,7 @@ Version             Name                           Repository           Descript
 4.1.0               Az                             PSGallery            Microsoft Azure PowerShell
 ```
 
-下列指令碼會查詢 PowerShell 資源庫來取得相依子模組的清單。 然後，指令碼會將每個子模組的正確版本解除安裝。 您需要擁有系統管理員權限，才能在**流程**或**目前使用者**以外的範圍執行此指令碼。
+下列指令碼會查詢 PowerShell 資源庫來取得相依子模組的清單。 然後，指令碼會將每個子模組的正確版本解除安裝。 您需要擁有系統管理員權限，才能在 **流程** 或 **目前使用者** 以外的範圍執行此指令碼。
 
 ```powershell-interactive
 function Uninstall-AzModule {
@@ -146,7 +147,7 @@ function Uninstall-AzModule {
 Uninstall-AzModule -Name Az -Version 1.8.0
 ```
 
-指令碼在執行時，會顯示要解除安裝每個子模組的**名稱**、**版本**及**狀態**。 若執行指令碼只是查看會刪除的項目，而不要真正移除項目，請指定 `-WhatIf` 參數。
+指令碼在執行時，會顯示要解除安裝每個子模組的 **名稱** 、 **版本** 及 **狀態** 。 若執行指令碼只是查看會刪除的項目，而不要真正移除項目，請指定 `-WhatIf` 參數。
 
 ```output
 ModuleName              Version  State
@@ -160,10 +161,10 @@ Az.ApplicationInsights  1.0.0    Uninstalled
 ```
 
 > [!IMPORTANT]
-> 若此指令碼與要解除安裝之相同版本的相依性不完全相符，系統不會解除安裝該相依性的_任何_版本。 這是因為您的系統上可能有其他版本的目標模組需要使用這些相依性。
+> 若此指令碼與要解除安裝之相同版本的相依性不完全相符，系統不會解除安裝該相依性的 _任何_ 版本。 這是因為您的系統上可能有其他版本的目標模組需要使用這些相依性。
 
 針對您要解除安裝的 Az PowerShell 模組每個版本執行下列範例。
-為了方便起見，下列指令碼會將所有版本的 Az 解除安裝，**只留下**最新版本。
+為了方便起見，下列指令碼會將所有版本的 Az 解除安裝， **只留下** 最新版本。
 
 ```powershell-interactive
 $Modules = Get-InstalledModule -Name Az -AllVersions |
@@ -185,7 +186,7 @@ $Modules | ForEach-Object {Uninstall-AzModule -Name $_.Name -Version $_.Version}
 | Windows 10               | [開始] > [設定] > [應用程式]                                |
 | Windows 7 </br>Windows 8 | [啟動] > [控制台] -> [程式集] -> [解除安裝程式] |
 
-您在此畫面上應該會看到程式清單中的 **Azure PowerShell** 或 **Microsoft Azure PowerShell - 月份年份**。 這是要解除安裝的應用程式。 如果並未列出此程式，而您是透過 PowerShellGet 安裝，則應遵循下一組指示。
+您在此畫面上應該會看到程式清單中的 **Azure PowerShell** 或 **Microsoft Azure PowerShell - 月份年份** 。 這是要解除安裝的應用程式。 如果並未列出此程式，而您是透過 PowerShellGet 安裝，則應遵循下一組指示。
 
 ### <a name="uninstall-the-azurerm-powershell-module-from-powershellget"></a>透過 PowerShellGet 解除安裝 AzureRM PowerShell 模組
 

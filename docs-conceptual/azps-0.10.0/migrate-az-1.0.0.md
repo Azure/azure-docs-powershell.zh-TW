@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: ae2539a09b93fb482ed3f8a363c7a0a66e02a412
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.service: azure-powershell
+ms.openlocfilehash: 3ab12307f786c12422338835926802793a33713e
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89241843"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93409868"
 ---
 # <a name="breaking-changes-for-az-100"></a>Az 1.0.0 的重大變更
 
@@ -98,7 +99,7 @@ Get-AzureRmStorageAccount | Get-AzureStorageContainer | Get-AzureStorageBlob
 當您準備好要停用別名時，`Disable-AzureRmAlias` 會移除已建立的別名。 如需完整的詳細資訊，請參閱 [Disable-AzureRmAlias 參考資料](/powershell/module/az.accounts/disable-azurermalias)。
 
 > [!IMPORTANT]
-> 停用別名時，請確實在_所有_已啟用別名的範圍加以停用。
+> 停用別名時，請確實在 _所有_ 已啟用別名的範圍加以停用。
 
 ### <a name="module-name-changes"></a>模組名稱的變更
 
@@ -119,7 +120,7 @@ Get-AzureRmStorageAccount | Get-AzureStorageContainer | Get-AzureStorageBlob
 | AzureRM.UsageAggregates | Az.Billing |
 | AzureRM.Consumption | Az.Billing |
 
-模組名稱的變更表示，只要指令碼使用 `#Requires` 或 `Import-Module` 來載入特定模組，就需要進行變更，以改為使用新的模組。 對 Cmdlet 後置詞未變更的模組而言，這表示模組名稱雖已變更，但表示作業空間的後置詞_並未_變更。
+模組名稱的變更表示，只要指令碼使用 `#Requires` 或 `Import-Module` 來載入特定模組，就需要進行變更，以改為使用新的模組。 對 Cmdlet 後置詞未變更的模組而言，這表示模組名稱雖已變更，但表示作業空間的後置詞 _並未_ 變更。
 
 #### <a name="migrating-requires-and-import-module-statements"></a>移轉 #Requires 和 Import-Module 陳述式
 

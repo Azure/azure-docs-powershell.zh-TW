@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/04/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: cfe5833bd8bbfac53f65695f8bdfbd7b946a8852
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.service: azure-powershell
+ms.openlocfilehash: a8fa4e04d316b48a6d7c6f6c496504727fd2aaf3
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89244070"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93410412"
 ---
 # <a name="use-multiple-azure-subscriptions"></a>使用多個 Azure 訂用帳戶
 
@@ -20,8 +21,8 @@ ms.locfileid: "89244070"
 
 ## <a name="tenants-users-and-subscriptions"></a>租用戶、使用者和訂用帳戶
 
-您可能對於 Azure 中租用戶、使用者和訂用帳戶之間的差異感到混淆。 _租用戶_是指包含整個組織的 Azure Active Directory 實體。 租用戶至少有一個_訂用帳戶_和_使用者_。 使用者為個人，且只與一個租用戶相關，也就是其所屬的組織。 使用者是會登入 Azure 來建立、管理並使用資源的帳戶。
-使用者可能擁有多個_訂用帳戶_的存取權，訂用帳戶是與 Microsoft 的協議，可使用包括 Azure 等雲端服務。 每個資源會與訂用帳戶相關聯。
+您可能對於 Azure 中租用戶、使用者和訂用帳戶之間的差異感到混淆。 _租用戶_ 是指包含整個組織的 Azure Active Directory 實體。 租用戶至少有一個 _訂用帳戶_ 和 _使用者_ 。 使用者為個人，且只與一個租用戶相關，也就是其所屬的組織。 使用者是會登入 Azure 來建立、管理並使用資源的帳戶。
+使用者可能擁有多個 _訂用帳戶_ 的存取權，訂用帳戶是與 Microsoft 的協議，可使用包括 Azure 等雲端服務。 每個資源會與訂用帳戶相關聯。
 
 若要深入了解租用戶、使用者和訂用帳戶之間的差異，請參閱 [Azure 雲端術語字典](/azure/azure-glossary-cloud-terminology)。  若要了解如何將新訂用帳戶新增至您的 Azure Active Directory 租用戶，請參閱[如何將 Azure 訂用帳戶新增至 Azure Active Directory](/azure/active-directory/active-directory-how-subscriptions-associated-directory)。
 若要了解如何登入特定租用戶，請參閱[使用 Azure PowerShell 登入](/powershell/azure/authenticate-azureps)。
