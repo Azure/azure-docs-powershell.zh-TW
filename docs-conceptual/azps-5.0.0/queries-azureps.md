@@ -5,22 +5,23 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 2754df5132ca9d528217fa5caad95b7f59cc8215
-ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.service: azure-powershell
+ms.openlocfilehash: 71de99fec7de36cf8cc0fe3e8840fb55cedc5db7
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92753402"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93409953"
 ---
-# <a name="query-output-of-azure-powershell"></a><span data-ttu-id="004ac-103">查詢 Azure PowerShell 的輸出</span><span class="sxs-lookup"><span data-stu-id="004ac-103">Query output of Azure PowerShell</span></span> 
+# <a name="query-output-of-azure-powershell"></a><span data-ttu-id="391c8-103">查詢 Azure PowerShell 的輸出</span><span class="sxs-lookup"><span data-stu-id="391c8-103">Query output of Azure PowerShell</span></span> 
 
-<span data-ttu-id="004ac-104">每個 Azure PowerShell Cmdlet 的結果都是 Azure PowerShell 物件。</span><span class="sxs-lookup"><span data-stu-id="004ac-104">The results of each Azure PowerShell cmdlet are an Azure PowerShell object.</span></span> <span data-ttu-id="004ac-105">即使 Cmdlet 不是明確的 `Get-` 作業，也可能會傳回可進行檢查的值，以提供已建立或已修改資源的相關資訊。</span><span class="sxs-lookup"><span data-stu-id="004ac-105">Even cmdlets that aren't explicitly `Get-` operations might return a value that can be inspected, to give information about a resource that was created or modified.</span></span> <span data-ttu-id="004ac-106">大多數的 Cmdlet 會傳回單一物件，但有些會傳回應重複查看的陣列。</span><span class="sxs-lookup"><span data-stu-id="004ac-106">While most cmdlets return a single object, some return an array that should be iterated through.</span></span>
+<span data-ttu-id="391c8-104">每個 Azure PowerShell Cmdlet 的結果都是 Azure PowerShell 物件。</span><span class="sxs-lookup"><span data-stu-id="391c8-104">The results of each Azure PowerShell cmdlet are an Azure PowerShell object.</span></span> <span data-ttu-id="391c8-105">即使 Cmdlet 不是明確的 `Get-` 作業，也可能會傳回可進行檢查的值，以提供已建立或已修改資源的相關資訊。</span><span class="sxs-lookup"><span data-stu-id="391c8-105">Even cmdlets that aren't explicitly `Get-` operations might return a value that can be inspected, to give information about a resource that was created or modified.</span></span> <span data-ttu-id="391c8-106">大多數的 Cmdlet 會傳回單一物件，但有些會傳回應重複查看的陣列。</span><span class="sxs-lookup"><span data-stu-id="391c8-106">While most cmdlets return a single object, some return an array that should be iterated through.</span></span>
 
-<span data-ttu-id="004ac-107">在大部分的情況下，您可以使用 [Select-Object](/powershell/module/Microsoft.PowerShell.Utility/Select-Object) Cmdlet (通常縮寫為 `select`) 從 Azure PowerShell 查詢輸出。</span><span class="sxs-lookup"><span data-stu-id="004ac-107">In almost all cases, you query output from Azure PowerShell with the [Select-Object](/powershell/module/Microsoft.PowerShell.Utility/Select-Object) cmdlet, often abbreviated to `select`.</span></span> <span data-ttu-id="004ac-108">您可以透過 [Where-Object](/powershell/module/Microsoft.PowerShell.Core/Where-Object) 或其別名 `where` 來篩選輸出。</span><span class="sxs-lookup"><span data-stu-id="004ac-108">Output can be filtered with [Where-Object](/powershell/module/Microsoft.PowerShell.Core/Where-Object), or its alias `where`.</span></span>
+<span data-ttu-id="391c8-107">在大部分的情況下，您可以使用 [Select-Object](/powershell/module/Microsoft.PowerShell.Utility/Select-Object) Cmdlet (通常縮寫為 `select`) 從 Azure PowerShell 查詢輸出。</span><span class="sxs-lookup"><span data-stu-id="391c8-107">In almost all cases, you query output from Azure PowerShell with the [Select-Object](/powershell/module/Microsoft.PowerShell.Utility/Select-Object) cmdlet, often abbreviated to `select`.</span></span> <span data-ttu-id="391c8-108">您可以透過 [Where-Object](/powershell/module/Microsoft.PowerShell.Core/Where-Object) 或其別名 `where` 來篩選輸出。</span><span class="sxs-lookup"><span data-stu-id="391c8-108">Output can be filtered with [Where-Object](/powershell/module/Microsoft.PowerShell.Core/Where-Object), or its alias `where`.</span></span>
 
-## <a name="select-simple-properties"></a><span data-ttu-id="004ac-109">選取簡單屬性</span><span class="sxs-lookup"><span data-stu-id="004ac-109">Select simple properties</span></span>
+## <a name="select-simple-properties"></a><span data-ttu-id="391c8-109">選取簡單屬性</span><span class="sxs-lookup"><span data-stu-id="391c8-109">Select simple properties</span></span>
 
-<span data-ttu-id="004ac-110">在預設的資料表格式中，Azure PowerShell Cmdlet 不會顯示所有可用的屬性。</span><span class="sxs-lookup"><span data-stu-id="004ac-110">In the default table format, Azure PowerShell cmdlets don't display all of their available properties.</span></span> <span data-ttu-id="004ac-111">您可以使用 [Format-List](/powershell/module/microsoft.powershell.utility/format-list) Cmdlet，或透過管道將輸出傳送至 `Select-Object *` 以取得完整屬性：</span><span class="sxs-lookup"><span data-stu-id="004ac-111">You can get the full properties by using the [Format-List](/powershell/module/microsoft.powershell.utility/format-list) cmdlet, or by piping output to `Select-Object *`:</span></span>
+<span data-ttu-id="391c8-110">在預設的資料表格式中，Azure PowerShell Cmdlet 不會顯示所有可用的屬性。</span><span class="sxs-lookup"><span data-stu-id="391c8-110">In the default table format, Azure PowerShell cmdlets don't display all of their available properties.</span></span> <span data-ttu-id="391c8-111">您可以使用 [Format-List](/powershell/module/microsoft.powershell.utility/format-list) Cmdlet，或透過管道將輸出傳送至 `Select-Object *` 以取得完整屬性：</span><span class="sxs-lookup"><span data-stu-id="391c8-111">You can get the full properties by using the [Format-List](/powershell/module/microsoft.powershell.utility/format-list) cmdlet, or by piping output to `Select-Object *`:</span></span>
 
 ```azurepowershell-interactive
 Get-AzVM -Name TestVM -ResourceGroupName TestGroup | Select-Object *
@@ -55,7 +56,7 @@ RequestId                : 711d8ed1-b888-4c52-8ab9-66f07b87eb6b
 StatusCode               : OK
 ```
 
-<span data-ttu-id="004ac-112">一旦知道您感興趣的屬性名稱後，您可以使用這些屬性名稱搭配 `Select-Object` 來直接取得這些屬性：</span><span class="sxs-lookup"><span data-stu-id="004ac-112">Once you know the names of the properties that you're interested in, you can use those property names with `Select-Object` to get them directly:</span></span>
+<span data-ttu-id="391c8-112">一旦知道您感興趣的屬性名稱後，您可以使用這些屬性名稱搭配 `Select-Object` 來直接取得這些屬性：</span><span class="sxs-lookup"><span data-stu-id="391c8-112">Once you know the names of the properties that you're interested in, you can use those property names with `Select-Object` to get them directly:</span></span>
 
 ```azurepowershell-interactive
 Get-AzVM -Name TestVM -ResourceGroupName TestGroup | Select-Object Name,VmId,ProvisioningState
@@ -67,11 +68,11 @@ Name   VmId                                 ProvisioningState
 TestVM 711d8ed1-b888-4c52-8ab9-66f07b87eb6b Succeeded
 ```
 
-<span data-ttu-id="004ac-113">使用 `Select-Object` 的輸出一律會經過格式化，以顯示要求的資訊。</span><span class="sxs-lookup"><span data-stu-id="004ac-113">Output from using `Select-Object` is always formatted to display the requested information.</span></span> <span data-ttu-id="004ac-114">若要了解如何將格式化當作查詢 Cmdlet 結果的一部份使用，請參閱[格式化 Azure PowerShell Cmdlet 的輸出](formatting-output.md)。</span><span class="sxs-lookup"><span data-stu-id="004ac-114">To learn about using formatting as part of querying cmdlet results, see [Format Azure PowerShell cmdlet output](formatting-output.md).</span></span>
+<span data-ttu-id="391c8-113">使用 `Select-Object` 的輸出一律會經過格式化，以顯示要求的資訊。</span><span class="sxs-lookup"><span data-stu-id="391c8-113">Output from using `Select-Object` is always formatted to display the requested information.</span></span> <span data-ttu-id="391c8-114">若要了解如何將格式化當作查詢 Cmdlet 結果的一部份使用，請參閱[格式化 Azure PowerShell Cmdlet 的輸出](formatting-output.md)。</span><span class="sxs-lookup"><span data-stu-id="391c8-114">To learn about using formatting as part of querying cmdlet results, see [Format Azure PowerShell cmdlet output](formatting-output.md).</span></span>
 
-## <a name="select-nested-properties"></a><span data-ttu-id="004ac-115">選取巢狀屬性</span><span class="sxs-lookup"><span data-stu-id="004ac-115">Select nested properties</span></span>
+## <a name="select-nested-properties"></a><span data-ttu-id="391c8-115">選取巢狀屬性</span><span class="sxs-lookup"><span data-stu-id="391c8-115">Select nested properties</span></span>
 
-<span data-ttu-id="004ac-116">Azure PowerShell Cmdlet 輸出中的某些屬性會使用巢狀物件，例如 `Get-AzVM` 輸出的 `StorageProfile` 屬性。</span><span class="sxs-lookup"><span data-stu-id="004ac-116">Some properties in Azure PowerShell cmdlet output use nested objects, like the `StorageProfile` property of `Get-AzVM` output.</span></span> <span data-ttu-id="004ac-117">若要從巢狀屬性中取得要檢查的值，需提供值的顯示名稱和完整路徑，以作為 `Select-Object` 中字典引數的一部份：</span><span class="sxs-lookup"><span data-stu-id="004ac-117">To get a value from a nested property, provide a display name and the full path to the value you want to inspect as part of a dictionary argument to `Select-Object`:</span></span>
+<span data-ttu-id="391c8-116">Azure PowerShell Cmdlet 輸出中的某些屬性會使用巢狀物件，例如 `Get-AzVM` 輸出的 `StorageProfile` 屬性。</span><span class="sxs-lookup"><span data-stu-id="391c8-116">Some properties in Azure PowerShell cmdlet output use nested objects, like the `StorageProfile` property of `Get-AzVM` output.</span></span> <span data-ttu-id="391c8-117">若要從巢狀屬性中取得要檢查的值，需提供值的顯示名稱和完整路徑，以作為 `Select-Object` 中字典引數的一部份：</span><span class="sxs-lookup"><span data-stu-id="391c8-117">To get a value from a nested property, provide a display name and the full path to the value you want to inspect as part of a dictionary argument to `Select-Object`:</span></span>
 
 ```azurepowershell-interactive
 Get-AzVM -ResourceGroupName TestGroup | `
@@ -86,11 +87,11 @@ TestVM2   Linux
 WinVM   Windows
 ```
 
-<span data-ttu-id="004ac-118">每個字典引數都會從物件中選取一個屬性。</span><span class="sxs-lookup"><span data-stu-id="004ac-118">Each dictionary argument selects one property from the object.</span></span> <span data-ttu-id="004ac-119">要擷取的屬性必須是運算式的一部分。</span><span class="sxs-lookup"><span data-stu-id="004ac-119">The property to extract must be part of an expression.</span></span>
+<span data-ttu-id="391c8-118">每個字典引數都會從物件中選取一個屬性。</span><span class="sxs-lookup"><span data-stu-id="391c8-118">Each dictionary argument selects one property from the object.</span></span> <span data-ttu-id="391c8-119">要擷取的屬性必須是運算式的一部分。</span><span class="sxs-lookup"><span data-stu-id="391c8-119">The property to extract must be part of an expression.</span></span>
 
-## <a name="filter-results"></a><span data-ttu-id="004ac-120">篩選結果</span><span class="sxs-lookup"><span data-stu-id="004ac-120">Filter results</span></span> 
+## <a name="filter-results"></a><span data-ttu-id="391c8-120">篩選結果</span><span class="sxs-lookup"><span data-stu-id="391c8-120">Filter results</span></span> 
 
-<span data-ttu-id="004ac-121">`Where-Object` Cmdlet 可讓您根據任何屬性值 (包括巢狀屬性) 來篩選結果。</span><span class="sxs-lookup"><span data-stu-id="004ac-121">The `Where-Object` cmdlet allows you to filter the result based on any property value, including nested properties.</span></span> <span data-ttu-id="004ac-122">下一個範例會示範如何使用 `Where-Object` 來尋找資源群組中的 Linux VM。</span><span class="sxs-lookup"><span data-stu-id="004ac-122">The next example shows how to use `Where-Object` to find the Linux VMs in a resource group.</span></span>
+<span data-ttu-id="391c8-121">`Where-Object` Cmdlet 可讓您根據任何屬性值 (包括巢狀屬性) 來篩選結果。</span><span class="sxs-lookup"><span data-stu-id="391c8-121">The `Where-Object` cmdlet allows you to filter the result based on any property value, including nested properties.</span></span> <span data-ttu-id="391c8-122">下一個範例會示範如何使用 `Where-Object` 來尋找資源群組中的 Linux VM。</span><span class="sxs-lookup"><span data-stu-id="391c8-122">The next example shows how to use `Where-Object` to find the Linux VMs in a resource group.</span></span>
 
 ```azurepowershell-interactive
 Get-AzVM -ResourceGroupName TestGroup | `
@@ -104,7 +105,7 @@ TestGroup          TestVM  westus2 Standard_D2s_v3  Linux  testvm299         Suc
 TestGroup         TestVM2  westus2 Standard_D2s_v3  Linux testvm2669         Succeeded
 ```
 
-<span data-ttu-id="004ac-123">您可以使用管道將 `Select-Object` 和 `Where-Object` 的結果傳送給彼此。</span><span class="sxs-lookup"><span data-stu-id="004ac-123">You can pipe the results of `Select-Object` and `Where-Object` to each other.</span></span> <span data-ttu-id="004ac-124">基於效能目的，我們一律建議將 `Where-Object` 作業放在 `Select-Object` 之前：</span><span class="sxs-lookup"><span data-stu-id="004ac-124">For performance purposes, it's always recommended to put the `Where-Object` operation before `Select-Object`:</span></span>
+<span data-ttu-id="391c8-123">您可以使用管道將 `Select-Object` 和 `Where-Object` 的結果傳送給彼此。</span><span class="sxs-lookup"><span data-stu-id="391c8-123">You can pipe the results of `Select-Object` and `Where-Object` to each other.</span></span> <span data-ttu-id="391c8-124">基於效能目的，我們一律建議將 `Where-Object` 作業放在 `Select-Object` 之前：</span><span class="sxs-lookup"><span data-stu-id="391c8-124">For performance purposes, it's always recommended to put the `Where-Object` operation before `Select-Object`:</span></span>
 
 ```azurepowershell-interactive
 Get-AzVM -ResourceGroupName TestGroup | `

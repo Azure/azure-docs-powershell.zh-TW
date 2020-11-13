@@ -5,29 +5,30 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 27acf416d118fb4e25f0f683d97f3a56fe882a1a
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.service: azure-powershell
+ms.openlocfilehash: 44016cc9546869b05693276293119c21ca02e4b0
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89241945"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93410276"
 ---
-# <a name="format-azure-powershell-cmdlet-output"></a><span data-ttu-id="312b9-103">格式化 Azure PowerShell Cmdlet 輸出</span><span class="sxs-lookup"><span data-stu-id="312b9-103">Format Azure PowerShell cmdlet output</span></span>
+# <a name="format-azure-powershell-cmdlet-output"></a><span data-ttu-id="3b2d4-103">格式化 Azure PowerShell Cmdlet 輸出</span><span class="sxs-lookup"><span data-stu-id="3b2d4-103">Format Azure PowerShell cmdlet output</span></span>
 
-<span data-ttu-id="312b9-104">依預設，每個 Azure PowerShell Cmdlet 的輸出格式都很容易讀取。</span><span class="sxs-lookup"><span data-stu-id="312b9-104">By default each Azure PowerShell cmdlet formats output to be easy to read.</span></span> <span data-ttu-id="312b9-105">PowerShell 可讓您將 Cmdlet 輸出轉換或格式化為下列其中一個 Cmdlet：</span><span class="sxs-lookup"><span data-stu-id="312b9-105">PowerShell allows you to convert or format cmdlet output by piping to one of the following cmdlets:</span></span>
+<span data-ttu-id="3b2d4-104">依預設，每個 Azure PowerShell Cmdlet 的輸出格式都很容易讀取。</span><span class="sxs-lookup"><span data-stu-id="3b2d4-104">By default each Azure PowerShell cmdlet formats output to be easy to read.</span></span> <span data-ttu-id="3b2d4-105">PowerShell 可讓您將 Cmdlet 輸出轉換或格式化為下列其中一個 Cmdlet：</span><span class="sxs-lookup"><span data-stu-id="3b2d4-105">PowerShell allows you to convert or format cmdlet output by piping to one of the following cmdlets:</span></span>
 
-| <span data-ttu-id="312b9-106">格式化</span><span class="sxs-lookup"><span data-stu-id="312b9-106">Formatting</span></span>      | <span data-ttu-id="312b9-107">轉換</span><span class="sxs-lookup"><span data-stu-id="312b9-107">Conversion</span></span>       |
+| <span data-ttu-id="3b2d4-106">格式化</span><span class="sxs-lookup"><span data-stu-id="3b2d4-106">Formatting</span></span>      | <span data-ttu-id="3b2d4-107">轉換</span><span class="sxs-lookup"><span data-stu-id="3b2d4-107">Conversion</span></span>       |
 |-----------------|------------------|
-| [<span data-ttu-id="312b9-108">Format-Custom</span><span class="sxs-lookup"><span data-stu-id="312b9-108">Format-Custom</span></span>](/powershell/module/microsoft.powershell.utility/format-custom) | [<span data-ttu-id="312b9-109">ConvertTo-Csv</span><span class="sxs-lookup"><span data-stu-id="312b9-109">ConvertTo-Csv</span></span>](/powershell/module/microsoft.powershell.utility/convertto-csv)  |
-| [<span data-ttu-id="312b9-110">Format-List</span><span class="sxs-lookup"><span data-stu-id="312b9-110">Format-List</span></span>](/powershell/module/microsoft.powershell.utility/format-list)   | [<span data-ttu-id="312b9-111">ConvertTo-Html</span><span class="sxs-lookup"><span data-stu-id="312b9-111">ConvertTo-Html</span></span>](/powershell/module/microsoft.powershell.utility/convertto-html) |
-| [<span data-ttu-id="312b9-112">Format-Table</span><span class="sxs-lookup"><span data-stu-id="312b9-112">Format-Table</span></span>](/powershell/module/microsoft.powershell.utility/format-table)  | [<span data-ttu-id="312b9-113">ConvertTo-Json</span><span class="sxs-lookup"><span data-stu-id="312b9-113">ConvertTo-Json</span></span>](/powershell/module/microsoft.powershell.utility/convertto-json) |
-| [<span data-ttu-id="312b9-114">Format-Wide</span><span class="sxs-lookup"><span data-stu-id="312b9-114">Format-Wide</span></span>](/powershell/module/microsoft.powershell.utility/format-wide)   | [<span data-ttu-id="312b9-115">ConvertTo-Xml</span><span class="sxs-lookup"><span data-stu-id="312b9-115">ConvertTo-Xml</span></span>](/powershell/module/microsoft.powershell.utility/convertto-xml)  |
+| [<span data-ttu-id="3b2d4-108">Format-Custom</span><span class="sxs-lookup"><span data-stu-id="3b2d4-108">Format-Custom</span></span>](/powershell/module/microsoft.powershell.utility/format-custom) | [<span data-ttu-id="3b2d4-109">ConvertTo-Csv</span><span class="sxs-lookup"><span data-stu-id="3b2d4-109">ConvertTo-Csv</span></span>](/powershell/module/microsoft.powershell.utility/convertto-csv)  |
+| [<span data-ttu-id="3b2d4-110">Format-List</span><span class="sxs-lookup"><span data-stu-id="3b2d4-110">Format-List</span></span>](/powershell/module/microsoft.powershell.utility/format-list)   | [<span data-ttu-id="3b2d4-111">ConvertTo-Html</span><span class="sxs-lookup"><span data-stu-id="3b2d4-111">ConvertTo-Html</span></span>](/powershell/module/microsoft.powershell.utility/convertto-html) |
+| [<span data-ttu-id="3b2d4-112">Format-Table</span><span class="sxs-lookup"><span data-stu-id="3b2d4-112">Format-Table</span></span>](/powershell/module/microsoft.powershell.utility/format-table)  | [<span data-ttu-id="3b2d4-113">ConvertTo-Json</span><span class="sxs-lookup"><span data-stu-id="3b2d4-113">ConvertTo-Json</span></span>](/powershell/module/microsoft.powershell.utility/convertto-json) |
+| [<span data-ttu-id="3b2d4-114">Format-Wide</span><span class="sxs-lookup"><span data-stu-id="3b2d4-114">Format-Wide</span></span>](/powershell/module/microsoft.powershell.utility/format-wide)   | [<span data-ttu-id="3b2d4-115">ConvertTo-Xml</span><span class="sxs-lookup"><span data-stu-id="3b2d4-115">ConvertTo-Xml</span></span>](/powershell/module/microsoft.powershell.utility/convertto-xml)  |
 
-<span data-ttu-id="312b9-116">格式化可用於在 PowerShell 終端中顯示內容，而轉換則用來產生供其他指令碼或程式使用的資料。</span><span class="sxs-lookup"><span data-stu-id="312b9-116">Formatting is used for display in a PowerShell terminal, and conversion is used for generating data to be consumed by other scripts or programs.</span></span>
+<span data-ttu-id="3b2d4-116">格式化可用於在 PowerShell 終端中顯示內容，而轉換則用來產生供其他指令碼或程式使用的資料。</span><span class="sxs-lookup"><span data-stu-id="3b2d4-116">Formatting is used for display in a PowerShell terminal, and conversion is used for generating data to be consumed by other scripts or programs.</span></span>
 
-## <a name="table-output-format"></a><span data-ttu-id="312b9-117">Table 輸出格式</span><span class="sxs-lookup"><span data-stu-id="312b9-117">Table output format</span></span>
+## <a name="table-output-format"></a><span data-ttu-id="3b2d4-117">Table 輸出格式</span><span class="sxs-lookup"><span data-stu-id="3b2d4-117">Table output format</span></span>
 
-<span data-ttu-id="312b9-118">依預設，Azure PowerShell Cmdlet 會以資料表格式輸出。</span><span class="sxs-lookup"><span data-stu-id="312b9-118">By default, Azure PowerShell cmdlets output in the table format.</span></span> <span data-ttu-id="312b9-119">此格式不會顯示要求資源的所有資訊：</span><span class="sxs-lookup"><span data-stu-id="312b9-119">This format doesn't display all information of the requested resource:</span></span>
+<span data-ttu-id="3b2d4-118">依預設，Azure PowerShell Cmdlet 會以資料表格式輸出。</span><span class="sxs-lookup"><span data-stu-id="3b2d4-118">By default, Azure PowerShell cmdlets output in the table format.</span></span> <span data-ttu-id="3b2d4-119">此格式不會顯示要求資源的所有資訊：</span><span class="sxs-lookup"><span data-stu-id="3b2d4-119">This format doesn't display all information of the requested resource:</span></span>
 
 ```powershell-interactive
 Get-AzVM
@@ -41,7 +42,7 @@ QueryExample         RHELExample  westus2  Standard_D2_v3   Linux    rhelexample
 QueryExample        WinExampleVM  westus2 Standard_DS1_v2 Windows   winexamplevm268         Succeeded
 ```
 
-<span data-ttu-id="312b9-120">PowerShell 工作階段視窗的寬度會影響由 `Format-Table` 所顯示的資料量。</span><span class="sxs-lookup"><span data-stu-id="312b9-120">The amount of data displayed by `Format-Table` can be affected by the width of your PowerShell session window.</span></span> <span data-ttu-id="312b9-121">若要將輸出限制為特定屬性並加以排序，可以提供屬性名稱做為 `Format-Table` 的引數：</span><span class="sxs-lookup"><span data-stu-id="312b9-121">To restrict the output to specific properties and order them, property names can be provided as arguments to `Format-Table`:</span></span>
+<span data-ttu-id="3b2d4-120">PowerShell 工作階段視窗的寬度會影響由 `Format-Table` 所顯示的資料量。</span><span class="sxs-lookup"><span data-stu-id="3b2d4-120">The amount of data displayed by `Format-Table` can be affected by the width of your PowerShell session window.</span></span> <span data-ttu-id="3b2d4-121">若要將輸出限制為特定屬性並加以排序，可以提供屬性名稱做為 `Format-Table` 的引數：</span><span class="sxs-lookup"><span data-stu-id="3b2d4-121">To restrict the output to specific properties and order them, property names can be provided as arguments to `Format-Table`:</span></span>
 
 ```powershell-interactive
 Get-AzVM -ResourceGroupName QueryExample | Format-Table Name,ResourceGroupName,Location
@@ -55,15 +56,15 @@ RHELExample    QueryExample      westus2
 WinExampleVM   QueryExample      westus2
 ```
 
-## <a name="list-output-format"></a><span data-ttu-id="312b9-122">清單輸出格式</span><span class="sxs-lookup"><span data-stu-id="312b9-122">List output format</span></span>
+## <a name="list-output-format"></a><span data-ttu-id="3b2d4-122">清單輸出格式</span><span class="sxs-lookup"><span data-stu-id="3b2d4-122">List output format</span></span>
 
-<span data-ttu-id="312b9-123">清單輸出格式會產生兩個資料行，而值後面會緊接著屬性名稱。</span><span class="sxs-lookup"><span data-stu-id="312b9-123">List output format produces two columns, property names followed by the value.</span></span> <span data-ttu-id="312b9-124">對於複雜的物件，則會改為顯示該物件的類型。</span><span class="sxs-lookup"><span data-stu-id="312b9-124">For complex objects, the type of the object is displayed instead.</span></span>
+<span data-ttu-id="3b2d4-123">清單輸出格式會產生兩個資料行，而值後面會緊接著屬性名稱。</span><span class="sxs-lookup"><span data-stu-id="3b2d4-123">List output format produces two columns, property names followed by the value.</span></span> <span data-ttu-id="3b2d4-124">對於複雜的物件，則會改為顯示該物件的類型。</span><span class="sxs-lookup"><span data-stu-id="3b2d4-124">For complex objects, the type of the object is displayed instead.</span></span>
 
 ```powershell-interactive
 Get-AzVM | Format-List
 ```
 
-<span data-ttu-id="312b9-125">下列輸出會移除某些欄位。</span><span class="sxs-lookup"><span data-stu-id="312b9-125">The following output has some fields removed.</span></span>
+<span data-ttu-id="3b2d4-125">下列輸出會移除某些欄位。</span><span class="sxs-lookup"><span data-stu-id="3b2d4-125">The following output has some fields removed.</span></span>
 
 ```output
 ResourceGroupName        : QueryExample
@@ -89,7 +90,7 @@ Location                 : westus2
 ...
 ```
 
-<span data-ttu-id="312b9-126">例如 `Format-Table`，系統會提供屬性名稱以便將輸出排序，並限制輸出：</span><span class="sxs-lookup"><span data-stu-id="312b9-126">Like `Format-Table`, property names can be provided to order and restrict the output:</span></span>
+<span data-ttu-id="3b2d4-126">例如 `Format-Table`，系統會提供屬性名稱以便將輸出排序，並限制輸出：</span><span class="sxs-lookup"><span data-stu-id="3b2d4-126">Like `Format-Table`, property names can be provided to order and restrict the output:</span></span>
 
 ```powershell-interactive
 Get-AzVM | Format-List ResourceGroupName,Name,Location
@@ -109,9 +110,9 @@ Name              : WinExampleVM
 Location          : westus2
 ```
 
-## <a name="wide-output-format"></a><span data-ttu-id="312b9-127">寬度輸出格式</span><span class="sxs-lookup"><span data-stu-id="312b9-127">Wide output format</span></span>
+## <a name="wide-output-format"></a><span data-ttu-id="3b2d4-127">寬度輸出格式</span><span class="sxs-lookup"><span data-stu-id="3b2d4-127">Wide output format</span></span>
 
-<span data-ttu-id="312b9-128">只會針對每個查詢產生一個屬性名稱。</span><span class="sxs-lookup"><span data-stu-id="312b9-128">Wide output format produces only one property name per query.</span></span> <span data-ttu-id="312b9-129">您可以提供做為引數的屬性來控制要顯示的屬性。</span><span class="sxs-lookup"><span data-stu-id="312b9-129">Which property is displayed can be controlled by giving a property as an argument.</span></span>
+<span data-ttu-id="3b2d4-128">只會針對每個查詢產生一個屬性名稱。</span><span class="sxs-lookup"><span data-stu-id="3b2d4-128">Wide output format produces only one property name per query.</span></span> <span data-ttu-id="3b2d4-129">您可以提供做為引數的屬性來控制要顯示的屬性。</span><span class="sxs-lookup"><span data-stu-id="3b2d4-129">Which property is displayed can be controlled by giving a property as an argument.</span></span>
 
 ```powershell-interactive
 Get-AzVM | Format-Wide
@@ -131,15 +132,15 @@ QueryExample                                    QueryExample
 QueryExample
 ```
 
-## <a name="custom-output-format"></a><span data-ttu-id="312b9-130">自訂輸出格式</span><span class="sxs-lookup"><span data-stu-id="312b9-130">Custom output format</span></span>
+## <a name="custom-output-format"></a><span data-ttu-id="3b2d4-130">自訂輸出格式</span><span class="sxs-lookup"><span data-stu-id="3b2d4-130">Custom output format</span></span>
 
-<span data-ttu-id="312b9-131">`Custom-Format` 輸出類型的作用是格式化自訂物件。</span><span class="sxs-lookup"><span data-stu-id="312b9-131">The `Custom-Format` output type is meant for formatting custom objects.</span></span> <span data-ttu-id="312b9-132">若沒有任何引數，其行為會類似 `Format-List`，但是會顯示自訂類別的屬性名稱。</span><span class="sxs-lookup"><span data-stu-id="312b9-132">Without any arguments, it behaves like `Format-List` but displays the property names of custom classes.</span></span>
+<span data-ttu-id="3b2d4-131">`Custom-Format` 輸出類型的作用是格式化自訂物件。</span><span class="sxs-lookup"><span data-stu-id="3b2d4-131">The `Custom-Format` output type is meant for formatting custom objects.</span></span> <span data-ttu-id="3b2d4-132">若沒有任何引數，其行為會類似 `Format-List`，但是會顯示自訂類別的屬性名稱。</span><span class="sxs-lookup"><span data-stu-id="3b2d4-132">Without any arguments, it behaves like `Format-List` but displays the property names of custom classes.</span></span>
 
 ```powershell-interactive
 Get-AzVM | Format-Custom
 ```
 
-<span data-ttu-id="312b9-133">下列輸出會移除某些欄位。</span><span class="sxs-lookup"><span data-stu-id="312b9-133">The following output has some fields removed.</span></span>
+<span data-ttu-id="3b2d4-133">下列輸出會移除某些欄位。</span><span class="sxs-lookup"><span data-stu-id="3b2d4-133">The following output has some fields removed.</span></span>
 
 ```output
 ResourceGroupName : QueryExample
@@ -158,13 +159,13 @@ StorageProfile    : {ImageReference, OsDisk, DataDisks}
 ...
 ```
 
-<span data-ttu-id="312b9-134">將屬性名稱做為 `Custom-Format` 的引數，會顯示設為值之自訂物件集的屬性/值組：</span><span class="sxs-lookup"><span data-stu-id="312b9-134">Giving property names as arguments to `Custom-Format` displays the property/value pairs for custom objects set as values:</span></span>
+<span data-ttu-id="3b2d4-134">將屬性名稱做為 `Custom-Format` 的引數，會顯示設為值之自訂物件集的屬性/值組：</span><span class="sxs-lookup"><span data-stu-id="3b2d4-134">Giving property names as arguments to `Custom-Format` displays the property/value pairs for custom objects set as values:</span></span>
 
 ```powershell-interactive
 Get-AzVM | Format-Custom Name,ResourceGroupName,Location,OSProfile
 ```
 
-<span data-ttu-id="312b9-135">下列輸出會移除某些欄位。</span><span class="sxs-lookup"><span data-stu-id="312b9-135">The following output has some fields removed.</span></span>
+<span data-ttu-id="3b2d4-135">下列輸出會移除某些欄位。</span><span class="sxs-lookup"><span data-stu-id="3b2d4-135">The following output has some fields removed.</span></span>
 
 ```output
 class PSVirtualMachineList
@@ -228,11 +229,11 @@ class PSVirtualMachineList
 }
 ```
 
-## <a name="conversion-to-other-data-formats"></a><span data-ttu-id="312b9-136">轉換成其他資料格式</span><span class="sxs-lookup"><span data-stu-id="312b9-136">Conversion to other data formats</span></span>
+## <a name="conversion-to-other-data-formats"></a><span data-ttu-id="3b2d4-136">轉換成其他資料格式</span><span class="sxs-lookup"><span data-stu-id="3b2d4-136">Conversion to other data formats</span></span>
 
-<span data-ttu-id="312b9-137">`ConvertTo-*` 系列的 Cmdlet 是用來將 Azure PowerShell Cmdlet 的結果轉換成電腦可讀取的格式。</span><span class="sxs-lookup"><span data-stu-id="312b9-137">The `ConvertTo-*` family of cmdlets allows for converting the results of Azure PowerShell cmdlets to machine-readable formats.</span></span> <span data-ttu-id="312b9-138">若只需從 Azure PowerShell 結果中獲得一些屬性，請在執行轉換之前，在管道中使用 `Select-Object` 命令。</span><span class="sxs-lookup"><span data-stu-id="312b9-138">To get only some properties from the Azure PowerShell results, use the `Select-Object` command in a pipe before performing the conversion.</span></span> <span data-ttu-id="312b9-139">下列範例會示範每個轉換產生的不同種類輸出。</span><span class="sxs-lookup"><span data-stu-id="312b9-139">The following examples demonstrate the different kinds of output that each conversion produces.</span></span>
+<span data-ttu-id="3b2d4-137">`ConvertTo-*` 系列的 Cmdlet 是用來將 Azure PowerShell Cmdlet 的結果轉換成電腦可讀取的格式。</span><span class="sxs-lookup"><span data-stu-id="3b2d4-137">The `ConvertTo-*` family of cmdlets allows for converting the results of Azure PowerShell cmdlets to machine-readable formats.</span></span> <span data-ttu-id="3b2d4-138">若只需從 Azure PowerShell 結果中獲得一些屬性，請在執行轉換之前，在管道中使用 `Select-Object` 命令。</span><span class="sxs-lookup"><span data-stu-id="3b2d4-138">To get only some properties from the Azure PowerShell results, use the `Select-Object` command in a pipe before performing the conversion.</span></span> <span data-ttu-id="3b2d4-139">下列範例會示範每個轉換產生的不同種類輸出。</span><span class="sxs-lookup"><span data-stu-id="3b2d4-139">The following examples demonstrate the different kinds of output that each conversion produces.</span></span>
 
-### <a name="conversion-to-csv"></a><span data-ttu-id="312b9-140">轉換為 CSV</span><span class="sxs-lookup"><span data-stu-id="312b9-140">Conversion to CSV</span></span>
+### <a name="conversion-to-csv"></a><span data-ttu-id="3b2d4-140">轉換為 CSV</span><span class="sxs-lookup"><span data-stu-id="3b2d4-140">Conversion to CSV</span></span>
 
 ```azurepowershell-interactive
 Get-AzVM | ConvertTo-CSV
@@ -246,15 +247,15 @@ Get-AzVM | ConvertTo-CSV
 "QUERYEXAMPLE","/subscriptions/.../resourceGroups/QUERYEXAMPLE/providers/Microsoft.Compute/virtualMachines/WinExampleVM","...","WinExampleVM","Microsoft.Compute/virtualMachines","westus2",,"System.Collections.Generic.Dictionary`2[System.String,System.String]",,,"System.Collections.Generic.List`1[Microsoft.Azure.Management.Compute.Models.VirtualMachineExtension]","Microsoft.Azure.Management.Compute.Models.HardwareProfile",,"Microsoft.Azure.Management.Compute.Models.NetworkProfile","Microsoft.Azure.Management.Compute.Models.OSProfile",,"Succeeded","Microsoft.Azure.Management.Compute.Models.StorageProfile","Compact",,"System.Collections.Generic.List`1[System.String]",,,"...","OK"
 ```
 
-### <a name="conversion-to-json"></a><span data-ttu-id="312b9-141">轉換為 JSON</span><span class="sxs-lookup"><span data-stu-id="312b9-141">Conversion to JSON</span></span>
+### <a name="conversion-to-json"></a><span data-ttu-id="3b2d4-141">轉換為 JSON</span><span class="sxs-lookup"><span data-stu-id="3b2d4-141">Conversion to JSON</span></span>
 
-<span data-ttu-id="312b9-142">根據預設，JSON 輸出不會展開所有屬性。</span><span class="sxs-lookup"><span data-stu-id="312b9-142">JSON output doesn't expand all properties by default.</span></span> <span data-ttu-id="312b9-143">若要變更屬性展開的深度，請使用 `-Depth` 引數。</span><span class="sxs-lookup"><span data-stu-id="312b9-143">To change the depth of properties expanded, use the `-Depth` argument.</span></span> <span data-ttu-id="312b9-144">根據預設，展開的深度為 `2`。</span><span class="sxs-lookup"><span data-stu-id="312b9-144">By default, the expansion depth is `2`.</span></span>
+<span data-ttu-id="3b2d4-142">根據預設，JSON 輸出不會展開所有屬性。</span><span class="sxs-lookup"><span data-stu-id="3b2d4-142">JSON output doesn't expand all properties by default.</span></span> <span data-ttu-id="3b2d4-143">若要變更屬性展開的深度，請使用 `-Depth` 引數。</span><span class="sxs-lookup"><span data-stu-id="3b2d4-143">To change the depth of properties expanded, use the `-Depth` argument.</span></span> <span data-ttu-id="3b2d4-144">根據預設，展開的深度為 `2`。</span><span class="sxs-lookup"><span data-stu-id="3b2d4-144">By default, the expansion depth is `2`.</span></span>
 
 ```azurepowershell-interactive
 Get-AzVM|ConvertTo-JSON
 ```
 
-<span data-ttu-id="312b9-145">下列輸出會移除某些欄位。</span><span class="sxs-lookup"><span data-stu-id="312b9-145">The following output has some fields removed.</span></span>
+<span data-ttu-id="3b2d4-145">下列輸出會移除某些欄位。</span><span class="sxs-lookup"><span data-stu-id="3b2d4-145">The following output has some fields removed.</span></span>
 
 ```output
 [
@@ -297,9 +298,9 @@ Get-AzVM|ConvertTo-JSON
 ]
 ```
 
-### <a name="conversion-to-xml"></a><span data-ttu-id="312b9-146">轉換為 XML</span><span class="sxs-lookup"><span data-stu-id="312b9-146">Conversion to XML</span></span>
+### <a name="conversion-to-xml"></a><span data-ttu-id="3b2d4-146">轉換為 XML</span><span class="sxs-lookup"><span data-stu-id="3b2d4-146">Conversion to XML</span></span>
 
-<span data-ttu-id="312b9-147">`ConvertTo-XML` Cmdlet 會將 Azure PowerShell 回應物件轉換為純 XML 物件，可以使用處理 PowerShell 中任何其他 XML 物件的方式處理。</span><span class="sxs-lookup"><span data-stu-id="312b9-147">The `ConvertTo-XML` cmdlet converts the Azure PowerShell response object into a pure XML object, which can be handled like any other XML object within PowerShell.</span></span> 
+<span data-ttu-id="3b2d4-147">`ConvertTo-XML` Cmdlet 會將 Azure PowerShell 回應物件轉換為純 XML 物件，可以使用處理 PowerShell 中任何其他 XML 物件的方式處理。</span><span class="sxs-lookup"><span data-stu-id="3b2d4-147">The `ConvertTo-XML` cmdlet converts the Azure PowerShell response object into a pure XML object, which can be handled like any other XML object within PowerShell.</span></span> 
 
 ```azurepowershell-interactive
 Get-AzVM | ConvertTo-XML
@@ -311,10 +312,10 @@ xml                            Objects
 version="1.0" encoding="utf-8" Objects
 ```
 
-### <a name="conversion-to-html"></a><span data-ttu-id="312b9-148">轉換為 HTML</span><span class="sxs-lookup"><span data-stu-id="312b9-148">Conversion to HTML</span></span>
+### <a name="conversion-to-html"></a><span data-ttu-id="3b2d4-148">轉換為 HTML</span><span class="sxs-lookup"><span data-stu-id="3b2d4-148">Conversion to HTML</span></span>
 
-<span data-ttu-id="312b9-149">將物件轉換為 HTML 時，會產生將轉譯為 HTML 表格的輸出。</span><span class="sxs-lookup"><span data-stu-id="312b9-149">Converting an object to HTML produces output that will be rendered as an HTML table.</span></span> <span data-ttu-id="312b9-150">HTML 轉譯方式會依瀏覽器轉譯資料表時不包含寬度資訊的行為處理。</span><span class="sxs-lookup"><span data-stu-id="312b9-150">Rendering of the HTML will depend on your browser behavior for rendering tables which contain no width information.</span></span>
-<span data-ttu-id="312b9-151">不會展開自訂類別物件。</span><span class="sxs-lookup"><span data-stu-id="312b9-151">No custom class objects are expanded.</span></span>
+<span data-ttu-id="3b2d4-149">將物件轉換為 HTML 時，會產生將轉譯為 HTML 表格的輸出。</span><span class="sxs-lookup"><span data-stu-id="3b2d4-149">Converting an object to HTML produces output that will be rendered as an HTML table.</span></span> <span data-ttu-id="3b2d4-150">HTML 轉譯方式會依瀏覽器轉譯資料表時不包含寬度資訊的行為處理。</span><span class="sxs-lookup"><span data-stu-id="3b2d4-150">Rendering of the HTML will depend on your browser behavior for rendering tables which contain no width information.</span></span>
+<span data-ttu-id="3b2d4-151">不會展開自訂類別物件。</span><span class="sxs-lookup"><span data-stu-id="3b2d4-151">No custom class objects are expanded.</span></span>
 
 ```azurepowershell-interactive
 Get-AzVM | ConvertTo-HTML
