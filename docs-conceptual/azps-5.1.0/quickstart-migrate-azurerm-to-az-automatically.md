@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.custom: devx-track-azurepowershell
 ms.author: mirobb
 ms.date: 09/11/2020
-ms.openlocfilehash: d342ca65baf7664f430de3b7d294c0fc9815c0a0
-ms.sourcegitcommit: d81c3b0f0f7289104be03869eb675128b61db7d3
+ms.openlocfilehash: 5945b573d467f1ff64e327c52124ffed1e4305aa
+ms.sourcegitcommit: ec731e58b7de3eb14df6d3bf308df92154125bbb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94715309"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95005852"
 ---
 # <a name="quickstart-automatically-migrate-powershell-scripts-from-azurerm-to-the-az-powershell-module"></a>快速入門：將 PowerShell 指令碼從 AzureRM 自動遷移至 Az PowerShell 模組
 
@@ -103,4 +103,4 @@ $Results | Where-Object UpgradeResult -ne UpgradeCompleted | Format-List
 
 ## <a name="next-steps"></a>Next steps
 
-若要深入了解 Az PowerShell 模組，請參閱 [Azure PowerShell 文件](https://docs.microsoft.com/powershell/azure/)
+若要深入了解 Az PowerShell 模組，請參閱 [Azure PowerShell 文件](/powershell/azure/)
