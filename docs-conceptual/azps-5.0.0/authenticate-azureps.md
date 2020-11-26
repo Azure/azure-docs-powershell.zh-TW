@@ -3,15 +3,15 @@ title: 使用 Azure PowerShell 登入
 description: 如何使用 Azure PowerShell 以使用者身分登入、使用服務主體登入，或使用適用於 Azure 資源的受控識別登入。
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 7/7/2020
+ms.date: 11/23/2020
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 2ec432ae2823bb59f32ca7801a44a9da48db9fac
-ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
+ms.openlocfilehash: a5bff1a5c22d5cd93cc3548a470e123daf5e129e
+ms.sourcegitcommit: 25eca7b5f5480758aa2cd830458900cf91cf673c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93407658"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95515070"
 ---
 # <a name="sign-in-with-azure-powershell"></a>使用 Azure PowerShell 登入
 
@@ -31,7 +31,7 @@ Azure PowerShell 支援數種驗證方法。 要開始使用的最簡單方法�
 Connect-AzAccount
 ```
 
-從 PowerShell 第 6 版和更新版本執行時，此 Cmdlet 會呈現權杖字串。 若要登入，請複製此字串並將其貼入網頁瀏覽器中的 [microsoft.com/devicelogin](https://microsoft.com/devicelogin)。 PowerShell 工作階段會進行驗證以便連線至 Azure。 您可以指定 `UseDeviceAuthentication` 參數，以在 Windows PowerShell 上接收權杖字串。
+從 Az PowerShell 模組 5.0.0 版開始，此 Cmdlet 依預設會提供互動式瀏覽器型登入提示。 您可以指定 `UseDeviceAuthentication` 參數以接收權杖字串，該權杖字串先前為 PowerShell 第 6 版和更新版本的預設字串。
 
 > [!IMPORTANT]
 > 由於 Active Directory 授權實作與安全性考量中的變更，已在 Azure PowerShell 中移除使用者名稱/密碼認證授權。 如果您將認證授權用於自動化用途，請[建立服務主體](create-azure-service-principal-azureps.md)。
