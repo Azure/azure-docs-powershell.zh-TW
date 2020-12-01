@@ -11,7 +11,7 @@
 - name: 開始使用
   href: get-started-azureps.md
 - name: Cloud Shell
-  href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
+  href: /azure/cloud-shell/overview
 - name: 登入
   items:
     - name: 驗證方法
