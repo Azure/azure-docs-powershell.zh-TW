@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 02/24/2020
-ms.openlocfilehash: ec406c80de6b457f7e340a23fe8caf2ab83be46a
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: e19fea440025e7a00a037e360ac95ff8e0e62129
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "78264405"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96428005"
 ---
 # <a name="azure-stack-module-180"></a>Azure Stack 模組 1.8.0
 
@@ -21,7 +21,7 @@ ms.locfileid: "78264405"
 
 最低支援的 Azure Stack 版本為 1910 版。
 
-注意:如需較舊版的 Azure Stack 請查看[安裝 Azure Stack Powershell](https://docs.microsoft.com/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)
+注意:如需較舊版的 Azure Stack 請查看[安裝 Azure Stack Powershell](/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)
 
 ## <a name="install"></a>安裝
 
@@ -48,7 +48,7 @@ Install-Module -Name AzureStack -RequiredVersion 1.8.0
         - 支援 Azure stack 基礎結構備份的單一角色還原。
         - 將 `RoleName` 參數新增至 R`estore-AzsBackup` Cmdlet。
 
-    - **FRP**：**磁碟機**和**磁碟區**的重大變更，並搭配 API 版本 2019-05-01。 Azure Stack Hub 1910 和更新版本所支援的功能：
+    - **FRP**：**磁碟機** 和 **磁碟區** 的重大變更，並搭配 API 版本 2019-05-01。 Azure Stack Hub 1910 和更新版本所支援的功能：
         - 已變更 `Name`、`HealthStatus` 和 `OperationalStatus` 的值。
-        - **磁碟機**資源支援新的屬性：`FirmwareVersion`、`IsIndicationEnabled`、`Manufacturer` 和 `StoragePool`。
-        - **磁碟機**資源的屬性 `CanPool` 和 `CannotPoolReason` 已淘汰；請改用 `OperationalStatus`。
+        - **磁碟機** 資源支援新的屬性：`FirmwareVersion`、`IsIndicationEnabled`、`Manufacturer` 和 `StoragePool`。
+        - **磁碟機** 資源的屬性 `CanPool` 和 `CannotPoolReason` 已淘汰；請改用 `OperationalStatus`。

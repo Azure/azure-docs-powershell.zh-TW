@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 04/16/2020
-ms.openlocfilehash: fd1f2a3778e348ba41b46acb4bdce19e18a7f4ec
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 166c5339c95507b8a9ef1a32d46f589b8d792794
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81524960"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96427950"
 ---
 # <a name="azure-stack-hub-module-200"></a>Azure Stack Hub 模組 2.0.0
 
@@ -21,7 +21,7 @@ ms.locfileid: "81524960"
 
 最低支援的 Azure Stack Hub 版本為 2002 版。
 
-注意:如需較舊版的 Azure Stack 請查看[安裝 Azure Stack Powershell](https://docs.microsoft.com/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)
+注意:如需較舊版的 Azure Stack 請查看[安裝 Azure Stack Powershell](/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)
 
 ## <a name="install"></a>安裝
 
@@ -45,4 +45,4 @@ Install-Module -Name AzureStack -RequiredVersion 2.0.0-preview -AllowPrerelease
 
 * 由 2002 更新所支援。  
 
-  Azure Stack Hub 2.0.0 是一個重大變更。 此模組會使用 Az 模組，而不是 AzureRM 模組。 ＜[在 Azure Stack Hub 中從 AzureRM 移轉至 Azure PowerShell Az](https://aka.ms/AA7qsji)＞中有移轉指南和重大變更清單。
+  Azure Stack Hub 2.0.0 是一個重大變更。 此模組會使用 Az 模組，而不是 AzureRM 模組。 ＜[在 Azure Stack Hub 中從 AzureRM 移轉至 Azure PowerShell Az](/azure-stack/operator/azure-stack-powershell-install)＞中有移轉指南和重大變更清單。
