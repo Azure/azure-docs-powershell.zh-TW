@@ -6,17 +6,17 @@ ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 2e824dbbf593e0da9a2a8735aaa094b1944e306c
-ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
+ms.openlocfilehash: ab367ed41c77629122d6a4a9a79b96c7c66d09cb
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93408865"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96427576"
 ---
 # <a name="azure-powershell-release-notes"></a>Azure PowerShell 版本資訊
 ## <a name="0100-preview---april-2020"></a>0.10.0-preview - 2020 年 4 月
 ### <a name="general"></a>一般
-* Az 模組現已在 Azure Stack Hub 中提供預覽。 此模組具有 Linux 和 macOs 的跨平台相容性。 Azure Stack Hub 現在支援使用 Az 模組的 PowerShell Core，如需詳細資訊，請參閱[這裡](https://aka.ms/az4AzureStack)
+* Az 模組現已在 Azure Stack Hub 中提供預覽。 此模組具有 Linux 和 macOs 的跨平台相容性。 Azure Stack Hub 現在支援使用 Az 模組的 PowerShell Core，如需詳細資訊，請參閱[這裡](/azure-stack/operator/powershell-install-az-module)
 * Az 模組支援 2019-03-01-hybrid 設定檔：
   - Az.Billing
   - Az.Compute
@@ -31,7 +31,7 @@ ms.locfileid: "93408865"
   - Az.Websites
 * 已引進三個可搭配 Azure Stack Hub 且適用於 az 的新 PowerShell 模組，包括 Az.Databox、Az.IotHub 和 Az. EventHub
 * 命令維持不變，但有次要變更，例如將 AzureRM 變更為 Az
-* 您可以在[這裡](https://aka.ms/InstallASHPowerShell)找到 Azure Stack Hub 的 PowerShell 文件更新連結
+* 您可以在[這裡](/azure-stack/operator/powershell-install-az-module)找到 Azure Stack Hub 的 PowerShell 文件更新連結
 
 #### <a name="azaccounts"></a>Az.Accounts
 * 從 ADAL 升級至 MSAL
@@ -575,25 +575,25 @@ ms.locfileid: "93408865"
 
 #### <a name="azbatch"></a>Az.Batch
 * 已將 `BatchAccountContext` 中的 `CoreQuota` 重新命名為 `DedicatedCoreQuota`。 另外還有新的 `LowPriorityCoreQuota`。
-  - 這會影響 **Get-AzBatchAccount** 。
+  - 這會影響 **Get-AzBatchAccount**。
 * **New-AzBatchTask** `-ResourceFile` 參數現在會採用 `PSResourceFile` 物件集合，可使用新的 **New-AzBatchResourceFile** Cmdlet 加以建構。
-* 新增 **New-AzBatchResourceFile** Cmdlet 以協助建立 `PSResourceFile` 物件。 這些可以提供給 `-ResourceFile` 參數中的 **New-AzBatchTask** 。
+* 新增 **New-AzBatchResourceFile** Cmdlet 以協助建立 `PSResourceFile` 物件。 這些可以提供給 `-ResourceFile` 參數中的 **New-AzBatchTask**。
   - 除了現有的 `HttpUrl` 方式，這也會支援兩種新的資源檔類型：
     - `AutoStorageContainerName` 以資源檔為基礎，會將整個自動儲存體容器下載至 Batch-節點。
     - `StorageContainerUrl` 以資源檔為基礎，會將 URL 中指定的容器下載至 Batch-節點。
 * 已移除 **AzBatchApplication** 所傳回之 `PSApplication` 的 `ApplicationPackages` 屬性。
   - 您現在可以使用 **AzBatchApplicationPackage** 來取出應用程式內的特定套件。 例如： `Get-AzBatchApplication -AccountName myaccount -ResourceGroupName myresourcegroup -ApplicationId myapplication` 。
-* 將 **Get-AzBatchApplicationPackage** 、 **New-AzBatchApplicationPackage** 、 **Remove-AzBatchApplicationPackage** 、 **Get-AzBatchApplication** 、 **New-AzBatchApplication** 、 **Remove-AzBatchApplication** 和 **Set-AzBatchApplication** 上的 `ApplicationId` 重新命名為 `ApplicationName`。
+* 將 **Get-AzBatchApplicationPackage**、**New-AzBatchApplicationPackage**、**Remove-AzBatchApplicationPackage**、**Get-AzBatchApplication**、**New-AzBatchApplication**、**Remove-AzBatchApplication** 和 **Set-AzBatchApplication** 上的 `ApplicationId` 重新命名為 `ApplicationName`。
   - `ApplicationId` 現在是 `ApplicationName` 的別名。
 * 已在 `PSWindowsUserConfiguration` 中新增新的 `PSUserAccount` 屬性。
 * 已將 `PSApplicationPackage` 上的 `Version` 重新命名為 `Name`。
 * 已將 `PSResourceFile` 上的 `BlobSource` 重新命名為 `HttpUrl`。
 * 已從 `PSVirtualMachineConfiguration` 移除 `OSDisk` 屬性。
-* 已移除 **AzBatchPoolOSVersion** 。 不再支援此作業。
+* 已移除 **AzBatchPoolOSVersion**。 不再支援此作業。
 * 已從下列 `PSCloudServiceConfiguration` 中移除 `TargetOSVersion`。
 * 已將 `PSCloudServiceConfiguration` 上的 `CurrentOSVersion` 重新命名為 `OSVersion`。
 * 已從 `PSPoolUsageMetrics` 移除 `DataEgressGiB` 和 `DataIngressGiB`。
-* 已移除 **AzBatchNodeAgentSku** ，並以 **AzBatchSupportedImage** 取代。
+* 已移除 **AzBatchNodeAgentSku**，並以 **AzBatchSupportedImage** 取代。
   - **AzBatchSupportedImage** 會傳回與 **AzBatchNodeAgentSku** 相同但格式較好用的資料。
   - 系統現在也會傳回新的未驗證映像。 此外，也包含每個映像的 `Capabilities` 和 `BatchSupportEndOfLife` 的其他相關資訊。
 * 新增了一項功能，可透過 **New-azbatchpool** 的新 `MountConfiguration` 參數，在集區的每個節點上裝載遠端檔案系統。
@@ -892,8 +892,8 @@ ms.locfileid: "93408865"
 #### <a name="azmonitor"></a>Az.Monitor
 * 指向最近的監視 SDK，例如 0.24.1-preview
    - 在 Metrics Cmdlet 中新增不會造成中斷的變更，例如單位列舉支援數個新值。 這些 Cmdlet 是唯讀的，因此 Cmdlet 的輸出中不會有任何變更。
-   - **ActionGroups** 要求的 api-version 現在為 **2019-06-01** ，之前為 **2018-03-01** 。 已針對此項變更新增多個案例測試。
-   - **EmailReceiver** 和 **WebhookReceiver** 類別的建構函式新增了一個新的強制引數，例如稱為 **useCommonAlertSchema** 的布林值。 目前，該值已修正為 **false** 以隱藏 Cmdlet 的重大變更。 **注意** ：這是暫時性的變更，必須由警示小組驗證。
+   - **ActionGroups** 要求的 api-version 現在為 **2019-06-01**，之前為 **2018-03-01**。 已針對此項變更新增多個案例測試。
+   - **EmailReceiver** 和 **WebhookReceiver** 類別的建構函式新增了一個新的強制引數，例如稱為 **useCommonAlertSchema** 的布林值。 目前，該值已修正為 **false** 以隱藏 Cmdlet 的重大變更。 **注意**：這是暫時性的變更，必須由警示小組驗證。
    - **Source** 類別之建構函式的引數順序 (與 **ScheduledQueryRuleSource** 類別相關) 已變更，不再是先前的 SDK。 此變更需要修正兩個單元測試：這兩個單元已進行編譯，但無法通過測試。
    - **AlertingAction** 類別之建構函式的引數順序 (與 **ScheduledQueryRuleSource** 類別相關) 已變更，不再是先前的 SDK。 此變更需要修正兩個單元測試：這兩個單元已進行編譯，但無法通過測試。
 * 適用於計量警示 V2 的支援動態閾值準則
@@ -1474,21 +1474,21 @@ ms.locfileid: "93408865"
     - **New-AzApiManagementUserToken** - 產生預設有效期為 8 小時的新使用者權杖。'GIT' 使用者的權杖可使用此 Cmdlet 產生。/
 * 已建立新的 Cmdlet 用以擷取網路狀態
     - **Get-AzApiManagementNetworkStatus** - 取得 API 管理服務相依資源的網路狀態連線。 這在將 ApiManagement 服務部署到虛擬網路和驗證是否有任何相依性中斷時，將可發揮效用。
-* 已更新 Cmdlet **New-AzApiManagement** ，用以管理 ApiManagement 服務
+* 已更新 Cmdlet **New-AzApiManagement**，用以管理 ApiManagement 服務
     - 已加入新的「使用量」SKU 的支援
     - 已加入為「使用量」SKU 開啟 'EnableClientCertificate' 旗標的支援
     - 新的 Cmdlet **New-AzApiManagementSslSetting** 允許在「後端」和「前端」設定 'TLS/SSL' 設定。 這也可用來在 ApiManagement 服務的「前端」設定「編碼器」 (例如 '3DES') 和 'ServerProtocols' (例如 'Http2')。
     - 已加入在 ApiManagement 服務上設定 'DeveloperPortal' 主機名稱的支援。
-* 已更新 Cmdlet **Get-AzApiManagementSsoToken** ，以使用 'PsApiManagement' 物件作為輸入
+* 已更新 Cmdlet **Get-AzApiManagementSsoToken**，以使用 'PsApiManagement' 物件作為輸入
 * 已更新 Cmdlet 以顯示內嵌錯誤訊息
      > PS D:\github\azure-powershell> Set-AzApiManagementPolicy -Context  -PolicyFilePath C:\wrongpolicy.xml -ApiId httpbin Set-AzApiManagementPolicy :錯誤碼：ValidationError 錯誤訊息：有一或多個欄位包含不正確的值：錯誤詳細資料：[Code=ValidationError, Message=Error in element 'log-to-eventhub' on line 3, column 10:Logger not found, Target=log-to-eventhub]
-* 已更新 Cmdlet **Export-AzApiManagementApi** ，以採用 'OpenApi 3.0' 格式匯出 API
+* 已更新 Cmdlet **Export-AzApiManagementApi**，以採用 'OpenApi 3.0' 格式匯出 API
 * 已更新 Cmdlet **Import-AzApiManagementApi**
     - 以從 'OpenApi 3.0' 文件規格匯入 API
     - 以覆寫任何 ('Swagger'、'Wadl'、'Wsdl'、'OpenApi') 文件中指定的 'PsApiManagementSchema' 屬性。
     - 以覆寫任何文件中指定的 'ServiceUrl' 屬性。
-* 已更新 Cmdlet **Get-AzApiManagementPolicy** ，以透過使用 'rawxml' 的非 XML 逸出「格式」傳回原則
-* 已更新 Cmdlet **Set-AzApiManagementPolicy** ，以接受使用 'rawxml' 的非 XML 逸出「格式」和使用 'xml' 溢出的 XML 格式的原則
+* 已更新 Cmdlet **Get-AzApiManagementPolicy**，以透過使用 'rawxml' 的非 XML 逸出「格式」傳回原則
+* 已更新 Cmdlet **Set-AzApiManagementPolicy**，以接受使用 'rawxml' 的非 XML 逸出「格式」和使用 'xml' 溢出的 XML 格式的原則
 * 已更新 Cmdlet **New-AzApiManagementApi**
     - 以透過 'OpenId' 授權伺服器設定 API。
     - 以在 'ApiVersionSet' 中建立 API
@@ -1618,7 +1618,7 @@ ms.locfileid: "93408865"
     - Set-AzScheduledQueryRule
     - Update-AzScheduledQueryRule
     - Remove-AzScheduledQueryRule
-    - [更多](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) SQR API 的相關資訊
+    - [更多](/rest/api/monitor/scheduledqueryrules) SQR API 的相關資訊
     - 更新 Az.Monitor.md，以包含用於 GenV2 (非傳統) 計量式警示規則的 Cmdlet
 
 #### <a name="aznetwork"></a>Az.Network

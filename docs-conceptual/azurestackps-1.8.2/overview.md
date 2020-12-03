@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 08/06/2020
-ms.openlocfilehash: e314374eff433d1869378bdaa9a0370c3fd3d8d1
-ms.sourcegitcommit: 09eb4dbfcad6fce303b793dafe9bebdef589db03
+ms.openlocfilehash: 5e30e1b4a21f62c00419cfa77e1d875e110eebec
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/08/2020
-ms.locfileid: "88022927"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96427987"
 ---
 # <a name="azure-stack-module-182"></a>Azure Stack 模組 1.8.2
 
@@ -21,7 +21,7 @@ ms.locfileid: "88022927"
 
 最低支援的 Azure Stack 版本為 1910 版。
 
-注意:如需較舊版的 Azure Stack 請查看[安裝 Azure Stack Powershell](https://docs.microsoft.com/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)
+注意:如需較舊版的 Azure Stack 請查看[安裝 Azure Stack Powershell](/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)
 
 ## <a name="install"></a>安裝
 

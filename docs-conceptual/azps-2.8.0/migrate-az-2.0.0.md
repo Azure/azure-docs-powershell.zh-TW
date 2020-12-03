@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 05/24/2019
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: ebe18c24881f146b7cf885892c7869cd7167d511
-ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
+ms.openlocfilehash: d6dac1514fffa140f6d785be9a1a0e8be58476eb
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93410395"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96427406"
 ---
 # <a name="migration-guide-for-az-200"></a>Az 2.0.0 的移轉指南
 
@@ -328,7 +328,7 @@ ms.locfileid: "93410395"
     - 具有 HDInsight 叢集操作員、參與者或擁有者角色的使用者將不受影響。
     - 具有讀者角色的使用者將必須明確指定 `DefaultStorageAccountKey` 參數。
 
-如需這些角色型存取權變更的詳細資訊，請參閱 [aka.ms/hdi-config-update](https://aka.ms/hdi-config-update)
+如需這些角色型存取權變更的詳細資訊，請參閱 [aka.ms/hdi-config-update](/azure/hdinsight/hdinsight-migrate-granular-access-cluster-configurations)
 
   #### <a name="before"></a>之前
 
