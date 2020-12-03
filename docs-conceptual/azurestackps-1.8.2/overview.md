@@ -8,22 +8,22 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 08/06/2020
-ms.openlocfilehash: e314374eff433d1869378bdaa9a0370c3fd3d8d1
-ms.sourcegitcommit: 09eb4dbfcad6fce303b793dafe9bebdef589db03
+ms.openlocfilehash: 5e30e1b4a21f62c00419cfa77e1d875e110eebec
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/08/2020
-ms.locfileid: "88022927"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96427987"
 ---
-# <a name="azure-stack-module-182"></a><span data-ttu-id="757a5-103">Azure Stack 模組 1.8.2</span><span class="sxs-lookup"><span data-stu-id="757a5-103">Azure Stack Module 1.8.2</span></span>
+# <a name="azure-stack-module-182"></a><span data-ttu-id="08d61-103">Azure Stack 模組 1.8.2</span><span class="sxs-lookup"><span data-stu-id="08d61-103">Azure Stack Module 1.8.2</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="757a5-104">需求：</span><span class="sxs-lookup"><span data-stu-id="757a5-104">Requirements:</span></span>
+## <a name="requirements"></a><span data-ttu-id="08d61-104">需求：</span><span class="sxs-lookup"><span data-stu-id="08d61-104">Requirements:</span></span>
 
-<span data-ttu-id="757a5-105">最低支援的 Azure Stack 版本為 1910 版。</span><span class="sxs-lookup"><span data-stu-id="757a5-105">Minimum supported Azure Stack version is 1910.</span></span>
+<span data-ttu-id="08d61-105">最低支援的 Azure Stack 版本為 1910 版。</span><span class="sxs-lookup"><span data-stu-id="08d61-105">Minimum supported Azure Stack version is 1910.</span></span>
 
-<span data-ttu-id="757a5-106">注意:如需較舊版的 Azure Stack 請查看[安裝 Azure Stack Powershell](https://docs.microsoft.com/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)</span><span class="sxs-lookup"><span data-stu-id="757a5-106">Note: For earlier versions of Azure Stack check [Install Azure Stack Powershell](https://docs.microsoft.com/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)</span></span>
+<span data-ttu-id="08d61-106">注意:如需較舊版的 Azure Stack 請查看[安裝 Azure Stack Powershell](/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)</span><span class="sxs-lookup"><span data-stu-id="08d61-106">Note: For earlier versions of Azure Stack check [Install Azure Stack Powershell](/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)</span></span>
 
-## <a name="install"></a><span data-ttu-id="757a5-107">安裝</span><span class="sxs-lookup"><span data-stu-id="757a5-107">Install</span></span>
+## <a name="install"></a><span data-ttu-id="08d61-107">安裝</span><span class="sxs-lookup"><span data-stu-id="08d61-107">Install</span></span>
 
 ```powershell
 # Remove previous versions of AzureStack and AzureRM modules
@@ -37,6 +37,6 @@ Use-AzureRmProfile -Profile 2019-03-01-hybrid -Force
 Install-Module -Name AzureStack -RequiredVersion 1.8.2
 ```
 
-## <a name="release-notes"></a><span data-ttu-id="757a5-108">版本資訊</span><span class="sxs-lookup"><span data-stu-id="757a5-108">Release Notes</span></span>
+## <a name="release-notes"></a><span data-ttu-id="08d61-108">版本資訊</span><span class="sxs-lookup"><span data-stu-id="08d61-108">Release Notes</span></span>
 
-* <span data-ttu-id="757a5-109">由 1910 更新所支援</span><span class="sxs-lookup"><span data-stu-id="757a5-109">Supported with 1910 update</span></span>
+* <span data-ttu-id="08d61-109">由 1910 更新所支援</span><span class="sxs-lookup"><span data-stu-id="08d61-109">Supported with 1910 update</span></span>
