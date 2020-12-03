@@ -8,22 +8,22 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 02/06/2019
-ms.openlocfilehash: 1b3d707e862dd0c21e9e6b0a89f429ff21b1a99d
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 72974ac2fec42da962513c161c506e83f047bfb6
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "68861336"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96427372"
 ---
-# <a name="azure-stack-module-172"></a><span data-ttu-id="48615-103">Azure Stack 模組 1.7.2</span><span class="sxs-lookup"><span data-stu-id="48615-103">Azure Stack Module 1.7.2</span></span>
+# <a name="azure-stack-module-172"></a><span data-ttu-id="1c33e-103">Azure Stack 模組 1.7.2</span><span class="sxs-lookup"><span data-stu-id="1c33e-103">Azure Stack Module 1.7.2</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="48615-104">需求：</span><span class="sxs-lookup"><span data-stu-id="48615-104">Requirements:</span></span>
+## <a name="requirements"></a><span data-ttu-id="1c33e-104">需求：</span><span class="sxs-lookup"><span data-stu-id="1c33e-104">Requirements:</span></span>
 
-<span data-ttu-id="48615-105">最低支援的 Azure Stack 版本為 1904 版。</span><span class="sxs-lookup"><span data-stu-id="48615-105">Minimum supported Azure Stack version is 1904.</span></span>
+<span data-ttu-id="1c33e-105">最低支援的 Azure Stack 版本為 1904 版。</span><span class="sxs-lookup"><span data-stu-id="1c33e-105">Minimum supported Azure Stack version is 1904.</span></span>
 
-<span data-ttu-id="48615-106">注意:如需較舊版的 Azure Stack 請查看[安裝 Azure Stack Powershell](https://docs.microsoft.com/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)</span><span class="sxs-lookup"><span data-stu-id="48615-106">Note: For earlier versions of Azure Stack check [Install Azure Stack Powershell](https://docs.microsoft.com/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)</span></span>
+<span data-ttu-id="1c33e-106">注意:如需較舊版的 Azure Stack 請查看[安裝 Azure Stack Powershell](/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)</span><span class="sxs-lookup"><span data-stu-id="1c33e-106">Note: For earlier versions of Azure Stack check [Install Azure Stack Powershell](/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)</span></span>
 
-## <a name="install"></a><span data-ttu-id="48615-107">安裝</span><span class="sxs-lookup"><span data-stu-id="48615-107">Install</span></span>
+## <a name="install"></a><span data-ttu-id="1c33e-107">安裝</span><span class="sxs-lookup"><span data-stu-id="1c33e-107">Install</span></span>
 
 ```powershell
 # Remove previous versions of AzureStack and AzureRM modules
@@ -37,11 +37,11 @@ Install-Module -Name AzureRM -RequiredVersion 2.5.0
 Install-Module -Name AzureStack -RequiredVersion 1.7.2
 ```
 
-## <a name="release-notes"></a><span data-ttu-id="48615-108">版本資訊</span><span class="sxs-lookup"><span data-stu-id="48615-108">Release Notes</span></span>
+## <a name="release-notes"></a><span data-ttu-id="1c33e-108">版本資訊</span><span class="sxs-lookup"><span data-stu-id="1c33e-108">Release Notes</span></span>
 
-* <span data-ttu-id="48615-109">由 1904 更新所支援</span><span class="sxs-lookup"><span data-stu-id="48615-109">Supported with 1904 update</span></span>
-* <span data-ttu-id="48615-110">這是重大變更版本。</span><span class="sxs-lookup"><span data-stu-id="48615-110">This a breaking change release.</span></span> <span data-ttu-id="48615-111">如需重大變更的詳細資訊，請參閱 <https://aka.ms/azspshmigration170></span><span class="sxs-lookup"><span data-stu-id="48615-111">For details on the breaking changes, refer to <https://aka.ms/azspshmigration170></span></span>
-* <span data-ttu-id="48615-112">重大變更：備份對憑證型加密模式所做的變更。</span><span class="sxs-lookup"><span data-stu-id="48615-112">Breaking change: Backup changes to cert-based encryption mode.</span></span> <span data-ttu-id="48615-113">對於對稱金鑰的支援已被取代。</span><span class="sxs-lookup"><span data-stu-id="48615-113">Support for symmetric keys is deprecated.</span></span>
-* <span data-ttu-id="48615-114">如需重大變更的詳細資訊，請參閱 https://aka.ms/azspshmigration170</span><span class="sxs-lookup"><span data-stu-id="48615-114">For details on the breaking changes, refer to https://aka.ms/azspshmigration170</span></span>
-* <span data-ttu-id="48615-115">Azs.Storage.Admin 模組</span><span class="sxs-lookup"><span data-stu-id="48615-115">Azs.Storage.Admin Module</span></span> 
-* <span data-ttu-id="48615-116">錯誤修正 - 如果未提供，則新的儲存體配額會使用預設值。</span><span class="sxs-lookup"><span data-stu-id="48615-116">Bug fix - New Storage Quota uses defaults if none provided.</span></span>
+* <span data-ttu-id="1c33e-109">由 1904 更新所支援</span><span class="sxs-lookup"><span data-stu-id="1c33e-109">Supported with 1904 update</span></span>
+* <span data-ttu-id="1c33e-110">這是重大變更版本。</span><span class="sxs-lookup"><span data-stu-id="1c33e-110">This a breaking change release.</span></span> <span data-ttu-id="1c33e-111">如需重大變更的詳細資訊，請參閱 <https://aka.ms/azspshmigration170></span><span class="sxs-lookup"><span data-stu-id="1c33e-111">For details on the breaking changes, refer to <https://aka.ms/azspshmigration170></span></span>
+* <span data-ttu-id="1c33e-112">重大變更：備份對憑證型加密模式所做的變更。</span><span class="sxs-lookup"><span data-stu-id="1c33e-112">Breaking change: Backup changes to cert-based encryption mode.</span></span> <span data-ttu-id="1c33e-113">對於對稱金鑰的支援已被取代。</span><span class="sxs-lookup"><span data-stu-id="1c33e-113">Support for symmetric keys is deprecated.</span></span>
+* <span data-ttu-id="1c33e-114">如需重大變更的詳細資訊，請參閱 https://aka.ms/azspshmigration170</span><span class="sxs-lookup"><span data-stu-id="1c33e-114">For details on the breaking changes, refer to https://aka.ms/azspshmigration170</span></span>
+* <span data-ttu-id="1c33e-115">Azs.Storage.Admin 模組</span><span class="sxs-lookup"><span data-stu-id="1c33e-115">Azs.Storage.Admin Module</span></span> 
+* <span data-ttu-id="1c33e-116">錯誤修正 - 如果未提供，則新的儲存體配額會使用預設值。</span><span class="sxs-lookup"><span data-stu-id="1c33e-116">Bug fix - New Storage Quota uses defaults if none provided.</span></span>
