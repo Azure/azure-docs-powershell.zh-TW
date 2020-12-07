@@ -6,12 +6,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: a3b74531ff71ed0e9ac473831b71efb6f29d6e66
-ms.sourcegitcommit: 7887e040bdeb2f55c035a3169cd0d9d807ab186e
+ms.openlocfilehash: d922affd608ebfce41f9608ec82d565d6afe9f7f
+ms.sourcegitcommit: 3ef9f7f6c20af98282a0499b1527c291ee54011b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96536539"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96617714"
 ---
 # <a name="introducing-the-azure-az-powershell-module"></a>Azure Az PowerShell 模組簡介
 
@@ -77,7 +77,7 @@ Az PowerShell 是以 .NET Standard 程式庫為基礎，可以在所有平台 (�
 
 Az 是最新的 Azure PowerShell 模組。 若有任何問題或功能要求，您可以直接記錄在 [GitHub 存放庫](https://github.com/Azure/azure-powershell)，如果擁有支援合約，則可透過 Microsoft 支援服務直接回報。 功能要求將會在最新版本的 Az 中實作。 重大問題將會在最新的兩個 Az 版本中實作。
 
-AzureRM 不會再收到新的 Cmdlet 或功能。 不過，我們仍會正式維護 AzureRM 模組，並在 2020 年 2 月之前都會提供重要修正程式。
+AzureRM 不會再收到新的 Cmdlet 或功能。 不過，我們仍會正式維護 AzureRM 模組，並在 2021 年 2 月之前都會提供重要修正程式。
 
 ## <a name="data-collection"></a>資料收集
 
