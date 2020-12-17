@@ -4,14 +4,14 @@ description: 了解將 Azure PowerShell 指令碼從 AzureRM 遷移至新的 Az 
 ms.devlang: powershell
 ms.service: azure-powershell
 ms.topic: conceptual
-ms.date: 12/1/2020
-ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: bc37d0b73db0e6df226788795730730c077fcefa
-ms.sourcegitcommit: 04221336bc9eed46c05ed1e828a6811534d4b4ab
+ms.date: 12/15/2020
+ms.custom: devx-track-azurepowershell, contperf-fy21q2
+ms.openlocfilehash: 6bccaf9a628f67b8945516bae70f07939cdce8f7
+ms.sourcegitcommit: a24069b411d3a6011067770430b6dcdd4b2c2159
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96856268"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97532237"
 ---
 # <a name="migrate-azure-powershell-from-azurerm-to-az"></a>將 Azure PowerShell 從 AzureRM 移轉至 Az
 
@@ -91,5 +91,5 @@ Install-Module -Name Az.Tools.Migration
 
 ## <a name="next-steps"></a>後續步驟
 
-[解除安裝 AzureRM](uninstall-az-ps.md#uninstall-the-azurerm-module)
-[安裝 Azure PowerShell](install-az-ps.md)
+* [解除安裝 AzureRM](uninstall-az-ps.md#uninstall-the-azurerm-module)
+* [安裝 Azure PowerShell](install-az-ps.md)
