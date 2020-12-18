@@ -6,12 +6,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: d922affd608ebfce41f9608ec82d565d6afe9f7f
-ms.sourcegitcommit: 04221336bc9eed46c05ed1e828a6811534d4b4ab
+ms.openlocfilehash: 9021a1d8fdc73aedb87b17631f8e67cb8ef79166
+ms.sourcegitcommit: a6d92493a8d1b81b85f4db2a38f271134be5e6c5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96856141"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97353847"
 ---
 # <a name="introducing-the-azure-az-powershell-module"></a>Azure Az PowerShell 模組簡介
 
@@ -34,16 +34,17 @@ Az PowerShell 模組具備下列優點：
 
 * 安全性和穩定性
   * 權杖快取加密
-  * 支援 ADFS 2019
-  * 防止中間人攻擊類型的安全性機制
+  * 防止中間人攻擊類型
+  * 支援使用 ADFS 2019 進行驗證
+  * PowerShell 7 中的使用者名稱和密碼驗證
   * 支援連續存取評估等功能 (即將於 2021 推出)
 * 支援所有 Azure 服務
-  * 每個 Azure 服務都有可用的模組
+  * 所有正式發行的 Azure 服務都有對應的支援 PowerShell 模組
   * 自 AzureRM 後的多個錯誤 (bug) 修正和 API 版本升級
-* 其他幾項新功能
+* 新功能
   * Cloud Shell 和跨平台的支援
   * 可以取得及使用存取權杖來存取 Azure 資源
-  * 用於防止類型作業的一般 Az Cmdlet
+  * 適用於包含 Azure 資源進階 REST 作業的 Cmdlet
 
 > [!NOTE]
 > PowerShell 7 和更新版本是在所有平台上與 Az PowerShell 搭配使用的 PowerShell 建議版本。
