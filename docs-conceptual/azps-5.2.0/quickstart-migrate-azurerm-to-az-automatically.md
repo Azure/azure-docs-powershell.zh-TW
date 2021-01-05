@@ -6,20 +6,17 @@ ms.service: azure-powershell
 ms.topic: quickstart
 ms.custom: devx-track-azurepowershell
 ms.author: mirobb
-ms.date: 12/10/2020
-ms.openlocfilehash: 6752fa0376c2f8887511455f56add0859f8961c8
-ms.sourcegitcommit: 076ff98abc48e072eb1727532817487bac7507c6
+ms.date: 12/18/2020
+ms.openlocfilehash: 3a26dfbb89f83a9d1983ea8d69cd47c9f74eab38
+ms.sourcegitcommit: dd90c54d8794109fa7984543649bb3faa0cbb544
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97488524"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97701294"
 ---
 # <a name="quickstart-automatically-migrate-powershell-scripts-from-azurerm-to-the-az-powershell-module"></a>快速入門：將 PowerShell 指令碼從 AzureRM 自動遷移至 Az PowerShell 模組
 
-在本文中，您將了解如何使用 Az.Tools.Migration PowerShell 模組，將 PowerShell 指令碼和指令碼模組從 AzureRM 自動升級至 Az PowerShell 模組。
-
-> [!IMPORTANT]
-> Az.Tools.Migration PowerShell 模組目前為公開預覽狀態。 所提供的這個預覽版本並沒有服務等級協定。 不建議用於生產工作負載。 可能不支援特定功能，或可能已經限制功能。 如需詳細資訊，請參閱 [Microsoft Azure 預覽版增補使用條款](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)。
+在本文中，您將了解如何使用 Az.Tools.Migration PowerShell 模組，將 PowerShell 指令碼和指令碼模組從 AzureRM 自動升級至 Az PowerShell 模組。 如需其他移轉選項，請參閱[將 Azure PowerShell 從 AzureRM 移轉至 Az](/powershell/azure/migrate-from-azurerm-to-az)。
 
 ## <a name="requirements"></a>需求
 

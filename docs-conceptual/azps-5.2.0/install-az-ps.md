@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 05/14/2020
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: f7a1658cdcafd1e8d6cba51ead26f9ddaa8c4c56
-ms.sourcegitcommit: 04221336bc9eed46c05ed1e828a6811534d4b4ab
+ms.openlocfilehash: ae26b84ecf02ff90ddfbbc2960aed448f37f2a6a
+ms.sourcegitcommit: e4f2cb406f0ea7bcdb48e130966eabba4d0f9a67
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96856285"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97665434"
 ---
 # <a name="install-azure-powershell"></a>安裝 Azure PowerShell
 
@@ -44,6 +44,8 @@ $PSVersionTable.PSVersion
 > [!WARNING]
 > 我們不支援同時為 Windows 上的 PowerShell 5.1 安裝 AzureRM 和 Az 模組。 如果您需要在系統上保留可用的 AzureRM，請安裝適用於 PowerShell 6.2.4 或更新版本的 Az 模組。
 
+### <a name="install-for-current-user"></a>適用於目前使用者的安裝
+
 使用 PowerShellGet Cmdlet 是慣用的安裝方法。 僅安裝適用於目前使用者的 Az 模組。 這是建議的安裝範圍。 這個方法在 Windows、macOS、Linux 平台上的做法相同。 從 PowerShell 工作階段執行下列命令︰
 
 ```powershell-interactive
@@ -68,6 +70,8 @@ Are you sure you want to install the modules from 'PSGallery'?
 ```
 
 請回答 `Yes` 或 `Yes to All` 以繼續安裝。
+
+### <a name="install-for-all-users"></a>適用於所有使用者的安裝
 
 為系統上的所有使用者安裝模組需要較高的權限。 在 Windows 中使用 **Run as administrator**，在 macOS 或 Linux 上使用 `sudo` 命令，以啟動 PowerShell 工作階段：
 
