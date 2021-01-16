@@ -1,0 +1,182 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ResourceManager.dll-Help.xml
+Module Name: Az.Resources
+ms.assetid: 20CB842B-F7A9-4052-85D9-0DF9586D5FEA
+online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/get-azresourcegroupdeployment
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzResourceGroupDeployment.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzResourceGroupDeployment.md
+ms.openlocfilehash: 82df573a658fda9af97778e59819e45359c226fd
+ms.sourcegitcommit: 68451baa389791703e666d95469602c5652609ee
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "98435500"
+---
+# Get-AzResourceGroupDeployment
+
+## 摘要
+取得資源群組中的部署。
+
+## 句法
+
+### GetByResourceGroupDeploymentName (預設) 
+```
+Get-AzResourceGroupDeployment [-ResourceGroupName] <String> [[-Name] <String>] [-Pre]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### GetByResourceGroupDeploymentId
+```
+Get-AzResourceGroupDeployment -Id <String> [-Pre] [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+## 說明
+**AzResourceGroupDeployment** Cmdlet 會取得 Azure 資源群組中的部署。
+指定 *Name* 或 *Id* 參數來篩選結果。
+根據預設， **AzResourceGroupDeployment 會取得** 指定資源群組的所有部署。
+Azure 資源是使用者管理的 Azure 實體，例如資料庫伺服器、資料庫或網站。
+Azure 資源群組是一個以單位形式部署的 Azure 資源集合。
+部署是使資源群組中的資源可供使用的作業。
+如需有關 Azure 資源和 Azure 資源群組的詳細資訊，請參閱 New-AzResourceGroup Cmdlet。
+您可以使用此 Cmdlet 進行追蹤。
+針對調試，請將此 Cmdlet 與 Get-AzLog Cmdlet 搭配使用。
+
+## 示例
+
+### 範例1：取得資源群組的所有部署
+```
+PS C:\>Get-AzResourceGroupDeployment -ResourceGroupName "ContosoLabsRG"
+```
+
+這個命令會取得 ContosoLabsRG 資源群組的所有部署。
+[輸出] 會顯示使用圖庫範本之 WordPress 博客的部署。
+
+### 範例2：依名稱取得部署
+```
+PS C:\>Get-AzResourceGroupDeployment -ResourceGroupName "ContosoLabsRG" -Name "DeployWebsite01"
+```
+
+這個命令會取得 ContosoLabsRG 資源群組的 DeployWebsite01 部署。
+您可以使用 **新的 AzResourceGroup** 或 **AzResourceGroupDeployment** Cmdlet，在建立部署時指派名稱。
+如果您沒有指派名稱，則 Cmdlet 會根據用來建立部署的範本，提供預設名稱。
+
+### 範例3：取得所有資源群組的部署
+```
+PS C:\>Get-AzResourceGroup | Get-AzResourceGroupDeployment | Format-Table ResourceGroupName, DeploymentName, ProvisioningState
+```
+
+這個命令會使用 Get-AzResourceGroup Cmdlet 來取得訂閱中的所有資源群組。
+命令會使用管線運算子，將資源群組傳遞至目前的 Cmdlet。
+目前的 Cmdlet 會取得訂閱中所有資源群組的所有部署，並將結果傳遞給 Format-Table Cmdlet，以顯示其 **ResourceGroupName**、 **DeploymentName** 和 **ProvisioningState** 屬性值。
+
+## 參數
+
+### -DefaultProfile
+用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -識別碼
+指定要取得之資源群組部署的 ID。
+
+```yaml
+Type: System.String
+Parameter Sets: GetByResourceGroupDeploymentId
+Aliases: DeploymentId, ResourceId
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -名稱
+指定要取得之部署的名稱。
+不允許通配字元。
+
+```yaml
+Type: System.String
+Parameter Sets: GetByResourceGroupDeploymentName
+Aliases: DeploymentName
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -預先
+表示此 Cmdlet 會在自動決定要使用哪個版本時，考慮預發行 API 版本。
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+指定資源群組的名稱。
+此 Cmdlet 會取得此參數指定之資源群組的部署。
+不允許通配字元。
+這個參數是必要的，而且您只能在每個命令中指定一個資源群組。
+
+```yaml
+Type: System.String
+Parameter Sets: GetByResourceGroupDeploymentName
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### CommonParameters
+這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+
+## 輸入
+
+### System.object
+
+## 輸出
+
+### PSResourceGroupDeployment 中的 SdkModels （）
+
+## 筆記
+
+## 相關連結
+
+[AzResourceGroup](./Get-AzResourceGroup.md)
+
+[新-AzResourceGroup](./New-AzResourceGroup.md)
+
+[新-AzResourceGroupDeployment](./New-AzResourceGroupDeployment.md)
+
+[移除-AzResourceGroupDeployment](./Remove-AzResourceGroupDeployment.md)
+
+[停止 AzResourceGroupDeployment](./Stop-AzResourceGroupDeployment.md)
+
+[Test-AzResourceGroupDeployment](./Test-AzResourceGroupDeployment.md)
+
+
