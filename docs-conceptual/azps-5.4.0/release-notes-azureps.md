@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 8cf52259008b2551b780d4cf6f09b4876673723c
-ms.sourcegitcommit: 12bb1a6d1f89789bf2a78992f9b8ca848691a4d7
+ms.openlocfilehash: 5310923995ad8c950183a1fbf97c01530cac734c
+ms.sourcegitcommit: 8f997856c29db6b969893d5c570215d9ab2f2bfb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98573613"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685849"
 ---
 # <a name="azure-powershell-release-notes"></a>Azure PowerShell 版本資訊
 
@@ -52,10 +52,10 @@ ms.locfileid: "98573613"
 
 #### <a name="aznetwork"></a>Az.Network
 * 已新增 VpnGatewayNATRule CRUD 的新 Cmdlet。
-    - ' AzAzVpnGatewayNatRule '
-    - ' AzAzVpnGatewayNatRule '
-    - ' AzAzVpnGatewayNatRule '
-    - ' AzAzVpnGatewayNatRule '    
+    - ' AzVpnGatewayNatRule '
+    - ' AzVpnGatewayNatRule '
+    - ' AzVpnGatewayNatRule '
+    - ' AzVpnGatewayNatRule '  
 * 已更新 Cmdlet，以在 VpnGateway 資源上設定 NATRule，並將其與 VpnSiteLinkConnection 資源建立關聯。
     - ' AzVpnGateway '
     - ' AzVpnGateway ' 
