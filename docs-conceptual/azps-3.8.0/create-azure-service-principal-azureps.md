@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 06/17/2020
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: abb41f25abc14426d053cbf440d4e8e0b8c17362
-ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
-ms.translationtype: HT
+ms.openlocfilehash: 196af9721ed8ab5141451159b12a8a1e5a5b1f3d
+ms.sourcegitcommit: e680033f216d86cd91a1dfdb8328d32f4c99d21a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93409190"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99251857"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>使用 Azure PowerShell 來建立 Azure 服務主體
 
@@ -22,7 +22,7 @@ Azure 服務主體是一種身分識別，建立目的是為了搭配應用程�
 本文會示範搭配 Azure PowerShell 建立服務主體，以及擷取其資訊和重設服務主體的步驟。
 
 > [!WARNING]
-> 當您使用 [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal) 命令建立服務主體時，輸出中會包含您必須保護的認證。 請務必不要在程式碼中包含這些認證，或是將認證簽入原始檔控制中。 或者，您也可以考慮使用[受控識別](/azure/active-directory/managed-identities-azure-resources/overview)以避免需要使用認證。
+> 當您使用 [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal) 命令建立服務主體時，輸出中會包含您必須保護的認證。 或者，您也可以考慮使用[受控識別](/azure/active-directory/managed-identities-azure-resources/overview)以避免需要使用認證。
 >
 > 根據預設，[New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal) 會將[參與者](/azure/role-based-access-control/built-in-roles#contributor)角色指派給訂用帳戶範圍中的服務主體。 若要降低服務主體遭到入侵的風險，請指派更具體的角色，並將範圍縮小至資源或資源群組。 如需相關資訊，請參閱[新增角色指派的步驟](/azure/role-based-access-control/role-assignments-steps)。
 
@@ -108,7 +108,7 @@ $sp = New-AzADServicePrincipal -DisplayName ServicePrincipalName -KeyCredential 
 您可以使用 [Get-AzADServicePrincipal](/powershell/module/az.resources/get-azadserviceprincipal) 擷取作用中租用戶的服務主體清單。 依預設，此命令會傳回租用戶中的「所有」服務主體。 若為大型組織，可能需要很長的時間才會傳回結果。 建議使用選擇性伺服器端篩選引數的其中一個：
 
 - `-DisplayNameBeginsWith` 會要求服務主體的 _前置詞_ 符合所提供的值。 服務主體的顯示名稱是建立期間使用 `-DisplayName` 所設定的值。
-- `-DisplayName` 要求服務主體名稱 _完全相符_ 。
+- `-DisplayName` 要求服務主體名稱 _完全相符_。
 
 ## <a name="manage-service-principal-roles"></a>管理服務主體角色
 

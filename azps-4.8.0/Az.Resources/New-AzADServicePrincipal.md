@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzADServicePrincipal.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzADServicePrincipal.md
-ms.openlocfilehash: 3c96ab0cdcc25e0e1c9b4a343cd68420654d934c
-ms.sourcegitcommit: 375232b84336ef5e13052504deaa43f5bd4b7f65
+ms.openlocfilehash: 9fc7b3de271188c2f8ebd0be3293892a6fae56e3
+ms.sourcegitcommit: e680033f216d86cd91a1dfdb8328d32f4c99d21a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "94288475"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99251772"
 ---
 # New-AzADServicePrincipal
 
@@ -131,7 +131,7 @@ New-AzADServicePrincipal -ApplicationObject <PSADApplication> -KeyCredential <PS
 建立新的 Azure active directory 服務主體。 如果未提供參數，則預設參數集會使用預設值。 如需有關預設值的詳細資訊，請參閱每個參數的描述。 這個 Cmdlet 能夠 **將角色指派** 給服務主體與 **作用域** 參數。 如果省略兩者，則會將參與者角色指派給服務主體。 [ **角色** ] 與 [ **範圍** ] 參數的預設值是目前訂閱的 **參與者** 。 如果未提供 ApplicationId，此 Cmdlet 會建立應用程式並設定其屬性。 若要更新應用程式的特定參數，請使用 [AzADApplication](./update-azadapplication.md) Cmdlet。
 
 > [!WARNING]
-> 當您使用 **新的-AzADServicePrincipal** 命令建立服務主體時，輸出會包含您必須受到保護的認證。 請確定您的程式碼中不包含這些認證，或者請將認證核取到您的來源控制中。 或者，請考慮使用 [受管理](/azure/active-directory/managed-identities-azure-resources/overview) 的身分識別，以避免需要使用認證。
+> 當您使用 **新的-AzADServicePrincipal** 命令建立服務主體時，輸出會包含您必須受到保護的認證。 或者，請考慮使用 [受管理](/azure/active-directory/managed-identities-azure-resources/overview) 的身分識別，以避免需要使用認證。
 >
 > 根據預設， **新-AzADServicePrincipal** 會將 [參與者](/azure/role-based-access-control/built-in-roles#contributor) 角色指派給訂閱範圍中的服務主體。 若要降低受到危害的服務主體的風險，請指派更明確的角色，並將範圍縮小至資源或資源群組。 如需詳細資訊，請參閱 [新增角色分派的步驟](/azure/role-based-access-control/role-assignments-steps) 。
 

@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzADServicePrincipal.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzADServicePrincipal.md
-ms.openlocfilehash: f921cceb3692032f61f99db825efeea074773faa
-ms.sourcegitcommit: 375232b84336ef5e13052504deaa43f5bd4b7f65
+ms.openlocfilehash: 3a410dfb43cc767b0a73086147042425d42764d1
+ms.sourcegitcommit: e680033f216d86cd91a1dfdb8328d32f4c99d21a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "94288468"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99251619"
 ---
 # New-AzADServicePrincipal
 
@@ -113,11 +113,11 @@ New-AzADServicePrincipal -ApplicationObject <PSADApplication> -KeyCredential <PS
 
 ## 說明
 建立新的 azure active directory 服務主體。 如果使用者沒有提供參數的預設參數集，則它會使用預設值。 如需使用預設值的詳細資訊，請參閱下列指定參數的描述。
-這個 Cmdlet 能夠使用 and 參數將角色指派給服務主體 `Role` `Scope` ; 如果沒有提供這些參數，就不會將任何角色指派給服務主體。 與參數的預設值 `Role` `Scope` 分別是「參與者」和目前的訂閱， ( _注意_ ：只有當使用者提供其中一個參數的值，而不是其他) 時，才會使用預設值。
+這個 Cmdlet 能夠使用 and 參數將角色指派給服務主體 `Role` `Scope` ; 如果沒有提供這些參數，就不會將任何角色指派給服務主體。 與參數的預設值 `Role` `Scope` 分別是「參與者」和目前的訂閱， (_注意_：只有當使用者提供其中一個參數的值，而不是其他) 時，才會使用預設值。
 如果沒有提供 ApplicationId，該 Cmdlet 也會以隱含方式建立應用程式，並將其屬性 () 。 若要更新應用程式的特定參數，請使用 Set-AzADApplication Cmdlet。
 
 > [!WARNING]
-> 當您使用 **新的-AzADServicePrincipal** 命令建立服務主體時，輸出會包含您必須受到保護的認證。 請確定您的程式碼中不包含這些認證，或者請將認證核取到您的來源控制中。 或者，請考慮使用 [受管理](/azure/active-directory/managed-identities-azure-resources/overview) 的身分識別，以避免需要使用認證。
+> 當您使用 **新的-AzADServicePrincipal** 命令建立服務主體時，輸出會包含您必須受到保護的認證。 或者，請考慮使用 [受管理](/azure/active-directory/managed-identities-azure-resources/overview) 的身分識別，以避免需要使用認證。
 >
 > 根據預設， **新-AzADServicePrincipal** 會將 [參與者](/azure/role-based-access-control/built-in-roles#contributor) 角色指派給訂閱範圍中的服務主體。 若要降低受到危害的服務主體的風險，請指派更明確的角色，並將範圍縮小至資源或資源群組。 如需詳細資訊，請參閱 [新增角色分派的步驟](/azure/role-based-access-control/role-assignments-steps) 。
 
