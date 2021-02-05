@@ -3,13 +3,12 @@ external help file: Microsoft.Azure.Commands.DeploymentManager.dll-Help.xml
 Module Name: AzureRM.DeploymentManager
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.deploymentmanager/get-azurermdeploymentmanagerservice
 schema: 2.0.0
-content_git_url: ''
-ms.openlocfilehash: 655cfeeae35d1b48bbfe2149fd4262dffe72ae09
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 4a91c2f8fdda1d2cda7c75f0cf7cfab165701f3d
+ms.sourcegitcommit: e57be0da5162efeb0a01f396e2343dd137920063
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93443512"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99572100"
 ---
 # Get-AzureRmDeploymentManagerService
 
