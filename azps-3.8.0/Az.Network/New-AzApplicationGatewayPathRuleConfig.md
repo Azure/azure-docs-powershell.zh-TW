@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGatewayPathRuleConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGatewayPathRuleConfig.md
-ms.openlocfilehash: cbd69ff20e32d93ff5d9f9f7c4959568f627c7e0
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: f06dbac5e7c7a67acc38c5357351905fab0ed141
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93966250"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100402553"
 ---
 # New-AzApplicationGatewayPathRuleConfig
 
-## 摘要
+## 簡介
 建立應用程式閘道路徑規則。
 
-## 句法
+## 語法
 
 ### SetByResourceId
 ```
@@ -38,14 +38,14 @@ New-AzApplicationGatewayPathRuleConfig -Name <String> -Paths <String[]>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## 說明
-**新的-AzApplicationGatewayPathRuleConfig** Cmdlet 會建立應用程式閘道路徑規則。
-您可以將由此 Cmdlet 建立的規則新增至 URL 路徑對應設定的集合，然後指派給閘道。
-路徑對應設定是在應用程式閘道負載平衡中使用。
+## 描述
+**New-AzApplicationGatewayPathRuleConfig** Cmdlet 會建立應用程式閘道路徑規則。
+此 Cmdlet 所建立的規則可以新增到 URL 路徑地圖設定設定集合，然後指派給閘道。
+路徑圖設定設定用於應用程式閘道負載平衡。
 
-## 示例
+## 例子
 
-### 範例1
+### 範例 1
 ```
 PS C:\>$Gateway = Get-AzApplicationGateway -Name "ContosoApplicationGateway"
 PS C:\> $AddressPool = New-AzApplicationGatewayBackendAddressPool -Name "ContosoAddressPool" -BackendIPAddresses "192.168.1.1", "192.168.1.2"
@@ -54,31 +54,31 @@ PS C:\> $PathRuleConfig = New-AzApplicationGatewayPathRuleConfig -Name "base" -P
 PS C:\> Add-AzApplicationGatewayUrlPathMapConfig -ApplicationGateway $Gateway -Name "ContosoUrlPathMap" -PathRules $PathRuleConfig -DefaultBackendAddressPool $AddressPool -DefaultBackendHttpSettings $HttpSettings
 ```
 
-這些命令會建立新的應用程式閘道路徑規則，然後使用 **AzApplicationGatewayUrlPathMapConfig** Cmdlet 將該規則指派給應用程式閘道。
-若要這樣做，第一個命令會建立對閘道 ContosoApplicationGateway 的物件參照。
-這個物件參照會儲存在名為 $Gateway 的變數中。
-接下來的兩個命令會建立後端位址集區和後端 HTTP 設定物件;這些物件 (儲存在 $AddressPool 變數中，而且需要 $HttpSettings) ，才能建立路徑規則物件。
+這些命令會建立新的應用程式閘道路徑規則，然後使用 **Add-AzApplicationGatewayUrlPathMapConfig** Cmdlet 將規則指派給應用程式閘道。
+若要這麼做，第一個命令會建立閘道 ContosoApplicationGateway 的物件參照。
+此物件參照會儲存在名為 $Gateway 的變數中。
+接下來兩個命令會建立後端位址集區及後端 HTTP 設定物件;這些物件 (儲存在$AddressPool$HttpSettings) ，才能建立路徑規則物件。
 第四個命令會建立路徑規則物件，並儲存在名為 $PathRuleConfig 的變數中。
-第五個命令使用 [ **載入 AzApplicationGatewayUrlPathMapConfig** ]，將配置設定和包含在這些設定中的新路徑規則新增到 ContosoApplicationGateway。
+第五個命令使用 **Add-AzApplicationGatewayUrlPathMapConfig，** 將設定設定和這些設定中包含的新路徑規則新增到 ContosoApplicationGateway。
 
-### 範例2
+### 範例 2
 ```
 PS C:\> $PathRuleConfig = New-AzApplicationGatewayPathRuleConfig -Name "base" -Paths "/base" -BackendAddressPool $AddressPool -BackendHttpSettings $HttpSettings -FirewallPolicy $firewallPolicy
 ```
 
-這些命令會建立名稱為 "base"、路徑為 "/base"、BackendAddressPool 為 $AddressPool 的路徑規則，BackendHttpSettings $HttpSettings 為 [ngs] 和 [$firewallPolicy FirewallPolicy]，將這些設定中所包含的新路徑規則加入 ContosoApplicationGateway。
+這些命令會建立路徑規則，名稱為"base"、Path as "/base"、後端AddressPool as $AddressPool、後端HttpSettings as $HttpSettings 和 FirewallPolicy as $firewallPolicy.ngs，以及這些設定中包含的新路徑規則至 ContosoApplicationGateway。
 
 ## 參數
 
-### -BackendAddressPool
-指定要新增至 [閘道路徑規則設定] 的後端位址集區設定集合的物件參照。
-您可以使用 New-AzApplicationGatewayBackendAddressPool Cmdlet 及如下所示的語法來建立此物件參照： `$AddressPool = New-AzApplicationGatewayBackendAddressPool -Name "ContosoAddressPool" -BackendIPAddresses "192.168.1.1", "192.168.1.2"`
-上述命令會將兩個 IP 位址 (192.16.1.1 和 192.168.1.2) 新增到位址集區中。
-請注意，IP 位址括在引號中，並以逗號分隔。
-產生的變數 $AddressPool，就可以用來做為 *DefaultBackendAddressPool* 參數的參數值。
-後端位址集區代表後端伺服器上的 IP 位址。
-這些 IP 位址應該是屬於虛擬網路子網，或是公用 IP 位址。
-如果您使用這個參數，就不能在相同的命令中使用 *DefaultBackendAddressPoolId* 參數。
+### -後端AddressPool
+指定要新增到閘道路徑規則設定設定之後端位址集區設定集合的物件參照。
+您可以使用類似以下的 Cmdlet New-AzApplicationGatewayBackendAddressPool建立此物件參照： `$AddressPool = New-AzApplicationGatewayBackendAddressPool -Name "ContosoAddressPool" -BackendIPAddresses "192.168.1.1", "192.168.1.2"`
+上述命令會將兩個 IP 位址 (192.16.1.1 和 192.168.1.2) 到位址區段。
+請注意，IP 位址會以引號括住，並且使用逗號分隔。
+結果變數 $AddressPool，然後可以用來做為 *DefaultBackendAddressPool* 參數的參數值。
+後端位址資料庫代表後端伺服器的 IP 位址。
+這些 IP 位址應屬於虛擬網路子網，或應為公用 IP 位址。
+如果您使用此參數，就無法在同一個命令中使用 *DefaultBackendAddressPoolId* 參數。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendAddressPool
@@ -92,12 +92,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -BackendAddressPoolId
-指定可新增至 [閘道路徑規則設定] 的現有後端位址集區 ID。
-您可以使用 Get-AzApplicationGatewayBackendAddressPool Cmdlet 傳回位址集區識別碼。
-在您擁有 ID 之後，您就可以使用 *DefaultBackendAddressPoolId* 參數，而不是 *DefaultBackendAddressPool* 參數。
-例如：-DefaultBackendAddressPoolId "/subscriptions/39c54063-01d3-4abf-8f4c-234777bc1f10/resourceGroups/appgw-rg/providers/Microsoft.Network/applicationGateways/appgwtest/backendAddressPools/ContosoAddressPool" 後端位址集區代表後端伺服器上的 IP 位址。
-這些 IP 位址應該是屬於虛擬網路子網，或是公用 IP 位址。
+### -後端AddressPoolId
+指定可以新加入閘道路徑規則設定設定的現有後端位址集區識別碼。
+您可以使用 Cmdlet 來Get-AzApplicationGatewayBackendAddressPool位址。
+在您擁有識別碼之後，就可以使用 *DefaultBackendAddressPoolId* 參數，而不是 *DefaultBackendAddressPool* 參數。
+例如：-DefaultBackendAddressPoolId"/subscriptions/39c54063-01d3-4abf-8f4c-234777bc1f10 /resourceGroups/appgw-rg/providers/Microsoft.Network/applicationGateways/appgwtest/後端AddressPools/ContosoAddressPool" 後端位址資料庫代表後端伺服器的 IP 位址。
+這些 IP 位址應屬於虛擬網路子網，或應為公用 IP 位址。
 
 ```yaml
 Type: System.String
@@ -111,10 +111,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -BackendHttpSettings
-指定要新增至 [閘道路徑規則設定] 的後端 HTTP 設定集合的物件參照。
-您可以使用 New-AzApplicationGatewayBackendHttpSettings Cmdlet 及如下所示的語法來建立此物件參照： $HttpSettings = New-AzApplicationGatewayBackendHttpSettings 名稱 "ContosoHttpSettings"-Port 80-通訊協定 "Http"-CookieBasedAffinity "Disabled" 所產生的變數（$HttpSettings）隨後可用作 *DefaultBackendAddressPool* 參數的參數值：-DefaultBackendHttpSettings $HttpSettings 後端 Http 設定會針對後端池設定屬性，例如埠、通訊協定和 cookie 的關聯性。
-如果您使用這個參數，就不能在相同的命令中使用 *DefaultBackendHttpSettingsId* 參數。
+### -後端HttpSettings
+指定要新加入閘道路徑規則設定設定之後端 HTTP 設定集合的物件參照。
+您可以使用類似以下的 New-AzApplicationGatewayBackendHttpSettings Cmdlet 和語法來建立此物件參照：$HttpSettings = New-AzApplicationGatewayBackendHttpSettings -Name "ContosoHttpSettings" -Port 80 -Protocol "HTTP" -CookieBasedAffinity "Disabled" 產生的變數， $HttpSettings，然後可以用來做為 *DefaultBackendAddressPool* 參數的參數值：-DefaultBackendHttpSettings $HttpSettings 後端 HTTP 設定會為後端資料庫設定埠、通訊協定和 Cookie 型關聯等屬性。
+如果您使用此參數，就無法在同一個命令中使用 *DefaultBackendHttpSettingsId* 參數。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendHttpSettings
@@ -128,12 +128,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -BackendHttpSettingsId
-指定現有後端 HTTP 設定集合的識別碼，該集合可以新增至 [閘道路徑規則] 設定設定。
-您可以使用 Get-AzApplicationGatewayBackendHttpSettings Cmdlet 傳回 HTTP 設定 Id。
-在您擁有 ID 之後，您就可以使用 *DefaultBackendHttpSettingsId* 參數，而不是 *DefaultBackendHttpSettings* 參數。
-例如：-DefaultBackendSettings Id "/subscriptions/39c54063-01d3-4abf-8f4c-234777bc1f10/resourceGroups/appgw-rg/providers/Microsoft.Network/applicationGateways/appgwtest/backendHttpSettingsCollection/ContosoHttpSettings" 後端 HTTP 設定會為後端池設定屬性，例如埠、通訊協定及 cookie 的關聯性。
-如果您使用這個參數，就不能在相同的命令中使用 *DefaultBackendHttpSettings* 參數。
+### -後端HttpSettingsId
+指定可以新加入閘道路徑規則設定設定的現有後端 HTTP 設定集合識別碼。
+HTTP 設定 ID 可以使用 Cmdlet Get-AzApplicationGatewayBackendHttpSettings回。
+在您擁有識別碼之後，就可以使用 *DefaultBackendHttpSettingsId* 參數，而不是 *DefaultBackendHttpSettings* 參數。
+例如：-DefaultBackendSettings Id "/subscriptions/39c54063-01d3-4abf-8f4c-234777bc1f10/resourceGroups/appgw-rg/providers/Microsoft.Network/applicationGateways/appgwtest/後端HttpSettingsCollection/ContosoHttpSettings" 後端 HTTP 設定設定屬性，例如埠， 協定，以及後端資料庫的 Cookie 型關聯。
+如果您使用此參數，就無法在同一個命令中使用 *DefaultBackendHttpSettings* 參數。
 
 ```yaml
 Type: System.String
@@ -148,9 +148,9 @@ Accept wildcard characters: False
 ```
 
 ### -FirewallPolicy
-指定對頂層防火牆原則的物件參考。 您可以使用 New-AzApplicationGatewayWebApplicationFirewallPolicy Cmdlet 來建立物件參考。
-$firewallPolicy = New-AzApplicationGatewayFirewallPolicy 名稱 "wafPolicy1"-ResourceGroup "rgName" 使用上述的 commandlet 建立的防火牆原則，可以在 path 規則層級引用。 上述命令會建立預設的原則設定和受管理的規則。
-使用者可以使用 New-AzApplicationGatewayFirewallPolicySettings 和 New-AzApplicationGatewayFirewallPolicyManagedRules 分別指定 PolicySettings、ManagedRules，而不是預設值。
+指定頂層防火牆政策的物件參照。 您可以使用 Cmdlet 建立New-AzApplicationGatewayWebApplicationFirewallPolicy參照。
+$firewallPolicy = New-AzApplicationGatewayFirewallPolicy -Name "wafPolicy1" -ResourceGroup "rgName" 使用上述命令建立防火牆原則，可以在路徑規則層級中參考。 上方命令會建立預設原則設定及受管理規則。
+使用者可以指定 PolicySettings、ManagedRules，而不使用預設值，New-AzApplicationGatewayFirewallPolicySettings和New-AzApplicationGatewayFirewallPolicyManagedRules設定。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayWebApplicationFirewallPolicy
@@ -164,9 +164,9 @@ Accept wildcard characters: False
 ```
 
 ### -FirewallPolicyId
-指定現有最上層 web 應用程式防火牆資源的 ID。
-您可以使用 Get-AzApplicationGatewayWebApplicationFirewallPolicy Cmdlet 傳回防火牆原則識別碼。 我們擁有 ID 之後，您可以使用 *FirewallPolicyId* 參數，而不是 *FirewallPolicy* 參數。
-例如：-FirewallPolicyId "/subscriptions/<訂閱識別碼>/resourceGroups/<資源群組-識別碼>/providers/Microsoft.Network/ApplicationGatewayWebApplicationFirewallPolicies/ <firewallPolicyName> "
+指定現有頂層 Web 應用程式防火牆資源的識別碼。
+防火牆策略的 ID 可以使用 Get-AzApplicationGatewayWebApplicationFirewallPolicy Cmdlet。 當我們有識別碼之後，您可以使用 *FirewallPolicyId* 參數，而不是 *FirewallPolicy* 參數。
+例如：-FirewallPolicyId "/subscriptions/<subscription-id>/resourceGroups/<resource-group-id>/providers/Microsoft.Network/ApplicationGatewayWebApplicationFirewallPolicies/ <firewallPolicyName> "
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayWebApplicationFirewallPolicy
@@ -180,7 +180,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -195,7 +195,7 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-指定此 Cmdlet 所建立之路徑規則配置的名稱。
+指定此 Cmdlet 建立的路徑規則組組名稱。
 
 ```yaml
 Type: System.String
@@ -210,7 +210,7 @@ Accept wildcard characters: False
 ```
 
 ### -路徑
-指定一個或多個應用程式閘道路徑規則。
+指定一或多個應用程式閘道路徑規則。
 
 ```yaml
 Type: System.String[]
@@ -240,7 +240,7 @@ Accept wildcard characters: False
 ```
 
 ### -RedirectConfigurationId
-應用程式閘道 RedirectConfiguration 的 ID
+應用程式閘道 RedirectConfiguration 的識別碼
 
 ```yaml
 Type: System.String
@@ -270,7 +270,7 @@ Accept wildcard characters: False
 ```
 
 ### -RewriteRuleSetId
-應用程式閘道 RewriteRuleSet 的 ID
+應用程式閘道 RewriteRuleSet 的識別碼
 
 ```yaml
 Type: System.String
@@ -285,35 +285,34 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 http://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
-### 所有
+### 沒有
 
 ## 輸出
 
-### PSApplicationGatewayPathRule 中的 [.]
+### Microsoft.Azure.Commands.Network.models.PSApplicationGatewayPathRule
 
 ## 筆記
 
 ## 相關連結
 
-[附加 AzApplicationGatewayUrlPathMapConfig](./Add-AzApplicationGatewayUrlPathMapConfig.md)
+[Add-AzApplicationGatewayUrlPathMapConfig](./Add-AzApplicationGatewayUrlPathMapConfig.md)
 
-[AzApplicationGateway](./Get-AzApplicationGateway.md)
+[Get-AzApplicationGateway](./Get-AzApplicationGateway.md)
 
-[AzApplicationGatewayUrlPathMapConfig](./Get-AzApplicationGatewayUrlPathMapConfig.md)
+[Get-AzApplicationGatewayUrlPathMapConfig](./Get-AzApplicationGatewayUrlPathMapConfig.md)
 
-[新-AzApplicationGatewayBackendAddressPool](./New-AzApplicationGatewayBackendAddressPool.md)
+[New-AzApplicationGatewayBackendAddressPool](./New-AzApplicationGatewayBackendAddressPool.md)
 
-[新-AzApplicationGatewayBackendHttpSettings](./New-AzApplicationGatewayBackendHttpSettings.md)
 
-[新-AzApplicationGatewayPathRuleConfig](./New-AzApplicationGatewayPathRuleConfig.md)
+[New-AzApplicationGatewayPathRuleConfig](./New-AzApplicationGatewayPathRuleConfig.md)
 
-[新-AzApplicationGatewayUrlPathMapConfig](./New-AzApplicationGatewayUrlPathMapConfig.md)
+[New-AzApplicationGatewayUrlPathMapConfig](./New-AzApplicationGatewayUrlPathMapConfig.md)
 
-[移除-AzApplicationGatewayUrlPathMapConfig](./Remove-AzApplicationGatewayUrlPathMapConfig.md)
+[Remove-AzApplicationGatewayUrlPathMapConfig](./Remove-AzApplicationGatewayUrlPathMapConfig.md)
 
 [Set-AzApplicationGatewayUrlPathMapConfig](./Set-AzApplicationGatewayUrlPathMapConfig.md)
 
