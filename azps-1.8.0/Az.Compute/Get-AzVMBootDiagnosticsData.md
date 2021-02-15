@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMBootDiagnosticsData.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMBootDiagnosticsData.md
-ms.openlocfilehash: 94e5a1087f870f8dbbe099962e69d83b64f52ed3
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: ee210b5b9408f3de2b9e92213fafe4846ea8c3e1
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93788518"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400649"
 ---
 # Get-AzVMBootDiagnosticsData
 
-## 摘要
-取得虛擬機器的啟動診斷資料。
+## 簡介
+為虛擬機器獲得開機診斷資料。
 
-## 句法
+## 語法
 
 ### WindowsParamSet (預設) 
 ```
@@ -32,24 +32,24 @@ Get-AzVMBootDiagnosticsData [-ResourceGroupName] <String> [-Name] <String> [-Lin
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## 說明
-**AzVMBootDiagnosticsData** Cmdlet 會取得虛擬機器的啟動診斷資料。
+## 描述
+**Get-Az VIRTUALBootDiagnosticsData** Cmdlet 會取得虛擬機器的開機診斷資料。
 
-## 示例
+## 例子
 
-### 範例1：取得啟動診斷資料
+### 範例 1：取得開機診斷資料
 ```
 PS C:\> Get-AzVMBootDiagnosticsData -ResourceGroupName "ResourceGroup11" -Name "ContosoVM07" -Windows -LocalPath "C:\Contoso\BootDiagnostics"
 ```
 
-這個命令會取得名為 ContosoVM07 的虛擬機器的啟動診斷資料。
+此命令會為名為 ContosoEV07 的虛擬機器獲得開機診斷資料。
 此虛擬機器會執行 Windows 作業系統。
-該命令會將資料儲存在指定的本機路徑中。
+命令會以指定的本地路徑儲存資料。
 
 ## 參數
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -64,7 +64,7 @@ Accept wildcard characters: False
 ```
 
 ### -Linux
-表示虛擬機器執行的是 Linux 作業系統。
+表示虛擬機器執行 Linux 作業系統。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -79,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -LocalPath
-指定啟動診斷資料的本機路徑。
+指定開機診斷資料的本地路徑。
 
 ```yaml
 Type: System.String
@@ -106,7 +106,7 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-指定此 Cmdlet 取得診斷資料之虛擬機器的名稱。
+指定此 Cmdlet 會獲得診斷資料的虛擬機器名稱。
 
 ```yaml
 Type: System.String
@@ -121,7 +121,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-指定虛擬機器之資源群組的名稱。
+指定虛擬機器的資源組名。
 
 ```yaml
 Type: System.String
@@ -136,7 +136,7 @@ Accept wildcard characters: False
 ```
 
 ### -Windows
-表示虛擬機器執行的是 Windows 作業系統。
+表示虛擬機器執行 Windows 作業系統。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -151,22 +151,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](https://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### System.object
+### System.String
 
 ## 輸出
 
-### PSVirtualMachine 中的 [計算] 命令
+### Microsoft.Azure.Commands.Compute.models.PSVirtualMachine
 
-### PSVirtualMachineInstanceView 中的 [計算] 命令
+### Microsoft.Azure.Commands.Compute.models.PSVirtualMachineInstanceView
 
 ## 筆記
 
 ## 相關連結
 
-[Set-AzVMBootDiagnostics](./Set-AzVMBootDiagnostics.md)
+[Set-AzMSBOotDiagnostic](./Set-AzVMBootDiagnostic.md)
 
 
