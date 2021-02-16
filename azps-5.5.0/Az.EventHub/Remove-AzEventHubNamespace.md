@@ -1,0 +1,232 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.EventHub.dll-Help.xml
+Module Name: Az.EventHub
+online version: https://docs.microsoft.com/en-us/powershell/module/az.eventhub/remove-azeventhubnamespace
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/EventHub/EventHub/help/Remove-AzEventHubNamespace.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/EventHub/EventHub/help/Remove-AzEventHubNamespace.md
+ms.openlocfilehash: 29f2b961637a398470f6455d0d2330ce5fd863a6
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100139199"
+---
+# <span data-ttu-id="50adc-101">Remove-AzEventHubNamespace</span><span class="sxs-lookup"><span data-stu-id="50adc-101">Remove-AzEventHubNamespace</span></span>
+
+## <span data-ttu-id="50adc-102">摘要</span><span class="sxs-lookup"><span data-stu-id="50adc-102">SYNOPSIS</span></span>
+<span data-ttu-id="50adc-103">移除指定的事件中樞命名空間。</span><span class="sxs-lookup"><span data-stu-id="50adc-103">Removes the specified Event Hubs namespace.</span></span>
+
+## <span data-ttu-id="50adc-104">句法</span><span class="sxs-lookup"><span data-stu-id="50adc-104">SYNTAX</span></span>
+
+### <span data-ttu-id="50adc-105">NamespaceParameterSet (預設) </span><span class="sxs-lookup"><span data-stu-id="50adc-105">NamespaceParameterSet (Default)</span></span>
+```
+Remove-AzEventHubNamespace [-ResourceGroupName] <String> [-Name] <String> [-PassThru] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="50adc-106">NamespaceInputObjectSet</span><span class="sxs-lookup"><span data-stu-id="50adc-106">NamespaceInputObjectSet</span></span>
+```
+Remove-AzEventHubNamespace [-InputObject] <PSNamespaceAttributes> [-PassThru] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="50adc-107">NamespaceResourceIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="50adc-107">NamespaceResourceIdParameterSet</span></span>
+```
+Remove-AzEventHubNamespace [-ResourceId] <String> [-PassThru] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="50adc-108">說明</span><span class="sxs-lookup"><span data-stu-id="50adc-108">DESCRIPTION</span></span>
+<span data-ttu-id="50adc-109">Remove-AzEventHubNamespace Cmdlet 會移除並刪除指定的事件中樞命名空間。</span><span class="sxs-lookup"><span data-stu-id="50adc-109">The Remove-AzEventHubNamespace cmdlet removes and deletes the specified Event Hubs namespace.</span></span>
+
+## <span data-ttu-id="50adc-110">示例</span><span class="sxs-lookup"><span data-stu-id="50adc-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="50adc-111">範例1</span><span class="sxs-lookup"><span data-stu-id="50adc-111">Example 1</span></span>
+```powershell
+PS C:\> Remove-AzEventHubNamespace -ResourceGroupName MyResourceGroupName -Name MyNamespaceName
+```
+
+<span data-ttu-id="50adc-112">移除 \` \` 資源群組 MyResourceGroupName 中的 [事件中心] 命名空間 MyNamespaceName \` \` 。</span><span class="sxs-lookup"><span data-stu-id="50adc-112">Removes the Event Hubs namespace \`MyNamespaceName\` in resource group \`MyResourceGroupName\`.</span></span>
+
+### <span data-ttu-id="50adc-113">範例2：使用 InputObject 的變數：</span><span class="sxs-lookup"><span data-stu-id="50adc-113">Example 2: InputObject - Using Variable:</span></span>
+```powershell
+PS C:\> $inputObject = Get-AzEventHubNamespace <params> 
+PS C:\> Remove-AzEventHubNamespace -InputObject $inputObject
+```
+
+### <span data-ttu-id="50adc-114">範例3：使用 [InputObject] 管道：</span><span class="sxs-lookup"><span data-stu-id="50adc-114">Example 3: InputObject - Using Piping:</span></span>
+```powershell
+PS C:\> Get-AzEventHubNamespace <params> | Remove-AzEventHubNamespace
+```
+
+### <span data-ttu-id="50adc-115">範例4：使用變數 ResourceId</span><span class="sxs-lookup"><span data-stu-id="50adc-115">Example 4: ResourceId - Using Variable</span></span>
+```powershell
+PS C:\> $resourceid = Get-AzEventHubNamespace <params>
+PS C:\> Remove-AzEventHubNamespace -ResourceId $resourceid.Id
+```
+
+### <span data-ttu-id="50adc-116">範例5：使用管道的 ResourceId：</span><span class="sxs-lookup"><span data-stu-id="50adc-116">Example 5: ResourceId - Using Piping:</span></span>
+```powershell
+PS C:\> Get-AzResource -ResourceType Microsoft.EventHub/Namespaces | Remove-AzEventHubNamespace
+```
+
+### <span data-ttu-id="50adc-117">範例6：使用中字串：</span><span class="sxs-lookup"><span data-stu-id="50adc-117">Example 6: ResourceId - Using String:</span></span>
+```powershell
+PS C:\> Remove-AzEventHubNamespace -ResourceId "/subscriptions/xxx-xxxxx-xxxxxx-xxxxxx/resourceGroups/ResourceGroupName/providers/Microsoft.EventHub/namespaces/NamespaceName"
+```
+
+## <span data-ttu-id="50adc-118">參數</span><span class="sxs-lookup"><span data-stu-id="50adc-118">PARAMETERS</span></span>
+
+### <span data-ttu-id="50adc-119">-AsJob</span><span class="sxs-lookup"><span data-stu-id="50adc-119">-AsJob</span></span>
+<span data-ttu-id="50adc-120">在背景中執行 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="50adc-120">Run cmdlet in the background</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="50adc-121">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="50adc-121">-DefaultProfile</span></span>
+<span data-ttu-id="50adc-122">用於與 Azure 進行通訊的認證、帳戶、租使用者及訂閱。</span><span class="sxs-lookup"><span data-stu-id="50adc-122">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="50adc-123">-InputObject</span><span class="sxs-lookup"><span data-stu-id="50adc-123">-InputObject</span></span>
+<span data-ttu-id="50adc-124">EventHubs Namespace 物件</span><span class="sxs-lookup"><span data-stu-id="50adc-124">EventHubs Namespace Object</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.EventHub.Models.PSNamespaceAttributes
+Parameter Sets: NamespaceInputObjectSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="50adc-125">-名稱</span><span class="sxs-lookup"><span data-stu-id="50adc-125">-Name</span></span>
+<span data-ttu-id="50adc-126">EventHub 命名空間名稱</span><span class="sxs-lookup"><span data-stu-id="50adc-126">EventHub Namespace Name</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: NamespaceParameterSet
+Aliases: NamespaceName
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="50adc-127">-PassThru</span><span class="sxs-lookup"><span data-stu-id="50adc-127">-PassThru</span></span>
+<span data-ttu-id="50adc-128">如果命令成功，則指定此值會傳回 true。</span><span class="sxs-lookup"><span data-stu-id="50adc-128">Specifying this will return true if the command was successful.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="50adc-129">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="50adc-129">-ResourceGroupName</span></span>
+<span data-ttu-id="50adc-130">資源群組名稱</span><span class="sxs-lookup"><span data-stu-id="50adc-130">Resource Group Name</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: NamespaceParameterSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="50adc-131">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="50adc-131">-ResourceId</span></span>
+<span data-ttu-id="50adc-132">EventHubs 命名空間資源識別碼</span><span class="sxs-lookup"><span data-stu-id="50adc-132">EventHubs Namespace Resource Id</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: NamespaceResourceIdParameterSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="50adc-133">-確認</span><span class="sxs-lookup"><span data-stu-id="50adc-133">-Confirm</span></span>
+<span data-ttu-id="50adc-134">在執行 Cmdlet 之前提示您進行確認。</span><span class="sxs-lookup"><span data-stu-id="50adc-134">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="50adc-135">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="50adc-135">-WhatIf</span></span>
+<span data-ttu-id="50adc-136">顯示在執行 Cmdlet 時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="50adc-136">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="50adc-137">未執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="50adc-137">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="50adc-138">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="50adc-138">CommonParameters</span></span>
+<span data-ttu-id="50adc-139">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="50adc-139">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="50adc-140">如需詳細資訊，請參閱 about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216) 。</span><span class="sxs-lookup"><span data-stu-id="50adc-140">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="50adc-141">輸入</span><span class="sxs-lookup"><span data-stu-id="50adc-141">INPUTS</span></span>
+
+### <span data-ttu-id="50adc-142">System.object</span><span class="sxs-lookup"><span data-stu-id="50adc-142">System.String</span></span>
+
+### <span data-ttu-id="50adc-143">PSNamespaceAttributes 的 [.]</span><span class="sxs-lookup"><span data-stu-id="50adc-143">Microsoft.Azure.Commands.EventHub.Models.PSNamespaceAttributes</span></span>
+
+## <span data-ttu-id="50adc-144">輸出</span><span class="sxs-lookup"><span data-stu-id="50adc-144">OUTPUTS</span></span>
+
+### <span data-ttu-id="50adc-145">System.void</span><span class="sxs-lookup"><span data-stu-id="50adc-145">System.Void</span></span>
+
+## <span data-ttu-id="50adc-146">筆記</span><span class="sxs-lookup"><span data-stu-id="50adc-146">NOTES</span></span>
+
+## <span data-ttu-id="50adc-147">相關連結</span><span class="sxs-lookup"><span data-stu-id="50adc-147">RELATED LINKS</span></span>
