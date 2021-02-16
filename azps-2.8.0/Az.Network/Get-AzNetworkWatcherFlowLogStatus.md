@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherFlowLogStatus.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherFlowLogStatus.md
-ms.openlocfilehash: cdc97ff5e528e58aa088950f5272e7689f35b10e
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: d7b6fdc67864145ec6219fa466680715b2c20ec3
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93790077"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398660"
 ---
 # Get-AzNetworkWatcherFlowLogStatus
 
-## 摘要
-取得資源的流程記錄狀態。
+## 簡介
+在資源上獲得流程記錄的狀態。
 
-## 句法
+## 語法
 
 ### SetByResource (預設) 
 ```
@@ -37,12 +37,12 @@ Get-AzNetworkWatcherFlowLogStatus -Location <String> -TargetResourceId <String> 
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## 說明
-Get-AzNetworkWatcherFlowLogStatus Cmdlet 會取得資源的流程記錄狀態。 狀態包括是否針對提供的資源、已設定的儲存空間帳戶來傳送記錄，以及記錄的保留原則，都已啟用流程記錄。 目前支援資料流程記錄的網路安全性群組。 
+## 描述
+此Get-AzNetworkWatcherFlowLogStatus Cmdlet 會獲得資源上流程記錄的狀態。 狀態包括是否針對所提供的資源啟用流程記錄、已配置的儲存空間帳戶來傳送記錄，以及記錄保留原則。 目前網路安全性群組支援流程記錄。 
 
-## 示例
+## 例子
 
-### 範例1：取得指定 NSG 的流程記錄狀態
+### 範例 1：取得指定 NSG 的流量記錄狀態
 ```
 PS C:\> $NW = Get-AzNetworkWatcher -ResourceGroupName NetworkWatcherRg -Name NetworkWatcher_westcentralus
 PS C:\> $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName NSGRG -Name appNSG
@@ -64,9 +64,9 @@ Properties       : {
                    }
 ```
 
-在這個範例中，我們會取得網路安全性群組的流程記錄狀態。 指定的 NSG 已啟用流程記錄、預設格式，且未設定保留原則。
+在此範例中，我們取得網路安全性群組的流量記錄狀態。 指定的 NSG 已啟用流程記錄、預設格式，而且未設定保留原則。
 
-### 範例2：取得指定 NSG 的流程記錄和流量分析狀態
+### 範例 2：取得指定 NSG 的流量記錄與流量分析狀態
 ```
 PS C:\> $NW = Get-AzNetworkWatcher -ResourceGroupName NetworkWatcherRg -Name NetworkWatcher_westcentralus
 PS C:\> $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName NSGRG -Name appNSG
@@ -95,7 +95,7 @@ FlowAnalyticsConfiguration : {
           }
 ```
 
-在這個範例中，我們會取得網路安全性群組的流程記錄和流量分析狀態。 指定的 NSG 已啟用流程記錄和流量分析、預設格式及沒有設定保留原則。
+在此範例中，我們取得網路安全性群組的流量記錄和流量分析狀態。 指定的 NSG 已啟用流程記錄與流量分析，預設格式且未設定保留原則。
 
 ## 參數
 
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -位置
-網路觀察程式的位置。
+網路監視者的位置。
 
 ```yaml
 Type: System.String
@@ -145,7 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcher
-網路觀察程式資源。
+網路監視程式資源。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
@@ -160,7 +160,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcherName
-網路觀察程式的名稱。
+網路監視者的名稱。
 
 ```yaml
 Type: System.String
@@ -175,7 +175,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-網路監視程式資源群組的名稱。
+網路監視者資源組的名稱。
 
 ```yaml
 Type: System.String
@@ -205,73 +205,73 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](https://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### PSNetworkWatcher 中的 [.]
+### Microsoft.Azure.Commands.Network.models.PSNetworkWatcher
 
-### System.object
+### System.String
 
 ## 輸出
 
-### PSFlowLog 中的 [.]
+### Microsoft.Azure.Commands.network.models.PSFlowLog
 
 ## 筆記
-關鍵字： azure，azurerm，arm，資源，管理，管理員，網路，網路，觀察程式，流程，記錄，flowlog，記錄
+關鍵字：azure、azurerm、arm、resource、management、manager、network、network、watcher、flow、logs、flowlog、logging
 
 ## 相關連結
 
-[新-AzNetworkWatcher](./New-AzNetworkWatcher.md)
+[New-AzNetworkWatcher](./New-AzNetworkWatcher.md)
 
-[AzNetworkWatcher](./Get-AzNetworkWatcher.md)
+[Get-AzNetworkWatcher](./Get-AzNetworkWatcher.md)
 
-[移除-AzNetworkWatcher](./Remove-AzNetworkWatcher.md)
+[Remove-AzNetworkWatcher](./Remove-AzNetworkWatcher.md)
 
-[AzNetworkWatcherNextHop](./Get-AzNetworkWatcherNextHop.md)
+[Get-AzNetworkWatcherNextHop](./Get-AzNetworkWatcherNextHop.md)
 
-[AzNetworkWatcherSecurityGroupView](./Get-AzNetworkWatcherSecurityGroupView.md)
+[Get-AzNetworkWatcherSecurityGroupView](./Get-AzNetworkWatcherSecurityGroupView.md)
 
-[AzNetworkWatcherTopology](./Get-AzNetworkWatcherTopology.md)
+[Get-AzNetworkWatcherTopwork](./Get-AzNetworkWatcherTopology.md)
 
-[開始-AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md)
+[Start-AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md)
 
-[新-AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
+[New-AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
 
-[新-AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
+[New-AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
 
-[AzNetworkWatcherPacketCapture](./Get-AzNetworkWatcherPacketCapture.md)
+[Get-AzNetworkWatcherPacketCapture](./Get-AzNetworkWatcherPacketCapture.md)
 
-[移除-AzNetworkWatcherPacketCapture](./Remove-AzNetworkWatcherPacketCapture.md)
+[Remove-AzNetworkWatcherPacketCapture](./Remove-AzNetworkWatcherPacketCapture.md)
 
-[停止 AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
+[Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
 
-[新-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
+[New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
 
 [Test-AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md)
 
 [Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
 
-[停止 AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
+[Stop-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
-[開始-AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md)
+[Start-AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md)
 
 [Set-AzNetworkWatcherConnectionMonitor](./Set-AzNetworkWatcherConnectionMonitor.md)
 
 [Set-AzNetworkWatcherConfigFlowLog](./Set-AzNetworkWatcherConfigFlowLog.md)
 
-[移除-AzNetworkWatcherConnectionMonitor](./Remove-AzNetworkWatcherConnectionMonitor.md)
+[Remove-AzNetworkWatcherConnectionMonitor](./Remove-AzNetworkWatcherConnectionMonitor.md)
 
-[新-AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md)
+[New-AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md)
 
-[AzNetworkWatcherTroubleshootingResult](./Get-AzNetworkWatcherTroubleshootingResult.md)
+[Get-AzNetworkWatcherTroubleshootingResult](./Get-AzNetworkWatcherTroubleshootingResult.md)
 
-[AzNetworkWatcherReachabilityReport](./Get-AzNetworkWatcherReachabilityReport.md)
+[Get-AzNetworkWatcherReachabilityReport](./Get-AzNetworkWatcherReachabilityReport.md)
 
-[AzNetworkWatcherReachabilityProvidersList](./Get-AzNetworkWatcherReachabilityProvidersList.md)
+[Get-AzNetworkWatcherReachabilityProvidersList](./Get-AzNetworkWatcherReachabilityProvidersList.md)
 
-[AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
+[Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport)
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)

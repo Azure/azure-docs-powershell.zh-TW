@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementCache.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementCache.md
-ms.openlocfilehash: 0e0fa81830264f550531a156260f3a4f2c7827ce
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: a95be9f18c00d72afb6117d1689f62a6bad053b4
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93613933"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398677"
 ---
 # Remove-AzApiManagementCache
 
-## 摘要
-移除快取實體。
+## 簡介
+移除緩存實體。
 
-## 句法
+## 語法
 
 ### CoNtextParameterSetName (預設) 
 ```
@@ -37,24 +37,24 @@ Remove-AzApiManagementCache -ResourceId <String> [-PassThru] [-DefaultProfile <I
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## 說明
-Cmdlet **移除-AzApiManagementCache** 會移除快取實體。
+## 描述
+Cmdlet **Remove-AzApiManagementCache 會** 移除緩存實體。
 
-## 示例
+## 例子
 
-### 範例1：移除快取實體
+### 範例 1：移除 Cache 實體
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Remove-AzApiManagementCache -Context $apimContext -CacheId "centralus"
 ```
 
-這個 Cmdlet 會 `centralus` 從 Api 管理服務移除快取。
+此 Cmdlet 會從 `centralus` Api 管理服務移除緩存。
 
 ## 參數
 
 ### -CacheId
 現有 cacheId 的識別碼。
-這個參數是必要的。
+此參數為必填項。
 
 ```yaml
 Type: System.String
@@ -70,7 +70,7 @@ Accept wildcard characters: False
 
 ### -內容
 PsApiManagementCoNtext 的實例。
-這個參數是必要的。
+此參數為必填項。
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 Azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-PsApiManagementCache 的實例。 這個參數是必要的。
+PsApiManagementCache 實例。 此參數為必填項。
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementCache
@@ -115,9 +115,9 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-如果已指定，則會在操作成功時寫入 true。
-這個參數是選用的。
-預設值為 false。
+如果指定，如果作業成功，會寫入 True。
+此參數為選擇性。
+預設值為 False。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-[快取] 的 [Arm] ResourceId。 這個參數是必要的。
+Arm ResourceId of Cache. 此參數為必填項。
 
 ```yaml
 Type: System.String
@@ -147,7 +147,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，系統會提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -162,8 +162,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。
-未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。
+不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -178,26 +178,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](https://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### ServiceManagement. PsApiManagementCoNtext （ApiManagement）
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.models.PsApiManagementCoNtext
 
-### System.object
+### System.String
 
-### SwitchParameter 的系統管理功能
+### System.Management.Automation.SwitchParameter
 
 ## 輸出
 
-### System.object
+### System.Boolean
 
 ## 筆記
 
 ## 相關連結
 
-[新-AzApiManagementCache](./New-AzApiManagementCache)
+[Get-AzApiManagementCache](./Get-AzApiManagementCache.md)
 
-[Set-AzApiManagementCache](./Set-AzApiManagementCache.md)
+[New-AzApiManagementCache](./New-AzApiManagementCache.md)
 
-[AzApiManagementCache](./Get-AzApiManagementCache.md)
+[Update-AzApiManagementCache](./Update-AzApiManagementCache.md)
