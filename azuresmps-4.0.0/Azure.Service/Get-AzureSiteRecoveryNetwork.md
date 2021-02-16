@@ -3,30 +3,30 @@ external help file: Microsoft.Azure.Commands.RecoveryServicesRdfe.dll-Help.xml
 ms.assetid: 615D2C5D-AB31-45DB-9535-9B9C8E957322
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: 96b51b49d76093be96eeab26417f4a70f70c4627
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 4a5701fc6308f1884bbf0237887a223a62a58669
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "93967038"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100411580"
 ---
 # Get-AzureSiteRecoveryNetwork
 
-## 摘要
-取得目前電子倉庫的網站復原所管理網路的相關資訊。
+## 簡介
+針對目前的儲存庫，獲得網站修復所管理之網路的資訊。
 
-## 句法
+## 語法
 
 ```
 Get-AzureSiteRecoveryNetwork -Server <ASRServer> [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## 說明
-**AzureSiteRecoveryNetwork** Cmdlet 會針對目前的網站復原電子倉庫取得 Azure Site recovery 網路的相關資訊。
+## 描述
+**Get-AzureSiteRecoveryNetwork** Cmdlet 會取得目前網站復原庫的 Azure 網站修復網路相關資訊。
 
-## 示例
+## 例子
 
-### 範例1：取得網站恢復網路
+### 範例 1：取得網站復原網路
 ```
 PS C:\> $Servers = Get-AzureSiteRecoveryServer
 PS C:\> Get-AzureSiteRecoveryNetwork -Server $Servers[0]
@@ -47,16 +47,16 @@ FabricType          : VMM
 VmNetworkSubnetList : {}
 ```
 
-第一個命令 Cmdlet 會使用 **AzureSiteRecoveryServer** Cmdlet，為目前的 Azure Site Recovery 保存庫取得伺服器。
-該命令會將網站復原伺服器儲存在 $Servers 陣列變數中。
+第一個命令 Cmdlet 會使用 **Get-AzureSiteRecoveryServer** Cmdlet 取得目前 Azure 網站修復保存庫的伺服器。
+該命令將網站復原伺服器儲存在$Servers變數中。
 
-第二個命令會針對 $Servers 陣列中的第一個伺服器，取得網站恢復網路。
+第二個命令會為數組中第一個伺服器$Servers網路。
 
 ## 參數
 
 ### -設定檔
 指定此 Cmdlet 讀取的 Azure 設定檔。
-如果您沒有指定設定檔，此 Cmdlet 會從本機預設設定檔讀取。
+如果您未指定設定檔，此 Cmdlet 會從本地預設設定檔讀取。
 
 ```yaml
 Type: AzureSMProfile
@@ -70,7 +70,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -伺服器
+### -Server
 指定網站復原伺服器。
 
 ```yaml
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 https://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
@@ -96,6 +96,6 @@ Accept wildcard characters: False
 
 ## 相關連結
 
-[Azure Site Recovery 服務 Cmdlet](./Azure.SiteRecoveryServices.md)
+
 
 
