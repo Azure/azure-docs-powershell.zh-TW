@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorWafManagedRuleObject.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorWafManagedRuleObject.md
-ms.openlocfilehash: 6e56ff9b174ec13d0844a1ac860d34043f8b73cf
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 7c9ace339da9639404072fd802782aee43d8ab37
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93959778"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100403947"
 ---
-# <span data-ttu-id="21c16-101">New-AzFrontDoorWafManagedRuleObject</span><span class="sxs-lookup"><span data-stu-id="21c16-101">New-AzFrontDoorWafManagedRuleObject</span></span>
+# <span data-ttu-id="8b70c-101">New-AzFrontDoorWafManagedRuleObject</span><span class="sxs-lookup"><span data-stu-id="8b70c-101">New-AzFrontDoorWafManagedRuleObject</span></span>
 
-## <span data-ttu-id="21c16-102">摘要</span><span class="sxs-lookup"><span data-stu-id="21c16-102">SYNOPSIS</span></span>
-<span data-ttu-id="21c16-103">建立 WAF 原則建立的 ManagedRule 物件</span><span class="sxs-lookup"><span data-stu-id="21c16-103">Create ManagedRule Object for WAF policy creation</span></span>
+## <span data-ttu-id="8b70c-102">簡介</span><span class="sxs-lookup"><span data-stu-id="8b70c-102">SYNOPSIS</span></span>
+<span data-ttu-id="8b70c-103">建立 ManagedRule 物件以建立 WAF 策略</span><span class="sxs-lookup"><span data-stu-id="8b70c-103">Create ManagedRule Object for WAF policy creation</span></span>
 
-## <span data-ttu-id="21c16-104">句法</span><span class="sxs-lookup"><span data-stu-id="21c16-104">SYNTAX</span></span>
+## <span data-ttu-id="8b70c-104">語法</span><span class="sxs-lookup"><span data-stu-id="8b70c-104">SYNTAX</span></span>
 
 ```
 New-AzFrontDoorWafManagedRuleObject -Type <String> -Version <String>
@@ -25,12 +25,12 @@ New-AzFrontDoorWafManagedRuleObject -Type <String> -Version <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="21c16-105">說明</span><span class="sxs-lookup"><span data-stu-id="21c16-105">DESCRIPTION</span></span>
-<span data-ttu-id="21c16-106">建立 WAF 原則建立的 ManagedRule 物件</span><span class="sxs-lookup"><span data-stu-id="21c16-106">Create ManagedRule Object for WAF policy creation</span></span>
+## <span data-ttu-id="8b70c-105">描述</span><span class="sxs-lookup"><span data-stu-id="8b70c-105">DESCRIPTION</span></span>
+<span data-ttu-id="8b70c-106">建立 ManagedRule 物件以建立 WAF 策略</span><span class="sxs-lookup"><span data-stu-id="8b70c-106">Create ManagedRule Object for WAF policy creation</span></span>
 
-## <span data-ttu-id="21c16-107">示例</span><span class="sxs-lookup"><span data-stu-id="21c16-107">EXAMPLES</span></span>
+## <span data-ttu-id="8b70c-107">例子</span><span class="sxs-lookup"><span data-stu-id="8b70c-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="21c16-108">範例1</span><span class="sxs-lookup"><span data-stu-id="21c16-108">Example 1</span></span>
+### <span data-ttu-id="8b70c-108">範例 1</span><span class="sxs-lookup"><span data-stu-id="8b70c-108">Example 1</span></span>
 ```powershell
 PS C:\> $ruleOverride1 = New-AzFrontDoorWafManagedRuleOverrideObject -RuleId "942250" -Action Log -EnabledState Enabled
 PS C:\> $ruleOverride2 = New-AzFrontDoorWafManagedRuleOverrideObject -RuleId "942251" -Action Log -EnabledState Enabled
@@ -46,12 +46,12 @@ RuleGroupOverrides RuleSetType    RuleSetVersion
 {SQLI, XSS}        DefaultRuleSet preview-0.1
 ```
 
-<span data-ttu-id="21c16-109">建立 ManagedRule 物件</span><span class="sxs-lookup"><span data-stu-id="21c16-109">Create a ManagedRule Object</span></span>
+<span data-ttu-id="8b70c-109">建立 ManagedRule 物件</span><span class="sxs-lookup"><span data-stu-id="8b70c-109">Create a ManagedRule Object</span></span>
 
-## <span data-ttu-id="21c16-110">參數</span><span class="sxs-lookup"><span data-stu-id="21c16-110">PARAMETERS</span></span>
+## <span data-ttu-id="8b70c-110">參數</span><span class="sxs-lookup"><span data-stu-id="8b70c-110">PARAMETERS</span></span>
 
-### <span data-ttu-id="21c16-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="21c16-111">-DefaultProfile</span></span>
-<span data-ttu-id="21c16-112">用於與 Azure 進行通訊的認證、帳戶、租使用者及訂閱。</span><span class="sxs-lookup"><span data-stu-id="21c16-112">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+### <span data-ttu-id="8b70c-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="8b70c-111">-DefaultProfile</span></span>
+<span data-ttu-id="8b70c-112">用於與 Azure 通訊的認證、帳戶、租使用者和訂閱。</span><span class="sxs-lookup"><span data-stu-id="8b70c-112">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -65,8 +65,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="21c16-113">-排除</span><span class="sxs-lookup"><span data-stu-id="21c16-113">-Exclusion</span></span>
-<span data-ttu-id="21c16-114">他</span><span class="sxs-lookup"><span data-stu-id="21c16-114">Exclusion</span></span>
+### <span data-ttu-id="8b70c-113">-排除</span><span class="sxs-lookup"><span data-stu-id="8b70c-113">-Exclusion</span></span>
+<span data-ttu-id="8b70c-114">排除</span><span class="sxs-lookup"><span data-stu-id="8b70c-114">Exclusion</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSManagedRuleExclusion[]
@@ -80,8 +80,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="21c16-115">-RuleGroupOverride</span><span class="sxs-lookup"><span data-stu-id="21c16-115">-RuleGroupOverride</span></span>
-<span data-ttu-id="21c16-116">Azure managed 提供者覆蓋設定的清單</span><span class="sxs-lookup"><span data-stu-id="21c16-116">List of azure managed provider override configuration</span></span>
+### <span data-ttu-id="8b70c-115">-RuleGroupOverride</span><span class="sxs-lookup"><span data-stu-id="8b70c-115">-RuleGroupOverride</span></span>
+<span data-ttu-id="8b70c-116">Azure 受管理提供者的重寫群組原則清單</span><span class="sxs-lookup"><span data-stu-id="8b70c-116">List of azure managed provider override configuration</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSAzureRuleGroupOverride[]
@@ -95,8 +95,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="21c16-117">-類型</span><span class="sxs-lookup"><span data-stu-id="21c16-117">-Type</span></span>
-<span data-ttu-id="21c16-118">規則集的類型</span><span class="sxs-lookup"><span data-stu-id="21c16-118">Type of the ruleset</span></span>
+### <span data-ttu-id="8b70c-117">-類型</span><span class="sxs-lookup"><span data-stu-id="8b70c-117">-Type</span></span>
+<span data-ttu-id="8b70c-118">規則集的類型</span><span class="sxs-lookup"><span data-stu-id="8b70c-118">Type of the ruleset</span></span>
 
 ```yaml
 Type: System.String
@@ -110,8 +110,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="21c16-119">-版本</span><span class="sxs-lookup"><span data-stu-id="21c16-119">-Version</span></span>
-<span data-ttu-id="21c16-120">版本的規則集</span><span class="sxs-lookup"><span data-stu-id="21c16-120">Version of the ruleset</span></span>
+### <span data-ttu-id="8b70c-119">-版本</span><span class="sxs-lookup"><span data-stu-id="8b70c-119">-Version</span></span>
+<span data-ttu-id="8b70c-120">規則集版本</span><span class="sxs-lookup"><span data-stu-id="8b70c-120">Version of the ruleset</span></span>
 
 ```yaml
 Type: System.String
@@ -125,23 +125,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="21c16-121">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="21c16-121">CommonParameters</span></span>
-<span data-ttu-id="21c16-122">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="21c16-122">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="21c16-123">如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="21c16-123">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="8b70c-121">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="8b70c-121">CommonParameters</span></span>
+<span data-ttu-id="8b70c-122">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="8b70c-122">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="8b70c-123">詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="8b70c-123">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="21c16-124">輸入</span><span class="sxs-lookup"><span data-stu-id="21c16-124">INPUTS</span></span>
+## <span data-ttu-id="8b70c-124">輸入</span><span class="sxs-lookup"><span data-stu-id="8b70c-124">INPUTS</span></span>
 
-### <span data-ttu-id="21c16-125">所有</span><span class="sxs-lookup"><span data-stu-id="21c16-125">None</span></span>
+### <span data-ttu-id="8b70c-125">沒有</span><span class="sxs-lookup"><span data-stu-id="8b70c-125">None</span></span>
 
-## <span data-ttu-id="21c16-126">輸出</span><span class="sxs-lookup"><span data-stu-id="21c16-126">OUTPUTS</span></span>
+## <span data-ttu-id="8b70c-126">輸出</span><span class="sxs-lookup"><span data-stu-id="8b70c-126">OUTPUTS</span></span>
 
-### <span data-ttu-id="21c16-127">PSAzureManagedRule 中的 FrontDoor。</span><span class="sxs-lookup"><span data-stu-id="21c16-127">Microsoft.Azure.Commands.FrontDoor.Models.PSAzureManagedRule</span></span>
+### <span data-ttu-id="8b70c-127">Microsoft.Azure.Commands.FrontDoor.models.PSAzureManagedRule</span><span class="sxs-lookup"><span data-stu-id="8b70c-127">Microsoft.Azure.Commands.FrontDoor.Models.PSAzureManagedRule</span></span>
 
-## <span data-ttu-id="21c16-128">筆記</span><span class="sxs-lookup"><span data-stu-id="21c16-128">NOTES</span></span>
+## <span data-ttu-id="8b70c-128">筆記</span><span class="sxs-lookup"><span data-stu-id="8b70c-128">NOTES</span></span>
 
-## <span data-ttu-id="21c16-129">相關連結</span><span class="sxs-lookup"><span data-stu-id="21c16-129">RELATED LINKS</span></span>
+## <span data-ttu-id="8b70c-129">相關連結</span><span class="sxs-lookup"><span data-stu-id="8b70c-129">RELATED LINKS</span></span>
 
-<span data-ttu-id="21c16-130">[新-AzFrontDoorWafPolicy](./New-AzFrontDoorWafPolicy.md) 
-[Set-AzFrontDoorWafPolicy](./Set-AzFrontDoorWafPolicy.md) 
-[新-AzFrontDoorWafRuleGroupOverrideObject](./New-AzFrontDoorWafRuleGroupOverrideObject.md)</span><span class="sxs-lookup"><span data-stu-id="21c16-130">[New-AzFrontDoorWafPolicy](./New-AzFrontDoorWafPolicy.md)
-[Set-AzFrontDoorWafPolicy](./Set-AzFrontDoorWafPolicy.md)
+<span data-ttu-id="8b70c-130">[New-AzFrontDoorWafPolicy](./New-AzFrontDoorWafPolicy.md) 
+[Update-AzFrontDoorWafPolicy](./Update-AzFrontDoorWafPolicy.md) 
+[New-AzFrontDoorWafRuleGroupOverrideObject](./New-AzFrontDoorWafRuleGroupOverrideObject.md)</span><span class="sxs-lookup"><span data-stu-id="8b70c-130">[New-AzFrontDoorWafPolicy](./New-AzFrontDoorWafPolicy.md)
+[Update-AzFrontDoorWafPolicy](./Update-AzFrontDoorWafPolicy.md)
 [New-AzFrontDoorWafRuleGroupOverrideObject](./New-AzFrontDoorWafRuleGroupOverrideObject.md)</span></span>

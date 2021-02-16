@@ -5,51 +5,51 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.recoveryse
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesAsrProtectableItem.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesAsrProtectableItem.md
-ms.openlocfilehash: c9c50e26e99493fb693b8bded693bceb24f5a40f
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: da9dd3d7b1ed0a54a34fdf5c8a0c9d65b507a07b
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94127418"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413977"
 ---
-# <span data-ttu-id="5c058-101">Get-AzRecoveryServicesAsrProtectableItem</span><span class="sxs-lookup"><span data-stu-id="5c058-101">Get-AzRecoveryServicesAsrProtectableItem</span></span>
+# <span data-ttu-id="10943-101">Get-AzRecoveryServicesAsrProtectableItem</span><span class="sxs-lookup"><span data-stu-id="10943-101">Get-AzRecoveryServicesAsrProtectableItem</span></span>
 
-## <span data-ttu-id="5c058-102">摘要</span><span class="sxs-lookup"><span data-stu-id="5c058-102">SYNOPSIS</span></span>
-<span data-ttu-id="5c058-103">在 ASR 保護容器中取得可保護的專案。</span><span class="sxs-lookup"><span data-stu-id="5c058-103">Get the protectable items in an ASR protection container.</span></span>
+## <span data-ttu-id="10943-102">簡介</span><span class="sxs-lookup"><span data-stu-id="10943-102">SYNOPSIS</span></span>
+<span data-ttu-id="10943-103">在 ASR 保護容器中取得受保護的專案。</span><span class="sxs-lookup"><span data-stu-id="10943-103">Get the protectable items in an ASR protection container.</span></span>
 
-## <span data-ttu-id="5c058-104">句法</span><span class="sxs-lookup"><span data-stu-id="5c058-104">SYNTAX</span></span>
+## <span data-ttu-id="10943-104">語法</span><span class="sxs-lookup"><span data-stu-id="10943-104">SYNTAX</span></span>
 
-### <span data-ttu-id="5c058-105">ByObject (預設) </span><span class="sxs-lookup"><span data-stu-id="5c058-105">ByObject (Default)</span></span>
+### <span data-ttu-id="10943-105">ByObject (預設) </span><span class="sxs-lookup"><span data-stu-id="10943-105">ByObject (Default)</span></span>
 ```
 Get-AzRecoveryServicesAsrProtectableItem -ProtectionContainer <ASRProtectionContainer>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="5c058-106">ByObjectWithName</span><span class="sxs-lookup"><span data-stu-id="5c058-106">ByObjectWithName</span></span>
+### <span data-ttu-id="10943-106">ByObjectWithName</span><span class="sxs-lookup"><span data-stu-id="10943-106">ByObjectWithName</span></span>
 ```
 Get-AzRecoveryServicesAsrProtectableItem -Name <String> -ProtectionContainer <ASRProtectionContainer>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="5c058-107">ByObjectWithFriendlyName</span><span class="sxs-lookup"><span data-stu-id="5c058-107">ByObjectWithFriendlyName</span></span>
+### <span data-ttu-id="10943-107">ByObjectWithWithWithLyName</span><span class="sxs-lookup"><span data-stu-id="10943-107">ByObjectWithFriendlyName</span></span>
 ```
 Get-AzRecoveryServicesAsrProtectableItem -FriendlyName <String> -ProtectionContainer <ASRProtectionContainer>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="5c058-108">說明</span><span class="sxs-lookup"><span data-stu-id="5c058-108">DESCRIPTION</span></span>
-<span data-ttu-id="5c058-109">**AzRecoveryServicesAsrProtectableItem** Cmdlet 會取得 Azure Site Recovery 保護容器中的可保護專案。</span><span class="sxs-lookup"><span data-stu-id="5c058-109">The **Get-AzRecoveryServicesAsrProtectableItem** cmdlet gets the protectable items in an Azure Site Recovery Protection Container.</span></span>
+## <span data-ttu-id="10943-108">描述</span><span class="sxs-lookup"><span data-stu-id="10943-108">DESCRIPTION</span></span>
+<span data-ttu-id="10943-109">**Get-AzRecoveryServicesrProtectableItem** Cmdlet 會取得 Azure 網站修復保護容器中的可保護專案。</span><span class="sxs-lookup"><span data-stu-id="10943-109">The **Get-AzRecoveryServicesAsrProtectableItem** cmdlet gets the protectable items in an Azure Site Recovery Protection Container.</span></span>
 
-## <span data-ttu-id="5c058-110">示例</span><span class="sxs-lookup"><span data-stu-id="5c058-110">EXAMPLES</span></span>
+## <span data-ttu-id="10943-110">例子</span><span class="sxs-lookup"><span data-stu-id="10943-110">EXAMPLES</span></span>
 
-### <span data-ttu-id="5c058-111">範例1</span><span class="sxs-lookup"><span data-stu-id="5c058-111">Example 1</span></span>
+### <span data-ttu-id="10943-111">範例 1</span><span class="sxs-lookup"><span data-stu-id="10943-111">Example 1</span></span>
 ```
 PS C:\> $ProtectableItems = Get-AzRecoveryServicesAsrProtectableItem -ProtectionContainer $Container
 ```
 
-<span data-ttu-id="5c058-112">在指定的 ASR 保護容器中取得所有可保護的專案。</span><span class="sxs-lookup"><span data-stu-id="5c058-112">Gets all the protectable items in specified ASR protection container.</span></span>
+<span data-ttu-id="10943-112">在指定的 ASR 保護容器內，獲得所有可保護的專案。</span><span class="sxs-lookup"><span data-stu-id="10943-112">Gets all the protectable items in specified ASR protection container.</span></span>
 
-### <span data-ttu-id="5c058-113">範例2</span><span class="sxs-lookup"><span data-stu-id="5c058-113">Example 2</span></span>
+### <span data-ttu-id="10943-113">範例 2</span><span class="sxs-lookup"><span data-stu-id="10943-113">Example 2</span></span>
 ```
 PS C:\> Get-ASRProtectableItem -ProtectionContainer $pc -FriendlyName $piFriendlyName
 
@@ -70,9 +70,9 @@ ReplicationProtectedItemId    :
 SupportedReplicationProviders : {InMage, InMageAzureV2}
 ```
 
-<span data-ttu-id="5c058-114">在指定的 ASR 保護容器中，以指定的易記名稱取得可以保護的專案。</span><span class="sxs-lookup"><span data-stu-id="5c058-114">Get the protectable items in specified ASR protection container and with given friendly name.</span></span>
+<span data-ttu-id="10943-114">取得指定 ASR 保護容器和具有指定好用名稱的可保護專案。</span><span class="sxs-lookup"><span data-stu-id="10943-114">Get the protectable items in specified ASR protection container and with given friendly name.</span></span>
 
-### <span data-ttu-id="5c058-115">範例3</span><span class="sxs-lookup"><span data-stu-id="5c058-115">Example 3</span></span>
+### <span data-ttu-id="10943-115">範例 3</span><span class="sxs-lookup"><span data-stu-id="10943-115">Example 3</span></span>
 ```
 PS C:\> Get-ASRProtectableItem -ProtectionContainer $pc -Name $piName
 
@@ -93,12 +93,12 @@ ReplicationProtectedItemId    :
 SupportedReplicationProviders : {InMage, InMageAzureV2}
 ```
 
-<span data-ttu-id="5c058-116">在指定的 ASR 保護容器中取得所有可保護的專案。</span><span class="sxs-lookup"><span data-stu-id="5c058-116">Gets all the protectable items in specified ASR protection container.</span></span>
+<span data-ttu-id="10943-116">在指定的 ASR 保護容器內，獲得所有可保護的專案。</span><span class="sxs-lookup"><span data-stu-id="10943-116">Gets all the protectable items in specified ASR protection container.</span></span>
 
-## <span data-ttu-id="5c058-117">參數</span><span class="sxs-lookup"><span data-stu-id="5c058-117">PARAMETERS</span></span>
+## <span data-ttu-id="10943-117">參數</span><span class="sxs-lookup"><span data-stu-id="10943-117">PARAMETERS</span></span>
 
-### <span data-ttu-id="5c058-118">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="5c058-118">-DefaultProfile</span></span>
-<span data-ttu-id="5c058-119">用於與 Azure 進行通訊的認證、帳戶、租使用者及訂閱。</span><span class="sxs-lookup"><span data-stu-id="5c058-119">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+### <span data-ttu-id="10943-118">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="10943-118">-DefaultProfile</span></span>
+<span data-ttu-id="10943-119">用於與 Azure 通訊的認證、帳戶、租使用者和訂閱。</span><span class="sxs-lookup"><span data-stu-id="10943-119">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
 
 
 ```yaml
@@ -113,8 +113,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="5c058-120">FriendlyName</span><span class="sxs-lookup"><span data-stu-id="5c058-120">-FriendlyName</span></span>
-<span data-ttu-id="5c058-121">指定 ASR [能保護的專案] 的易記名稱。</span><span class="sxs-lookup"><span data-stu-id="5c058-121">Specifies the friendly name of the ASR protectable item.</span></span>
+### <span data-ttu-id="10943-120">-FriendlyName</span><span class="sxs-lookup"><span data-stu-id="10943-120">-FriendlyName</span></span>
+<span data-ttu-id="10943-121">指定 ASR 可保護專案的好用名稱。</span><span class="sxs-lookup"><span data-stu-id="10943-121">Specifies the friendly name of the ASR protectable item.</span></span>
 
 ```yaml
 Type: System.String
@@ -128,8 +128,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="5c058-122">-名稱</span><span class="sxs-lookup"><span data-stu-id="5c058-122">-Name</span></span>
-<span data-ttu-id="5c058-123">指定 ASR [能保護的專案] 的名稱。</span><span class="sxs-lookup"><span data-stu-id="5c058-123">Specifies the name of the ASR protectable item.</span></span>
+### <span data-ttu-id="10943-122">-名稱</span><span class="sxs-lookup"><span data-stu-id="10943-122">-Name</span></span>
+<span data-ttu-id="10943-123">指定 ASR 可保護專案的名稱。</span><span class="sxs-lookup"><span data-stu-id="10943-123">Specifies the name of the ASR protectable item.</span></span>
 
 ```yaml
 Type: System.String
@@ -143,8 +143,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="5c058-124">-ProtectionContainer</span><span class="sxs-lookup"><span data-stu-id="5c058-124">-ProtectionContainer</span></span>
-<span data-ttu-id="5c058-125">指定 Azure Site Recovery 保護容器物件。</span><span class="sxs-lookup"><span data-stu-id="5c058-125">Specifies the Azure Site Recovery Protection Container object.</span></span>
+### <span data-ttu-id="10943-124">-ProtectionContainer</span><span class="sxs-lookup"><span data-stu-id="10943-124">-ProtectionContainer</span></span>
+<span data-ttu-id="10943-125">指定 Azure 網站復原保護容器物件。</span><span class="sxs-lookup"><span data-stu-id="10943-125">Specifies the Azure Site Recovery Protection Container object.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectionContainer
@@ -158,21 +158,19 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="5c058-126">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="5c058-126">CommonParameters</span></span>
-<span data-ttu-id="5c058-127">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="5c058-127">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="5c058-128">如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="5c058-128">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="10943-126">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="10943-126">CommonParameters</span></span>
+<span data-ttu-id="10943-127">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="10943-127">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="10943-128">詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="10943-128">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="5c058-129">輸入</span><span class="sxs-lookup"><span data-stu-id="5c058-129">INPUTS</span></span>
+## <span data-ttu-id="10943-129">輸入</span><span class="sxs-lookup"><span data-stu-id="10943-129">INPUTS</span></span>
 
-### <span data-ttu-id="5c058-130">RecoveryServices. SiteRecovery. ASRProtectionContainer</span><span class="sxs-lookup"><span data-stu-id="5c058-130">Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectionContainer</span></span>
+### <span data-ttu-id="10943-130">Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectionContainer</span><span class="sxs-lookup"><span data-stu-id="10943-130">Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectionContainer</span></span>
 
-## <span data-ttu-id="5c058-131">輸出</span><span class="sxs-lookup"><span data-stu-id="5c058-131">OUTPUTS</span></span>
+## <span data-ttu-id="10943-131">輸出</span><span class="sxs-lookup"><span data-stu-id="10943-131">OUTPUTS</span></span>
 
-### <span data-ttu-id="5c058-132">RecoveryServices. SiteRecovery. ASRProtectableItem</span><span class="sxs-lookup"><span data-stu-id="5c058-132">Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectableItem</span></span>
+### <span data-ttu-id="10943-132">Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectableItem</span><span class="sxs-lookup"><span data-stu-id="10943-132">Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectableItem</span></span>
 
-## <span data-ttu-id="5c058-133">筆記</span><span class="sxs-lookup"><span data-stu-id="5c058-133">NOTES</span></span>
+## <span data-ttu-id="10943-133">筆記</span><span class="sxs-lookup"><span data-stu-id="10943-133">NOTES</span></span>
 
-## <span data-ttu-id="5c058-134">相關連結</span><span class="sxs-lookup"><span data-stu-id="5c058-134">RELATED LINKS</span></span>
+## <span data-ttu-id="10943-134">相關連結</span><span class="sxs-lookup"><span data-stu-id="10943-134">RELATED LINKS</span></span>
 
-[<span data-ttu-id="5c058-135">AzRecoveryServicesAsrProtectionEntity</span><span class="sxs-lookup"><span data-stu-id="5c058-135">Get-AzRecoveryServicesAsrProtectionEntity</span></span>](./Get-AzRecoveryServicesAsrProtectionEntity.md)
 
-[<span data-ttu-id="5c058-136">Set-AzRecoveryServicesAsrProtectionEntity</span><span class="sxs-lookup"><span data-stu-id="5c058-136">Set-AzRecoveryServicesAsrProtectionEntity</span></span>](./Set-AzRecoveryServicesAsrProtectionEntity.md)
