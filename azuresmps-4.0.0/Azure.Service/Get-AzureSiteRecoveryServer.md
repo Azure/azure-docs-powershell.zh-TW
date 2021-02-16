@@ -3,19 +3,19 @@ external help file: Microsoft.Azure.Commands.RecoveryServicesRdfe.dll-Help.xml
 ms.assetid: 3EC274C9-9BF6-4B39-BC70-C7F9D780805D
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: a4081d6d072aadd6a4ae7d09ff57748a8f2cb697
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 79b61501a56913fedb2a003d7aea1a041bfab4d5
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "93967026"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100412277"
 ---
 # Get-AzureSiteRecoveryServer
 
-## 摘要
-取得網站復原伺服器已登錄網站復原電子倉庫的註冊。
+## 簡介
+讓網站復原伺服器註冊網站復原儲存庫。
 
-## 句法
+## 語法
 
 ### 預設 (預設) 
 ```
@@ -32,12 +32,12 @@ Get-AzureSiteRecoveryServer -Id <String> [-Profile <AzureSMProfile>] [<CommonPar
 Get-AzureSiteRecoveryServer -Name <String> [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## 說明
-**AzureSiteRecoveryServer** Cmdlet 會取得已登錄至目前網站復原電子倉庫之 Azure 網站復原伺服器的相關資訊。
+## 描述
+**Get-AzureSiteRecoveryServer** Cmdlet 會取得已註冊至目前網站復原保存庫的 Azure 網站復原伺服器相關資訊。
 
-## 示例
+## 例子
 
-### 範例1：取得有關網站恢復伺服器的資訊
+### 範例 1：取得網站復原伺服器的資訊
 ```
 PS C:\> Get-AzureSiteRecoveryServer
 ID              : cd7dec80-1144-4531-9ab3-888b8ab39bee
@@ -53,12 +53,12 @@ ProviderVersion : 3.5
 ServerVersion   : 3.2.7510.0
 ```
 
-這個命令會取得 Azure Site Recovery 伺服器的相關資訊。
+此命令會獲得有關 Azure 網站修復伺服器的資訊。
 
 ## 參數
 
-### -識別碼
-指定伺服器的 ID。
+### -Id
+指定伺服器識別碼。
 
 ```yaml
 Type: String
@@ -89,7 +89,7 @@ Accept wildcard characters: False
 
 ### -設定檔
 指定此 Cmdlet 讀取的 Azure 設定檔。
-如果您沒有指定設定檔，此 Cmdlet 會從本機預設設定檔讀取。
+如果您未指定設定檔，此 Cmdlet 會從本地預設設定檔讀取。
 
 ```yaml
 Type: AzureSMProfile
@@ -104,7 +104,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 https://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
@@ -114,6 +114,6 @@ Accept wildcard characters: False
 
 ## 相關連結
 
-[Azure Site Recovery 服務 Cmdlet](./Azure.SiteRecoveryServices.md)
+
 
 
