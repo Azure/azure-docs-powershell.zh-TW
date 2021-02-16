@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/New-AzVMSqlServerAutoPatchingConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/New-AzVMSqlServerAutoPatchingConfig.md
-ms.openlocfilehash: 0ce851373ac31aaef4c5664db7085f345e9b947d
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: 3ba7ab00076a3a0634a0d4394270fe4a83ec8ede
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93796106"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398252"
 ---
 # New-AzVMSqlServerAutoPatchingConfig
 
-## 摘要
-在虛擬機器上建立自動修補的設定物件。
+## 簡介
+建立虛擬機器上自動修補的組塊物件。
 
-## 句法
+## 語法
 
 ```
 New-AzVMSqlServerAutoPatchingConfig [-Enable] [-DayOfWeek <String>]
@@ -26,12 +26,12 @@ New-AzVMSqlServerAutoPatchingConfig [-Enable] [-DayOfWeek <String>]
  [<CommonParameters>]
 ```
 
-## 說明
-**新的-AzVMSqlServerAutoPatchingConfig** Cmdlet 會在虛擬機器上建立自動修補的設定物件。
+## 描述
+**New-AzMSqlServerAutoPatchingConfig** Cmdlet 會建立一個組塊物件，以在虛擬機器上自動修補。
 
-## 示例
+## 例子
 
-### 範例1：建立設定物件以設定自動修補
+### 範例 1：建立設定物件以設定自動修補
 ```
 PS C:\> $AutoPatchingConfig = New-AzVMSqlServerAutoPatchingConfig -Enable -DayOfWeek "Thursday" -MaintenanceWindowStartingHour 11 -MaintenanceWindowDuration 120 -PatchCategory "Important"
 Enable                        : True
@@ -41,32 +41,32 @@ MaintenanceWindowDuration     : 120
 PatchCategory                 : Important
 ```
 
-這個命令會建立用來修補的設定物件。
-該命令會指定一周中的一天，並定義 [維護] 視窗。
-這項設定會啟用使用這些值的修補程式。
-該命令會將結果儲存在 $AutoBackupConfig 變數中。
-您可以為其他 Cmdlet 指定此設定專案，例如 Set-AzVMSqlServerExtension Cmdlet。
+此命令會建立修補的組塊物件。
+命令會指定一周中的星期，並定義維護視窗。
+此組塊可啟用使用這些值的修補。
+該命令會將結果儲存在$AutoBackupConfig變數中。
+您可以為其他 Cmdlet 指定此組Set-AzVMSqlServerExtension專案。
 
 ## 參數
 
 ### -DayOfWeek
-指定一周中要安裝更新的日期。
+指定一周中應該安裝更新的日子。
 
 此參數可接受的值為：
 
-- 日
-- 從
+- 星期天
+- 星期一
 - 星期二
 - 星期三
 - 星期四
-- 日
+- 星期五
 - 星期六
-- 生活
+- 每天
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Everyday
 
 Required: False
@@ -77,14 +77,14 @@ Accept wildcard characters: False
 ```
 
 ### -啟用
-表示已啟用虛擬機器的自動修補程式。
-如果您啟用自動修補，則 Cmdlet 會將 Windows 更新放入互動模式。
-如果您停用自動修補，Windows Update 設定就不會變更。
+表示已啟用虛擬機器的自動修補功能。
+如果您啟用自動修補，Cmdlet 會將 Windows Update 進入互動式模式。
+如果您停用自動修補，Windows Update 設定不會變更。
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -94,14 +94,14 @@ Accept wildcard characters: False
 ```
 
 ### -MaintenanceWindowDuration
-指定 [維護] 視窗的持續時間（以分鐘為單位）。
-自動修補可避免執行可能會影響虛擬機器在該視窗以外的可用性的動作。
-指定30分鐘的倍數。
+指定維護視窗的工期 ，以分鐘表示。
+自動修補可避免執行可能會影響該視窗外部虛擬機器可用性的動作。
+指定 30 分鐘的倍數。
 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -111,13 +111,13 @@ Accept wildcard characters: False
 ```
 
 ### -MaintenanceWindowStartingHour
-指定 [維護] 視窗啟動當天的小時。
-此時間定義更新開始安裝的時機。
+指定維護視窗啟動時的一天中小時。
+這次會定義何時開始安裝更新。
 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -127,12 +127,12 @@ Accept wildcard characters: False
 ```
 
 ### -PatchCategory
-指定是否應包含重要更新。
+指定是否應該包含重要的更新。
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Important
 
 Required: False
@@ -143,24 +143,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 http://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
-### 所有
-這個 Cmdlet 不接受任何輸入。
+### 沒有
+此 Cmdlet 不接受任何輸入。
 
 ## 輸出
 
-### AutoPatchingSettings
-這個 Cmdlet 會傳回物件，其中包含自動修補程式的設定。
+### 自動修補設定
+此 Cmdlet 會返回包含自動修補設定的物件。
 
 ## 筆記
 
 ## 相關連結
 
-[新-AzureVMSqlServerAutoBackupConfig](./New-AzureVMSqlServerAutoBackupConfig.md)
+[New-AzureMSqlServerAutoBackupConfig](./New-AzVMSqlServerAutoBackupConfig.md)
 
-[Set-AzVMSqlServerExtension](./Set-AzVMSqlServerExtension.md)
+[Set-AzMSqlServerExtension](./Set-AzVMSqlServerExtension.md)
 
 

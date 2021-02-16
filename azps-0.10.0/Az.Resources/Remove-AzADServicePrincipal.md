@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Remove-AzADServicePrincipal.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Remove-AzADServicePrincipal.md
-ms.openlocfilehash: 966b9baf35f1719f29fda6355a9675739693314f
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: bd58a044db49cdd0cedf2872e97e64662a49372c
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93795244"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398218"
 ---
 # Remove-AzADServicePrincipal
 
-## 摘要
-刪除 azure active directory 服務主體。
+## 簡介
+刪除 Azure Active Directory 服務主體。
 
-## 句法
+## 語法
 
 ### ObjectIdParameterSet (預設) 
 ```
@@ -56,28 +56,28 @@ Remove-AzADServicePrincipal -ApplicationObject <PSADApplication> [-PassThru] [-F
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## 說明
-刪除 azure active directory 服務主體。
+## 描述
+刪除 Azure Active Directory 服務主體。
 
-## 示例
+## 例子
 
-### 範例 1-依物件識別碼移除服務主體
+### 範例 1 - 根據物件識別碼移除服務主體
 
 ```
 PS C:\> Remove-AzADServicePrincipal -ObjectId 61b5d8ea-fdc6-40a2-8d5b-ad447c678d45
 ```
 
-移除物件 id 為 "61b5d8ea-fdc6-40a2-8d5b-ad447c678d45" 的服務主體。
+移除具有物件識別碼 '61b5d8ea-fdc6-40a2-8d5b-ad447c678d45'的服務主體。
 
-### 範例 2-依應用程式識別碼移除服務主體
+### 範例 2 - 根據應用程式識別碼移除服務主體
 
 ```
 PS C:\> Remove-AzADServicePrincipal -ApplicationId 9263469e-d328-4321-8646-3e3e75d20e76
 ```
 
-移除應用程式識別碼 ' 9263469e-d328-4321-8646-3e3e75d20e76」的服務主體。
+移除具有應用程式識別碼 '9263469e-d328-4321-8646-3e3e75d20e76'的服務主體。
 
-### 範例 3-依 SPN 移除服務主體
+### 範例 3 - 根據 SPN 移除服務主體
 
 ```
 PS C:\> Remove-AzADServicePrincipal -ServicePrincipalName MyServicePrincipal
@@ -85,21 +85,21 @@ PS C:\> Remove-AzADServicePrincipal -ServicePrincipalName MyServicePrincipal
 
 移除服務主體名稱為 "MyServicePrincipal" 的服務主體
 
-### 範例 4-依管道移除服務主體
+### 範例 4 - 使用管道移除服務主體
 
 ```
 PS C:\> Get-AzADServicePrincipal -ObjectId 61b5d8ea-fdc6-40a2-8d5b-ad447c678d45 | Remove-AzADServicePrincipal
 ```
 
-取得 61b5d8ea-fdc6-40a2-8d5b-ad447c678d45 Cmdlet 的物件識別碼 '」和 Remove-AzADServicePrincipal 管道的服務主體，以移除該服務主體。
+使用物件識別碼 '61b5d8ea-fdc6-40a2-8d5b-ad447c678d45' 和服務管道到 Remove-AzADServicePrincipal Cmdlet 以移除該服務主體來獲得服務主體。
 
-### 範例 5-依管道將應用程式移除服務主體
+### 範例 5 - 使用管道處理應用程式來移除服務主體
 
 ```
 PS C:\> Get-AzApplication -ApplicationId 9263469e-d328-4321-8646-3e3e75d20e76 | Remove-AzADServicePrincipal
 ```
 
-取得應用程式識別碼 ' 9263469e-d328-4321-8646-3e3e75d20e76 ' 以及 Remove-AzADServicePrincipal Cmdlet 的管道的應用程式，以移除與該應用程式相關聯的服務主體。
+使用應用程式識別碼為 '9263469e-d328-4321-8646-3e3e75d20e76' 的應用程式，以及管道到 Remove-AzADServicePrincipal Cmdlet 以移除與該應用程式相關聯的服務主體。
 
 ## 參數
 
@@ -119,7 +119,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationObject
-要移除其服務主體的應用程式物件。
+正在移除其服務主體的應用程式物件。
 
 ```yaml
 Type: Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADApplication
@@ -134,7 +134,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
@@ -163,8 +163,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Force
-如果沒有確認，請切換到刪除服務主體。
+### -強制
+切換至刪除服務主體而不進行確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -209,7 +209,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-如果已指定，則傳回已刪除的服務主體。
+如果指定，會返回已刪除的服務主體。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -224,7 +224,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServicePrincipalName
-服務主要名稱。
+服務主體名稱。
 
 ```yaml
 Type: System.String
@@ -239,7 +239,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -254,8 +254,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。
-未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。
+不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -270,35 +270,34 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 http://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
-### Guid.empty
+### System.Guid
 
-### System.object
+### System.String
 
-### Microsoft.Azure.Graph.RBAC.Version1_6 PSADServicePrincipal
-參數： InputObject (ByValue) 
+### Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADServicePrincipal
+參數：InputObject (ByValue) 
 
-### Microsoft.Azure.Graph.RBAC.Version1_6 PSADApplication
-參數： ApplicationObject (ByValue) 
+### Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADApplication
+參數：ApplicationObject (ByValue) 
 
 ## 輸出
 
-### Microsoft.Azure.Graph.RBAC.Version1_6 PSADServicePrincipal
+### Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADServicePrincipal
 
 ## 筆記
-關鍵字： azure，Az，arm，資源，管理，管理員，資源，群組，範本，部署
+關鍵字：azure、Az、arm、資源、管理、管理員、資源、群組、範本、部署
 
 ## 相關連結
 
-[新-AzADServicePrincipal](./New-AzADServicePrincipal.md)
+[New-AzADServicePrincipal](./New-AzADServicePrincipal.md)
 
-[AzADServicePrincipal](./Get-AzADServicePrincipal.md)
+[Get-AzADServicePrincipal](./Get-AzADServicePrincipal.md)
 
-[Set-AzADServicePrincipal](./Set-AzADServicePrincipal.md)
 
-[移除-AzADApplication](./Remove-AzADApplication.md)
+[Remove-AzADApplication](./Remove-AzADApplication.md)
 
-[移除-AzADAppCredential](./Remove-AzADAppCredential.md)
+[Remove-AzADAppCredential](./Remove-AzADAppCredential.md)

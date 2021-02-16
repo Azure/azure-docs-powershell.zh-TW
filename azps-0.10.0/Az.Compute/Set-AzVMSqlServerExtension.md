@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/Set-AzVMSqlServerExtension.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/Set-AzVMSqlServerExtension.md
-ms.openlocfilehash: 4093e236f84d7587586ba30c8bd4653c4ba7358f
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: 1795216cbc18da2d503a1e0056d614337cd12785
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93795846"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398235"
 ---
 # Set-AzVMSqlServerExtension
 
-## 摘要
-在虛擬機器上設定 Azure SQL Server 延伸。
+## 簡介
+設定虛擬機器上的 Azure SQL Server 擴充功能。
 
-## 句法
+## 語法
 
 ```
 Set-AzVMSqlServerExtension [[-Version] <String>] [-ResourceGroupName] <String> [-VMName] <String>
@@ -27,66 +27,66 @@ Set-AzVMSqlServerExtension [[-Version] <String>] [-ResourceGroupName] <String> [
  [[-Location] <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## 說明
-**AzVMSqlServerExtension** Cmdlet 會在虛擬機器上設定 AzureSQL 伺服器延伸。
+## 描述
+**Set-AzCMSqlServerExtension** Cmdlet 會設定虛擬機器上的 AzureSQL Server 擴充功能。
 
-## 示例
+## 例子
 
-### 範例1：在虛擬機器上設定自動修補設定
+### 範例 1：在虛擬機器上設定自動修補設定
 ```
 PS C:\> $AutoPatchingConfig = New-AzureVMSqlServerAutoPatchingConfig -Enable -DayOfWeek "Thursday" -MaintenanceWindowStartingHour 11 -MaintenanceWindowDuration 120 -PatchCategory "Important"
 PS C:\> Get-AzVM -ServiceName "Service02" -Name "VirtualMachine11" | Set-AzVMSqlServerExtension -AutoPatchingSettings $AutoPatchingConfig | Update-AzVM
 ```
 
-第一個命令會使用 **AzureVMSqlServerAutoPatchingConfig** Cmdlet 建立設定物件。
-該命令會將設定儲存在 $AutoPatchingConfig 變數中。
+第一個命令會使用 **New-AzureCMSqlServerAutoPatchingConfig** Cmdlet 來建立組組物件。
+該命令將組$AutoPatchingConfig變數。
 
-第二個命令會透過使用 Get-AzVM Cmdlet，在名為 Service02 的服務上，取得名為 VirtualMachine11 的虛擬機器。
-命令會使用管線運算子，將該物件傳遞至目前的 Cmdlet。
+第二個命令會使用 Get-AzVM Cmdlet，在名為 Service02 的服務上，獲得名為 VirtualMachine11 的虛擬機器。
+該命令會使用管線運算子，將該物件傳遞至目前的 Cmdlet。
 
-目前的 Cmdlet 會針對虛擬機器設定 $AutoPatchingConfig 中的自動修補設定。
-命令會將虛擬機器傳遞到 Update-AzVM Cmdlet。
+目前的 Cmdlet 會針對虛擬機器$AutoPatchingConfig自動修補設定。
+該命令會將虛擬機器傳遞至 Update-AzVM Cmdlet。
 
-### 範例2：在虛擬機器上設定自動備份設定
+### 範例 2：在虛擬機器上設定自動備份設定
 ```
 PS C:\> $AutoBackupConfig = New-AzureVMSqlServerAutoBackupConfig -Enable -RetentionPeriod 10 -StorageUri $StorageUrl -StorageKey $StorageAccountKeySecure
 PS C:\> Get-AzVM -ServiceName "Service02" -Name "VirtualMachine11" | Set-AzVMSqlServerExtension -AutoBackupSettings $AutoBackupConfig | Update-AzVM
 ```
 
-第一個命令會使用 **AzureVMSqlServerAutoBackupConfig** Cmdlet 建立設定物件。
-該命令會將設定儲存在 $AutoBackupConfig 變數中。
+第一個命令會使用 **New-AzureCMSqlServerAutoBackupConfig** Cmdlet 建立組組物件。
+命令會儲存此$AutoBackupConfig變數。
 
-第二個命令會在名為 Service02 的服務上取得名為 VirtualMachine11 的虛擬機器，然後將它傳遞到目前的 Cmdlet。
+第二個命令會獲得名為 Service02 的服務上名為 VirtualMachine11 的虛擬機器，然後將它傳遞至目前的 Cmdlet。
 
-目前的 Cmdlet 會在虛擬機器的 $AutoBackupConfig 中設定自動備份設定。
-命令會將虛擬機器傳遞到 Update-AzVM Cmdlet。
+目前的 Cmdlet 會設定$AutoBackupConfig的自動備份設定。
+該命令會將虛擬機器傳遞至 Update-AzVM Cmdlet。
 
-### 範例3：停用虛擬機器上的 SQL Server 延伸
+### 範例 3：停用虛擬機器上的 SQL Server 擴充功能
 ```
 PS C:\> Get-AzVM -ServiceName "Service03" -Name "VirtualMachine08" | Set-AzVMSqlServerExtension -Disable
 ```
 
-這個命令會在 Service03 上取得名為 VirtualMachine08 的虛擬機器，然後將它傳遞到目前的 Cmdlet。
-此命令會在該虛擬機器上停用 SQL Server 虛擬電腦延伸。
+此命令在 Service03 上會獲得一個名為 VirtualMachine08 的虛擬機器，然後將它傳遞至目前的 Cmdlet。
+該命令會停用該虛擬機器上的 SQL Server 虛擬機器擴充功能。
 
-### 範例4：卸載特定虛擬機器上的 SQL Server extension （機器翻譯）
+### 範例 4：卸載特定虛擬機器上的 SQL Server 擴充功能
 ```
 PS C:\> Get-AzVM -ServiceName "Service03" -Name "VirtualMachine08" | Set-AzVMSqlServerExtension -Uninstall
 ```
 
-這個命令會在 Service03 上取得名為 VirtualMachine08 的虛擬機器，然後將它傳遞到目前的 Cmdlet。
-此命令會卸載該虛擬機器上的 SQL Server 虛擬機器延伸。
+此命令在 Service03 上會獲得一個名為 VirtualMachine08 的虛擬機器，然後將它傳遞至目前的 Cmdlet。
+該命令會卸載該虛擬機器上的 SQL Server 虛擬機器擴充功能。
 
 ## 參數
 
-### -AutoBackupSettings
-指定自動 SQL Server 備份設定。
-若要建立 **AutoBackupSettings** 物件，請使用 New-AzureVMSqlServerAutoBackupConfig Cmdlet。
+### -自動BackupSettings
+指定 SQL Server 自動備份設定。
+若要建立 **AutoBackupSettings 物件** ，請使用 New-AzureVMSqlServerAutoBackupConfig Cmdlet。
 
 ```yaml
 Type: AutoBackupSettings
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 6
@@ -95,14 +95,14 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -AutoPatchingSettings
+### -自動修補設定
 指定自動 SQL Server 修補設定。
-若要建立 **AutoPatchingSettings** 物件，請使用 New-AzureVMSqlServerAutoPatchingConfig Cmdlet。
+若要建立 **AutoPatchingSettings 物件** ，請使用 New-AzureVMSqlServerAutoPatchingConfig Cmdlet。
 
 ```yaml
 Type: AutoPatchingSettings
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 5
@@ -112,7 +112,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: IAzureContextContainer
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```yaml
 Type: KeyVaultCredentialSettings
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 7
@@ -145,7 +145,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 8
@@ -155,12 +155,12 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-指定副檔名的 SQL 伺服器名稱。
+指定擴充功能 SQL Server 的名稱。
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -170,12 +170,12 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-指定虛擬機器之資源群組的名稱。
+指定虛擬機器的資源組名。
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -185,7 +185,7 @@ Accept wildcard characters: False
 ```
 
 ### -版本
-指定 SQL Server 延伸的版本。
+指定 SQL Server 擴充功能的版本。
 
 ```yaml
 Type: String
@@ -200,12 +200,12 @@ Accept wildcard characters: False
 ```
 
 ### -VMName
-指定此 Cmdlet 設定 SQL Server 延伸的虛擬機器名稱。
+指定此 Cmdlet 設定 SQL Server 副檔名的虛擬機器名稱。
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 3
@@ -215,31 +215,31 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 http://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
-### 所有
-這個 Cmdlet 不接受任何輸入。
+### 沒有
+此 Cmdlet 不接受任何輸入。
 
 ## 輸出
 
-### PSAzureOperationResponse 中的 [計算] 命令
+### Microsoft.Azure.Commands.Compute.models.PSAzureOperationResponse
 
 ## 筆記
 
 ## 相關連結
 
-[AzVM](./Get-AzVM.md)
+[Get-AzMS](./Get-AzVM.md)
 
-[AzVMSqlServerExtension](./Get-AzVMSqlServerExtension.md)
+[Get-AzMSqlServerExtension](./Get-AzVMSqlServerExtension.md)
 
-[新-AzureVMSqlServerAutoPatchingConfig](./New-AzureVMSqlServerAutoPatchingConfig.md)
+[New-AzureMSqlServerAutoPatchingConfig](./New-AzVMSqlServerAutoPatchingConfig.md)
 
-[新-AzureVMSqlServerAutoBackupConfig](./New-AzureVMSqlServerAutoBackupConfig.md)
+[New-AzureMSqlServerAutoBackupConfig](./New-AzVMSqlServerAutoBackupConfig.md)
 
-[移除-AzVMSqlServerExtension](./Remove-AzVMSqlServerExtension.md)
+[Remove-AzMSqlServerExtension](./Remove-AzVMSqlServerExtension.md)
 
-[更新-AzVM](./Update-AzVM.md)
+[Update-AzMS](./Update-AzVM.md)
 
 
