@@ -5,31 +5,31 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzPacketCaptureFilterConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzPacketCaptureFilterConfig.md
-ms.openlocfilehash: c81eada89865585ae56af2ed629ee17e43d57aa8
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: d7dac006abf09ec7c80d4a7e7659405936a8d20e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93957714"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100408537"
 ---
-# <span data-ttu-id="b8d0f-101">New-AzPacketCaptureFilterConfig</span><span class="sxs-lookup"><span data-stu-id="b8d0f-101">New-AzPacketCaptureFilterConfig</span></span>
+# <span data-ttu-id="faafc-101">New-AzPacketCaptureFilterConfig</span><span class="sxs-lookup"><span data-stu-id="faafc-101">New-AzPacketCaptureFilterConfig</span></span>
 
-## <span data-ttu-id="b8d0f-102">摘要</span><span class="sxs-lookup"><span data-stu-id="b8d0f-102">SYNOPSIS</span></span>
-<span data-ttu-id="b8d0f-103">建立新的 [資料包捕獲篩選] 物件。</span><span class="sxs-lookup"><span data-stu-id="b8d0f-103">Creates a new packet capture filter object.</span></span>
+## <span data-ttu-id="faafc-102">簡介</span><span class="sxs-lookup"><span data-stu-id="faafc-102">SYNOPSIS</span></span>
+<span data-ttu-id="faafc-103">建立新封包捕獲篩選物件。</span><span class="sxs-lookup"><span data-stu-id="faafc-103">Creates a new packet capture filter object.</span></span>
 
-## <span data-ttu-id="b8d0f-104">句法</span><span class="sxs-lookup"><span data-stu-id="b8d0f-104">SYNTAX</span></span>
+## <span data-ttu-id="faafc-104">語法</span><span class="sxs-lookup"><span data-stu-id="faafc-104">SYNTAX</span></span>
 
 ```
 New-AzPacketCaptureFilterConfig [-Protocol <String>] [-RemoteIPAddress <String>] [-LocalIPAddress <String>]
  [-LocalPort <String>] [-RemotePort <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="b8d0f-105">說明</span><span class="sxs-lookup"><span data-stu-id="b8d0f-105">DESCRIPTION</span></span>
-<span data-ttu-id="b8d0f-106">New-AzPacketCaptureFilterConfig Cmdlet 會建立新的 [資料包捕獲] 篩選物件。</span><span class="sxs-lookup"><span data-stu-id="b8d0f-106">The New-AzPacketCaptureFilterConfig cmdlet creates a new packet capture filter object.</span></span> <span data-ttu-id="b8d0f-107">這個物件是用來限制在資料包捕獲會話期間使用指定準則捕獲的資料包類型。</span><span class="sxs-lookup"><span data-stu-id="b8d0f-107">This object is used to restrict the type of packets that are captured during a packet capture session using the specified criteria.</span></span> <span data-ttu-id="b8d0f-108">New-AzNetworkWatcherPacketCapture Cmdlet 可以接受多個篩選物件，以啟用可撰寫的捕獲會話。</span><span class="sxs-lookup"><span data-stu-id="b8d0f-108">The New-AzNetworkWatcherPacketCapture cmdlet can accept multiple filter objects to enable composable capture sessions.</span></span>
+## <span data-ttu-id="faafc-105">描述</span><span class="sxs-lookup"><span data-stu-id="faafc-105">DESCRIPTION</span></span>
+<span data-ttu-id="faafc-106">Cmdlet New-AzPacketCaptureFilterConfig建立一個新的封包捕獲篩選物件。</span><span class="sxs-lookup"><span data-stu-id="faafc-106">The New-AzPacketCaptureFilterConfig cmdlet creates a new packet capture filter object.</span></span> <span data-ttu-id="faafc-107">此物件用來限制使用指定準則在封包捕獲會話期間所捕獲的封包類型。</span><span class="sxs-lookup"><span data-stu-id="faafc-107">This object is used to restrict the type of packets that are captured during a packet capture session using the specified criteria.</span></span> <span data-ttu-id="faafc-108">Cmdlet New-AzNetworkWatcherPacketCapture接受多個篩選物件，以啟用可撰寫的捕獲會話。</span><span class="sxs-lookup"><span data-stu-id="faafc-108">The New-AzNetworkWatcherPacketCapture cmdlet can accept multiple filter objects to enable composable capture sessions.</span></span>
 
-## <span data-ttu-id="b8d0f-109">示例</span><span class="sxs-lookup"><span data-stu-id="b8d0f-109">EXAMPLES</span></span>
+## <span data-ttu-id="faafc-109">例子</span><span class="sxs-lookup"><span data-stu-id="faafc-109">EXAMPLES</span></span>
 
-### <span data-ttu-id="b8d0f-110">範例1：使用多個篩選建立資料包捕獲</span><span class="sxs-lookup"><span data-stu-id="b8d0f-110">Example 1: Create a Packet Capture with multiple filters</span></span>
+### <span data-ttu-id="faafc-110">範例 1：建立包含多個篩選的封包捕獲</span><span class="sxs-lookup"><span data-stu-id="faafc-110">Example 1: Create a Packet Capture with multiple filters</span></span>
 ```
 $nw = Get-AzResource | Where {$_.ResourceType -eq "Microsoft.Network/networkWatchers" -and $_.Location -eq "WestCentralUS" } 
 $networkWatcher = Get-AzNetworkWatcher -Name $nw.Name -ResourceGroupName $nw.ResourceGroupName 
@@ -41,12 +41,12 @@ $filter2 = New-AzPacketCaptureFilterConfig -Protocol UDP
 New-AzNetworkWatcherPacketCapture -NetworkWatcher $networkWatcher -TargetVirtualMachineId $vm.Id -PacketCaptureName "PacketCaptureTest" -StorageAccountId $storageAccount.id -TimeLimitInSeconds 60 -Filters $filter1, $filter2
 ```
 
-<span data-ttu-id="b8d0f-111">在這個範例中，我們會建立名為 "PacketCaptureTest" 的資料包捕獲，並提供多個篩選和時間限制。</span><span class="sxs-lookup"><span data-stu-id="b8d0f-111">In this example we create a packet capture named "PacketCaptureTest" with multiple filters and a time limit.</span></span> <span data-ttu-id="b8d0f-112">會話完成後，就會將它儲存到指定的儲存空間帳戶。</span><span class="sxs-lookup"><span data-stu-id="b8d0f-112">Once the session is complete, it will be saved to the specified storage account.</span></span> <span data-ttu-id="b8d0f-113">注意：必須在目標虛擬機器上安裝 Azure 網路觀察程式延伸，才能建立資料包捕獲。</span><span class="sxs-lookup"><span data-stu-id="b8d0f-113">Note: The Azure Network Watcher extension must be installed on the target virtual machine to create packet captures.</span></span>
+<span data-ttu-id="faafc-111">在此範例中，我們建立名為「PacketCaptureTest」的封包捕獲，具有多個篩選和時間限制。</span><span class="sxs-lookup"><span data-stu-id="faafc-111">In this example we create a packet capture named "PacketCaptureTest" with multiple filters and a time limit.</span></span> <span data-ttu-id="faafc-112">會話完成之後，就會儲存到指定的儲存空間帳戶。</span><span class="sxs-lookup"><span data-stu-id="faafc-112">Once the session is complete, it will be saved to the specified storage account.</span></span> <span data-ttu-id="faafc-113">注意：Azure 網路監視程式擴充功能必須安裝在目標虛擬機器上，以建立封包捕獲。</span><span class="sxs-lookup"><span data-stu-id="faafc-113">Note: The Azure Network Watcher extension must be installed on the target virtual machine to create packet captures.</span></span>
 
-## <span data-ttu-id="b8d0f-114">參數</span><span class="sxs-lookup"><span data-stu-id="b8d0f-114">PARAMETERS</span></span>
+## <span data-ttu-id="faafc-114">參數</span><span class="sxs-lookup"><span data-stu-id="faafc-114">PARAMETERS</span></span>
 
-### <span data-ttu-id="b8d0f-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="b8d0f-115">-DefaultProfile</span></span>
-<span data-ttu-id="b8d0f-116">用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。</span><span class="sxs-lookup"><span data-stu-id="b8d0f-116">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="faafc-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="faafc-115">-DefaultProfile</span></span>
+<span data-ttu-id="faafc-116">用於與 azure 通訊的認證、帳戶、租使用者和訂閱。</span><span class="sxs-lookup"><span data-stu-id="faafc-116">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -60,11 +60,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b8d0f-117">-LocalIPAddress</span><span class="sxs-lookup"><span data-stu-id="b8d0f-117">-LocalIPAddress</span></span>
-<span data-ttu-id="b8d0f-118">指定要篩選的本機 IP 位址。</span><span class="sxs-lookup"><span data-stu-id="b8d0f-118">Specifies the Local IP Address to filter on.</span></span>
-<span data-ttu-id="b8d0f-119">[範例] 輸入： [127.0.0.1 "代表單一位址專案。</span><span class="sxs-lookup"><span data-stu-id="b8d0f-119">Example inputs: "127.0.0.1" for single address entry.</span></span>
-<span data-ttu-id="b8d0f-120">範圍的 "127.0.0.1-127.0.0.255"。</span><span class="sxs-lookup"><span data-stu-id="b8d0f-120">"127.0.0.1-127.0.0.255" for range.</span></span>
-<span data-ttu-id="b8d0f-121">"127.0.0.1; 127.0.0.5;" 代表多個專案。</span><span class="sxs-lookup"><span data-stu-id="b8d0f-121">"127.0.0.1;127.0.0.5;" for multiple entries.</span></span>
+### <span data-ttu-id="faafc-117">-LocalIPAddress</span><span class="sxs-lookup"><span data-stu-id="faafc-117">-LocalIPAddress</span></span>
+<span data-ttu-id="faafc-118">指定要篩選的本地 IP 位址。</span><span class="sxs-lookup"><span data-stu-id="faafc-118">Specifies the Local IP Address to filter on.</span></span>
+<span data-ttu-id="faafc-119">輸入範例：單一位址專案輸入"127.0.0.1"。</span><span class="sxs-lookup"><span data-stu-id="faafc-119">Example inputs: "127.0.0.1" for single address entry.</span></span>
+<span data-ttu-id="faafc-120">範圍為 "127.0.0.1-127.0.0.255"。</span><span class="sxs-lookup"><span data-stu-id="faafc-120">"127.0.0.1-127.0.0.255" for range.</span></span>
+<span data-ttu-id="faafc-121">多個專案為「127.0.0.1;127.0.0.5;」。</span><span class="sxs-lookup"><span data-stu-id="faafc-121">"127.0.0.1;127.0.0.5;" for multiple entries.</span></span>
 
 ```yaml
 Type: System.String
@@ -78,11 +78,11 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b8d0f-122">-LocalPort</span><span class="sxs-lookup"><span data-stu-id="b8d0f-122">-LocalPort</span></span>
-<span data-ttu-id="b8d0f-123">指定要篩選的本機 IP 位址。</span><span class="sxs-lookup"><span data-stu-id="b8d0f-123">Specifies the Local IP Address to filter on.</span></span>
-<span data-ttu-id="b8d0f-124">[範例] 輸入： [127.0.0.1 "代表單一位址專案。</span><span class="sxs-lookup"><span data-stu-id="b8d0f-124">Example inputs: "127.0.0.1" for single address entry.</span></span>
-<span data-ttu-id="b8d0f-125">範圍的 "127.0.0.1-127.0.0.255"。</span><span class="sxs-lookup"><span data-stu-id="b8d0f-125">"127.0.0.1-127.0.0.255" for range.</span></span>
-<span data-ttu-id="b8d0f-126">"127.0.0.1; 127.0.0.5;" 代表多個專案。</span><span class="sxs-lookup"><span data-stu-id="b8d0f-126">"127.0.0.1;127.0.0.5;" for multiple entries.</span></span>
+### <span data-ttu-id="faafc-122">-LocalPort</span><span class="sxs-lookup"><span data-stu-id="faafc-122">-LocalPort</span></span>
+<span data-ttu-id="faafc-123">指定要篩選的本地 IP 位址。</span><span class="sxs-lookup"><span data-stu-id="faafc-123">Specifies the Local IP Address to filter on.</span></span>
+<span data-ttu-id="faafc-124">輸入範例：單一位址專案輸入"127.0.0.1"。</span><span class="sxs-lookup"><span data-stu-id="faafc-124">Example inputs: "127.0.0.1" for single address entry.</span></span>
+<span data-ttu-id="faafc-125">範圍為"127.0.0.1-127.0.0.255"。</span><span class="sxs-lookup"><span data-stu-id="faafc-125">"127.0.0.1-127.0.0.255" for range.</span></span>
+<span data-ttu-id="faafc-126">多個專案為「127.0.0.1;127.0.0.5;」。</span><span class="sxs-lookup"><span data-stu-id="faafc-126">"127.0.0.1;127.0.0.5;" for multiple entries.</span></span>
 
 ```yaml
 Type: System.String
@@ -96,8 +96,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b8d0f-127">-通訊協定</span><span class="sxs-lookup"><span data-stu-id="b8d0f-127">-Protocol</span></span>
-<span data-ttu-id="b8d0f-128">指定要篩選的通訊協定。</span><span class="sxs-lookup"><span data-stu-id="b8d0f-128">Specifies the Protocol to filter on.</span></span> <span data-ttu-id="b8d0f-129">可接受的值 "TCP"，"UDP"，"Any"</span><span class="sxs-lookup"><span data-stu-id="b8d0f-129">Acceptable values "TCP","UDP","Any"</span></span>
+### <span data-ttu-id="faafc-127">-通訊協定</span><span class="sxs-lookup"><span data-stu-id="faafc-127">-Protocol</span></span>
+<span data-ttu-id="faafc-128">指定要篩選的通訊協定。</span><span class="sxs-lookup"><span data-stu-id="faafc-128">Specifies the Protocol to filter on.</span></span> <span data-ttu-id="faafc-129">可接受的值 "TCP"，"UDP"，"Any"</span><span class="sxs-lookup"><span data-stu-id="faafc-129">Acceptable values "TCP","UDP","Any"</span></span>
 
 ```yaml
 Type: System.String
@@ -111,11 +111,11 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b8d0f-130">-RemoteIPAddress</span><span class="sxs-lookup"><span data-stu-id="b8d0f-130">-RemoteIPAddress</span></span>
-<span data-ttu-id="b8d0f-131">指定要篩選的遠端 IP 位址。</span><span class="sxs-lookup"><span data-stu-id="b8d0f-131">Specifies the remote IP address to filter on.</span></span>
-<span data-ttu-id="b8d0f-132">[範例] 輸入： [127.0.0.1 "代表單一位址專案。</span><span class="sxs-lookup"><span data-stu-id="b8d0f-132">Example inputs: "127.0.0.1" for single address entry.</span></span>
-<span data-ttu-id="b8d0f-133">範圍的 "127.0.0.1-127.0.0.255"。</span><span class="sxs-lookup"><span data-stu-id="b8d0f-133">"127.0.0.1-127.0.0.255" for range.</span></span>
-<span data-ttu-id="b8d0f-134">"127.0.0.1; 127.0.0.5;" 代表多個專案。</span><span class="sxs-lookup"><span data-stu-id="b8d0f-134">"127.0.0.1;127.0.0.5;" for multiple entries.</span></span>
+### <span data-ttu-id="faafc-130">-RemoteIPAddress</span><span class="sxs-lookup"><span data-stu-id="faafc-130">-RemoteIPAddress</span></span>
+<span data-ttu-id="faafc-131">指定要篩選的遠端 IP 位址。</span><span class="sxs-lookup"><span data-stu-id="faafc-131">Specifies the remote IP address to filter on.</span></span>
+<span data-ttu-id="faafc-132">輸入範例：單一位址專案輸入"127.0.0.1"。</span><span class="sxs-lookup"><span data-stu-id="faafc-132">Example inputs: "127.0.0.1" for single address entry.</span></span>
+<span data-ttu-id="faafc-133">範圍為 "127.0.0.1-127.0.0.255"。</span><span class="sxs-lookup"><span data-stu-id="faafc-133">"127.0.0.1-127.0.0.255" for range.</span></span>
+<span data-ttu-id="faafc-134">多個專案為「127.0.0.1;127.0.0.5;」。</span><span class="sxs-lookup"><span data-stu-id="faafc-134">"127.0.0.1;127.0.0.5;" for multiple entries.</span></span>
 
 ```yaml
 Type: System.String
@@ -129,11 +129,11 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b8d0f-135">-RemotePort</span><span class="sxs-lookup"><span data-stu-id="b8d0f-135">-RemotePort</span></span>
-<span data-ttu-id="b8d0f-136">指定要篩選的遠端埠。</span><span class="sxs-lookup"><span data-stu-id="b8d0f-136">Specifies the Remote Port to filter on.</span></span>
-<span data-ttu-id="b8d0f-137">遠端埠範例輸入：「80」（適用于單一端口專案）。</span><span class="sxs-lookup"><span data-stu-id="b8d0f-137">Remote port Example inputs: "80" for single port entry.</span></span>
-<span data-ttu-id="b8d0f-138">範圍的 "80-85"。</span><span class="sxs-lookup"><span data-stu-id="b8d0f-138">"80-85" for range.</span></span>
-<span data-ttu-id="b8d0f-139">"80; 443;" （針對多個專案）。</span><span class="sxs-lookup"><span data-stu-id="b8d0f-139">"80;443;" for multiple entries.</span></span>
+### <span data-ttu-id="faafc-135">-RemotePort</span><span class="sxs-lookup"><span data-stu-id="faafc-135">-RemotePort</span></span>
+<span data-ttu-id="faafc-136">指定要篩選的遠端埠。</span><span class="sxs-lookup"><span data-stu-id="faafc-136">Specifies the Remote Port to filter on.</span></span>
+<span data-ttu-id="faafc-137">遠端埠範例輸入：「80」表示單一端口專案。</span><span class="sxs-lookup"><span data-stu-id="faafc-137">Remote port Example inputs: "80" for single port entry.</span></span>
+<span data-ttu-id="faafc-138">範圍為"80-85"。</span><span class="sxs-lookup"><span data-stu-id="faafc-138">"80-85" for range.</span></span>
+<span data-ttu-id="faafc-139">多個專案為 「80;443;」。</span><span class="sxs-lookup"><span data-stu-id="faafc-139">"80;443;" for multiple entries.</span></span>
 
 ```yaml
 Type: System.String
@@ -147,72 +147,72 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b8d0f-140">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="b8d0f-140">CommonParameters</span></span>
-<span data-ttu-id="b8d0f-141">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="b8d0f-141">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="b8d0f-142">如需詳細資訊，請參閱 about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216) 。</span><span class="sxs-lookup"><span data-stu-id="b8d0f-142">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="faafc-140">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="faafc-140">CommonParameters</span></span>
+<span data-ttu-id="faafc-141">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="faafc-141">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="faafc-142">詳細資訊請參閱 http://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。</span><span class="sxs-lookup"><span data-stu-id="faafc-142">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="b8d0f-143">輸入</span><span class="sxs-lookup"><span data-stu-id="b8d0f-143">INPUTS</span></span>
+## <span data-ttu-id="faafc-143">輸入</span><span class="sxs-lookup"><span data-stu-id="faafc-143">INPUTS</span></span>
 
-### <span data-ttu-id="b8d0f-144">System.object</span><span class="sxs-lookup"><span data-stu-id="b8d0f-144">System.String</span></span>
+### <span data-ttu-id="faafc-144">System.String</span><span class="sxs-lookup"><span data-stu-id="faafc-144">System.String</span></span>
 
-## <span data-ttu-id="b8d0f-145">輸出</span><span class="sxs-lookup"><span data-stu-id="b8d0f-145">OUTPUTS</span></span>
+## <span data-ttu-id="faafc-145">輸出</span><span class="sxs-lookup"><span data-stu-id="faafc-145">OUTPUTS</span></span>
 
-### <span data-ttu-id="b8d0f-146">PSPacketCaptureFilter 中的 [.]</span><span class="sxs-lookup"><span data-stu-id="b8d0f-146">Microsoft.Azure.Commands.Network.Models.PSPacketCaptureFilter</span></span>
+### <span data-ttu-id="faafc-146">Microsoft.Azure.Commands.Network.models.PSPacketCaptureFilter</span><span class="sxs-lookup"><span data-stu-id="faafc-146">Microsoft.Azure.Commands.Network.Models.PSPacketCaptureFilter</span></span>
 
-## <span data-ttu-id="b8d0f-147">筆記</span><span class="sxs-lookup"><span data-stu-id="b8d0f-147">NOTES</span></span>
-<span data-ttu-id="b8d0f-148">關鍵字： azure、azurerm、arm、資源、管理、管理員、網路、網路、觀察者、資料包、捕獲、流量、篩選器</span><span class="sxs-lookup"><span data-stu-id="b8d0f-148">Keywords: azure, azurerm, arm, resource, management, manager, network, networking, watcher, packet, capture, traffic, filter</span></span> 
+## <span data-ttu-id="faafc-147">筆記</span><span class="sxs-lookup"><span data-stu-id="faafc-147">NOTES</span></span>
+<span data-ttu-id="faafc-148">關鍵字：azure、azurerm、arm、資源、管理、管理員、網路、網路、監視者、封包、捕獲、流量、篩選</span><span class="sxs-lookup"><span data-stu-id="faafc-148">Keywords: azure, azurerm, arm, resource, management, manager, network, networking, watcher, packet, capture, traffic, filter</span></span> 
 
-## <span data-ttu-id="b8d0f-149">相關連結</span><span class="sxs-lookup"><span data-stu-id="b8d0f-149">RELATED LINKS</span></span>
+## <span data-ttu-id="faafc-149">相關連結</span><span class="sxs-lookup"><span data-stu-id="faafc-149">RELATED LINKS</span></span>
 
-[<span data-ttu-id="b8d0f-150">新-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="b8d0f-150">New-AzNetworkWatcher</span></span>](./New-AzNetworkWatcher.md)
+[<span data-ttu-id="faafc-150">New-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="faafc-150">New-AzNetworkWatcher</span></span>](./New-AzNetworkWatcher.md)
 
-[<span data-ttu-id="b8d0f-151">AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="b8d0f-151">Get-AzNetworkWatcher</span></span>](./Get-AzNetworkWatcher.md)
+[<span data-ttu-id="faafc-151">Get-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="faafc-151">Get-AzNetworkWatcher</span></span>](./Get-AzNetworkWatcher.md)
 
-[<span data-ttu-id="b8d0f-152">移除-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="b8d0f-152">Remove-AzNetworkWatcher</span></span>](./Remove-AzNetworkWatcher.md)
+[<span data-ttu-id="faafc-152">Remove-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="faafc-152">Remove-AzNetworkWatcher</span></span>](./Remove-AzNetworkWatcher.md)
 
-[<span data-ttu-id="b8d0f-153">AzNetworkWatcherNextHop</span><span class="sxs-lookup"><span data-stu-id="b8d0f-153">Get-AzNetworkWatcherNextHop</span></span>](./Get-AzNetworkWatcherNextHop.md)
+[<span data-ttu-id="faafc-153">Get-AzNetworkWatcherNextHop</span><span class="sxs-lookup"><span data-stu-id="faafc-153">Get-AzNetworkWatcherNextHop</span></span>](./Get-AzNetworkWatcherNextHop.md)
 
-[<span data-ttu-id="b8d0f-154">AzNetworkWatcherSecurityGroupView</span><span class="sxs-lookup"><span data-stu-id="b8d0f-154">Get-AzNetworkWatcherSecurityGroupView</span></span>](./Get-AzNetworkWatcherSecurityGroupView.md)
+[<span data-ttu-id="faafc-154">Get-AzNetworkWatcherSecurityGroupView</span><span class="sxs-lookup"><span data-stu-id="faafc-154">Get-AzNetworkWatcherSecurityGroupView</span></span>](./Get-AzNetworkWatcherSecurityGroupView.md)
 
-[<span data-ttu-id="b8d0f-155">AzNetworkWatcherTopology</span><span class="sxs-lookup"><span data-stu-id="b8d0f-155">Get-AzNetworkWatcherTopology</span></span>](./Get-AzNetworkWatcherTopology.md)
+[<span data-ttu-id="faafc-155">Get-AzNetworkWatcherTopwork</span><span class="sxs-lookup"><span data-stu-id="faafc-155">Get-AzNetworkWatcherTopology</span></span>](./Get-AzNetworkWatcherTopology.md)
 
-[<span data-ttu-id="b8d0f-156">開始-AzNetworkWatcherResourceTroubleshooting</span><span class="sxs-lookup"><span data-stu-id="b8d0f-156">Start-AzNetworkWatcherResourceTroubleshooting</span></span>](./Start-AzNetworkWatcherResourceTroubleshooting.md)
+[<span data-ttu-id="faafc-156">Start-AzNetworkWatcherResourceTroubleshooting</span><span class="sxs-lookup"><span data-stu-id="faafc-156">Start-AzNetworkWatcherResourceTroubleshooting</span></span>](./Start-AzNetworkWatcherResourceTroubleshooting.md)
 
-[<span data-ttu-id="b8d0f-157">新-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="b8d0f-157">New-AzNetworkWatcherPacketCapture</span></span>](./New-AzNetworkWatcherPacketCapture.md)
+[<span data-ttu-id="faafc-157">New-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="faafc-157">New-AzNetworkWatcherPacketCapture</span></span>](./New-AzNetworkWatcherPacketCapture.md)
 
-[<span data-ttu-id="b8d0f-158">新-AzPacketCaptureFilterConfig</span><span class="sxs-lookup"><span data-stu-id="b8d0f-158">New-AzPacketCaptureFilterConfig</span></span>](./New-AzPacketCaptureFilterConfig.md)
+[<span data-ttu-id="faafc-158">New-AzPacketCaptureFilterConfig</span><span class="sxs-lookup"><span data-stu-id="faafc-158">New-AzPacketCaptureFilterConfig</span></span>](./New-AzPacketCaptureFilterConfig.md)
 
-[<span data-ttu-id="b8d0f-159">AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="b8d0f-159">Get-AzNetworkWatcherPacketCapture</span></span>](./Get-AzNetworkWatcherPacketCapture.md)
+[<span data-ttu-id="faafc-159">Get-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="faafc-159">Get-AzNetworkWatcherPacketCapture</span></span>](./Get-AzNetworkWatcherPacketCapture.md)
 
-[<span data-ttu-id="b8d0f-160">移除-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="b8d0f-160">Remove-AzNetworkWatcherPacketCapture</span></span>](./Remove-AzNetworkWatcherPacketCapture.md)
+[<span data-ttu-id="faafc-160">Remove-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="faafc-160">Remove-AzNetworkWatcherPacketCapture</span></span>](./Remove-AzNetworkWatcherPacketCapture.md)
 
-[<span data-ttu-id="b8d0f-161">停止 AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="b8d0f-161">Stop-AzNetworkWatcherPacketCapture</span></span>](./Stop-AzNetworkWatcherPacketCapture.md)
+[<span data-ttu-id="faafc-161">Stop-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="faafc-161">Stop-AzNetworkWatcherPacketCapture</span></span>](./Stop-AzNetworkWatcherPacketCapture.md)
 
-[<span data-ttu-id="b8d0f-162">新-AzNetworkWatcherProtocolConfiguration</span><span class="sxs-lookup"><span data-stu-id="b8d0f-162">New-AzNetworkWatcherProtocolConfiguration</span></span>](./New-AzNetworkWatcherProtocolConfiguration.md)
+[<span data-ttu-id="faafc-162">New-AzNetworkWatcherProtocolConfiguration</span><span class="sxs-lookup"><span data-stu-id="faafc-162">New-AzNetworkWatcherProtocolConfiguration</span></span>](./New-AzNetworkWatcherProtocolConfiguration.md)
 
-[<span data-ttu-id="b8d0f-163">Test-AzNetworkWatcherIPFlow</span><span class="sxs-lookup"><span data-stu-id="b8d0f-163">Test-AzNetworkWatcherIPFlow</span></span>](./Test-AzNetworkWatcherIPFlow.md)
+[<span data-ttu-id="faafc-163">Test-AzNetworkWatcherIPFlow</span><span class="sxs-lookup"><span data-stu-id="faafc-163">Test-AzNetworkWatcherIPFlow</span></span>](./Test-AzNetworkWatcherIPFlow.md)
 
-[<span data-ttu-id="b8d0f-164">Test-AzNetworkWatcherConnectivity</span><span class="sxs-lookup"><span data-stu-id="b8d0f-164">Test-AzNetworkWatcherConnectivity</span></span>](./Test-AzNetworkWatcherConnectivity.md)
+[<span data-ttu-id="faafc-164">Test-AzNetworkWatcherConnectivity</span><span class="sxs-lookup"><span data-stu-id="faafc-164">Test-AzNetworkWatcherConnectivity</span></span>](./Test-AzNetworkWatcherConnectivity.md)
 
-[<span data-ttu-id="b8d0f-165">停止 AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="b8d0f-165">Stop-AzNetworkWatcherConnectionMonitor</span></span>](./Stop-AzNetworkWatcherConnectionMonitor.md)
+[<span data-ttu-id="faafc-165">Stop-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="faafc-165">Stop-AzNetworkWatcherConnectionMonitor</span></span>](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="b8d0f-166">開始-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="b8d0f-166">Start-AzNetworkWatcherConnectionMonitor</span></span>](./Start-AzNetworkWatcherConnectionMonitor.md)
+[<span data-ttu-id="faafc-166">Start-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="faafc-166">Start-AzNetworkWatcherConnectionMonitor</span></span>](./Start-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="b8d0f-167">Set-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="b8d0f-167">Set-AzNetworkWatcherConnectionMonitor</span></span>](./Set-AzNetworkWatcherConnectionMonitor.md)
+[<span data-ttu-id="faafc-167">Set-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="faafc-167">Set-AzNetworkWatcherConnectionMonitor</span></span>](./Set-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="b8d0f-168">Set-AzNetworkWatcherConfigFlowLog</span><span class="sxs-lookup"><span data-stu-id="b8d0f-168">Set-AzNetworkWatcherConfigFlowLog</span></span>](./Set-AzNetworkWatcherConfigFlowLog.md)
+[<span data-ttu-id="faafc-168">Set-AzNetworkWatcherConfigFlowLog</span><span class="sxs-lookup"><span data-stu-id="faafc-168">Set-AzNetworkWatcherConfigFlowLog</span></span>](./Set-AzNetworkWatcherConfigFlowLog.md)
 
-[<span data-ttu-id="b8d0f-169">移除-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="b8d0f-169">Remove-AzNetworkWatcherConnectionMonitor</span></span>](./Remove-AzNetworkWatcherConnectionMonitor.md)
+[<span data-ttu-id="faafc-169">Remove-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="faafc-169">Remove-AzNetworkWatcherConnectionMonitor</span></span>](./Remove-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="b8d0f-170">新-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="b8d0f-170">New-AzNetworkWatcherConnectionMonitor</span></span>](./New-AzNetworkWatcherConnectionMonitor.md)
+[<span data-ttu-id="faafc-170">New-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="faafc-170">New-AzNetworkWatcherConnectionMonitor</span></span>](./New-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="b8d0f-171">AzNetworkWatcherTroubleshootingResult</span><span class="sxs-lookup"><span data-stu-id="b8d0f-171">Get-AzNetworkWatcherTroubleshootingResult</span></span>](./Get-AzNetworkWatcherTroubleshootingResult.md)
+[<span data-ttu-id="faafc-171">Get-AzNetworkWatcherTroubleshootingResult</span><span class="sxs-lookup"><span data-stu-id="faafc-171">Get-AzNetworkWatcherTroubleshootingResult</span></span>](./Get-AzNetworkWatcherTroubleshootingResult.md)
 
-[<span data-ttu-id="b8d0f-172">AzNetworkWatcherReachabilityReport</span><span class="sxs-lookup"><span data-stu-id="b8d0f-172">Get-AzNetworkWatcherReachabilityReport</span></span>](./Get-AzNetworkWatcherReachabilityReport.md)
+[<span data-ttu-id="faafc-172">Get-AzNetworkWatcherReachabilityReport</span><span class="sxs-lookup"><span data-stu-id="faafc-172">Get-AzNetworkWatcherReachabilityReport</span></span>](./Get-AzNetworkWatcherReachabilityReport.md)
 
-[<span data-ttu-id="b8d0f-173">AzNetworkWatcherReachabilityProvidersList</span><span class="sxs-lookup"><span data-stu-id="b8d0f-173">Get-AzNetworkWatcherReachabilityProvidersList</span></span>](./Get-AzNetworkWatcherReachabilityProvidersList.md)
+[<span data-ttu-id="faafc-173">Get-AzNetworkWatcherReachabilityProvidersList</span><span class="sxs-lookup"><span data-stu-id="faafc-173">Get-AzNetworkWatcherReachabilityProvidersList</span></span>](./Get-AzNetworkWatcherReachabilityProvidersList.md)
 
-[<span data-ttu-id="b8d0f-174">AzNetworkWatcherFlowLogStatus</span><span class="sxs-lookup"><span data-stu-id="b8d0f-174">Get-AzNetworkWatcherFlowLogStatus</span></span>](./Get-AzNetworkWatcherFlowLogStatus.md)
+[<span data-ttu-id="faafc-174">Get-AzNetworkWatcherFlowLogStatus</span><span class="sxs-lookup"><span data-stu-id="faafc-174">Get-AzNetworkWatcherFlowLogStatus</span></span>](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[<span data-ttu-id="b8d0f-175">AzNetworkWatcherConnectionMonitorReport</span><span class="sxs-lookup"><span data-stu-id="b8d0f-175">Get-AzNetworkWatcherConnectionMonitorReport</span></span>](./Get-AzNetworkWatcherConnectionMonitorReport)
+[<span data-ttu-id="faafc-175">Get-AzNetworkWatcherConnectionMonitorReport</span><span class="sxs-lookup"><span data-stu-id="faafc-175">Get-AzNetworkWatcherConnectionMonitorReport</span></span>](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[<span data-ttu-id="b8d0f-176">AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="b8d0f-176">Get-AzNetworkWatcherConnectionMonitor</span></span>](./Get-AzNetworkWatcherConnectionMonitor)
+[<span data-ttu-id="faafc-176">Get-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="faafc-176">Get-AzNetworkWatcherConnectionMonitor</span></span>](./Get-AzNetworkWatcherConnectionMonitor.md)

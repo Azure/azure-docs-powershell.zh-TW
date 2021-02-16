@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Set-AzActionGroup.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Set-AzActionGroup.md
-ms.openlocfilehash: bcec58094fc124d3dd49fc2536a9427ed72d07a2
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: da050b069ee77ce73b2325a600ac06f4d0fb919c
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93796753"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399204"
 ---
-# <span data-ttu-id="47d10-101">Set-AzActionGroup</span><span class="sxs-lookup"><span data-stu-id="47d10-101">Set-AzActionGroup</span></span>
+# <span data-ttu-id="f710b-101">Set-AzActionGroup</span><span class="sxs-lookup"><span data-stu-id="f710b-101">Set-AzActionGroup</span></span>
 
-## <span data-ttu-id="47d10-102">摘要</span><span class="sxs-lookup"><span data-stu-id="47d10-102">SYNOPSIS</span></span>
-<span data-ttu-id="47d10-103">建立新的或更新現有的動作群組。</span><span class="sxs-lookup"><span data-stu-id="47d10-103">Creates a new or updates an existing action group.</span></span>
+## <span data-ttu-id="f710b-102">簡介</span><span class="sxs-lookup"><span data-stu-id="f710b-102">SYNOPSIS</span></span>
+<span data-ttu-id="f710b-103">建立新動作或更新現有的動作群組。</span><span class="sxs-lookup"><span data-stu-id="f710b-103">Creates a new or updates an existing action group.</span></span>
 
-## <span data-ttu-id="47d10-104">句法</span><span class="sxs-lookup"><span data-stu-id="47d10-104">SYNTAX</span></span>
+## <span data-ttu-id="f710b-104">語法</span><span class="sxs-lookup"><span data-stu-id="f710b-104">SYNTAX</span></span>
 
-### <span data-ttu-id="47d10-105">ByPropertyName (預設) </span><span class="sxs-lookup"><span data-stu-id="47d10-105">ByPropertyName (Default)</span></span>
+### <span data-ttu-id="f710b-105">ByPropertyName (預設) </span><span class="sxs-lookup"><span data-stu-id="f710b-105">ByPropertyName (Default)</span></span>
 ```
 Set-AzActionGroup -ResourceGroupName <String> -Name <String> -ShortName <String>
  -Receiver <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupReceiverBase]>
@@ -28,7 +28,7 @@ Set-AzActionGroup -ResourceGroupName <String> -Name <String> -ShortName <String>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="47d10-106">ByResourceId</span><span class="sxs-lookup"><span data-stu-id="47d10-106">ByResourceId</span></span>
+### <span data-ttu-id="f710b-106">ByResourceId</span><span class="sxs-lookup"><span data-stu-id="f710b-106">ByResourceId</span></span>
 ```
 Set-AzActionGroup -ShortName <String>
  -Receiver <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupReceiverBase]>
@@ -36,7 +36,7 @@ Set-AzActionGroup -ShortName <String>
  -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="47d10-107">ByInputObject</span><span class="sxs-lookup"><span data-stu-id="47d10-107">ByInputObject</span></span>
+### <span data-ttu-id="f710b-107">ByInputObject</span><span class="sxs-lookup"><span data-stu-id="f710b-107">ByInputObject</span></span>
 ```
 Set-AzActionGroup [-ShortName <String>] [-DisableGroup]
  [-Tag <System.Collections.Generic.IDictionary`2[System.String,System.String]>]
@@ -44,25 +44,25 @@ Set-AzActionGroup [-ShortName <String>] [-DisableGroup]
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="47d10-108">說明</span><span class="sxs-lookup"><span data-stu-id="47d10-108">DESCRIPTION</span></span>
-<span data-ttu-id="47d10-109">**AzActionGroup** Cmdlet 會建立新的或更新現有的動作群組</span><span class="sxs-lookup"><span data-stu-id="47d10-109">The **Set-AzActionGroup** cmdlet creates a new or updates an existing action group</span></span>
+## <span data-ttu-id="f710b-108">描述</span><span class="sxs-lookup"><span data-stu-id="f710b-108">DESCRIPTION</span></span>
+<span data-ttu-id="f710b-109">**Set-AzActionGroup** Cmdlet 會建立新動作群組或更新現有的動作群組</span><span class="sxs-lookup"><span data-stu-id="f710b-109">The **Set-AzActionGroup** cmdlet creates a new or updates an existing action group</span></span>
 
-## <span data-ttu-id="47d10-110">示例</span><span class="sxs-lookup"><span data-stu-id="47d10-110">EXAMPLES</span></span>
+## <span data-ttu-id="f710b-110">例子</span><span class="sxs-lookup"><span data-stu-id="f710b-110">EXAMPLES</span></span>
 
-### <span data-ttu-id="47d10-111">範例1：建立動作群組</span><span class="sxs-lookup"><span data-stu-id="47d10-111">Example 1: Create an Action Group</span></span>
+### <span data-ttu-id="f710b-111">範例 1：建立動作群組</span><span class="sxs-lookup"><span data-stu-id="f710b-111">Example 1: Create an Action Group</span></span>
 ```
 PS C:\>$email1 = New-AzActionGroupReceiver -Name 'user1' -EmailReceiver -EmailAddress 'user1@example.com'
 PS C:\>$sms1 = New-AzActionGroupReceiver -Name 'user2' -SmsReceiver -CountryCode '1' -PhoneNumber '5555555555'
 PS C:\>Set-AzActionGroup -Name $actionGroupName -ResourceGroup $resourceGroupName -ShortName $shortName -Receiver $email1,$sms1
 ```
 
-<span data-ttu-id="47d10-112">前兩個命令會建立兩個接收方。</span><span class="sxs-lookup"><span data-stu-id="47d10-112">The first two commands create two receivers.</span></span>
-<span data-ttu-id="47d10-113">最後一個命令會建立包含兩個接收器的動作群組。</span><span class="sxs-lookup"><span data-stu-id="47d10-113">The final command creates an Action Group including the two receivers.</span></span>
+<span data-ttu-id="f710b-112">前兩個命令會建立兩個收聽者。</span><span class="sxs-lookup"><span data-stu-id="f710b-112">The first two commands create two receivers.</span></span>
+<span data-ttu-id="f710b-113">最後一個命令會建立一個動作群組，包括兩個收受者。</span><span class="sxs-lookup"><span data-stu-id="f710b-113">The final command creates an Action Group including the two receivers.</span></span>
 
-## <span data-ttu-id="47d10-114">參數</span><span class="sxs-lookup"><span data-stu-id="47d10-114">PARAMETERS</span></span>
+## <span data-ttu-id="f710b-114">參數</span><span class="sxs-lookup"><span data-stu-id="f710b-114">PARAMETERS</span></span>
 
-### <span data-ttu-id="47d10-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="47d10-115">-DefaultProfile</span></span>
-<span data-ttu-id="47d10-116">用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱</span><span class="sxs-lookup"><span data-stu-id="47d10-116">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="f710b-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="f710b-115">-DefaultProfile</span></span>
+<span data-ttu-id="f710b-116">用於與 Azure 通訊的認證、帳戶、租使用者和訂閱</span><span class="sxs-lookup"><span data-stu-id="f710b-116">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -76,8 +76,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="47d10-117">-DisableGroup</span><span class="sxs-lookup"><span data-stu-id="47d10-117">-DisableGroup</span></span>
-<span data-ttu-id="47d10-118">停用 [動作] 群組。</span><span class="sxs-lookup"><span data-stu-id="47d10-118">Disables the action group.</span></span>
+### <span data-ttu-id="f710b-117">-DisableGroup</span><span class="sxs-lookup"><span data-stu-id="f710b-117">-DisableGroup</span></span>
+<span data-ttu-id="f710b-118">停用動作群組。</span><span class="sxs-lookup"><span data-stu-id="f710b-118">Disables the action group.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -103,8 +103,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="47d10-119">-InputObject</span><span class="sxs-lookup"><span data-stu-id="47d10-119">-InputObject</span></span>
-<span data-ttu-id="47d10-120">[動作] 群組資源</span><span class="sxs-lookup"><span data-stu-id="47d10-120">The action group resource</span></span>
+### <span data-ttu-id="f710b-119">-InputObject</span><span class="sxs-lookup"><span data-stu-id="f710b-119">-InputObject</span></span>
+<span data-ttu-id="f710b-120">動作群組資源</span><span class="sxs-lookup"><span data-stu-id="f710b-120">The action group resource</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource
@@ -118,8 +118,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="47d10-121">-名稱</span><span class="sxs-lookup"><span data-stu-id="47d10-121">-Name</span></span>
-<span data-ttu-id="47d10-122">動作群組的名稱。</span><span class="sxs-lookup"><span data-stu-id="47d10-122">The name of the action group.</span></span>
+### <span data-ttu-id="f710b-121">-名稱</span><span class="sxs-lookup"><span data-stu-id="f710b-121">-Name</span></span>
+<span data-ttu-id="f710b-122">動作組的名稱。</span><span class="sxs-lookup"><span data-stu-id="f710b-122">The name of the action group.</span></span>
 
 ```yaml
 Type: System.String
@@ -133,8 +133,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="47d10-123">-接收器</span><span class="sxs-lookup"><span data-stu-id="47d10-123">-Receiver</span></span>
-<span data-ttu-id="47d10-124">動作群組的接收器清單。</span><span class="sxs-lookup"><span data-stu-id="47d10-124">The list of receivers of the action group.</span></span>
+### <span data-ttu-id="f710b-123">-Receiver</span><span class="sxs-lookup"><span data-stu-id="f710b-123">-Receiver</span></span>
+<span data-ttu-id="f710b-124">動作群組的收受者清單。</span><span class="sxs-lookup"><span data-stu-id="f710b-124">The list of receivers of the action group.</span></span>
 
 ```yaml
 Type: System.Collections.Generic.List`1[Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupReceiverBase]
@@ -148,8 +148,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="47d10-125">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="47d10-125">-ResourceGroupName</span></span>
-<span data-ttu-id="47d10-126">資源群組</span><span class="sxs-lookup"><span data-stu-id="47d10-126">The resource group nam</span></span>
+### <span data-ttu-id="f710b-125">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="f710b-125">-ResourceGroupName</span></span>
+<span data-ttu-id="f710b-126">資源群組的命名</span><span class="sxs-lookup"><span data-stu-id="f710b-126">The resource group nam</span></span>
 
 ```yaml
 Type: System.String
@@ -163,8 +163,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="47d10-127">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="47d10-127">-ResourceId</span></span>
-<span data-ttu-id="47d10-128">資源 i</span><span class="sxs-lookup"><span data-stu-id="47d10-128">The resource i</span></span>
+### <span data-ttu-id="f710b-127">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="f710b-127">-ResourceId</span></span>
+<span data-ttu-id="f710b-128">資源 i</span><span class="sxs-lookup"><span data-stu-id="f710b-128">The resource i</span></span>
 
 ```yaml
 Type: System.String
@@ -178,8 +178,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="47d10-129">-ShortName</span><span class="sxs-lookup"><span data-stu-id="47d10-129">-ShortName</span></span>
-<span data-ttu-id="47d10-130">動作群組的簡短名稱。</span><span class="sxs-lookup"><span data-stu-id="47d10-130">The short name of the action group.</span></span>
+### <span data-ttu-id="f710b-129">-ShortName</span><span class="sxs-lookup"><span data-stu-id="f710b-129">-ShortName</span></span>
+<span data-ttu-id="f710b-130">動作群組的簡短名稱。</span><span class="sxs-lookup"><span data-stu-id="f710b-130">The short name of the action group.</span></span>
 
 ```yaml
 Type: System.String
@@ -205,8 +205,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="47d10-131">-Tag</span><span class="sxs-lookup"><span data-stu-id="47d10-131">-Tag</span></span>
-<span data-ttu-id="47d10-132">[動作] 群組資源的標記</span><span class="sxs-lookup"><span data-stu-id="47d10-132">The tags of the action group resource</span></span>
+### <span data-ttu-id="f710b-131">-標記</span><span class="sxs-lookup"><span data-stu-id="f710b-131">-Tag</span></span>
+<span data-ttu-id="f710b-132">動作群組資源的標記</span><span class="sxs-lookup"><span data-stu-id="f710b-132">The tags of the action group resource</span></span>
 
 ```yaml
 Type: System.Collections.Generic.IDictionary`2[System.String,System.String]
@@ -232,8 +232,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="47d10-133">-確認</span><span class="sxs-lookup"><span data-stu-id="47d10-133">-Confirm</span></span>
-<span data-ttu-id="47d10-134">在執行 Cmdlet 之前提示您進行確認。</span><span class="sxs-lookup"><span data-stu-id="47d10-134">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="f710b-133">-確認</span><span class="sxs-lookup"><span data-stu-id="f710b-133">-Confirm</span></span>
+<span data-ttu-id="f710b-134">執行 Cmdlet 之前，提示您確認。</span><span class="sxs-lookup"><span data-stu-id="f710b-134">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -247,8 +247,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="47d10-135">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="47d10-135">-WhatIf</span></span>
-<span data-ttu-id="47d10-136">顯示在執行 Cmdlet 時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="47d10-136">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="47d10-137">未執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="47d10-137">The cmdlet is not run.</span></span>
+### <span data-ttu-id="f710b-135">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="f710b-135">-WhatIf</span></span>
+<span data-ttu-id="f710b-136">顯示 Cmdlet 執行時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="f710b-136">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="f710b-137">不會執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="f710b-137">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -262,31 +262,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="47d10-138">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="47d10-138">CommonParameters</span></span>
-<span data-ttu-id="47d10-139">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="47d10-139">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="47d10-140">如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="47d10-140">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="f710b-138">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="f710b-138">CommonParameters</span></span>
+<span data-ttu-id="f710b-139">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="f710b-139">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="f710b-140">詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="f710b-140">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="47d10-141">輸入</span><span class="sxs-lookup"><span data-stu-id="47d10-141">INPUTS</span></span>
+## <span data-ttu-id="f710b-141">輸入</span><span class="sxs-lookup"><span data-stu-id="f710b-141">INPUTS</span></span>
 
-### <span data-ttu-id="47d10-142">System.object</span><span class="sxs-lookup"><span data-stu-id="47d10-142">System.String</span></span>
+### <span data-ttu-id="f710b-142">System.String</span><span class="sxs-lookup"><span data-stu-id="f710b-142">System.String</span></span>
 
-### <span data-ttu-id="47d10-143">[System.object]. 清單 ' 1 [PSActionGroupReceiverBase，OutputClasses = 1.0.0.0，版本 = 1.0.0.0，Culture = 中性，PublicKeyToken = null]]。）））））</span><span class="sxs-lookup"><span data-stu-id="47d10-143">System.Collections.Generic.List\`1[[Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupReceiverBase, Microsoft.Azure.PowerShell.Cmdlets.Monitor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]</span></span>
+### <span data-ttu-id="f710b-143">System.Collections.Generic.List'1[[Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupReceiverBase, Microsoft.Azure.PowerShell.Cmdlets.Monitor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]</span><span class="sxs-lookup"><span data-stu-id="f710b-143">System.Collections.Generic.List\`1[[Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupReceiverBase, Microsoft.Azure.PowerShell.Cmdlets.Monitor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]</span></span>
 
-### <span data-ttu-id="47d10-144">SwitchParameter 的系統管理功能</span><span class="sxs-lookup"><span data-stu-id="47d10-144">System.Management.Automation.SwitchParameter</span></span>
+### <span data-ttu-id="f710b-144">System.Management.Automation.SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="f710b-144">System.Management.Automation.SwitchParameter</span></span>
 
-### <span data-ttu-id="47d10-145">System.object. IDictionary ' 2 [CoreLib，版本 = 4.0.0.0，Culture = 中性，PublicKeyToken = 7cec85d7bea7798e]，[System.object，，Culture = 中性，PublicKeyToken = 4.0.0.0]]。））））中的 [system.object = 7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="47d10-145">System.Collections.Generic.IDictionary\`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
+### <span data-ttu-id="f710b-145">System.Collections.Generic.IDictionary'2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="f710b-145">System.Collections.Generic.IDictionary\`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
 
-### <span data-ttu-id="47d10-146">PSActionGroupResource 中的 OutputClasses。</span><span class="sxs-lookup"><span data-stu-id="47d10-146">Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource</span></span>
+### <span data-ttu-id="f710b-146">Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource</span><span class="sxs-lookup"><span data-stu-id="f710b-146">Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource</span></span>
 
-## <span data-ttu-id="47d10-147">輸出</span><span class="sxs-lookup"><span data-stu-id="47d10-147">OUTPUTS</span></span>
+## <span data-ttu-id="f710b-147">輸出</span><span class="sxs-lookup"><span data-stu-id="f710b-147">OUTPUTS</span></span>
 
-### <span data-ttu-id="47d10-148">PSActionGroupResource 中的 OutputClasses。</span><span class="sxs-lookup"><span data-stu-id="47d10-148">Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource</span></span>
+### <span data-ttu-id="f710b-148">Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource</span><span class="sxs-lookup"><span data-stu-id="f710b-148">Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource</span></span>
 
-## <span data-ttu-id="47d10-149">筆記</span><span class="sxs-lookup"><span data-stu-id="47d10-149">NOTES</span></span>
+## <span data-ttu-id="f710b-149">筆記</span><span class="sxs-lookup"><span data-stu-id="f710b-149">NOTES</span></span>
 
-## <span data-ttu-id="47d10-150">相關連結</span><span class="sxs-lookup"><span data-stu-id="47d10-150">RELATED LINKS</span></span>
+## <span data-ttu-id="f710b-150">相關連結</span><span class="sxs-lookup"><span data-stu-id="f710b-150">RELATED LINKS</span></span>
 
-<span data-ttu-id="47d10-151">[AzActionGroup](./Get-AzActionGroup.md) 
-[移除-AzActionGroup](./Remove-AzActionGroup.md) 
-[新-AzActionGroupReceiver](./AzureRmActionGroupReceiver.md)</span><span class="sxs-lookup"><span data-stu-id="47d10-151">[Get-AzActionGroup](./Get-AzActionGroup.md)
-[Remove-AzActionGroup](./Remove-AzActionGroup.md)
-[New-AzActionGroupReceiver](./AzureRmActionGroupReceiver.md)</span></span>
+<span data-ttu-id="f710b-151">[Get-AzActionGroup](./Get-AzActionGroup.md) 
+[Remove-AzActionGroup](./Remove-AzActionGroup.md)</span><span class="sxs-lookup"><span data-stu-id="f710b-151">[Get-AzActionGroup](./Get-AzActionGroup.md)
+[Remove-AzActionGroup](./Remove-AzActionGroup.md)</span></span>
+

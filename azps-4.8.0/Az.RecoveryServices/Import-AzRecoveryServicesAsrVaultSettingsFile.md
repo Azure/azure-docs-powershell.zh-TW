@@ -5,41 +5,41 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.recoveryse
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Import-AzRecoveryServicesAsrVaultSettingsFile.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Import-AzRecoveryServicesAsrVaultSettingsFile.md
-ms.openlocfilehash: de3604a4bf1f9c46bf88b2f3cda25982672e9096
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: f71f7e37e4864de10c5387d63c101cd66ed9fd34
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93969136"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398864"
 ---
-# <span data-ttu-id="5ad5b-101">Import-AzRecoveryServicesAsrVaultSettingsFile</span><span class="sxs-lookup"><span data-stu-id="5ad5b-101">Import-AzRecoveryServicesAsrVaultSettingsFile</span></span>
+# <span data-ttu-id="05c29-101">Import-AzRecoveryServicesAsrVaultSettingsFile</span><span class="sxs-lookup"><span data-stu-id="05c29-101">Import-AzRecoveryServicesAsrVaultSettingsFile</span></span>
 
-## <span data-ttu-id="5ad5b-102">摘要</span><span class="sxs-lookup"><span data-stu-id="5ad5b-102">SYNOPSIS</span></span>
-<span data-ttu-id="5ad5b-103">匯入指定的 ASR 電子倉庫設定檔案，以便在 PowerShell 會話中針對後續的 ASR 作業 (PowerShell 會話內容) 設定 vault 內容。</span><span class="sxs-lookup"><span data-stu-id="5ad5b-103">Imports the specified ASR vault settings file to set the vault context(PowerShell session context) for subsequent ASR operations in the PowerShell session.</span></span> 
+## <span data-ttu-id="05c29-102">簡介</span><span class="sxs-lookup"><span data-stu-id="05c29-102">SYNOPSIS</span></span>
+<span data-ttu-id="05c29-103">將指定的 ASR 保存庫設定檔案， (PowerShell 會話上下文的保存庫上下文設定) PowerShell 會話中後續的 ASR 作業。</span><span class="sxs-lookup"><span data-stu-id="05c29-103">Imports the specified ASR vault settings file to set the vault context(PowerShell session context) for subsequent ASR operations in the PowerShell session.</span></span> 
 
-## <span data-ttu-id="5ad5b-104">句法</span><span class="sxs-lookup"><span data-stu-id="5ad5b-104">SYNTAX</span></span>
+## <span data-ttu-id="05c29-104">語法</span><span class="sxs-lookup"><span data-stu-id="05c29-104">SYNTAX</span></span>
 
 ```
 Import-AzRecoveryServicesAsrVaultSettingsFile [-Path] <String> [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="5ad5b-105">說明</span><span class="sxs-lookup"><span data-stu-id="5ad5b-105">DESCRIPTION</span></span>
-<span data-ttu-id="5ad5b-106">匯 **入-AzRecoveryServicesAsrVaultSettingsFile** Cmdlet 會匯入 Azure Site Recovery 保存庫設定檔。</span><span class="sxs-lookup"><span data-stu-id="5ad5b-106">The **Import-AzRecoveryServicesAsrVaultSettingsFile** cmdlet imports the Azure Site Recovery vault settings file.</span></span> <span data-ttu-id="5ad5b-107">Vault 設定檔案是用來在目前的會話中設定後續 Azure 網站恢復作業的保存庫內容。</span><span class="sxs-lookup"><span data-stu-id="5ad5b-107">The vault settings file is used to set the vault context for subsequent Azure Site Recovery operations in the current session.</span></span>
+## <span data-ttu-id="05c29-105">描述</span><span class="sxs-lookup"><span data-stu-id="05c29-105">DESCRIPTION</span></span>
+<span data-ttu-id="05c29-106">**Import-AzRecoveryServicesAsrVaultSettingsFile** Cmdlet 會導入 Azure 網站復原保存庫設定檔案。</span><span class="sxs-lookup"><span data-stu-id="05c29-106">The **Import-AzRecoveryServicesAsrVaultSettingsFile** cmdlet imports the Azure Site Recovery vault settings file.</span></span> <span data-ttu-id="05c29-107">保存庫設定檔案用來設定目前會話中後續 Azure 網站復原作業的保存庫上下文。</span><span class="sxs-lookup"><span data-stu-id="05c29-107">The vault settings file is used to set the vault context for subsequent Azure Site Recovery operations in the current session.</span></span>
 
-## <span data-ttu-id="5ad5b-108">示例</span><span class="sxs-lookup"><span data-stu-id="5ad5b-108">EXAMPLES</span></span>
+## <span data-ttu-id="05c29-108">例子</span><span class="sxs-lookup"><span data-stu-id="05c29-108">EXAMPLES</span></span>
 
-### <span data-ttu-id="5ad5b-109">範例1</span><span class="sxs-lookup"><span data-stu-id="5ad5b-109">Example 1</span></span>
+### <span data-ttu-id="05c29-109">範例 1</span><span class="sxs-lookup"><span data-stu-id="05c29-109">Example 1</span></span>
 ```
 PS C:\> $VaultSettings = Import-AzRecoveryServicesAsrVaultSettingsFile -Path $FilePath
 ```
 
-<span data-ttu-id="5ad5b-110">匯入指定的復原服務電子倉庫設定檔案，並傳回已匯入的電子倉庫的設定。</span><span class="sxs-lookup"><span data-stu-id="5ad5b-110">Imports the specified Recovery Services vault settings file and returns settings of the imported vault.</span></span>
+<span data-ttu-id="05c29-110">匯出指定的修復服務保存庫設定檔案，並返回所導入保存庫的設定。</span><span class="sxs-lookup"><span data-stu-id="05c29-110">Imports the specified Recovery Services vault settings file and returns settings of the imported vault.</span></span>
 
-## <span data-ttu-id="5ad5b-111">參數</span><span class="sxs-lookup"><span data-stu-id="5ad5b-111">PARAMETERS</span></span>
+## <span data-ttu-id="05c29-111">參數</span><span class="sxs-lookup"><span data-stu-id="05c29-111">PARAMETERS</span></span>
 
-### <span data-ttu-id="5ad5b-112">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="5ad5b-112">-DefaultProfile</span></span>
-<span data-ttu-id="5ad5b-113">用於與 Azure 進行通訊的認證、帳戶、租使用者及訂閱。</span><span class="sxs-lookup"><span data-stu-id="5ad5b-113">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+### <span data-ttu-id="05c29-112">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="05c29-112">-DefaultProfile</span></span>
+<span data-ttu-id="05c29-113">用於與 Azure 通訊的認證、帳戶、租使用者和訂閱。</span><span class="sxs-lookup"><span data-stu-id="05c29-113">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
 
 
 ```yaml
@@ -54,9 +54,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="5ad5b-114">-Path</span><span class="sxs-lookup"><span data-stu-id="5ad5b-114">-Path</span></span>
-<span data-ttu-id="5ad5b-115">指定 ASR 電子倉庫設定檔案的資料夾路徑。</span><span class="sxs-lookup"><span data-stu-id="5ad5b-115">Specifies the folder path of the ASR vault settings file.</span></span>
-<span data-ttu-id="5ad5b-116">此檔案可從 [恢復服務] vault 入口網站下載，並儲存在本機。</span><span class="sxs-lookup"><span data-stu-id="5ad5b-116">This file can be downloaded from the Recovery Services vault portal and stored locally.</span></span>
+### <span data-ttu-id="05c29-114">-路徑</span><span class="sxs-lookup"><span data-stu-id="05c29-114">-Path</span></span>
+<span data-ttu-id="05c29-115">指定 ASR 保存庫設定檔案的資料夾路徑。</span><span class="sxs-lookup"><span data-stu-id="05c29-115">Specifies the folder path of the ASR vault settings file.</span></span>
+<span data-ttu-id="05c29-116">此檔案可以從修復服務保存庫入口網站下載，並儲存在本地。</span><span class="sxs-lookup"><span data-stu-id="05c29-116">This file can be downloaded from the Recovery Services vault portal and stored locally.</span></span>
 
 ```yaml
 Type: System.String
@@ -70,8 +70,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="5ad5b-117">-確認</span><span class="sxs-lookup"><span data-stu-id="5ad5b-117">-Confirm</span></span>
-<span data-ttu-id="5ad5b-118">在執行 Cmdlet 之前提示您進行確認。</span><span class="sxs-lookup"><span data-stu-id="5ad5b-118">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="05c29-117">-確認</span><span class="sxs-lookup"><span data-stu-id="05c29-117">-Confirm</span></span>
+<span data-ttu-id="05c29-118">執行 Cmdlet 之前，系統會提示您確認。</span><span class="sxs-lookup"><span data-stu-id="05c29-118">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -85,8 +85,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="5ad5b-119">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="5ad5b-119">-WhatIf</span></span>
-<span data-ttu-id="5ad5b-120">顯示在執行 Cmdlet 時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="5ad5b-120">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="5ad5b-121">未執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="5ad5b-121">The cmdlet is not run.</span></span>
+### <span data-ttu-id="05c29-119">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="05c29-119">-WhatIf</span></span>
+<span data-ttu-id="05c29-120">顯示 Cmdlet 執行時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="05c29-120">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="05c29-121">不會執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="05c29-121">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -100,19 +100,18 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="5ad5b-122">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="5ad5b-122">CommonParameters</span></span>
-<span data-ttu-id="5ad5b-123">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="5ad5b-123">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="5ad5b-124">如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="5ad5b-124">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="05c29-122">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="05c29-122">CommonParameters</span></span>
+<span data-ttu-id="05c29-123">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="05c29-123">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="05c29-124">詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="05c29-124">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="5ad5b-125">輸入</span><span class="sxs-lookup"><span data-stu-id="5ad5b-125">INPUTS</span></span>
+## <span data-ttu-id="05c29-125">輸入</span><span class="sxs-lookup"><span data-stu-id="05c29-125">INPUTS</span></span>
 
-### <span data-ttu-id="5ad5b-126">System.object</span><span class="sxs-lookup"><span data-stu-id="5ad5b-126">System.String</span></span>
+### <span data-ttu-id="05c29-126">System.String</span><span class="sxs-lookup"><span data-stu-id="05c29-126">System.String</span></span>
 
-## <span data-ttu-id="5ad5b-127">輸出</span><span class="sxs-lookup"><span data-stu-id="5ad5b-127">OUTPUTS</span></span>
+## <span data-ttu-id="05c29-127">輸出</span><span class="sxs-lookup"><span data-stu-id="05c29-127">OUTPUTS</span></span>
 
-### <span data-ttu-id="5ad5b-128">RecoveryServices. SiteRecovery. ASRVaultSettings</span><span class="sxs-lookup"><span data-stu-id="5ad5b-128">Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRVaultSettings</span></span>
+### <span data-ttu-id="05c29-128">Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRVaultSettings</span><span class="sxs-lookup"><span data-stu-id="05c29-128">Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRVaultSettings</span></span>
 
-## <span data-ttu-id="5ad5b-129">筆記</span><span class="sxs-lookup"><span data-stu-id="5ad5b-129">NOTES</span></span>
+## <span data-ttu-id="05c29-129">筆記</span><span class="sxs-lookup"><span data-stu-id="05c29-129">NOTES</span></span>
 
-## <span data-ttu-id="5ad5b-130">相關連結</span><span class="sxs-lookup"><span data-stu-id="5ad5b-130">RELATED LINKS</span></span>
+## <span data-ttu-id="05c29-130">相關連結</span><span class="sxs-lookup"><span data-stu-id="05c29-130">RELATED LINKS</span></span>
 
-[<span data-ttu-id="5ad5b-131">AzRecoveryServicesAsrVaultSettingsFile</span><span class="sxs-lookup"><span data-stu-id="5ad5b-131">Get-AzRecoveryServicesAsrVaultSettingsFile</span></span>](./Get-AzRecoveryServicesAsrVaultSettingsFile.md)
