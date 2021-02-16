@@ -3,19 +3,19 @@ external help file: Microsoft.Azure.Commands.RecoveryServicesRdfe.dll-Help.xml
 ms.assetid: 853D5585-2A92-4B65-BA8C-EC06BEE8C237
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: 63274c772c6085fc8c491557851673a38056aa77
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: d7681631d98f80def1076a04ab57f1774bad245c
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "93967337"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100403641"
 ---
 # New-AzureSiteRecoveryProtectionProfileObject
 
-## 摘要
+## 簡介
 建立網站復原保護設定檔物件。
 
-## 句法
+## 語法
 
 ### EnterpriseToAzure (預設) 
 ```
@@ -35,13 +35,13 @@ New-AzureSiteRecoveryProtectionProfileObject [-Name <String>] -ReplicationProvid
  [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## 說明
-**新的-AzureSiteRecoveryProtectionProfileObject** Cmdlet 會建立 Azure Site Recovery 保護設定檔物件。
-這個 Cmdlet 會建立要與其他 Cmdlet 搭配使用的 **ASRProtectionProfile** 物件。
+## 描述
+**New-AzureSiteRecoveryProtectionProfileObject** Cmdlet 會建立 Azure 網站復原保護設定檔物件。
+此 Cmdlet 會建立 **一個 ASRProtectionProfile** 物件，以與其他 Cmdlet 一起使用。
 
-## 示例
+## 例子
 
-### 範例1：建立保護設定檔
+### 範例 1：建立保護設定檔
 ```
 PS C:\> New-AzureSiteRecoveryProtectionProfileObject -ReplicationProvider "HyperVReplica" -AllowReplicaDeletion -ApplicationConsistentSnapshotFrequencyInHours 1 -CompressionEnabled -RecoveryPoints 2 -ReplicationFrequencyInSeconds 30 -ReplicationMethod "Online" -ReplicationPort 8085 -ReplicationStartTime 1
 Name                                     : 
@@ -51,9 +51,9 @@ HyperVReplicaProviderSettingsObject      : Microsoft.Azure.Portal.RecoveryServic
 HyperVReplicaAzureProviderSettingsObject :
 ```
 
-這個命令會建立保護設定檔物件。
+此命令會建立保護設定檔物件。
 
-### 範例2：建立 HyperVReplicaAzure 提供者的保護設定檔
+### 範例 2：建立 HyperVReplicaAzure 提供者的保護設定檔
 ```
 PS C:\> New-AzureSiteRecoveryProtectionProfileObject -Name "ProtectionProfile" -ReplicationProvider "HyperVReplicaAzure" -RecoveryAzureSubscription "cb53d0c3-bd59-4721-89bc-06916a9147ef" -RecoveryAzureStorageAccount "Contoso01" -ReplicationFrequencyInSeconds 30 -RecoveryPoints 1 -Force
 Name                                     : ProtectionProfile
@@ -63,12 +63,12 @@ HyperVReplicaProviderSettingsObject      :
 HyperVReplicaAzureProviderSettingsObject : Microsoft.Azure.Portal.RecoveryServices.Models.Common.HyperVReplicaAzureProviderSettings
 ```
 
-這個命令會建立 HyperVReplicaAzure 提供者的保護設定檔。
+此命令會為 HyperVReplicaAzure 提供者建立保護設定檔。
 
 ## 參數
 
 ### -AllowReplicaDeletion
-表示保護設定檔可讓您刪除複本實體。
+表示保護設定檔可刪除複本實體。
 
 ```yaml
 Type: SwitchParameter
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationConsistentSnapshotFrequencyInHours
-指定應用程式一致快照的頻率（以小時為單位）。
+指定應用程式一致快照的頻率 ，以小時表示。
 
 ```yaml
 Type: Int32
@@ -99,7 +99,7 @@ Accept wildcard characters: False
 
 ### -驗證
 指定要使用的驗證類型。
-此參數可接受的值為： [憑證] 和 [Kerberos]。
+此參數可接受的值為：憑證和 Kerberos。
 
 ```yaml
 Type: String
@@ -114,7 +114,7 @@ Accept wildcard characters: False
 ```
 
 ### -CompressionEnabled
-表示保護設定檔可讓您壓縮。
+表示保護設定檔啟用壓縮。
 
 ```yaml
 Type: SwitchParameter
@@ -128,8 +128,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Force
-強制執行命令，而不要求使用者確認。
+### -強制
+強制執行命令，但不要求使用者確認。
 
 ```yaml
 Type: SwitchParameter
@@ -160,7 +160,7 @@ Accept wildcard characters: False
 
 ### -設定檔
 指定此 Cmdlet 讀取的 Azure 設定檔。
-如果您沒有指定設定檔，此 Cmdlet 會從本機預設設定檔讀取。
+如果您未指定設定檔，此 Cmdlet 會從本地預設設定檔讀取。
 
 ```yaml
 Type: AzureSMProfile
@@ -175,7 +175,7 @@ Accept wildcard characters: False
 ```
 
 ### -RecoveryAzureStorageAccount
-指定要儲存 Azure 副本實體之 Azure 儲存空間帳戶的名稱。
+指定要儲存 Azure 複本實體的 Azure 儲存空間帳戶名稱。
 
 ```yaml
 Type: String
@@ -190,8 +190,8 @@ Accept wildcard characters: False
 ```
 
 ### -RecoveryAzureSubscription
-指定儲存空間帳戶的 Azure 訂閱 ID。
-此參數會參照要儲存 Azure 副本實體的帳戶。
+指定儲存帳戶的 Azure 訂閱識別碼。
+此參數參照儲存 Azure 複本實體的帳戶。
 
 ```yaml
 Type: String
@@ -206,7 +206,7 @@ Accept wildcard characters: False
 ```
 
 ### -RecoveryPoints
-指定要保留復原點數的小時數。
+指定要保留修復點的時數。
 
 ```yaml
 Type: Int32
@@ -220,10 +220,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ReplicationFrequencyInSeconds
-指定複製的頻率間隔（以秒為單位）。 此參數可接受的值為：
+### -ReplicationFrequencyIn自秒鐘
+指定複製的頻率間隔 ，以秒為單位。 此參數可接受的值為：
 
-- 為期 
+- 30 
 - 300 
 - 900
 
@@ -242,9 +242,9 @@ Accept wildcard characters: False
 ### -ReplicationMethod
 指定複製方法。 此參數可接受的值為：
 
-- Online.
-在網路上複製。
-- 處於.
+- 線上。
+複製網路。
+- 離線。
 
 ```yaml
 Type: String
@@ -259,7 +259,7 @@ Accept wildcard characters: False
 ```
 
 ### -ReplicationPort
-指定發生複製的埠號碼。
+指定進行複製的埠數目。
 
 ```yaml
 Type: UInt16
@@ -274,7 +274,7 @@ Accept wildcard characters: False
 ```
 
 ### -ReplicationProvider
-指定複製提供者的類型。 此參數可接受的值為： HyperVReplica 和 HyperVReplicaAzure。
+指定複製提供者的類型。 此參數可接受的值為：HyperVReplica 和 HyperVReplicaAzure。
 
 ```yaml
 Type: String
@@ -288,9 +288,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ReplicationStartTime
+### -複製啟動時間
 指定複製的開始時間。
-在您開始工作後的24小時內指定時間。
+指定工作開始後的 24 小時內的時間。
 
 ```yaml
 Type: TimeSpan
@@ -305,7 +305,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 https://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
@@ -315,6 +315,6 @@ Accept wildcard characters: False
 
 ## 相關連結
 
-[Azure Site Recovery 服務 Cmdlet](./Azure.SiteRecoveryServices.md)
+
 
 

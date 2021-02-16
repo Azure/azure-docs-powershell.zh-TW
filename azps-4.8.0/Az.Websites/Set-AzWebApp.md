@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.websites/s
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Set-AzWebApp.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Set-AzWebApp.md
-ms.openlocfilehash: 0120bd19d1c8930129796e47758bd9f91dccfd5d
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 46c5dae54bf4f59556e62256797a43221d0650b7
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93970741"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100412345"
 ---
 # Set-AzWebApp
 
-## 摘要
+## 簡介
 修改 Azure Web App。
 
-## 句法
+## 語法
 
 ### S1
 ```
@@ -41,29 +41,29 @@ Set-AzWebApp [[-Use32BitWorkerProcess] <Boolean>] [[-AutoSwapSlotName] <String>]
  [-AsJob] [-WebApp] <PSSite> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## 說明
-**AzWebApp** Cmdlet 會設定 Azure Web App。
+## 描述
+**Set-AzWebApp** Cmdlet 會設定 Azure Web App。
 
-## 示例
+## 例子
 
-### 範例1
+### 範例 1
 ```powershell
 PS C:\> Set-AzWebApp -ResourceGroupName "Default-Web-WestUS" -Name "ContosoWebApp" -AppServicePlan "ContosoPlan"
 ```
 
-這個命令會變更與與資源群組預設-Web-WestUS 相關聯之 Web App ContosoWebApp 相關聯的 appservice 方案。 使用連結進一步瞭解如何變更與它相關聯的 appservice 方案和限制。
+此命令會變更與資源群組 Default-Web-WestUS 相關聯的 Web App ContosoWebApp 相關應用程式服務計畫。 使用連結深入瞭解如何變更應用程式服務計畫和與其相關聯的限制式。
 https://docs.microsoft.com/en-us/azure/app-service/app-service-plan-manage#move-an-app-to-another-app-service-plan
 
-### 範例2
+### 範例 2
 ```powershell
 PS C:\> Set-AzWebApp -ResourceGroupName "Default-Web-WestUS" -Name "ContosoWebApp" -HttpLoggingEnabled $true
 ```
 
-這個命令會將與資源群組預設的 Web App ContosoWebApp 的 HttpLoggingEnabled 設定為 true （Web-WestUS）
+此命令將與資源群組 Default-Web-WestUS 相關聯的 Web App ContosoWebApp 的 HTTPLoggingEnabled 設定為 True
 
-### 範例3
+### 範例 3
 
-修改 Azure Web App。  (自動生成) 
+修改 Azure Web App。  (自動) 
 
 ```powershell <!-- Aladdin Generated Example --> 
 Set-AzWebApp -AppSettings <Hashtable> -Name 'ContosoWebApp' -ResourceGroupName 'Default-Web-WestUS'
@@ -72,7 +72,7 @@ Set-AzWebApp -AppSettings <Hashtable> -Name 'ContosoWebApp' -ResourceGroupName '
 ## 參數
 
 ### -AlwaysOn
-確保所有時間都會載入 web 應用程式，而不是在空閒後卸載。
+確保 Web App 會一直載入，而不是閒置後卸貨。
 
 ```yaml
 Type: System.Boolean
@@ -87,7 +87,7 @@ Accept wildcard characters: False
 ```
 
 ### -AppServicePlan
-App 服務方案名稱
+應用程式服務方案名稱
 
 ```yaml
 Type: System.String
@@ -102,7 +102,7 @@ Accept wildcard characters: False
 ```
 
 ### -AppSettings
-App 設定雜湊表。 現有的應用程式設定將會取代，移除任何未提供的設定。
+應用程式設定雜湊表。 現有的應用程式設定將會取代，移除未提供的任何設定。
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -AssignIdentity
-啟用/停用現有 azure webapp 或 functionapp 上的 MSI
+在現有的 Azure Webapp 或函數應用程式上啟用/停用 MSI
 
 ```yaml
 Type: System.Boolean
@@ -147,7 +147,7 @@ Accept wildcard characters: False
 ```
 
 ### -AutoSwapSlotName
-自動交換的目的地槽名稱
+自動交換的目的地插槽名稱
 
 ```yaml
 Type: System.String
@@ -162,7 +162,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureStoragePath
-[Azure 儲存空間] 可在容器的 Web App 內裝載。 使用 New-AzureRmWebAppAzureStoragePath 建立
+要安裝在容器用 Web App 內的 Azure 儲存空間。 使用New-AzureRmWebAppAzureStoragePath建立
 
 ```yaml
 Type: Microsoft.Azure.Commands.WebApps.Models.WebAppAzureStoragePath[]
@@ -177,7 +177,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectionStrings
-連接字串 HashTable
+連接字串雜湊表
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -207,7 +207,7 @@ Accept wildcard characters: False
 ```
 
 ### -ContainerRegistryPassword
-私人容器註冊密碼
+私人容器登錄密碼
 
 ```yaml
 Type: System.Security.SecureString
@@ -222,7 +222,7 @@ Accept wildcard characters: False
 ```
 
 ### -ContainerRegistryUrl
-私人容器登錄伺服器 Url
+Private Container Registry Server Url
 
 ```yaml
 Type: System.String
@@ -237,7 +237,7 @@ Accept wildcard characters: False
 ```
 
 ### -ContainerRegistryUser
-私人容器註冊使用者名稱
+私人容器登錄使用者名稱
 
 ```yaml
 Type: System.String
@@ -267,7 +267,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -282,7 +282,7 @@ Accept wildcard characters: False
 ```
 
 ### -DetailedErrorLoggingEnabled
-詳細的錯誤記錄啟用的布林值
+啟用布林值的詳細錯誤記錄
 
 ```yaml
 Type: System.Boolean
@@ -297,7 +297,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableContainerContinuousDeployment
-啟用/停用容器連續部署 webhook
+啟用/停用容器連續部署網頁元件
 
 ```yaml
 Type: System.Boolean
@@ -312,7 +312,7 @@ Accept wildcard characters: False
 ```
 
 ### -FtpsState
-設定應用程式的 Ftps 狀態值。 允許的值 [AllAllowed |已停用 |FtpsOnly].
+設定應用程式的 Ftps 狀態值。 允許的值 [全部|已停用|FtpsOnly]。
 
 ```yaml
 Type: System.String
@@ -327,7 +327,7 @@ Accept wildcard characters: False
 ```
 
 ### -HandlerMappings
-處理常式映射 IList
+處理常式地圖 IList
 
 ```yaml
 Type: System.Collections.Generic.IList`1[Microsoft.Azure.Management.WebSites.Models.HandlerMapping]
@@ -341,8 +341,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -主機名稱
-WebApp 主機名稱字串陣列
+### -HostNames
+WebApp HostNames 字串陣列
 
 ```yaml
 Type: System.String[]
@@ -356,8 +356,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -HttpLoggingEnabled
-HttpLoggingEnabled 布林值
+### -HTTPLoggingEnabled
+HttpLoggingEnabled Boolean
 
 ```yaml
 Type: System.Boolean
@@ -371,8 +371,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -HttpsOnly
-啟用/停用現有 azure webapp 或 functionapp 上的所有流量重定向至 HTTPS
+### -HTTPsOnly
+啟用/停用將現有 Azure Webapp 或函數應用程式上的所有流量重新導向至 HTTPS
 
 ```yaml
 Type: System.Boolean
@@ -387,7 +387,7 @@ Accept wildcard characters: False
 ```
 
 ### -ManagedPipelineMode
-Managed 管線模式名稱
+受管理的管線模式名稱
 
 ```yaml
 Type: System.String
@@ -403,7 +403,7 @@ Accept wildcard characters: False
 ```
 
 ### -MinTlsVersion
-SSL 要求所需的最小 TLS 版本。 允許值 [1.0 | 1.1 | 1.2]。
+SSL 要求所需的 TLS 最低版本。 允許的值 [1.0 | 1.1 | 1.2]。
 
 ```yaml
 Type: System.String
@@ -448,7 +448,7 @@ Accept wildcard characters: False
 ```
 
 ### -NumberOfWorkers
-要配置的工作分派人數
+要配置的員工人數
 
 ```yaml
 Type: System.Int32
@@ -493,7 +493,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-資源群組名稱
+資源組名
 
 ```yaml
 Type: System.String
@@ -508,7 +508,7 @@ Accept wildcard characters: False
 ```
 
 ### -Use32BitWorkerProcess
-使用32位的輔助進程布林值
+使用 32 位的工作程式布林值
 
 ```yaml
 Type: System.Boolean
@@ -538,7 +538,7 @@ Accept wildcard characters: False
 ```
 
 ### -WebSocketsEnabled
-WebSocketsEnabled 布林值
+WebSocketsEnabled Boolean
 
 ```yaml
 Type: System.Boolean
@@ -553,39 +553,38 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### System.object
+### System.Int32
 
-### System.object
+### System.String
 
-### PSSite 中的 WebApps。
+### Microsoft.Azure.Commands.WebApps.models.PSSite
 
 ## 輸出
 
-### PSSite 中的 WebApps。
+### Microsoft.Azure.Commands.WebApps.models.PSSite
 
 ## 筆記
-下面提供的 Cmdlet 可協助您將 Azure Web App 更新為 **DOTNETCORE**
+以下提供的 Cmdlet 可協助您將 Azure Web App 更新為 **DOTNETCORE**
 
-$PropertiesObject = @ {"CURRENT_STACK" = "dotnetcore"} New-AzResource-PropertyObject $PropertiesObject-ResourceGroupName "Default-WestUS"-ResourceType Microsoft. Web/網站/config-"ContosoWebApp/metadata"-ApiVersion 2018-02-01-強制
+$PropertiesObject = @{ "CURRENT_STACK" = "dotnetcore" } New-AzResource -PropertyObject $PropertiesObject -ResourceGroupName "Default-Web-WestUS" -ResourceType Microsoft.Web/sites/config -ResourceName "ContosoWebApp/metadata" -ApiVersion 2018-02-01 -Force
 
-將預設網頁 WestUS 的值以 webapp 和 ContosoWebApp 的資源群組名稱取代為 webapp 名稱。
+以 Webapp 和 ContosoWebApp 的資源組名取代 Default-Web-WestUS 的值。
  
 ## 相關連結
 
-[AzWebApp](./Get-AzWebApp.md)
+[Get-AzWebApp](./Get-AzWebApp.md)
 
-[新-AzWebApp](./New-AzWebApp.md)
+[New-AzWebApp](./New-AzWebApp.md)
 
-[移除-AzWebApp](./Remove-AzWebApp.md)
+[Remove-AzWebApp](./Remove-AzWebApp.md)
 
-[重新開機-AzWebApp](./Restart-AzWebApp.md)
+[Restart-AzWebApp](./Restart-AzWebApp.md)
 
-[開始-AzWebApp](./Start-AzWebApp.md)
+[Start-AzWebApp](./Start-AzWebApp.md)
 
-[停止 AzWebApp](./Stop-AzWebApp.md)
+[Stop-AzWebApp](./Stop-AzWebApp.md)
 
-[新-AzResource](./New-AzResource.md)

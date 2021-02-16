@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/g
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultCertificate.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultCertificate.md
-ms.openlocfilehash: 5935706c341fac5f0b26d3e4965f226342c3dfc8
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: ccd2762449e24f881a3308c0d11476a1e4626fed
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93612148"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100403573"
 ---
 # Get-AzKeyVaultCertificate
 
-## 摘要
-從金鑰保存庫取得憑證。
+## 簡介
+從金鑰庫獲得憑證。
 
-## 句法
+## 語法
 
 ### ByName (預設) 
 ```
@@ -74,12 +74,12 @@ Get-AzKeyVaultCertificate [-ResourceId] <String> [-Name] <String> [-IncludeVersi
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## 說明
-**AzKeyVaultCertificate** Cmdlet 會從 Azure 金鑰保存庫中的金鑰保存庫取得指定的憑證或憑證版本。
+## 描述
+**Get-AzKeyVaultCertificate** Cmdlet 會從 Azure 金鑰庫的金鑰庫取得指定的憑證或憑證版本。
 
-## 示例
+## 例子
 
-### 範例1：取得憑證
+### 範例 1：取得憑證
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "TestCert01"
 Name        : testCert01
@@ -108,9 +108,9 @@ Created     : 2/8/2016 11:21:45 PM
 Updated     : 2/8/2016 11:21:45 PM
 ```
 
-這個命令會從名為 ContosoKV01 的主要電子倉庫中取得名為 TestCert01 的憑證。
+此命令會從名為 ContosoKV01 的金鑰庫獲得名為 TestCert01 的憑證。
 
-### 範例2：取得已刪除但未針對此金鑰保存庫清除的所有憑證。
+### 範例 2：取得此金鑰庫的所有已刪除但並未清除的憑證。
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName 'contoso' -InRemovedState
 
@@ -140,9 +140,9 @@ Version            :
 Id                 : https://contoso.vault.azure.net:443/certificates/test2
 ```
 
-這個命令會在名為 Contoso 的金鑰保存庫中，取得先前已刪除但尚未清除的所有憑證。
+此命令會獲得先前在名稱為 Contoso 的金鑰庫中刪除但並未清除的所有憑證。
 
-### 範例3：取得已刪除但未針對此金鑰保存庫清除的憑證 MyCert。
+### 範例 3：針對此金鑰庫，獲得已被刪除但並未清除的憑證 MyCert。
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName 'contoso' -Name 'test1' -InRemovedState
 
@@ -182,10 +182,10 @@ Version            : 7fe415d5518240c1a6fce89986b8d334
 Id                 : https://contoso.vault.azure.net:443/certificates/test1/7fe415d5518240c1a6fce89986b8d334
 ```
 
-這個命令會在名為 Contoso 的金鑰保存庫中，取得名為「MyCert」的憑證，但尚未清除。
-這個命令會傳回中繼資料，例如刪除日期，以及此刪除的憑證的排程清除日期。
+此命令會獲得名稱為 "MyCert" 的憑證，該憑證先前已在名為 Contoso 的金鑰庫中刪除，但並未清除。
+此命令會返回中繼資料，例如刪除日期，以及此已刪除憑證的排程清除日期。
 
-### 範例4：使用篩選來列出憑證
+### 範例 4：使用篩選列出憑證
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "test*"
 
@@ -217,7 +217,7 @@ This command gets all certificates starting with "test" from the key vault named
 ## 參數
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -232,7 +232,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludePending
-指定是否要在輸出中包含擱置中的憑證
+指定是否要在輸出中納入擱置中的憑證
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -247,7 +247,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeVersions
-表示此操作會取得所有版本的憑證。
+表示此作業會獲得憑證的所有版本。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -277,7 +277,7 @@ Accept wildcard characters: False
 ```
 
 ### -InRemovedState
-指定是否要在輸出中包含先前刪除的憑證
+指定是否要在輸出中納入先前刪除的憑證
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -292,7 +292,7 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-指定要取得的憑證名稱。
+指定要取得之憑證的名稱。
 
 ```yaml
 Type: System.String
@@ -334,7 +334,7 @@ Accept wildcard characters: False
 ```
 
 ### -VaultName
-指定主要電子倉庫的名稱。
+指定金鑰庫的名稱。
 
 ```yaml
 Type: System.String
@@ -349,7 +349,7 @@ Accept wildcard characters: False
 ```
 
 ### -版本
-指定憑證版本。
+指定憑證的版本。
 
 ```yaml
 Type: System.String
@@ -364,19 +364,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](https://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### PSKeyVault 中的 KeyVault。
+### Microsoft.Azure.Commands.KeyVault.models.PSKeyVault
 
-### System.object
+### System.String
 
 ## 輸出
 
-### PSKeyVaultCertificateIdentityItem 中的 KeyVault。
+### Microsoft.Azure.Commands.KeyVault.models.PSKeyVaultCertificateIdentityItem
 
-### PSKeyVaultCertificate 中的 KeyVault。
+### Microsoft.Azure.Commands.KeyVault.models.PSKeyVaultCertificate
 
 ### Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultCertificate
 
@@ -386,10 +386,9 @@ Accept wildcard characters: False
 
 ## 相關連結
 
-[附加 AzKeyVaultCertificate](./Add-AzKeyVaultCertificate.md)
+[Add-AzKeyVaultCertificate](./Add-AzKeyVaultCertificate.md)
 
-[匯入-AzKeyVaultCertificate](./Import-AzKeyVaultCertificate.md)
+[Import-AzKeyVaultCertificate](./Import-AzKeyVaultCertificate.md)
 
-[移除-AzKeyVaultCertificate](./Remove-AzKeyVaultCertificate.md)
+[Remove-AzKeyVaultCertificate](./Remove-AzKeyVaultCertificate.md)
 
-[復原-AzKeyVaultSecretCertificate](./Undo-AzKeyVaultSecretCertificate.md)
