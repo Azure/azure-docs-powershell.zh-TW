@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/r
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultKey.md
-ms.openlocfilehash: bfdd237ecadadae181d9e9dd3a201580537097f0
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 75d781527a9783c81eba5bd2aacf07d237ef4f8f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94127665"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398354"
 ---
 # Remove-AzKeyVaultKey
 
-## 摘要
-刪除主要電子倉庫中的金鑰。
+## 簡介
+刪除金鑰庫中的金鑰。
 
-## 句法
+## 語法
 
 ### ByVaultName (預設) 
 ```
@@ -32,14 +32,14 @@ Remove-AzKeyVaultKey [-InputObject] <PSKeyVaultKeyIdentityItem> [-Force] [-PassT
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## 說明
-Remove-AzKeyVaultKey Cmdlet 會刪除金鑰保存庫中的金鑰。
-如果不小心刪除了金鑰，則可以使用具有特殊「復原」許可權的使用者 Undo-AzKeyVaultKeyRemoval 來復原金鑰。
-這個 Cmdlet 的值為 high，用於 **ConfirmImpact** 屬性。
+## 描述
+Cmdlet Remove-AzKeyVaultKey刪除金鑰庫中的金鑰。
+如果金鑰意外刪除，則具有特殊Undo-AzKeyVaultKeyRemoval金鑰的使用者可以使用該金鑰來復原。
+此 Cmdlet 的 **ConfirmImpact** 屬性的值為高。
 
-## 示例
+## 例子
 
-### 範例1：從金鑰保存庫移除金鑰
+### 範例 1：從金鑰庫移除金鑰
 ```powershell
 PS C:\> Remove-AzKeyVaultKey -VaultName 'Contoso' -Name 'ITSoftware' -PassThru
 
@@ -57,37 +57,37 @@ Purge Disabled       : False
 Tags                 :
 ```
 
-這個命令會從名為 Contoso 的主要電子倉庫中移除名為 ITSoftware 的索引鍵。
+此命令會從名為 Contoso 的金鑰庫移除名為 ITSoftware 的金鑰。
 
-### 範例2：在未確認使用者的情況下移除金鑰
+### 範例 2：移除沒有使用者確認的金鑰
 ```powershell
 PS C:\> Remove-AzKeyVaultKey -VaultName 'Contoso' -Name 'ITSoftware' -Force
 ```
 
-這個命令會從名為 Contoso 的主要電子倉庫中移除名為 ITSoftware 的索引鍵。
-此命令會指定 *Force* 參數，因此 Cmdlet 不會提示您進行確認。
+此命令會從名為 Contoso 的金鑰庫移除名為 ITSoftware 的金鑰。
+命令會指定 *Force* 參數，因此 Cmdlet 不會提示您確認。
 
-### 範例3：從金鑰 vault 永久清除已刪除的金鑰
+### 範例 3：永久清除從金鑰保存庫刪除的金鑰
 ```powershell
 PS C:\> Remove-AzKeyVaultKey -VaultName 'Contoso' -Name 'ITSoftware' -InRemovedState
 ```
 
-這個命令會從名為 Contoso 的主要電子倉庫永久刪除名為 ITSoftware 的金鑰。
-執行這個指令需要「清除」許可權，該許可權必須是先前已明確授與使用者的此金鑰保存庫。
+此命令會從名為 Contoso 的金鑰保存庫永久移除名為 ITSoftware 的金鑰。
+執行此 Cmdlet 需要'清除」許可權，此許可權必須先前已明確授予此金鑰庫的使用者。
 
-### 範例4：使用管線運算子移除按鍵
+### 範例 4：使用管線運算子移除金鑰
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'Contoso' | Where-Object {$_.Attributes.Enabled -eq $False} | Remove-AzKeyVaultKey
 ```
 
-這個命令會取得名為 Contoso 的主要電子倉庫中的所有金鑰，並使用管線運算子將它們傳遞到 **物件** Cmdlet。
-這個 Cmdlet 會將已 **啟用** 屬性的值 $False 的金鑰傳遞給目前的 Cmdlet。
-該 Cmdlet 會移除這些索引鍵。
+此命令會獲得名稱為 Contoso 的金鑰庫中的所有金鑰，然後使用管線運算子將它們傳遞至 **Where-Object** Cmdlet。
+該 Cmdlet 會將具有值 $False **Enabled** 屬性的按鍵傳遞至目前的 Cmdlet。
+該 Cmdlet 會移除這些按鍵。
 
 ## 參數
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -101,8 +101,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Force
-強制執行命令，而不要求使用者確認。
+### -強制
+強制執行命令，但不要求使用者確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -147,8 +147,8 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-指定要移除的索引鍵名。
-這個 Cmdlet 會根據此參數指定的名稱、主要電子倉庫的名稱和您目前的環境，來構造金鑰的完整功能變數名稱 (FQDN) 。
+指定要移除的金鑰名稱。
+此 Cmdlet 會依據此參數指定的名稱、金鑰庫的名稱，以及您目前的環境，建構金鑰的完全限定功能變數名稱 (FQDN) 。
 
 ```yaml
 Type: System.String
@@ -163,8 +163,8 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-表示此 Cmdlet 會傳回 **KeyVault PSKeyVaultKey** 物件的命令。
-根據預設，這個 Cmdlet 不會產生任何輸出。
+表示此 Cmdlet 會返回 **Microsoft.Azure.Commands.KeyVault.models.PSKeyVaultKey** 物件。
+根據預設，此 Cmdlet 不會產生任何輸出。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -179,8 +179,8 @@ Accept wildcard characters: False
 ```
 
 ### -VaultName
-指定要從中移除金鑰的主要電子倉庫名稱。
-這個 Cmdlet 會根據此參數指定的名稱和您目前的環境，來構造金鑰 vault 的 FQDN。
+指定要移除金鑰的金鑰庫名稱。
+此 Cmdlet 會依據此參數指定的名稱和您目前的環境，建構金鑰庫的 FQDN。
 
 ```yaml
 Type: System.String
@@ -195,7 +195,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，系統會提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -210,9 +210,9 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。
-未執行 Cmdlet。顯示在執行 Cmdlet 時會發生什麼情況。
-未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。
+不會執行 Cmdlet。顯示 Cmdlet 執行時會發生什麼情況。
+不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -227,11 +227,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### PSKeyVaultKeyIdentityItem 中的 KeyVault。
+### Microsoft.Azure.Commands.KeyVault.models.PSKeyVaultKeyIdentityItem
 
 ## 輸出
 
@@ -241,11 +241,10 @@ Accept wildcard characters: False
 
 ## 相關連結
 
-[附加 AzKeyVaultKey](./Add-AzKeyVaultKey.md)
+[Add-AzKeyVaultKey](./Add-AzKeyVaultKey.md)
 
-[AzKeyVaultKey](./Get-AzKeyVaultKey.md)
+[Get-AzKeyVaultKey](./Get-AzKeyVaultKey.md)
 
-[Set-AzKeyVaultKeyAttribute](./Set-AzKeyVaultKeyAttribute.md)
 
-[復原-AzKeyVaultKeyRemoval](./Undo-AzKeyVaultKeyRemoval.md)
+[Undo-AzKeyVaultKeyRemoval](./Undo-AzKeyVaultKeyRemoval.md)
 

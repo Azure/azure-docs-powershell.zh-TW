@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.datafactor
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Get-AzDataFactoryV2DataFlow.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Get-AzDataFactoryV2DataFlow.md
-ms.openlocfilehash: b4af5eae61e47d8617eb270451f406f349162f50
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 7bd25d444a4277e2aa423026be551fab1c5f360e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93798958"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398405"
 ---
 # Get-AzDataFactoryV2DataFlow
 
-## 摘要
-取得資料工廠中資料流程的相關資訊。
+## 簡介
+在 Data Factory 中獲得資料流程相關資訊。
 
-## 句法
+## 語法
 
 ### ByFactoryName (預設) 
 ```
@@ -37,13 +37,13 @@ Get-AzDataFactoryV2DataFlow [-ResourceId] <String> [-DefaultProfile <IAzureConte
  [<CommonParameters>]
 ```
 
-## 說明
-Get-AzDataFactoryV2DataFlow Cmdlet 會取得 Azure 資料工廠中資料流程的相關資訊。
-如果您指定資料流程程的名稱，此 Cmdlet 會取得該資料流程的相關資訊。
-如果您沒有指定名稱，此 Cmdlet 會取得資料工廠中所有資料流程的相關資訊。
+## 描述
+Cmdlet Get-AzDataFactoryV2DataFlow Azure Data Factory 中有關資料流程的資訊。
+如果您指定資料流程的名稱，此 Cmdlet 會獲得該資料流程的資訊。
+如果您未指定名稱，此 Cmdlet 會獲得資料工廠中所有資料流程的資訊。
 
-## 示例
-### 範例1：取得所有資料流程程的相關資訊
+## 例子
+### 範例 1：取得所有資料流程的資訊
 ```powershell
 PS C:\> Get-AzDataFactoryV2DataFlow -ResourceGroupName "ADF" -DataFactoryName "WikiADF"
 
@@ -54,9 +54,9 @@ dataflow1                      WikiADF               adf Microsoft.Azure.Managem
 dataflow3                      WikiADF               adf Microsoft.Azure.Management.DataFactory.Models.MappingDataFlow
 ```
 
-這個命令會取得資料工廠（名為 WikiADF）中所有資料流程的相關資訊。
+此命令會獲得名稱為 WikiADF 的資料工廠中所有資料流程的資訊。
 
-### 範例2：取得特定資料流程程的相關資訊
+### 範例 2：取得特定資料流程的資訊
 ```powershell
 PS C:\> Get-AzDataFactoryV2DataFlow -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "dataflow1"
 
@@ -65,7 +65,7 @@ DataFlowName           DataFactoryName ResourceGroupName                        
 TaxiDemo1                      WikiADF               adf Microsoft.Azure.Management.DataFactory.Models.MappingDataFlow
 ```
 
-這個命令會取得資料工廠（名為 WikiADF）中名為 dataflow1 的資料流程的相關資訊。
+此命令會從名稱為 WikiADF 的資料工廠中，獲得名為 Dataflow1 的資料流程程相關資訊。
 
 ## 參數
 
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### -DataFactoryName
-資料工廠名稱。
+資料出廠名稱。
 
 ```yaml
 Type: System.String
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 Azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-資料流程程名稱。
+資料流程名稱。
 
 ```yaml
 Type: System.String
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-資源群組的名稱。
+資源組名。
 
 ```yaml
 Type: System.String
@@ -160,11 +160,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### System.object
+### System.String
 
 ### Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataFactory
 
@@ -173,10 +173,8 @@ Accept wildcard characters: False
 ### Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataFlow
 
 ## 筆記
-關鍵字： azure，azurerm，arm，資源，管理，管理員，資料，工廠
+關鍵字：azure、azurerm、arm、resource、management、manager、data、azure
 
 ## 相關連結
 
-[Set-AzDataFactoryDataFlow](./Set-AzDataFactoryDataFlow.md)
 
-[移除-AzDataFactoryDataFlow](./Remove-AzDataFactoryDataFlow.md)
