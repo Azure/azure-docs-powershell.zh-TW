@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzResource.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzResource.md
-ms.openlocfilehash: ecd70916f1ddb6e365fb9f880db9974f6c9ae771
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 9e8eea48238bd177f3a8556691db48686a57dd99
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94126888"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100414861"
 ---
 # Remove-AzResource
 
-## 摘要
+## 簡介
 移除資源。
 
-## 句法
+## 語法
 
 ### ByResourceId (預設) 
 ```
@@ -41,26 +41,26 @@ Remove-AzResource [-AsJob] -ResourceName <String> -ResourceType <String> [-Exten
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## 說明
-**AzResource** Cmdlet 會移除 Azure 資源。
+## 描述
+**Remove-AzResource** Cmdlet 會移除 Azure 資源。
 
-## 示例
+## 例子
 
-### 範例1：移除網站資源
+### 範例 1：移除網站資源
 ```
 PS C:\>Remove-AzResource -ResourceId "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/ResourceGroup11/providers/Microsoft.Web/sites/ContosoSite" -Force
 ```
 
-這個命令會移除名為 ContosoSite 的網站資源。
-此範例會使用 [訂閱識別碼] 的預留位置值。
+此命令會移除名為 ContosoSite 的網站資源。
+此範例使用訂閱識別碼的預留位置值。
 命令會指定 *Force* 參數。
-因此，它不會提示您進行確認。
+因此，它不會提示您確認。
 
 ## 參數
 
 ### -ApiVersion
 指定要使用的資源提供者 API 版本。
-如果您沒有指定版本，此 Cmdlet 會使用最新的可用版本。
+如果您未指定版本，此 Cmdlet 會使用最新的可用版本。
 
 ```yaml
 Type: System.String
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -105,7 +105,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExtensionResourceName
-指定此 Cmdlet 移除之資源之延伸資源的名稱。
+指定此 Cmdlet 移除之資源的延伸資源名稱。
 例如，若要指定資料庫，請使用下列格式：伺服器名稱 `/` 資料庫名稱
 
 ```yaml
@@ -121,8 +121,8 @@ Accept wildcard characters: False
 ```
 
 ### -ExtensionResourceType
-指定延伸資源的資源類型。
-指定資源的延伸資源類型。
+指定擴充資源的資源類型。
+指定資源的擴充資源類型。
 例如： `Microsoft.Sql/Servers/Databases`
 
 ```yaml
@@ -137,8 +137,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Force
-強制執行命令，而不要求使用者確認。
+### -強制
+強制執行命令，但不要求使用者確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -153,8 +153,8 @@ Accept wildcard characters: False
 ```
 
 ### -ODataQuery
-指定 (OData) 樣式篩選的開放式資料通訊協定。
-除了任何其他篩選器之外，此 Cmdlet 還會將此值附加到要求中。
+指定開啟資料通訊協定 (OData) 樣式篩選。
+除了任何其他篩選之外，此 Cmdlet 會附加此值至要求。
 
 ```yaml
 Type: System.String
@@ -168,8 +168,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -預先
-表示此 Cmdlet 會在自動決定要使用哪個版本時，考慮預發行 API 版本。
+### -Pre
+表示此 Cmdlet 會在自動決定要使用哪個版本時，考慮測試版 API 版本。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -184,7 +184,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-指定此 Cmdlet 從中移除資源的資源群組的名稱。
+指定此 Cmdlet 從其中移除資源的資源組名。
 
 ```yaml
 Type: System.String
@@ -199,7 +199,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-指定此 Cmdlet 移除之資源的完整限定資源識別碼。
+指定此 Cmdlet 移除之資源之完整資源識別碼。
 識別碼包含訂閱，如下列範例所示： `/subscriptions/` 訂閱識別碼`/providers/Microsoft.Sql/servers/ContosoServer/databases/ContosoDatabase`
 
 ```yaml
@@ -214,8 +214,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -CoNtext.resourcename
-指定此 Cmdlet 移除之資源的名稱。
+### -ResourceName
+指定此 Cmdlet 移除的資源名稱。
 例如，若要指定資料庫，請使用下列格式： `ContosoServer/ContosoDatabase`
 
 ```yaml
@@ -232,7 +232,7 @@ Accept wildcard characters: False
 
 ### -ResourceType
 指定此 Cmdlet 移除的資源類型。
-舉例來說，對於資料庫而言，資源類型如下所示： `Microsoft.Sql/Servers/Databases`
+例如，對於資料庫，資源類型如下所示： `Microsoft.Sql/Servers/Databases`
 
 ```yaml
 Type: System.String
@@ -262,7 +262,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，系統會提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -277,8 +277,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。
-未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。
+不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -293,27 +293,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### System.object
+### System.String
 
 ## 輸出
 
-### System.object
+### System.Boolean
 
 ## 筆記
 
 ## 相關連結
 
-[尋找-AzResource](./Find-AzResource.md)
 
-[AzResource](./Get-AzResource.md)
+[Get-AzResource](./Get-AzResource.md)
 
-[移動流覽 AzResource](./Move-AzResource.md)
+[Move-AzResource](./Move-AzResource.md)
 
-[新-AzResource](./New-AzResource.md)
+[New-AzResource](./New-AzResource.md)
 
 [Set-AzResource](./Set-AzResource.md)
 
