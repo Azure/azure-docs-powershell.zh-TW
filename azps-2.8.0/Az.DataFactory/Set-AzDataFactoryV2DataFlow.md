@@ -5,39 +5,39 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.datafactor
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Set-AzDataFactoryV2DataFlow.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Set-AzDataFactoryV2DataFlow.md
-ms.openlocfilehash: a563d6b0e72c60632d99df2668552b649ffb1662
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 7938a4b9b96cbbd61d0bb484ddc3129dfd23f215
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93612912"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100411512"
 ---
-# <span data-ttu-id="03f75-101">Set-AzDataFactoryV2DataFlow</span><span class="sxs-lookup"><span data-stu-id="03f75-101">Set-AzDataFactoryV2DataFlow</span></span>
+# <span data-ttu-id="0cd14-101">Set-AzDataFactoryV2DataFlow</span><span class="sxs-lookup"><span data-stu-id="0cd14-101">Set-AzDataFactoryV2DataFlow</span></span>
 
-## <span data-ttu-id="03f75-102">摘要</span><span class="sxs-lookup"><span data-stu-id="03f75-102">SYNOPSIS</span></span>
-<span data-ttu-id="03f75-103">在資料工廠中建立資料流程。</span><span class="sxs-lookup"><span data-stu-id="03f75-103">Creates a data flow in Data Factory.</span></span>
+## <span data-ttu-id="0cd14-102">簡介</span><span class="sxs-lookup"><span data-stu-id="0cd14-102">SYNOPSIS</span></span>
+<span data-ttu-id="0cd14-103">在 Data Factory 中建立資料流程。</span><span class="sxs-lookup"><span data-stu-id="0cd14-103">Creates a data flow in Data Factory.</span></span>
 
-## <span data-ttu-id="03f75-104">句法</span><span class="sxs-lookup"><span data-stu-id="03f75-104">SYNTAX</span></span>
+## <span data-ttu-id="0cd14-104">語法</span><span class="sxs-lookup"><span data-stu-id="0cd14-104">SYNTAX</span></span>
 
-### <span data-ttu-id="03f75-105">ByFactoryName (預設) </span><span class="sxs-lookup"><span data-stu-id="03f75-105">ByFactoryName (Default)</span></span>
+### <span data-ttu-id="0cd14-105">ByFactoryName (預設) </span><span class="sxs-lookup"><span data-stu-id="0cd14-105">ByFactoryName (Default)</span></span>
 ```
 Set-AzDataFactoryV2DataFlow [-Name] <String> [-DefinitionFile] <String> [-Force] [-ResourceGroupName] <String>
  [-DataFactoryName] <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-### <span data-ttu-id="03f75-106">ByResourceId</span><span class="sxs-lookup"><span data-stu-id="03f75-106">ByResourceId</span></span>
+### <span data-ttu-id="0cd14-106">ByResourceId</span><span class="sxs-lookup"><span data-stu-id="0cd14-106">ByResourceId</span></span>
 ```
 Set-AzDataFactoryV2DataFlow [-DefinitionFile] <String> [-Force] [-ResourceId] <String>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="03f75-107">說明</span><span class="sxs-lookup"><span data-stu-id="03f75-107">DESCRIPTION</span></span>
-<span data-ttu-id="03f75-108">Set-AzDataFactoryV2DataFlow Cmdlet 會建立資料流程程或更新 Azure 資料工廠中現有的資料流程。</span><span class="sxs-lookup"><span data-stu-id="03f75-108">The Set-AzDataFactoryV2DataFlow cmdlet creates a data flow or updates an existing data flow in Azure Data Factory.</span></span>
+## <span data-ttu-id="0cd14-107">描述</span><span class="sxs-lookup"><span data-stu-id="0cd14-107">DESCRIPTION</span></span>
+<span data-ttu-id="0cd14-108">Cmdlet Set-AzDataFactoryV2DataFlow建立資料流程，或更新 Azure Data Factory 中現有的資料流程。</span><span class="sxs-lookup"><span data-stu-id="0cd14-108">The Set-AzDataFactoryV2DataFlow cmdlet creates a data flow or updates an existing data flow in Azure Data Factory.</span></span>
 
-## <span data-ttu-id="03f75-109">示例</span><span class="sxs-lookup"><span data-stu-id="03f75-109">EXAMPLES</span></span>
+## <span data-ttu-id="0cd14-109">例子</span><span class="sxs-lookup"><span data-stu-id="0cd14-109">EXAMPLES</span></span>
 
-### <span data-ttu-id="03f75-110">範例1：建立資料流程程</span><span class="sxs-lookup"><span data-stu-id="03f75-110">Example 1: Create a data flow</span></span>
+### <span data-ttu-id="0cd14-110">範例 1：建立資料流程</span><span class="sxs-lookup"><span data-stu-id="0cd14-110">Example 1: Create a data flow</span></span>
 ```powershell
 PS C:\> Set-AzDataFactoryV2DataFlow -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "TaxiDemo1" -DefinitionFile "C:\\samples\\WikiSample\\TaxiDemo1.json"
 
@@ -46,13 +46,13 @@ DataFlowName           DataFactoryName ResourceGroupName                        
 TaxiDemo1                      WikiADF               adf Microsoft.Azure.Management.DataFactory.Models.MappingDataFlow
 ```
 
-<span data-ttu-id="03f75-111">這個命令會在名為 WikiADF 的資料工廠中建立名為 TaxiDemo1 的資料流程。</span><span class="sxs-lookup"><span data-stu-id="03f75-111">This command creates a data flow named TaxiDemo1 in the data factory named WikiADF.</span></span>
-<span data-ttu-id="03f75-112">此命令會根據檔案中 TaxiDemo1.js的資訊來控制資料流程。</span><span class="sxs-lookup"><span data-stu-id="03f75-112">The command bases the data flow on information in the TaxiDemo1.json file.</span></span>
+<span data-ttu-id="0cd14-111">此命令在名稱為 WikiADF 的資料工廠中，建立名為一個名為一個以一個資料流程程命名的一個資料流程程。</span><span class="sxs-lookup"><span data-stu-id="0cd14-111">This command creates a data flow named TaxiDemo1 in the data factory named WikiADF.</span></span>
+<span data-ttu-id="0cd14-112">命令以檔案中資料TaxiDemo1.js的基礎。</span><span class="sxs-lookup"><span data-stu-id="0cd14-112">The command bases the data flow on information in the TaxiDemo1.json file.</span></span>
 
-## <span data-ttu-id="03f75-113">參數</span><span class="sxs-lookup"><span data-stu-id="03f75-113">PARAMETERS</span></span>
+## <span data-ttu-id="0cd14-113">參數</span><span class="sxs-lookup"><span data-stu-id="0cd14-113">PARAMETERS</span></span>
 
-### <span data-ttu-id="03f75-114">-DataFactoryName</span><span class="sxs-lookup"><span data-stu-id="03f75-114">-DataFactoryName</span></span>
-<span data-ttu-id="03f75-115">資料工廠名稱。</span><span class="sxs-lookup"><span data-stu-id="03f75-115">The data factory name.</span></span>
+### <span data-ttu-id="0cd14-114">-DataFactoryName</span><span class="sxs-lookup"><span data-stu-id="0cd14-114">-DataFactoryName</span></span>
+<span data-ttu-id="0cd14-115">資料出廠名稱。</span><span class="sxs-lookup"><span data-stu-id="0cd14-115">The data factory name.</span></span>
 
 ```yaml
 Type: System.String
@@ -66,8 +66,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="03f75-116">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="03f75-116">-DefaultProfile</span></span>
-<span data-ttu-id="03f75-117">用於與 Azure 進行通訊的認證、帳戶、租使用者及訂閱。</span><span class="sxs-lookup"><span data-stu-id="03f75-117">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+### <span data-ttu-id="0cd14-116">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="0cd14-116">-DefaultProfile</span></span>
+<span data-ttu-id="0cd14-117">用於與 Azure 通訊的認證、帳戶、租使用者和訂閱。</span><span class="sxs-lookup"><span data-stu-id="0cd14-117">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -81,8 +81,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="03f75-118">-DefinitionFile</span><span class="sxs-lookup"><span data-stu-id="03f75-118">-DefinitionFile</span></span>
-<span data-ttu-id="03f75-119">JSON 檔路徑。</span><span class="sxs-lookup"><span data-stu-id="03f75-119">The JSON file path.</span></span>
+### <span data-ttu-id="0cd14-118">-DefinitionFile</span><span class="sxs-lookup"><span data-stu-id="0cd14-118">-DefinitionFile</span></span>
+<span data-ttu-id="0cd14-119">JSON 檔案路徑。</span><span class="sxs-lookup"><span data-stu-id="0cd14-119">The JSON file path.</span></span>
 
 ```yaml
 Type: System.String
@@ -96,8 +96,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="03f75-120">-Force</span><span class="sxs-lookup"><span data-stu-id="03f75-120">-Force</span></span>
-<span data-ttu-id="03f75-121">不要要求確認。</span><span class="sxs-lookup"><span data-stu-id="03f75-121">Don't ask for confirmation.</span></span>
+### <span data-ttu-id="0cd14-120">-強制</span><span class="sxs-lookup"><span data-stu-id="0cd14-120">-Force</span></span>
+<span data-ttu-id="0cd14-121">請勿要求確認。</span><span class="sxs-lookup"><span data-stu-id="0cd14-121">Don't ask for confirmation.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -111,8 +111,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="03f75-122">-名稱</span><span class="sxs-lookup"><span data-stu-id="03f75-122">-Name</span></span>
-<span data-ttu-id="03f75-123">資料流程程名稱。</span><span class="sxs-lookup"><span data-stu-id="03f75-123">The data flow name.</span></span>
+### <span data-ttu-id="0cd14-122">-名稱</span><span class="sxs-lookup"><span data-stu-id="0cd14-122">-Name</span></span>
+<span data-ttu-id="0cd14-123">資料流程名稱。</span><span class="sxs-lookup"><span data-stu-id="0cd14-123">The data flow name.</span></span>
 
 ```yaml
 Type: System.String
@@ -126,8 +126,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="03f75-124">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="03f75-124">-ResourceGroupName</span></span>
-<span data-ttu-id="03f75-125">資源群組的名稱。</span><span class="sxs-lookup"><span data-stu-id="03f75-125">The resource group name.</span></span>
+### <span data-ttu-id="0cd14-124">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="0cd14-124">-ResourceGroupName</span></span>
+<span data-ttu-id="0cd14-125">資源組名。</span><span class="sxs-lookup"><span data-stu-id="0cd14-125">The resource group name.</span></span>
 
 ```yaml
 Type: System.String
@@ -141,8 +141,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="03f75-126">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="03f75-126">-ResourceId</span></span>
-<span data-ttu-id="03f75-127">Azure 資源識別碼。</span><span class="sxs-lookup"><span data-stu-id="03f75-127">The Azure resource ID.</span></span>
+### <span data-ttu-id="0cd14-126">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="0cd14-126">-ResourceId</span></span>
+<span data-ttu-id="0cd14-127">Azure 資源識別碼。</span><span class="sxs-lookup"><span data-stu-id="0cd14-127">The Azure resource ID.</span></span>
 
 ```yaml
 Type: System.String
@@ -156,8 +156,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="03f75-128">-確認</span><span class="sxs-lookup"><span data-stu-id="03f75-128">-Confirm</span></span>
-<span data-ttu-id="03f75-129">在執行 Cmdlet 之前提示您進行確認。</span><span class="sxs-lookup"><span data-stu-id="03f75-129">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="0cd14-128">-確認</span><span class="sxs-lookup"><span data-stu-id="0cd14-128">-Confirm</span></span>
+<span data-ttu-id="0cd14-129">執行 Cmdlet 之前，系統會提示您確認。</span><span class="sxs-lookup"><span data-stu-id="0cd14-129">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -171,9 +171,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="03f75-130">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="03f75-130">-WhatIf</span></span>
-<span data-ttu-id="03f75-131">顯示在執行 Cmdlet 時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="03f75-131">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="03f75-132">未執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="03f75-132">The cmdlet is not run.</span></span>
+### <span data-ttu-id="0cd14-130">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="0cd14-130">-WhatIf</span></span>
+<span data-ttu-id="0cd14-131">顯示 Cmdlet 執行時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="0cd14-131">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="0cd14-132">不會執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="0cd14-132">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -187,22 +187,20 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="03f75-133">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="03f75-133">CommonParameters</span></span>
-<span data-ttu-id="03f75-134">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="03f75-134">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="03f75-135">如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="03f75-135">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="0cd14-133">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="0cd14-133">CommonParameters</span></span>
+<span data-ttu-id="0cd14-134">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="0cd14-134">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="0cd14-135">詳細資訊[請參閱about_CommonParameters。](https://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="0cd14-135">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="03f75-136">輸入</span><span class="sxs-lookup"><span data-stu-id="03f75-136">INPUTS</span></span>
+## <span data-ttu-id="0cd14-136">輸入</span><span class="sxs-lookup"><span data-stu-id="0cd14-136">INPUTS</span></span>
 
-### <span data-ttu-id="03f75-137">System.object</span><span class="sxs-lookup"><span data-stu-id="03f75-137">System.String</span></span>
+### <span data-ttu-id="0cd14-137">System.String</span><span class="sxs-lookup"><span data-stu-id="0cd14-137">System.String</span></span>
 
-## <span data-ttu-id="03f75-138">輸出</span><span class="sxs-lookup"><span data-stu-id="03f75-138">OUTPUTS</span></span>
+## <span data-ttu-id="0cd14-138">輸出</span><span class="sxs-lookup"><span data-stu-id="0cd14-138">OUTPUTS</span></span>
 
-### <span data-ttu-id="03f75-139">Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataFlow</span><span class="sxs-lookup"><span data-stu-id="03f75-139">Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataFlow</span></span>
+### <span data-ttu-id="0cd14-139">Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataFlow</span><span class="sxs-lookup"><span data-stu-id="0cd14-139">Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataFlow</span></span>
 
-## <span data-ttu-id="03f75-140">筆記</span><span class="sxs-lookup"><span data-stu-id="03f75-140">NOTES</span></span>
-<span data-ttu-id="03f75-141">關鍵字： azure，azurerm，arm，資源，管理，管理員，資料，工廠</span><span class="sxs-lookup"><span data-stu-id="03f75-141">Keywords: azure, azurerm, arm, resource, management, manager, data, factories</span></span>
+## <span data-ttu-id="0cd14-140">筆記</span><span class="sxs-lookup"><span data-stu-id="0cd14-140">NOTES</span></span>
+<span data-ttu-id="0cd14-141">關鍵字：azure、azurerm、arm、resource、management、manager、data、azure</span><span class="sxs-lookup"><span data-stu-id="0cd14-141">Keywords: azure, azurerm, arm, resource, management, manager, data, factories</span></span>
 
-## <span data-ttu-id="03f75-142">相關連結</span><span class="sxs-lookup"><span data-stu-id="03f75-142">RELATED LINKS</span></span>
+## <span data-ttu-id="0cd14-142">相關連結</span><span class="sxs-lookup"><span data-stu-id="0cd14-142">RELATED LINKS</span></span>
 
-[<span data-ttu-id="03f75-143">AzDataFactoryDataFlow</span><span class="sxs-lookup"><span data-stu-id="03f75-143">Get-AzDataFactoryDataFlow</span></span>](./Get-AzDataFactoryDataFlow.md)
 
-[<span data-ttu-id="03f75-144">移除-AzDataFactoryDataFlow</span><span class="sxs-lookup"><span data-stu-id="03f75-144">Remove-AzDataFactoryDataFlow</span></span>](./Remove-AzDataFactoryDataFlow.md)
