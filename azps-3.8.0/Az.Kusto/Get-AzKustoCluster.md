@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.kusto/get-
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Kusto/Kusto/help/Get-AzKustoCluster.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Kusto/Kusto/help/Get-AzKustoCluster.md
-ms.openlocfilehash: 6e24eaee77e8965ea34cbfcd8c169d675bce56d8
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 5a5450629024dbca8433bee79bfe9d2fa7119025
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93957076"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398031"
 ---
 # Get-AzKustoCluster
 
-## 摘要
-列出資源群組中的所有 Kusto 群集，或取得特定的 Kusto 群集。
+## 簡介
+列出資源群組中所有的 Kusto 群組，或取得特定的 Kusto 群組。
 
-## 句法
+## 語法
 
 ### ByClusterOrResourceGroupOrSubscription (預設) 
 ```
@@ -30,25 +30,25 @@ Get-AzKustoCluster -ResourceGroupName <String> [-Name <String>] [-DefaultProfile
 Get-AzKustoCluster -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## 說明
-列出資源群組中的所有 Kusto 群集，或取得特定的 Kusto 群集。
+## 描述
+列出資源群組中所有的 Kusto 群組，或取得特定的 Kusto 群組。
 
-## 示例
+## 例子
 
-### 範例 1-列出資源群組中的所有 Kusto 群集
+### 範例 1 - 列出資源群組中所有的 Kusto 群組
 
-類型： Kusto/群集 Id：/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster1 ResourceGroup： testrg 名稱： mykustocluster1 位置：中美式容量： 3 Sku： D13_v2 ProvisioningState： Succeeded 狀態：執行標記： {} Uri： https://mykustocluster1.centralus.kusto.windows.net DataIngestionUri： https://ingest-mykustocluster1.centralus.kusto.windows.net
+類型 ： Microsoft.Kusto/Clusters Id ： /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster1 ResourceGroup ： testrg Name ： mykustocluster1 Location ： Central US Capacity ： 3 SKU ： D13_v2 ProvisioningState ： Succeeded State ： Running Tag ： {} `https://mykustocluster1.centralus.kusto.windows.net` DataIngestionUri： `https://ingest-mykustocluster1.centralus.kusto.windows.net`
 
-類型： Kusto/群集 Id：/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster2 ResourceGroup： testrg 名稱： mykustocluster2 位置：中美式容量： 5 Sku： D13_v2 ProvisioningState： Succeeded 狀態：執行標記： {} Uri： https://mykustocluster2.centralus.kusto.windows.net DataIngestionUri： https://ingest-mykustocluster2.centralus.kusto.windows.net
+類型 ： Microsoft.Kusto/Clusters Id ： /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster2 ResourceGroup ： testrg Name ： mykustocluster2 Location ： Central US Capacity ： 5 SKU ： D13_v2 ProvisioningState ： succeeded State ： Running Tag ： {} `https://mykustocluster2.centralus.kusto.windows.net` DataIngestionUri： `https://ingest-mykustocluster2.centralus.kusto.windows.net`
 
 
 ```
 PS C:\> Get-AzKustoCluster -ResourceGroupName testrg
 ```
 
-上述命令會列出 [資源] 群組中的所有 Kusto 群集 [testrg]。
+上述命令會列出資源群組 "testrg" 中所有的 Kusto 群組。
 
-### 範例 2-依名稱取得特定的 Kusto 群集
+### 範例 2 - 根據名稱取得特定的 Kusto 集區
 
 ```
 PS C:\> Get-AzKustoCluster -ResourceGroupName testrg -Name mykustocluster
@@ -67,9 +67,9 @@ Uri               : https://mykustocluster.centralus.kusto.windows.net
 DataIngestionUri  : https://ingest-mykustocluster.centralus.kusto.windows.net
 ```
 
-上述命令會傳回資源群組 "testrg" 中名為 "mykustocluster" 的 Kusto 群集。
+上述命令會返回資源群組 "testrg" 中名為 "mykustocluster" 的 Kusto 叢集。
 
-### 範例 3-依資源識別碼取得特定的 Kusto 群集
+### 範例 3 - 根據資源識別碼取得特定的 Kusto 組
 
 ```
 PS C:\> Get-AzKustoCluster -ResourceId /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/clusters/mykustocluster
@@ -87,12 +87,12 @@ Uri               : https://mykustocluster.centralus.kusto.windows.net
 DataIngestionUri  : https://ingest-mykustocluster.centralus.kusto.windows.net
 ```
 
-上述命令會傳回資源群組 "testrg" 中名為 "mykustocluster" 的 Kusto 群集。
+上述命令會返回資源群組 "testrg" 中名為 "mykustocluster" 的 Kusto 叢集。
 
 ## 參數
 
 ### -DefaultProfile
-用於與 Azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -107,7 +107,7 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-特定群集的名稱。
+特定組名。
 
 ```yaml
 Type: System.String
@@ -122,7 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-使用者想要在其上取得群集的資源群組的名稱。
+使用者想要在資源群組中取回群組的資源組名。
 
 ```yaml
 Type: System.String
@@ -137,7 +137,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Kusto [群集 ResourceID]。
+Kusto cluster ResourceID.
 
 ```yaml
 Type: System.String
@@ -152,15 +152,15 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 http://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
-### System.object
+### System.String
 
 ## 輸出
 
-### PSKustoCluster 中的 Kusto。
+### Microsoft.Azure.Commands.Kusto.models.PSKustoCluster
 
 ## 筆記
 
