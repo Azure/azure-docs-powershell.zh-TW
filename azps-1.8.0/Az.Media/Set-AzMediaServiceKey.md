@@ -6,48 +6,48 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.media/set-
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Media/Media/help/Set-AzMediaServiceKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Media/Media/help/Set-AzMediaServiceKey.md
-ms.openlocfilehash: e9d117e9e81ee1189031b9e1f2f0a4094e9b9fcf
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: c80c9b411d360de0b46cd051a3f786bb740b26f2
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93786818"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100402349"
 ---
 # Set-AzMediaServiceKey
 
-## 摘要
-重新產生用來存取與媒體服務相關聯之 REST 端點的金鑰。
+## 簡介
+重新產生用來存取與媒體服務關聯的 REST 端點的金鑰。
 
-## 句法
+## 語法
 
 ```
 Set-AzMediaServiceKey [-ResourceGroupName] <String> [-AccountName] <String> [-KeyType] <KeyType>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## 說明
-**AzMediaServiceKey** Cmdlet 會重新產生一個用來存取 Representational 狀態轉移的金鑰， (與媒體服務相關聯的 REST) 端點。
+## 描述
+**Set-AzMediaServiceKey** Cmdlet 會重新產生用於存取媒體服務相關之表示狀態傳輸 (REST) 端點的金鑰。
 
-## 示例
+## 例子
 
-### 範例1：重新產生用來存取媒體服務的主鍵
+### 範例 1：重新產生用來存取媒體服務的主鍵
 ```
 PS C:\>Set-AzMediaServiceKey -ResourceGroupName "ResourceGroup004" -AccountName "MediaService001" -KeyType Primary
 ```
 
-這個命令會重新產生屬於名為 ResourceGroup004 之資源群組之名為 MediaService001 的媒體服務的主機碼。
+此命令會重新產生名為 MediaService001 的媒體服務主鍵，該媒體服務屬於名為 ResourceGroup004 的資源群組。
 
-### 範例2：重新產生存取媒體服務時所用的次要金鑰
+### 範例 2：重新產生用來存取媒體服務的次要金鑰
 ```
 PS C:\>Set-AzMediaServiceKey -ResourceGroupName "Resourcegroup123" -AccountName "MediaService002" -KeyType Secondary
 ```
 
-這個命令會為屬於名為 Resourcegroup123 之資源群組的名為 MediaService002 的媒體服務重新產生次要金鑰。
+此命令會重新產生媒體服務名為 MediaService002 的次要金鑰，該媒體服務屬於名為 Resourcegroup123 的資源群組。
 
 ## 參數
 
 ### -AccountName
-指定此 Cmdlet 所再生之媒體服務的名稱。
+指定此 Cmdlet 重新產生之媒體服務的名稱。
 
 ```yaml
 Type: System.String
@@ -62,7 +62,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -94,7 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-指定包含媒體服務之資源群組的名稱。
+指定包含媒體服務的資源組名。
 
 ```yaml
 Type: System.String
@@ -109,7 +109,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -124,8 +124,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。
-未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。
+不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -140,20 +140,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 https://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
-### System.object
+### System.String
 
 ## 輸出
 
-### PSServiceKey 中的 [.]
+### Microsoft.Azure.Commands.Media.models.PSServiceKey
 
 ## 筆記
 
 ## 相關連結
 
-[AzMediaServiceKeys](./Get-AzMediaServiceKeys.md)
 
 

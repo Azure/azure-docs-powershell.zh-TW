@@ -6,31 +6,31 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.media/new-
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Media/Media/help/New-AzMediaServiceStorageConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Media/Media/help/New-AzMediaServiceStorageConfig.md
-ms.openlocfilehash: 8fb6e4a683decc8b5615a7cf0c8088681578f8ec
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: ec411d7e1afd71849ec2d490ee70eeb0283303ca
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93786834"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100402383"
 ---
 # New-AzMediaServiceStorageConfig
 
-## 摘要
-為媒體服務 Cmdlet 建立儲存帳戶設定。
+## 簡介
+建立媒體服務 Cmdlet 的儲存空間帳戶組配置。
 
-## 句法
+## 語法
 
 ```
 New-AzMediaServiceStorageConfig [-DefaultProfile <IAzureContextContainer>] [-StorageAccountId] <String>
  [-IsPrimary] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## 說明
-**新的 AzMediaServiceStorageConfig** Cmdlet 會建立媒體服務 Cmdlet 的儲存帳戶配置。
+## 描述
+**New-AzMediaServiceStorageConfig** Cmdlet 會針對媒體服務 Cmdlet 建立儲存帳戶組式。
 
-## 示例
+## 例子
 
-### 範例1：建立媒體服務 Cmdlet 的儲存帳戶設定
+### 範例 1：建立媒體服務 Cmdlet 的儲存空間帳戶組
 ```
 PS C:\>
 $StorageAccount = New-AzStorageAccount -ResourceGroupName $ResourceGroupName -Name "Storage1" -Location "East US" -Type "Standard_GRS"
@@ -38,14 +38,14 @@ $StorageAccount = New-AzStorageAccount -ResourceGroupName $ResourceGroupName -Na
 PS C:\> New-AzMediaServiceStorageConfig -StorageAccountId $StorageAccount.Id -IsPrimary
 ```
 
-第一個命令會使用 **AzStorageAccount** Cmdlet 建立儲存空間帳戶物件。
-命令會將此儲存帳戶 Storage1 及類型命名為 Standard_GRS，並將結果儲存在名為 $StorageAccount 的變數中。
-第二個命令會使用儲存在 $StorageAccount 變數中的儲存空間帳戶識別碼資訊，來建立儲存設定物件，作為與媒體服務相關聯的主要儲存空間帳戶。
+第一個命令會使用 **New-AzStorageAccount** Cmdlet 建立儲存空間帳戶物件。
+命令會命名此儲存帳戶 Storage1，且類型會命名為 Standard_GRS，並儲存在名為 $StorageAccount 的變數中。
+第二個命令會使用儲存在資料變數中的儲存帳戶識別碼資訊，將儲存組$StorageAccount帳戶。
 
 ## 參數
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -60,7 +60,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsPrimary
-表示 Cmdlet 會建立儲存空間帳戶做為媒體服務的主要儲存空間。
+表示 Cmdlet 會建立儲存帳戶做為媒體服務的主要儲存空間。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 ```
 
 ### -StorageAccountId
-指定儲存空間帳戶的 ID。
+指定儲存空間帳戶的識別碼。
 
 ```yaml
 Type: System.String
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -105,8 +105,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。
-未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。
+不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -121,20 +121,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 https://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
-### System.object
+### System.String
 
 ## 輸出
 
-### PSStorageAccount 中的 [.]
+### Microsoft.Azure.Commands.Media.models.PSStorageAccount
 
 ## 筆記
 
 ## 相關連結
 
-[同步處理-AzMediaServiceStorageKeys](./Sync-AzMediaServiceStorageKeys.md)
 
 
