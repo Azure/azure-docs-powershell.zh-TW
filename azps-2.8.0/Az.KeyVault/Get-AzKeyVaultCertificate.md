@@ -6,80 +6,80 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/g
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultCertificate.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultCertificate.md
-ms.openlocfilehash: 5935706c341fac5f0b26d3e4965f226342c3dfc8
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: ccd2762449e24f881a3308c0d11476a1e4626fed
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93612148"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100403573"
 ---
-# <span data-ttu-id="187b6-101">Get-AzKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="187b6-101">Get-AzKeyVaultCertificate</span></span>
+# <span data-ttu-id="4ceab-101">Get-AzKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="4ceab-101">Get-AzKeyVaultCertificate</span></span>
 
-## <span data-ttu-id="187b6-102">摘要</span><span class="sxs-lookup"><span data-stu-id="187b6-102">SYNOPSIS</span></span>
-<span data-ttu-id="187b6-103">從金鑰保存庫取得憑證。</span><span class="sxs-lookup"><span data-stu-id="187b6-103">Gets a certificate from a key vault.</span></span>
+## <span data-ttu-id="4ceab-102">簡介</span><span class="sxs-lookup"><span data-stu-id="4ceab-102">SYNOPSIS</span></span>
+<span data-ttu-id="4ceab-103">從金鑰庫獲得憑證。</span><span class="sxs-lookup"><span data-stu-id="4ceab-103">Gets a certificate from a key vault.</span></span>
 
-## <span data-ttu-id="187b6-104">句法</span><span class="sxs-lookup"><span data-stu-id="187b6-104">SYNTAX</span></span>
+## <span data-ttu-id="4ceab-104">語法</span><span class="sxs-lookup"><span data-stu-id="4ceab-104">SYNTAX</span></span>
 
-### <span data-ttu-id="187b6-105">ByName (預設) </span><span class="sxs-lookup"><span data-stu-id="187b6-105">ByName (Default)</span></span>
+### <span data-ttu-id="4ceab-105">ByName (預設) </span><span class="sxs-lookup"><span data-stu-id="4ceab-105">ByName (Default)</span></span>
 ```
 Get-AzKeyVaultCertificate [-VaultName] <String> [[-Name] <String>] [-InRemovedState] [-IncludePending]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="187b6-106">ByCertificateNameAndVersion</span><span class="sxs-lookup"><span data-stu-id="187b6-106">ByCertificateNameAndVersion</span></span>
+### <span data-ttu-id="4ceab-106">ByCertificateNameAndVersion</span><span class="sxs-lookup"><span data-stu-id="4ceab-106">ByCertificateNameAndVersion</span></span>
 ```
 Get-AzKeyVaultCertificate [-VaultName] <String> [-Name] <String> [-Version] <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="187b6-107">ByCertificateAllVersions</span><span class="sxs-lookup"><span data-stu-id="187b6-107">ByCertificateAllVersions</span></span>
+### <span data-ttu-id="4ceab-107">ByCertificateAllVersions</span><span class="sxs-lookup"><span data-stu-id="4ceab-107">ByCertificateAllVersions</span></span>
 ```
 Get-AzKeyVaultCertificate [-VaultName] <String> [-Name] <String> [-IncludeVersions]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="187b6-108">ByNameInputObject</span><span class="sxs-lookup"><span data-stu-id="187b6-108">ByNameInputObject</span></span>
+### <span data-ttu-id="4ceab-108">ByNameInputObject</span><span class="sxs-lookup"><span data-stu-id="4ceab-108">ByNameInputObject</span></span>
 ```
 Get-AzKeyVaultCertificate [-InputObject] <PSKeyVault> [[-Name] <String>] [-InRemovedState] [-IncludePending]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="187b6-109">ByCertificateNameAndVersionInputObject</span><span class="sxs-lookup"><span data-stu-id="187b6-109">ByCertificateNameAndVersionInputObject</span></span>
+### <span data-ttu-id="4ceab-109">ByCertificateNameAndVersionInputObject</span><span class="sxs-lookup"><span data-stu-id="4ceab-109">ByCertificateNameAndVersionInputObject</span></span>
 ```
 Get-AzKeyVaultCertificate [-InputObject] <PSKeyVault> [-Name] <String> [-Version] <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="187b6-110">ByCertificateAllVersionsInputObject</span><span class="sxs-lookup"><span data-stu-id="187b6-110">ByCertificateAllVersionsInputObject</span></span>
+### <span data-ttu-id="4ceab-110">ByCertificateAllVersionsInputObject</span><span class="sxs-lookup"><span data-stu-id="4ceab-110">ByCertificateAllVersionsInputObject</span></span>
 ```
 Get-AzKeyVaultCertificate [-InputObject] <PSKeyVault> [-Name] <String> [-IncludeVersions]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="187b6-111">ByNameResourceId</span><span class="sxs-lookup"><span data-stu-id="187b6-111">ByNameResourceId</span></span>
+### <span data-ttu-id="4ceab-111">ByNameResourceId</span><span class="sxs-lookup"><span data-stu-id="4ceab-111">ByNameResourceId</span></span>
 ```
 Get-AzKeyVaultCertificate [-ResourceId] <String> [[-Name] <String>] [-InRemovedState] [-IncludePending]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="187b6-112">ByCertificateNameAndVersionResourceId</span><span class="sxs-lookup"><span data-stu-id="187b6-112">ByCertificateNameAndVersionResourceId</span></span>
+### <span data-ttu-id="4ceab-112">ByCertificateNameAndVersionResourceId</span><span class="sxs-lookup"><span data-stu-id="4ceab-112">ByCertificateNameAndVersionResourceId</span></span>
 ```
 Get-AzKeyVaultCertificate [-ResourceId] <String> [-Name] <String> [-Version] <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="187b6-113">ByCertificateAllVersionsResourceId</span><span class="sxs-lookup"><span data-stu-id="187b6-113">ByCertificateAllVersionsResourceId</span></span>
+### <span data-ttu-id="4ceab-113">ByCertificateAllVersionsResourceId</span><span class="sxs-lookup"><span data-stu-id="4ceab-113">ByCertificateAllVersionsResourceId</span></span>
 ```
 Get-AzKeyVaultCertificate [-ResourceId] <String> [-Name] <String> [-IncludeVersions]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="187b6-114">說明</span><span class="sxs-lookup"><span data-stu-id="187b6-114">DESCRIPTION</span></span>
-<span data-ttu-id="187b6-115">**AzKeyVaultCertificate** Cmdlet 會從 Azure 金鑰保存庫中的金鑰保存庫取得指定的憑證或憑證版本。</span><span class="sxs-lookup"><span data-stu-id="187b6-115">The **Get-AzKeyVaultCertificate** cmdlet gets the specified certificate or the versions of a certificate from a key vault in Azure Key Vault.</span></span>
+## <span data-ttu-id="4ceab-114">描述</span><span class="sxs-lookup"><span data-stu-id="4ceab-114">DESCRIPTION</span></span>
+<span data-ttu-id="4ceab-115">**Get-AzKeyVaultCertificate** Cmdlet 會從 Azure 金鑰庫的金鑰庫取得指定的憑證或憑證版本。</span><span class="sxs-lookup"><span data-stu-id="4ceab-115">The **Get-AzKeyVaultCertificate** cmdlet gets the specified certificate or the versions of a certificate from a key vault in Azure Key Vault.</span></span>
 
-## <span data-ttu-id="187b6-116">示例</span><span class="sxs-lookup"><span data-stu-id="187b6-116">EXAMPLES</span></span>
+## <span data-ttu-id="4ceab-116">例子</span><span class="sxs-lookup"><span data-stu-id="4ceab-116">EXAMPLES</span></span>
 
-### <span data-ttu-id="187b6-117">範例1：取得憑證</span><span class="sxs-lookup"><span data-stu-id="187b6-117">Example 1: Get a certificate</span></span>
+### <span data-ttu-id="4ceab-117">範例 1：取得憑證</span><span class="sxs-lookup"><span data-stu-id="4ceab-117">Example 1: Get a certificate</span></span>
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "TestCert01"
 Name        : testCert01
@@ -108,9 +108,9 @@ Created     : 2/8/2016 11:21:45 PM
 Updated     : 2/8/2016 11:21:45 PM
 ```
 
-<span data-ttu-id="187b6-118">這個命令會從名為 ContosoKV01 的主要電子倉庫中取得名為 TestCert01 的憑證。</span><span class="sxs-lookup"><span data-stu-id="187b6-118">This command gets the certificate named TestCert01 from the key vault named ContosoKV01.</span></span>
+<span data-ttu-id="4ceab-118">此命令會從名為 ContosoKV01 的金鑰庫獲得名為 TestCert01 的憑證。</span><span class="sxs-lookup"><span data-stu-id="4ceab-118">This command gets the certificate named TestCert01 from the key vault named ContosoKV01.</span></span>
 
-### <span data-ttu-id="187b6-119">範例2：取得已刪除但未針對此金鑰保存庫清除的所有憑證。</span><span class="sxs-lookup"><span data-stu-id="187b6-119">Example 2: Get all the certificates that have been deleted but not purged for this key vault.</span></span>
+### <span data-ttu-id="4ceab-119">範例 2：取得此金鑰庫的所有已刪除但並未清除的憑證。</span><span class="sxs-lookup"><span data-stu-id="4ceab-119">Example 2: Get all the certificates that have been deleted but not purged for this key vault.</span></span>
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName 'contoso' -InRemovedState
 
@@ -140,9 +140,9 @@ Version            :
 Id                 : https://contoso.vault.azure.net:443/certificates/test2
 ```
 
-<span data-ttu-id="187b6-120">這個命令會在名為 Contoso 的金鑰保存庫中，取得先前已刪除但尚未清除的所有憑證。</span><span class="sxs-lookup"><span data-stu-id="187b6-120">This command gets all the certificates that have been previously deleted, but not purged, in the key vault named Contoso.</span></span>
+<span data-ttu-id="4ceab-120">此命令會獲得先前在名稱為 Contoso 的金鑰庫中刪除但並未清除的所有憑證。</span><span class="sxs-lookup"><span data-stu-id="4ceab-120">This command gets all the certificates that have been previously deleted, but not purged, in the key vault named Contoso.</span></span>
 
-### <span data-ttu-id="187b6-121">範例3：取得已刪除但未針對此金鑰保存庫清除的憑證 MyCert。</span><span class="sxs-lookup"><span data-stu-id="187b6-121">Example 3: Gets the certificate MyCert that has been deleted but not purged for this key vault.</span></span>
+### <span data-ttu-id="4ceab-121">範例 3：針對此金鑰庫，獲得已被刪除但並未清除的憑證 MyCert。</span><span class="sxs-lookup"><span data-stu-id="4ceab-121">Example 3: Gets the certificate MyCert that has been deleted but not purged for this key vault.</span></span>
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName 'contoso' -Name 'test1' -InRemovedState
 
@@ -182,10 +182,10 @@ Version            : 7fe415d5518240c1a6fce89986b8d334
 Id                 : https://contoso.vault.azure.net:443/certificates/test1/7fe415d5518240c1a6fce89986b8d334
 ```
 
-<span data-ttu-id="187b6-122">這個命令會在名為 Contoso 的金鑰保存庫中，取得名為「MyCert」的憑證，但尚未清除。</span><span class="sxs-lookup"><span data-stu-id="187b6-122">This command gets the certificate named 'MyCert' that has been previously deleted, but not purged, in the key vault named Contoso.</span></span>
-<span data-ttu-id="187b6-123">這個命令會傳回中繼資料，例如刪除日期，以及此刪除的憑證的排程清除日期。</span><span class="sxs-lookup"><span data-stu-id="187b6-123">This command will return metadata such as the deletion date, and the scheduled purging date of this deleted certificate.</span></span>
+<span data-ttu-id="4ceab-122">此命令會獲得名稱為 "MyCert" 的憑證，該憑證先前已在名為 Contoso 的金鑰庫中刪除，但並未清除。</span><span class="sxs-lookup"><span data-stu-id="4ceab-122">This command gets the certificate named 'MyCert' that has been previously deleted, but not purged, in the key vault named Contoso.</span></span>
+<span data-ttu-id="4ceab-123">此命令會返回中繼資料，例如刪除日期，以及此已刪除憑證的排程清除日期。</span><span class="sxs-lookup"><span data-stu-id="4ceab-123">This command will return metadata such as the deletion date, and the scheduled purging date of this deleted certificate.</span></span>
 
-### <span data-ttu-id="187b6-124">範例4：使用篩選來列出憑證</span><span class="sxs-lookup"><span data-stu-id="187b6-124">Example 4: List certificates using filtering</span></span>
+### <span data-ttu-id="4ceab-124">範例 4：使用篩選列出憑證</span><span class="sxs-lookup"><span data-stu-id="4ceab-124">Example 4: List certificates using filtering</span></span>
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "test*"
 
@@ -214,10 +214,10 @@ Id        : https://ContosoKV01.vault.azure.net:443/certificates/test2
 This command gets all certificates starting with "test" from the key vault named ContosoKV01.
 ```
 
-## <span data-ttu-id="187b6-125">參數</span><span class="sxs-lookup"><span data-stu-id="187b6-125">PARAMETERS</span></span>
+## <span data-ttu-id="4ceab-125">參數</span><span class="sxs-lookup"><span data-stu-id="4ceab-125">PARAMETERS</span></span>
 
-### <span data-ttu-id="187b6-126">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="187b6-126">-DefaultProfile</span></span>
-<span data-ttu-id="187b6-127">用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱</span><span class="sxs-lookup"><span data-stu-id="187b6-127">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="4ceab-126">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="4ceab-126">-DefaultProfile</span></span>
+<span data-ttu-id="4ceab-127">用於與 Azure 通訊的認證、帳戶、租使用者和訂閱</span><span class="sxs-lookup"><span data-stu-id="4ceab-127">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -231,8 +231,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="187b6-128">-IncludePending</span><span class="sxs-lookup"><span data-stu-id="187b6-128">-IncludePending</span></span>
-<span data-ttu-id="187b6-129">指定是否要在輸出中包含擱置中的憑證</span><span class="sxs-lookup"><span data-stu-id="187b6-129">Specifies whether to include pending certificates in the output</span></span>
+### <span data-ttu-id="4ceab-128">-IncludePending</span><span class="sxs-lookup"><span data-stu-id="4ceab-128">-IncludePending</span></span>
+<span data-ttu-id="4ceab-129">指定是否要在輸出中納入擱置中的憑證</span><span class="sxs-lookup"><span data-stu-id="4ceab-129">Specifies whether to include pending certificates in the output</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -246,8 +246,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="187b6-130">-IncludeVersions</span><span class="sxs-lookup"><span data-stu-id="187b6-130">-IncludeVersions</span></span>
-<span data-ttu-id="187b6-131">表示此操作會取得所有版本的憑證。</span><span class="sxs-lookup"><span data-stu-id="187b6-131">Indicates that this operation gets all versions of the certificate.</span></span>
+### <span data-ttu-id="4ceab-130">-IncludeVersions</span><span class="sxs-lookup"><span data-stu-id="4ceab-130">-IncludeVersions</span></span>
+<span data-ttu-id="4ceab-131">表示此作業會獲得憑證的所有版本。</span><span class="sxs-lookup"><span data-stu-id="4ceab-131">Indicates that this operation gets all versions of the certificate.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -261,8 +261,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="187b6-132">-InputObject</span><span class="sxs-lookup"><span data-stu-id="187b6-132">-InputObject</span></span>
-<span data-ttu-id="187b6-133">KeyVault 物件。</span><span class="sxs-lookup"><span data-stu-id="187b6-133">KeyVault object.</span></span>
+### <span data-ttu-id="4ceab-132">-InputObject</span><span class="sxs-lookup"><span data-stu-id="4ceab-132">-InputObject</span></span>
+<span data-ttu-id="4ceab-133">KeyVault 物件。</span><span class="sxs-lookup"><span data-stu-id="4ceab-133">KeyVault object.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
@@ -276,8 +276,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="187b6-134">-InRemovedState</span><span class="sxs-lookup"><span data-stu-id="187b6-134">-InRemovedState</span></span>
-<span data-ttu-id="187b6-135">指定是否要在輸出中包含先前刪除的憑證</span><span class="sxs-lookup"><span data-stu-id="187b6-135">Specifies whether to include previously deleted certificates in the output</span></span>
+### <span data-ttu-id="4ceab-134">-InRemovedState</span><span class="sxs-lookup"><span data-stu-id="4ceab-134">-InRemovedState</span></span>
+<span data-ttu-id="4ceab-135">指定是否要在輸出中納入先前刪除的憑證</span><span class="sxs-lookup"><span data-stu-id="4ceab-135">Specifies whether to include previously deleted certificates in the output</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -291,8 +291,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="187b6-136">-名稱</span><span class="sxs-lookup"><span data-stu-id="187b6-136">-Name</span></span>
-<span data-ttu-id="187b6-137">指定要取得的憑證名稱。</span><span class="sxs-lookup"><span data-stu-id="187b6-137">Specifies the name of the certificate to get.</span></span>
+### <span data-ttu-id="4ceab-136">-名稱</span><span class="sxs-lookup"><span data-stu-id="4ceab-136">-Name</span></span>
+<span data-ttu-id="4ceab-137">指定要取得之憑證的名稱。</span><span class="sxs-lookup"><span data-stu-id="4ceab-137">Specifies the name of the certificate to get.</span></span>
 
 ```yaml
 Type: System.String
@@ -318,8 +318,8 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="187b6-138">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="187b6-138">-ResourceId</span></span>
-<span data-ttu-id="187b6-139">KeyVault 資源識別碼。</span><span class="sxs-lookup"><span data-stu-id="187b6-139">KeyVault Resource Id.</span></span>
+### <span data-ttu-id="4ceab-138">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="4ceab-138">-ResourceId</span></span>
+<span data-ttu-id="4ceab-139">KeyVault 資源識別碼。</span><span class="sxs-lookup"><span data-stu-id="4ceab-139">KeyVault Resource Id.</span></span>
 
 ```yaml
 Type: System.String
@@ -333,8 +333,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="187b6-140">-VaultName</span><span class="sxs-lookup"><span data-stu-id="187b6-140">-VaultName</span></span>
-<span data-ttu-id="187b6-141">指定主要電子倉庫的名稱。</span><span class="sxs-lookup"><span data-stu-id="187b6-141">Specifies the name of a key vault.</span></span>
+### <span data-ttu-id="4ceab-140">-VaultName</span><span class="sxs-lookup"><span data-stu-id="4ceab-140">-VaultName</span></span>
+<span data-ttu-id="4ceab-141">指定金鑰庫的名稱。</span><span class="sxs-lookup"><span data-stu-id="4ceab-141">Specifies the name of a key vault.</span></span>
 
 ```yaml
 Type: System.String
@@ -348,8 +348,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="187b6-142">-版本</span><span class="sxs-lookup"><span data-stu-id="187b6-142">-Version</span></span>
-<span data-ttu-id="187b6-143">指定憑證版本。</span><span class="sxs-lookup"><span data-stu-id="187b6-143">Specifies the version of a certificate.</span></span>
+### <span data-ttu-id="4ceab-142">-版本</span><span class="sxs-lookup"><span data-stu-id="4ceab-142">-Version</span></span>
+<span data-ttu-id="4ceab-143">指定憑證的版本。</span><span class="sxs-lookup"><span data-stu-id="4ceab-143">Specifies the version of a certificate.</span></span>
 
 ```yaml
 Type: System.String
@@ -363,33 +363,32 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="187b6-144">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="187b6-144">CommonParameters</span></span>
-<span data-ttu-id="187b6-145">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="187b6-145">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="187b6-146">如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="187b6-146">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="4ceab-144">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="4ceab-144">CommonParameters</span></span>
+<span data-ttu-id="4ceab-145">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="4ceab-145">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="4ceab-146">詳細資訊[請參閱about_CommonParameters。](https://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="4ceab-146">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="187b6-147">輸入</span><span class="sxs-lookup"><span data-stu-id="187b6-147">INPUTS</span></span>
+## <span data-ttu-id="4ceab-147">輸入</span><span class="sxs-lookup"><span data-stu-id="4ceab-147">INPUTS</span></span>
 
-### <span data-ttu-id="187b6-148">PSKeyVault 中的 KeyVault。</span><span class="sxs-lookup"><span data-stu-id="187b6-148">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault</span></span>
+### <span data-ttu-id="4ceab-148">Microsoft.Azure.Commands.KeyVault.models.PSKeyVault</span><span class="sxs-lookup"><span data-stu-id="4ceab-148">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault</span></span>
 
-### <span data-ttu-id="187b6-149">System.object</span><span class="sxs-lookup"><span data-stu-id="187b6-149">System.String</span></span>
+### <span data-ttu-id="4ceab-149">System.String</span><span class="sxs-lookup"><span data-stu-id="4ceab-149">System.String</span></span>
 
-## <span data-ttu-id="187b6-150">輸出</span><span class="sxs-lookup"><span data-stu-id="187b6-150">OUTPUTS</span></span>
+## <span data-ttu-id="4ceab-150">輸出</span><span class="sxs-lookup"><span data-stu-id="4ceab-150">OUTPUTS</span></span>
 
-### <span data-ttu-id="187b6-151">PSKeyVaultCertificateIdentityItem 中的 KeyVault。</span><span class="sxs-lookup"><span data-stu-id="187b6-151">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificateIdentityItem</span></span>
+### <span data-ttu-id="4ceab-151">Microsoft.Azure.Commands.KeyVault.models.PSKeyVaultCertificateIdentityItem</span><span class="sxs-lookup"><span data-stu-id="4ceab-151">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificateIdentityItem</span></span>
 
-### <span data-ttu-id="187b6-152">PSKeyVaultCertificate 中的 KeyVault。</span><span class="sxs-lookup"><span data-stu-id="187b6-152">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificate</span></span>
+### <span data-ttu-id="4ceab-152">Microsoft.Azure.Commands.KeyVault.models.PSKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="4ceab-152">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificate</span></span>
 
-### <span data-ttu-id="187b6-153">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="187b6-153">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultCertificate</span></span>
+### <span data-ttu-id="4ceab-153">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="4ceab-153">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultCertificate</span></span>
 
-### <span data-ttu-id="187b6-154">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultCertificateIdentityItem</span><span class="sxs-lookup"><span data-stu-id="187b6-154">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultCertificateIdentityItem</span></span>
+### <span data-ttu-id="4ceab-154">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultCertificateIdentityItem</span><span class="sxs-lookup"><span data-stu-id="4ceab-154">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultCertificateIdentityItem</span></span>
 
-## <span data-ttu-id="187b6-155">筆記</span><span class="sxs-lookup"><span data-stu-id="187b6-155">NOTES</span></span>
+## <span data-ttu-id="4ceab-155">筆記</span><span class="sxs-lookup"><span data-stu-id="4ceab-155">NOTES</span></span>
 
-## <span data-ttu-id="187b6-156">相關連結</span><span class="sxs-lookup"><span data-stu-id="187b6-156">RELATED LINKS</span></span>
+## <span data-ttu-id="4ceab-156">相關連結</span><span class="sxs-lookup"><span data-stu-id="4ceab-156">RELATED LINKS</span></span>
 
-[<span data-ttu-id="187b6-157">附加 AzKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="187b6-157">Add-AzKeyVaultCertificate</span></span>](./Add-AzKeyVaultCertificate.md)
+[<span data-ttu-id="4ceab-157">Add-AzKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="4ceab-157">Add-AzKeyVaultCertificate</span></span>](./Add-AzKeyVaultCertificate.md)
 
-[<span data-ttu-id="187b6-158">匯入-AzKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="187b6-158">Import-AzKeyVaultCertificate</span></span>](./Import-AzKeyVaultCertificate.md)
+[<span data-ttu-id="4ceab-158">Import-AzKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="4ceab-158">Import-AzKeyVaultCertificate</span></span>](./Import-AzKeyVaultCertificate.md)
 
-[<span data-ttu-id="187b6-159">移除-AzKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="187b6-159">Remove-AzKeyVaultCertificate</span></span>](./Remove-AzKeyVaultCertificate.md)
+[<span data-ttu-id="4ceab-159">Remove-AzKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="4ceab-159">Remove-AzKeyVaultCertificate</span></span>](./Remove-AzKeyVaultCertificate.md)
 
-[<span data-ttu-id="187b6-160">復原-AzKeyVaultSecretCertificate</span><span class="sxs-lookup"><span data-stu-id="187b6-160">Undo-AzKeyVaultSecretCertificate</span></span>](./Undo-AzKeyVaultSecretCertificate.md)
