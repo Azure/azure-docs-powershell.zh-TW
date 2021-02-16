@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitARPTable.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitARPTable.md
-ms.openlocfilehash: ce1e05106350adda37ffa5877585ff37337dad87
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 04c4355caaa76776a96e2619a0080b9c32d8e98a
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93790158"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100412209"
 ---
 # Get-AzExpressRouteCircuitARPTable
 
-## 摘要
-從 ExpressRoute 回路取得 ARP 資料表。
+## 簡介
+從 ExpressRoute 回路中獲得 ARP 表格。
 
-## 句法
+## 語法
 
 ```
 Get-AzExpressRouteCircuitARPTable -ResourceGroupName <String> -ExpressRouteCircuitName <String>
@@ -26,12 +26,12 @@ Get-AzExpressRouteCircuitARPTable -ResourceGroupName <String> -ExpressRouteCircu
  [<CommonParameters>]
 ```
 
-## 說明
-**AzExpressRouteCircuitARPTable** Cmdlet 會從 ExpressRoute 回路的兩個介面中檢索 ARP 資料表。 ARP 表格提供特定對等的 IPv4 位址到 MAC 位址的對應。 您可以使用 ARP 資料表來驗證第2層設定和連線性。
+## 描述
+**Get-AzExpressRouteCircuitARPTable** Cmdlet 會從 ExpressRoute 回路的兩個介面中，取得 ARP 資料表。 ARP 資料表提供特定對等的 IPv4 位址與 MAC 位址的映射。 您可以使用 ARP 資料表驗證第 2 層組配置和連接。
 
-## 示例
+## 例子
 
-### 範例1：顯示 ExpressRoute 對等的 ARP 資料表
+### 範例 1：顯示 ExpressRoute 對等的 ARP 表格
 ```
 Get-AzExpressRouteCircuitARPTable -ResourceGroupName $RG -ExpressRouteCircuitName $CircuitName -PeeringType MicrosoftPeering -DevicePath Primary
 ```
@@ -39,7 +39,7 @@ Get-AzExpressRouteCircuitARPTable -ResourceGroupName $RG -ExpressRouteCircuitNam
 ## 參數
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -70,7 +70,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExpressRouteCircuitName
-所檢查的 ExpressRoute 電路名稱。
+要檢查的 ExpressRoute 回路名稱。
 
 ```yaml
 Type: System.String
@@ -101,7 +101,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-包含 ExpressRoute 回路之資源群組的名稱。
+包含 ExpressRoute 回路的資源組名。
 
 ```yaml
 Type: System.String
@@ -116,22 +116,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](https://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### System.object
+### System.String
 
 ## 輸出
 
-### PSExpressRouteCircuitArpTable 中的 [.]
+### Microsoft.Azure.Commands.Network.models.PSExpressRouteCircuitArpTable
 
 ## 筆記
 
 ## 相關連結
 
-[AzExpressRouteCircuitRouteTable](Get-AzExpressRouteCircuitRouteTable.md)
+[Get-AzExpressRouteCircuitRouteTable](Get-AzExpressRouteCircuitRouteTable.md)
 
-[AzExpressRouteCircuitRouteTableSummary](Get-AzExpressRouteCircuitRouteTableSummary.md)
+[Get-AzExpressRouteCircuitRouteTableSummary](Get-AzExpressRouteCircuitRouteTableSummary.md)
 
-[AzExpressRouteCircuitStats](Get-AzExpressRouteCircuitStats.md)
+[Get-AzExpressRouteCircuitStat](Get-AzExpressRouteCircuitStat.md)
