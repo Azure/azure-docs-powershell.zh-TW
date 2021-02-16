@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzADUser.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzADUser.md
-ms.openlocfilehash: ac2dfb864733d7bcb2b46e17d557fca57c7bb4b4
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: cd8834dd329ab82e98316cb0d94b554eb3bb6c13
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93792227"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100408316"
 ---
 # New-AzADUser
 
-## 摘要
-建立新的 active directory 使用者。
+## 簡介
+建立新 Active Directory 使用者。
 
-## 句法
+## 語法
 
 ```
 New-AzADUser -DisplayName <String> -UserPrincipalName <String> -Password <SecureString> [-ImmutableId <String>]
@@ -26,24 +26,24 @@ New-AzADUser -DisplayName <String> -UserPrincipalName <String> -Password <Secure
  [-Confirm] [<CommonParameters>]
 ```
 
-## 說明
-建立新的 active directory 使用者 (公司/學校帳戶也會 popularly 稱為組織識別碼) 。
-如需詳細資訊： https://msdn.microsoft.com/en-us/library/azure/ad/graph/api/users-operations#CreateUser
+## 描述
+在公司/學校 (建立新 Active Directory 使用者，也稱為組織識別碼) 。
+詳細資訊： https://msdn.microsoft.com/en-us/library/azure/ad/graph/api/users-operations#CreateUser
 
-## 示例
+## 例子
 
-### 範例 1-建立新的廣告使用者
+### 範例 1 - 建立新 AD 使用者
 ```
 PS C:\> $SecureStringPassword = ConvertTo-SecureString -String "password" -AsPlainText -Force
 PS C:\> New-AzADUser -DisplayName "MyDisplayName" -UserPrincipalName "myemail@domain.com" -Password $SecureStringPassword -MailNickname "MyMailNickName"
 ```
 
-在租使用者中建立名為 "MyDisplayName" 和使用者主體名稱 "" 的新 AD 使用者 myemail@domain.com 。
+在租使用者中建立名稱為 "MyDisplayName" 和使用者主體名稱 " 的新 AD myemail@domain.com 使用者。
 
 ## 參數
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -59,7 +59,7 @@ Accept wildcard characters: False
 
 ### -DisplayName
 要顯示在使用者通訊錄中的名稱。
-範例「立民 Wu」。
+範例 'Alex Wu'。
 
 ```yaml
 Type: System.String
@@ -74,8 +74,8 @@ Accept wildcard characters: False
 ```
 
 ### -ForceChangePasswordNextLogin
-如果使用者必須在下一次成功的登入 (true) 時變更密碼，則必須指定它。
-預設行為是 (false) ，不會在下一次成功的登入時變更密碼。
+必須指定使用者必須在下次成功登入時變更密碼， (密碼) 。
+預設行為 (錯誤) ，不會在下次成功登入時變更密碼。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -89,8 +89,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -ImmutableId
-只有在您針對使用者的使用者主要名稱 (upn) 屬性中使用聯盟網域時，才需要指定它。
+### -一元元Id
+您必須針對使用者的使用者主體名稱使用聯盟網域，才能指定 (屬性) 。
 
 ```yaml
 Type: System.String
@@ -105,7 +105,7 @@ Accept wildcard characters: False
 ```
 
 ### -MailNickname
-使用者的 [郵件別名]。
+使用者的郵件別名。
 
 ```yaml
 Type: System.String
@@ -119,10 +119,10 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Password
+### -密碼
 使用者的密碼。
-它必須符合租使用者的密碼複雜性需求。
-建議設定強式密碼。
+它必須符合租使用者的密碼複雜度需求。
+建議您設定強式密碼。
 
 ```yaml
 Type: System.Security.SecureString
@@ -137,8 +137,8 @@ Accept wildcard characters: False
 ```
 
 ### -UserPrincipalName
-使用者主要名稱。
-範例-" someuser@contoso.com "。
+使用者主體名稱。
+Example-' someuser@contoso.com '.
 
 ```yaml
 Type: System.String
@@ -153,7 +153,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，系統會提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -168,8 +168,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。
-未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。
+不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -184,26 +184,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 https://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
-### System.object
+### System.String
 
-### SecureString
+### System.Security.SecureString
 
-### SwitchParameter 的系統管理功能
+### System.Management.Automation.SwitchParameter
 
 ## 輸出
 
-### PSADUser （即 Azure。
+### Microsoft.Azure.Commands.ActiveDirectory.PSADUser
 
 ## 筆記
 
 ## 相關連結
 
-[AzADUser](./Get-AzADUser.md)
+[Get-AzADUser](./Get-AzADUser.md)
 
-[Set-AzADUser](./Set-AzADUser.md)
 
-[移除-AzADUser](./Remove-AzADUser.md)
+[Remove-AzADUser](./Remove-AzADUser.md)

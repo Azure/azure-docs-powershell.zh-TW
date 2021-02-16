@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Get-AzADUser.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Get-AzADUser.md
-ms.openlocfilehash: 34a00ed29d40d8824ac0f2d24f5275bb7c0a0164
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: b5690dfc1d85483b10fc7cd08606c4555784e8e0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93795337"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398728"
 ---
 # Get-AzADUser
 
-## 摘要
-篩選 active directory 使用者。
+## 簡介
+篩選 Active Directory 使用者。
 
-## 句法
+## 語法
 
 ### EmptyParameterSet (預設) 
 ```
@@ -56,47 +56,47 @@ Get-AzADUser -Mail <String> [-DefaultProfile <IAzureContextContainer>] [-Include
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-## 說明
-篩選 active directory 使用者。
+## 描述
+篩選 Active Directory 使用者。
 
-## 示例
+## 例子
 
-### 範例 1-列出所有使用者
+### 範例 1 - 列出所有使用者
 
 ```
 PS C:\> Get-AzADUser
 ```
 
-列出租使用者中的所有 AD 使用者。
+列出租使用者中所有的 AD 使用者。
 
-### 範例 2-使用分頁列出所有使用者
+### 範例 2 - 列出使用分頁的所有使用者
 
 ```
 PS C:\> Get-AzADUser -First 100
 ```
 
-列出租使用者中的第一個 100 AD 使用者。
+列出租使用者中的前 100 個 AD 使用者。
 
-### 範例 3-依使用者主要名稱取得 AD 使用者
+### 範例 3 - 根據使用者主體名稱取得 AD 使用者
 
 ```
 PS C:\> Get-AzADUser -UserPrincipalName foo@domain.com
 ```
 
-取得使用者主體名稱 "" 的 AD 使用者 foo@domain.com 。
+使用使用者主體名稱 " "" 獲得 foo@domain.com AD 使用者。
 
-### 範例 4-依搜尋字串列出
+### 範例 4 - 按搜尋字串列出
 
 ```
 PS C:\> Get-AzADUser -SearchString Joe
 ```
 
-列出顯示名稱以「Joe」開頭的所有廣告使用者。
+列出顯示名稱以 "Joe" 開頭的所有 AD 使用者。
 
 ## 參數
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
@@ -125,8 +125,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -優先
-要傳回的物件數目上限。
+### -第一個
+要返回的物件數量上限。
 
 ```yaml
 Type: System.UInt64
@@ -141,7 +141,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeTotalCount
-報告資料集中的物件數目。 這個參數目前不會執行任何動作。
+報告資料集中的物件數目。 目前，此參數沒有任何影響。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -156,7 +156,7 @@ Accept wildcard characters: False
 ```
 
 ### -郵件
-[使用者郵件]。
+使用者郵件。
 
 ```yaml
 Type: System.String
@@ -186,7 +186,7 @@ Accept wildcard characters: False
 ```
 
 ### -略過
-忽略前 N 個物件，然後取得剩餘的物件。
+忽略前 N 個物件，然後獲得其餘的物件。
 
 ```yaml
 Type: System.UInt64
@@ -201,7 +201,7 @@ Accept wildcard characters: False
 ```
 
 ### -StartsWith
-用來尋找以所提供字串開頭的使用者。
+用來尋找以所提供的字串開頭的使用者。
 
 ```yaml
 Type: System.String
@@ -243,25 +243,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 http://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
-### System.object
+### System.String
 
-### Guid.empty
+### System.Guid
 
 ## 輸出
 
-### Microsoft.Azure.Graph.RBAC.Version1_6 PSADUser
+### Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADUser
 
 ## 筆記
 
 ## 相關連結
 
-[新-AzADUser](./New-AzADUser.md)
+[New-AzADUser](./New-AzADUser.md)
 
-[Set-AzADUser](./Set-AzADUser.md)
 
-[移除-AzADUser](./Remove-AzADUser.md)
+[Remove-AzADUser](./Remove-AzADUser.md)
 
