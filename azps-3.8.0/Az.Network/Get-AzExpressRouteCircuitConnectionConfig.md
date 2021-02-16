@@ -6,45 +6,45 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitConnectionConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitConnectionConfig.md
-ms.openlocfilehash: f4aabb68fd1f508651406d7ccf7be91ff646d46c
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 0ef2870592411ce64847f8a4a58dabdebcc8235f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93959326"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100408231"
 ---
-# <span data-ttu-id="86e41-101">Get-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="86e41-101">Get-AzExpressRouteCircuitConnectionConfig</span></span>
+# <span data-ttu-id="bd186-101">Get-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="bd186-101">Get-AzExpressRouteCircuitConnectionConfig</span></span>
 
-## <span data-ttu-id="86e41-102">摘要</span><span class="sxs-lookup"><span data-stu-id="86e41-102">SYNOPSIS</span></span>
-<span data-ttu-id="86e41-103">取得與 ExpressRouteCircuit 的私有對等相關聯的 ExpressRoute 線路連線設定。</span><span class="sxs-lookup"><span data-stu-id="86e41-103">Gets an ExpressRoute circuit connection configuration associated with Private Peering of ExpressRouteCircuit.</span></span>
+## <span data-ttu-id="bd186-102">簡介</span><span class="sxs-lookup"><span data-stu-id="bd186-102">SYNOPSIS</span></span>
+<span data-ttu-id="bd186-103">獲得與 ExpressRouteCircuit 的專用對等關聯的 ExpressRoute 回路連接組。</span><span class="sxs-lookup"><span data-stu-id="bd186-103">Gets an ExpressRoute circuit connection configuration associated with Private Peering of ExpressRouteCircuit.</span></span>
 
-## <span data-ttu-id="86e41-104">句法</span><span class="sxs-lookup"><span data-stu-id="86e41-104">SYNTAX</span></span>
+## <span data-ttu-id="bd186-104">語法</span><span class="sxs-lookup"><span data-stu-id="bd186-104">SYNTAX</span></span>
 
 ```
 Get-AzExpressRouteCircuitConnectionConfig [[-Name] <String>] [-ExpressRouteCircuit] <PSExpressRouteCircuit>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="86e41-105">說明</span><span class="sxs-lookup"><span data-stu-id="86e41-105">DESCRIPTION</span></span>
-<span data-ttu-id="86e41-106">AzExpressRouteCircuitConnectionConfig Cmdlet 會為與 ExpressRoute 回路的私人對等相關聯的線路連線 **取得** 配置。</span><span class="sxs-lookup"><span data-stu-id="86e41-106">The **Get-AzExpressRouteCircuitConnectionConfig** cmdlet retrieves the configuration of a circuit connection associated with Private Peering for an ExpressRoute circuit.</span></span>
+## <span data-ttu-id="bd186-105">描述</span><span class="sxs-lookup"><span data-stu-id="bd186-105">DESCRIPTION</span></span>
+<span data-ttu-id="bd186-106">**Get-AzExpressRouteRouteCircuitConnectionConfig** Cmdlet 會針對 ExpressRoute 回路，取得與私人對等關聯的回路連接組式。</span><span class="sxs-lookup"><span data-stu-id="bd186-106">The **Get-AzExpressRouteCircuitConnectionConfig** cmdlet retrieves the configuration of a circuit connection associated with Private Peering for an ExpressRoute circuit.</span></span>
 
-## <span data-ttu-id="86e41-107">示例</span><span class="sxs-lookup"><span data-stu-id="86e41-107">EXAMPLES</span></span>
+## <span data-ttu-id="bd186-107">例子</span><span class="sxs-lookup"><span data-stu-id="bd186-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="86e41-108">範例1：顯示 ExpressRoute 線路的線路連線設定</span><span class="sxs-lookup"><span data-stu-id="86e41-108">Example 1: Display the circuit connection configuration for an ExpressRoute circuit</span></span>
+### <span data-ttu-id="bd186-108">範例 1：顯示 ExpressRoute 回路的回路連接組</span><span class="sxs-lookup"><span data-stu-id="bd186-108">Example 1: Display the circuit connection configuration for an ExpressRoute circuit</span></span>
 ```
 $circuit_init = Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg
 Get-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName -ExpressRouteCircuit $circuit_init
 ```
 
-### <span data-ttu-id="86e41-109">範例2：使用管道取得與 ExpressRoute 電路相關聯的線路連線資源</span><span class="sxs-lookup"><span data-stu-id="86e41-109">Example 2: Get circuit connection resource associated with an ExpressRoute Circuit using piping</span></span>
+### <span data-ttu-id="bd186-109">範例 2：使用管道取得與 ExpressRoute 回路相關聯的回路連接資源</span><span class="sxs-lookup"><span data-stu-id="bd186-109">Example 2: Get circuit connection resource associated with an ExpressRoute Circuit using piping</span></span>
 ```
 Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg|Get-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName
 ```
 
-## <span data-ttu-id="86e41-110">參數</span><span class="sxs-lookup"><span data-stu-id="86e41-110">PARAMETERS</span></span>
+## <span data-ttu-id="bd186-110">參數</span><span class="sxs-lookup"><span data-stu-id="bd186-110">PARAMETERS</span></span>
 
-### <span data-ttu-id="86e41-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="86e41-111">-DefaultProfile</span></span>
-<span data-ttu-id="86e41-112">用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。</span><span class="sxs-lookup"><span data-stu-id="86e41-112">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="bd186-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="bd186-111">-DefaultProfile</span></span>
+<span data-ttu-id="bd186-112">用於與 azure 通訊的認證、帳戶、租使用者和訂閱。</span><span class="sxs-lookup"><span data-stu-id="bd186-112">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -58,8 +58,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="86e41-113">-ExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="86e41-113">-ExpressRouteCircuit</span></span>
-<span data-ttu-id="86e41-114">包含線路連接設定的 ExpressRoute 電路物件。</span><span class="sxs-lookup"><span data-stu-id="86e41-114">The ExpressRoute circuit object containing the circuit connection configuration.</span></span>
+### <span data-ttu-id="bd186-113">-ExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="bd186-113">-ExpressRouteCircuit</span></span>
+<span data-ttu-id="bd186-114">包含回路連接配置的 ExpressRoute 回路物件。</span><span class="sxs-lookup"><span data-stu-id="bd186-114">The ExpressRoute circuit object containing the circuit connection configuration.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit
@@ -73,8 +73,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="86e41-115">-名稱</span><span class="sxs-lookup"><span data-stu-id="86e41-115">-Name</span></span>
-<span data-ttu-id="86e41-116">要檢索之線路連接設定的名稱。</span><span class="sxs-lookup"><span data-stu-id="86e41-116">The name of the circuit connection configuration to be retrieved.</span></span>
+### <span data-ttu-id="bd186-115">-名稱</span><span class="sxs-lookup"><span data-stu-id="bd186-115">-Name</span></span>
+<span data-ttu-id="bd186-116">要取回的回路連接組名。</span><span class="sxs-lookup"><span data-stu-id="bd186-116">The name of the circuit connection configuration to be retrieved.</span></span>
 
 ```yaml
 Type: System.String
@@ -88,27 +88,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="86e41-117">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="86e41-117">CommonParameters</span></span>
-<span data-ttu-id="86e41-118">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="86e41-118">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="86e41-119">如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="86e41-119">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="bd186-117">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="bd186-117">CommonParameters</span></span>
+<span data-ttu-id="bd186-118">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="bd186-118">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="bd186-119">詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="bd186-119">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="86e41-120">輸入</span><span class="sxs-lookup"><span data-stu-id="86e41-120">INPUTS</span></span>
+## <span data-ttu-id="bd186-120">輸入</span><span class="sxs-lookup"><span data-stu-id="bd186-120">INPUTS</span></span>
 
-### <span data-ttu-id="86e41-121">PSExpressRouteCircuit 中的 [.]</span><span class="sxs-lookup"><span data-stu-id="86e41-121">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit</span></span>
+### <span data-ttu-id="bd186-121">Microsoft.Azure.Commands.Network.models.PSExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="bd186-121">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit</span></span>
 
-## <span data-ttu-id="86e41-122">輸出</span><span class="sxs-lookup"><span data-stu-id="86e41-122">OUTPUTS</span></span>
+## <span data-ttu-id="bd186-122">輸出</span><span class="sxs-lookup"><span data-stu-id="bd186-122">OUTPUTS</span></span>
 
-### <span data-ttu-id="86e41-123">PSExpressRouteCircuitConnection 中的 [.]</span><span class="sxs-lookup"><span data-stu-id="86e41-123">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuitConnection</span></span>
+### <span data-ttu-id="bd186-123">Microsoft.Azure.Commands.Network.models.PSExpressRouteCircuitConnection</span><span class="sxs-lookup"><span data-stu-id="bd186-123">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuitConnection</span></span>
 
-## <span data-ttu-id="86e41-124">筆記</span><span class="sxs-lookup"><span data-stu-id="86e41-124">NOTES</span></span>
+## <span data-ttu-id="bd186-124">筆記</span><span class="sxs-lookup"><span data-stu-id="bd186-124">NOTES</span></span>
 
-## <span data-ttu-id="86e41-125">相關連結</span><span class="sxs-lookup"><span data-stu-id="86e41-125">RELATED LINKS</span></span>
+## <span data-ttu-id="bd186-125">相關連結</span><span class="sxs-lookup"><span data-stu-id="bd186-125">RELATED LINKS</span></span>
 
-[<span data-ttu-id="86e41-126">AzExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="86e41-126">Get-AzExpressRouteCircuit</span></span>](Get-AzExpressRouteCircuit.md)
+[<span data-ttu-id="bd186-126">Get-AzExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="bd186-126">Get-AzExpressRouteCircuit</span></span>](Get-AzExpressRouteCircuit.md)
 
-[<span data-ttu-id="86e41-127">附加 AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="86e41-127">Add-AzExpressRouteCircuitConnectionConfig</span></span>](Add-AzExpressRouteCircuitConnectionConfig.md)
+[<span data-ttu-id="bd186-127">Add-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="bd186-127">Add-AzExpressRouteCircuitConnectionConfig</span></span>](Add-AzExpressRouteCircuitConnectionConfig.md)
 
-[<span data-ttu-id="86e41-128">移除-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="86e41-128">Remove-AzExpressRouteCircuitConnectionConfig</span></span>](Remove-AzExpressRouteCircuitConnectionConfig.md)
+[<span data-ttu-id="bd186-128">Remove-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="bd186-128">Remove-AzExpressRouteCircuitConnectionConfig</span></span>](Remove-AzExpressRouteCircuitConnectionConfig.md)
 
-[<span data-ttu-id="86e41-129">Set-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="86e41-129">Set-AzExpressRouteCircuitConnectionConfig</span></span>](Set-AzExpressRouteCircuitConnectionConfig.md)
+[<span data-ttu-id="bd186-129">Set-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="bd186-129">Set-AzExpressRouteCircuitConnectionConfig</span></span>](Set-AzExpressRouteCircuitConnectionConfig.md)
 
-[<span data-ttu-id="86e41-130">新-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="86e41-130">New-AzExpressRouteCircuitConnectionConfig</span></span>](New-AzExpressRouteCircuitConnectionConfig.md)
+
