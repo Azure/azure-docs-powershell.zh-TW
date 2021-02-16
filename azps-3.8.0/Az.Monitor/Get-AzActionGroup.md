@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzActionGroup.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzActionGroup.md
-ms.openlocfilehash: c297198a1e49b93d498c136d1cb099d2068d24db
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 90bd9c7943e6e788d81f8ddec85513676afade23
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93966452"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100414028"
 ---
 # Get-AzActionGroup
 
-## 摘要
-取得動作群組 (s) 。
+## 簡介
+將動作群組 () 。
 
-## 句法
+## 語法
 
 ### BySubscriptionOrResourceGroup (預設) 
 ```
@@ -31,36 +31,36 @@ Get-AzActionGroup -ResourceGroupName <String> -Name <String> [-DefaultProfile <I
  [<CommonParameters>]
 ```
 
-## 說明
-**AzActionGroup** Cmdlet 會取得一或多個動作群組。
+## 描述
+**Get-AzActionGroup** Cmdlet 會取得一或多個動作群組。
 
-## 示例
+## 例子
 
-### 範例1：依訂閱識別碼取得動作群組
+### 範例 1：根據訂閱識別碼取得動作群組
 ```
 PS C:\>Get-AzActionGroup
 ```
 
-這個命令會列出目前訂閱的所有動作群組。
+此命令會列出目前訂閱的所有動作群組。
 
-### 範例2：取得指定資源群組的動作群組
+### 範例 2：取得給定資源群組的動作群組
 ```
 PS C:\>Get-AzActionGroup -ResourceGroup "Default-activityLogAlerts"
 ```
 
-這個命令會列出指定資源群組的 [動作] 群組。
+此命令會列出給定資源群組的動作群組。
 
-### 範例3：取得動作群組。
+### 範例 3：取得動作群組。
 ```
 PS C:\>Get-AzActionGroup -ResourceGroup "Default-activityLogAlerts" -Name "actionGroup1"
 ```
 
-這個命令會列出一個 (清單，其中只有一個元素) [動作] 群組。
+此命令會列出一 (動作群組中具有單一) 清單。
 
 ## 參數
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-動作群組的名稱。
+動作組的名稱。
 
 ```yaml
 Type: System.String
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-資源群組名稱
+資源組名
 
 ```yaml
 Type: System.String
@@ -117,20 +117,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### System.object
+### System.String
 
 ## 輸出
 
-### PSActionGroupResource 中的 OutputClasses。
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource
 
 ## 筆記
 
 ## 相關連結
 
 [Set-AzActionGroup](./Set-AzActionGroup.md) 
-[移除-AzActionGroup](./Remove-AzActionGroup.md) 
-[新-AzActionGroupReceiver](./AzureRmActionGroupReceiver.md)
+[Remove-AzActionGroup](./Remove-AzActionGroup.md) 
+[New-AzActionGroupReceiver](./New-AzActionGroupReceiver.md)
