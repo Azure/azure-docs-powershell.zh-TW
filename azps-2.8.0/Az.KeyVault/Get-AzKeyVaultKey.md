@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/g
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultKey.md
-ms.openlocfilehash: 21d2f6efa039dbd9b229562fcefd53c715f400fe
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: a934b1d96b260a6615acfbe02b15c80e6d3bfae5
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93612138"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100411444"
 ---
 # Get-AzKeyVaultKey
 
-## 摘要
-取得金鑰保存庫金鑰。
+## 簡介
+獲得金鑰庫金鑰。
 
-## 句法
+## 語法
 
 ### ByVaultName (預設) 
 ```
@@ -74,13 +74,13 @@ Get-AzKeyVaultKey [-ResourceId] <String> [-Name] <String> [-IncludeVersions]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## 說明
-**AzKeyVaultKey** Cmdlet 會取得 Azure 金鑰保存庫金鑰。
-這個 Cmdlet 會取得特定的 **KeyVault KeyBundle** 或主要保存庫或依據版本中所有 **KeyBundle** 物件的清單。
+## 描述
+**Get-AzKeyVaultKey** Cmdlet 會取得 Azure 金鑰庫金鑰。
+此 Cmdlet 會獲得特定的 **Microsoft.Azure.Commands.KeyVault.Models.KeyBundle** 或金鑰庫或版本的所有 **KeyBundle** 物件清單。
 
-## 示例
+## 例子
 
-### 範例1：取得金鑰保存庫中的所有按鍵
+### 範例 1：取得金鑰庫中的所有金鑰
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso'
 
@@ -109,9 +109,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-這個命令會取得名為 Contoso 的主要電子倉庫中的所有金鑰。
+此命令會獲得名稱為 Contoso 之金鑰庫中的所有金鑰。
 
-### 範例2：取得目前的金鑰版本
+### 範例 2：取得金鑰的目前版本
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test1'
 
@@ -128,9 +128,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-這個命令會取得名為 Contoso 之金鑰保存庫中名為 test1 的目前版本的金鑰。
+此命令會獲得名稱為 Contoso 之金鑰庫中名為 test1 的金鑰的目前版本。
 
-### 範例3：取得金鑰的所有版本
+### 範例 3：取得金鑰的所有版本
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test1' -IncludeVersions
 
@@ -159,9 +159,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-這個命令會取得所有版本金鑰 vaultnamed Contoso 中名為 ITPfx 的金鑰。
+此命令會獲得名稱為 Contoso 之金鑰庫中名為 ITPfx 的所有版本。
 
-### 範例4：取得特定的金鑰版本
+### 範例 4：取得金鑰的特定版本
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test1' -Version 'e4e95940e669407fbdb4298bc21a3e1d'
 
@@ -178,10 +178,10 @@ Purge Disabled : False
 Tags           :
 ```
 
-這個命令會在名為 Contoso 的主要保存庫中，取得名為 test1 的特定金鑰版本。
-執行此命令之後，您可以流覽 $Key 物件來檢查索引鍵的各種屬性。
+此命令在名為 Contoso 的金鑰庫中，會獲得名為 test1 的特定金鑰版本。
+執行此命令之後，您可以流覽物件以檢查$Key屬性。
 
-### 範例5：取得已刪除但未針對此金鑰保存庫清除的所有索引鍵。
+### 範例 5：取得此金鑰庫的所有已刪除但並未清除的金鑰。
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -InRemovedState
 
@@ -199,9 +199,9 @@ Purge Disabled       : False
 Tags                 :
 ```
 
-這個命令會在名為 Contoso 的金鑰保存庫中，取得先前已刪除但尚未清除的所有索引鍵。
+此命令會獲得先前在名稱為 Contoso 的金鑰庫中刪除但並未清除的所有金鑰。
 
-### 範例6：取得已刪除但未針對此金鑰保存庫清除的金鑰 ITPfx。
+### 範例 6：針對此金鑰庫，獲得已刪除但並未清除的金鑰 ITPfx。
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test3' -InRemovedState
 
@@ -219,10 +219,10 @@ Purge Disabled       : False
 Tags                 :
 ```
 
-這個命令會在名為 Contoso 的金鑰保存庫中，取得先前已刪除但尚未清除的金鑰 test3。
-這個命令會傳回中繼資料，例如刪除日期，以及此刪除金鑰的排程清除日期。
+此命令會獲得先前在名稱為 Contoso 的金鑰庫中刪除但並未清除的金鑰 test3。
+此命令會返回中繼資料，例如刪除日期，以及此刪除金鑰的排程清除日期。
 
-### 範例7：使用篩選取得金鑰保存庫中的所有金鑰
+### 範例 7：使用篩選功能取得金鑰庫中的所有金鑰
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName "test*"
 
@@ -251,12 +251,12 @@ Purge Disabled : False
 Tags           :
 ```
 
-這個命令會取得名為 Contoso 的主要電子倉庫中，以「test」開頭的所有索引鍵。
+此命令會獲得名稱為 Contoso 的金鑰庫中以「測試」做為開始的所有金鑰。
 
 ## 參數
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -271,10 +271,10 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeVersions
-表示此 Cmdlet 會取得所有版本的金鑰。
-索引鍵的目前版本是清單中的第一個版本。
-如果您指定此參數，您也必須指定 *Name* 及 *VaultName* 參數。
-如果您沒有指定 *IncludeVersions* 參數，這個 Cmdlet 會取得具有指定 *名稱* 的目前金鑰版本。
+表示此 Cmdlet 會獲得所有版本的金鑰。
+目前版本的金鑰是清單中的第一個版本。
+如果您指定此參數，您也必須指定 *Name* 和 *VaultName* 參數。
+如果您未指定 *IncludeVersions* 參數，此 Cmdlet 會以指定的名稱獲得目前版本的 *金鑰*。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -304,7 +304,7 @@ Accept wildcard characters: False
 ```
 
 ### -InRemovedState
-指定是否要在輸出中顯示先前刪除的索引鍵
+指定是否要在輸出中顯示先前刪除的按鍵
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -319,7 +319,7 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-指定要取得的金鑰捆綁的名稱。
+指定要取得之金鑰組合的名稱。
 
 ```yaml
 Type: System.String
@@ -361,8 +361,8 @@ Accept wildcard characters: False
 ```
 
 ### -VaultName
-指定由此 Cmdlet 取得金鑰之金鑰電子倉庫的名稱。
-這個 Cmdlet 會根據此參數指定的名稱和您所選的環境，來構造金鑰 vault (FQDN) 的完整功能變數名稱。
+指定此 Cmdlet 從其中獲得金鑰的金鑰庫名稱。
+此 Cmdlet 會根據此參數指定的名稱 (所選環境，建構金鑰庫的 FQDN) 完整功能變數名稱。
 
 ```yaml
 Type: System.String
@@ -378,7 +378,7 @@ Accept wildcard characters: False
 
 ### -版本
 指定金鑰版本。
-這個 Cmdlet 根據金鑰保存庫名稱、您目前選取的環境、金鑰名稱及金鑰版本來構造金鑰的 FQDN。
+此 Cmdlet 會根據金鑰庫名稱、您目前選取的環境、金鑰名稱和金鑰版本來建構金鑰的 FQDN。
 
 ```yaml
 Type: System.String
@@ -393,19 +393,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](https://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### PSKeyVault 中的 KeyVault。
+### Microsoft.Azure.Commands.KeyVault.models.PSKeyVault
 
-### System.object
+### System.String
 
 ## 輸出
 
-### PSKeyVaultKeyIdentityItem 中的 KeyVault。
+### Microsoft.Azure.Commands.KeyVault.models.PSKeyVaultKeyIdentityItem
 
-### PSKeyVaultKey 中的 KeyVault。
+### Microsoft.Azure.Commands.KeyVault.models.PSKeyVaultKey
 
 ### Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKeyIdentityItem
 
@@ -415,11 +415,10 @@ Accept wildcard characters: False
 
 ## 相關連結
 
-[附加 AzKeyVaultKey](./Add-AzKeyVaultKey.md)
+[Add-AzKeyVaultKey](./Add-AzKeyVaultKey.md)
 
-[移除-AzKeyVaultKey](./Remove-AzKeyVaultKey.md)
+[Remove-AzKeyVaultKey](./Remove-AzKeyVaultKey.md)
 
-[復原-AzKeyVaultKeyRemoval](./Undo-AzKeyVaultKeyRemoval.md)
+[Undo-AzKeyVaultKeyRemoval](./Undo-AzKeyVaultKeyRemoval.md)
 
-[Set-AzKeyVaultKeyAttribute](./Set-AzKeyVaultKeyAttribute.md)
 

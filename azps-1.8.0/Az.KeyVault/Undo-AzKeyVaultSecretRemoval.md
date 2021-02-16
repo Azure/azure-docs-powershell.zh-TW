@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/u
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Undo-AzKeyVaultSecretRemoval.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Undo-AzKeyVaultSecretRemoval.md
-ms.openlocfilehash: 26bf7b91b330032e05f96f425cb21908fc3df55d
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 92c5166794808d08a925c458afc14fe4b6dca834
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93787270"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100402145"
 ---
 # Undo-AzKeyVaultSecretRemoval
 
-## 摘要
-將 [金鑰 vault] 中已刪除的機密恢復為 [作用中] 狀態。
+## 簡介
+將金鑰庫中已刪除的機密復原為使用中狀態。
 
-## 句法
+## 語法
 
 ### 預設 (預設) 
 ```
@@ -31,14 +31,14 @@ Undo-AzKeyVaultSecretRemoval [-InputObject] <PSDeletedKeyVaultSecretIdentityItem
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## 說明
-**Undo AzKeyVaultSecretRemoval** Cmdlet 會復原先前刪除的機密。
-復原的秘密將是作用中的，而且可用於所有正常的機密作業。
-來電者需要擁有「復原」許可權，才能執行這個作業。
+## 描述
+**Undo-AzKeyVaultSecretRemoval Cmdlet** 會復原先前刪除的機密。
+已復原的機密將會為使用中，而且可用於所有一般機密作業。
+來電者必須擁有復原許可權，才能執行此作業。
 
-## 示例
+## 例子
 
-### 範例1
+### 範例 1
 ```powershell
 PS C:\> Undo-AzKeyVaultSecretRemoval -VaultName 'MyKeyVault' -Name 'MySecret'
 
@@ -55,12 +55,12 @@ Content Type :
 Tags         :
 ```
 
-這個命令會將先前刪除的秘密「MySecret」復原成作用中且可用的狀態。
+此命令將會將先前刪除的機密 MySecret 復原為使用中且可使用的狀態。
 
 ## 參數
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -90,8 +90,8 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-[秘密名稱]。
-Cmdlet 會從保存庫名稱、目前已選取的環境和密碼來構造秘密的 FQDN。
+機密名稱。
+Cmdlet 會從儲存庫名稱、目前選取的環境和機密名稱建構一個機密的 FQDN。
 
 ```yaml
 Type: System.String
@@ -106,8 +106,8 @@ Accept wildcard characters: False
 ```
 
 ### -VaultName
-保存庫名稱。
-Cmdlet 根據名稱和目前所選的環境來構造電子倉庫的 FQDN。
+儲存庫名稱。
+Cmdlet 會根據名稱和目前選取的環境來建構庫的 FQDN。
 
 ```yaml
 Type: System.String
@@ -122,7 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，系統會提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -137,8 +137,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。
-未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。
+不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -153,7 +153,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 https://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
@@ -161,14 +161,13 @@ Accept wildcard characters: False
 
 ## 輸出
 
-### PSKeyVaultSecret 中的 KeyVault。
+### Microsoft.Azure.Commands.KeyVault.models.PSKeyVaultSecret
 
 ## 筆記
 
 ## 相關連結
 
-[移除-AzKeyVaultSecret](./Remove-AzKeyVaultSecret.md)
+[Remove-AzKeyVaultSecret](./Remove-AzKeyVaultSecret.md)
 
-[附加 AzKeyVaultSecret](./Add-AzKeyVaultSecret.md)
 
-[AzKeyVaultSecret](./Get-AzKeyVaultSecret.md)
+[Get-AzKeyVaultSecret](./Get-AzKeyVaultSecret.md)
