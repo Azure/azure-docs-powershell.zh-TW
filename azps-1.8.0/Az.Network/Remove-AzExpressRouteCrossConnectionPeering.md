@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/Re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzExpressRouteCrossConnectionPeering.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzExpressRouteCrossConnectionPeering.md
-ms.openlocfilehash: b991b26d8d6fc7a7cfd33ab051619b7192ae0aec
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: fe7c4550e3f54268e600414f8516095132b72115
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93621621"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100402281"
 ---
 # Remove-AzExpressRouteCrossConnectionPeering
 
-## 摘要
-移除 ExpressRoute 交叉連接對等設定。
+## 簡介
+移除 ExpressRoute 交叉連接對等互連組。
 
-## 句法
+## 語法
 
 ```
 Remove-AzExpressRouteCrossConnectionPeering -ExpressRouteCrossConnection <PSExpressRouteCrossConnection>
@@ -26,12 +26,12 @@ Remove-AzExpressRouteCrossConnectionPeering -ExpressRouteCrossConnection <PSExpr
  [-Confirm] [<CommonParameters>]
 ```
 
-## 說明
-**AzExpressRouteCrossConnectionPeering** Cmdlet 會移除 ExpressRoute 交叉連接對等設定。
+## 描述
+**Remove-AzExpressRouteCrossConnectionPeering** Cmdlet 會移除 ExpressRoute 交叉連接對等配置。
 
-## 示例
+## 例子
 
-### 範例1：從 ExpressRoute 交叉連線中移除對等設定
+### 範例 1：從 ExpressRoute 交叉連接移除對等組
 ```
 $cc = Get-AzExpressRouteCrossConnection -Name $CrossConnectionName -ResourceGroupName $rg
 Remove-AzExpressRouteCrossConnectionPeering -Name 'AzurePrivatePeering' -ExpressRouteCrossConnection $cc
@@ -41,7 +41,7 @@ Set-AzExpressRouteCrossConnection -ExpressRouteCrossConnection $cc
 ## 參數
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -56,7 +56,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExpressRouteCrossConnection
-包含要移除之對等設定的 ExpressRoute 交叉連線。
+包含要移除對等配置的 ExpressRoute 交叉連接。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSExpressRouteCrossConnection
@@ -70,8 +70,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Force
-如果您想要 overrite 資源，請不要要求確認
+### -強制
+如果您想要過度使用資源，請勿要求確認
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-要移除之對等設定的名稱。
+要移除的對等組名。
 
 ```yaml
 Type: System.String
@@ -101,7 +101,7 @@ Accept wildcard characters: False
 ```
 
 ### -PeerAddressType
-對等的位址族
+對等的網址系列
 
 ```yaml
 Type: System.String
@@ -117,7 +117,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，系統會提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。 未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。 不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -147,25 +147,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 https://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
 ### PSExpressRouteCrossConnection
-形參 "ExpressRouteCrossConnection" 接受管線中 "PSExpressRouteCrossConnection" 類型的值
+參數 'ExpressRouteCrossConnection' 接受來自管線之類型 'PSExpressRouteCrossConnection'的值
 
 ## 輸出
 
-### PSExpressRouteCrossConnection 中的 [.]
+### Microsoft.Azure.Commands.Network.models.PSExpressRouteCrossConnection
 
 ## 筆記
 
 ## 相關連結
 
-[附加 AzExpressRouteCrossConnectionPeering](Add-AzExpressRouteCrossConnectionPeering.md)
+[Add-AzExpressRouteCrossConnectionPeering](Add-AzExpressRouteCrossConnectionPeering.md)
 
-[AzExpressRouteCrossConnectionPeering](New-AzExpressRouteCrossConnectionPeering.md)
 
-[AzExpressRouteCrossConnection](Get-AzExpressRouteCrossConnection.md)
+
+[Get-AzExpressRouteCrossConnection](Get-AzExpressRouteCrossConnection.md)
 
 [Set-AzExpressRouteCrossConnection](Set-AzExpressRouteCrossConnection.md)
