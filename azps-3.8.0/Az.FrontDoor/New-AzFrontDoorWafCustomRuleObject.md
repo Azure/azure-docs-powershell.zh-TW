@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorWafCustomRuleObject.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorWafCustomRuleObject.md
-ms.openlocfilehash: d352f70d28b9bfafae46697fb6d69dc50c739b19
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 4612f1ef1dac22d87b6794e35f9541a39f6312ea
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93959780"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100403981"
 ---
 # New-AzFrontDoorWafCustomRuleObject
 
-## 摘要
-建立 WAF 原則建立的 CustomRule 物件
+## 簡介
+建立自訂規則物件以建立 WAF 規則
 
-## 句法
+## 語法
 
 ```
 New-AzFrontDoorWafCustomRuleObject -Name <String> -RuleType <String> -MatchCondition <PSMatchCondition[]>
@@ -25,12 +25,12 @@ New-AzFrontDoorWafCustomRuleObject -Name <String> -RuleType <String> -MatchCondi
  [-EnabledState <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## 說明
-建立 WAF 原則建立的 CustomRule 物件
+## 描述
+建立自訂規則物件以建立 WAF 策略
 
-## 示例
+## 例子
 
-### 範例1
+### 範例 1
 ```powershell
 PS C:\> New-AzFrontDoorWafCustomRuleObject -Name "Rule1" -RuleType MatchRule -MatchCondition $matchCondition1 -Action Block -Priority 2
 
@@ -45,7 +45,7 @@ Rule1 MatchRule  Block        2                          1
 
 ### -動作
 動作類型。
-可能的值包括： "Allow"，"Block"，"Log"
+可能的值包括：'Allow'，'Block'， 'Log'
 
 ```yaml
 Type: System.String
@@ -60,7 +60,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 Azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledState
-已啟用狀態。 可能的值包括：「已啟用」、「已停用」。
+啟用狀態。 可能的值包括：「已啟用」、」已停用」。
 
 ```yaml
 Type: System.String
@@ -120,7 +120,7 @@ Accept wildcard characters: False
 ```
 
 ### -優先順序
-描述規則的優先順序。
+說明規則的優先順序。
 
 ```yaml
 Type: System.Int32
@@ -135,7 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -RateLimitDurationInMinutes
-Rate 限制持續時間。 預設值-1 分鐘
+費率限制持續時間。 預設 - 1 分鐘
 
 ```yaml
 Type: System.Int32
@@ -150,7 +150,7 @@ Accept wildcard characters: False
 ```
 
 ### -RateLimitThreshold
-Rate 限制閾值
+費率限制閥值
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -165,8 +165,8 @@ Accept wildcard characters: False
 ```
 
 ### -RuleType
-規則的類型。
-可能的值包括： "MatchRule"、"RateLimitRule"
+規則類型。
+可能的值包括：'MatchRule'， 'RateLimitRule'
 
 ```yaml
 Type: System.String
@@ -181,19 +181,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### 所有
+### 沒有
 
 ## 輸出
 
-### PSCustomRule 中的 FrontDoor。
+### Microsoft.Azure.Commands.FrontDoor.models.PSCustomRule
 
 ## 筆記
 
 ## 相關連結
 
-[新-AzFrontDoorWafPolicy](./New-AzFrontDoorWafPolicy.md) 
-[Set-AzFrontDoorWafPolicy](./Set-AzFrontDoorWafPolicy.md)
+[New-AzFrontDoorWafPolicy](./New-AzFrontDoorWafPolicy.md) 
+[Update-AzFrontDoorWafPolicy](./Update-AzFrontDoorWafPolicy.md)
