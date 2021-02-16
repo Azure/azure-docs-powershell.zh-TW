@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/Update
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Update-AzSqlDatabaseAdvancedThreatProtectionSetting.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Update-AzSqlDatabaseAdvancedThreatProtectionSetting.md
-ms.openlocfilehash: 1bd5906ac4736fc2aace122070edfebe1e59fe3f
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: baa3e3d4b272bccab5fe33b9af05edc9ed254236
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94127230"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406701"
 ---
 # Update-AzSqlDatabaseAdvancedThreatProtectionSetting
 
-## 摘要
-在資料庫上設定高級威脅防護設定。
+## 簡介
+在資料庫中設定進一級的威脅防護設定。
 
-## 句法
+## 語法
 
 ```
 Update-AzSqlDatabaseAdvancedThreatProtectionSetting [-PassThru] [-NotificationRecipientsEmails <String>]
@@ -27,25 +27,25 @@ Update-AzSqlDatabaseAdvancedThreatProtectionSetting [-PassThru] [-NotificationRe
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## 說明
-**AzSqlDatabaseAdvancedThreatProtectionSetting** Cmdlet 會針對 Azure SQL 資料庫設定高級威脅防護設定。
-若要在資料庫上啟用高級威脅防護，必須在該資料庫上啟用 [審核] 設定。
-若要使用這個 Cmdlet，請指定 *ResourceGroupName* 、 *ServerName* 和 *DatabaseName* 參數來識別資料庫。
-Azure 上的 SQL Server Stretch Database 服務也支援此 Cmdlet。
+## 描述
+**Update-AzSqlDatabaseAdvancedThreatProtectionSetting** Cmdlet 會設定 Azure SQL 資料庫上的進一威脅防護設定。
+若要在資料庫上啟用進位威脅防護，必須在該資料庫上啟用稽核設定。
+若要使用此 Cmdlet，請指定 *ResourceGroupName、ServerName* 和 *DatabaseName* 參數來識別資料庫。 
+Azure 上的 SQL Server 延伸資料庫服務也支援此 Cmdlet。
 
-## 示例
+## 例子
 
-### 範例1：為資料庫設定高級威脅防護設定
+### 範例 1：設定資料庫的進一步威脅防護設定
 ```
 PS C:\>Update-AzSqlDatabaseAdvancedThreatProtectionSetting -ResourceGroupName "ResourceGroup11" -ServerName "Server01" -DatabaseName "Database01" -NotificationRecipientsEmails "admin01@contoso.com;secadmin@contoso.com" -EmailAdmins $False -ExcludedDetectionType "Sql_Injection_Vulnerability", "SQL_Injection" -StorageAccountName "mystorageAccount"
 ```
 
-這個命令會在名為 Server01 的伺服器上，為名為 Database01 的資料庫設定高級威脅防護設定。
+此命令會針對伺服器名為 Database01 的伺服器上名為 Database01 的資料庫設定進位威脅防護設定。
 
 ## 參數
 
 ### -DatabaseName
-指定設定設定之資料庫的名稱。
+指定設定之資料庫的名稱。
 
 ```yaml
 Type: System.String
@@ -60,7 +60,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 ```
 
 ### -EmailAdmins
-指定 [高級威脅防護] 設定是否使用電子郵件與管理員聯絡。
+指定進一步威脅防護設定是否使用電子郵件與系統管理員聯繫。
 
 ```yaml
 Type: System.Nullable`1[System.Boolean]
@@ -90,12 +90,12 @@ Accept wildcard characters: False
 ```
 
 ### -ExcludedDetectionType
-指定要從設定中排除的偵測類型陣列。
+指定要排除于設定中的偵測類型的陣列。
 此參數可接受的值為：
-- Sql_Injection 
-- Sql_Injection_Vulnerability 
-- Access_Anomaly 
-- 所有
+- Sql_Injection
+- Sql_Injection_Vulnerability
+- Access_Anomaly
+- 沒有
 
 ```yaml
 Type: System.String[]
@@ -110,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -NotificationRecipientsEmails
-指定要傳送提醒的電子郵件地址清單（以分號分隔）。
+指定設定會傳送通知的電子郵件地址的分號分隔清單。
 
 ```yaml
 Type: System.String
@@ -125,8 +125,8 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-傳回代表您正在使用之專案的物件。
-根據預設，這個 Cmdlet 不會產生任何輸出。
+會返回代表您處理之專案的物件。
+根據預設，此 Cmdlet 不會產生任何輸出。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -141,7 +141,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-指定指派給伺服器之資源群組的名稱。
+指定伺服器指派給的資源組名。
 
 ```yaml
 Type: System.String
@@ -156,7 +156,7 @@ Accept wildcard characters: False
 ```
 
 ### -RetentionInDays
-審計記錄的保留天數
+稽核記錄保留天數
 
 ```yaml
 Type: System.Nullable`1[System.UInt32]
@@ -186,7 +186,7 @@ Accept wildcard characters: False
 ```
 
 ### -StorageAccountName
-指定要使用的儲存空間帳戶名稱。 不允許使用萬用字元。 不需要此參數。 如果未提供此參數，則此 Cmdlet 會使用先前在資料庫的高級威脅防護設定中定義的儲存空間帳戶。 如果這是已定義資料庫高級威脅防護設定且未提供此參數的第一次，則 Cmdlet 將會失敗。
+指定要使用的儲存空間帳戶名稱。 不允許使用萬用字元。 此參數不為必填專案。 未提供此參數時，Cmdlet 會使用先前定義為資料庫進一步威脅防護設定一部分的儲存空間帳戶。 如果這是第一次定義資料庫進位威脅防護設定，而且未提供此參數，Cmdlet 將會失敗。
 
 ```yaml
 Type: System.String
@@ -201,7 +201,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -216,8 +216,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。
-未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。
+不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -232,30 +232,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### System.object
+### System.String
 
-### "CoreLib" 1 ["System.object，System.object，版本 = 4.0.0.0，Culture = 中立，PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Boolean， System.Private.CoreLib， Version=4.0.0.0， Culture=neutral， PublicKeyToken=7cec85d7bea7798e]]
 
-### DetectionType [] 的 ThreatDetection [）]
+### Microsoft.Azure.Commands.Sql.ThreatDetection.Model.DetectionType[]
 
-### 系統. Nullable "1 [[System. UInt32，System.object CoreLib，Version = 4.0.0.0，Culture = 中性，PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.UInt32， System.Private.CoreLib， Version=4.0.0.0， Culture=neutral， PublicKeyToken=7cec85d7bea7798e]]
 
 ## 輸出
 
-### DatabaseThreatDetectionsettingsModel 中的 [ThreatDetection]
+### Microsoft.Azure.Commands.Sql.ThreatDetection.Model.DatabaseThreatDetectionsettingsModel
 
 ## 筆記
 
 ## 相關連結
 
-[AzSqlDatabaseThreatDetectionsettings](./Get-AzSqlServerThreatDetectionsettings.md)
-
-[移除-AzSqlDatabaseThreatDetectionsettings](./Remove-AzSqlDatabaseThreatDetectionsettings.md)
-
 [SQL 資料庫檔](https://docs.microsoft.com/azure/sql-database/)
-
-
