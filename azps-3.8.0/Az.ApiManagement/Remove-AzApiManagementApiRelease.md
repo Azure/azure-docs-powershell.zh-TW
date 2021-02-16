@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementApiRelease.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementApiRelease.md
-ms.openlocfilehash: 073f93cdb13e39925ef92dc556fb06a0ac96bcae
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 9673df14bdd0f5b7d0e946170a155231e8c4e751
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93958847"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100412651"
 ---
 # Remove-AzApiManagementApiRelease
 
-## 摘要
+## 簡介
 移除特定的 API 發行
 
-## 句法
+## 語法
 
 ### ByApiReleaseId (預設) 
 ```
@@ -31,25 +31,25 @@ Remove-AzApiManagementApiRelease -InputObject <PsApiManagementApiRelease> [-Pass
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## 說明
+## 描述
 
-**AzAzureRmApiManagementApiRelease** Cmdlet 會移除現有的 API 版本。
+**Remove-AzAzureRmApiManagementApiRelease** Cmdlet 會移除現有的 API 發行。
 
-## 示例
+## 例子
 
-### 範例1：移除 API 發行
+### 範例 1：移除 API 發行
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Remove-AzAzureRmApiManagementApiRelease -Context $apimContext -ApiId "echo-api" -ReleaseId "2"
 ```
 
-這個命令會以指定的 ApiId 和 ReleaseId 移除 API 發行。
+此命令會移除具有指定 ApiId 和 ReleaseId 的 API 發行。
 
 ## 參數
 
 ### -ApiId
 API 的識別碼。
-這個參數是必要的。
+此參數為必填專案。
 
 ```yaml
 Type: System.String
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 
 ### -內容
 PsApiManagementCoNtext 的實例。
-這個參數是必要的。
+此參數為必填專案。
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -80,7 +80,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 Azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -95,7 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-PsApiManagementApiRelease 的實例。 這個參數是必要的。
+PsApiManagementApiRelease 實例。 此參數為必填專案。
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApiRelease
@@ -110,8 +110,8 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-如果已指定，則會在操作成功時寫入 true。
-這個參數是選用的。
+如果指定，如果作業成功，會寫入 True。
+此參數為選擇性。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -126,8 +126,8 @@ Accept wildcard characters: False
 ```
 
 ### -ReleaseId
-API 發行的識別碼。
-這個參數是必要的。
+API 發行識別碼。
+此參數為必填專案。
 
 ```yaml
 Type: System.String
@@ -142,7 +142,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -157,8 +157,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。
-未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。
+不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -173,26 +173,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### ServiceManagement. PsApiManagementCoNtext （ApiManagement）
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.models.PsApiManagementCoNtext
 
-### ServiceManagement. PsApiManagementApiRelease （ApiManagement）
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.models.PsApiManagementApiRelease
 
-### System.object
+### System.String
 
 ## 輸出
 
-### System.object
+### System.Boolean
 
 ## 筆記
 
 ## 相關連結
 
-[AzApiManagementApiRelease](./Get-AzApiManagementApiRelease.md)
+[Get-AzApiManagementApiRelease](./Get-AzApiManagementApiRelease.md)
 
-[新-AzApiManagementApiRelease](./New-AzApiManagementApiRelease.md)
+[New-AzApiManagementApiRelease](./New-AzApiManagementApiRelease.md)
 
-[Set-AzApiManagementApiRelease](./Set-AzApiManagementApiRelease.md)
+[Update-AzApiManagementApiRelease](./Update-AzApiManagementApiRelease.md)

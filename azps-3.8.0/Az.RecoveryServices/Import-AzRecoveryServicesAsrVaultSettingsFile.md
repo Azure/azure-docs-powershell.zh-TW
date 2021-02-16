@@ -5,41 +5,41 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.recoveryse
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Import-AzRecoveryServicesAsrVaultSettingsFile.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Import-AzRecoveryServicesAsrVaultSettingsFile.md
-ms.openlocfilehash: de3604a4bf1f9c46bf88b2f3cda25982672e9096
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: f71f7e37e4864de10c5387d63c101cd66ed9fd34
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93966158"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100412617"
 ---
 # Import-AzRecoveryServicesAsrVaultSettingsFile
 
-## 摘要
-匯入指定的 ASR 電子倉庫設定檔案，以便在 PowerShell 會話中針對後續的 ASR 作業 (PowerShell 會話內容) 設定 vault 內容。 
+## 簡介
+將指定的 ASR 保存庫設定檔案， (PowerShell 會話上下文的保存庫上下文設定) PowerShell 會話中後續的 ASR 作業。 
 
-## 句法
+## 語法
 
 ```
 Import-AzRecoveryServicesAsrVaultSettingsFile [-Path] <String> [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## 說明
-匯 **入-AzRecoveryServicesAsrVaultSettingsFile** Cmdlet 會匯入 Azure Site Recovery 保存庫設定檔。 Vault 設定檔案是用來在目前的會話中設定後續 Azure 網站恢復作業的保存庫內容。
+## 描述
+**Import-AzRecoveryServicesAsrVaultSettingsFile** Cmdlet 會導入 Azure 網站復原保存庫設定檔案。 保存庫設定檔案用來設定目前會話中後續 Azure 網站復原作業的保存庫上下文。
 
-## 示例
+## 例子
 
-### 範例1
+### 範例 1
 ```
 PS C:\> $VaultSettings = Import-AzRecoveryServicesAsrVaultSettingsFile -Path $FilePath
 ```
 
-匯入指定的復原服務電子倉庫設定檔案，並傳回已匯入的電子倉庫的設定。
+匯出指定的修復服務保存庫設定檔案，並返回所導入保存庫的設定。
 
 ## 參數
 
 ### -DefaultProfile
-用於與 Azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱。
 
 
 ```yaml
@@ -54,9 +54,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Path
-指定 ASR 電子倉庫設定檔案的資料夾路徑。
-此檔案可從 [恢復服務] vault 入口網站下載，並儲存在本機。
+### -路徑
+指定 ASR 保存庫設定檔案的資料夾路徑。
+此檔案可以從修復服務保存庫入口網站下載，並儲存在本地。
 
 ```yaml
 Type: System.String
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，系統會提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。 未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。 不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -101,18 +101,17 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### System.object
+### System.String
 
 ## 輸出
 
-### RecoveryServices. SiteRecovery. ASRVaultSettings
+### Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRVaultSettings
 
 ## 筆記
 
 ## 相關連結
 
-[AzRecoveryServicesAsrVaultSettingsFile](./Get-AzRecoveryServicesAsrVaultSettingsFile.md)
