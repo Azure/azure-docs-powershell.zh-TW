@@ -5,31 +5,31 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/Get-AzFrontDoorWafPolicy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/Get-AzFrontDoorWafPolicy.md
-ms.openlocfilehash: 60d6263d3fb074cf4795379ae28f1824dc81a4c0
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 5cc2a2e480044aa00c51a18dd116d33bd4c2f72a
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93612373"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398456"
 ---
 # Get-AzFrontDoorWafPolicy
 
-## 摘要
-取得 WAF 原則
+## 簡介
+取得 WAF 政策
 
-## 句法
+## 語法
 
 ```
 Get-AzFrontDoorWafPolicy -ResourceGroupName <String> [-Name <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## 說明
-**AzFrontDoorWafPolicy** CmdletGet 會在目前訂閱底下的資源群組中取得 WAF 原則
+## 描述
+**Get-AzFrontDoorWafPolicy** CmdletGet 會取得目前訂閱下資源群組中的 WAF 策略
 
-## 示例
+## 例子
 
-### 範例1
+### 範例 1
 ```powershell
 PS C:\> Get-AzFrontDoorWafPolicy -Name $policyName -ResourceGroupName $resourceGroupName
 
@@ -38,9 +38,9 @@ Name         PolicyMode PolicyEnabledState CustomBlockResponseStatusCode Redirec
 {policyName} Prevention            Enabled                           403 https://www.bing.com/
 ```
 
-在 $resourceGroupName 中取得稱為 $policyName 的 WAF 原則
+在 $policyName 中取得稱為 $resourceGroupName 的 WAF $resourceGroupName
 
-### 範例2
+### 範例 2
 ```powershell
 PS C:\> Get-AzFrontDoorWafPolicy -ResourceGroupName $resourceGroupName
 
@@ -51,12 +51,12 @@ Name         PolicyMode PolicyEnabledState CustomBlockResponseStatusCode Redirec
 {policyName} Detection             Enabled                           404
 ```
 
-取得 $resourceGroupName 中的所有 WAF 原則
+取得所有 WAF $resourceGroupName
 
 ## 參數
 
 ### -DefaultProfile
-用於與 Azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-FireWallPolicy [名稱]。
+FireWallPolicy 名稱。
 
 ```yaml
 Type: System.String
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-資源群組的名稱。
+資源組名。
 
 ```yaml
 Type: System.String
@@ -101,20 +101,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](https://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### 所有
+### 沒有
 
 ## 輸出
 
-### PSPolicy 中的 FrontDoor。
+### Microsoft.Azure.Commands.FrontDoor.models.PSPolicy
 
 ## 筆記
 
 ## 相關連結
 
-[新-AzFrontDoorWafPolicy](./New-AzFrontDoorWafPolicy.md) 
-[Set-AzFrontDoorWafPolicy](./Set-AzFrontDoorWafPolicy.md) 
-[移除-AzFrontDoorWafPolicy](./Remove-AzFrontDoorWafPolicy.md)
+[New-AzFrontDoorWafPolicy](./New-AzFrontDoorWafPolicy.md) 
+[Remove-AzFrontDoorWafPolicy](./Remove-AzFrontDoorWafPolicy.md) 
+[Update-AzFrontDoorWafPolicy](./Update-AzFrontDoorWafPolicy.md)

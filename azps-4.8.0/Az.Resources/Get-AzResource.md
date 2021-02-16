@@ -6,20 +6,20 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzResource.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzResource.md
-ms.openlocfilehash: e1748bb3dbb5c2bb86f02ef9ec58d0d1eec55ba9
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 2926aa351e7e9f1f9251c5a6e6a2292b27ef93b0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94127889"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398184"
 ---
 # Get-AzResource
 
-## 摘要
+## 簡介
 
-取得資源。
+獲得資源。
 
-## 句法
+## 語法
 
 ### ByTagNameValueParameterSet (預設) 
 ```
@@ -41,13 +41,13 @@ Get-AzResource [-Name <String>] [-ResourceType <String>] [-ODataQuery <String>] 
  [<CommonParameters>]
 ```
 
-## 說明
+## 描述
 
-**AzResource** Cmdlet 會取得 Azure 資源。
+**Get-AzResource** Cmdlet 會取得 Azure 資源。
 
-## 示例
+## 例子
 
-### 範例1：取得目前訂閱中的所有資源
+### 範例 1：取得目前訂閱的所有資源
 
 ```
 PS C:\> Get-AzResource | ft
@@ -65,9 +65,9 @@ storage otherResourceGroup Microsoft.Storage/storageAccounts       eastus
 testVM2 otherResourceGroup Microsoft.Compute/virtualMachines       eastus
 ```
 
-這個命令會取得目前訂閱中的所有資源。
+此命令會獲得目前訂閱的所有資源。
 
-### 範例2：取得資源群組中的所有資源
+### 範例 2：取得資源群組中所有的資源
 
 ```
 PS C:\> Get-AzResource -ResourceGroupName testRG | ft
@@ -82,9 +82,9 @@ ip     testRG            Microsoft.Network/publicIPAddresses     westus
 vnet   testRG            Microsoft.Network/virtualNetworks       westus
 ```
 
-這個命令會取得資源群組 "testRG" 中的所有資源。
+此命令會獲得資源群組 "testRG" 的所有資源。
 
-### 範例3：取得資源群組與提供的萬用字元相符的所有資源
+### 範例 3：取得資源群組符合所提供的萬用字元的所有資源
 
 ```
 PS C:\> Get-AzResource -ResourceGroupName other* | ft
@@ -96,9 +96,9 @@ storage otherResourceGroup Microsoft.Storage/storageAccounts eastus
 testVM2 otherResourceGroup Microsoft.Compute/virtualMachines eastus
 ```
 
-這個命令會取得其資源群組與「其他」有關的所有資源。
+此命令會以「其他」方式，獲得其所屬資源群組的所有資源。
 
-### 範例4：取得具有指定名稱的所有資源
+### 範例 4：使用指定名稱取得所有資源
 
 ```
 PS C:\> Get-AzResource -Name testVM | fl
@@ -116,9 +116,9 @@ Tags              :
                     Status  Approved
 ```
 
-這個命令會取得資源名稱為 "testVM" 的所有資源。
+此命令會獲得資源名稱為"testMS"的所有資源。
 
-### 範例5：取得名稱與提供的萬用字元相符的所有資源
+### 範例 5：取得名稱符合所提供的萬用字元的所有資源
 
 ```
 PS C:\> Get-AzResource -Name test* | ft
@@ -130,9 +130,9 @@ testKV  otherRG            Microsoft.KeyVault/vaults         eastus
 testVM2 otherResourceGroup Microsoft.Compute/virtualMachines eastus
 ```
 
-這個命令會取得其資源名稱以「test」開頭的所有資源。
+此命令會獲得資源名稱以「測試」開頭的所有資源。
 
-### 範例6：取得指定資源類型的所有資源
+### 範例 6：取得給定資源類型的所有資源
 
 ```
 PS C:\> Get-AzResource -ResourceType Microsoft.Compute/virtualMachines | ft
@@ -143,9 +143,9 @@ testVM  testRG             Microsoft.Compute/virtualMachines westus
 testVM2 otherResourceGroup Microsoft.Compute/virtualMachines eastus
 ```
 
-這個命令會在目前的訂閱中取得虛擬機器的所有資源。
+此命令會獲得目前訂閱中虛擬機器的所有資源。
 
-### 範例7：依資源識別碼取得資源
+### 範例 7：根據資源識別碼取得資源
 
 ```
 PS C:\> Get-AzResource -ResourceId /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testRG/providers/Microsoft.Compute/virtualMachines/testVM
@@ -163,7 +163,7 @@ Tags              :
                     Status  Approved
 ```
 
-這個命令會取得具有提供之資源識別碼的資源，這是資源群組 "testRG" 中稱為 "testVM" 的虛擬機器。
+此命令會使用提供的資源識別碼來獲得資源，這是資源群組 "testRG" 中稱為 "testMS" 的虛擬機器。
 
 ## 參數
 
@@ -182,7 +182,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -197,7 +197,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExpandProperties
-指定時，會展開資源的屬性。
+指定時，展開資源的屬性。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -212,7 +212,7 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-要檢索) 資源 (s 的名稱。 這個參數支援字串開頭和/或結尾的萬用字元。
+要 (的資源) 名稱。 此參數支援字串開頭和/或結尾的萬用字元。
 
 ```yaml
 Type: System.String
@@ -240,7 +240,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -預先
+### -Pre
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -255,7 +255,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-[資源] 群組) 所檢索的資源 (s。 這個參數支援字串開頭和/或結尾的萬用字元。
+已取回 (資源) 所屬的資源群組。 此參數支援字串開頭和/或結尾的萬用字元。
 
 ```yaml
 Type: System.String
@@ -270,7 +270,7 @@ Accept wildcard characters: True
 ```
 
 ### -ResourceId
-指定完全合格的資源識別碼，如下列範例所示 `/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.Compute/virtualMachines`
+指定完整資源識別碼，如下列範例所示 `/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.Compute/virtualMachines`
 
 ```yaml
 Type: System.String
@@ -285,7 +285,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceType
-要檢索) 資源的資源類型 (s。 例如，Microsoft. 計算/virtualMachines
+要取回的資源 () 類型。 例如，Microsoft.Compute/virtualMachines
 
 ```yaml
 Type: System.String
@@ -299,9 +299,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Tag
+### -標記
 
-取得具有指定 Azure 標記的資源。 輸入具有 [鍵] 或 [名稱] 和 [值] 鍵的雜湊表。 不支援萬用字元。[標記] 是您可以套用至資源和資源群組的名稱-值對。 使用標籤將資源分類（例如 [部門] 或 [成本中心]），或追蹤資源的備忘稿或意見。 若要新增標籤至資源，請使用 New-AzResource 或 Set-AzResource Cmdlet 的 Tag 參數。 若要建立預先定義的標記，請使用 New-AzTag Cmdlet。 如需有關 Windows PowerShell 中的雜湊資料表的說明，請執行「Get-help about_Hashtables」。
+獲得具有指定 Azure 標記的資源。 輸入包含名稱鍵或名稱與值索引鍵的雜湊表。 不支援萬用字元。「標記」是一組名稱值，您可以將它用於資源和資源群組。 使用標記來分類資源，例如按照部門或成本中心，或追蹤資源的附注或批註。 若要新增標籤至資源，請使用標籤或 Cmdlet New-AzResource標記Set-AzResource參數。 若要建立預先定義的標籤，請使用 New-AzTag Cmdlet。 有關 Windows PowerShell 中雜湊表格的協助，請執行 'Get-help about_Hashtables'。
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -316,7 +316,7 @@ Accept wildcard characters: False
 ```
 
 ### -TagName
-要檢索) 資源的標籤中的索引鍵 (s。
+要取回的資源 (標記) 鍵。
 
 ```yaml
 Type: System.String
@@ -331,7 +331,7 @@ Accept wildcard characters: False
 ```
 
 ### -TagValue
-要檢索之資源 (s 的標籤中的值) 。
+要取回的資源 (標記) 的值。
 
 ```yaml
 Type: System.String
@@ -346,26 +346,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### System.object
+### System.String
 
 ## 輸出
 
-### PSResource 中的 SdkModels （）
+### Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResource
 
 ## 筆記
 
 ## 相關連結
 
-[尋找-AzResource](./Find-AzResource.md)
 
-[移動流覽 AzResource](./Move-AzResource.md)
+[Move-AzResource](./Move-AzResource.md)
 
-[新-AzResource](./New-AzResource.md)
+[New-AzResource](./New-AzResource.md)
 
-[移除-AzResource](./Remove-AzResource.md)
+[Remove-AzResource](./Remove-AzResource.md)
 
 [Set-AzResource](./Set-AzResource.md)

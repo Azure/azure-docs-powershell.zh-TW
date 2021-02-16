@@ -5,31 +5,31 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendProxy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendProxy.md
-ms.openlocfilehash: d7afe10975003dcc8c82156d03adc1aa022b505c
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: d7757e277c6465622279937f72c45a1bec07684a
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93958190"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398150"
 ---
 # New-AzApiManagementBackendProxy
 
-## 摘要
+## 簡介
 建立新的後端 Proxy 物件。
 
-## 句法
+## 語法
 
 ```
 New-AzApiManagementBackendProxy -Url <String> [-ProxyCredential <PSCredential>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## 說明
-建立新的後端 Proxy 物件，可在建立新的後端實體時進行管道。
+## 描述
+建立新後端 Proxy 物件，可在建立新後端實體時進行管道處理。
 
-## 示例
+## 例子
 
-### 建立後端 Proxy In-Memory 物件
+### 建立後端 Proxy In-Memory物件
 ```powershell
 PS C:\>$secpassword = ConvertTo-SecureString "PlainTextPassword" -AsPlainText -Force
 PS C:\>$proxyCreds = New-Object System.Management.Automation.PSCredential ("foo", $secpassword)
@@ -45,7 +45,7 @@ PS C:\>$backend = New-AzApiManagementBackend -Context  $apimContext -BackendId 1
 ## 參數
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -60,7 +60,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
-用來連接到後端 Proxy 的認證。 這個參數是選用的。
+用來連接至後端 Proxy 的認證。 此參數為選擇性。
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -75,8 +75,8 @@ Accept wildcard characters: False
 ```
 
 ### -Url
-將來電轉接到後端時要使用之 Proxy 伺服器的 Url。
-這個參數是必要的。
+將呼叫轉往後端時所使用的 Proxy 伺服器 URL。
+此參數為必填專案。
 
 ```yaml
 Type: System.String
@@ -91,26 +91,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### 所有
+### 沒有
 
 ## 輸出
 
-### ServiceManagement. PsApiManagementBackendProxy （ApiManagement）
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.models.PsApiManagementBackendProxy
 
 ## 筆記
 
 ## 相關連結
 
-[AzApiManagementBackend](./Get-AzApiManagementBackend)
+[Get-AzApiManagementBackend](./Get-AzApiManagementBackend.md)
 
-[新-AzApiManagementBackend](./New-AzApiManagementBackend.md)
+[New-AzApiManagementBackend](./New-AzApiManagementBackend.md)
 
-[新-AzApiManagementBackendCredential](./New-AzApiManagementBackendCredential.md)
+[New-AzApiManagementBackendCredential](./New-AzApiManagementBackendCredential.md)
 
 [Set-AzApiManagementBackend](./Set-AzApiManagementBackend.md)
 
-[移除-AzApiManagementBackend](./Remove-AzApiManagementBackend.md)
+[Remove-AzApiManagementBackend](./Remove-AzApiManagementBackend.md)
