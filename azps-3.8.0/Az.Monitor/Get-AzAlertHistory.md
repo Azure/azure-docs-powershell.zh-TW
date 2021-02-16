@@ -6,31 +6,31 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertHistory.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertHistory.md
-ms.openlocfilehash: 5d4b3be80602377a7eae378939e4bb10221de324
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 42f407235238cec0b7e298bce344e71c075cecfd
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93966450"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406089"
 ---
-# <span data-ttu-id="75a6d-101">Get-AzAlertHistory</span><span class="sxs-lookup"><span data-stu-id="75a6d-101">Get-AzAlertHistory</span></span>
+# <span data-ttu-id="54dcc-101">Get-AzAlertHistory</span><span class="sxs-lookup"><span data-stu-id="54dcc-101">Get-AzAlertHistory</span></span>
 
-## <span data-ttu-id="75a6d-102">摘要</span><span class="sxs-lookup"><span data-stu-id="75a6d-102">SYNOPSIS</span></span>
-<span data-ttu-id="75a6d-103">取得預警的歷程記錄。</span><span class="sxs-lookup"><span data-stu-id="75a6d-103">Gets the history of alerts.</span></span>
+## <span data-ttu-id="54dcc-102">簡介</span><span class="sxs-lookup"><span data-stu-id="54dcc-102">SYNOPSIS</span></span>
+<span data-ttu-id="54dcc-103">獲得提醒的歷程記錄。</span><span class="sxs-lookup"><span data-stu-id="54dcc-103">Gets the history of alerts.</span></span>
 
-## <span data-ttu-id="75a6d-104">句法</span><span class="sxs-lookup"><span data-stu-id="75a6d-104">SYNTAX</span></span>
+## <span data-ttu-id="54dcc-104">語法</span><span class="sxs-lookup"><span data-stu-id="54dcc-104">SYNTAX</span></span>
 
 ```
 Get-AzAlertHistory [-ResourceId <String>] [-StartTime <DateTime>] [-EndTime <DateTime>] [-Status <String>]
  [-Caller <String>] [-DetailedOutput] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="75a6d-105">說明</span><span class="sxs-lookup"><span data-stu-id="75a6d-105">DESCRIPTION</span></span>
-<span data-ttu-id="75a6d-106">**AzAlertHistory** Cmdlet 會在已啟用、停用、激發、解決等問題時，取得警報的歷程記錄。</span><span class="sxs-lookup"><span data-stu-id="75a6d-106">The **Get-AzAlertHistory** cmdlet gets the history of alerts as they are enabled, disabled, fired, resolved, and so on.</span></span>
+## <span data-ttu-id="54dcc-105">描述</span><span class="sxs-lookup"><span data-stu-id="54dcc-105">DESCRIPTION</span></span>
+<span data-ttu-id="54dcc-106">**Get-AzAlertHistory** Cmdlet 會取得警示啟用、停用、啟用、解決等功能的歷程記錄。</span><span class="sxs-lookup"><span data-stu-id="54dcc-106">The **Get-AzAlertHistory** cmdlet gets the history of alerts as they are enabled, disabled, fired, resolved, and so on.</span></span>
 
-## <span data-ttu-id="75a6d-107">示例</span><span class="sxs-lookup"><span data-stu-id="75a6d-107">EXAMPLES</span></span>
+## <span data-ttu-id="54dcc-107">例子</span><span class="sxs-lookup"><span data-stu-id="54dcc-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="75a6d-108">範例1：取得通知歷程記錄</span><span class="sxs-lookup"><span data-stu-id="75a6d-108">Example 1: Get the alert history</span></span>
+### <span data-ttu-id="54dcc-108">範例 1：取得提醒記錄</span><span class="sxs-lookup"><span data-stu-id="54dcc-108">Example 1: Get the alert history</span></span>
 ```
 PS C:\>Get-AzAlertHistory -StartTime 2015-02-11T11:00:00 -EndTime 2015-02-11T12:00:00 -DetailedOutput
 Authorization        : 
@@ -170,9 +170,9 @@ SubscriptionId       : b93fb07a-6f93-30be-bf3e-4f0deca15f4f
 SubStatus            :
 ```
 
-<span data-ttu-id="75a6d-109">這個命令會針對目前的訂閱取得指定時間範圍的警示歷程記錄。</span><span class="sxs-lookup"><span data-stu-id="75a6d-109">This command gets the alert history for the specified time frame for the current subscription.</span></span>
+<span data-ttu-id="54dcc-109">此命令會針對目前訂閱的指定時間範圍，獲得警示記錄。</span><span class="sxs-lookup"><span data-stu-id="54dcc-109">This command gets the alert history for the specified time frame for the current subscription.</span></span>
 
-### <span data-ttu-id="75a6d-110">範例2：取得特定資源的警示歷程記錄</span><span class="sxs-lookup"><span data-stu-id="75a6d-110">Example 2: Get alert history for a specified resource</span></span>
+### <span data-ttu-id="54dcc-110">範例 2：取得指定資源的警示記錄</span><span class="sxs-lookup"><span data-stu-id="54dcc-110">Example 2: Get alert history for a specified resource</span></span>
 ```
 PS C:\>Get-AzAlertHistory -StartTime 2015-02-11T11:00:00 -EndTime 2015-02-11T12:00:00 -ResourceId "/subscriptions/b93fb07a-6f93-30be-bf3e-4f0deca15f4f/resourceGroups/Default-Web-EastUS/providers/microsoft.insights/alertrules/checkrule3-4b135401-a30c-4224-ae21-fa53a5bd253d" -DetailedOutput
 
@@ -268,12 +268,12 @@ SubscriptionId       : b93fb07a-6f93-30be-bf3e-4f0deca15f4f
 SubStatus            :
 ```
 
-<span data-ttu-id="75a6d-111">這個命令會取得指定資源的警示規則相關事件。</span><span class="sxs-lookup"><span data-stu-id="75a6d-111">This command gets the alert rule-related events for a specified resource.</span></span>
+<span data-ttu-id="54dcc-111">此命令會獲得指定資源的警示規則相關事件。</span><span class="sxs-lookup"><span data-stu-id="54dcc-111">This command gets the alert rule-related events for a specified resource.</span></span>
 
-## <span data-ttu-id="75a6d-112">參數</span><span class="sxs-lookup"><span data-stu-id="75a6d-112">PARAMETERS</span></span>
+## <span data-ttu-id="54dcc-112">參數</span><span class="sxs-lookup"><span data-stu-id="54dcc-112">PARAMETERS</span></span>
 
-### <span data-ttu-id="75a6d-113">-來電者</span><span class="sxs-lookup"><span data-stu-id="75a6d-113">-Caller</span></span>
-<span data-ttu-id="75a6d-114">指定來電者。</span><span class="sxs-lookup"><span data-stu-id="75a6d-114">Specifies the caller.</span></span>
+### <span data-ttu-id="54dcc-113">-本機號碼</span><span class="sxs-lookup"><span data-stu-id="54dcc-113">-Caller</span></span>
+<span data-ttu-id="54dcc-114">指定來電者。</span><span class="sxs-lookup"><span data-stu-id="54dcc-114">Specifies the caller.</span></span>
 
 ```yaml
 Type: System.String
@@ -287,8 +287,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="75a6d-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="75a6d-115">-DefaultProfile</span></span>
-<span data-ttu-id="75a6d-116">用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱</span><span class="sxs-lookup"><span data-stu-id="75a6d-116">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="54dcc-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="54dcc-115">-DefaultProfile</span></span>
+<span data-ttu-id="54dcc-116">用於與 Azure 通訊的認證、帳戶、租使用者和訂閱</span><span class="sxs-lookup"><span data-stu-id="54dcc-116">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -302,8 +302,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="75a6d-117">-DetailedOutput</span><span class="sxs-lookup"><span data-stu-id="75a6d-117">-DetailedOutput</span></span>
-<span data-ttu-id="75a6d-118">顯示輸出中的完整詳細資料。</span><span class="sxs-lookup"><span data-stu-id="75a6d-118">Displays full details in the output.</span></span>
+### <span data-ttu-id="54dcc-117">-DetailedOutput</span><span class="sxs-lookup"><span data-stu-id="54dcc-117">-DetailedOutput</span></span>
+<span data-ttu-id="54dcc-118">在輸出中顯示完整詳細資料。</span><span class="sxs-lookup"><span data-stu-id="54dcc-118">Displays full details in the output.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -317,9 +317,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="75a6d-119">-EndTime</span><span class="sxs-lookup"><span data-stu-id="75a6d-119">-EndTime</span></span>
-<span data-ttu-id="75a6d-120">指定當地時間的查詢結束時間。</span><span class="sxs-lookup"><span data-stu-id="75a6d-120">Specifies the end time of the query in local time.</span></span>
-<span data-ttu-id="75a6d-121">預設為目前時間。</span><span class="sxs-lookup"><span data-stu-id="75a6d-121">The default is the current time.</span></span>
+### <span data-ttu-id="54dcc-119">-EndTime</span><span class="sxs-lookup"><span data-stu-id="54dcc-119">-EndTime</span></span>
+<span data-ttu-id="54dcc-120">指定查詢在本地時間中的結束時間。</span><span class="sxs-lookup"><span data-stu-id="54dcc-120">Specifies the end time of the query in local time.</span></span>
+<span data-ttu-id="54dcc-121">預設值為目前時間。</span><span class="sxs-lookup"><span data-stu-id="54dcc-121">The default is the current time.</span></span>
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -333,8 +333,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="75a6d-122">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="75a6d-122">-ResourceId</span></span>
-<span data-ttu-id="75a6d-123">指定與規則相關聯的資源識別碼。</span><span class="sxs-lookup"><span data-stu-id="75a6d-123">Specifies the resource ID the rule is associated with.</span></span>
+### <span data-ttu-id="54dcc-122">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="54dcc-122">-ResourceId</span></span>
+<span data-ttu-id="54dcc-123">指定規則所關聯的資源識別碼。</span><span class="sxs-lookup"><span data-stu-id="54dcc-123">Specifies the resource ID the rule is associated with.</span></span>
 
 ```yaml
 Type: System.String
@@ -348,9 +348,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="75a6d-124">-StartTime</span><span class="sxs-lookup"><span data-stu-id="75a6d-124">-StartTime</span></span>
-<span data-ttu-id="75a6d-125">指定當地時間查詢的開始時間。</span><span class="sxs-lookup"><span data-stu-id="75a6d-125">Specifies the start time of the query in local time.</span></span>
-<span data-ttu-id="75a6d-126">預設為目前的當地時間減去1小時。</span><span class="sxs-lookup"><span data-stu-id="75a6d-126">The default is the current local time minus one hour.</span></span>
+### <span data-ttu-id="54dcc-124">-StartTime</span><span class="sxs-lookup"><span data-stu-id="54dcc-124">-StartTime</span></span>
+<span data-ttu-id="54dcc-125">指定查詢在本地時間中的開始時間。</span><span class="sxs-lookup"><span data-stu-id="54dcc-125">Specifies the start time of the query in local time.</span></span>
+<span data-ttu-id="54dcc-126">預設值為目前的當地時間減 1 小時。</span><span class="sxs-lookup"><span data-stu-id="54dcc-126">The default is the current local time minus one hour.</span></span>
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -364,8 +364,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="75a6d-127">-狀態</span><span class="sxs-lookup"><span data-stu-id="75a6d-127">-Status</span></span>
-<span data-ttu-id="75a6d-128">指定狀態。</span><span class="sxs-lookup"><span data-stu-id="75a6d-128">Specifies the status.</span></span>
+### <span data-ttu-id="54dcc-127">-狀態</span><span class="sxs-lookup"><span data-stu-id="54dcc-127">-Status</span></span>
+<span data-ttu-id="54dcc-128">指定狀態。</span><span class="sxs-lookup"><span data-stu-id="54dcc-128">Specifies the status.</span></span>
 
 ```yaml
 Type: System.String
@@ -379,33 +379,32 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="75a6d-129">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="75a6d-129">CommonParameters</span></span>
-<span data-ttu-id="75a6d-130">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="75a6d-130">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="75a6d-131">如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="75a6d-131">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="54dcc-129">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="54dcc-129">CommonParameters</span></span>
+<span data-ttu-id="54dcc-130">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="54dcc-130">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="54dcc-131">詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="54dcc-131">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="75a6d-132">輸入</span><span class="sxs-lookup"><span data-stu-id="75a6d-132">INPUTS</span></span>
+## <span data-ttu-id="54dcc-132">輸入</span><span class="sxs-lookup"><span data-stu-id="54dcc-132">INPUTS</span></span>
 
-### <span data-ttu-id="75a6d-133">System.object</span><span class="sxs-lookup"><span data-stu-id="75a6d-133">System.String</span></span>
+### <span data-ttu-id="54dcc-133">System.String</span><span class="sxs-lookup"><span data-stu-id="54dcc-133">System.String</span></span>
 
-### <span data-ttu-id="75a6d-134">System.object Null ' 1 [CoreLib，System.object = 4.0.0.0，Culture = 中立，PublicKeyToken = 7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="75a6d-134">System.Nullable\`1[[System.DateTime, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
+### <span data-ttu-id="54dcc-134">System.Nullable'1[[System.DateTime， System.Private.CoreLib， Version=4.0.0.0， Culture=neutral， PublicKeyToken=7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="54dcc-134">System.Nullable\`1[[System.DateTime, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
 
-### <span data-ttu-id="75a6d-135">SwitchParameter 的系統管理功能</span><span class="sxs-lookup"><span data-stu-id="75a6d-135">System.Management.Automation.SwitchParameter</span></span>
+### <span data-ttu-id="54dcc-135">System.Management.Automation.SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="54dcc-135">System.Management.Automation.SwitchParameter</span></span>
 
-## <span data-ttu-id="75a6d-136">輸出</span><span class="sxs-lookup"><span data-stu-id="75a6d-136">OUTPUTS</span></span>
+## <span data-ttu-id="54dcc-136">輸出</span><span class="sxs-lookup"><span data-stu-id="54dcc-136">OUTPUTS</span></span>
 
-### <span data-ttu-id="75a6d-137">PSEventData 中的 OutputClasses。</span><span class="sxs-lookup"><span data-stu-id="75a6d-137">Microsoft.Azure.Commands.Insights.OutputClasses.PSEventData</span></span>
+### <span data-ttu-id="54dcc-137">Microsoft.Azure.Commands.Insights.OutputClasses.PSEventData</span><span class="sxs-lookup"><span data-stu-id="54dcc-137">Microsoft.Azure.Commands.Insights.OutputClasses.PSEventData</span></span>
 
-## <span data-ttu-id="75a6d-138">筆記</span><span class="sxs-lookup"><span data-stu-id="75a6d-138">NOTES</span></span>
+## <span data-ttu-id="54dcc-138">筆記</span><span class="sxs-lookup"><span data-stu-id="54dcc-138">NOTES</span></span>
 
-## <span data-ttu-id="75a6d-139">相關連結</span><span class="sxs-lookup"><span data-stu-id="75a6d-139">RELATED LINKS</span></span>
+## <span data-ttu-id="54dcc-139">相關連結</span><span class="sxs-lookup"><span data-stu-id="54dcc-139">RELATED LINKS</span></span>
 
-[<span data-ttu-id="75a6d-140">附加 AzLogAlertRule</span><span class="sxs-lookup"><span data-stu-id="75a6d-140">Add-AzLogAlertRule</span></span>](./Add-AzLogAlertRule.md)
 
-[<span data-ttu-id="75a6d-141">附加 AzMetricAlertRule</span><span class="sxs-lookup"><span data-stu-id="75a6d-141">Add-AzMetricAlertRule</span></span>](./Add-AzMetricAlertRule.md)
+[<span data-ttu-id="54dcc-140">Add-AzMetricAlertRule</span><span class="sxs-lookup"><span data-stu-id="54dcc-140">Add-AzMetricAlertRule</span></span>](./Add-AzMetricAlertRule.md)
 
-[<span data-ttu-id="75a6d-142">附加 AzWebtestAlertRule</span><span class="sxs-lookup"><span data-stu-id="75a6d-142">Add-AzWebtestAlertRule</span></span>](./Add-AzWebtestAlertRule.md)
+[<span data-ttu-id="54dcc-141">Add-AzWebtestAlertRule</span><span class="sxs-lookup"><span data-stu-id="54dcc-141">Add-AzWebtestAlertRule</span></span>](./Add-AzWebtestAlertRule.md)
 
-[<span data-ttu-id="75a6d-143">AzAlertRule</span><span class="sxs-lookup"><span data-stu-id="75a6d-143">Get-AzAlertRule</span></span>](./Get-AzAlertRule.md)
+[<span data-ttu-id="54dcc-142">Get-AzAlertRule</span><span class="sxs-lookup"><span data-stu-id="54dcc-142">Get-AzAlertRule</span></span>](./Get-AzAlertRule.md)
 
-[<span data-ttu-id="75a6d-144">移除-AzAlertRule</span><span class="sxs-lookup"><span data-stu-id="75a6d-144">Remove-AzAlertRule</span></span>](./Remove-AzAlertRule.md)
+[<span data-ttu-id="54dcc-143">Remove-AzAlertRule</span><span class="sxs-lookup"><span data-stu-id="54dcc-143">Remove-AzAlertRule</span></span>](./Remove-AzAlertRule.md)
 
 
