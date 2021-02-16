@@ -6,49 +6,49 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.notificati
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHubListKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHubListKey.md
-ms.openlocfilehash: 6b9aa676e00d137612908955e88558b4cefb0eb8
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 7ce6c3c08c1794e2bed794186203a5c6c0d1fdea
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93791441"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413756"
 ---
 # Get-AzNotificationHubListKey
 
-## 摘要
-取得與通知中樞授權規則相關聯的主要和次要連接字串。
+## 簡介
+獲得與通知中樞授權規則相關聯的主要和次要連接字串。
 
-## 句法
+## 語法
 
 ```
 Get-AzNotificationHubListKey [-ResourceGroup] <String> [-Namespace] <String> [-NotificationHub] <String>
  [-AuthorizationRule] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## 說明
-**AzNotificationHubListKey** Cmdlet 會傳回通知中樞共用存取簽章的主要和次要連接字串， (SAS) 授權規則。
-授權規則可管理使用者對中心的許可權。
-每個規則都包含主要和次要的連線字串。
-這些連接字串 (Uri) 執行下列動作：
+## 描述
+**Get-AzNotificationHubListKey** Cmdlet 會返回通知中樞共用存取簽名 (SAS) 授權規則的主要和次要連接字串。
+授權規則會管理中樞的使用者許可權。
+每個規則包含主要和次要連接字串。
+這些連接字串 (URI) 執行下列操作：
 - 將使用者指向資源。
-- 包含含查詢參數的權杖。
-其中一個參數（即簽名）是用來驗證使用者，並提供指定的存取層級。
+- 包含包含查詢參數的權杖。
+其中一個參數簽名可用來驗證使用者，並提供指定的存取層級。
 
-## 示例
+## 例子
 
-### 範例1：取得授權規則的主要和次要連接字串
+### 範例 1：取得授權規則的主要和次要連接字串
 ```
 PS C:\>Get-AzNotificationHubListKey -Namespace "ContosoNamespace" -NotificationHub "ContosoInternalHub" -ResourceGroup "ContosoNotificationsGroup" -AuthorizationRule "ListenRule"
 ```
 
-這個命令會取得授權規則 ListenRule （指派給 ContosoInternalHub 通知中樞的規則）的主要和次要連接字串。
+此命令會獲得授權規則 ListenRule 的主要和次要連接字串，這是指派給 ContosoInternalHub 通知中樞的規則。
 命令必須包含中樞命名空間和資源群組。
 
 ## 參數
 
 ### -AuthorizationRule
-指定 (SAS) 驗證規則的共用存取簽章名稱。
-這些規則決定使用者對通知中樞所擁有的存取類型。
+指定 SAS 驗證規則的共用存取簽 (名稱) 名稱。
+這些規則會決定使用者對通知中樞的存取類型。
 
 ```yaml
 Type: System.String
@@ -63,7 +63,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -78,8 +78,8 @@ Accept wildcard characters: False
 ```
 
 ### -命名空間
-指定通知中心指派給哪個命名空間。
-命名空間提供一種群組和分類通知中樞的方式。
+指定指派通知中樞的命名空間。
+命名空間提供將通知中樞分組和分類的方式。
 
 ```yaml
 Type: System.String
@@ -95,7 +95,7 @@ Accept wildcard characters: False
 
 ### -NotificationHub
 指定此 Cmdlet 指派授權規則的通知中樞。
-通知中樞可用來傳送推播通知給多個用戶端，而不管這些用戶端使用的平臺為何。
+通知中樞可用來傳送推入通知給多個用戶端，無論這些用戶端使用哪個平臺。
 
 ```yaml
 Type: System.String
@@ -110,8 +110,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroup
-指定通知中心指派給哪個資源群組。
-資源群組會以協助您簡單地清查管理和 Azure 管理的方式，來組織諸如命名空間、通知中樞和授權規則等專案。
+指定指派通知中樞給的資源群組。
+資源群組會以只協助庫存管理和 Azure 系統管理的方式整理專案，例如命名空間、通知中樞和授權規則。
 
 ```yaml
 Type: System.String
@@ -126,20 +126,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 https://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
-### System.object
+### System.String
 
 ## 輸出
 
-### ResourceListKeys 中的 NotificationHubs。
+### Microsoft.Azure.management.NotificationHubs.models.ResourceListKeys
 
 ## 筆記
 
 ## 相關連結
 
-[AzNotificationHubAuthorizationRules](./Get-AzNotificationHubAuthorizationRules.md)
 
 
