@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/a
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Add-AzKeyVaultKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Add-AzKeyVaultKey.md
-ms.openlocfilehash: d0f26dda6e5fd79f20713dff61ed299a995d6fd3
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 3d0f7267d1dbe899de0e0414c52a395985f09bfd
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93798702"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100412532"
 ---
 # Add-AzKeyVaultKey
 
-## 摘要
-在金鑰保存庫中建立金鑰或將金鑰匯入到金鑰保存庫中。
+## 簡介
+在金鑰庫中建立金鑰，或將金鑰導入到金鑰庫。
 
-## 句法
+## 語法
 
 ### InteractiveCreate (預設) 
 ```
@@ -65,22 +65,22 @@ Add-AzKeyVaultKey [-ResourceId] <String> [-Name] <String> -KeyFilePath <String>
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## 說明
-AzKeyVaultKey Cmdlet 會在 Azure 金鑰保存庫中的金鑰保存庫中建立金鑰，或 **將** 金鑰匯入到金鑰保存庫中。
-使用這個 Cmdlet，使用下列任何一種方法來新增金鑰：
-- 在硬體安全模組中建立金鑰， (在主要 Vault 服務中的 HSM) 。
-- 在金鑰 Vault 服務的軟體中建立金鑰。
-- 從您自己的硬體安全模組將金鑰匯入到主要 Vault 服務中 (HSM) 至 Hsm。
-- 從您電腦上的 .pfx 檔案匯入金鑰。
-- 從您電腦上的 .pfx 檔案將金鑰匯入到 [主要 Vault] 服務中 (Hsm) 的硬體安全模組。
-針對這些作業中的任何一個，您可以提供重要屬性或接受預設設定。
-如果您在金鑰保存庫中建立或匯入與現有金鑰同名的金鑰，則會使用您為新金鑰指定的值來更新原始金鑰。 您可以使用該版本金鑰的版本特定 URI 來存取先前的值。 若要瞭解主要版本與 URI 結構，請參閱主要保存庫 REST API 檔中的 [金鑰與密碼](http://go.microsoft.com/fwlink/?linkid=518560) 。
-注意：若要從您自己的硬體安全模組匯入金鑰，您必須先使用 Azure Key Vault BYOK 工具集，以) BYOK 副檔名 (的檔案來產生 BYOK 套件。 如需詳細資訊，請參閱 [如何為 Azure 金鑰電子倉庫產生及轉移 HSM-Protected 金鑰](http://go.microsoft.com/fwlink/?LinkId=522252)。
-最佳做法是使用 Backup-AzKeyVaultKey Cmdlet，在建立或更新金鑰後進行備份。 沒有取消刪除功能，因此如果您不小心刪除或刪除您的金鑰，然後改變主意，除非您有可以還原的備份，否則金鑰是無法復原的。
+## 描述
+**Add-AzKeyVaultKey** Cmdlet 在 Azure 金鑰庫的金鑰庫中建立金鑰，或將金鑰導入金鑰庫。
+使用此 Cmdlet 使用下列任一方法新增金鑰：
+- 在金鑰庫服務中的 HSM (中) 金鑰。
+- 在 Key Vault 服務的軟體中建立金鑰。
+- 從您自己的硬體安全性模組將金鑰 (HSM) 金鑰庫服務中的 HSMS。
+- 從您電腦的 .pfx 檔案中輸入金鑰。
+- 將您電腦的 .pfx 檔案中的金鑰， (金鑰保存庫服務) HSMS 中的硬體安全性模組。
+針對任何這些作業，您可以提供重要屬性或接受預設設定。
+如果您建立或導入的金鑰與金鑰庫中現有金鑰的名稱相同，原始金鑰會以您為新金鑰指定的值更新。 您可以使用該金鑰版本的特定 URI 存取先前的值。 若要瞭解金鑰版本和 URI 結構，請參閱[](http://go.microsoft.com/fwlink/?linkid=518560)Key Vault REST API 檔中關於金鑰和秘訣的資訊。
+注意：若要從您自己的硬體安全性模組中導入金鑰，您必須先使用 Azure Key Vault BYOK 工具集產生具有 .byok 副檔名 (的 BYOK 套件) 檔案。 詳細資訊請參閱如何產生及傳輸 [Azure HSM-Protected金鑰庫的金鑰](http://go.microsoft.com/fwlink/?LinkId=522252)。
+最佳做法是在建立或更新金鑰之後，使用 Backup-AzKeyVaultKey備份。 沒有任何取消刪除的功能，因此如果您不小心刪除或刪除金鑰，然後改變心意，除非有可還原的備份，否則無法復原金鑰。
 
-## 示例
+## 例子
 
-### 範例1：建立索引鍵
+### 範例 1：建立金鑰
 ```powershell
 PS C:\> Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITSoftware' -Destination 'Software'
 
@@ -97,9 +97,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-這個命令會在名為 Contoso 的主要保存庫中，建立名為 ITSoftware 的軟體保護金鑰。
+此命令在名為 Contoso 的金鑰庫中，建立一個名為 ITSoftware 的軟體保護金鑰。
 
-### 範例2：建立受 HSM 保護的金鑰
+### 範例 2：建立受 HSM 保護的金鑰
 ```powershell
 PS C:\> Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITHsm' -Destination 'HSM'
 
@@ -116,9 +116,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-這個命令會在名為 Contoso 的金鑰保存庫中建立受 HSM 保護的金鑰。
+此命令在名為 Contoso 的金鑰庫中建立受 HSM 保護的金鑰。
 
-### 範例3：使用非預設值建立金鑰
+### 範例 3：建立具有非預設值的金鑰
 ```powershell
 PS C:\> $KeyOperations = 'decrypt', 'verify'
 PS C:\> $Expires = (Get-Date).AddYears(2).ToUniversalTime()
@@ -141,13 +141,13 @@ Tags           : Name        Value
                  Accounting  true
 ```
 
-第一個命令會儲存在 $KeyOperations 變數中解密和驗證的值。
-第二個命令會建立一個 **DateTime** 物件（在 UTC 中定義），方法是使用 [ **取得日期** ] Cmdlet。
-該物件指定未來兩年的時間。 該命令會將該日期儲存在 $Expires 變數中。 如需詳細資訊，請輸入 `Get-Help Get-Date` 。
-第三個命令會使用 [ **取得日期** ] Cmdlet 來建立 **DateTime** 物件。 該物件會指定目前的 UTC 時間。 該命令會將該日期儲存在 $NotBefore 變數中。
-最後一個命令會建立一個名為 ITHsmNonDefault 的索引鍵，該金鑰是受 HSM 保護的金鑰。 此命令會指定儲存 $KeyOperations 所允許的按鍵作業值。 此命令會指定在前一個命令中建立的 *Expires* 及 *NotBefore* 參數的時間，以及高嚴重性及嚴重度的標記。 新的索引鍵是停用的。 您可以使用 **AzKeyVaultKey** Cmdlet 來啟用它。
+第一個命令會儲存值解密，並在$KeyOperations驗證。
+第二個命令會使用 **Get-Date** Cmdlet 建立以 UTC 定義的 **DateTime** 物件。
+該物件會指定未來兩年的時間。 命令會儲存該日期至$Expires變數。 如需要詳細資訊，請鍵入 `Get-Help Get-Date` 。
+第三個命令會使用 **Get-Date** Cmdlet 建立 **DateTime** 物件。 該物件會指定目前的 UTC 時間。 命令會儲存該日期至$NotBefore變數。
+最後一個命令會建立名為 ITHMNonDefault 的金鑰，該金鑰受 HSM 保護。 該命令會指定儲存于其中之允許之金鑰作業$KeyOperations。 命令會指定在先前命令中建立之 *到期* 和 *NotBefore* 參數的時間，以及高嚴重性和 IT 的標記。 新金鑰已停用。 您可以使用 **Set-AzKeyVaultKey** Cmdlet 來啟用。
 
-### 範例4：匯入受 HSM 保護的金鑰
+### 範例 4：匯出受 HSM 保護的金鑰
 ```powershell
 PS C:\> Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITByok' -KeyFilePath 'C:\Contoso\ITByok.byok' -Destination 'HSM'
 
@@ -164,11 +164,11 @@ Purge Disabled : False
 Tags           :
 ```
 
-這個命令會從 *KeyFilePath* 參數指定的位置匯入名為 ITByok 的金鑰。 匯入金鑰是受 HSM 保護的金鑰。
-若要匯入您自己的硬體安全模組中的金鑰，您必須先使用 Azure 金鑰保存庫 BYOK 工具集，以) BYOK 副檔名 (的檔案來產生 BYOK 套件。
-如需詳細資訊，請參閱 [如何為 Azure 金鑰電子倉庫產生及轉移 HSM-Protected 金鑰](http://go.microsoft.com/fwlink/?LinkId=522252)。
+此命令會從 KeyFilePath 參數指定的位置，將 *名為 ITByok* 的金鑰導入。 所輸入的金鑰受 HSM 保護。
+若要從您自己的硬體安全性模組中輸入金鑰，您必須先使用 Azure Key Vault BYOK 工具集 (產生副檔名為 .byok 的檔案) BYOK 套件。
+詳細資訊請參閱如何產生及傳輸 [Azure HSM-Protected金鑰庫的金鑰](http://go.microsoft.com/fwlink/?LinkId=522252)。
 
-### 範例5：匯入軟體保護的金鑰
+### 範例 5：匯出軟體保護金鑰
 ```powershell
 PS C:\> $Password = ConvertTo-SecureString -String 'Password' -AsPlainText -Force
 PS C:\> Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITPfx' -KeyFilePath 'C:\Contoso\ITPfx.pfx' -KeyFilePassword $Password
@@ -186,11 +186,11 @@ Purge Disabled : False
 Tags           :
 ```
 
-第一個命令會使用 **ConvertTo-SecureString** Cmdlet，將字串轉換成安全字串，然後將該字串儲存在 $Password 變數中。 如需詳細資訊，請輸入 `Get-Help
+第一個命令會使用 **ConvertTo-SecureString** Cmdlet 將字串轉換為安全字串，然後將該字串儲存在 $Password 變數中。 如需要詳細資訊，請鍵入 `Get-Help
 ConvertTo-SecureString` 。
-第二個命令會在 Contoso 金鑰保存庫中建立軟體密碼。 命令會指定儲存在 $Password 的索引鍵和密碼的位置。
+第二個命令在 Contoso 金鑰保存庫中建立軟體密碼。 命令會指定金鑰的位置，以及儲存在 $Password。
 
-### 範例6：匯入金鑰並指派屬性
+### 範例 6：輸入金鑰並指派屬性
 ```powershell
 PS C:\> $Password = ConvertTo-SecureString -String 'password' -AsPlainText -Force
 PS C:\> $Expires = (Get-Date).AddYears(2).ToUniversalTime()
@@ -212,15 +212,15 @@ Tags           : Name        Value
                  Accounting  true
 ```
 
-第一個命令會使用 **ConvertTo-SecureString** Cmdlet，將字串轉換成安全字串，然後將該字串儲存在 $Password 變數中。
-第二個命令會使用 [ **取得日期** ] Cmdlet 來建立 **DateTime** 物件，然後將該物件儲存在 $Expires 變數中。
-第三個命令會建立 $tags 變數，以設定高嚴重性及它的標記。
-最終的命令會將金鑰從指定的位置匯入為 HSM 金鑰。 此命令會指定儲存在 $Password 中的 $Expires 和密碼儲存的到期時間，並套用 $tags 中儲存的標籤。
+第一個命令會使用 **ConvertTo-SecureString** Cmdlet 將字串轉換為安全字串，然後將該字串儲存在 $Password 變數中。
+第二個命令會使用 **Get-Date** Cmdlet 建立 **DateTime** 物件，然後將該物件儲存在$Expires變數中。
+第三個命令會建立$tags變數，以設定高嚴重性和 IT 的標記。
+最後一個命令會從指定位置將金鑰輸入為 HSM 鍵。 命令會指定儲存在 $Expires 中的到期日和密碼$Password，並適用儲存在 $tags 中的標記。
 
 ## 參數
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -235,12 +235,12 @@ Accept wildcard characters: False
 ```
 
 ### -目的地
-指定是否要在金鑰保存庫服務中，將金鑰新增為軟體保護金鑰或受 HSM 保護的金鑰。
-有效值為： HSM 和軟體。
-注意：若要使用 HSM 作為目的地，您必須擁有支援 Hsm 的金鑰保存庫。 如需有關 Azure 金鑰保存庫之服務層級和功能的詳細資訊，請參閱 [Azure 金鑰保存庫定價網站](http://go.microsoft.com/fwlink/?linkid=512521)。
-當您建立新的金鑰時，這個參數是必要的。 如果您使用 *KeyFilePath* 參數匯入金鑰，則此參數為 optional （選用）：
-- 如果您沒有指定此參數，且這個 Cmdlet 會匯入副檔名為 byok 的金鑰，它會將該金鑰匯入為受 HSM 保護的金鑰。 Cmdlet 無法將該金鑰匯入為軟體保護的金鑰。
-- 如果您沒有指定此參數，且這個 Cmdlet 會匯入副檔名為 .pfx 的金鑰，它會將金鑰匯入為軟體保護金鑰。
+指定是否要在 Key Vault 服務中將金鑰新增為受軟體保護的金鑰或 HSM 保護的金鑰。
+有效的值為：HSM 和 Software。
+注意：若要使用 HSM 做為目的地，您必須有支援 HSMS 的金鑰庫。 有關 Azure 金鑰庫的服務層級和功能的詳細資訊，請參閱 [Azure 金鑰庫定價網站](http://go.microsoft.com/fwlink/?linkid=512521)。
+當您建立新金鑰時，需要此參數。 如果您使用 *KeyFilePath* 參數來輸入金鑰，此參數為選擇性：
+- 如果您未指定此參數，且此 Cmdlet 會輸入副檔名為 .byok 的金鑰，它會將該金鑰以 HSM 保護的金鑰導入。 Cmdlet 無法將該金鑰以軟體保護金鑰進行導入。
+- 如果您未指定此參數，且此 Cmdlet 會輸入副檔名為 .pfx 的金鑰，它會將金鑰以軟體保護金鑰導入。
 
 ```yaml
 Type: System.String
@@ -269,7 +269,7 @@ Accept wildcard characters: False
 ```
 
 ### -停用
-表示您要新增的金鑰已設定為 [已停用] 的初始狀態。 任何使用金鑰的嘗試都將失敗。 如果您正在預載入您想要稍後啟用的金鑰，請使用此參數。
+表示您新增的金鑰已設定為初始停用狀態。 任何使用金鑰的嘗試都會失敗。 如果您要預先載入要稍後啟用的金鑰，請使用此參數。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -284,7 +284,7 @@ Accept wildcard characters: False
 ```
 
 ### -到期
-指定此 Cmdlet 所新增之金鑰的到期時間（作為 **DateTime** 物件）。 此參數使用協調通用時間 (UTC) 。 若要取得 **DateTime** 物件，請使用 [ **取得日期** ] Cmdlet。 如需詳細資訊，請輸入 `Get-Help Get-Date` 。 如果您沒有指定此參數，金鑰就不會過期。
+指定此 Cmdlet 新增之金鑰的到期日 ，做為 **DateTime** 物件。 此參數使用 Utc (協調) 。 若要取得 **DateTime** 物件，請使用 **Get-Date** Cmdlet。 如需要詳細資訊，請鍵入 `Get-Help Get-Date` 。 如果您未指定此參數，金鑰不會過期。
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -314,7 +314,7 @@ Accept wildcard characters: False
 ```
 
 ### -KeyFilePassword
-指定匯入檔案的密碼做為 **SecureString** 物件。 若要取得 **SecureString** 物件，請使用 **ConvertTo-SecureString** Cmdlet。 如需詳細資訊，請輸入 `Get-Help ConvertTo-SecureString` 。 您必須指定此密碼才能匯入副檔名為 .pfx 的檔案。
+將所輸入檔案的密碼指定為 **SecureString** 物件。 若要取得 **SecureString 物件** ，請使用 **ConvertTo-SecureString** Cmdlet。 如需要詳細資訊，請鍵入 `Get-Help ConvertTo-SecureString` 。 您必須指定此密碼，才能使用 .pfx 副檔名來輸入檔案。
 
 ```yaml
 Type: System.Security.SecureString
@@ -329,11 +329,11 @@ Accept wildcard characters: False
 ```
 
 ### -KeyFilePath
-指定本機檔案的路徑，該檔案內含這個 Cmdlet 所匯入的重要材料。
-有效的檔案名副檔名為 byok 和 .pfx。
-- 如果檔案是 byok 檔案，則在匯入之後，金鑰會自動受 Hsm 保護，而且您無法覆寫此預設值。
-- 如果檔案是 .pfx 檔案，則在匯入之後，該金鑰會自動受到軟體的保護。 若要覆寫此預設值，請將 *Destination* 參數設定為 hsm，讓金鑰受 HSM 保護。
-當您指定此參數時， *Destination* 參數是選擇性的。
+指定包含此 Cmdlet 所導入之重要資料之本地檔案的路徑。
+有效的副檔名為 .byok 和 .pfx。
+- 如果檔案是 .byok 檔案，則金鑰會在進行匯出後自動受到 HSMS 保護，而且您無法覆蓋此預設值。
+- 如果檔案是 .pfx 檔案，則金鑰會在匯出後自動受到軟體保護。 若要覆蓋此預設值，將 *Destination* 參數設定為 HSM，讓金鑰受 HSM 保護。
+當您指定此參數時 *，Destination* 參數為選擇性。
 
 ```yaml
 Type: System.String
@@ -348,15 +348,15 @@ Accept wildcard characters: False
 ```
 
 ### -KeyOps
-指定可使用這個 Cmdlet 所新增之金鑰來執行的作業陣列。
-如果您沒有指定此參數，則可以執行所有作業。
-此參數可接受的值是由 [JSON Web 金鑰 (JWK) 規格](http://go.microsoft.com/fwlink/?LinkID=613300)所定義的以逗號分隔的主要動作清單：
-- 進行
-- 對
-- 浮
-- 解
-- 母音
-- 是否
+指定可以使用此 Cmdlet 新增的金鑰執行的作業陣列。
+如果您未指定此參數，可以執行所有操作。
+此參數可接受的值是 JSON Web Key ([JWK](http://go.microsoft.com/fwlink/?LinkID=613300)) 定義之金鑰作業的逗號分隔清單：
+- 加密
+- 解密
+- 包裝
+- 打開
+- 標誌
+- 驗證
 
 ```yaml
 Type: System.String[]
@@ -371,7 +371,7 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-指定要新增到 [主要電子倉庫] 的索引鍵名。 這個 Cmdlet 會根據此參數指定的名稱、主要電子倉庫的名稱和您目前的環境，來構造金鑰的完整功能變數名稱 (FQDN) 。 名稱必須是1到63個字元的字串，長度只包含0-9、a-z、A-z，並 (破折號) 符號。
+指定要新加到金鑰庫的金鑰名稱。 此 Cmdlet 會依據此參數指定的名稱、金鑰庫名稱，以及您目前的環境，建構金鑰的完全限定功能變數名稱 (FQDN) 。 名稱必須是長度為 1 到 63 個字元的字串，只包含 0-9、a-z、A-Z 和 - (破折號) 。
 
 ```yaml
 Type: System.String
@@ -386,7 +386,7 @@ Accept wildcard characters: False
 ```
 
 ### -NotBefore
-指定時間（作為 **DateTime** 物件），在此之後就不能使用該索引鍵。 此參數使用 UTC。 若要取得 **DateTime** 物件，請使用 [ **取得日期** ] Cmdlet。 如果您沒有指定此參數，就可以立即使用金鑰。
+指定無法使用金鑰的時間 ，做為 **DateTime** 物件。 此參數使用 UTC。 若要取得 **DateTime** 物件，請使用 **Get-Date** Cmdlet。 如果您未指定此參數，可以立即使用金鑰。
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -401,7 +401,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-保存庫資源識別碼。
+Vault 資源識別碼。
 
 ```yaml
 Type: System.String
@@ -416,7 +416,7 @@ Accept wildcard characters: False
 ```
 
 ### -大小
-RSA 金鑰大小（以位為單位）。 如果未指定，服務將會提供安全的預設值。
+以位為單位的 RSA 金鑰大小。 如果未指定，服務會提供安全預設值。
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -430,8 +430,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Tag
-雜湊資料表形式的索引鍵/值對。 例如： @ {key0 = "value0"; key1 = $null; key2 = "value2"}
+### -標記
+以雜湊表格形式建立索引鍵值組。 例如：@{key0="value0";key1=$null;key2="value2"}
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -446,7 +446,7 @@ Accept wildcard characters: False
 ```
 
 ### -VaultName
-指定此 Cmdlet 要在其中新增金鑰的主要保存庫的名稱。 這個 Cmdlet 會根據此參數指定的名稱和您目前的環境，來構造金鑰 vault 的 FQDN。
+指定此 Cmdlet 新增該金鑰的金鑰庫名稱。 此 Cmdlet 會依據此參數指定的名稱和您目前的環境，建構金鑰庫的 FQDN。
 
 ```yaml
 Type: System.String
@@ -461,7 +461,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，系統會提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -476,8 +476,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。
-未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。
+不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -492,26 +492,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### PSKeyVault 中的 KeyVault。
+### Microsoft.Azure.Commands.KeyVault.models.PSKeyVault
 
-### System.object
+### System.String
 
 ## 輸出
 
-### PSKeyVaultKey 中的 KeyVault。
+### Microsoft.Azure.Commands.KeyVault.models.PSKeyVaultKey
 
 ## 筆記
 
 ## 相關連結
 
-[備份-AzKeyVaultKey](./Backup-AzKeyVaultKey.md)
+[Backup-AzKeyVaultKey](./Backup-AzKeyVaultKey.md)
 
-[AzKeyVaultKey](./Get-AzKeyVaultKey.md)
+[Get-AzKeyVaultKey](./Get-AzKeyVaultKey.md)
 
-[移除-AzKeyVaultKey](./Remove-AzKeyVaultKey.md)
+[Remove-AzKeyVaultKey](./Remove-AzKeyVaultKey.md)
 
-[Set-AzKeyVaultKeyAttribute](./Set-AzKeyVaultKeyAttribute.md)
