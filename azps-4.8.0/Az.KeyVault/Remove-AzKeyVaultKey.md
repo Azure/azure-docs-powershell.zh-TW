@@ -6,40 +6,40 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/r
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultKey.md
-ms.openlocfilehash: bfdd237ecadadae181d9e9dd3a201580537097f0
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 75d781527a9783c81eba5bd2aacf07d237ef4f8f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94127665"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398354"
 ---
-# <span data-ttu-id="2f36b-101">Remove-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="2f36b-101">Remove-AzKeyVaultKey</span></span>
+# <span data-ttu-id="d800b-101">Remove-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="d800b-101">Remove-AzKeyVaultKey</span></span>
 
-## <span data-ttu-id="2f36b-102">摘要</span><span class="sxs-lookup"><span data-stu-id="2f36b-102">SYNOPSIS</span></span>
-<span data-ttu-id="2f36b-103">刪除主要電子倉庫中的金鑰。</span><span class="sxs-lookup"><span data-stu-id="2f36b-103">Deletes a key in a key vault.</span></span>
+## <span data-ttu-id="d800b-102">簡介</span><span class="sxs-lookup"><span data-stu-id="d800b-102">SYNOPSIS</span></span>
+<span data-ttu-id="d800b-103">刪除金鑰庫中的金鑰。</span><span class="sxs-lookup"><span data-stu-id="d800b-103">Deletes a key in a key vault.</span></span>
 
-## <span data-ttu-id="2f36b-104">句法</span><span class="sxs-lookup"><span data-stu-id="2f36b-104">SYNTAX</span></span>
+## <span data-ttu-id="d800b-104">語法</span><span class="sxs-lookup"><span data-stu-id="d800b-104">SYNTAX</span></span>
 
-### <span data-ttu-id="2f36b-105">ByVaultName (預設) </span><span class="sxs-lookup"><span data-stu-id="2f36b-105">ByVaultName (Default)</span></span>
+### <span data-ttu-id="d800b-105">ByVaultName (預設) </span><span class="sxs-lookup"><span data-stu-id="d800b-105">ByVaultName (Default)</span></span>
 ```
 Remove-AzKeyVaultKey [-VaultName] <String> [-Name] <String> [-Force] [-PassThru] [-InRemovedState]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="2f36b-106">ByInputObject</span><span class="sxs-lookup"><span data-stu-id="2f36b-106">ByInputObject</span></span>
+### <span data-ttu-id="d800b-106">ByInputObject</span><span class="sxs-lookup"><span data-stu-id="d800b-106">ByInputObject</span></span>
 ```
 Remove-AzKeyVaultKey [-InputObject] <PSKeyVaultKeyIdentityItem> [-Force] [-PassThru] [-InRemovedState]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="2f36b-107">說明</span><span class="sxs-lookup"><span data-stu-id="2f36b-107">DESCRIPTION</span></span>
-<span data-ttu-id="2f36b-108">Remove-AzKeyVaultKey Cmdlet 會刪除金鑰保存庫中的金鑰。</span><span class="sxs-lookup"><span data-stu-id="2f36b-108">The Remove-AzKeyVaultKey cmdlet deletes a key in a key vault.</span></span>
-<span data-ttu-id="2f36b-109">如果不小心刪除了金鑰，則可以使用具有特殊「復原」許可權的使用者 Undo-AzKeyVaultKeyRemoval 來復原金鑰。</span><span class="sxs-lookup"><span data-stu-id="2f36b-109">If the key was accidentally deleted the key can be recovered using Undo-AzKeyVaultKeyRemoval by a user with special 'recover' permissions.</span></span>
-<span data-ttu-id="2f36b-110">這個 Cmdlet 的值為 high，用於 **ConfirmImpact** 屬性。</span><span class="sxs-lookup"><span data-stu-id="2f36b-110">This cmdlet has a value of high for the **ConfirmImpact** property.</span></span>
+## <span data-ttu-id="d800b-107">描述</span><span class="sxs-lookup"><span data-stu-id="d800b-107">DESCRIPTION</span></span>
+<span data-ttu-id="d800b-108">Cmdlet Remove-AzKeyVaultKey刪除金鑰庫中的金鑰。</span><span class="sxs-lookup"><span data-stu-id="d800b-108">The Remove-AzKeyVaultKey cmdlet deletes a key in a key vault.</span></span>
+<span data-ttu-id="d800b-109">如果金鑰意外刪除，則具有特殊Undo-AzKeyVaultKeyRemoval金鑰的使用者可以使用該金鑰來復原。</span><span class="sxs-lookup"><span data-stu-id="d800b-109">If the key was accidentally deleted the key can be recovered using Undo-AzKeyVaultKeyRemoval by a user with special 'recover' permissions.</span></span>
+<span data-ttu-id="d800b-110">此 Cmdlet 的 **ConfirmImpact** 屬性的值為高。</span><span class="sxs-lookup"><span data-stu-id="d800b-110">This cmdlet has a value of high for the **ConfirmImpact** property.</span></span>
 
-## <span data-ttu-id="2f36b-111">示例</span><span class="sxs-lookup"><span data-stu-id="2f36b-111">EXAMPLES</span></span>
+## <span data-ttu-id="d800b-111">例子</span><span class="sxs-lookup"><span data-stu-id="d800b-111">EXAMPLES</span></span>
 
-### <span data-ttu-id="2f36b-112">範例1：從金鑰保存庫移除金鑰</span><span class="sxs-lookup"><span data-stu-id="2f36b-112">Example 1: Remove a key from a key vault</span></span>
+### <span data-ttu-id="d800b-112">範例 1：從金鑰庫移除金鑰</span><span class="sxs-lookup"><span data-stu-id="d800b-112">Example 1: Remove a key from a key vault</span></span>
 ```powershell
 PS C:\> Remove-AzKeyVaultKey -VaultName 'Contoso' -Name 'ITSoftware' -PassThru
 
@@ -57,37 +57,37 @@ Purge Disabled       : False
 Tags                 :
 ```
 
-<span data-ttu-id="2f36b-113">這個命令會從名為 Contoso 的主要電子倉庫中移除名為 ITSoftware 的索引鍵。</span><span class="sxs-lookup"><span data-stu-id="2f36b-113">This command removes the key named ITSoftware from the key vault named Contoso.</span></span>
+<span data-ttu-id="d800b-113">此命令會從名為 Contoso 的金鑰庫移除名為 ITSoftware 的金鑰。</span><span class="sxs-lookup"><span data-stu-id="d800b-113">This command removes the key named ITSoftware from the key vault named Contoso.</span></span>
 
-### <span data-ttu-id="2f36b-114">範例2：在未確認使用者的情況下移除金鑰</span><span class="sxs-lookup"><span data-stu-id="2f36b-114">Example 2: Remove a key without user confirmation</span></span>
+### <span data-ttu-id="d800b-114">範例 2：移除沒有使用者確認的金鑰</span><span class="sxs-lookup"><span data-stu-id="d800b-114">Example 2: Remove a key without user confirmation</span></span>
 ```powershell
 PS C:\> Remove-AzKeyVaultKey -VaultName 'Contoso' -Name 'ITSoftware' -Force
 ```
 
-<span data-ttu-id="2f36b-115">這個命令會從名為 Contoso 的主要電子倉庫中移除名為 ITSoftware 的索引鍵。</span><span class="sxs-lookup"><span data-stu-id="2f36b-115">This command removes the key named ITSoftware from the key vault named Contoso.</span></span>
-<span data-ttu-id="2f36b-116">此命令會指定 *Force* 參數，因此 Cmdlet 不會提示您進行確認。</span><span class="sxs-lookup"><span data-stu-id="2f36b-116">The command specifies the *Force* parameter, and, therefore, the cmdlet does not prompt you for confirmation.</span></span>
+<span data-ttu-id="d800b-115">此命令會從名為 Contoso 的金鑰庫移除名為 ITSoftware 的金鑰。</span><span class="sxs-lookup"><span data-stu-id="d800b-115">This command removes the key named ITSoftware from the key vault named Contoso.</span></span>
+<span data-ttu-id="d800b-116">命令會指定 *Force* 參數，因此 Cmdlet 不會提示您確認。</span><span class="sxs-lookup"><span data-stu-id="d800b-116">The command specifies the *Force* parameter, and, therefore, the cmdlet does not prompt you for confirmation.</span></span>
 
-### <span data-ttu-id="2f36b-117">範例3：從金鑰 vault 永久清除已刪除的金鑰</span><span class="sxs-lookup"><span data-stu-id="2f36b-117">Example 3: Purge a deleted key from the key vault permanently</span></span>
+### <span data-ttu-id="d800b-117">範例 3：永久清除從金鑰保存庫刪除的金鑰</span><span class="sxs-lookup"><span data-stu-id="d800b-117">Example 3: Purge a deleted key from the key vault permanently</span></span>
 ```powershell
 PS C:\> Remove-AzKeyVaultKey -VaultName 'Contoso' -Name 'ITSoftware' -InRemovedState
 ```
 
-<span data-ttu-id="2f36b-118">這個命令會從名為 Contoso 的主要電子倉庫永久刪除名為 ITSoftware 的金鑰。</span><span class="sxs-lookup"><span data-stu-id="2f36b-118">This command removes the key named ITSoftware from the key vault named Contoso permanently.</span></span>
-<span data-ttu-id="2f36b-119">執行這個指令需要「清除」許可權，該許可權必須是先前已明確授與使用者的此金鑰保存庫。</span><span class="sxs-lookup"><span data-stu-id="2f36b-119">Executing this cmdlet requires the 'purge' permission, which must have been previously and explicitly granted to the user for this key vault.</span></span>
+<span data-ttu-id="d800b-118">此命令會從名為 Contoso 的金鑰保存庫永久移除名為 ITSoftware 的金鑰。</span><span class="sxs-lookup"><span data-stu-id="d800b-118">This command removes the key named ITSoftware from the key vault named Contoso permanently.</span></span>
+<span data-ttu-id="d800b-119">執行此 Cmdlet 需要'清除」許可權，此許可權必須先前已明確授予此金鑰庫的使用者。</span><span class="sxs-lookup"><span data-stu-id="d800b-119">Executing this cmdlet requires the 'purge' permission, which must have been previously and explicitly granted to the user for this key vault.</span></span>
 
-### <span data-ttu-id="2f36b-120">範例4：使用管線運算子移除按鍵</span><span class="sxs-lookup"><span data-stu-id="2f36b-120">Example 4: Remove keys by using the pipeline operator</span></span>
+### <span data-ttu-id="d800b-120">範例 4：使用管線運算子移除金鑰</span><span class="sxs-lookup"><span data-stu-id="d800b-120">Example 4: Remove keys by using the pipeline operator</span></span>
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'Contoso' | Where-Object {$_.Attributes.Enabled -eq $False} | Remove-AzKeyVaultKey
 ```
 
-<span data-ttu-id="2f36b-121">這個命令會取得名為 Contoso 的主要電子倉庫中的所有金鑰，並使用管線運算子將它們傳遞到 **物件** Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="2f36b-121">This command gets all the keys in the key vault named Contoso, and passes them to the **Where-Object** cmdlet by using the pipeline operator.</span></span>
-<span data-ttu-id="2f36b-122">這個 Cmdlet 會將已 **啟用** 屬性的值 $False 的金鑰傳遞給目前的 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="2f36b-122">That cmdlet passes the keys that have a value of $False for the **Enabled** attribute to the current cmdlet.</span></span>
-<span data-ttu-id="2f36b-123">該 Cmdlet 會移除這些索引鍵。</span><span class="sxs-lookup"><span data-stu-id="2f36b-123">That cmdlet removes those keys.</span></span>
+<span data-ttu-id="d800b-121">此命令會獲得名稱為 Contoso 的金鑰庫中的所有金鑰，然後使用管線運算子將它們傳遞至 **Where-Object** Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="d800b-121">This command gets all the keys in the key vault named Contoso, and passes them to the **Where-Object** cmdlet by using the pipeline operator.</span></span>
+<span data-ttu-id="d800b-122">該 Cmdlet 會將具有值 $False **Enabled** 屬性的按鍵傳遞至目前的 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="d800b-122">That cmdlet passes the keys that have a value of $False for the **Enabled** attribute to the current cmdlet.</span></span>
+<span data-ttu-id="d800b-123">該 Cmdlet 會移除這些按鍵。</span><span class="sxs-lookup"><span data-stu-id="d800b-123">That cmdlet removes those keys.</span></span>
 
-## <span data-ttu-id="2f36b-124">參數</span><span class="sxs-lookup"><span data-stu-id="2f36b-124">PARAMETERS</span></span>
+## <span data-ttu-id="d800b-124">參數</span><span class="sxs-lookup"><span data-stu-id="d800b-124">PARAMETERS</span></span>
 
-### <span data-ttu-id="2f36b-125">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="2f36b-125">-DefaultProfile</span></span>
-<span data-ttu-id="2f36b-126">用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱</span><span class="sxs-lookup"><span data-stu-id="2f36b-126">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="d800b-125">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="d800b-125">-DefaultProfile</span></span>
+<span data-ttu-id="d800b-126">用於與 Azure 通訊的認證、帳戶、租使用者和訂閱</span><span class="sxs-lookup"><span data-stu-id="d800b-126">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -101,8 +101,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="2f36b-127">-Force</span><span class="sxs-lookup"><span data-stu-id="2f36b-127">-Force</span></span>
-<span data-ttu-id="2f36b-128">強制執行命令，而不要求使用者確認。</span><span class="sxs-lookup"><span data-stu-id="2f36b-128">Forces the command to run without asking for user confirmation.</span></span>
+### <span data-ttu-id="d800b-127">-強制</span><span class="sxs-lookup"><span data-stu-id="d800b-127">-Force</span></span>
+<span data-ttu-id="d800b-128">強制執行命令，但不要求使用者確認。</span><span class="sxs-lookup"><span data-stu-id="d800b-128">Forces the command to run without asking for user confirmation.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -116,8 +116,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="2f36b-129">-InputObject</span><span class="sxs-lookup"><span data-stu-id="2f36b-129">-InputObject</span></span>
-<span data-ttu-id="2f36b-130">KeyBundle 物件</span><span class="sxs-lookup"><span data-stu-id="2f36b-130">KeyBundle Object</span></span>
+### <span data-ttu-id="d800b-129">-InputObject</span><span class="sxs-lookup"><span data-stu-id="d800b-129">-InputObject</span></span>
+<span data-ttu-id="d800b-130">KeyBundle 物件</span><span class="sxs-lookup"><span data-stu-id="d800b-130">KeyBundle Object</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKeyIdentityItem
@@ -131,8 +131,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="2f36b-131">-InRemovedState</span><span class="sxs-lookup"><span data-stu-id="2f36b-131">-InRemovedState</span></span>
-<span data-ttu-id="2f36b-132">永久移除先前刪除的金鑰。</span><span class="sxs-lookup"><span data-stu-id="2f36b-132">Remove the previously deleted key permanently.</span></span>
+### <span data-ttu-id="d800b-131">-InRemovedState</span><span class="sxs-lookup"><span data-stu-id="d800b-131">-InRemovedState</span></span>
+<span data-ttu-id="d800b-132">永久移除先前刪除的金鑰。</span><span class="sxs-lookup"><span data-stu-id="d800b-132">Remove the previously deleted key permanently.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -146,9 +146,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="2f36b-133">-名稱</span><span class="sxs-lookup"><span data-stu-id="2f36b-133">-Name</span></span>
-<span data-ttu-id="2f36b-134">指定要移除的索引鍵名。</span><span class="sxs-lookup"><span data-stu-id="2f36b-134">Specifies the name of the key to remove.</span></span>
-<span data-ttu-id="2f36b-135">這個 Cmdlet 會根據此參數指定的名稱、主要電子倉庫的名稱和您目前的環境，來構造金鑰的完整功能變數名稱 (FQDN) 。</span><span class="sxs-lookup"><span data-stu-id="2f36b-135">This cmdlet constructs the fully qualified domain name (FQDN) of a key based on the name that this parameter specifies, the name of the key vault, and your current environment.</span></span>
+### <span data-ttu-id="d800b-133">-名稱</span><span class="sxs-lookup"><span data-stu-id="d800b-133">-Name</span></span>
+<span data-ttu-id="d800b-134">指定要移除的金鑰名稱。</span><span class="sxs-lookup"><span data-stu-id="d800b-134">Specifies the name of the key to remove.</span></span>
+<span data-ttu-id="d800b-135">此 Cmdlet 會依據此參數指定的名稱、金鑰庫的名稱，以及您目前的環境，建構金鑰的完全限定功能變數名稱 (FQDN) 。</span><span class="sxs-lookup"><span data-stu-id="d800b-135">This cmdlet constructs the fully qualified domain name (FQDN) of a key based on the name that this parameter specifies, the name of the key vault, and your current environment.</span></span>
 
 ```yaml
 Type: System.String
@@ -162,9 +162,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="2f36b-136">-PassThru</span><span class="sxs-lookup"><span data-stu-id="2f36b-136">-PassThru</span></span>
-<span data-ttu-id="2f36b-137">表示此 Cmdlet 會傳回 **KeyVault PSKeyVaultKey** 物件的命令。</span><span class="sxs-lookup"><span data-stu-id="2f36b-137">Indicates that this cmdlet returns a **Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKey** object.</span></span>
-<span data-ttu-id="2f36b-138">根據預設，這個 Cmdlet 不會產生任何輸出。</span><span class="sxs-lookup"><span data-stu-id="2f36b-138">By default, this cmdlet does not generate any output.</span></span>
+### <span data-ttu-id="d800b-136">-PassThru</span><span class="sxs-lookup"><span data-stu-id="d800b-136">-PassThru</span></span>
+<span data-ttu-id="d800b-137">表示此 Cmdlet 會返回 **Microsoft.Azure.Commands.KeyVault.models.PSKeyVaultKey** 物件。</span><span class="sxs-lookup"><span data-stu-id="d800b-137">Indicates that this cmdlet returns a **Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKey** object.</span></span>
+<span data-ttu-id="d800b-138">根據預設，此 Cmdlet 不會產生任何輸出。</span><span class="sxs-lookup"><span data-stu-id="d800b-138">By default, this cmdlet does not generate any output.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -178,9 +178,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="2f36b-139">-VaultName</span><span class="sxs-lookup"><span data-stu-id="2f36b-139">-VaultName</span></span>
-<span data-ttu-id="2f36b-140">指定要從中移除金鑰的主要電子倉庫名稱。</span><span class="sxs-lookup"><span data-stu-id="2f36b-140">Specifies the name of the key vault from which to remove the key.</span></span>
-<span data-ttu-id="2f36b-141">這個 Cmdlet 會根據此參數指定的名稱和您目前的環境，來構造金鑰 vault 的 FQDN。</span><span class="sxs-lookup"><span data-stu-id="2f36b-141">This cmdlet constructs the FQDN of a key vault based on the name that this parameter specifies and your current environment.</span></span>
+### <span data-ttu-id="d800b-139">-VaultName</span><span class="sxs-lookup"><span data-stu-id="d800b-139">-VaultName</span></span>
+<span data-ttu-id="d800b-140">指定要移除金鑰的金鑰庫名稱。</span><span class="sxs-lookup"><span data-stu-id="d800b-140">Specifies the name of the key vault from which to remove the key.</span></span>
+<span data-ttu-id="d800b-141">此 Cmdlet 會依據此參數指定的名稱和您目前的環境，建構金鑰庫的 FQDN。</span><span class="sxs-lookup"><span data-stu-id="d800b-141">This cmdlet constructs the FQDN of a key vault based on the name that this parameter specifies and your current environment.</span></span>
 
 ```yaml
 Type: System.String
@@ -194,8 +194,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="2f36b-142">-確認</span><span class="sxs-lookup"><span data-stu-id="2f36b-142">-Confirm</span></span>
-<span data-ttu-id="2f36b-143">在執行 Cmdlet 之前提示您進行確認。</span><span class="sxs-lookup"><span data-stu-id="2f36b-143">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="d800b-142">-確認</span><span class="sxs-lookup"><span data-stu-id="d800b-142">-Confirm</span></span>
+<span data-ttu-id="d800b-143">執行 Cmdlet 之前，系統會提示您確認。</span><span class="sxs-lookup"><span data-stu-id="d800b-143">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -209,10 +209,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="2f36b-144">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="2f36b-144">-WhatIf</span></span>
-<span data-ttu-id="2f36b-145">顯示在執行 Cmdlet 時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="2f36b-145">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="2f36b-146">未執行 Cmdlet。顯示在執行 Cmdlet 時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="2f36b-146">The cmdlet is not run.Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="2f36b-147">未執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="2f36b-147">The cmdlet is not run.</span></span>
+### <span data-ttu-id="d800b-144">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="d800b-144">-WhatIf</span></span>
+<span data-ttu-id="d800b-145">顯示 Cmdlet 執行時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="d800b-145">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="d800b-146">不會執行 Cmdlet。顯示 Cmdlet 執行時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="d800b-146">The cmdlet is not run.Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="d800b-147">不會執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="d800b-147">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -226,26 +226,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="2f36b-148">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="2f36b-148">CommonParameters</span></span>
-<span data-ttu-id="2f36b-149">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="2f36b-149">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="2f36b-150">如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="2f36b-150">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="d800b-148">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="d800b-148">CommonParameters</span></span>
+<span data-ttu-id="d800b-149">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="d800b-149">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="d800b-150">詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="d800b-150">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="2f36b-151">輸入</span><span class="sxs-lookup"><span data-stu-id="2f36b-151">INPUTS</span></span>
+## <span data-ttu-id="d800b-151">輸入</span><span class="sxs-lookup"><span data-stu-id="d800b-151">INPUTS</span></span>
 
-### <span data-ttu-id="2f36b-152">PSKeyVaultKeyIdentityItem 中的 KeyVault。</span><span class="sxs-lookup"><span data-stu-id="2f36b-152">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKeyIdentityItem</span></span>
+### <span data-ttu-id="d800b-152">Microsoft.Azure.Commands.KeyVault.models.PSKeyVaultKeyIdentityItem</span><span class="sxs-lookup"><span data-stu-id="d800b-152">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKeyIdentityItem</span></span>
 
-## <span data-ttu-id="2f36b-153">輸出</span><span class="sxs-lookup"><span data-stu-id="2f36b-153">OUTPUTS</span></span>
+## <span data-ttu-id="d800b-153">輸出</span><span class="sxs-lookup"><span data-stu-id="d800b-153">OUTPUTS</span></span>
 
-### <span data-ttu-id="2f36b-154">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="2f36b-154">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKey</span></span>
+### <span data-ttu-id="d800b-154">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="d800b-154">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKey</span></span>
 
-## <span data-ttu-id="2f36b-155">筆記</span><span class="sxs-lookup"><span data-stu-id="2f36b-155">NOTES</span></span>
+## <span data-ttu-id="d800b-155">筆記</span><span class="sxs-lookup"><span data-stu-id="d800b-155">NOTES</span></span>
 
-## <span data-ttu-id="2f36b-156">相關連結</span><span class="sxs-lookup"><span data-stu-id="2f36b-156">RELATED LINKS</span></span>
+## <span data-ttu-id="d800b-156">相關連結</span><span class="sxs-lookup"><span data-stu-id="d800b-156">RELATED LINKS</span></span>
 
-[<span data-ttu-id="2f36b-157">附加 AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="2f36b-157">Add-AzKeyVaultKey</span></span>](./Add-AzKeyVaultKey.md)
+[<span data-ttu-id="d800b-157">Add-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="d800b-157">Add-AzKeyVaultKey</span></span>](./Add-AzKeyVaultKey.md)
 
-[<span data-ttu-id="2f36b-158">AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="2f36b-158">Get-AzKeyVaultKey</span></span>](./Get-AzKeyVaultKey.md)
+[<span data-ttu-id="d800b-158">Get-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="d800b-158">Get-AzKeyVaultKey</span></span>](./Get-AzKeyVaultKey.md)
 
-[<span data-ttu-id="2f36b-159">Set-AzKeyVaultKeyAttribute</span><span class="sxs-lookup"><span data-stu-id="2f36b-159">Set-AzKeyVaultKeyAttribute</span></span>](./Set-AzKeyVaultKeyAttribute.md)
 
-[<span data-ttu-id="2f36b-160">復原-AzKeyVaultKeyRemoval</span><span class="sxs-lookup"><span data-stu-id="2f36b-160">Undo-AzKeyVaultKeyRemoval</span></span>](./Undo-AzKeyVaultKeyRemoval.md)
+[<span data-ttu-id="d800b-159">Undo-AzKeyVaultKeyRemoval</span><span class="sxs-lookup"><span data-stu-id="d800b-159">Undo-AzKeyVaultKeyRemoval</span></span>](./Undo-AzKeyVaultKeyRemoval.md)
 
