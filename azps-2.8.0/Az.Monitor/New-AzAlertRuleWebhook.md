@@ -6,48 +6,48 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAlertRuleWebhook.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAlertRuleWebhook.md
-ms.openlocfilehash: aa287095405e48550153e58049f750d78a9ed877
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 1b8d58c6519084db5e679d3087c22adab7c2bef6
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93789833"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100403998"
 ---
-# <span data-ttu-id="634d6-101">New-AzAlertRuleWebhook</span><span class="sxs-lookup"><span data-stu-id="634d6-101">New-AzAlertRuleWebhook</span></span>
+# <span data-ttu-id="234dd-101">New-AzAlertRuleWebhook</span><span class="sxs-lookup"><span data-stu-id="234dd-101">New-AzAlertRuleWebhook</span></span>
 
-## <span data-ttu-id="634d6-102">摘要</span><span class="sxs-lookup"><span data-stu-id="634d6-102">SYNOPSIS</span></span>
-<span data-ttu-id="634d6-103">建立警示規則 webhook。</span><span class="sxs-lookup"><span data-stu-id="634d6-103">Creates an alert rule webhook.</span></span>
+## <span data-ttu-id="234dd-102">簡介</span><span class="sxs-lookup"><span data-stu-id="234dd-102">SYNOPSIS</span></span>
+<span data-ttu-id="234dd-103">建立警示規則 web一樣。</span><span class="sxs-lookup"><span data-stu-id="234dd-103">Creates an alert rule webhook.</span></span>
 
-## <span data-ttu-id="634d6-104">句法</span><span class="sxs-lookup"><span data-stu-id="634d6-104">SYNTAX</span></span>
+## <span data-ttu-id="234dd-104">語法</span><span class="sxs-lookup"><span data-stu-id="234dd-104">SYNTAX</span></span>
 
 ```
 New-AzAlertRuleWebhook [-ServiceUri] <String> [[-Property] <Hashtable>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="634d6-105">說明</span><span class="sxs-lookup"><span data-stu-id="634d6-105">DESCRIPTION</span></span>
-<span data-ttu-id="634d6-106">**新的-AzAlertRuleWebhook** Cmdlet 會建立一個警報規則 webhook。</span><span class="sxs-lookup"><span data-stu-id="634d6-106">The **New-AzAlertRuleWebhook** cmdlet creates an alert rule webhook.</span></span>
+## <span data-ttu-id="234dd-105">描述</span><span class="sxs-lookup"><span data-stu-id="234dd-105">DESCRIPTION</span></span>
+<span data-ttu-id="234dd-106">**New-AzAlertRuleWeb有 Cmdlet** 會建立提醒規則 webrule。</span><span class="sxs-lookup"><span data-stu-id="234dd-106">The **New-AzAlertRuleWebhook** cmdlet creates an alert rule webhook.</span></span>
 
-## <span data-ttu-id="634d6-107">示例</span><span class="sxs-lookup"><span data-stu-id="634d6-107">EXAMPLES</span></span>
+## <span data-ttu-id="234dd-107">例子</span><span class="sxs-lookup"><span data-stu-id="234dd-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="634d6-108">範例1：建立警示規則 webhook</span><span class="sxs-lookup"><span data-stu-id="634d6-108">Example 1: Create an alert rule webhook</span></span>
+### <span data-ttu-id="234dd-108">範例 1：建立通知規則 Web更</span><span class="sxs-lookup"><span data-stu-id="234dd-108">Example 1: Create an alert rule webhook</span></span>
 ```
 PS C:\>New-AzAlertRuleWebhook -ServiceUri "http://contoso.com"
 ```
 
-<span data-ttu-id="634d6-109">這個命令會透過只指定服務 URI 來建立警示規則 webhook。</span><span class="sxs-lookup"><span data-stu-id="634d6-109">This command creates an alert rule webhook by specifying only the service URI.</span></span>
+<span data-ttu-id="234dd-109">此命令僅指定服務 URI，以建立警示規則 web建立。</span><span class="sxs-lookup"><span data-stu-id="234dd-109">This command creates an alert rule webhook by specifying only the service URI.</span></span>
 
-### <span data-ttu-id="634d6-110">範例2：使用一個屬性建立 webhook</span><span class="sxs-lookup"><span data-stu-id="634d6-110">Example 2: Create a webhook with one property</span></span>
+### <span data-ttu-id="234dd-110">範例 2：使用一個屬性建立 Web一個</span><span class="sxs-lookup"><span data-stu-id="234dd-110">Example 2: Create a webhook with one property</span></span>
 ```
 PS C:\>$Actual = New-AzAlertRuleWebhook -ServiceUri "http://contoso.com" -Property @{prop1 = 'value1'}
 ```
 
-<span data-ttu-id="634d6-111">這個命令會針對具有一個屬性的 Contoso.com 建立一個警示規則 webhook，然後將它儲存在 $Actual 變數中。</span><span class="sxs-lookup"><span data-stu-id="634d6-111">This command creates an alert rule webhook for Contoso.com that has one property, and then stores it in the $Actual variable.</span></span>
+<span data-ttu-id="234dd-111">此命令會針對具有一個屬性Contoso.com建立提醒規則 web下一個屬性，然後將它儲存在$Actual變數中。</span><span class="sxs-lookup"><span data-stu-id="234dd-111">This command creates an alert rule webhook for Contoso.com that has one property, and then stores it in the $Actual variable.</span></span>
 
-## <span data-ttu-id="634d6-112">參數</span><span class="sxs-lookup"><span data-stu-id="634d6-112">PARAMETERS</span></span>
+## <span data-ttu-id="234dd-112">參數</span><span class="sxs-lookup"><span data-stu-id="234dd-112">PARAMETERS</span></span>
 
-### <span data-ttu-id="634d6-113">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="634d6-113">-DefaultProfile</span></span>
-<span data-ttu-id="634d6-114">用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱</span><span class="sxs-lookup"><span data-stu-id="634d6-114">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="234dd-113">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="234dd-113">-DefaultProfile</span></span>
+<span data-ttu-id="234dd-114">用於與 Azure 通訊的認證、帳戶、租使用者和訂閱</span><span class="sxs-lookup"><span data-stu-id="234dd-114">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -61,8 +61,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="634d6-115">-屬性</span><span class="sxs-lookup"><span data-stu-id="634d6-115">-Property</span></span>
-<span data-ttu-id="634d6-116">指定 [@ (property1 = ' value1 ",.... ) 格式的屬性清單。</span><span class="sxs-lookup"><span data-stu-id="634d6-116">Specifies the list of properties in the format @(property1 = 'value1',....).</span></span>
+### <span data-ttu-id="234dd-115">-屬性</span><span class="sxs-lookup"><span data-stu-id="234dd-115">-Property</span></span>
+<span data-ttu-id="234dd-116">指定格式為 @ (屬性1 = 'value1',....) 。</span><span class="sxs-lookup"><span data-stu-id="234dd-116">Specifies the list of properties in the format @(property1 = 'value1',....).</span></span>
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -76,8 +76,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="634d6-117">-ServiceUri</span><span class="sxs-lookup"><span data-stu-id="634d6-117">-ServiceUri</span></span>
-<span data-ttu-id="634d6-118">指定服務 URI。</span><span class="sxs-lookup"><span data-stu-id="634d6-118">Specifies the service URI.</span></span>
+### <span data-ttu-id="234dd-117">-ServiceUri</span><span class="sxs-lookup"><span data-stu-id="234dd-117">-ServiceUri</span></span>
+<span data-ttu-id="234dd-118">指定服務 URI。</span><span class="sxs-lookup"><span data-stu-id="234dd-118">Specifies the service URI.</span></span>
 
 ```yaml
 Type: System.String
@@ -91,31 +91,30 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="634d6-119">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="634d6-119">CommonParameters</span></span>
-<span data-ttu-id="634d6-120">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="634d6-120">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="634d6-121">如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="634d6-121">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="234dd-119">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="234dd-119">CommonParameters</span></span>
+<span data-ttu-id="234dd-120">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="234dd-120">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="234dd-121">詳細資訊[請參閱about_CommonParameters。](https://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="234dd-121">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="634d6-122">輸入</span><span class="sxs-lookup"><span data-stu-id="634d6-122">INPUTS</span></span>
+## <span data-ttu-id="234dd-122">輸入</span><span class="sxs-lookup"><span data-stu-id="234dd-122">INPUTS</span></span>
 
-### <span data-ttu-id="634d6-123">System.object</span><span class="sxs-lookup"><span data-stu-id="634d6-123">System.String</span></span>
+### <span data-ttu-id="234dd-123">System.String</span><span class="sxs-lookup"><span data-stu-id="234dd-123">System.String</span></span>
 
-### <span data-ttu-id="634d6-124">[System.object] 集合. Hashtable</span><span class="sxs-lookup"><span data-stu-id="634d6-124">System.Collections.Hashtable</span></span>
+### <span data-ttu-id="234dd-124">System.Collections.Hashtable</span><span class="sxs-lookup"><span data-stu-id="234dd-124">System.Collections.Hashtable</span></span>
 
-## <span data-ttu-id="634d6-125">輸出</span><span class="sxs-lookup"><span data-stu-id="634d6-125">OUTPUTS</span></span>
+## <span data-ttu-id="234dd-125">輸出</span><span class="sxs-lookup"><span data-stu-id="234dd-125">OUTPUTS</span></span>
 
-### <span data-ttu-id="634d6-126">RuleWebhookAction 中的 [管理模型]。</span><span class="sxs-lookup"><span data-stu-id="634d6-126">Microsoft.Azure.Management.Monitor.Management.Models.RuleWebhookAction</span></span>
+### <span data-ttu-id="234dd-126">Microsoft.Azure.management.monitor.management.models.RuleWebaction</span><span class="sxs-lookup"><span data-stu-id="234dd-126">Microsoft.Azure.Management.Monitor.Management.Models.RuleWebhookAction</span></span>
 
-## <span data-ttu-id="634d6-127">筆記</span><span class="sxs-lookup"><span data-stu-id="634d6-127">NOTES</span></span>
+## <span data-ttu-id="234dd-127">筆記</span><span class="sxs-lookup"><span data-stu-id="234dd-127">NOTES</span></span>
 
-## <span data-ttu-id="634d6-128">相關連結</span><span class="sxs-lookup"><span data-stu-id="634d6-128">RELATED LINKS</span></span>
+## <span data-ttu-id="234dd-128">相關連結</span><span class="sxs-lookup"><span data-stu-id="234dd-128">RELATED LINKS</span></span>
 
-[<span data-ttu-id="634d6-129">附加 AzLogAlertRule</span><span class="sxs-lookup"><span data-stu-id="634d6-129">Add-AzLogAlertRule</span></span>](./Add-AzLogAlertRule.md)
 
-[<span data-ttu-id="634d6-130">附加 AzMetricAlertRule</span><span class="sxs-lookup"><span data-stu-id="634d6-130">Add-AzMetricAlertRule</span></span>](./Add-AzMetricAlertRule.md)
+[<span data-ttu-id="234dd-129">Add-AzMetricAlertRule</span><span class="sxs-lookup"><span data-stu-id="234dd-129">Add-AzMetricAlertRule</span></span>](./Add-AzMetricAlertRule.md)
 
-[<span data-ttu-id="634d6-131">附加 AzWebtestAlertRule</span><span class="sxs-lookup"><span data-stu-id="634d6-131">Add-AzWebtestAlertRule</span></span>](./Add-AzWebtestAlertRule.md)
+[<span data-ttu-id="234dd-130">Add-AzWebtestAlertRule</span><span class="sxs-lookup"><span data-stu-id="234dd-130">Add-AzWebtestAlertRule</span></span>](./Add-AzWebtestAlertRule.md)
 
-[<span data-ttu-id="634d6-132">新-AzAlertRuleEmail</span><span class="sxs-lookup"><span data-stu-id="634d6-132">New-AzAlertRuleEmail</span></span>](./New-AzAlertRuleEmail.md)
+[<span data-ttu-id="234dd-131">New-AzAlertRuleEmail</span><span class="sxs-lookup"><span data-stu-id="234dd-131">New-AzAlertRuleEmail</span></span>](./New-AzAlertRuleEmail.md)
 
-[<span data-ttu-id="634d6-133">新-AzAutoscaleWebhook</span><span class="sxs-lookup"><span data-stu-id="634d6-133">New-AzAutoscaleWebhook</span></span>](./New-AzAutoscaleWebhook.md)
+[<span data-ttu-id="234dd-132">New-AzAutoscaleWeb用</span><span class="sxs-lookup"><span data-stu-id="234dd-132">New-AzAutoscaleWebhook</span></span>](./New-AzAutoscaleWebhook.md)
 
 
