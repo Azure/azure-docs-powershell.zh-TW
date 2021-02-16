@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementCache.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementCache.md
-ms.openlocfilehash: 4ae5bdd5dc9c15ab72b2f35f5d67eeaa732296bd
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: cfa2024064256b780121aeb489a3e8988b0a688e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93958188"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398099"
 ---
 # New-AzApiManagementCache
 
-## 摘要
-建立新的快取實體
+## 簡介
+建立新的 Cache 實體
 
-## 句法
+## 語法
 
 ```
 New-AzApiManagementCache -Context <PsApiManagementContext> [-CacheId <String>] -ConnectionString <String>
@@ -25,12 +25,12 @@ New-AzApiManagementCache -Context <PsApiManagementContext> [-CacheId <String>] -
  [-Confirm] [<CommonParameters>]
 ```
 
-## 說明
-Cmdlet [ **new-AzApiManagementCache** ] 會在 Api 管理服務中建立新的快取實體。
+## 描述
+Cmdlet **New-AzApiManagementCache** 在 Api 管理服務中建立新緩存實體。
 
-## 示例
+## 例子
 
-### 範例1：建立新的快取實體
+### 範例 1：建立新 Cache 實體
 ```powershell
 PS c:\> New-AzApiManagementCache -Context $context -ConnectionString "teamdemo.redis.cache.windows.net:6380,password=xxxxxx+xxxxx=,ssl=True,abortConnect=False" -Description "Team Cache"
 
@@ -44,12 +44,12 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 ```
 
-Cmdlet 會在 Api 管理服務的主位置中建立新的快取實體。
+Cmdlet 會于 Api 管理服務的主位置中建立新緩存實體。
 
 ## 參數
 
 ### -AzureRedisResourceId
-Azure Redis Cache 實例的 Arm ResourceId。 這個參數是選用的。
+Azure Redis Cache 實例的 Arm ResourceId。 此參數為選擇性。
 
 ```yaml
 Type: System.String
@@ -64,8 +64,8 @@ Accept wildcard characters: False
 ```
 
 ### -CacheId
-新快取的識別碼。
-這個參數是選用的。
+新緩存的識別碼。
+此參數為選擇性。
 如果未指定，將會產生。
 
 ```yaml
@@ -80,9 +80,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### ConnectionString
-Redis [連接字串]。
-這個參數是必要的。
+### -ConnectionString
+Redis Connection String.
+此參數為必填專案。
 
 ```yaml
 Type: System.String
@@ -98,7 +98,7 @@ Accept wildcard characters: False
 
 ### -內容
 PsApiManagementCoNtext 的實例。
-這個參數是必要的。
+此參數為必填專案。
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 Azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -128,8 +128,8 @@ Accept wildcard characters: False
 ```
 
 ### -描述
-快取說明。
-這個參數是選用的。
+緩存描述。
+此參數為選擇性。
 
 ```yaml
 Type: System.String
@@ -144,7 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，系統會提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -159,8 +159,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。
-未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。
+不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -175,24 +175,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### ServiceManagement. PsApiManagementCoNtext （ApiManagement）
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.models.PsApiManagementCoNtext
 
-### System.object
+### System.String
 
 ## 輸出
 
-### ServiceManagement. PsApiManagementCache （ApiManagement）
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.models.PsApiManagementCache
 
 ## 筆記
 
 ## 相關連結
 
-[AzApiManagementCache](./Get-AzApiManagementCache)
+[Get-AzApiManagementCache](./Get-AzApiManagementCache.md)
 
-[Set-AzApiManagementCache](./Set-AzApiManagementCache.md)
+[Remove-AzApiManagementCache](./Remove-AzApiManagementCache.md)
 
-[移除-AzApiManagementCache](./Remove-AzApiManagementCache.md)
+[Update-AzApiManagementCache](./Update-AzApiManagementCache.md)
