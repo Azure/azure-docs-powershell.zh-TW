@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.recoveryse
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Start-AzRecoveryServicesAsrApplyRecoveryPoint.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Start-AzRecoveryServicesAsrApplyRecoveryPoint.md
-ms.openlocfilehash: 893298c3349d2d7ceaa998a1f147ce8dd590f101
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: b06501fafbc573e10ac7d5dba3435dbf96342ba0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94126259"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100411852"
 ---
-# <span data-ttu-id="ca643-101">Start-AzRecoveryServicesAsrApplyRecoveryPoint</span><span class="sxs-lookup"><span data-stu-id="ca643-101">Start-AzRecoveryServicesAsrApplyRecoveryPoint</span></span>
+# <span data-ttu-id="297aa-101">Start-AzRecoveryServicesAsrApplyRecoveryPoint</span><span class="sxs-lookup"><span data-stu-id="297aa-101">Start-AzRecoveryServicesAsrApplyRecoveryPoint</span></span>
 
-## <span data-ttu-id="ca643-102">摘要</span><span class="sxs-lookup"><span data-stu-id="ca643-102">SYNOPSIS</span></span>
-<span data-ttu-id="ca643-103">在提交容錯移轉作業之前，變更失敗的受保護專案的復原點。</span><span class="sxs-lookup"><span data-stu-id="ca643-103">Changes a recovery point for a failed over protected item before committing the failover operation.</span></span>
+## <span data-ttu-id="297aa-102">簡介</span><span class="sxs-lookup"><span data-stu-id="297aa-102">SYNOPSIS</span></span>
+<span data-ttu-id="297aa-103">在承諾執行容錯移轉作業之前，變更容錯移轉超過受保護專案的復原點。</span><span class="sxs-lookup"><span data-stu-id="297aa-103">Changes a recovery point for a failed over protected item before committing the failover operation.</span></span>
 
-## <span data-ttu-id="ca643-104">句法</span><span class="sxs-lookup"><span data-stu-id="ca643-104">SYNTAX</span></span>
+## <span data-ttu-id="297aa-104">語法</span><span class="sxs-lookup"><span data-stu-id="297aa-104">SYNTAX</span></span>
 
 ```
 Start-AzRecoveryServicesAsrApplyRecoveryPoint -RecoveryPoint <ASRRecoveryPoint>
@@ -26,37 +26,22 @@ Start-AzRecoveryServicesAsrApplyRecoveryPoint -RecoveryPoint <ASRRecoveryPoint>
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="ca643-105">說明</span><span class="sxs-lookup"><span data-stu-id="ca643-105">DESCRIPTION</span></span>
-<span data-ttu-id="ca643-106">在提交容錯移轉作業之前， **AzRecoveryServicesAsrApplyRecoveryPoint** 會變更已失敗的受保護專案的復原點。</span><span class="sxs-lookup"><span data-stu-id="ca643-106">The **Start-AzRecoveryServicesAsrApplyRecoveryPoint** changes the recovery point for a failed over protected item before it commits the failover operation.</span></span>
+## <span data-ttu-id="297aa-105">描述</span><span class="sxs-lookup"><span data-stu-id="297aa-105">DESCRIPTION</span></span>
+<span data-ttu-id="297aa-106">**Start-AzRecoveryServicesAsrApplyRecoveryPoint** 會變更容錯移轉超過受保護專案的復原點，然後再進行容錯移轉作業。</span><span class="sxs-lookup"><span data-stu-id="297aa-106">The **Start-AzRecoveryServicesAsrApplyRecoveryPoint** changes the recovery point for a failed over protected item before it commits the failover operation.</span></span>
 
-## <span data-ttu-id="ca643-107">示例</span><span class="sxs-lookup"><span data-stu-id="ca643-107">EXAMPLES</span></span>
+## <span data-ttu-id="297aa-107">例子</span><span class="sxs-lookup"><span data-stu-id="297aa-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="ca643-108">範例1</span><span class="sxs-lookup"><span data-stu-id="ca643-108">Example 1</span></span>
+### <span data-ttu-id="297aa-108">範例 1</span><span class="sxs-lookup"><span data-stu-id="297aa-108">Example 1</span></span>
 ```
 PS C:\> $currentJob = Start-AzRecoveryServicesAsrApplyRecoveryPoint -RecoveryPoint $RecoveryPoint -ReplicationProtectedItem $RPI
 ```
 
-<span data-ttu-id="ca643-109">開始將指定的復原點套用至複製受保護的專案，並傳回用於追蹤作業的 ASR 作業。</span><span class="sxs-lookup"><span data-stu-id="ca643-109">Starts applying the specified recovery point to the replication protected item and returns the ASR job used to track the operation.</span></span>
+<span data-ttu-id="297aa-109">開始將指定的復原點適用于複本受保護的專案，並返回用來追蹤作業的 ASR 工作。</span><span class="sxs-lookup"><span data-stu-id="297aa-109">Starts applying the specified recovery point to the replication protected item and returns the ASR job used to track the operation.</span></span>
 
-## <span data-ttu-id="ca643-110">參數</span><span class="sxs-lookup"><span data-stu-id="ca643-110">PARAMETERS</span></span>
+## <span data-ttu-id="297aa-110">參數</span><span class="sxs-lookup"><span data-stu-id="297aa-110">PARAMETERS</span></span>
 
-### <span data-ttu-id="ca643-111">-DataEncryptionPrimaryCertFile</span><span class="sxs-lookup"><span data-stu-id="ca643-111">-DataEncryptionPrimaryCertFile</span></span>
-<span data-ttu-id="ca643-112">如果正在使用資料加密，指定主要憑證檔案。</span><span class="sxs-lookup"><span data-stu-id="ca643-112">Specifies the primary certificate file if data encryption is being used.</span></span>
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### <span data-ttu-id="ca643-113">-DataEncryptionSecondaryCertFile</span><span class="sxs-lookup"><span data-stu-id="ca643-113">-DataEncryptionSecondaryCertFile</span></span>
-<span data-ttu-id="ca643-114">指定要使用資料加密的次要憑證檔案。</span><span class="sxs-lookup"><span data-stu-id="ca643-114">Specifies the secondary certificate file if data encryption is being used.</span></span>
+### <span data-ttu-id="297aa-111">-DataEncryptionPrimaryCertFile</span><span class="sxs-lookup"><span data-stu-id="297aa-111">-DataEncryptionPrimaryCertFile</span></span>
+<span data-ttu-id="297aa-112">指定使用資料加密時的主要憑證檔案。</span><span class="sxs-lookup"><span data-stu-id="297aa-112">Specifies the primary certificate file if data encryption is being used.</span></span>
 
 ```yaml
 Type: System.String
@@ -70,8 +55,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ca643-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="ca643-115">-DefaultProfile</span></span>
-<span data-ttu-id="ca643-116">用於與 Azure 進行通訊的認證、帳戶、租使用者及訂閱。</span><span class="sxs-lookup"><span data-stu-id="ca643-116">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+### <span data-ttu-id="297aa-113">-DataEncryption？aryCertFile</span><span class="sxs-lookup"><span data-stu-id="297aa-113">-DataEncryptionSecondaryCertFile</span></span>
+<span data-ttu-id="297aa-114">指定使用資料加密時次要憑證檔案。</span><span class="sxs-lookup"><span data-stu-id="297aa-114">Specifies the secondary certificate file if data encryption is being used.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="297aa-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="297aa-115">-DefaultProfile</span></span>
+<span data-ttu-id="297aa-116">用於與 Azure 通訊的認證、帳戶、租使用者和訂閱。</span><span class="sxs-lookup"><span data-stu-id="297aa-116">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
 
 
 ```yaml
@@ -86,8 +86,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ca643-117">-RecoveryPoint</span><span class="sxs-lookup"><span data-stu-id="ca643-117">-RecoveryPoint</span></span>
-<span data-ttu-id="ca643-118">指定對應至要套用之復原點的復原點物件。</span><span class="sxs-lookup"><span data-stu-id="ca643-118">Specifies the recovery point object corresponding to the recovery point to be applied.</span></span>
+### <span data-ttu-id="297aa-117">-RecoveryPoint</span><span class="sxs-lookup"><span data-stu-id="297aa-117">-RecoveryPoint</span></span>
+<span data-ttu-id="297aa-118">指定對應到要適用之修復點的復原點物件。</span><span class="sxs-lookup"><span data-stu-id="297aa-118">Specifies the recovery point object corresponding to the recovery point to be applied.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRRecoveryPoint
@@ -101,8 +101,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ca643-119">-ReplicationProtectedItem</span><span class="sxs-lookup"><span data-stu-id="ca643-119">-ReplicationProtectedItem</span></span>
-<span data-ttu-id="ca643-120">指定 ASR 複製受保護的專案物件。</span><span class="sxs-lookup"><span data-stu-id="ca643-120">Specifies the ASR replication protected item object.</span></span>
+### <span data-ttu-id="297aa-119">-ReplicationProtectedItem</span><span class="sxs-lookup"><span data-stu-id="297aa-119">-ReplicationProtectedItem</span></span>
+<span data-ttu-id="297aa-120">指定 ASR 複製受保護的專案物件。</span><span class="sxs-lookup"><span data-stu-id="297aa-120">Specifies the ASR replication protected item object.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRReplicationProtectedItem
@@ -116,8 +116,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ca643-121">-確認</span><span class="sxs-lookup"><span data-stu-id="ca643-121">-Confirm</span></span>
-<span data-ttu-id="ca643-122">在執行 Cmdlet 之前提示您進行確認。</span><span class="sxs-lookup"><span data-stu-id="ca643-122">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="297aa-121">-確認</span><span class="sxs-lookup"><span data-stu-id="297aa-121">-Confirm</span></span>
+<span data-ttu-id="297aa-122">執行 Cmdlet 之前，提示您確認。</span><span class="sxs-lookup"><span data-stu-id="297aa-122">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -131,8 +131,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ca643-123">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="ca643-123">-WhatIf</span></span>
-<span data-ttu-id="ca643-124">顯示在執行 Cmdlet 時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="ca643-124">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="ca643-125">未執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="ca643-125">The cmdlet is not run.</span></span>
+### <span data-ttu-id="297aa-123">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="297aa-123">-WhatIf</span></span>
+<span data-ttu-id="297aa-124">顯示 Cmdlet 執行時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="297aa-124">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="297aa-125">不會執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="297aa-125">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -146,19 +146,19 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ca643-126">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="ca643-126">CommonParameters</span></span>
-<span data-ttu-id="ca643-127">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="ca643-127">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="ca643-128">如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="ca643-128">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="297aa-126">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="297aa-126">CommonParameters</span></span>
+<span data-ttu-id="297aa-127">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="297aa-127">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="297aa-128">詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="297aa-128">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="ca643-129">輸入</span><span class="sxs-lookup"><span data-stu-id="ca643-129">INPUTS</span></span>
+## <span data-ttu-id="297aa-129">輸入</span><span class="sxs-lookup"><span data-stu-id="297aa-129">INPUTS</span></span>
 
-### <span data-ttu-id="ca643-130">RecoveryServices. SiteRecovery. ASRReplicationProtectedItem</span><span class="sxs-lookup"><span data-stu-id="ca643-130">Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRReplicationProtectedItem</span></span>
+### <span data-ttu-id="297aa-130">Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRReplicationProtectedItem</span><span class="sxs-lookup"><span data-stu-id="297aa-130">Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRReplicationProtectedItem</span></span>
 
-## <span data-ttu-id="ca643-131">輸出</span><span class="sxs-lookup"><span data-stu-id="ca643-131">OUTPUTS</span></span>
+## <span data-ttu-id="297aa-131">輸出</span><span class="sxs-lookup"><span data-stu-id="297aa-131">OUTPUTS</span></span>
 
-### <span data-ttu-id="ca643-132">RecoveryServices. SiteRecovery. ASRJob</span><span class="sxs-lookup"><span data-stu-id="ca643-132">Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRJob</span></span>
+### <span data-ttu-id="297aa-132">Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRJob</span><span class="sxs-lookup"><span data-stu-id="297aa-132">Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRJob</span></span>
 
-## <span data-ttu-id="ca643-133">筆記</span><span class="sxs-lookup"><span data-stu-id="ca643-133">NOTES</span></span>
+## <span data-ttu-id="297aa-133">筆記</span><span class="sxs-lookup"><span data-stu-id="297aa-133">NOTES</span></span>
 
-## <span data-ttu-id="ca643-134">相關連結</span><span class="sxs-lookup"><span data-stu-id="ca643-134">RELATED LINKS</span></span>
+## <span data-ttu-id="297aa-134">相關連結</span><span class="sxs-lookup"><span data-stu-id="297aa-134">RELATED LINKS</span></span>
 
-[<span data-ttu-id="ca643-135">Azure Site Recovery Cmdlet</span><span class="sxs-lookup"><span data-stu-id="ca643-135">Azure Site Recovery Cmdlets</span></span>](./Az.SiteRecovery.md)
+

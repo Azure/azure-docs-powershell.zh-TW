@@ -6,49 +6,49 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Resize-AzVirtualNetworkGateway.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Resize-AzVirtualNetworkGateway.md
-ms.openlocfilehash: dd48af6a0f20cafea5911adb629a83323faa94a6
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 31ec0453b0ce64c27d1bb37d4bf6c0f100a8c760
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93959875"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100411750"
 ---
-# <span data-ttu-id="e13aa-101">Resize-AzVirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="e13aa-101">Resize-AzVirtualNetworkGateway</span></span>
+# <span data-ttu-id="efece-101">Resize-AzVirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="efece-101">Resize-AzVirtualNetworkGateway</span></span>
 
-## <span data-ttu-id="e13aa-102">摘要</span><span class="sxs-lookup"><span data-stu-id="e13aa-102">SYNOPSIS</span></span>
-<span data-ttu-id="e13aa-103">重新調整現有虛擬網路閘道的大小。</span><span class="sxs-lookup"><span data-stu-id="e13aa-103">Resizes an existing virtual network gateway.</span></span>
+## <span data-ttu-id="efece-102">簡介</span><span class="sxs-lookup"><span data-stu-id="efece-102">SYNOPSIS</span></span>
+<span data-ttu-id="efece-103">調整現有虛擬網路閘道的大小。</span><span class="sxs-lookup"><span data-stu-id="efece-103">Resizes an existing virtual network gateway.</span></span>
 
-## <span data-ttu-id="e13aa-104">句法</span><span class="sxs-lookup"><span data-stu-id="e13aa-104">SYNTAX</span></span>
+## <span data-ttu-id="efece-104">語法</span><span class="sxs-lookup"><span data-stu-id="efece-104">SYNTAX</span></span>
 
 ```
 Resize-AzVirtualNetworkGateway -VirtualNetworkGateway <PSVirtualNetworkGateway> -GatewaySku <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="e13aa-105">說明</span><span class="sxs-lookup"><span data-stu-id="e13aa-105">DESCRIPTION</span></span>
-<span data-ttu-id="e13aa-106">重 **設大小 AzVirtualNetworkGateway** Cmdlet 能讓您變更虛擬閘道 (SKU) 的庫存單位。</span><span class="sxs-lookup"><span data-stu-id="e13aa-106">The **Resize-AzVirtualNetworkGateway** cmdlet enables you to change the stock-keeping unit (SKU) for a virtual network gateway.</span></span>
-<span data-ttu-id="e13aa-107">Sku 決定閘道的功能，包括輸送量與允許的 IP 隧道數目上限等。</span><span class="sxs-lookup"><span data-stu-id="e13aa-107">SKUs determine the capabilities of a gateway, including such things as throughput and the maximum number of IP tunnels that are allowed.</span></span>
-<span data-ttu-id="e13aa-108">Azure 支援基本、標準、高效能、VpnGw1、VpnGw2、VpnGw3、VpnGw1AZ、VpnGw2AZ、VpnGw3AZ、ErGw1AZ、ErGw2AZ、ErGw3AZ Sku (有時稱為中小型、中型及大型 Sku) 。</span><span class="sxs-lookup"><span data-stu-id="e13aa-108">Azure supports Basic, Standard, High-Performance, VpnGw1, VpnGw2, VpnGw3, VpnGw1AZ, VpnGw2AZ, VpnGw3AZ, ErGw1AZ, ErGw2AZ, ErGw3AZ SKUs (sometimes referred to as Small, Medium, and Large SKUs).</span></span>
-<span data-ttu-id="e13aa-109">如需有關每個 SKU 類型之功能的詳細資訊，請參閱 https://azure.microsoft.com/en-us/documentation/articles/vpn-gateway-about-vpngateways/ 。</span><span class="sxs-lookup"><span data-stu-id="e13aa-109">For detailed information about the capabilities of each SKU type, see https://azure.microsoft.com/en-us/documentation/articles/vpn-gateway-about-vpngateways/.</span></span>
-<span data-ttu-id="e13aa-110">請記住，Sku 與定價及功能有不同。</span><span class="sxs-lookup"><span data-stu-id="e13aa-110">Keep in mind that SKUs differ in pricing as well as capabilities.</span></span>
-<span data-ttu-id="e13aa-111">如需詳細資訊，請參閱 https://azure.microsoft.com/en-us/pricing/details/vpn-gateway/ 。</span><span class="sxs-lookup"><span data-stu-id="e13aa-111">For more information, see https://azure.microsoft.com/en-us/pricing/details/vpn-gateway/.</span></span>
+## <span data-ttu-id="efece-105">描述</span><span class="sxs-lookup"><span data-stu-id="efece-105">DESCRIPTION</span></span>
+<span data-ttu-id="efece-106">**Resize-AzVirtualNetworkGateway** Cmdlet 可讓您變更 (SKU) 的庫存單位。</span><span class="sxs-lookup"><span data-stu-id="efece-106">The **Resize-AzVirtualNetworkGateway** cmdlet enables you to change the stock-keeping unit (SKU) for a virtual network gateway.</span></span>
+<span data-ttu-id="efece-107">SKUS 會決定閘道的功能，包括輸送量和允許的 IP 數量上限等。</span><span class="sxs-lookup"><span data-stu-id="efece-107">SKUs determine the capabilities of a gateway, including such things as throughput and the maximum number of IP tunnels that are allowed.</span></span>
+<span data-ttu-id="efece-108">Azure 支援基本、標準、高績效、VpnGw1、VpnGw2、VpnGw3、VpnGw1AZ、VpnGw2AZ、VpnGw3AZ、ErGw1AZ、ErGw2AZ、ErGw3AZ SKUS (有時稱為小型、中型和大型 SKUS) 。</span><span class="sxs-lookup"><span data-stu-id="efece-108">Azure supports Basic, Standard, High-Performance, VpnGw1, VpnGw2, VpnGw3, VpnGw1AZ, VpnGw2AZ, VpnGw3AZ, ErGw1AZ, ErGw2AZ, ErGw3AZ SKUs (sometimes referred to as Small, Medium, and Large SKUs).</span></span>
+<span data-ttu-id="efece-109">有關每個 SKU 類型功能的詳細資訊，請參閱 https://azure.microsoft.com/en-us/documentation/articles/vpn-gateway-about-vpngateways/ 。</span><span class="sxs-lookup"><span data-stu-id="efece-109">For detailed information about the capabilities of each SKU type, see https://azure.microsoft.com/en-us/documentation/articles/vpn-gateway-about-vpngateways/.</span></span>
+<span data-ttu-id="efece-110">請記住，SKUS 在定價和功能上有所不同。</span><span class="sxs-lookup"><span data-stu-id="efece-110">Keep in mind that SKUs differ in pricing as well as capabilities.</span></span>
+<span data-ttu-id="efece-111">詳細資訊請參閱 https://azure.microsoft.com/en-us/pricing/details/vpn-gateway/ 。</span><span class="sxs-lookup"><span data-stu-id="efece-111">For more information, see https://azure.microsoft.com/en-us/pricing/details/vpn-gateway/.</span></span>
 
-## <span data-ttu-id="e13aa-112">示例</span><span class="sxs-lookup"><span data-stu-id="e13aa-112">EXAMPLES</span></span>
+## <span data-ttu-id="efece-112">例子</span><span class="sxs-lookup"><span data-stu-id="efece-112">EXAMPLES</span></span>
 
-### <span data-ttu-id="e13aa-113">範例1：變更虛擬閘道的大小</span><span class="sxs-lookup"><span data-stu-id="e13aa-113">Example 1: Change the size of a virtual network gateway</span></span>
+### <span data-ttu-id="efece-113">範例 1：變更虛擬網路閘道的大小</span><span class="sxs-lookup"><span data-stu-id="efece-113">Example 1: Change the size of a virtual network gateway</span></span>
 ```
 PS C:\>$Gateway = Get-AzVirtualNetworkGateway -Name "ContosoVirtualGateway"
 PS C:\> Resize-AzVirtualNetworkGateway -VirtualNetworkGateway $Gateway -GatewaySku "Basic"
 ```
 
-<span data-ttu-id="e13aa-114">這個範例會變更名為 ContosoVirtualGateway 的虛擬網路閘道的大小。</span><span class="sxs-lookup"><span data-stu-id="e13aa-114">This example changes the size of a virtual network gateway named ContosoVirtualGateway.</span></span>
-<span data-ttu-id="e13aa-115">第一個命令會建立 ContosoVirtualGateway 的物件參照;這個物件參照會儲存在名為 $Gateway 的變數中。</span><span class="sxs-lookup"><span data-stu-id="e13aa-115">The first command creates an object reference to ContosoVirtualGateway; this object reference is stored in a variable named $Gateway.</span></span>
-<span data-ttu-id="e13aa-116">然後，第二個命令會使用 **AzVirtualNetworkGateway** Cmdlet，將 *GatewaySku* 屬性設為 Basic。</span><span class="sxs-lookup"><span data-stu-id="e13aa-116">The second command then uses the **Resize-AzVirtualNetworkGateway** cmdlet to set the *GatewaySku* property to Basic.</span></span>
+<span data-ttu-id="efece-114">此範例會變更名為 ContosoVirtualGateway 的虛擬網路閘道大小。</span><span class="sxs-lookup"><span data-stu-id="efece-114">This example changes the size of a virtual network gateway named ContosoVirtualGateway.</span></span>
+<span data-ttu-id="efece-115">第一個命令會建立 ContosoVirtualGateway 的物件參照;此物件參照會儲存在名為 $Gateway 的$Gateway。</span><span class="sxs-lookup"><span data-stu-id="efece-115">The first command creates an object reference to ContosoVirtualGateway; this object reference is stored in a variable named $Gateway.</span></span>
+<span data-ttu-id="efece-116">接著，第二個命令會使用 **Resize-AzVirtualNetworkGateway** Cmdlet 將 *GatewaySku* 屬性設為 Basic。</span><span class="sxs-lookup"><span data-stu-id="efece-116">The second command then uses the **Resize-AzVirtualNetworkGateway** cmdlet to set the *GatewaySku* property to Basic.</span></span>
 
-## <span data-ttu-id="e13aa-117">參數</span><span class="sxs-lookup"><span data-stu-id="e13aa-117">PARAMETERS</span></span>
+## <span data-ttu-id="efece-117">參數</span><span class="sxs-lookup"><span data-stu-id="efece-117">PARAMETERS</span></span>
 
-### <span data-ttu-id="e13aa-118">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="e13aa-118">-DefaultProfile</span></span>
-<span data-ttu-id="e13aa-119">用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。</span><span class="sxs-lookup"><span data-stu-id="e13aa-119">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="efece-118">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="efece-118">-DefaultProfile</span></span>
+<span data-ttu-id="efece-119">用於與 azure 通訊的認證、帳戶、租使用者和訂閱。</span><span class="sxs-lookup"><span data-stu-id="efece-119">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -62,21 +62,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="e13aa-120">-GatewaySku</span><span class="sxs-lookup"><span data-stu-id="e13aa-120">-GatewaySku</span></span>
-<span data-ttu-id="e13aa-121">指定新的閘道 SKU 類型。</span><span class="sxs-lookup"><span data-stu-id="e13aa-121">Specifies the new type of gateway SKU.</span></span>
-<span data-ttu-id="e13aa-122">此參數可接受的值為：</span><span class="sxs-lookup"><span data-stu-id="e13aa-122">The acceptable values for this parameter are:</span></span>
-- <span data-ttu-id="e13aa-123">空白</span><span class="sxs-lookup"><span data-stu-id="e13aa-123">Basic</span></span>
-- <span data-ttu-id="e13aa-124">標準</span><span class="sxs-lookup"><span data-stu-id="e13aa-124">Standard</span></span>
-- <span data-ttu-id="e13aa-125">高效能</span><span class="sxs-lookup"><span data-stu-id="e13aa-125">High Performance</span></span>
-- <span data-ttu-id="e13aa-126">VpnGw1</span><span class="sxs-lookup"><span data-stu-id="e13aa-126">VpnGw1</span></span>
-- <span data-ttu-id="e13aa-127">VpnGw2</span><span class="sxs-lookup"><span data-stu-id="e13aa-127">VpnGw2</span></span>
-- <span data-ttu-id="e13aa-128">VpnGw3</span><span class="sxs-lookup"><span data-stu-id="e13aa-128">VpnGw3</span></span>
-- <span data-ttu-id="e13aa-129">VpnGw1AZ</span><span class="sxs-lookup"><span data-stu-id="e13aa-129">VpnGw1AZ</span></span> 
-- <span data-ttu-id="e13aa-130">VpnGw2AZ</span><span class="sxs-lookup"><span data-stu-id="e13aa-130">VpnGw2AZ</span></span> 
-- <span data-ttu-id="e13aa-131">VpnGw3AZ</span><span class="sxs-lookup"><span data-stu-id="e13aa-131">VpnGw3AZ</span></span> 
-- <span data-ttu-id="e13aa-132">ErGw1AZ</span><span class="sxs-lookup"><span data-stu-id="e13aa-132">ErGw1AZ</span></span> 
-- <span data-ttu-id="e13aa-133">ErGw2AZ</span><span class="sxs-lookup"><span data-stu-id="e13aa-133">ErGw2AZ</span></span> 
-- <span data-ttu-id="e13aa-134">ErGw3AZ</span><span class="sxs-lookup"><span data-stu-id="e13aa-134">ErGw3AZ</span></span> 
+### <span data-ttu-id="efece-120">-GatewaySku</span><span class="sxs-lookup"><span data-stu-id="efece-120">-GatewaySku</span></span>
+<span data-ttu-id="efece-121">指定新類型的閘道 SKU。</span><span class="sxs-lookup"><span data-stu-id="efece-121">Specifies the new type of gateway SKU.</span></span>
+<span data-ttu-id="efece-122">此參數可接受的值為：</span><span class="sxs-lookup"><span data-stu-id="efece-122">The acceptable values for this parameter are:</span></span>
+- <span data-ttu-id="efece-123">基本</span><span class="sxs-lookup"><span data-stu-id="efece-123">Basic</span></span>
+- <span data-ttu-id="efece-124">標準</span><span class="sxs-lookup"><span data-stu-id="efece-124">Standard</span></span>
+- <span data-ttu-id="efece-125">高績效</span><span class="sxs-lookup"><span data-stu-id="efece-125">High Performance</span></span>
+- <span data-ttu-id="efece-126">VpnGw1</span><span class="sxs-lookup"><span data-stu-id="efece-126">VpnGw1</span></span>
+- <span data-ttu-id="efece-127">VpnGw2</span><span class="sxs-lookup"><span data-stu-id="efece-127">VpnGw2</span></span>
+- <span data-ttu-id="efece-128">VpnGw3</span><span class="sxs-lookup"><span data-stu-id="efece-128">VpnGw3</span></span>
+- <span data-ttu-id="efece-129">VpnGw1AZ</span><span class="sxs-lookup"><span data-stu-id="efece-129">VpnGw1AZ</span></span> 
+- <span data-ttu-id="efece-130">VpnGw2AZ</span><span class="sxs-lookup"><span data-stu-id="efece-130">VpnGw2AZ</span></span> 
+- <span data-ttu-id="efece-131">VpnGw3AZ</span><span class="sxs-lookup"><span data-stu-id="efece-131">VpnGw3AZ</span></span> 
+- <span data-ttu-id="efece-132">ErGw1AZ</span><span class="sxs-lookup"><span data-stu-id="efece-132">ErGw1AZ</span></span> 
+- <span data-ttu-id="efece-133">ErGw2AZ</span><span class="sxs-lookup"><span data-stu-id="efece-133">ErGw2AZ</span></span> 
+- <span data-ttu-id="efece-134">ErGw3AZ</span><span class="sxs-lookup"><span data-stu-id="efece-134">ErGw3AZ</span></span> 
 
 ```yaml
 Type: System.String
@@ -91,9 +91,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="e13aa-135">-VirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="e13aa-135">-VirtualNetworkGateway</span></span>
-<span data-ttu-id="e13aa-136">指定要調整其大小的虛擬網路閘道物件參照。</span><span class="sxs-lookup"><span data-stu-id="e13aa-136">Specifies an object reference to the virtual network gateway to be resized.</span></span>
-<span data-ttu-id="e13aa-137">您可以使用 Get-AzVirtualNetworkGateway 並指定閘道的名稱來建立此物件參照。</span><span class="sxs-lookup"><span data-stu-id="e13aa-137">You can create this object reference by using the Get-AzVirtualNetworkGateway and specifying the name of the gateway.</span></span>
+### <span data-ttu-id="efece-135">-VirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="efece-135">-VirtualNetworkGateway</span></span>
+<span data-ttu-id="efece-136">指定要調整大小之虛擬網路閘道的物件參照。</span><span class="sxs-lookup"><span data-stu-id="efece-136">Specifies an object reference to the virtual network gateway to be resized.</span></span>
+<span data-ttu-id="efece-137">您可以使用資料Get-AzVirtualNetworkGateway指定閘道名稱，以建立此物件參照。</span><span class="sxs-lookup"><span data-stu-id="efece-137">You can create this object reference by using the Get-AzVirtualNetworkGateway and specifying the name of the gateway.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway
@@ -107,34 +107,33 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="e13aa-138">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="e13aa-138">CommonParameters</span></span>
-<span data-ttu-id="e13aa-139">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="e13aa-139">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="e13aa-140">如需詳細資訊，請參閱 about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216) 。</span><span class="sxs-lookup"><span data-stu-id="e13aa-140">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="efece-138">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="efece-138">CommonParameters</span></span>
+<span data-ttu-id="efece-139">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="efece-139">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="efece-140">詳細資訊請參閱 http://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。</span><span class="sxs-lookup"><span data-stu-id="efece-140">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="e13aa-141">輸入</span><span class="sxs-lookup"><span data-stu-id="e13aa-141">INPUTS</span></span>
+## <span data-ttu-id="efece-141">輸入</span><span class="sxs-lookup"><span data-stu-id="efece-141">INPUTS</span></span>
 
-### <span data-ttu-id="e13aa-142">PSVirtualNetworkGateway 中的 [.]</span><span class="sxs-lookup"><span data-stu-id="e13aa-142">Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway</span></span>
+### <span data-ttu-id="efece-142">Microsoft.Azure.Commands.Network.models.PSVirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="efece-142">Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway</span></span>
 
-### <span data-ttu-id="e13aa-143">System.object</span><span class="sxs-lookup"><span data-stu-id="e13aa-143">System.String</span></span>
+### <span data-ttu-id="efece-143">System.String</span><span class="sxs-lookup"><span data-stu-id="efece-143">System.String</span></span>
 
-## <span data-ttu-id="e13aa-144">輸出</span><span class="sxs-lookup"><span data-stu-id="e13aa-144">OUTPUTS</span></span>
+## <span data-ttu-id="efece-144">輸出</span><span class="sxs-lookup"><span data-stu-id="efece-144">OUTPUTS</span></span>
 
-### <span data-ttu-id="e13aa-145">PSVirtualNetworkGateway 中的 [.]</span><span class="sxs-lookup"><span data-stu-id="e13aa-145">Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway</span></span>
+### <span data-ttu-id="efece-145">Microsoft.Azure.Commands.Network.models.PSVirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="efece-145">Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway</span></span>
 
-## <span data-ttu-id="e13aa-146">筆記</span><span class="sxs-lookup"><span data-stu-id="e13aa-146">NOTES</span></span>
-<span data-ttu-id="e13aa-147">您無法將基本/標準/HighPerformance Sku 的大小調整成新的 VpnGw1/VpnGw2/VpnGw3 Sku。</span><span class="sxs-lookup"><span data-stu-id="e13aa-147">You cannot resize from Basic/Standard/HighPerformance SKUs to the new VpnGw1/VpnGw2/VpnGw3 SKUs.</span></span> <span data-ttu-id="e13aa-148">不允許從/至 VpnGw1AZ/VpnGw2AZ/VpnGw3AZ 或 ErGw1AZ/ErGw2AZ/ErGw3AZ 進行進一步的調整大小。</span><span class="sxs-lookup"><span data-stu-id="e13aa-148">Further resize is not allowed from/to VpnGw1AZ/VpnGw2AZ/VpnGw3AZ or ErGw1AZ/ErGw2AZ/ErGw3AZ.</span></span> <span data-ttu-id="e13aa-149">只允許在 SKU "series" 中使用調整大小（例如，可以從 VpnGw2AZ/VpnGw3AZ 調整 VpnGw1AZ 大小），也可以從 ErGw2AZ/ErGw3AZ 調整 ErGw1AZ 的大小。</span><span class="sxs-lookup"><span data-stu-id="e13aa-149">Resize is allowed only within the SKU 'series' e.g VpnGw1AZ can be resized to/from VpnGw2AZ/VpnGw3AZ and ErGw1AZ can be resized to/from ErGw2AZ/ErGw3AZ.</span></span> <span data-ttu-id="e13aa-150"> https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways如需相關指示，請參閱。</span><span class="sxs-lookup"><span data-stu-id="e13aa-150">See https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways for instructions.</span></span>
+## <span data-ttu-id="efece-146">筆記</span><span class="sxs-lookup"><span data-stu-id="efece-146">NOTES</span></span>
+<span data-ttu-id="efece-147">您無法將基本/標準/HighPerformance SKUS 的大小調整為新的 VpnGw1/VpnGw2/VpnGw3 SKUS。</span><span class="sxs-lookup"><span data-stu-id="efece-147">You cannot resize from Basic/Standard/HighPerformance SKUs to the new VpnGw1/VpnGw2/VpnGw3 SKUs.</span></span> <span data-ttu-id="efece-148">不允許進一步調整大小，從/到 VpnGw1AZ/VpnGw2AZ/VpnGw3AZ 或 ErGw1AZ/ErGw2AZ/ErGw3AZ。</span><span class="sxs-lookup"><span data-stu-id="efece-148">Further resize is not allowed from/to VpnGw1AZ/VpnGw2AZ/VpnGw3AZ or ErGw1AZ/ErGw2AZ/ErGw3AZ.</span></span> <span data-ttu-id="efece-149">只有在 SKU 'series' 內允許調整大小，例如 VpnGw1AZ 可以調整大小至/從 VpnGw2AZ/VpnGw3AZ 和 ErGw1AZ 可以調整大小至/從 ErGw2AZ/ErGw3AZ。</span><span class="sxs-lookup"><span data-stu-id="efece-149">Resize is allowed only within the SKU 'series' e.g VpnGw1AZ can be resized to/from VpnGw2AZ/VpnGw3AZ and ErGw1AZ can be resized to/from ErGw2AZ/ErGw3AZ.</span></span> <span data-ttu-id="efece-150">請參閱 https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways 指示。</span><span class="sxs-lookup"><span data-stu-id="efece-150">See https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways for instructions.</span></span>
 
-## <span data-ttu-id="e13aa-151">相關連結</span><span class="sxs-lookup"><span data-stu-id="e13aa-151">RELATED LINKS</span></span>
+## <span data-ttu-id="efece-151">相關連結</span><span class="sxs-lookup"><span data-stu-id="efece-151">RELATED LINKS</span></span>
 
-[<span data-ttu-id="e13aa-152">AzVirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="e13aa-152">Get-AzVirtualNetworkGateway</span></span>](./Get-AzVirtualNetworkGateway.md)
+[<span data-ttu-id="efece-152">Get-AzVirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="efece-152">Get-AzVirtualNetworkGateway</span></span>](./Get-AzVirtualNetworkGateway.md)
 
-[<span data-ttu-id="e13aa-153">新-AzVirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="e13aa-153">New-AzVirtualNetworkGateway</span></span>](./New-AzVirtualNetworkGateway.md)
+[<span data-ttu-id="efece-153">New-AzVirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="efece-153">New-AzVirtualNetworkGateway</span></span>](./New-AzVirtualNetworkGateway.md)
 
-[<span data-ttu-id="e13aa-154">移除-AzVirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="e13aa-154">Remove-AzVirtualNetworkGateway</span></span>](./Remove-AzVirtualNetworkGateway.md)
+[<span data-ttu-id="efece-154">Remove-AzVirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="efece-154">Remove-AzVirtualNetworkGateway</span></span>](./Remove-AzVirtualNetworkGateway.md)
 
-[<span data-ttu-id="e13aa-155">Reset-AzVirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="e13aa-155">Reset-AzVirtualNetworkGateway</span></span>](./Reset-AzVirtualNetworkGateway.md)
+[<span data-ttu-id="efece-155">Reset-AzVirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="efece-155">Reset-AzVirtualNetworkGateway</span></span>](./Reset-AzVirtualNetworkGateway.md)
 
-[<span data-ttu-id="e13aa-156">Set-AzVirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="e13aa-156">Set-AzVirtualNetworkGateway</span></span>](./Set-AzVirtualNetworkGateway.md)
+[<span data-ttu-id="efece-156">Set-AzVirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="efece-156">Set-AzVirtualNetworkGateway</span></span>](./Set-AzVirtualNetworkGateway.md)
 
-[<span data-ttu-id="e13aa-157">AzVpnClientPackage</span><span class="sxs-lookup"><span data-stu-id="e13aa-157">Get-AzVpnClientPackage</span></span>](./Get-AzVpnClientPackage.md)
+[<span data-ttu-id="efece-157">Get-Az VpnClientPackage</span><span class="sxs-lookup"><span data-stu-id="efece-157">Get-AzVpnClientPackage</span></span>](./Get-AzVpnClientPackage.md)
 
-[<span data-ttu-id="e13aa-158">Set-AzVirtualNetworkGatewayVpnClientConfig</span><span class="sxs-lookup"><span data-stu-id="e13aa-158">Set-AzVirtualNetworkGatewayVpnClientConfig</span></span>](./Set-AzVirtualNetworkGatewayVpnClientConfig.md)
