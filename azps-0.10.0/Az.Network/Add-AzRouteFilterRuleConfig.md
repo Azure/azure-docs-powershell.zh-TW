@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ad
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Network/Network/help/Add-AzRouteFilterRuleConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Network/Network/help/Add-AzRouteFilterRuleConfig.md
-ms.openlocfilehash: 910b432382eb24f6c5eaf77d3e0c7fe3dc547413
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: ded23a30c078cd1d474310d73d94717d050f6824
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93794500"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399272"
 ---
 # Add-AzRouteFilterRuleConfig
 
-## 摘要
-將路由篩選規則新增至路由篩選器。
+## 簡介
+新增路由篩選規則至路由篩選。
 
-## 句法
+## 語法
 
 ```
 Add-AzRouteFilterRuleConfig -RouteFilter <PSRouteFilter> [-Force] -Name <String> -Access <String>
@@ -25,24 +25,24 @@ Add-AzRouteFilterRuleConfig -RouteFilter <PSRouteFilter> [-Force] -Name <String>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## 說明
-Add-AzRouteFilterRuleConfig Cmdlet 會將路由篩選規則新增至 Azure 路由篩選器。
+## 描述
+Cmdlet Add-AzRouteFilterRuleConfig新增路由篩選規則至 Azure 路由篩選。
 
-## 示例
+## 例子
 
-### --------------------------範例1：將路由篩選規則新增至路由篩選器--------------------------
+### --------------------------範例 1：新增路由篩選規則至路由篩選--------------------------
 ```
 PS C:\>$RouteFilter = Get-AzRouteFilter -ResourceGroupName "ResourceGroup11" -Name "routefilter01"
                       PS C:\> Add-AzRouteFilterRuleConfig -Name "rule13" -Access Allow -RouteFilterRuleType Community -RouteFilter $RouteFilter
 ```
 
-第一個命令會使用 Get-AzRouteFilter Cmdlet 來取得名為 routefilter01 的路由篩選器。
-該命令會將篩選儲存在 $RouteFilter 變數中。
+第一個命令會使用 Get-AzRouteFilter Cmdlet，獲得名為 routefilter01 的路由篩選。
+命令會儲存篩選$RouteFilter變數。
 
 ## 參數
 
 ### -Access
-指定路由篩選規則的存取權，有效值為 [拒絕] 或 [允許]。
+指定路由篩選規則的存取權，有效值為拒絕或允許。
 
 ```yaml
 Type: String
@@ -58,7 +58,7 @@ Accept wildcard characters: False
 ```
 
 ### -CommunityList
-路由篩選將篩選的群組值清單
+路由篩選篩選所篩選的社群值清單
 
 ```yaml
 Type: System.Collections.Generic.List`1[System.String]
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: IAzureContextContainer
@@ -87,8 +87,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Force
-如果您想要 overrite 資源，請不要要求確認
+### -強制
+如果您想要過度使用資源，請勿要求確認
 
 ```yaml
 Type: SwitchParameter
@@ -103,7 +103,7 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-指定要新增至路由篩選器之路由篩選規則的名稱。
+指定要新加入路由篩選的路由篩選規則名稱。
 
 ```yaml
 Type: String
@@ -118,7 +118,7 @@ Accept wildcard characters: False
 ```
 
 ### -RouteFilter
-指定此 Cmdlet 新增路由篩選規則的路由篩選器。
+指定此 Cmdlet 新增路由篩選規則的路由篩選。
 
 ```yaml
 Type: PSRouteFilter
@@ -134,7 +134,7 @@ Accept wildcard characters: False
 
 ### -RouteFilterRuleType
 指定路由篩選規則類型。
-有效值為： [群組]
+有效的值為：社群
 
 ```yaml
 Type: String
@@ -150,7 +150,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，提示您確認。
 
 ```yaml
 Type: SwitchParameter
@@ -165,7 +165,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。 未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。 不會執行 Cmdlet。
 
 ```yaml
 Type: SwitchParameter
@@ -180,31 +180,28 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 http://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
 ### PSRouteFilter
-形參 "RouteFilter" 接受管線中 "PSRouteFilter" 類型的值
+參數 'RouteFilter' 接受來自管線之類型 'PSRouteFilter' 的值
 
 ## 輸出
 
-### PSRouteFilter 中的 [.]
+### Microsoft.Azure.Commands.Network.models.PSRouteFilter
 
 ## 筆記
-關鍵字： azure，azurerm，arm，資源，管理，管理員，網路，網路
+關鍵字：azure、azurerm、arm、resource、management、manager、network、network、network
 
 ## 相關連結
 
-[AzRouteFilterRuleConfig](./Get-AzRouteFilterRuleConfig.md)
+[Get-AzRouteFilterRuleConfig](./Get-AzRouteFilterRuleConfig.md)
 
-[AzRouteFilter](./Get-AzRouteFilter.md)
+[Get-AzRouteFilter](./Get-AzRouteFilter.md)
 
-[新-AzRouteFilterRuleConfigConfig](./New-AzRouteFilterRuleConfigConfig.md)
 
-[移除-AzRouteFilterRuleConfigConfig](./Remove-AzRouteFilterRuleConfigConfig.md)
 
-[Set-AzRouteFilterRuleConfigConfig](./Set-AzRouteFilterRuleConfigConfig.md)
 
 [Set-AzRouteFilter](./Set-AzRouteFilter.md)
 
