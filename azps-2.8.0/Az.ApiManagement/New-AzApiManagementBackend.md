@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackend.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackend.md
-ms.openlocfilehash: 5caef678df0aef88f4655c031d53e995920d0379
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: f26cb91ef820df6dfa67a0fb5664d4607df8fb21
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93614006"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399459"
 ---
-# <span data-ttu-id="0a0dc-101">New-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="0a0dc-101">New-AzApiManagementBackend</span></span>
+# <span data-ttu-id="ea2f4-101">New-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="ea2f4-101">New-AzApiManagementBackend</span></span>
 
-## <span data-ttu-id="0a0dc-102">摘要</span><span class="sxs-lookup"><span data-stu-id="0a0dc-102">SYNOPSIS</span></span>
-<span data-ttu-id="0a0dc-103">建立新的後端實體。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-103">Creates a new backend entity.</span></span>
+## <span data-ttu-id="ea2f4-102">簡介</span><span class="sxs-lookup"><span data-stu-id="ea2f4-102">SYNOPSIS</span></span>
+<span data-ttu-id="ea2f4-103">建立新的後端實體。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-103">Creates a new backend entity.</span></span>
 
-## <span data-ttu-id="0a0dc-104">句法</span><span class="sxs-lookup"><span data-stu-id="0a0dc-104">SYNTAX</span></span>
+## <span data-ttu-id="ea2f4-104">語法</span><span class="sxs-lookup"><span data-stu-id="ea2f4-104">SYNTAX</span></span>
 
 ```
 New-AzApiManagementBackend -Context <PsApiManagementContext> [-BackendId <String>] -Protocol <String>
@@ -28,12 +28,12 @@ New-AzApiManagementBackend -Context <PsApiManagementContext> [-BackendId <String
  [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="0a0dc-105">說明</span><span class="sxs-lookup"><span data-stu-id="0a0dc-105">DESCRIPTION</span></span>
-<span data-ttu-id="0a0dc-106">在 Api 管理中建立新的後端實體。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-106">Creates a new backend entity in Api Management.</span></span>
+## <span data-ttu-id="ea2f4-105">描述</span><span class="sxs-lookup"><span data-stu-id="ea2f4-105">DESCRIPTION</span></span>
+<span data-ttu-id="ea2f4-106">在 Api 管理中建立新的後端實體。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-106">Creates a new backend entity in Api Management.</span></span>
 
-## <span data-ttu-id="0a0dc-107">示例</span><span class="sxs-lookup"><span data-stu-id="0a0dc-107">EXAMPLES</span></span>
+## <span data-ttu-id="ea2f4-107">例子</span><span class="sxs-lookup"><span data-stu-id="ea2f4-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="0a0dc-108">使用基本授權配置建立後123</span><span class="sxs-lookup"><span data-stu-id="0a0dc-108">Create Backend 123 with a Basic Authorization Scheme</span></span>
+### <span data-ttu-id="ea2f4-108">使用基本授權方案建立後端 123</span><span class="sxs-lookup"><span data-stu-id="ea2f4-108">Create Backend 123 with a Basic Authorization Scheme</span></span>
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>$credential = New-AzApiManagementBackendCredential -AuthorizationHeaderScheme basic -AuthorizationHeaderParameter opensesame -Query @{"sv" = @('xx', 'bb'); "sr" = @('cc')} -Header @{"x-my-1" = @('val1', 'val2')}
@@ -41,14 +41,14 @@ PS C:\>$credential = New-AzApiManagementBackendCredential -AuthorizationHeaderSc
 PS C:\>$backend = New-AzApiManagementBackend -Context  $apimContext -BackendId 123 -Url 'https://contoso.com/awesomeapi' -Protocol http -Title "first backend" -SkipCertificateChainValidation $true -Credential $credential -Description "my backend"
 ```
 
-<span data-ttu-id="0a0dc-109">建立新的後端</span><span class="sxs-lookup"><span data-stu-id="0a0dc-109">Creates a new Backend</span></span>
+<span data-ttu-id="ea2f4-109">建立新後端</span><span class="sxs-lookup"><span data-stu-id="ea2f4-109">Creates a new Backend</span></span>
 
-## <span data-ttu-id="0a0dc-110">參數</span><span class="sxs-lookup"><span data-stu-id="0a0dc-110">PARAMETERS</span></span>
+## <span data-ttu-id="ea2f4-110">參數</span><span class="sxs-lookup"><span data-stu-id="ea2f4-110">PARAMETERS</span></span>
 
-### <span data-ttu-id="0a0dc-111">-BackendId</span><span class="sxs-lookup"><span data-stu-id="0a0dc-111">-BackendId</span></span>
-<span data-ttu-id="0a0dc-112">新後端的識別碼。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-112">Identifier of new backend.</span></span>
-<span data-ttu-id="0a0dc-113">這個參數是選用的。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-113">This parameter is optional.</span></span>
-<span data-ttu-id="0a0dc-114">如果未指定，將會產生。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-114">If not specified will be generated.</span></span>
+### <span data-ttu-id="ea2f4-111">-後端Id</span><span class="sxs-lookup"><span data-stu-id="ea2f4-111">-BackendId</span></span>
+<span data-ttu-id="ea2f4-112">新後端的識別碼。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-112">Identifier of new backend.</span></span>
+<span data-ttu-id="ea2f4-113">此參數為選擇性。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-113">This parameter is optional.</span></span>
+<span data-ttu-id="ea2f4-114">如果未指定，將會產生。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-114">If not specified will be generated.</span></span>
 
 ```yaml
 Type: System.String
@@ -62,9 +62,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="0a0dc-115">-內容</span><span class="sxs-lookup"><span data-stu-id="0a0dc-115">-Context</span></span>
-<span data-ttu-id="0a0dc-116">PsApiManagementCoNtext 的實例。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-116">Instance of PsApiManagementContext.</span></span>
-<span data-ttu-id="0a0dc-117">這個參數是必要的。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-117">This parameter is required.</span></span>
+### <span data-ttu-id="ea2f4-115">-內容</span><span class="sxs-lookup"><span data-stu-id="ea2f4-115">-Context</span></span>
+<span data-ttu-id="ea2f4-116">PsApiManagementCoNtext 的實例。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-116">Instance of PsApiManagementContext.</span></span>
+<span data-ttu-id="ea2f4-117">此參數為必填項。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-117">This parameter is required.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -78,9 +78,9 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="0a0dc-118">-認證</span><span class="sxs-lookup"><span data-stu-id="0a0dc-118">-Credential</span></span>
-<span data-ttu-id="0a0dc-119">在與後端交談時應使用的認證詳細資料。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-119">Credential details which should be used when talking to the Backend.</span></span>
-<span data-ttu-id="0a0dc-120">這個參數是選用的。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-120">This parameter is optional.</span></span>
+### <span data-ttu-id="ea2f4-118">-認證</span><span class="sxs-lookup"><span data-stu-id="ea2f4-118">-Credential</span></span>
+<span data-ttu-id="ea2f4-119">與後端交談時應該使用的認證詳細資料。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-119">Credential details which should be used when talking to the Backend.</span></span>
+<span data-ttu-id="ea2f4-120">此參數為選擇性。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-120">This parameter is optional.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendCredential
@@ -94,8 +94,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="0a0dc-121">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="0a0dc-121">-DefaultProfile</span></span>
-<span data-ttu-id="0a0dc-122">用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-122">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="ea2f4-121">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="ea2f4-121">-DefaultProfile</span></span>
+<span data-ttu-id="ea2f4-122">用於與 azure 通訊的認證、帳戶、租使用者和訂閱。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-122">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -109,9 +109,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="0a0dc-123">-描述</span><span class="sxs-lookup"><span data-stu-id="0a0dc-123">-Description</span></span>
-<span data-ttu-id="0a0dc-124">後端描述。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-124">Backend Description.</span></span>
-<span data-ttu-id="0a0dc-125">這個參數是選用的。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-125">This parameter is optional.</span></span>
+### <span data-ttu-id="ea2f4-123">-描述</span><span class="sxs-lookup"><span data-stu-id="ea2f4-123">-Description</span></span>
+<span data-ttu-id="ea2f4-124">後端描述。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-124">Backend Description.</span></span>
+<span data-ttu-id="ea2f4-125">此參數為選擇性。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-125">This parameter is optional.</span></span>
 
 ```yaml
 Type: System.String
@@ -125,10 +125,10 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="0a0dc-126">-通訊協定</span><span class="sxs-lookup"><span data-stu-id="0a0dc-126">-Protocol</span></span>
-<span data-ttu-id="0a0dc-127">後端通訊通訊協定。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-127">Backend Communication protocol.</span></span>
-<span data-ttu-id="0a0dc-128">這個參數是必要的。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-128">This parameter is required.</span></span>
-<span data-ttu-id="0a0dc-129">有效值為 "HTTP" 和 "soap"。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-129">Valid values are 'http' and 'soap'.</span></span>
+### <span data-ttu-id="ea2f4-126">-通訊協定</span><span class="sxs-lookup"><span data-stu-id="ea2f4-126">-Protocol</span></span>
+<span data-ttu-id="ea2f4-127">後端通訊通訊通訊協定。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-127">Backend Communication protocol.</span></span>
+<span data-ttu-id="ea2f4-128">此參數為必填項。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-128">This parameter is required.</span></span>
+<span data-ttu-id="ea2f4-129">有效的值為 'HTTP' 和 'soap'。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-129">Valid values are 'http' and 'soap'.</span></span>
 
 ```yaml
 Type: System.String
@@ -143,9 +143,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="0a0dc-130">-Proxy</span><span class="sxs-lookup"><span data-stu-id="0a0dc-130">-Proxy</span></span>
-<span data-ttu-id="0a0dc-131">傳送要求給後所要使用的 Proxy 伺服器詳細資料。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-131">Proxy Server details to be used while sending request to the Backend.</span></span>
-<span data-ttu-id="0a0dc-132">這個參數是選用的。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-132">This parameter is optional.</span></span>
+### <span data-ttu-id="ea2f4-130">-Proxy</span><span class="sxs-lookup"><span data-stu-id="ea2f4-130">-Proxy</span></span>
+<span data-ttu-id="ea2f4-131">傳送要求至後端時所使用的 Proxy 伺服器詳細資料。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-131">Proxy Server details to be used while sending request to the Backend.</span></span>
+<span data-ttu-id="ea2f4-132">此參數為選擇性。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-132">This parameter is optional.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendProxy
@@ -159,10 +159,10 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="0a0dc-133">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="0a0dc-133">-ResourceId</span></span>
-<span data-ttu-id="0a0dc-134">外部系統中資源的管理 Uri。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-134">Management Uri of the Resource in External System.</span></span>
-<span data-ttu-id="0a0dc-135">這個參數是選用的。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-135">This parameter is optional.</span></span>
-<span data-ttu-id="0a0dc-136">此 url 可以是邏輯 App、函數 App 或 Api App 的 Arm 資源 Id。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-136">This url can be the Arm Resource Id of Logic Apps, Function Apps or Api Apps.</span></span>
+### <span data-ttu-id="ea2f4-133">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="ea2f4-133">-ResourceId</span></span>
+<span data-ttu-id="ea2f4-134">外部系統中資源的管理 Uri。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-134">Management Uri of the Resource in External System.</span></span>
+<span data-ttu-id="ea2f4-135">此參數為選擇性。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-135">This parameter is optional.</span></span>
+<span data-ttu-id="ea2f4-136">此 URL 可以是邏輯應用程式、函數 App 或 Api Apps 的 Arm 資源識別碼。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-136">This url can be the Arm Resource Id of Logic Apps, Function Apps or Api Apps.</span></span>
 
 ```yaml
 Type: System.String
@@ -176,8 +176,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="0a0dc-137">-ServiceFabricCluster</span><span class="sxs-lookup"><span data-stu-id="0a0dc-137">-ServiceFabricCluster</span></span>
-<span data-ttu-id="0a0dc-138">Service Fabric 群集後端詳細資料。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-138">Service Fabric Cluster Backend details.</span></span> <span data-ttu-id="0a0dc-139">這個參數是選用的。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-139">This parameter is optional.</span></span>
+### <span data-ttu-id="ea2f4-137">-ServiceFabricCluster</span><span class="sxs-lookup"><span data-stu-id="ea2f4-137">-ServiceFabricCluster</span></span>
+<span data-ttu-id="ea2f4-138">服務結構組群後端詳細資料。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-138">Service Fabric Cluster Backend details.</span></span> <span data-ttu-id="ea2f4-139">此參數為選擇性。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-139">This parameter is optional.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementServiceFabric
@@ -191,9 +191,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="0a0dc-140">-SkipCertificateChainValidation</span><span class="sxs-lookup"><span data-stu-id="0a0dc-140">-SkipCertificateChainValidation</span></span>
-<span data-ttu-id="0a0dc-141">在與後端交談時，是否略過憑證連結驗證。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-141">Whether to Skip Certificate Chain Validation when talking to the Backend.</span></span>
-<span data-ttu-id="0a0dc-142">這個參數是選用的。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-142">This parameter is optional.</span></span>
+### <span data-ttu-id="ea2f4-140">-SkipCertificateChainValidation</span><span class="sxs-lookup"><span data-stu-id="ea2f4-140">-SkipCertificateChainValidation</span></span>
+<span data-ttu-id="ea2f4-141">與後端交談時是否要略過憑證鏈驗證。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-141">Whether to Skip Certificate Chain Validation when talking to the Backend.</span></span>
+<span data-ttu-id="ea2f4-142">此參數為選擇性。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-142">This parameter is optional.</span></span>
 
 ```yaml
 Type: System.Nullable`1[System.Boolean]
@@ -207,9 +207,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="0a0dc-143">-SkipCertificateNameValidation</span><span class="sxs-lookup"><span data-stu-id="0a0dc-143">-SkipCertificateNameValidation</span></span>
-<span data-ttu-id="0a0dc-144">在與後端交談時，是否略過憑證名稱驗證。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-144">Whether to skip Certificate Name Validation when talking to the Backend.</span></span>
-<span data-ttu-id="0a0dc-145">這個參數是選用的。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-145">This parameter is optional.</span></span>
+### <span data-ttu-id="ea2f4-143">-SkipCertificateNameValidation</span><span class="sxs-lookup"><span data-stu-id="ea2f4-143">-SkipCertificateNameValidation</span></span>
+<span data-ttu-id="ea2f4-144">是否要在與後端交談時略過憑證名稱驗證。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-144">Whether to skip Certificate Name Validation when talking to the Backend.</span></span>
+<span data-ttu-id="ea2f4-145">此參數為選擇性。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-145">This parameter is optional.</span></span>
 
 ```yaml
 Type: System.Nullable`1[System.Boolean]
@@ -223,9 +223,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="0a0dc-146">-標題</span><span class="sxs-lookup"><span data-stu-id="0a0dc-146">-Title</span></span>
-<span data-ttu-id="0a0dc-147">後端標題。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-147">Backend Title.</span></span>
-<span data-ttu-id="0a0dc-148">這個參數是選用的。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-148">This parameter is optional.</span></span>
+### <span data-ttu-id="ea2f4-146">-標題</span><span class="sxs-lookup"><span data-stu-id="ea2f4-146">-Title</span></span>
+<span data-ttu-id="ea2f4-147">後端標題。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-147">Backend Title.</span></span>
+<span data-ttu-id="ea2f4-148">此參數為選擇性。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-148">This parameter is optional.</span></span>
 
 ```yaml
 Type: System.String
@@ -239,9 +239,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="0a0dc-149">-Url</span><span class="sxs-lookup"><span data-stu-id="0a0dc-149">-Url</span></span>
-<span data-ttu-id="0a0dc-150">後端的執行時間 Url。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-150">Runtime Url for the Backend.</span></span>
-<span data-ttu-id="0a0dc-151">這個參數是必要的。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-151">This parameter is required.</span></span>
+### <span data-ttu-id="ea2f4-149">-Url</span><span class="sxs-lookup"><span data-stu-id="ea2f4-149">-Url</span></span>
+<span data-ttu-id="ea2f4-150">後端的執行時間 URL。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-150">Runtime Url for the Backend.</span></span>
+<span data-ttu-id="ea2f4-151">此參數為必填項。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-151">This parameter is required.</span></span>
 
 ```yaml
 Type: System.String
@@ -255,8 +255,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="0a0dc-152">-確認</span><span class="sxs-lookup"><span data-stu-id="0a0dc-152">-Confirm</span></span>
-<span data-ttu-id="0a0dc-153">在執行 Cmdlet 之前提示您進行確認。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-153">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="ea2f4-152">-確認</span><span class="sxs-lookup"><span data-stu-id="ea2f4-152">-Confirm</span></span>
+<span data-ttu-id="ea2f4-153">執行 Cmdlet 之前，系統會提示您確認。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-153">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -270,8 +270,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="0a0dc-154">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="0a0dc-154">-WhatIf</span></span>
-<span data-ttu-id="0a0dc-155">顯示在執行 Cmdlet 時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-155">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="0a0dc-156">未執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-156">The cmdlet is not run.</span></span>
+### <span data-ttu-id="ea2f4-154">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="ea2f4-154">-WhatIf</span></span>
+<span data-ttu-id="ea2f4-155">顯示 Cmdlet 執行時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-155">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="ea2f4-156">不會執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-156">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -285,38 +285,38 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="0a0dc-157">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="0a0dc-157">CommonParameters</span></span>
-<span data-ttu-id="0a0dc-158">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-158">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="0a0dc-159">如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="0a0dc-159">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="ea2f4-157">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="ea2f4-157">CommonParameters</span></span>
+<span data-ttu-id="ea2f4-158">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="ea2f4-158">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="ea2f4-159">詳細資訊[請參閱about_CommonParameters。](https://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="ea2f4-159">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="0a0dc-160">輸入</span><span class="sxs-lookup"><span data-stu-id="0a0dc-160">INPUTS</span></span>
+## <span data-ttu-id="ea2f4-160">輸入</span><span class="sxs-lookup"><span data-stu-id="ea2f4-160">INPUTS</span></span>
 
-### <span data-ttu-id="0a0dc-161">ServiceManagement. PsApiManagementCoNtext （ApiManagement）</span><span class="sxs-lookup"><span data-stu-id="0a0dc-161">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span></span>
+### <span data-ttu-id="ea2f4-161">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.models.PsApiManagementCoNtext</span><span class="sxs-lookup"><span data-stu-id="ea2f4-161">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span></span>
 
-### <span data-ttu-id="0a0dc-162">System.object</span><span class="sxs-lookup"><span data-stu-id="0a0dc-162">System.String</span></span>
+### <span data-ttu-id="ea2f4-162">System.String</span><span class="sxs-lookup"><span data-stu-id="ea2f4-162">System.String</span></span>
 
-### <span data-ttu-id="0a0dc-163">"CoreLib" 1 ["System.object，System.object，版本 = 4.0.0.0，Culture = 中立，PublicKeyToken = 7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="0a0dc-163">System.Nullable\`1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
+### <span data-ttu-id="ea2f4-163">System.Nullable'1[[System.Boolean， System.Private.CoreLib， Version=4.0.0.0， Culture=neutral， PublicKeyToken=7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="ea2f4-163">System.Nullable\`1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
 
-### <span data-ttu-id="0a0dc-164">ServiceManagement. PsApiManagementBackendCredential （ApiManagement）</span><span class="sxs-lookup"><span data-stu-id="0a0dc-164">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendCredential</span></span>
+### <span data-ttu-id="ea2f4-164">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.models.PsApiManagementBackendCredential</span><span class="sxs-lookup"><span data-stu-id="ea2f4-164">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendCredential</span></span>
 
-### <span data-ttu-id="0a0dc-165">ServiceManagement. PsApiManagementBackendProxy （ApiManagement）</span><span class="sxs-lookup"><span data-stu-id="0a0dc-165">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendProxy</span></span>
+### <span data-ttu-id="ea2f4-165">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.models.PsApiManagementBackendProxy</span><span class="sxs-lookup"><span data-stu-id="ea2f4-165">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendProxy</span></span>
 
-### <span data-ttu-id="0a0dc-166">ServiceManagement. PsApiManagementServiceFabric （ApiManagement）</span><span class="sxs-lookup"><span data-stu-id="0a0dc-166">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementServiceFabric</span></span>
+### <span data-ttu-id="ea2f4-166">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.models.PsApiManagementServiceFabric</span><span class="sxs-lookup"><span data-stu-id="ea2f4-166">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementServiceFabric</span></span>
 
-## <span data-ttu-id="0a0dc-167">輸出</span><span class="sxs-lookup"><span data-stu-id="0a0dc-167">OUTPUTS</span></span>
+## <span data-ttu-id="ea2f4-167">輸出</span><span class="sxs-lookup"><span data-stu-id="ea2f4-167">OUTPUTS</span></span>
 
-### <span data-ttu-id="0a0dc-168">ServiceManagement. PsApiManagementBackend （ApiManagement）</span><span class="sxs-lookup"><span data-stu-id="0a0dc-168">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackend</span></span>
+### <span data-ttu-id="ea2f4-168">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.models.PsApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="ea2f4-168">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackend</span></span>
 
-## <span data-ttu-id="0a0dc-169">筆記</span><span class="sxs-lookup"><span data-stu-id="0a0dc-169">NOTES</span></span>
+## <span data-ttu-id="ea2f4-169">筆記</span><span class="sxs-lookup"><span data-stu-id="ea2f4-169">NOTES</span></span>
 
-## <span data-ttu-id="0a0dc-170">相關連結</span><span class="sxs-lookup"><span data-stu-id="0a0dc-170">RELATED LINKS</span></span>
+## <span data-ttu-id="ea2f4-170">相關連結</span><span class="sxs-lookup"><span data-stu-id="ea2f4-170">RELATED LINKS</span></span>
 
-[<span data-ttu-id="0a0dc-171">AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="0a0dc-171">Get-AzApiManagementBackend</span></span>](./Get-AzApiManagementBackend)
+[<span data-ttu-id="ea2f4-171">Get-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="ea2f4-171">Get-AzApiManagementBackend</span></span>](./Get-AzApiManagementBackend.md)
 
-[<span data-ttu-id="0a0dc-172">新-AzApiManagementBackendCredential</span><span class="sxs-lookup"><span data-stu-id="0a0dc-172">New-AzApiManagementBackendCredential</span></span>](./New-AzApiManagementBackendCredential.md)
+[<span data-ttu-id="ea2f4-172">New-AzApiManagementBackendCredential</span><span class="sxs-lookup"><span data-stu-id="ea2f4-172">New-AzApiManagementBackendCredential</span></span>](./New-AzApiManagementBackendCredential.md)
 
-[<span data-ttu-id="0a0dc-173">新-AzApiManagementBackendProxy</span><span class="sxs-lookup"><span data-stu-id="0a0dc-173">New-AzApiManagementBackendProxy</span></span>](./New-AzApiManagementBackendProxy.md)
+[<span data-ttu-id="ea2f4-173">New-AzApiManagementBackendProxy</span><span class="sxs-lookup"><span data-stu-id="ea2f4-173">New-AzApiManagementBackendProxy</span></span>](./New-AzApiManagementBackendProxy.md)
 
-[<span data-ttu-id="0a0dc-174">Set-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="0a0dc-174">Set-AzApiManagementBackend</span></span>](./Set-AzApiManagementBackend.md)
+[<span data-ttu-id="ea2f4-174">Set-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="ea2f4-174">Set-AzApiManagementBackend</span></span>](./Set-AzApiManagementBackend.md)
 
-[<span data-ttu-id="0a0dc-175">移除-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="0a0dc-175">Remove-AzApiManagementBackend</span></span>](./Remove-AzApiManagementBackend.md)
+[<span data-ttu-id="ea2f4-175">Remove-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="ea2f4-175">Remove-AzApiManagementBackend</span></span>](./Remove-AzApiManagementBackend.md)
 
