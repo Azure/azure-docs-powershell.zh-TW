@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendCredential.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendCredential.md
-ms.openlocfilehash: c1495c505653470f4aa6b818162d57e02893c5e0
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 3d9a462a034c5c1e65ff6b22fe92b14421582392
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93958201"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401261"
 ---
 # New-AzApiManagementBackendCredential
 
-## 摘要
-建立新的後端認證協定。
+## 簡介
+建立新的後端認證合約。
 
-## 句法
+## 語法
 
 ```
 New-AzApiManagementBackendCredential [-CertificateThumbprint <String[]>] [-Query <Hashtable>]
@@ -25,12 +25,12 @@ New-AzApiManagementBackendCredential [-CertificateThumbprint <String[]>] [-Query
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## 說明
-建立新的後端認證協定。
+## 描述
+建立新的後端認證合約。
 
-## 示例
+## 例子
 
-### In-Memory 物件建立後端認證
+### 建立物件的後端認證In-Memory認證
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>$credential = New-AzApiManagementBackendCredential -AuthorizationHeaderScheme basic -AuthorizationHeaderParameter opensesame -Query @{"sv" = @('xx', 'bb'); "sr" = @('cc')} -Header @{"x-my-1" = @('val1', 'val2')}
@@ -44,7 +44,7 @@ PS C:\>$backend = New-AzApiManagementBackend -Context  $apimContext -BackendId 1
 
 ### -AuthorizationHeaderParameter
 後端使用的授權標頭。
-這個參數是選用的。
+此參數為選擇性。
 
 ```yaml
 Type: System.String
@@ -58,9 +58,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AuthorizationHeaderScheme
-後端使用的授權配置。
-這個參數是選用的。
+### -AuthorizationHeaderS化
+後端所使用的授權方案。
+此參數為選擇性。
 
 ```yaml
 Type: System.String
@@ -76,7 +76,7 @@ Accept wildcard characters: False
 
 ### -CertificateThumbprint
 用戶端憑證指紋。
-這個參數是選用的。
+此參數為選擇性。
 
 ```yaml
 Type: System.String[]
@@ -91,7 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -105,9 +105,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -頁首
-後端接受的標頭參數值。
-這個參數是選用的。
+### -頁眉
+後端接受的標題參數值。
+此參數為選擇性。
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -121,9 +121,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Query
+### -查詢
 後端接受的查詢參數值。
-這個參數是選用的。
+此參數為選擇性。
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -138,26 +138,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### 所有
+### 沒有
 
 ## 輸出
 
-### ServiceManagement. PsApiManagementBackendCredential （ApiManagement）
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.models.PsApiManagementBackendCredential
 
 ## 筆記
 
 ## 相關連結
 
-[AzApiManagementBackend](./Get-AzApiManagementBackend)
+[Get-AzApiManagementBackend](./Get-AzApiManagementBackend.md)
 
-[新-AzApiManagementBackend](./New-AzApiManagementBackend.md)
+[New-AzApiManagementBackend](./New-AzApiManagementBackend.md)
 
-[新-AzApiManagementBackendProxy](./New-AzApiManagementBackendProxy.md)
+[New-AzApiManagementBackendProxy](./New-AzApiManagementBackendProxy.md)
 
 [Set-AzApiManagementBackend](./Set-AzApiManagementBackend.md)
 
-[移除-AzApiManagementBackend](./Remove-AzApiManagementBackend.md)
+[Remove-AzApiManagementBackend](./Remove-AzApiManagementBackend.md)
