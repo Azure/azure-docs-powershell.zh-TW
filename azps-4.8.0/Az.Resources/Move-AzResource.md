@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Move-AzResource.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Move-AzResource.md
-ms.openlocfilehash: 4f21ce7a14873d201fa18f45c96d508dcd38cb8e
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 561b19f7eb09d9addfda2b7f3c66c66f2d9f759d
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94136123"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100415592"
 ---
-# <span data-ttu-id="c1680-101">Move-AzResource</span><span class="sxs-lookup"><span data-stu-id="c1680-101">Move-AzResource</span></span>
+# <span data-ttu-id="2d528-101">Move-AzResource</span><span class="sxs-lookup"><span data-stu-id="2d528-101">Move-AzResource</span></span>
 
-## <span data-ttu-id="c1680-102">摘要</span><span class="sxs-lookup"><span data-stu-id="c1680-102">SYNOPSIS</span></span>
-<span data-ttu-id="c1680-103">將資源移至不同的資源群組或訂閱。</span><span class="sxs-lookup"><span data-stu-id="c1680-103">Moves a resource to a different resource group or subscription.</span></span>
+## <span data-ttu-id="2d528-102">簡介</span><span class="sxs-lookup"><span data-stu-id="2d528-102">SYNOPSIS</span></span>
+<span data-ttu-id="2d528-103">將資源移至不同的資源群組或訂閱。</span><span class="sxs-lookup"><span data-stu-id="2d528-103">Moves a resource to a different resource group or subscription.</span></span>
 
-## <span data-ttu-id="c1680-104">句法</span><span class="sxs-lookup"><span data-stu-id="c1680-104">SYNTAX</span></span>
+## <span data-ttu-id="2d528-104">語法</span><span class="sxs-lookup"><span data-stu-id="2d528-104">SYNTAX</span></span>
 
 ```
 Move-AzResource -DestinationResourceGroupName <String> [-DestinationSubscriptionId <Guid>]
@@ -26,27 +26,27 @@ Move-AzResource -DestinationResourceGroupName <String> [-DestinationSubscription
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="c1680-105">說明</span><span class="sxs-lookup"><span data-stu-id="c1680-105">DESCRIPTION</span></span>
-<span data-ttu-id="c1680-106">**AzResource** Cmdlet 會將現有資源移至不同的資源群組。</span><span class="sxs-lookup"><span data-stu-id="c1680-106">The **Move-AzResource** cmdlet moves existing resources to a different resource group.</span></span>
-<span data-ttu-id="c1680-107">該資源群組可以是不同的訂閱。</span><span class="sxs-lookup"><span data-stu-id="c1680-107">That resource group can be in a different subscription.</span></span>
+## <span data-ttu-id="2d528-105">描述</span><span class="sxs-lookup"><span data-stu-id="2d528-105">DESCRIPTION</span></span>
+<span data-ttu-id="2d528-106">**Move-AzResource** Cmdlet 會將現有的資源移至不同的資源群組。</span><span class="sxs-lookup"><span data-stu-id="2d528-106">The **Move-AzResource** cmdlet moves existing resources to a different resource group.</span></span>
+<span data-ttu-id="2d528-107">資源群組可以在不同的訂閱中。</span><span class="sxs-lookup"><span data-stu-id="2d528-107">That resource group can be in a different subscription.</span></span>
 
-## <span data-ttu-id="c1680-108">示例</span><span class="sxs-lookup"><span data-stu-id="c1680-108">EXAMPLES</span></span>
+## <span data-ttu-id="2d528-108">例子</span><span class="sxs-lookup"><span data-stu-id="2d528-108">EXAMPLES</span></span>
 
-### <span data-ttu-id="c1680-109">範例1：將資源移至資源群組</span><span class="sxs-lookup"><span data-stu-id="c1680-109">Example 1: Move a resource to a resource group</span></span>
+### <span data-ttu-id="2d528-109">範例 1：將資源移至資源群組</span><span class="sxs-lookup"><span data-stu-id="2d528-109">Example 1: Move a resource to a resource group</span></span>
 ```
 PS C:\>$Resource = Get-AzResource -ResourceType "Microsoft.ClassicCompute/storageAccounts" -ResourceName "ContosoStorageAccount"
 PS C:\> Move-AzResource -ResourceId $Resource.ResourceId -DestinationResourceGroupName "ResourceGroup14"
 ```
 
-<span data-ttu-id="c1680-110">第一個命令會使用 Get-AzResource Cmdlet 來取得名為 ContosoStorageAccount 的資源，然後將該資源儲存在 $Resource 變數中。</span><span class="sxs-lookup"><span data-stu-id="c1680-110">The first command gets a resource named ContosoStorageAccount by using the Get-AzResource cmdlet, and then stores that resource in the $Resource variable.</span></span>
-<span data-ttu-id="c1680-111">第二個命令會將該資源移到名為 ResourceGroup14 的資源群組中。</span><span class="sxs-lookup"><span data-stu-id="c1680-111">The second command moves that resource into the resource group named ResourceGroup14.</span></span>
-<span data-ttu-id="c1680-112">命令會使用 $Resource 的 **ResourceId** 屬性來識別要移動的資源。</span><span class="sxs-lookup"><span data-stu-id="c1680-112">The command identifies the resource to move by using the **ResourceId** property of $Resource.</span></span>
+<span data-ttu-id="2d528-110">第一個命令會使用 Get-AzResource Cmdlet 獲得名為 ContosoStorageAccount 的資源，然後將該資源儲存在 $Resource 變數中。</span><span class="sxs-lookup"><span data-stu-id="2d528-110">The first command gets a resource named ContosoStorageAccount by using the Get-AzResource cmdlet, and then stores that resource in the $Resource variable.</span></span>
+<span data-ttu-id="2d528-111">第二個命令會將資源移至名為 ResourceGroup14 的資源群組。</span><span class="sxs-lookup"><span data-stu-id="2d528-111">The second command moves that resource into the resource group named ResourceGroup14.</span></span>
+<span data-ttu-id="2d528-112">命令會使用資源的 **ResourceId** 屬性來識別要移動$Resource。</span><span class="sxs-lookup"><span data-stu-id="2d528-112">The command identifies the resource to move by using the **ResourceId** property of $Resource.</span></span>
 
-## <span data-ttu-id="c1680-113">參數</span><span class="sxs-lookup"><span data-stu-id="c1680-113">PARAMETERS</span></span>
+## <span data-ttu-id="2d528-113">參數</span><span class="sxs-lookup"><span data-stu-id="2d528-113">PARAMETERS</span></span>
 
-### <span data-ttu-id="c1680-114">-ApiVersion</span><span class="sxs-lookup"><span data-stu-id="c1680-114">-ApiVersion</span></span>
-<span data-ttu-id="c1680-115">指定要使用的資源提供者 API 版本。</span><span class="sxs-lookup"><span data-stu-id="c1680-115">Specifies the version of the resource provider API to use.</span></span>
-<span data-ttu-id="c1680-116">如果您沒有指定版本，此 Cmdlet 會使用最新的可用版本。</span><span class="sxs-lookup"><span data-stu-id="c1680-116">If you do not specify a version, this cmdlet uses the latest available version.</span></span>
+### <span data-ttu-id="2d528-114">-ApiVersion</span><span class="sxs-lookup"><span data-stu-id="2d528-114">-ApiVersion</span></span>
+<span data-ttu-id="2d528-115">指定要使用的資源提供者 API 版本。</span><span class="sxs-lookup"><span data-stu-id="2d528-115">Specifies the version of the resource provider API to use.</span></span>
+<span data-ttu-id="2d528-116">如果您未指定版本，此 Cmdlet 會使用最新的可用版本。</span><span class="sxs-lookup"><span data-stu-id="2d528-116">If you do not specify a version, this cmdlet uses the latest available version.</span></span>
 
 ```yaml
 Type: System.String
@@ -60,8 +60,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c1680-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="c1680-117">-DefaultProfile</span></span>
-<span data-ttu-id="c1680-118">用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱</span><span class="sxs-lookup"><span data-stu-id="c1680-118">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="2d528-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="2d528-117">-DefaultProfile</span></span>
+<span data-ttu-id="2d528-118">用於與 Azure 通訊的認證、帳戶、租使用者和訂閱</span><span class="sxs-lookup"><span data-stu-id="2d528-118">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -75,8 +75,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c1680-119">-DestinationResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="c1680-119">-DestinationResourceGroupName</span></span>
-<span data-ttu-id="c1680-120">指定此 Cmdlet 將資源移動到哪個資源群組的名稱。</span><span class="sxs-lookup"><span data-stu-id="c1680-120">Specifies the name of the resource group into which this cmdlet moves resources.</span></span>
+### <span data-ttu-id="2d528-119">-DestinationResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="2d528-119">-DestinationResourceGroupName</span></span>
+<span data-ttu-id="2d528-120">指定此 Cmdlet 將資源移動至其中的資源組名。</span><span class="sxs-lookup"><span data-stu-id="2d528-120">Specifies the name of the resource group into which this cmdlet moves resources.</span></span>
 
 ```yaml
 Type: System.String
@@ -90,8 +90,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c1680-121">-DestinationSubscriptionId</span><span class="sxs-lookup"><span data-stu-id="c1680-121">-DestinationSubscriptionId</span></span>
-<span data-ttu-id="c1680-122">指定此 Cmdlet 將資源移動到其中的訂閱識別碼。</span><span class="sxs-lookup"><span data-stu-id="c1680-122">Specifies the ID of the subscription into which this cmdlet moves resources .</span></span>
+### <span data-ttu-id="2d528-121">-DestinationSubscriptionId</span><span class="sxs-lookup"><span data-stu-id="2d528-121">-DestinationSubscriptionId</span></span>
+<span data-ttu-id="2d528-122">指定此 Cmdlet 移動資源的訂閱識別碼。</span><span class="sxs-lookup"><span data-stu-id="2d528-122">Specifies the ID of the subscription into which this cmdlet moves resources .</span></span>
 
 ```yaml
 Type: System.Nullable`1[System.Guid]
@@ -105,8 +105,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c1680-123">-Force</span><span class="sxs-lookup"><span data-stu-id="c1680-123">-Force</span></span>
-<span data-ttu-id="c1680-124">強制執行命令，而不要求使用者確認。</span><span class="sxs-lookup"><span data-stu-id="c1680-124">Forces the command to run without asking for user confirmation.</span></span>
+### <span data-ttu-id="2d528-123">-強制</span><span class="sxs-lookup"><span data-stu-id="2d528-123">-Force</span></span>
+<span data-ttu-id="2d528-124">強制執行命令，但不要求使用者確認。</span><span class="sxs-lookup"><span data-stu-id="2d528-124">Forces the command to run without asking for user confirmation.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -120,8 +120,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c1680-125">-預先</span><span class="sxs-lookup"><span data-stu-id="c1680-125">-Pre</span></span>
-<span data-ttu-id="c1680-126">表示此 Cmdlet 會在自動決定要使用哪個版本時，考慮預發行 API 版本。</span><span class="sxs-lookup"><span data-stu-id="c1680-126">Indicates that this cmdlet considers pre-release API versions when it automatically determines which version to use.</span></span>
+### <span data-ttu-id="2d528-125">-Pre</span><span class="sxs-lookup"><span data-stu-id="2d528-125">-Pre</span></span>
+<span data-ttu-id="2d528-126">表示此 Cmdlet 會在自動決定要使用哪個版本時，考慮測試版 API 版本。</span><span class="sxs-lookup"><span data-stu-id="2d528-126">Indicates that this cmdlet considers pre-release API versions when it automatically determines which version to use.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -135,8 +135,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c1680-127">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="c1680-127">-ResourceId</span></span>
-<span data-ttu-id="c1680-128">指定此 Cmdlet 所移動之資源的識別碼陣列。</span><span class="sxs-lookup"><span data-stu-id="c1680-128">Specifies an array of IDs of the resources that this cmdlet moves.</span></span>
+### <span data-ttu-id="2d528-127">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="2d528-127">-ResourceId</span></span>
+<span data-ttu-id="2d528-128">指定此 Cmdlet 移動之資源的 ID 陣列。</span><span class="sxs-lookup"><span data-stu-id="2d528-128">Specifies an array of IDs of the resources that this cmdlet moves.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -150,8 +150,8 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c1680-129">-確認</span><span class="sxs-lookup"><span data-stu-id="c1680-129">-Confirm</span></span>
-<span data-ttu-id="c1680-130">在執行 Cmdlet 之前提示您進行確認。</span><span class="sxs-lookup"><span data-stu-id="c1680-130">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="2d528-129">-確認</span><span class="sxs-lookup"><span data-stu-id="2d528-129">-Confirm</span></span>
+<span data-ttu-id="2d528-130">執行 Cmdlet 之前，提示您確認。</span><span class="sxs-lookup"><span data-stu-id="2d528-130">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -165,9 +165,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c1680-131">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="c1680-131">-WhatIf</span></span>
-<span data-ttu-id="c1680-132">顯示在執行 Cmdlet 時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="c1680-132">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="c1680-133">未執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="c1680-133">The cmdlet is not run.</span></span>
+### <span data-ttu-id="2d528-131">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="2d528-131">-WhatIf</span></span>
+<span data-ttu-id="2d528-132">顯示 Cmdlet 執行時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="2d528-132">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="2d528-133">不會執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="2d528-133">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -181,31 +181,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c1680-134">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="c1680-134">CommonParameters</span></span>
-<span data-ttu-id="c1680-135">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="c1680-135">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="c1680-136">如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="c1680-136">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="2d528-134">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="2d528-134">CommonParameters</span></span>
+<span data-ttu-id="2d528-135">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="2d528-135">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="2d528-136">詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="2d528-136">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="c1680-137">輸入</span><span class="sxs-lookup"><span data-stu-id="c1680-137">INPUTS</span></span>
+## <span data-ttu-id="2d528-137">輸入</span><span class="sxs-lookup"><span data-stu-id="2d528-137">INPUTS</span></span>
 
-### <span data-ttu-id="c1680-138">"CoreLib" 1 [[System. Guid.empty]、[System.] = 4.0.0.0、Culture = 中性、PublicKeyToken = 7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="c1680-138">System.Nullable\`1[[System.Guid, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
+### <span data-ttu-id="2d528-138">System.Nullable'1[[System.Guid， System.Private.CoreLib， Version=4.0.0.0， Culture=neutral， PublicKeyToken=7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="2d528-138">System.Nullable\`1[[System.Guid, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
 
-### <span data-ttu-id="c1680-139">System.object []</span><span class="sxs-lookup"><span data-stu-id="c1680-139">System.String[]</span></span>
+### <span data-ttu-id="2d528-139">System.String[]</span><span class="sxs-lookup"><span data-stu-id="2d528-139">System.String[]</span></span>
 
-## <span data-ttu-id="c1680-140">輸出</span><span class="sxs-lookup"><span data-stu-id="c1680-140">OUTPUTS</span></span>
+## <span data-ttu-id="2d528-140">輸出</span><span class="sxs-lookup"><span data-stu-id="2d528-140">OUTPUTS</span></span>
 
-### <span data-ttu-id="c1680-141">System.object</span><span class="sxs-lookup"><span data-stu-id="c1680-141">System.Boolean</span></span>
+### <span data-ttu-id="2d528-141">System.Boolean</span><span class="sxs-lookup"><span data-stu-id="2d528-141">System.Boolean</span></span>
 
-## <span data-ttu-id="c1680-142">筆記</span><span class="sxs-lookup"><span data-stu-id="c1680-142">NOTES</span></span>
+## <span data-ttu-id="2d528-142">筆記</span><span class="sxs-lookup"><span data-stu-id="2d528-142">NOTES</span></span>
 
-## <span data-ttu-id="c1680-143">相關連結</span><span class="sxs-lookup"><span data-stu-id="c1680-143">RELATED LINKS</span></span>
+## <span data-ttu-id="2d528-143">相關連結</span><span class="sxs-lookup"><span data-stu-id="2d528-143">RELATED LINKS</span></span>
 
-[<span data-ttu-id="c1680-144">尋找-AzResource</span><span class="sxs-lookup"><span data-stu-id="c1680-144">Find-AzResource</span></span>](./Find-AzResource.md)
 
-[<span data-ttu-id="c1680-145">AzResource</span><span class="sxs-lookup"><span data-stu-id="c1680-145">Get-AzResource</span></span>](./Get-AzResource.md)
+[<span data-ttu-id="2d528-144">Get-AzResource</span><span class="sxs-lookup"><span data-stu-id="2d528-144">Get-AzResource</span></span>](./Get-AzResource.md)
 
-[<span data-ttu-id="c1680-146">新-AzResource</span><span class="sxs-lookup"><span data-stu-id="c1680-146">New-AzResource</span></span>](./New-AzResource.md)
+[<span data-ttu-id="2d528-145">New-AzResource</span><span class="sxs-lookup"><span data-stu-id="2d528-145">New-AzResource</span></span>](./New-AzResource.md)
 
-[<span data-ttu-id="c1680-147">移除-AzResource</span><span class="sxs-lookup"><span data-stu-id="c1680-147">Remove-AzResource</span></span>](./Remove-AzResource.md)
+[<span data-ttu-id="2d528-146">Remove-AzResource</span><span class="sxs-lookup"><span data-stu-id="2d528-146">Remove-AzResource</span></span>](./Remove-AzResource.md)
 
-[<span data-ttu-id="c1680-148">Set-AzResource</span><span class="sxs-lookup"><span data-stu-id="c1680-148">Set-AzResource</span></span>](./Set-AzResource.md)
+[<span data-ttu-id="2d528-147">Set-AzResource</span><span class="sxs-lookup"><span data-stu-id="2d528-147">Set-AzResource</span></span>](./Set-AzResource.md)
 
 
