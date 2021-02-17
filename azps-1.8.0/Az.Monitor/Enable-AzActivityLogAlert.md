@@ -6,70 +6,70 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/en
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Enable-AzActivityLogAlert.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Enable-AzActivityLogAlert.md
-ms.openlocfilehash: 4e628affbae7b5356b1cfaacb8970b5315be746d
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 1982b6769677df330a63e02b222648cc37b0b72b
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93786762"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100403216"
 ---
-# <span data-ttu-id="9f442-101">Enable-AzActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="9f442-101">Enable-AzActivityLogAlert</span></span>
+# <span data-ttu-id="44d69-101">Enable-AzActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="44d69-101">Enable-AzActivityLogAlert</span></span>
 
-## <span data-ttu-id="9f442-102">摘要</span><span class="sxs-lookup"><span data-stu-id="9f442-102">SYNOPSIS</span></span>
-<span data-ttu-id="9f442-103">啟用活動記錄通知並設定其標記。</span><span class="sxs-lookup"><span data-stu-id="9f442-103">Enables an activity log alert and sets its Tags.</span></span>
+## <span data-ttu-id="44d69-102">簡介</span><span class="sxs-lookup"><span data-stu-id="44d69-102">SYNOPSIS</span></span>
+<span data-ttu-id="44d69-103">啟用活動記錄提醒並設定其標記。</span><span class="sxs-lookup"><span data-stu-id="44d69-103">Enables an activity log alert and sets its Tags.</span></span>
 
-## <span data-ttu-id="9f442-104">句法</span><span class="sxs-lookup"><span data-stu-id="9f442-104">SYNTAX</span></span>
+## <span data-ttu-id="44d69-104">語法</span><span class="sxs-lookup"><span data-stu-id="44d69-104">SYNTAX</span></span>
 
-### <span data-ttu-id="9f442-105">EnableByNameAndResourceGroup</span><span class="sxs-lookup"><span data-stu-id="9f442-105">EnableByNameAndResourceGroup</span></span>
+### <span data-ttu-id="44d69-105">EnableByNameAndResourceGroup</span><span class="sxs-lookup"><span data-stu-id="44d69-105">EnableByNameAndResourceGroup</span></span>
 ```
 Enable-AzActivityLogAlert -Name <String> -ResourceGroupName <String> [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="9f442-106">EnableByInputObject</span><span class="sxs-lookup"><span data-stu-id="9f442-106">EnableByInputObject</span></span>
+### <span data-ttu-id="44d69-106">EnableByInputObject</span><span class="sxs-lookup"><span data-stu-id="44d69-106">EnableByInputObject</span></span>
 ```
 Enable-AzActivityLogAlert -InputObject <PSActivityLogAlertResource> [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="9f442-107">EnableByResourceId</span><span class="sxs-lookup"><span data-stu-id="9f442-107">EnableByResourceId</span></span>
+### <span data-ttu-id="44d69-107">EnableByResourceId</span><span class="sxs-lookup"><span data-stu-id="44d69-107">EnableByResourceId</span></span>
 ```
 Enable-AzActivityLogAlert -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="9f442-108">說明</span><span class="sxs-lookup"><span data-stu-id="9f442-108">DESCRIPTION</span></span>
-<span data-ttu-id="9f442-109">**Enable-AzActivityLogAlert** Cmdlet 可啟用活動記錄通知並設定其標記。</span><span class="sxs-lookup"><span data-stu-id="9f442-109">The **Enable-AzActivityLogAlert** cmdlet allows enabling an activity log alert and setting its tags.</span></span>
-<span data-ttu-id="9f442-110">這個 Cmdlet 會實現 ShouldProcess 模式，亦即，在實際修補資源之前，它可能會要求使用者進行確認。</span><span class="sxs-lookup"><span data-stu-id="9f442-110">This cmdlet implements the ShouldProcess pattern, i.e. it might request confirmation from the user before actually patching the resource.</span></span>
+## <span data-ttu-id="44d69-108">描述</span><span class="sxs-lookup"><span data-stu-id="44d69-108">DESCRIPTION</span></span>
+<span data-ttu-id="44d69-109">**Enable-AzActivityLogAlert** Cmdlet 允許啟用活動記錄提醒並設定其標籤。</span><span class="sxs-lookup"><span data-stu-id="44d69-109">The **Enable-AzActivityLogAlert** cmdlet allows enabling an activity log alert and setting its tags.</span></span>
+<span data-ttu-id="44d69-110">此 Cmdlet 實做 ShouldProcess 模式，即實際修補資源之前，可能會向使用者要求確認。</span><span class="sxs-lookup"><span data-stu-id="44d69-110">This cmdlet implements the ShouldProcess pattern, i.e. it might request confirmation from the user before actually patching the resource.</span></span>
 
-## <span data-ttu-id="9f442-111">示例</span><span class="sxs-lookup"><span data-stu-id="9f442-111">EXAMPLES</span></span>
+## <span data-ttu-id="44d69-111">例子</span><span class="sxs-lookup"><span data-stu-id="44d69-111">EXAMPLES</span></span>
 
-### <span data-ttu-id="9f442-112">範例1：啟用活動記錄通知</span><span class="sxs-lookup"><span data-stu-id="9f442-112">Example 1: Enable an activity log alert</span></span>
+### <span data-ttu-id="44d69-112">範例 1：啟用活動記錄提醒</span><span class="sxs-lookup"><span data-stu-id="44d69-112">Example 1: Enable an activity log alert</span></span>
 ```
 PS C:\>Enable-AzActivityLogAlert -Name "alert1" -ResourceGroupName "Default-ActivityLogsAlerts"
 ```
 
-<span data-ttu-id="9f442-113">這個命令會在資源群組預設-ActivityLogsAlerts 中啟用稱為 alert1 的活動記錄提醒。</span><span class="sxs-lookup"><span data-stu-id="9f442-113">This command enables the activity log alert called alert1 in the resource group Default-ActivityLogsAlerts.</span></span>
+<span data-ttu-id="44d69-113">此命令會啟用資源群組 Default-ActivityLogsAlerts 中稱為通知1 的活動記錄提醒。</span><span class="sxs-lookup"><span data-stu-id="44d69-113">This command enables the activity log alert called alert1 in the resource group Default-ActivityLogsAlerts.</span></span>
 
-### <span data-ttu-id="9f442-114">範例2：使用 PSActivityLogAlertResource 物件做為輸入來啟用活動記錄提醒</span><span class="sxs-lookup"><span data-stu-id="9f442-114">Example 2: Enable an activity log alert using a PSActivityLogAlertResource object as input</span></span>
+### <span data-ttu-id="44d69-114">範例 2：使用 PSActivityLogAlertResource 物件做為輸入來啟用活動記錄提醒</span><span class="sxs-lookup"><span data-stu-id="44d69-114">Example 2: Enable an activity log alert using a PSActivityLogAlertResource object as input</span></span>
 ```
 PS C:\>$obj = Get-AzActivityLogAlert -ResourceGroup "Default-activityLogAlerts" -Name "alert1"
 PS C:\>Enable-AzActivityLogAlert -InputObject $obj
 ```
 
-<span data-ttu-id="9f442-115">這個命令會啟用稱為 alert1 的活動記錄提醒。</span><span class="sxs-lookup"><span data-stu-id="9f442-115">This command enables an activity log alert called alert1.</span></span> <span data-ttu-id="9f442-116">針對這種情況，它會使用 PSActivityLogAlertResource 物件做為輸入引數。</span><span class="sxs-lookup"><span data-stu-id="9f442-116">For this it uses a PSActivityLogAlertResource object as input argument.</span></span>
+<span data-ttu-id="44d69-115">此命令會啟用稱為警示1 的活動記錄提醒。</span><span class="sxs-lookup"><span data-stu-id="44d69-115">This command enables an activity log alert called alert1.</span></span> <span data-ttu-id="44d69-116">為此，它會使用 PSActivityLogAlertResource 物件做為輸入引數。</span><span class="sxs-lookup"><span data-stu-id="44d69-116">For this it uses a PSActivityLogAlertResource object as input argument.</span></span>
 
-### <span data-ttu-id="9f442-117">範例3：使用 ResourceId 參數啟用 ActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="9f442-117">Example 3: Enable the ActivityLogAlert using the ResourceId parameter</span></span>
+### <span data-ttu-id="44d69-117">範例 3：使用 ResourceId 參數啟用 ActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="44d69-117">Example 3: Enable the ActivityLogAlert using the ResourceId parameter</span></span>
 ```
 PS C:\>Find-AzResource -ResourceGroupEquals "myResourceGroup" -ResourceNameEquals "myLogAlert" | Enable-AzActivityLogAlert
 ```
 
-<span data-ttu-id="9f442-118">這個命令會從管道使用 ResourceId 參數來啟用 ActivityLogAlert。</span><span class="sxs-lookup"><span data-stu-id="9f442-118">This command enables the ActivityLogAlert using the ResourceId parameter from the pipe.</span></span>
+<span data-ttu-id="44d69-118">此命令會使用來自管道的 ResourceId 參數啟用 ActivityLogAlert。</span><span class="sxs-lookup"><span data-stu-id="44d69-118">This command enables the ActivityLogAlert using the ResourceId parameter from the pipe.</span></span>
 
-## <span data-ttu-id="9f442-119">參數</span><span class="sxs-lookup"><span data-stu-id="9f442-119">PARAMETERS</span></span>
+## <span data-ttu-id="44d69-119">參數</span><span class="sxs-lookup"><span data-stu-id="44d69-119">PARAMETERS</span></span>
 
-### <span data-ttu-id="9f442-120">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="9f442-120">-DefaultProfile</span></span>
-<span data-ttu-id="9f442-121">用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱</span><span class="sxs-lookup"><span data-stu-id="9f442-121">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="44d69-120">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="44d69-120">-DefaultProfile</span></span>
+<span data-ttu-id="44d69-121">用於與 Azure 通訊的認證、帳戶、租使用者和訂閱</span><span class="sxs-lookup"><span data-stu-id="44d69-121">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -83,8 +83,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="9f442-122">-InputObject</span><span class="sxs-lookup"><span data-stu-id="9f442-122">-InputObject</span></span>
-<span data-ttu-id="9f442-123">設定通話的 InputObject tags 屬性來解壓縮所需的名稱、資源組名稱，以及選用的標記屬性。</span><span class="sxs-lookup"><span data-stu-id="9f442-123">Sets the InputObject tags property of the call to extract the required name, resource group name, and the optional tags properties.</span></span>
+### <span data-ttu-id="44d69-122">-InputObject</span><span class="sxs-lookup"><span data-stu-id="44d69-122">-InputObject</span></span>
+<span data-ttu-id="44d69-123">設定呼叫的 InputObject 標記屬性，以解壓縮必要的名稱、資源組名，以及選擇性的標記屬性。</span><span class="sxs-lookup"><span data-stu-id="44d69-123">Sets the InputObject tags property of the call to extract the required name, resource group name, and the optional tags properties.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
@@ -98,8 +98,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="9f442-124">-名稱</span><span class="sxs-lookup"><span data-stu-id="9f442-124">-Name</span></span>
-<span data-ttu-id="9f442-125">活動記錄通知的名稱。</span><span class="sxs-lookup"><span data-stu-id="9f442-125">The name of the activity log alert.</span></span>
+### <span data-ttu-id="44d69-124">-名稱</span><span class="sxs-lookup"><span data-stu-id="44d69-124">-Name</span></span>
+<span data-ttu-id="44d69-125">活動記錄提醒的名稱。</span><span class="sxs-lookup"><span data-stu-id="44d69-125">The name of the activity log alert.</span></span>
 
 ```yaml
 Type: System.String
@@ -113,8 +113,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="9f442-126">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="9f442-126">-ResourceGroupName</span></span>
-<span data-ttu-id="9f442-127">要在其中存在預警資源之資源群組的名稱。</span><span class="sxs-lookup"><span data-stu-id="9f442-127">The name of the resource group where the alert resource is going to exist.</span></span>
+### <span data-ttu-id="44d69-126">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="44d69-126">-ResourceGroupName</span></span>
+<span data-ttu-id="44d69-127">警示資源將存在之資源組的名稱。</span><span class="sxs-lookup"><span data-stu-id="44d69-127">The name of the resource group where the alert resource is going to exist.</span></span>
 
 ```yaml
 Type: System.String
@@ -128,8 +128,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="9f442-128">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="9f442-128">-ResourceId</span></span>
-<span data-ttu-id="9f442-129">設定呼叫的 ResourceId 標籤屬性來解壓縮所需的名稱、資源組名稱屬性。</span><span class="sxs-lookup"><span data-stu-id="9f442-129">Sets the ResourceId tags property of the call to extract the required name, resource group name properties.</span></span>
+### <span data-ttu-id="44d69-128">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="44d69-128">-ResourceId</span></span>
+<span data-ttu-id="44d69-129">設定呼叫的 ResourceId 標記屬性，以解壓縮必要的名稱、資源組名屬性。</span><span class="sxs-lookup"><span data-stu-id="44d69-129">Sets the ResourceId tags property of the call to extract the required name, resource group name properties.</span></span>
 
 ```yaml
 Type: System.String
@@ -143,8 +143,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="9f442-130">-確認</span><span class="sxs-lookup"><span data-stu-id="9f442-130">-Confirm</span></span>
-<span data-ttu-id="9f442-131">在執行 Cmdlet 之前提示您進行確認。</span><span class="sxs-lookup"><span data-stu-id="9f442-131">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="44d69-130">-確認</span><span class="sxs-lookup"><span data-stu-id="44d69-130">-Confirm</span></span>
+<span data-ttu-id="44d69-131">執行 Cmdlet 之前，系統會提示您確認。</span><span class="sxs-lookup"><span data-stu-id="44d69-131">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -158,8 +158,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="9f442-132">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="9f442-132">-WhatIf</span></span>
-<span data-ttu-id="9f442-133">顯示在執行 Cmdlet 時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="9f442-133">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="9f442-134">未執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="9f442-134">The cmdlet is not run.</span></span>
+### <span data-ttu-id="44d69-132">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="44d69-132">-WhatIf</span></span>
+<span data-ttu-id="44d69-133">顯示 Cmdlet 執行時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="44d69-133">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="44d69-134">不會執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="44d69-134">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -173,31 +173,31 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="9f442-135">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="9f442-135">CommonParameters</span></span>
-<span data-ttu-id="9f442-136">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="9f442-136">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="9f442-137">如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。</span><span class="sxs-lookup"><span data-stu-id="9f442-137">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="44d69-135">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="44d69-135">CommonParameters</span></span>
+<span data-ttu-id="44d69-136">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="44d69-136">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="44d69-137">詳細資訊請參閱 https://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。</span><span class="sxs-lookup"><span data-stu-id="44d69-137">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="9f442-138">輸入</span><span class="sxs-lookup"><span data-stu-id="9f442-138">INPUTS</span></span>
+## <span data-ttu-id="44d69-138">輸入</span><span class="sxs-lookup"><span data-stu-id="44d69-138">INPUTS</span></span>
 
-### <span data-ttu-id="9f442-139">System.object</span><span class="sxs-lookup"><span data-stu-id="9f442-139">System.String</span></span>
+### <span data-ttu-id="44d69-139">System.String</span><span class="sxs-lookup"><span data-stu-id="44d69-139">System.String</span></span>
 
-### <span data-ttu-id="9f442-140">PSActivityLogAlertResource 中的 OutputClasses。</span><span class="sxs-lookup"><span data-stu-id="9f442-140">Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource</span></span>
+### <span data-ttu-id="44d69-140">Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource</span><span class="sxs-lookup"><span data-stu-id="44d69-140">Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource</span></span>
 
-## <span data-ttu-id="9f442-141">輸出</span><span class="sxs-lookup"><span data-stu-id="9f442-141">OUTPUTS</span></span>
+## <span data-ttu-id="44d69-141">輸出</span><span class="sxs-lookup"><span data-stu-id="44d69-141">OUTPUTS</span></span>
 
-### <span data-ttu-id="9f442-142">PSActivityLogAlertResource 中的 OutputClasses。</span><span class="sxs-lookup"><span data-stu-id="9f442-142">Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource</span></span>
+### <span data-ttu-id="44d69-142">Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource</span><span class="sxs-lookup"><span data-stu-id="44d69-142">Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource</span></span>
 
-## <span data-ttu-id="9f442-143">筆記</span><span class="sxs-lookup"><span data-stu-id="9f442-143">NOTES</span></span>
+## <span data-ttu-id="44d69-143">筆記</span><span class="sxs-lookup"><span data-stu-id="44d69-143">NOTES</span></span>
 
-## <span data-ttu-id="9f442-144">相關連結</span><span class="sxs-lookup"><span data-stu-id="9f442-144">RELATED LINKS</span></span>
+## <span data-ttu-id="44d69-144">相關連結</span><span class="sxs-lookup"><span data-stu-id="44d69-144">RELATED LINKS</span></span>
 
-[<span data-ttu-id="9f442-145">Set-AzActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="9f442-145">Set-AzActivityLogAlert</span></span>](./Set-AzActivityLogAlert.md)
+[<span data-ttu-id="44d69-145">Set-AzActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="44d69-145">Set-AzActivityLogAlert</span></span>](./Set-AzActivityLogAlert.md)
 
-[<span data-ttu-id="9f442-146">AzActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="9f442-146">Get-AzActivityLogAlert</span></span>](./Get-AzActivityLogAlert.md)
+[<span data-ttu-id="44d69-146">Get-AzActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="44d69-146">Get-AzActivityLogAlert</span></span>](./Get-AzActivityLogAlert.md)
 
-[<span data-ttu-id="9f442-147">移除-AzActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="9f442-147">Remove-AzActivityLogAlert</span></span>](./Remove-AzActivityLogAlert.md)
+[<span data-ttu-id="44d69-147">Remove-AzActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="44d69-147">Remove-AzActivityLogAlert</span></span>](./Remove-AzActivityLogAlert.md)
 
-[<span data-ttu-id="9f442-148">新-AzActionGroup</span><span class="sxs-lookup"><span data-stu-id="9f442-148">New-AzActionGroup</span></span>](./New-AzActionGroup.md)
+[<span data-ttu-id="44d69-148">New-AzActionGroup</span><span class="sxs-lookup"><span data-stu-id="44d69-148">New-AzActionGroup</span></span>](./New-AzActionGroup.md)
 
-[<span data-ttu-id="9f442-149">新-AzActivityLogAlertCondition</span><span class="sxs-lookup"><span data-stu-id="9f442-149">New-AzActivityLogAlertCondition</span></span>](./Get-AzActivityLogAlertCondition.md)
 
-[<span data-ttu-id="9f442-150">Disable-AzActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="9f442-150">Disable-AzActivityLogAlert</span></span>](./Disable-AzActivityLogAlert.md)
+
+[<span data-ttu-id="44d69-149">Disable-AzActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="44d69-149">Disable-AzActivityLogAlert</span></span>](./Disable-AzActivityLogAlert.md)
