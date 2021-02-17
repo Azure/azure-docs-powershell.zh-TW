@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementApiRelease.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementApiRelease.md
-ms.openlocfilehash: 9b2b94fbd6a308f9d927483e78e060a273354738
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 263e54adc39103a704dc4ea0bd30f396b5d00fc9
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93966444"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413603"
 ---
 # New-AzApiManagementApiRelease
 
-## 摘要
-建立 API 版本的 API 發行
+## 簡介
+建立 API 修訂的 API 版本
 
-## 句法
+## 語法
 
 ```
 New-AzApiManagementApiRelease -Context <PsApiManagementContext> -ApiId <String> -ApiRevision <String>
@@ -25,13 +25,13 @@ New-AzApiManagementApiRelease -Context <PsApiManagementContext> -ApiId <String> 
  [<CommonParameters>]
 ```
 
-## 說明
+## 描述
 
-**新的-AzApiManagementApiRelease** Cmdlet 會在 api 管理內容中建立 api 版本的 api 發行。 發行版本是用來將 Api 修訂設為目前的修正版本。
+**New-AzApiManagementApiRelease** Cmdlet 會針對 API 管理內容中的 API 修訂建立 API 版本。 發行用來將 Api 修訂製作為目前修訂。
 
-## 示例
+## 例子
 
-### 範例1：建立 API 版本的 API 版本
+### 範例 1：建立 API 修訂的 API 版本
 ```powershell
 PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>New-AzApiManagementApiRelease -Context $context  -ApiId 5adf6fbf0faadf3ad8558065 -ApiRevision 6 -Note "Releasing version 6"
@@ -49,7 +49,7 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 ```
 
-這個命令會建立的 API 發行版本本 `2` `echo-api` 。
+此命令會建立 API 版本的修訂 `2` `echo-api` 。
 
 ## 參數
 
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 
 ### -內容
 PsApiManagementCoNtext 的實例。
-這個參數是必要的。
+此參數為必填專案。
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 Azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -114,8 +114,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -記事
-Api 版本資訊。 此參數為選用。
+### -注意
+Api 版本資訊。 此參數為選擇性
 
 ```yaml
 Type: System.String
@@ -130,9 +130,9 @@ Accept wildcard characters: False
 ```
 
 ### -ReleaseId
-Api 發行的識別碼。
-這個參數是選用的。
-如果未指定識別碼，將會產生。
+Api 發行識別碼。
+此參數為選擇性。
+如果未指定識別碼，將會產生識別碼。
 
 ```yaml
 Type: System.String
@@ -147,7 +147,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，系統會提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -162,7 +162,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。 未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。 不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -177,24 +177,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### ServiceManagement. PsApiManagementCoNtext （ApiManagement）
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.models.PsApiManagementCoNtext
 
-### System.object
+### System.String
 
 ## 輸出
 
-### ServiceManagement. PsApiManagementApiRelease （ApiManagement）
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.models.PsApiManagementApiRelease
 
 ## 筆記
 
 ## 相關連結
 
-[AzApiManagementApiRelease](./Get-AzApiManagementApiRelease.md)
+[Get-AzApiManagementApiRelease](./Get-AzApiManagementApiRelease.md)
 
-[移除-AzApiManagementApiRelease](./Remove-AzApiManagementApiRelease.md)
+[Remove-AzApiManagementApiRelease](./Remove-AzApiManagementApiRelease.md)
 
-[Set-AzApiManagementApiRelease](./Set-AzApiManagementApiRelease.md)
+[Update-AzApiManagementApiRelease](./Update-AzApiManagementApiRelease.md)

@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzADApplication.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzADApplication.md
-ms.openlocfilehash: afcb95eca70c005023bacc2b2d71d9fda54c9259
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: f693fbc0ae4809f287e954babea0188c9d1d23b8
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93957973"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413382"
 ---
 # Get-AzADApplication
 
-## 摘要
-列出現有的 azure active directory 應用程式。
+## 簡介
+列出現有的 Azure Active Directory 應用程式。
 
-## 句法
+## 語法
 
 ### EmptyParameterSet (預設) 
 ```
@@ -56,14 +56,14 @@ Get-AzADApplication -IdentifierUri <String> [-DefaultProfile <IAzureContextConta
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-## 說明
-列出現有的 azure active directory 應用程式。
-應用程式查閱可以由 ObjectId、ApplicationId、IdentifierUri 或 DisplayName 來完成。
-如果未提供任何參數，則它會提取租使用者下的所有應用程式。
+## 描述
+列出現有的 Azure Active Directory 應用程式。
+應用程式查找可以由 ObjectId、ApplicationId、IdentifierUri 或 DisplayName 完成。
+如果沒有提供參數，它會在租使用者下抓取所有應用程式。
 
-## 示例
+## 例子
 
-### 範例 1-列出所有應用程式
+### 範例 1 - 列出所有應用程式
 
 ```
 PS C:\> Get-AzADApplication
@@ -71,34 +71,34 @@ PS C:\> Get-AzADApplication
 
 列出租使用者下的所有應用程式。
 
-### 範例 2-使用分頁的清單應用程式
+### 範例 2 - 使用分頁功能列出應用程式
 
 ```
 PS C:\> Get-AzADApplication -First 100
 ```
 
-列出租使用者底下的第一個100應用程式。
+列出租使用者下前 100 個應用程式。
 
-### 範例 3-透過識別碼 URI 取得應用程式
+### 範例 3 - 根據識別碼 URI 取得應用程式
 
 ```
 PS C:\> Get-AzADApplication -IdentifierUri http://mySecretApp1
 ```
 
-取得識別碼 uri 為 "" 的應用程式 http://mySecretApp1 。
+將識別碼為 uri 的應用程式當做 http://mySecretApp1 ""。
 
-### 範例 4-依物件識別碼取得應用程式
+### 範例 4 - 根據物件識別碼取得應用程式
 
 ```
 PS C:\> Get-AzADApplication -ObjectId 39e64ec6-569b-4030-8e1c-c3c519a05d69
 ```
 
-取得物件 id 為 ' 39e64ec6-569b-4030-8e1c-c3c519a05d69」的應用程式。
+使用物件識別碼為 '39e64ec6-569b-4030-8e1c-c3c519a05d69'的應用程式。
 
 ## 參數
 
 ### -ApplicationId
-要提取之應用程式的應用程式識別碼。
+要抓取的應用程式之應用程式識別碼。
 
 ```yaml
 Type: System.Guid
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -143,7 +143,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayNameStartWith
-從顯示名稱開始提取所有應用程式。
+從顯示名稱開始抓取所有應用程式。
 
 ```yaml
 Type: System.String
@@ -158,7 +158,7 @@ Accept wildcard characters: False
 ```
 
 ### -IdentifierUri
-要提取之應用程式的唯一識別碼 Uri。
+要抓取之應用程式的唯一識別碼 Uri。
 
 ```yaml
 Type: System.String
@@ -173,7 +173,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
-要提取之應用程式的物件識別碼。
+要抓取之應用程式的物件識別碼。
 
 ```yaml
 Type: System.String
@@ -188,7 +188,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeTotalCount
-報告資料集中的物件數目。 這個參數目前不會執行任何動作。
+報告資料集中的物件數目。 目前，此參數沒有任何影響。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -203,7 +203,7 @@ Accept wildcard characters: False
 ```
 
 ### -略過
-忽略前 N 個物件，然後取得剩餘的物件。
+忽略前 N 個物件，然後獲得其餘的物件。
 
 ```yaml
 Type: System.UInt64
@@ -217,8 +217,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -優先
-要傳回的物件數目上限。
+### -第一個
+要返回的物件數量上限。
 
 ```yaml
 Type: System.UInt64
@@ -233,31 +233,30 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### System.object
+### System.String
 
-### Guid.empty
+### System.Guid
 
 ## 輸出
 
-### PSADApplication （即 Azure。
+### Microsoft.Azure.Commands.ActiveDirectory.PSADApplication
 
 ## 筆記
 
 ## 相關連結
 
-[移除-AzADAppCredential](./Remove-AzADAppCredential.md)
+[Remove-AzADAppCredential](./Remove-AzADAppCredential.md)
 
-[新-AzADAppCredential](./New-AzADAppCredential.md)
+[New-AzADAppCredential](./New-AzADAppCredential.md)
 
-[AzADAppCredential](./Get-AzADAppCredential.md)
+[Get-AzADAppCredential](./Get-AzADAppCredential.md)
 
-[移除-AzADApplication](./Remove-AzADApplication.md)
+[Remove-AzADApplication](./Remove-AzADApplication.md)
 
-[Set-AzADApplication](./Set-AzADApplication.md)
 
-[新-AzADApplication](./New-AzADApplication.md)
+[New-AzADApplication](./New-AzADApplication.md)
 

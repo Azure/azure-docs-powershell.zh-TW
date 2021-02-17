@@ -1,17 +1,17 @@
 ---
 title: Azure PowerShell Az 模組簡介
 description: 介紹新的 Azure PowerShell 模組 Az，也就是 AzureRM 模組的替代項目。
-ms.date: 05/20/2020
+ms.date: 02/12/2021
 ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: de95b2e32a6b99a3978a3c8db9d12a6563b02e4b
-ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
-ms.translationtype: HT
+ms.openlocfilehash: 1f20f0aa4c1381e8bc1428f5cd9e9f68d76ce716
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96427661"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413569"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>新的 Azure PowerShell Az 模組簡介
 
@@ -66,6 +66,8 @@ Az 是新模組，因此版本已重設為 1.0.0。
 > [!IMPORTANT]
 > 即使 Cmdlet 名稱已有別名，但 Az Cmdlet 仍可能有新的 (或重新命名的) 參數或已變更的傳回值。 請不要誤以為啟用別名就能完成移轉。 請參閱[完整重大變更清單](migrate-az-1.0.0.md)，找出您的指令碼可能需要更新之處。
 
-## <a name="continued-support-for-azurerm"></a>對 AzureRM 的持續支援
+## <a name="support-for-azurerm"></a>對 AzureRM 的支援
 
-AzureRM 不會再收到新的 Cmdlet 或功能。 不過，我們仍會正式維護 AzureRM 模組，並在 2020 年 12 月之前都會提供錯誤修正。
+由於 Az PowerShell 模組現在具備 AzureRM PowerShell 模組的所有功能，因此我們將于2024年2月29日淘汰 AzureRM PowerShell 模組。
+
+若要避免服務中斷，請將使用 AzureRM PowerShell 模組的 [腳本更新為在](https://aka.ms/azpsmigrate) 2024 年2月29日之前使用 Az powershell 模組。 若要自動更新您的腳本，請遵循 [快速入門手冊](/powershell/azure/quickstart-migrate-azurerm-to-az-automatically)。

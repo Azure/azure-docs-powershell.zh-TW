@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/new-az
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlSyncGroup.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlSyncGroup.md
-ms.openlocfilehash: 7dc408b757c2bce197fcc6dd366c4ef64484eccf
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 5d4f8daa123b0bf90283eb29407ee3a47459dd47
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93796833"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413263"
 ---
 # New-AzSqlSyncGroup
 
-## 摘要
-建立 Azure SQL 資料庫同步處理群組。
+## 簡介
+建立 Azure SQL 資料庫同步組。
 
-## 句法
+## 語法
 
 ```
 New-AzSqlSyncGroup [-Name] <String> -SyncDatabaseName <String> -SyncDatabaseServerName <String>
@@ -27,12 +27,12 @@ New-AzSqlSyncGroup [-Name] <String> -SyncDatabaseName <String> -SyncDatabaseServ
  [<CommonParameters>]
 ```
 
-## 說明
-**新的-AzSqlSyncGroup** Cmdlet 會建立 Azure SQL 資料庫同步處理群組。
+## 描述
+**New-AzSqlSyncGroup** Cmdlet 會建立 Azure SQL 資料庫同步組。
 
-## 示例
+## 例子
 
-### 範例1：建立 Azure SQL 資料庫的同步處理群組。
+### 範例 1：建立 Azure SQL Database 的同步組。
 ```
 PS C:\> $credential = Get-Credential
 PS C:\> New-AzSqlSyncGroup -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" -Name "SyncGroup01" -ConflictResolutionPolicy "HubWin"
@@ -53,12 +53,12 @@ LastSyncTime                : 1/1/0001 12:00:00 AM
 Schema                      :
 ```
 
-這個命令會建立 Azure SQL 資料庫的同步處理群組。 「schema.js開啟」是本機磁片上的檔案。 它包含 json 格式的架構負載。 架構 json 的範例為： {"Tables"： [{"欄"： [{"QuotedName"： "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column1"}，{"QuotedName"： "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column2"}]，"QuotedName"： "MayQuotedTable1"}，{"欄"： [{"QuotedName"： "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column1"}，{"QuotedName"： "b3ee3a7f-7614-4644-ad07"： "afa832620b4bManualTestsm4column2，" QuotedName "：" MayQuotedTable2 "}]，" MasterSyncMemberName "：" "}"
+此命令會為 Azure SQL 資料庫建立同步群組。 「schema.js」是一個位於本地磁片中的檔案。 它包含 json 格式的架構負載。 架構 json 的範例為：{"Tables"： [{"Columns"： [{"QuotedName"： "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column1"}， {"QuotedName"： "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column2"}]， "QuotedName"： "MayQuotedTable1"}， {"Columns"： [{"QuotedName"： "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column1"}， {"QuotedName"： "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column2"}]， "QuotedName"： "MayQuotedTable2"}]， "MasterSyncMemberName"： Null }
 
 ## 參數
 
 ### -ConflictResolutionPolicy
-解決 [同步處理] 群組中的中心與成員資料庫衝突的原則。
+解決同步處理群組中中樞和成員資料庫之間衝突的策略。
 
 ```yaml
 Type: System.String
@@ -74,7 +74,7 @@ Accept wildcard characters: False
 ```
 
 ### -DatabaseCredential
-中心資料庫的 SQL 驗證認證。
+中樞資料庫的 SQL 驗證認證。
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -89,7 +89,7 @@ Accept wildcard characters: False
 ```
 
 ### -DatabaseName
-Azure SQL 資料庫的名稱。
+Azure SQL Database 的名稱。
 
 ```yaml
 Type: System.String
@@ -104,7 +104,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -118,9 +118,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IntervalInSeconds
-執行資料同步處理的頻率 (，以秒為單位) 。
-預設值是-1，這表示不會啟用自動同步處理。
+### -IntervalIn以秒為單位
+執行資料 (的頻率) 秒。
+預設值為 -1，這表示未啟用自動同步處理。
 
 ```yaml
 Type: System.Int32
@@ -135,7 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-同步處理組名。
+同步組名。
 
 ```yaml
 Type: System.String
@@ -150,7 +150,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-資源群組的名稱。
+資源組的名稱。
 
 ```yaml
 Type: System.String
@@ -210,7 +210,7 @@ Accept wildcard characters: False
 ```
 
 ### -SyncDatabaseResourceGroupName
-同步處理中繼資料資料庫所屬的資源群組。
+同步中繼資料資料庫所屬的資源群組。
 
 ```yaml
 Type: System.String
@@ -225,7 +225,7 @@ Accept wildcard characters: False
 ```
 
 ### -SyncDatabaseServerName
-在其上託管同步處理中繼資料資料庫的伺服器。
+託管同步處理中繼資料資料庫的伺服器。
 
 ```yaml
 Type: System.String
@@ -240,7 +240,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，系統會提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -255,8 +255,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。
-未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。
+不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -271,23 +271,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### System.object
+### System.String
 
 ## 輸出
 
-### AzureSqlSyncGroupModel 中的 [DataSync]
+### Microsoft.Azure.Commands.Sql.DataSync.Model.AzureSqlSyncGroupModel
 
 ## 筆記
 
 ## 相關連結
 
-[Set-AzSqlSyncGroup](./Set-AzSqlSyncGroup.md)
 
-[移除-AzSqlSyncGroup](./Remove-AzSqlSyncGroup.md)
+[Remove-AzSqlSyncGroup](./Remove-AzSqlSyncGroup.md)
 
-[AzSqlSyncGroup](./Get-AzSqlSyncGroup.md)
+[Get-AzSqlSyncGroup](./Get-AzSqlSyncGroup.md)
 
