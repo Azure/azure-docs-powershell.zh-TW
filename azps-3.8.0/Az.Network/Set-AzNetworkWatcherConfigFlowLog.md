@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzNetworkWatcherConfigFlowLog.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzNetworkWatcherConfigFlowLog.md
-ms.openlocfilehash: 7212c3cbfad4c3f6cd3c3dfee778645156da288c
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: afa73cab1f0e66ecc9388b9fb2c536ca50bc609d
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93959043"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401601"
 ---
-# <span data-ttu-id="7cb35-101">Set-AzNetworkWatcherConfigFlowLog</span><span class="sxs-lookup"><span data-stu-id="7cb35-101">Set-AzNetworkWatcherConfigFlowLog</span></span>
+# <span data-ttu-id="0c9f0-101">Set-AzNetworkWatcherConfigFlowLog</span><span class="sxs-lookup"><span data-stu-id="0c9f0-101">Set-AzNetworkWatcherConfigFlowLog</span></span>
 
-## <span data-ttu-id="7cb35-102">摘要</span><span class="sxs-lookup"><span data-stu-id="7cb35-102">SYNOPSIS</span></span>
-<span data-ttu-id="7cb35-103">配置目標資源的流程記錄。</span><span class="sxs-lookup"><span data-stu-id="7cb35-103">Configures flow logging for a target resource.</span></span>
+## <span data-ttu-id="0c9f0-102">簡介</span><span class="sxs-lookup"><span data-stu-id="0c9f0-102">SYNOPSIS</span></span>
+<span data-ttu-id="0c9f0-103">設定目標資源的流量記錄。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-103">Configures flow logging for a target resource.</span></span>
 
-## <span data-ttu-id="7cb35-104">句法</span><span class="sxs-lookup"><span data-stu-id="7cb35-104">SYNTAX</span></span>
+## <span data-ttu-id="0c9f0-104">語法</span><span class="sxs-lookup"><span data-stu-id="0c9f0-104">SYNTAX</span></span>
 
-### <span data-ttu-id="7cb35-105">SetFlowlogByResourceWithoutTA (預設) </span><span class="sxs-lookup"><span data-stu-id="7cb35-105">SetFlowlogByResourceWithoutTA (Default)</span></span>
+### <span data-ttu-id="0c9f0-105">SetFlowlogByResourceWithoutTA (預設) </span><span class="sxs-lookup"><span data-stu-id="0c9f0-105">SetFlowlogByResourceWithoutTA (Default)</span></span>
 ```
 Set-AzNetworkWatcherConfigFlowLog -NetworkWatcher <PSNetworkWatcher> -TargetResourceId <String>
  -EnableFlowLog <Boolean> -StorageAccountId <String> [-EnableRetention <Boolean>] [-RetentionInDays <Int32>]
@@ -27,7 +27,7 @@ Set-AzNetworkWatcherConfigFlowLog -NetworkWatcher <PSNetworkWatcher> -TargetReso
  [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="7cb35-106">SetFlowlogByResourceWithTAByResource</span><span class="sxs-lookup"><span data-stu-id="7cb35-106">SetFlowlogByResourceWithTAByResource</span></span>
+### <span data-ttu-id="0c9f0-106">SetFlowlogByResourceWithTAByResource</span><span class="sxs-lookup"><span data-stu-id="0c9f0-106">SetFlowlogByResourceWithTAByResource</span></span>
 ```
 Set-AzNetworkWatcherConfigFlowLog -NetworkWatcher <PSNetworkWatcher> -TargetResourceId <String>
  -EnableFlowLog <Boolean> -StorageAccountId <String> [-EnableRetention <Boolean>] [-RetentionInDays <Int32>]
@@ -36,7 +36,7 @@ Set-AzNetworkWatcherConfigFlowLog -NetworkWatcher <PSNetworkWatcher> -TargetReso
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="7cb35-107">SetFlowlogByResourceWithTAByDetails</span><span class="sxs-lookup"><span data-stu-id="7cb35-107">SetFlowlogByResourceWithTAByDetails</span></span>
+### <span data-ttu-id="0c9f0-107">SetFlowlogByResourceWithTAByDetails</span><span class="sxs-lookup"><span data-stu-id="0c9f0-107">SetFlowlogByResourceWithTAByDetails</span></span>
 ```
 Set-AzNetworkWatcherConfigFlowLog -NetworkWatcher <PSNetworkWatcher> -TargetResourceId <String>
  -EnableFlowLog <Boolean> -StorageAccountId <String> [-EnableRetention <Boolean>] [-RetentionInDays <Int32>]
@@ -46,7 +46,7 @@ Set-AzNetworkWatcherConfigFlowLog -NetworkWatcher <PSNetworkWatcher> -TargetReso
  [<CommonParameters>]
 ```
 
-### <span data-ttu-id="7cb35-108">SetFlowlogByNameWithTAByResource</span><span class="sxs-lookup"><span data-stu-id="7cb35-108">SetFlowlogByNameWithTAByResource</span></span>
+### <span data-ttu-id="0c9f0-108">SetFlowlogByNameWithTAByResource</span><span class="sxs-lookup"><span data-stu-id="0c9f0-108">SetFlowlogByNameWithTAByResource</span></span>
 ```
 Set-AzNetworkWatcherConfigFlowLog -NetworkWatcherName <String> -ResourceGroupName <String>
  -TargetResourceId <String> -EnableFlowLog <Boolean> -StorageAccountId <String> [-EnableRetention <Boolean>]
@@ -55,7 +55,7 @@ Set-AzNetworkWatcherConfigFlowLog -NetworkWatcherName <String> -ResourceGroupNam
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="7cb35-109">SetFlowlogByNameWithTAByDetails</span><span class="sxs-lookup"><span data-stu-id="7cb35-109">SetFlowlogByNameWithTAByDetails</span></span>
+### <span data-ttu-id="0c9f0-109">SetFlowlogByNameWithTAByDetails</span><span class="sxs-lookup"><span data-stu-id="0c9f0-109">SetFlowlogByNameWithTAByDetails</span></span>
 ```
 Set-AzNetworkWatcherConfigFlowLog -NetworkWatcherName <String> -ResourceGroupName <String>
  -TargetResourceId <String> -EnableFlowLog <Boolean> -StorageAccountId <String> [-EnableRetention <Boolean>]
@@ -65,7 +65,7 @@ Set-AzNetworkWatcherConfigFlowLog -NetworkWatcherName <String> -ResourceGroupNam
  [<CommonParameters>]
 ```
 
-### <span data-ttu-id="7cb35-110">SetFlowlogByNameWithoutTA</span><span class="sxs-lookup"><span data-stu-id="7cb35-110">SetFlowlogByNameWithoutTA</span></span>
+### <span data-ttu-id="0c9f0-110">SetFlowlogByNameWithoutTA</span><span class="sxs-lookup"><span data-stu-id="0c9f0-110">SetFlowlogByNameWithoutTA</span></span>
 ```
 Set-AzNetworkWatcherConfigFlowLog -NetworkWatcherName <String> -ResourceGroupName <String>
  -TargetResourceId <String> -EnableFlowLog <Boolean> -StorageAccountId <String> [-EnableRetention <Boolean>]
@@ -73,7 +73,7 @@ Set-AzNetworkWatcherConfigFlowLog -NetworkWatcherName <String> -ResourceGroupNam
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="7cb35-111">SetFlowlogByLocationWithTAByResource</span><span class="sxs-lookup"><span data-stu-id="7cb35-111">SetFlowlogByLocationWithTAByResource</span></span>
+### <span data-ttu-id="0c9f0-111">SetFlowlogByLocationWithTAByResource</span><span class="sxs-lookup"><span data-stu-id="0c9f0-111">SetFlowlogByLocationWithTAByResource</span></span>
 ```
 Set-AzNetworkWatcherConfigFlowLog -Location <String> -TargetResourceId <String> -EnableFlowLog <Boolean>
  -StorageAccountId <String> [-EnableRetention <Boolean>] [-RetentionInDays <Int32>] [-FormatType <String>]
@@ -82,7 +82,7 @@ Set-AzNetworkWatcherConfigFlowLog -Location <String> -TargetResourceId <String> 
  [<CommonParameters>]
 ```
 
-### <span data-ttu-id="7cb35-112">SetFlowlogByLocationWithTAByDetails</span><span class="sxs-lookup"><span data-stu-id="7cb35-112">SetFlowlogByLocationWithTAByDetails</span></span>
+### <span data-ttu-id="0c9f0-112">SetFlowlogByLocationWithTAByDetails</span><span class="sxs-lookup"><span data-stu-id="0c9f0-112">SetFlowlogByLocationWithTAByDetails</span></span>
 ```
 Set-AzNetworkWatcherConfigFlowLog -Location <String> -TargetResourceId <String> -EnableFlowLog <Boolean>
  -StorageAccountId <String> [-EnableRetention <Boolean>] [-RetentionInDays <Int32>] [-FormatType <String>]
@@ -91,7 +91,7 @@ Set-AzNetworkWatcherConfigFlowLog -Location <String> -TargetResourceId <String> 
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="7cb35-113">SetFlowlogByLocationWithoutTA</span><span class="sxs-lookup"><span data-stu-id="7cb35-113">SetFlowlogByLocationWithoutTA</span></span>
+### <span data-ttu-id="0c9f0-113">SetFlowlogByLocationWithoutTA</span><span class="sxs-lookup"><span data-stu-id="0c9f0-113">SetFlowlogByLocationWithoutTA</span></span>
 ```
 Set-AzNetworkWatcherConfigFlowLog -Location <String> -TargetResourceId <String> -EnableFlowLog <Boolean>
  -StorageAccountId <String> [-EnableRetention <Boolean>] [-RetentionInDays <Int32>] [-FormatType <String>]
@@ -99,12 +99,12 @@ Set-AzNetworkWatcherConfigFlowLog -Location <String> -TargetResourceId <String> 
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="7cb35-114">說明</span><span class="sxs-lookup"><span data-stu-id="7cb35-114">DESCRIPTION</span></span>
-<span data-ttu-id="7cb35-115">Set-AzNetworkWatcherConfigFlowLog 會配置目標資源的流程記錄。</span><span class="sxs-lookup"><span data-stu-id="7cb35-115">The Set-AzNetworkWatcherConfigFlowLog configures flow logging for a target resource.</span></span> <span data-ttu-id="7cb35-116">要設定的屬性包括：是否針對提供的資源啟用流程記錄、已設定的儲存空間帳戶來傳送記錄、流程記錄格式，以及記錄的保留原則。</span><span class="sxs-lookup"><span data-stu-id="7cb35-116">Properties to configure include: whether or not flow logging is enabled for the resource provided, the configured storage account to send logs, the flow logging format, and the retention policy for the logs.</span></span> <span data-ttu-id="7cb35-117">目前支援資料流程記錄的網路安全性群組。</span><span class="sxs-lookup"><span data-stu-id="7cb35-117">Currently Network Security Groups are supported for flow logging.</span></span> 
+## <span data-ttu-id="0c9f0-114">描述</span><span class="sxs-lookup"><span data-stu-id="0c9f0-114">DESCRIPTION</span></span>
+<span data-ttu-id="0c9f0-115">此Set-AzNetworkWatcherConfigFlowLog設定目標資源的流量記錄。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-115">The Set-AzNetworkWatcherConfigFlowLog configures flow logging for a target resource.</span></span> <span data-ttu-id="0c9f0-116">要設定的屬性包括：是否針對提供的資源啟用流程記錄、設定儲存帳戶以傳送記錄、流程記錄格式，以及記錄保留原則。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-116">Properties to configure include: whether or not flow logging is enabled for the resource provided, the configured storage account to send logs, the flow logging format, and the retention policy for the logs.</span></span> <span data-ttu-id="0c9f0-117">目前網路安全性群組支援流程記錄。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-117">Currently Network Security Groups are supported for flow logging.</span></span> 
 
-## <span data-ttu-id="7cb35-118">示例</span><span class="sxs-lookup"><span data-stu-id="7cb35-118">EXAMPLES</span></span>
+## <span data-ttu-id="0c9f0-118">例子</span><span class="sxs-lookup"><span data-stu-id="0c9f0-118">EXAMPLES</span></span>
 
-### <span data-ttu-id="7cb35-119">範例1：針對指定的 NSG 設定流程記錄</span><span class="sxs-lookup"><span data-stu-id="7cb35-119">Example 1: Configure Flow Logging for a Specified NSG</span></span>
+### <span data-ttu-id="0c9f0-119">範例 1：為指定的 NSG 設定流程記錄</span><span class="sxs-lookup"><span data-stu-id="0c9f0-119">Example 1: Configure Flow Logging for a Specified NSG</span></span>
 ```
 PS C:\> $NW = Get-AzNetworkWatcher -ResourceGroupName NetworkWatcherRg -Name NetworkWatcher_westcentralus
 PS C:\> $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName NSGRG -Name appNSG
@@ -126,9 +126,9 @@ Format           : {
                    }
 ```
 
-<span data-ttu-id="7cb35-120">在這個範例中，我們會設定網路安全性群組的流程記錄狀態。</span><span class="sxs-lookup"><span data-stu-id="7cb35-120">In this example we configure flow logging status for a Network Security Group.</span></span> <span data-ttu-id="7cb35-121">在回應中，我們會看到指定的 NSG 已啟用流程記錄、預設格式，且未設定保留原則。</span><span class="sxs-lookup"><span data-stu-id="7cb35-121">In the response, we see the specified NSG has flow logging enabled, default format, and no retention policy set.</span></span>
+<span data-ttu-id="0c9f0-120">在此範例中，我們設定網路安全性群組的流量記錄狀態。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-120">In this example we configure flow logging status for a Network Security Group.</span></span> <span data-ttu-id="0c9f0-121">在回應中，我們會看到指定的 NSG 已啟用流程記錄、預設格式，且未設定保留原則。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-121">In the response, we see the specified NSG has flow logging enabled, default format, and no retention policy set.</span></span>
 
-### <span data-ttu-id="7cb35-122">範例2：針對指定的 NSG 設定流程記錄，並將 [流程] 記錄的版本設定為2。</span><span class="sxs-lookup"><span data-stu-id="7cb35-122">Example 2: Configure Flow Logging for a Specified NSG and set the version of flow logging to 2.</span></span>
+### <span data-ttu-id="0c9f0-122">範例 2：為指定的 NSG 設定流程記錄，並設定流程記錄的版本為 2。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-122">Example 2: Configure Flow Logging for a Specified NSG and set the version of flow logging to 2.</span></span>
 ```
 PS C:\> $NW = Get-AzNetworkWatcher -ResourceGroupName NetworkWatcherRg -Name NetworkWatcher_westcentralus
 PS C:\> $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName NSGRG -Name appNSG
@@ -150,9 +150,9 @@ Format           : {
                    }
 ```
 
-<span data-ttu-id="7cb35-123">在這個範例中，我們會使用指定的版本2記錄，在網路安全性群組 (NSG) 上設定流程記錄。</span><span class="sxs-lookup"><span data-stu-id="7cb35-123">In this example, we configure flow logging on a Network Security Group (NSG) with version 2 logs specified.</span></span> <span data-ttu-id="7cb35-124">在回應中，我們會看到指定的 NSG 已啟用流程記錄、設定格式，且未設定保留原則。</span><span class="sxs-lookup"><span data-stu-id="7cb35-124">In the response, we see the specified NSG has flow logging enabled, the format is set, and there is no retention policy configured.</span></span> <span data-ttu-id="7cb35-125">如果區域不支援您指定的版本，網路觀察程式將會在區域中寫入預設支援的版本。</span><span class="sxs-lookup"><span data-stu-id="7cb35-125">If the region does not support version you specified, Network Watcher will write the default supported version in the region.</span></span>
+<span data-ttu-id="0c9f0-123">在此範例中，我們在已指定版本 2 記錄 (NSG) 組設定流程記錄。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-123">In this example, we configure flow logging on a Network Security Group (NSG) with version 2 logs specified.</span></span> <span data-ttu-id="0c9f0-124">在回應中，我們會看到指定的 NSG 已啟用流程記錄、已設定格式，而且未設定保留原則。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-124">In the response, we see the specified NSG has flow logging enabled, the format is set, and there is no retention policy configured.</span></span> <span data-ttu-id="0c9f0-125">如果地區不支援您指定的版本，Network Watcher 會撰寫該區域中預設支援的版本。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-125">If the region does not support version you specified, Network Watcher will write the default supported version in the region.</span></span>
 
-### <span data-ttu-id="7cb35-126">範例3：針對指定的 NSG 設定流程記錄和流量分析</span><span class="sxs-lookup"><span data-stu-id="7cb35-126">Example 3: Configure Flow Logging and Traffic Analytics for a Specified NSG</span></span>
+### <span data-ttu-id="0c9f0-126">範例 3：為指定的 NSG 設定流程記錄與流量分析</span><span class="sxs-lookup"><span data-stu-id="0c9f0-126">Example 3: Configure Flow Logging and Traffic Analytics for a Specified NSG</span></span>
 ```
 PS C:\> $NW = Get-AzNetworkWatcher -ResourceGroupName NetworkWatcherRg -Name NetworkWatcher_westcentralus
 PS C:\> $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName NSGRG -Name appNSG
@@ -184,9 +184,9 @@ FlowAnalyticsConfiguration : {
           }
 ```
 
-<span data-ttu-id="7cb35-127">在這個範例中，我們會為網路安全群組設定流程記錄狀態和流量分析。</span><span class="sxs-lookup"><span data-stu-id="7cb35-127">In this example we configure flow logging status and Traffic Analytics for a Network Security Group.</span></span> <span data-ttu-id="7cb35-128">在回應中，我們會看到指定的 NSG 已啟用流程記錄和流量分析、預設格式以及沒有設定保留原則。</span><span class="sxs-lookup"><span data-stu-id="7cb35-128">In the response, we see the specified NSG has flow logging and Traffic Analytics enabled, default format, and no retention policy set.</span></span>
+<span data-ttu-id="0c9f0-127">在此範例中，我們針對網路安全性群組設定流程記錄狀態和流量分析。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-127">In this example we configure flow logging status and Traffic Analytics for a Network Security Group.</span></span> <span data-ttu-id="0c9f0-128">在回應中，我們會看到指定的 NSG 已啟用流程記錄與流量分析、預設格式，且未設定保留原則。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-128">In the response, we see the specified NSG has flow logging and Traffic Analytics enabled, default format, and no retention policy set.</span></span>
 
-### <span data-ttu-id="7cb35-129">範例4：針對特定的 NSG 停用流量分析，並設定流量分析</span><span class="sxs-lookup"><span data-stu-id="7cb35-129">Example 4: Disable Traffic Analytics for a Specified NSG with Flow Logging and Traffic Analytics configured</span></span>
+### <span data-ttu-id="0c9f0-129">範例 4：停用指定 NSG 的流量分析，並已進行流程記錄與流量分析</span><span class="sxs-lookup"><span data-stu-id="0c9f0-129">Example 4: Disable Traffic Analytics for a Specified NSG with Flow Logging and Traffic Analytics configured</span></span>
 ```
 PS C:\> $NW = Get-AzNetworkWatcher -ResourceGroupName NetworkWatcherRg -Name NetworkWatcher_westcentralus
 PS C:\> $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName NSGRG -Name appNSG
@@ -219,12 +219,12 @@ FlowAnalyticsConfiguration : {
           }
 ```
 
-<span data-ttu-id="7cb35-130">在這個範例中，我們會停用 [網路安全性群組] 的流量分析，此群組已設定了較舊的流量記錄和流量分析。</span><span class="sxs-lookup"><span data-stu-id="7cb35-130">In this example we disable Traffic Analytics for a Network Security Group which has flow logging and Traffic Analytics configured earlier.</span></span> <span data-ttu-id="7cb35-131">在回應中，我們會看到指定的 NSG 已啟用流程記錄，但流量分析卻停用了。</span><span class="sxs-lookup"><span data-stu-id="7cb35-131">In the response, we see the specified NSG has flow logging enabled but Traffic Analytics disabled.</span></span>
+<span data-ttu-id="0c9f0-130">在此範例中，我們針對先前已進行流程記錄與流量分析的網路安全性群組停用流量分析。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-130">In this example we disable Traffic Analytics for a Network Security Group which has flow logging and Traffic Analytics configured earlier.</span></span> <span data-ttu-id="0c9f0-131">在回應中，我們會看到指定的 NSG 已啟用流程記錄，但流量分析已停用。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-131">In the response, we see the specified NSG has flow logging enabled but Traffic Analytics disabled.</span></span>
 
-## <span data-ttu-id="7cb35-132">參數</span><span class="sxs-lookup"><span data-stu-id="7cb35-132">PARAMETERS</span></span>
+## <span data-ttu-id="0c9f0-132">參數</span><span class="sxs-lookup"><span data-stu-id="0c9f0-132">PARAMETERS</span></span>
 
-### <span data-ttu-id="7cb35-133">-AsJob</span><span class="sxs-lookup"><span data-stu-id="7cb35-133">-AsJob</span></span>
-<span data-ttu-id="7cb35-134">在背景中執行 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="7cb35-134">Run cmdlet in the background</span></span>
+### <span data-ttu-id="0c9f0-133">-AsJob</span><span class="sxs-lookup"><span data-stu-id="0c9f0-133">-AsJob</span></span>
+<span data-ttu-id="0c9f0-134">在背景中執行 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="0c9f0-134">Run cmdlet in the background</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -238,8 +238,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7cb35-135">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="7cb35-135">-DefaultProfile</span></span>
-<span data-ttu-id="7cb35-136">用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。</span><span class="sxs-lookup"><span data-stu-id="7cb35-136">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="0c9f0-135">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="0c9f0-135">-DefaultProfile</span></span>
+<span data-ttu-id="0c9f0-136">用於與 azure 通訊的認證、帳戶、租使用者和訂閱。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-136">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -253,8 +253,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7cb35-137">-EnableFlowLog</span><span class="sxs-lookup"><span data-stu-id="7cb35-137">-EnableFlowLog</span></span>
-<span data-ttu-id="7cb35-138">[標記] 可啟用/停用流程記錄。</span><span class="sxs-lookup"><span data-stu-id="7cb35-138">Flag to enable/disable flow logging.</span></span>
+### <span data-ttu-id="0c9f0-137">-EnableFlowLog</span><span class="sxs-lookup"><span data-stu-id="0c9f0-137">-EnableFlowLog</span></span>
+<span data-ttu-id="0c9f0-138">標出以啟用/停用流程記錄。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-138">Flag to enable/disable flow logging.</span></span>
 
 ```yaml
 Type: System.Boolean
@@ -268,8 +268,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7cb35-139">-EnableRetention</span><span class="sxs-lookup"><span data-stu-id="7cb35-139">-EnableRetention</span></span>
-<span data-ttu-id="7cb35-140">[標記] 可啟用/停用保留。</span><span class="sxs-lookup"><span data-stu-id="7cb35-140">Flag to enable/disable retention.</span></span>
+### <span data-ttu-id="0c9f0-139">-EnableRetention</span><span class="sxs-lookup"><span data-stu-id="0c9f0-139">-EnableRetention</span></span>
+<span data-ttu-id="0c9f0-140">標出以啟用/停用保留。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-140">Flag to enable/disable retention.</span></span>
 
 ```yaml
 Type: System.Boolean
@@ -283,8 +283,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7cb35-141">-EnableTrafficAnalytics</span><span class="sxs-lookup"><span data-stu-id="7cb35-141">-EnableTrafficAnalytics</span></span>
-<span data-ttu-id="7cb35-142">[標記] 可啟用/停用保留。</span><span class="sxs-lookup"><span data-stu-id="7cb35-142">Flag to enable/disable retention.</span></span>
+### <span data-ttu-id="0c9f0-141">-EnableTrafficAnalytics</span><span class="sxs-lookup"><span data-stu-id="0c9f0-141">-EnableTrafficAnalytics</span></span>
+<span data-ttu-id="0c9f0-142">標出以啟用/停用保留。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-142">Flag to enable/disable retention.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -298,8 +298,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7cb35-143">-FormatType</span><span class="sxs-lookup"><span data-stu-id="7cb35-143">-FormatType</span></span>
-<span data-ttu-id="7cb35-144">資料流程記錄格式的類型。</span><span class="sxs-lookup"><span data-stu-id="7cb35-144">Type of flow log format.</span></span>
+### <span data-ttu-id="0c9f0-143">-FormatType</span><span class="sxs-lookup"><span data-stu-id="0c9f0-143">-FormatType</span></span>
+<span data-ttu-id="0c9f0-144">流程記錄格式類型。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-144">Type of flow log format.</span></span>
 
 ```yaml
 Type: System.String
@@ -313,8 +313,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7cb35-145">-FormatVersion</span><span class="sxs-lookup"><span data-stu-id="7cb35-145">-FormatVersion</span></span>
-<span data-ttu-id="7cb35-146">資料流程記錄格式的版本。</span><span class="sxs-lookup"><span data-stu-id="7cb35-146">Version of flow log format.</span></span>
+### <span data-ttu-id="0c9f0-145">-FormatVersion</span><span class="sxs-lookup"><span data-stu-id="0c9f0-145">-FormatVersion</span></span>
+<span data-ttu-id="0c9f0-146">流程記錄格式的版本。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-146">Version of flow log format.</span></span>
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -328,8 +328,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7cb35-147">-位置</span><span class="sxs-lookup"><span data-stu-id="7cb35-147">-Location</span></span>
-<span data-ttu-id="7cb35-148">網路觀察程式的位置。</span><span class="sxs-lookup"><span data-stu-id="7cb35-148">Location of the network watcher.</span></span>
+### <span data-ttu-id="0c9f0-147">-位置</span><span class="sxs-lookup"><span data-stu-id="0c9f0-147">-Location</span></span>
+<span data-ttu-id="0c9f0-148">網路監視者的位置。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-148">Location of the network watcher.</span></span>
 
 ```yaml
 Type: System.String
@@ -343,8 +343,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7cb35-149">-NetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="7cb35-149">-NetworkWatcher</span></span>
-<span data-ttu-id="7cb35-150">網路觀察程式資源。</span><span class="sxs-lookup"><span data-stu-id="7cb35-150">The network watcher resource.</span></span>
+### <span data-ttu-id="0c9f0-149">-NetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="0c9f0-149">-NetworkWatcher</span></span>
+<span data-ttu-id="0c9f0-150">網路監視程式資源。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-150">The network watcher resource.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
@@ -358,8 +358,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7cb35-151">-NetworkWatcherName</span><span class="sxs-lookup"><span data-stu-id="7cb35-151">-NetworkWatcherName</span></span>
-<span data-ttu-id="7cb35-152">網路觀察程式的名稱。</span><span class="sxs-lookup"><span data-stu-id="7cb35-152">The name of network watcher.</span></span>
+### <span data-ttu-id="0c9f0-151">-NetworkWatcherName</span><span class="sxs-lookup"><span data-stu-id="0c9f0-151">-NetworkWatcherName</span></span>
+<span data-ttu-id="0c9f0-152">網路監視者的名稱。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-152">The name of network watcher.</span></span>
 
 ```yaml
 Type: System.String
@@ -373,8 +373,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7cb35-153">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="7cb35-153">-ResourceGroupName</span></span>
-<span data-ttu-id="7cb35-154">網路監視程式資源群組的名稱。</span><span class="sxs-lookup"><span data-stu-id="7cb35-154">The name of the network watcher resource group.</span></span>
+### <span data-ttu-id="0c9f0-153">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="0c9f0-153">-ResourceGroupName</span></span>
+<span data-ttu-id="0c9f0-154">網路監視者資源組的名稱。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-154">The name of the network watcher resource group.</span></span>
 
 ```yaml
 Type: System.String
@@ -388,8 +388,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7cb35-155">-RetentionInDays</span><span class="sxs-lookup"><span data-stu-id="7cb35-155">-RetentionInDays</span></span>
-<span data-ttu-id="7cb35-156">要保留資料流程記錄記錄的天數。</span><span class="sxs-lookup"><span data-stu-id="7cb35-156">Number of days to retain flow log records.</span></span>
+### <span data-ttu-id="0c9f0-155">-RetentionInDays</span><span class="sxs-lookup"><span data-stu-id="0c9f0-155">-RetentionInDays</span></span>
+<span data-ttu-id="0c9f0-156">保留流程記錄記錄的天數。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-156">Number of days to retain flow log records.</span></span>
 
 ```yaml
 Type: System.Int32
@@ -403,8 +403,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7cb35-157">-StorageAccountId</span><span class="sxs-lookup"><span data-stu-id="7cb35-157">-StorageAccountId</span></span>
-<span data-ttu-id="7cb35-158">用來儲存流程記錄的儲存空間帳戶 ID。</span><span class="sxs-lookup"><span data-stu-id="7cb35-158">ID of the storage account which is used to store the flow log.</span></span>
+### <span data-ttu-id="0c9f0-157">-StorageAccountId</span><span class="sxs-lookup"><span data-stu-id="0c9f0-157">-StorageAccountId</span></span>
+<span data-ttu-id="0c9f0-158">用來儲存流程記錄表的儲存帳戶識別碼。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-158">ID of the storage account which is used to store the flow log.</span></span>
 
 ```yaml
 Type: System.String
@@ -418,8 +418,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7cb35-159">-TargetResourceId</span><span class="sxs-lookup"><span data-stu-id="7cb35-159">-TargetResourceId</span></span>
-<span data-ttu-id="7cb35-160">目標資源識別碼。</span><span class="sxs-lookup"><span data-stu-id="7cb35-160">The target resource ID.</span></span>
+### <span data-ttu-id="0c9f0-159">-TargetResourceId</span><span class="sxs-lookup"><span data-stu-id="0c9f0-159">-TargetResourceId</span></span>
+<span data-ttu-id="0c9f0-160">目標資源識別碼。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-160">The target resource ID.</span></span>
 
 ```yaml
 Type: System.String
@@ -433,8 +433,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7cb35-161">-TrafficAnalyticsInterval</span><span class="sxs-lookup"><span data-stu-id="7cb35-161">-TrafficAnalyticsInterval</span></span>
-<span data-ttu-id="7cb35-162">取得或設定間隔 (（分鐘）) 這會決定 TA 服務執行流程分析的頻率。</span><span class="sxs-lookup"><span data-stu-id="7cb35-162">Gets or sets the interval (in minutes) which would decide how frequently TA service should do flow analytics.</span></span>
+### <span data-ttu-id="0c9f0-161">-TrafficAnalyticsInterval</span><span class="sxs-lookup"><span data-stu-id="0c9f0-161">-TrafficAnalyticsInterval</span></span>
+<span data-ttu-id="0c9f0-162">以分鐘為單位 (或設定時間間隔) 決定 TA 服務應該執行流程分析的頻率。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-162">Gets or sets the interval (in minutes) which would decide how frequently TA service should do flow analytics.</span></span>
 
 ```yaml
 Type: System.Int32
@@ -448,8 +448,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7cb35-163">-工作區</span><span class="sxs-lookup"><span data-stu-id="7cb35-163">-Workspace</span></span>
-<span data-ttu-id="7cb35-164">用來儲存流量分析資料的 WS 物件。</span><span class="sxs-lookup"><span data-stu-id="7cb35-164">The WS object which is used to store the traffic analytics data.</span></span>
+### <span data-ttu-id="0c9f0-163">-工作區</span><span class="sxs-lookup"><span data-stu-id="0c9f0-163">-Workspace</span></span>
+<span data-ttu-id="0c9f0-164">用來儲存流量分析資料的 WS 物件。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-164">The WS object which is used to store the traffic analytics data.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Management.Internal.Network.Common.IOperationalInsightWorkspace
@@ -475,8 +475,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7cb35-165">-WorkspaceGUID</span><span class="sxs-lookup"><span data-stu-id="7cb35-165">-WorkspaceGUID</span></span>
-<span data-ttu-id="7cb35-166">用來儲存流量分析資料之 WS 的 GUID。</span><span class="sxs-lookup"><span data-stu-id="7cb35-166">GUID of the WS which is used to store the traffic analytics data.</span></span>
+### <span data-ttu-id="0c9f0-165">-WorkspaceGUID</span><span class="sxs-lookup"><span data-stu-id="0c9f0-165">-WorkspaceGUID</span></span>
+<span data-ttu-id="0c9f0-166">用來儲存流量分析資料的 WS GUID。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-166">GUID of the WS which is used to store the traffic analytics data.</span></span>
 
 ```yaml
 Type: System.String
@@ -490,8 +490,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7cb35-167">-WorkspaceLocation</span><span class="sxs-lookup"><span data-stu-id="7cb35-167">-WorkspaceLocation</span></span>
-<span data-ttu-id="7cb35-168">WS 的 Azure 地區，用來儲存流量分析資料。</span><span class="sxs-lookup"><span data-stu-id="7cb35-168">Azure Region of the WS which is used to store the traffic analytics data.</span></span>
+### <span data-ttu-id="0c9f0-167">-WorkspaceLocation</span><span class="sxs-lookup"><span data-stu-id="0c9f0-167">-WorkspaceLocation</span></span>
+<span data-ttu-id="0c9f0-168">用來儲存流量分析資料的 WS Azure 區域。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-168">Azure Region of the WS which is used to store the traffic analytics data.</span></span>
 
 ```yaml
 Type: System.String
@@ -505,8 +505,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7cb35-169">-WorkspaceResourceId</span><span class="sxs-lookup"><span data-stu-id="7cb35-169">-WorkspaceResourceId</span></span>
-<span data-ttu-id="7cb35-170">用來儲存流量分析資料的 WS 訂閱。</span><span class="sxs-lookup"><span data-stu-id="7cb35-170">Subscription of the WS which is used to store the traffic analytics data.</span></span>
+### <span data-ttu-id="0c9f0-169">-WorkspaceResourceId</span><span class="sxs-lookup"><span data-stu-id="0c9f0-169">-WorkspaceResourceId</span></span>
+<span data-ttu-id="0c9f0-170">用來儲存流量分析資料的 WS 訂閱。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-170">Subscription of the WS which is used to store the traffic analytics data.</span></span>
 
 ```yaml
 Type: System.String
@@ -520,8 +520,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7cb35-171">-確認</span><span class="sxs-lookup"><span data-stu-id="7cb35-171">-Confirm</span></span>
-<span data-ttu-id="7cb35-172">在執行 Cmdlet 之前提示您進行確認。</span><span class="sxs-lookup"><span data-stu-id="7cb35-172">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="0c9f0-171">-確認</span><span class="sxs-lookup"><span data-stu-id="0c9f0-171">-Confirm</span></span>
+<span data-ttu-id="0c9f0-172">執行 Cmdlet 之前，提示您確認。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-172">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -535,8 +535,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7cb35-173">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="7cb35-173">-WhatIf</span></span>
-<span data-ttu-id="7cb35-174">顯示在執行 Cmdlet 時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="7cb35-174">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="7cb35-175">未執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="7cb35-175">The cmdlet is not run.</span></span>
+### <span data-ttu-id="0c9f0-173">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="0c9f0-173">-WhatIf</span></span>
+<span data-ttu-id="0c9f0-174">顯示 Cmdlet 執行時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-174">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="0c9f0-175">不會執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-175">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -550,82 +550,82 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7cb35-176">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="7cb35-176">CommonParameters</span></span>
-<span data-ttu-id="7cb35-177">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="7cb35-177">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="7cb35-178">如需詳細資訊，請參閱 about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216) 。</span><span class="sxs-lookup"><span data-stu-id="7cb35-178">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="0c9f0-176">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="0c9f0-176">CommonParameters</span></span>
+<span data-ttu-id="0c9f0-177">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-177">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="0c9f0-178">詳細資訊請參閱 http://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。</span><span class="sxs-lookup"><span data-stu-id="0c9f0-178">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="7cb35-179">輸入</span><span class="sxs-lookup"><span data-stu-id="7cb35-179">INPUTS</span></span>
+## <span data-ttu-id="0c9f0-179">輸入</span><span class="sxs-lookup"><span data-stu-id="0c9f0-179">INPUTS</span></span>
 
-### <span data-ttu-id="7cb35-180">PSNetworkWatcher 中的 [.]</span><span class="sxs-lookup"><span data-stu-id="7cb35-180">Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher</span></span>
+### <span data-ttu-id="0c9f0-180">Microsoft.Azure.Commands.Network.models.PSNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="0c9f0-180">Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher</span></span>
 
-### <span data-ttu-id="7cb35-181">System.object</span><span class="sxs-lookup"><span data-stu-id="7cb35-181">System.String</span></span>
+### <span data-ttu-id="0c9f0-181">System.String</span><span class="sxs-lookup"><span data-stu-id="0c9f0-181">System.String</span></span>
 
-### <span data-ttu-id="7cb35-182">System.object</span><span class="sxs-lookup"><span data-stu-id="7cb35-182">System.Boolean</span></span>
+### <span data-ttu-id="0c9f0-182">System.Boolean</span><span class="sxs-lookup"><span data-stu-id="0c9f0-182">System.Boolean</span></span>
 
-### <span data-ttu-id="7cb35-183">System.object</span><span class="sxs-lookup"><span data-stu-id="7cb35-183">System.Int32</span></span>
+### <span data-ttu-id="0c9f0-183">System.Int32</span><span class="sxs-lookup"><span data-stu-id="0c9f0-183">System.Int32</span></span>
 
-### <span data-ttu-id="7cb35-184">"CoreLib" 1 ["System.object，System.object，版本 = 4.0.0.0，Culture = 中性，PublicKeyToken = 7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="7cb35-184">System.Nullable\`1[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
+### <span data-ttu-id="0c9f0-184">System.Nullable'1[[System.Int32， System.Private.CoreLib， Version=4.0.0.0， Culture=neutral， PublicKeyToken=7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="0c9f0-184">System.Nullable\`1[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
 
-### <span data-ttu-id="7cb35-185">IOperationalInsightWorkspace 中的 [Common.]</span><span class="sxs-lookup"><span data-stu-id="7cb35-185">Microsoft.Azure.Management.Internal.Network.Common.IOperationalInsightWorkspace</span></span>
+### <span data-ttu-id="0c9f0-185">Microsoft.Azure.management.Internal.Network.Common.IOperationalInsightWorkspace</span><span class="sxs-lookup"><span data-stu-id="0c9f0-185">Microsoft.Azure.Management.Internal.Network.Common.IOperationalInsightWorkspace</span></span>
 
-## <span data-ttu-id="7cb35-186">輸出</span><span class="sxs-lookup"><span data-stu-id="7cb35-186">OUTPUTS</span></span>
+## <span data-ttu-id="0c9f0-186">輸出</span><span class="sxs-lookup"><span data-stu-id="0c9f0-186">OUTPUTS</span></span>
 
-### <span data-ttu-id="7cb35-187">PSFlowLog 中的 [.]</span><span class="sxs-lookup"><span data-stu-id="7cb35-187">Microsoft.Azure.Commands.Network.Models.PSFlowLog</span></span>
+### <span data-ttu-id="0c9f0-187">Microsoft.Azure.Commands.network.models.PSFlowLog</span><span class="sxs-lookup"><span data-stu-id="0c9f0-187">Microsoft.Azure.Commands.Network.Models.PSFlowLog</span></span>
 
-## <span data-ttu-id="7cb35-188">筆記</span><span class="sxs-lookup"><span data-stu-id="7cb35-188">NOTES</span></span>
-<span data-ttu-id="7cb35-189">關鍵字： azure，azurerm，arm，資源，管理，管理員，網路，網路，觀察程式，流程，記錄，flowlog，記錄</span><span class="sxs-lookup"><span data-stu-id="7cb35-189">Keywords: azure, azurerm, arm, resource, management, manager, network, networking, watcher, flow, logs, flowlog, logging</span></span>
+## <span data-ttu-id="0c9f0-188">筆記</span><span class="sxs-lookup"><span data-stu-id="0c9f0-188">NOTES</span></span>
+<span data-ttu-id="0c9f0-189">關鍵字：azure、azurerm、arm、resource、management、manager、network、network、watcher、flow、logs、flowlog、logging</span><span class="sxs-lookup"><span data-stu-id="0c9f0-189">Keywords: azure, azurerm, arm, resource, management, manager, network, networking, watcher, flow, logs, flowlog, logging</span></span>
 
-## <span data-ttu-id="7cb35-190">相關連結</span><span class="sxs-lookup"><span data-stu-id="7cb35-190">RELATED LINKS</span></span>
+## <span data-ttu-id="0c9f0-190">相關連結</span><span class="sxs-lookup"><span data-stu-id="0c9f0-190">RELATED LINKS</span></span>
 
-[<span data-ttu-id="7cb35-191">新-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="7cb35-191">New-AzNetworkWatcher</span></span>](./New-AzNetworkWatcher.md)
+[<span data-ttu-id="0c9f0-191">New-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="0c9f0-191">New-AzNetworkWatcher</span></span>](./New-AzNetworkWatcher.md)
 
-[<span data-ttu-id="7cb35-192">AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="7cb35-192">Get-AzNetworkWatcher</span></span>](./Get-AzNetworkWatcher.md)
+[<span data-ttu-id="0c9f0-192">Get-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="0c9f0-192">Get-AzNetworkWatcher</span></span>](./Get-AzNetworkWatcher.md)
 
-[<span data-ttu-id="7cb35-193">移除-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="7cb35-193">Remove-AzNetworkWatcher</span></span>](./Remove-AzNetworkWatcher.md)
+[<span data-ttu-id="0c9f0-193">Remove-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="0c9f0-193">Remove-AzNetworkWatcher</span></span>](./Remove-AzNetworkWatcher.md)
 
-[<span data-ttu-id="7cb35-194">AzNetworkWatcherNextHop</span><span class="sxs-lookup"><span data-stu-id="7cb35-194">Get-AzNetworkWatcherNextHop</span></span>](./Get-AzNetworkWatcherNextHop.md)
+[<span data-ttu-id="0c9f0-194">Get-AzNetworkWatcherNextHop</span><span class="sxs-lookup"><span data-stu-id="0c9f0-194">Get-AzNetworkWatcherNextHop</span></span>](./Get-AzNetworkWatcherNextHop.md)
 
-[<span data-ttu-id="7cb35-195">AzNetworkWatcherSecurityGroupView</span><span class="sxs-lookup"><span data-stu-id="7cb35-195">Get-AzNetworkWatcherSecurityGroupView</span></span>](./Get-AzNetworkWatcherSecurityGroupView.md)
+[<span data-ttu-id="0c9f0-195">Get-AzNetworkWatcherSecurityGroupView</span><span class="sxs-lookup"><span data-stu-id="0c9f0-195">Get-AzNetworkWatcherSecurityGroupView</span></span>](./Get-AzNetworkWatcherSecurityGroupView.md)
 
-[<span data-ttu-id="7cb35-196">AzNetworkWatcherTopology</span><span class="sxs-lookup"><span data-stu-id="7cb35-196">Get-AzNetworkWatcherTopology</span></span>](./Get-AzNetworkWatcherTopology.md)
+[<span data-ttu-id="0c9f0-196">Get-AzNetworkWatcherTopwork</span><span class="sxs-lookup"><span data-stu-id="0c9f0-196">Get-AzNetworkWatcherTopology</span></span>](./Get-AzNetworkWatcherTopology.md)
 
-[<span data-ttu-id="7cb35-197">開始-AzNetworkWatcherResourceTroubleshooting</span><span class="sxs-lookup"><span data-stu-id="7cb35-197">Start-AzNetworkWatcherResourceTroubleshooting</span></span>](./Start-AzNetworkWatcherResourceTroubleshooting.md)
+[<span data-ttu-id="0c9f0-197">Start-AzNetworkWatcherResourceTroubleshooting</span><span class="sxs-lookup"><span data-stu-id="0c9f0-197">Start-AzNetworkWatcherResourceTroubleshooting</span></span>](./Start-AzNetworkWatcherResourceTroubleshooting.md)
 
-[<span data-ttu-id="7cb35-198">新-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="7cb35-198">New-AzNetworkWatcherPacketCapture</span></span>](./New-AzNetworkWatcherPacketCapture.md)
+[<span data-ttu-id="0c9f0-198">New-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="0c9f0-198">New-AzNetworkWatcherPacketCapture</span></span>](./New-AzNetworkWatcherPacketCapture.md)
 
-[<span data-ttu-id="7cb35-199">新-AzPacketCaptureFilterConfig</span><span class="sxs-lookup"><span data-stu-id="7cb35-199">New-AzPacketCaptureFilterConfig</span></span>](./New-AzPacketCaptureFilterConfig.md)
+[<span data-ttu-id="0c9f0-199">New-AzPacketCaptureFilterConfig</span><span class="sxs-lookup"><span data-stu-id="0c9f0-199">New-AzPacketCaptureFilterConfig</span></span>](./New-AzPacketCaptureFilterConfig.md)
 
-[<span data-ttu-id="7cb35-200">AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="7cb35-200">Get-AzNetworkWatcherPacketCapture</span></span>](./Get-AzNetworkWatcherPacketCapture.md)
+[<span data-ttu-id="0c9f0-200">Get-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="0c9f0-200">Get-AzNetworkWatcherPacketCapture</span></span>](./Get-AzNetworkWatcherPacketCapture.md)
 
-[<span data-ttu-id="7cb35-201">移除-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="7cb35-201">Remove-AzNetworkWatcherPacketCapture</span></span>](./Remove-AzNetworkWatcherPacketCapture.md)
+[<span data-ttu-id="0c9f0-201">Remove-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="0c9f0-201">Remove-AzNetworkWatcherPacketCapture</span></span>](./Remove-AzNetworkWatcherPacketCapture.md)
 
-[<span data-ttu-id="7cb35-202">停止 AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="7cb35-202">Stop-AzNetworkWatcherPacketCapture</span></span>](./Stop-AzNetworkWatcherPacketCapture.md)
+[<span data-ttu-id="0c9f0-202">Stop-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="0c9f0-202">Stop-AzNetworkWatcherPacketCapture</span></span>](./Stop-AzNetworkWatcherPacketCapture.md)
 
-[<span data-ttu-id="7cb35-203">新-AzNetworkWatcherProtocolConfiguration</span><span class="sxs-lookup"><span data-stu-id="7cb35-203">New-AzNetworkWatcherProtocolConfiguration</span></span>](./New-AzNetworkWatcherProtocolConfiguration.md)
+[<span data-ttu-id="0c9f0-203">New-AzNetworkWatcherProtocolConfiguration</span><span class="sxs-lookup"><span data-stu-id="0c9f0-203">New-AzNetworkWatcherProtocolConfiguration</span></span>](./New-AzNetworkWatcherProtocolConfiguration.md)
 
-[<span data-ttu-id="7cb35-204">Test-AzNetworkWatcherIPFlow</span><span class="sxs-lookup"><span data-stu-id="7cb35-204">Test-AzNetworkWatcherIPFlow</span></span>](./Test-AzNetworkWatcherIPFlow.md)
+[<span data-ttu-id="0c9f0-204">Test-AzNetworkWatcherIPFlow</span><span class="sxs-lookup"><span data-stu-id="0c9f0-204">Test-AzNetworkWatcherIPFlow</span></span>](./Test-AzNetworkWatcherIPFlow.md)
 
-[<span data-ttu-id="7cb35-205">Test-AzNetworkWatcherConnectivity</span><span class="sxs-lookup"><span data-stu-id="7cb35-205">Test-AzNetworkWatcherConnectivity</span></span>](./Test-AzNetworkWatcherConnectivity.md)
+[<span data-ttu-id="0c9f0-205">Test-AzNetworkWatcherConnectivity</span><span class="sxs-lookup"><span data-stu-id="0c9f0-205">Test-AzNetworkWatcherConnectivity</span></span>](./Test-AzNetworkWatcherConnectivity.md)
 
-[<span data-ttu-id="7cb35-206">停止 AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="7cb35-206">Stop-AzNetworkWatcherConnectionMonitor</span></span>](./Stop-AzNetworkWatcherConnectionMonitor.md)
+[<span data-ttu-id="0c9f0-206">Stop-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="0c9f0-206">Stop-AzNetworkWatcherConnectionMonitor</span></span>](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="7cb35-207">開始-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="7cb35-207">Start-AzNetworkWatcherConnectionMonitor</span></span>](./Start-AzNetworkWatcherConnectionMonitor.md)
+[<span data-ttu-id="0c9f0-207">Start-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="0c9f0-207">Start-AzNetworkWatcherConnectionMonitor</span></span>](./Start-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="7cb35-208">Set-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="7cb35-208">Set-AzNetworkWatcherConnectionMonitor</span></span>](./Set-AzNetworkWatcherConnectionMonitor.md)
+[<span data-ttu-id="0c9f0-208">Set-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="0c9f0-208">Set-AzNetworkWatcherConnectionMonitor</span></span>](./Set-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="7cb35-209">Set-AzNetworkWatcherConfigFlowLog</span><span class="sxs-lookup"><span data-stu-id="7cb35-209">Set-AzNetworkWatcherConfigFlowLog</span></span>](./Set-AzNetworkWatcherConfigFlowLog.md)
+[<span data-ttu-id="0c9f0-209">Set-AzNetworkWatcherConfigFlowLog</span><span class="sxs-lookup"><span data-stu-id="0c9f0-209">Set-AzNetworkWatcherConfigFlowLog</span></span>](./Set-AzNetworkWatcherConfigFlowLog.md)
 
-[<span data-ttu-id="7cb35-210">移除-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="7cb35-210">Remove-AzNetworkWatcherConnectionMonitor</span></span>](./Remove-AzNetworkWatcherConnectionMonitor.md)
+[<span data-ttu-id="0c9f0-210">Remove-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="0c9f0-210">Remove-AzNetworkWatcherConnectionMonitor</span></span>](./Remove-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="7cb35-211">新-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="7cb35-211">New-AzNetworkWatcherConnectionMonitor</span></span>](./New-AzNetworkWatcherConnectionMonitor.md)
+[<span data-ttu-id="0c9f0-211">New-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="0c9f0-211">New-AzNetworkWatcherConnectionMonitor</span></span>](./New-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="7cb35-212">AzNetworkWatcherTroubleshootingResult</span><span class="sxs-lookup"><span data-stu-id="7cb35-212">Get-AzNetworkWatcherTroubleshootingResult</span></span>](./Get-AzNetworkWatcherTroubleshootingResult.md)
+[<span data-ttu-id="0c9f0-212">Get-AzNetworkWatcherTroubleshootingResult</span><span class="sxs-lookup"><span data-stu-id="0c9f0-212">Get-AzNetworkWatcherTroubleshootingResult</span></span>](./Get-AzNetworkWatcherTroubleshootingResult.md)
 
-[<span data-ttu-id="7cb35-213">AzNetworkWatcherReachabilityReport</span><span class="sxs-lookup"><span data-stu-id="7cb35-213">Get-AzNetworkWatcherReachabilityReport</span></span>](./Get-AzNetworkWatcherReachabilityReport.md)
+[<span data-ttu-id="0c9f0-213">Get-AzNetworkWatcherReachabilityReport</span><span class="sxs-lookup"><span data-stu-id="0c9f0-213">Get-AzNetworkWatcherReachabilityReport</span></span>](./Get-AzNetworkWatcherReachabilityReport.md)
 
-[<span data-ttu-id="7cb35-214">AzNetworkWatcherReachabilityProvidersList</span><span class="sxs-lookup"><span data-stu-id="7cb35-214">Get-AzNetworkWatcherReachabilityProvidersList</span></span>](./Get-AzNetworkWatcherReachabilityProvidersList.md)
+[<span data-ttu-id="0c9f0-214">Get-AzNetworkWatcherReachabilityProvidersList</span><span class="sxs-lookup"><span data-stu-id="0c9f0-214">Get-AzNetworkWatcherReachabilityProvidersList</span></span>](./Get-AzNetworkWatcherReachabilityProvidersList.md)
 
-[<span data-ttu-id="7cb35-215">AzNetworkWatcherFlowLogStatus</span><span class="sxs-lookup"><span data-stu-id="7cb35-215">Get-AzNetworkWatcherFlowLogStatus</span></span>](./Get-AzNetworkWatcherFlowLogStatus.md)
+[<span data-ttu-id="0c9f0-215">Get-AzNetworkWatcherFlowLogStatus</span><span class="sxs-lookup"><span data-stu-id="0c9f0-215">Get-AzNetworkWatcherFlowLogStatus</span></span>](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[<span data-ttu-id="7cb35-216">AzNetworkWatcherConnectionMonitorReport</span><span class="sxs-lookup"><span data-stu-id="7cb35-216">Get-AzNetworkWatcherConnectionMonitorReport</span></span>](./Get-AzNetworkWatcherConnectionMonitorReport)
+[<span data-ttu-id="0c9f0-216">Get-AzNetworkWatcherConnectionMonitorReport</span><span class="sxs-lookup"><span data-stu-id="0c9f0-216">Get-AzNetworkWatcherConnectionMonitorReport</span></span>](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[<span data-ttu-id="7cb35-217">AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="7cb35-217">Get-AzNetworkWatcherConnectionMonitor</span></span>](./Get-AzNetworkWatcherConnectionMonitor)
+[<span data-ttu-id="0c9f0-217">Get-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="0c9f0-217">Get-AzNetworkWatcherConnectionMonitor</span></span>](./Get-AzNetworkWatcherConnectionMonitor.md)

@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendServiceFabric.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendServiceFabric.md
-ms.openlocfilehash: 9178efa364b7655e0a96f68a81399807435be4d5
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 744889e022301951bbc9ba2895eb5750f85925d0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93614001"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401652"
 ---
-# <span data-ttu-id="bfa49-101">New-AzApiManagementBackendServiceFabric</span><span class="sxs-lookup"><span data-stu-id="bfa49-101">New-AzApiManagementBackendServiceFabric</span></span>
+# <span data-ttu-id="fbf8b-101">New-AzApiManagementBackendServiceFabric</span><span class="sxs-lookup"><span data-stu-id="fbf8b-101">New-AzApiManagementBackendServiceFabric</span></span>
 
-## <span data-ttu-id="bfa49-102">摘要</span><span class="sxs-lookup"><span data-stu-id="bfa49-102">SYNOPSIS</span></span>
-<span data-ttu-id="bfa49-103">建立物件 `PsApiManagementServiceFabric`</span><span class="sxs-lookup"><span data-stu-id="bfa49-103">Creates an object of `PsApiManagementServiceFabric`</span></span>
+## <span data-ttu-id="fbf8b-102">簡介</span><span class="sxs-lookup"><span data-stu-id="fbf8b-102">SYNOPSIS</span></span>
+<span data-ttu-id="fbf8b-103">建立物件 `PsApiManagementServiceFabric`</span><span class="sxs-lookup"><span data-stu-id="fbf8b-103">Creates an object of `PsApiManagementServiceFabric`</span></span>
 
-## <span data-ttu-id="bfa49-104">句法</span><span class="sxs-lookup"><span data-stu-id="bfa49-104">SYNTAX</span></span>
+## <span data-ttu-id="fbf8b-104">語法</span><span class="sxs-lookup"><span data-stu-id="fbf8b-104">SYNTAX</span></span>
 
 ```
 New-AzApiManagementBackendServiceFabric -ManagementEndpoint <String[]> -ClientCertificateThumbprint <String>
@@ -25,13 +25,13 @@ New-AzApiManagementBackendServiceFabric -ManagementEndpoint <String[]> -ClientCe
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="bfa49-105">說明</span><span class="sxs-lookup"><span data-stu-id="bfa49-105">DESCRIPTION</span></span>
+## <span data-ttu-id="fbf8b-105">描述</span><span class="sxs-lookup"><span data-stu-id="fbf8b-105">DESCRIPTION</span></span>
 
-<span data-ttu-id="bfa49-106">**新的-AzApiManagementBackendServiceFabric** Cmdlet `PsApiManagementServiceFabric` 會建立要在 Cmdlet **New-AzApiManagementBackend** 和 **Set AzApiManagementBackend** 中使用的物件。</span><span class="sxs-lookup"><span data-stu-id="bfa49-106">The **New-AzApiManagementBackendServiceFabric** cmdlet creates an object of `PsApiManagementServiceFabric` to be used in cmdlet **New-AzApiManagementBackend** and **Set-AzApiManagementBackend**.</span></span>
+<span data-ttu-id="fbf8b-106">**New-AzApiManagementBackendServiceFabric** Cmdlet 會建立要用於 `PsApiManagementServiceFabric` Cmdlet **New-AzApiManagementBackend** 和 **Set-AzApiManagementBackend** 的物件。</span><span class="sxs-lookup"><span data-stu-id="fbf8b-106">The **New-AzApiManagementBackendServiceFabric** cmdlet creates an object of `PsApiManagementServiceFabric` to be used in cmdlet **New-AzApiManagementBackend** and **Set-AzApiManagementBackend**.</span></span>
 
-## <span data-ttu-id="bfa49-107">示例</span><span class="sxs-lookup"><span data-stu-id="bfa49-107">EXAMPLES</span></span>
+## <span data-ttu-id="fbf8b-107">例子</span><span class="sxs-lookup"><span data-stu-id="fbf8b-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="bfa49-108">範例1：建立後端服務結構 In-Memory 物件</span><span class="sxs-lookup"><span data-stu-id="bfa49-108">Example 1: Create a Backend Service Fabric In-Memory Object</span></span>
+### <span data-ttu-id="fbf8b-108">範例 1：建立後端服務結構In-Memory物件</span><span class="sxs-lookup"><span data-stu-id="fbf8b-108">Example 1: Create a Backend Service Fabric In-Memory Object</span></span>
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>$ManagementEndpoints = 'https://sfbackend-01.net:443', 'https://sfbackend-02.net:443'
@@ -41,13 +41,13 @@ PS C:\>$serviceFabric = New-AzApiManagementBackendServiceFabric -ManagementEndpo
 PS C:\>$backend = New-AzApiManagementBackend -Context  $apimContext -BackendId 123 -Url 'https://contoso.com/awesomeapi' -Protocol http -ServiceFabricCluster $serviceFabric -Description "service fabric backend" -PassThru
 ```
 
-<span data-ttu-id="bfa49-109">建立後端服務結構合約</span><span class="sxs-lookup"><span data-stu-id="bfa49-109">Creates a Backend Service Fabric Contract</span></span>
+<span data-ttu-id="fbf8b-109">建立後端服務結構合約</span><span class="sxs-lookup"><span data-stu-id="fbf8b-109">Creates a Backend Service Fabric Contract</span></span>
 
-## <span data-ttu-id="bfa49-110">參數</span><span class="sxs-lookup"><span data-stu-id="bfa49-110">PARAMETERS</span></span>
+## <span data-ttu-id="fbf8b-110">參數</span><span class="sxs-lookup"><span data-stu-id="fbf8b-110">PARAMETERS</span></span>
 
-### <span data-ttu-id="bfa49-111">-ClientCertificateThumbprint</span><span class="sxs-lookup"><span data-stu-id="bfa49-111">-ClientCertificateThumbprint</span></span>
-<span data-ttu-id="bfa49-112">管理端點的用戶端憑證指紋。</span><span class="sxs-lookup"><span data-stu-id="bfa49-112">Client Certificate Thumbprint for the management endpoint.</span></span>
-<span data-ttu-id="bfa49-113">這個參數是必要的。</span><span class="sxs-lookup"><span data-stu-id="bfa49-113">This parameter is required.</span></span>
+### <span data-ttu-id="fbf8b-111">-ClientCertificateThumbprint</span><span class="sxs-lookup"><span data-stu-id="fbf8b-111">-ClientCertificateThumbprint</span></span>
+<span data-ttu-id="fbf8b-112">管理端點的用戶端憑證指紋。</span><span class="sxs-lookup"><span data-stu-id="fbf8b-112">Client Certificate Thumbprint for the management endpoint.</span></span>
+<span data-ttu-id="fbf8b-113">此參數為必填項。</span><span class="sxs-lookup"><span data-stu-id="fbf8b-113">This parameter is required.</span></span>
 
 ```yaml
 Type: System.String
@@ -61,8 +61,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="bfa49-114">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="bfa49-114">-DefaultProfile</span></span>
-<span data-ttu-id="bfa49-115">用於與 Azure 進行通訊的認證、帳戶、租使用者及訂閱。</span><span class="sxs-lookup"><span data-stu-id="bfa49-115">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+### <span data-ttu-id="fbf8b-114">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="fbf8b-114">-DefaultProfile</span></span>
+<span data-ttu-id="fbf8b-115">用於與 Azure 通訊的認證、帳戶、租使用者和訂閱。</span><span class="sxs-lookup"><span data-stu-id="fbf8b-115">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -76,9 +76,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="bfa49-116">-ManagementEndpoint</span><span class="sxs-lookup"><span data-stu-id="bfa49-116">-ManagementEndpoint</span></span>
-<span data-ttu-id="bfa49-117">Service Fabric 群集管理端點。</span><span class="sxs-lookup"><span data-stu-id="bfa49-117">Service Fabric Cluster management Endpoints.</span></span>
-<span data-ttu-id="bfa49-118">這個參數是必要的。</span><span class="sxs-lookup"><span data-stu-id="bfa49-118">This parameter is required.</span></span>
+### <span data-ttu-id="fbf8b-116">-ManagementEndpoint</span><span class="sxs-lookup"><span data-stu-id="fbf8b-116">-ManagementEndpoint</span></span>
+<span data-ttu-id="fbf8b-117">服務結構組群管理端點。</span><span class="sxs-lookup"><span data-stu-id="fbf8b-117">Service Fabric Cluster management Endpoints.</span></span>
+<span data-ttu-id="fbf8b-118">此參數為必填項。</span><span class="sxs-lookup"><span data-stu-id="fbf8b-118">This parameter is required.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -92,9 +92,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="bfa49-119">-MaxPartitionResolutionRetry</span><span class="sxs-lookup"><span data-stu-id="bfa49-119">-MaxPartitionResolutionRetry</span></span>
-<span data-ttu-id="bfa49-120">解析 Service Fabric 分區時的最大重試次數。</span><span class="sxs-lookup"><span data-stu-id="bfa49-120">Maximum number of retries when resolving a Service Fabric partition.</span></span>
-<span data-ttu-id="bfa49-121">此參數為 optional，且預設值為5。</span><span class="sxs-lookup"><span data-stu-id="bfa49-121">This parameter is optional and default value is 5.</span></span>
+### <span data-ttu-id="fbf8b-119">-MaxPartitionResolutionRetry</span><span class="sxs-lookup"><span data-stu-id="fbf8b-119">-MaxPartitionResolutionRetry</span></span>
+<span data-ttu-id="fbf8b-120">解決 Service Fabric 分割時重試次數上限。</span><span class="sxs-lookup"><span data-stu-id="fbf8b-120">Maximum number of retries when resolving a Service Fabric partition.</span></span>
+<span data-ttu-id="fbf8b-121">此參數為選擇性，預設值為 5。</span><span class="sxs-lookup"><span data-stu-id="fbf8b-121">This parameter is optional and default value is 5.</span></span>
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -108,8 +108,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="bfa49-122">-ServerCertificateThumbprint</span><span class="sxs-lookup"><span data-stu-id="bfa49-122">-ServerCertificateThumbprint</span></span>
-<span data-ttu-id="bfa49-123">[憑證群集管理服務] 用來進行 tls 通訊的指紋。這個參數是選用的。</span><span class="sxs-lookup"><span data-stu-id="bfa49-123">Thumbprint of certificates cluster management service uses for tls communication.This parameter is optional.</span></span>
+### <span data-ttu-id="fbf8b-122">-ServerCertificateThumbprint</span><span class="sxs-lookup"><span data-stu-id="fbf8b-122">-ServerCertificateThumbprint</span></span>
+<span data-ttu-id="fbf8b-123">憑證組管理服務用於 tls 通訊的指紋。此參數為選擇性。</span><span class="sxs-lookup"><span data-stu-id="fbf8b-123">Thumbprint of certificates cluster management service uses for tls communication.This parameter is optional.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -123,9 +123,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="bfa49-124">-ServerX509Name</span><span class="sxs-lookup"><span data-stu-id="bfa49-124">-ServerX509Name</span></span>
-<span data-ttu-id="bfa49-125">Server X509 憑證名稱集合。</span><span class="sxs-lookup"><span data-stu-id="bfa49-125">Server X509 Certificate Names Collection.</span></span>
-<span data-ttu-id="bfa49-126">這個參數是選用的。</span><span class="sxs-lookup"><span data-stu-id="bfa49-126">This parameter is optional.</span></span>
+### <span data-ttu-id="fbf8b-124">-ServerX509Name</span><span class="sxs-lookup"><span data-stu-id="fbf8b-124">-ServerX509Name</span></span>
+<span data-ttu-id="fbf8b-125">Server X509 憑證名稱集合。</span><span class="sxs-lookup"><span data-stu-id="fbf8b-125">Server X509 Certificate Names Collection.</span></span>
+<span data-ttu-id="fbf8b-126">此參數為選擇性。</span><span class="sxs-lookup"><span data-stu-id="fbf8b-126">This parameter is optional.</span></span>
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -139,27 +139,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="bfa49-127">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="bfa49-127">CommonParameters</span></span>
-<span data-ttu-id="bfa49-128">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="bfa49-128">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="bfa49-129">如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="bfa49-129">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="fbf8b-127">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="fbf8b-127">CommonParameters</span></span>
+<span data-ttu-id="fbf8b-128">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="fbf8b-128">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="fbf8b-129">詳細資訊[請參閱about_CommonParameters。](https://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="fbf8b-129">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="bfa49-130">輸入</span><span class="sxs-lookup"><span data-stu-id="bfa49-130">INPUTS</span></span>
+## <span data-ttu-id="fbf8b-130">輸入</span><span class="sxs-lookup"><span data-stu-id="fbf8b-130">INPUTS</span></span>
 
-### <span data-ttu-id="bfa49-131">System.object</span><span class="sxs-lookup"><span data-stu-id="bfa49-131">System.String</span></span>
+### <span data-ttu-id="fbf8b-131">System.String</span><span class="sxs-lookup"><span data-stu-id="fbf8b-131">System.String</span></span>
 
-## <span data-ttu-id="bfa49-132">輸出</span><span class="sxs-lookup"><span data-stu-id="bfa49-132">OUTPUTS</span></span>
+## <span data-ttu-id="fbf8b-132">輸出</span><span class="sxs-lookup"><span data-stu-id="fbf8b-132">OUTPUTS</span></span>
 
-### <span data-ttu-id="bfa49-133">ServiceManagement. PsApiManagementServiceFabric （ApiManagement）</span><span class="sxs-lookup"><span data-stu-id="bfa49-133">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementServiceFabric</span></span>
+### <span data-ttu-id="fbf8b-133">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.models.PsApiManagementServiceFabric</span><span class="sxs-lookup"><span data-stu-id="fbf8b-133">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementServiceFabric</span></span>
 
-## <span data-ttu-id="bfa49-134">筆記</span><span class="sxs-lookup"><span data-stu-id="bfa49-134">NOTES</span></span>
+## <span data-ttu-id="fbf8b-134">筆記</span><span class="sxs-lookup"><span data-stu-id="fbf8b-134">NOTES</span></span>
 
-## <span data-ttu-id="bfa49-135">相關連結</span><span class="sxs-lookup"><span data-stu-id="bfa49-135">RELATED LINKS</span></span>
+## <span data-ttu-id="fbf8b-135">相關連結</span><span class="sxs-lookup"><span data-stu-id="fbf8b-135">RELATED LINKS</span></span>
 
-[<span data-ttu-id="bfa49-136">AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="bfa49-136">Get-AzApiManagementBackend</span></span>](./Get-AzApiManagementBackend)
+[<span data-ttu-id="fbf8b-136">Get-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="fbf8b-136">Get-AzApiManagementBackend</span></span>](./Get-AzApiManagementBackend.md)
 
-[<span data-ttu-id="bfa49-137">新-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="bfa49-137">New-AzApiManagementBackend</span></span>](./New-AzApiManagementBackend.md)
+[<span data-ttu-id="fbf8b-137">New-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="fbf8b-137">New-AzApiManagementBackend</span></span>](./New-AzApiManagementBackend.md)
 
-[<span data-ttu-id="bfa49-138">新-AzApiManagementBackendProxy</span><span class="sxs-lookup"><span data-stu-id="bfa49-138">New-AzApiManagementBackendProxy</span></span>](./New-AzApiManagementBackendProxy.md)
+[<span data-ttu-id="fbf8b-138">New-AzApiManagementBackendProxy</span><span class="sxs-lookup"><span data-stu-id="fbf8b-138">New-AzApiManagementBackendProxy</span></span>](./New-AzApiManagementBackendProxy.md)
 
-[<span data-ttu-id="bfa49-139">Set-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="bfa49-139">Set-AzApiManagementBackend</span></span>](./Set-AzApiManagementBackend.md)
+[<span data-ttu-id="fbf8b-139">Set-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="fbf8b-139">Set-AzApiManagementBackend</span></span>](./Set-AzApiManagementBackend.md)
 
-[<span data-ttu-id="bfa49-140">移除-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="bfa49-140">Remove-AzApiManagementBackend</span></span>](./Remove-AzApiManagementBackend.md)
+[<span data-ttu-id="fbf8b-140">Remove-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="fbf8b-140">Remove-AzApiManagementBackend</span></span>](./Remove-AzApiManagementBackend.md)
