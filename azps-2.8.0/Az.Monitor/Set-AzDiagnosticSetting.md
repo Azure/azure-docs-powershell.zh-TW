@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Set-AzDiagnosticSetting.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Set-AzDiagnosticSetting.md
-ms.openlocfilehash: bcebb7e4e272a22878c240946f04ffd5013a8999
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: d41d99993961906f88dc500603f74fc1a0d4fdf0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93790390"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100404916"
 ---
 # Set-AzDiagnosticSetting
 
-## 摘要
-設定資源的記錄和標準設定。
+## 簡介
+設定資源的記錄與計量設定。
 
-## 句法
+## 語法
 
 ### OldSetDiagnosticSetting (預設) 
 ```
@@ -37,28 +37,28 @@ Set-AzDiagnosticSetting -InputObject <PSServiceDiagnosticSettings> [-DefaultProf
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## 說明
-**AzDiagnosticSetting** Cmdlet 可針對特定資源啟用或停用每個時間細微性與記錄類別。
-記錄和度量單位儲存在指定的儲存空間帳戶。
-這個 Cmdlet 會實現 ShouldProcess 模式，亦即，在實際建立、修改或移除資源之前，它可能會要求使用者進行確認。
+## 描述
+**Set-AzDiagnosticSetting** Cmdlet 會啟用或停用特定資源的每一個紋理和記錄類別。
+記錄與計量會儲存在指定的儲存帳戶中。
+此 Cmdlet 實做 ShouldProcess 模式，即實際建立、修改或移除資源之前，可能會向使用者要求確認。
 
-## 示例
+## 例子
 
-### 範例1：啟用資源的所有度量及記錄
+### 範例 1：啟用資源的所有計量和記錄
 ```
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $True
 ```
 
-這個命令會啟用 Resource01 的所有可用度量值和記錄。
+此命令會啟用 Resource01 的所有可用計量和記錄。
 
-### 範例2：停用所有的度量及記錄
+### 範例 2：停用所有計量和記錄
 ```
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $False
 ```
 
-這個命令會針對資源 Resource01 停用所有可用的度量和記錄。
+此命令會停用資源資源01 的所有可用計量和記錄。
 
-### 範例3：啟用/停用多個公制類別
+### 範例 3：啟用/停用多個計量類別
 ```
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $False -MetricCategory MetricCategory1,MetricCategory2
 StorageAccountId   : <storageAccountId>
@@ -84,10 +84,10 @@ Logs
    Category : Category4
 ```
 
-這個命令會停用稱為 Category1 和 Category2 的度量值類別。
-所有其他類別都將保持不變。
+此命令會停用名為 Category1 和 Category2 的度量類別。
+所有其他類別都保持不變。
 
-### 範例4：啟用/停用多個記錄類別
+### 範例 4：啟用/停用多個記錄類別
 ```
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $True -Category Category1,Category2
 StorageAccountId   : <storageAccountId>
@@ -113,29 +113,29 @@ Logs
    Category : Category4
 ```
 
-這個命令會啟用 Category1 和 Category2。
-所有其他的度量標準與記錄類別都保持不變。
+此命令會啟用 Category1 和 Category2。
+所有其他計量和記錄類別都保持不變。
 
-### 範例4：啟用時間細微性和多個類別
+### 範例 4：啟用時間紋理和多個類別
 ```
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $True -Category Category1,Category2 -Timegrain PT1M
 ```
 
-這個命令只啟用 Category1、Category2 和時間細微性 PT1M。
-所有其他時間 grains 和類別都不會改變。
+此命令僅啟用 Category1、Category2 和 time grain PT1M。
+所有其他時間量和類別均保持不變。
 
-### 範例5：使用管線
+### 範例 5：使用管線
 ```
 PS C:\>Get-AzDiagnosticSetting -ResourceId "Resource01" | Set-AzDiagnosticSetting
 ```
 
-這個命令使用 PowerShell 管線來設定 (不會) 診斷設定中進行變更。
+此命令使用 PowerShell 管線來 (診斷設定) 變更。
 
 ## 參數
 
 ### -類別
-根據 *Enabled* 的值，指定要啟用或停用的記錄類別清單。
-如果未指定任何類別，此命令會在所有支援的類別上執行。 
+根據 Enabled 的值指定要啟用或停用的記錄 *類別清單*。
+如果沒有指定類別，此命令會在所有支援的類別上執行。
 
 ```yaml
 Type: System.Collections.Generic.List`1[System.String]
@@ -150,7 +150,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -164,9 +164,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -啟用
+### -已啟用
 指出是否要啟用診斷。
-指定 $True 以啟用診斷，或 $False 以停用診斷程式。
+指定$True以啟用診斷，或$False停用診斷。
 
 ```yaml
 Type: System.Boolean
@@ -181,7 +181,7 @@ Accept wildcard characters: False
 ```
 
 ### -EventHubAuthorizationRuleId
-事件中心授權規則識別碼
+事件中樞授權規則識別碼
 
 ```yaml
 Type: System.String
@@ -211,7 +211,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-輸入物件 (來自管線的可能。 ) 將會從這個物件中提取名稱和 resourceId。
+從管線 (輸入物件。) 會從此物件解壓縮名稱與 resourceId。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Insights.OutputClasses.PSServiceDiagnosticSettings
@@ -226,7 +226,8 @@ Accept wildcard characters: False
 ```
 
 ### -MetricCategory
-[公制] 類別的清單。 如果未指定任何類別，此命令會在所有支援的類別上執行。 
+公制類別清單。
+如果沒有指定類別，此命令會在所有支援的類別上執行。
 
 ```yaml
 Type: System.Collections.Generic.List`1[System.String]
@@ -241,7 +242,7 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-診斷設定的名稱。 預設值為 [ **服務** ]。
+診斷設定的名稱。 預設值為 **服務**。
 
 ```yaml
 Type: System.String
@@ -286,7 +287,7 @@ Accept wildcard characters: False
 ```
 
 ### -RetentionInDays
-指定保留原則（以天為單位）。
+指定保留政策 ，以天數表示。
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -301,7 +302,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceBusRuleId
-服務匯流排規則 id。
+服務母線規則識別碼。
 
 ```yaml
 Type: System.String
@@ -316,7 +317,7 @@ Accept wildcard characters: False
 ```
 
 ### -StorageAccountId
-指定要儲存資料的儲存空間帳戶識別碼。
+指定儲存資料的儲存空間帳戶識別碼。
 
 ```yaml
 Type: System.String
@@ -331,8 +332,8 @@ Accept wildcard characters: False
 ```
 
 ### -Timegrain
-根據 [ *Enabled* ] 的值，指定要啟用或停用度量單位的時間 grains。
-如果您沒有指定時間細微性，這個命令會在所有可用的時間 grains 上執行。
+根據 Enabled 的值指定要啟用或停用度量的時間 *量*。
+如果您未指定時間紋理，此命令會以所有可用的時間紋理操作。
 
 ```yaml
 Type: System.Collections.Generic.List`1[System.String]
@@ -347,7 +348,7 @@ Accept wildcard characters: False
 ```
 
 ### -WorkspaceId
-工作區的識別碼
+Log Analytics 工作區的資源識別碼，可傳送記錄/計量至
 
 ```yaml
 Type: System.String
@@ -362,7 +363,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，系統會提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -377,7 +378,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。 未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。 不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -392,29 +393,29 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](https://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### PSServiceDiagnosticSettings 中的 OutputClasses。
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSServiceDiagnosticSettings
 
-### System.object
+### System.String
 
-### System.object
+### System.Boolean
 
-### [System.object]。清單 ' 1 [CoreLib，版本 = 4.0.0.0，Culture = 中性，PublicKeyToken = 7cec85d7bea7798e]]
+### System.Collections.Generic.List'1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### "CoreLib" 1 ["System.object，System.object，版本 = 4.0.0.0，Culture = 中立，PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Boolean， System.Private.CoreLib， Version=4.0.0.0， Culture=neutral， PublicKeyToken=7cec85d7bea7798e]]
 
-### "CoreLib" 1 ["System.object，System.object，版本 = 4.0.0.0，Culture = 中性，PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Int32， System.Private.CoreLib， Version=4.0.0.0， Culture=neutral， PublicKeyToken=7cec85d7bea7798e]]
 
 ## 輸出
 
-### PSServiceDiagnosticSettings 中的 OutputClasses。
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSServiceDiagnosticSettings
 
 ## 筆記
 
 ## 相關連結
 
-[AzDiagnosticSetting](./Get-AzDiagnosticSetting.md) 
-[移除-AzDiagnosticSetting](./Remove-AzDiagnosticSetting.md)
+[Get-AzDiagnosticSetting](./Get-AzDiagnosticSetting.md) 
+[Remove-AzDiagnosticSetting](./Remove-AzDiagnosticSetting.md)
