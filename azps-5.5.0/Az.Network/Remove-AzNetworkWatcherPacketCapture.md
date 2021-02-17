@@ -1,65 +1,71 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
 Module Name: Az.Network
-online version: https://docs.microsoft.com/en-us/powershell/module/az.network/get-aznetworkwatchertroubleshootingresult
+online version: https://docs.microsoft.com/en-us/powershell/module/az.network/remove-aznetworkwatcherpacketcapture
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherTroubleshootingResult.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherTroubleshootingResult.md
-ms.openlocfilehash: 871509fc03a7cb80735b6f011a7103350fd945ac
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzNetworkWatcherPacketCapture.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzNetworkWatcherPacketCapture.md
+ms.openlocfilehash: d6d11590699b52bb7245222ddaa01fbc42938d22
 ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 02/14/2021
-ms.locfileid: "100401227"
+ms.locfileid: "100415473"
 ---
-# Get-AzNetworkWatcherTroubleshootingResult
+# Remove-AzNetworkWatcherPacketCapture
 
 ## 簡介
-取得先前執行或目前執行疑難排解作業的疑難排解結果。
+移除封包捕獲資源。
 
 ## 語法
 
 ### SetByResource (預設) 
 ```
-Get-AzNetworkWatcherTroubleshootingResult -NetworkWatcher <PSNetworkWatcher> -TargetResourceId <String>
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Remove-AzNetworkWatcherPacketCapture -NetworkWatcher <PSNetworkWatcher> -PacketCaptureName <String> [-PassThru]
+ [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### SetByName
 ```
-Get-AzNetworkWatcherTroubleshootingResult -NetworkWatcherName <String> -ResourceGroupName <String>
- -TargetResourceId <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Remove-AzNetworkWatcherPacketCapture -NetworkWatcherName <String> -ResourceGroupName <String>
+ -PacketCaptureName <String> [-PassThru] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### SetByLocation
 ```
-Get-AzNetworkWatcherTroubleshootingResult -Location <String> -TargetResourceId <String>
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Remove-AzNetworkWatcherPacketCapture -Location <String> -PacketCaptureName <String> [-PassThru] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## 描述
-此Get-AzNetworkWatcherTroubleshootingResult Cmdlet 會從先前執行或目前執行的任何作業取得疑Start-AzNetworkWatcherResourceTroubleshooting結果。 如果疑難排解作業正在進行中，則此作業可能需要幾分鐘才能完成。 目前支援虛擬網路閘道和連接。
+此Remove-AzNetworkWatcherPacketCapture移除封包捕獲資源。 建議您在撥打 remove-AzNetworkWatcherPacketCapture Stop-AzNetworkWatcherPacketCapture之前先撥打至您的電話。 如果封包捕獲會話是在封包Remove-AzNetworkWatcherPacketCapture封包捕獲時進行，可能不會儲存封包捕獲。 如果會話在移除包含捕獲資料的 .cap 檔案之前已經停止，系統不會移除。 
 
 ## 例子
 
-### 範例 1：開始在虛擬網路閘道上進行疑難排解並取得結果
+### 範例 1：移除封包捕獲會話
 ```
-$nw = Get-AzResource | Where {$_.ResourceType -eq "Microsoft.Network/networkWatchers" -and $_.Location -eq "WestCentralUS" } 
-$networkWatcher = Get-AzNetworkWatcher -Name $nw.Name -ResourceGroupName $nw.ResourceGroupName 
-
-$target = '/subscriptions/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworkGateways/{vnetGatewayName}'
-$storageId = '/subscriptions/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{storageAccountName}'
-$storagePath = 'https://{storageAccountName}.blob.core.windows.net/troubleshoot'
-
-Start-AzNetworkWatcherResourceTroubleshooting -NetworkWatcher $networkWatcher -TargetResourceId $target -StorageId $storageId -StoragePath $storagePath
-
-Get-AzNetworkWatcherTroubleshootingResult -NetworkWatcher $NW -TargetResourceId $target
+Remove-AzNetworkWatcherPacketCapture -NetworkWatcher $networkWatcher -PacketCaptureName "PacketCaptureTest"
 ```
 
-上述範例會開始在虛擬網路閘道上進行疑難排解。 作業可能需要幾分鐘的時間才能完成。
-疑難排解開始之後，Get-AzNetworkWatcherTroubleshootingResult資源撥打電話以取得此通話的結果。 
+在此範例中，我們會移除名為「PacketCaptureTest」的現有封包捕獲會話。
 
 ## 參數
+
+### -AsJob
+在背景中執行 Cmdlet
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -DefaultProfile
 用於與 azure 通訊的認證、帳戶、租使用者和訂閱。
@@ -121,6 +127,36 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -PacketCaptureName
+封包捕獲名稱。
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -PassThru
+會返回代表您處理之專案的物件。
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ResourceGroupName
 網路監視者資源組的名稱。
 
@@ -136,23 +172,39 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -TargetResourceId
-目標資源識別碼。
+### -確認
+執行 Cmdlet 之前，系統會提示您確認。
 
 ```yaml
-Type: System.String
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: cf
 
-Required: True
+Required: False
 Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+顯示 Cmdlet 執行時會發生什麼情況。
+不會執行 Cmdlet。
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### CommonParameters
-此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 http://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
@@ -162,10 +214,10 @@ Accept wildcard characters: False
 
 ## 輸出
 
-### Microsoft.Azure.Commands.Network.models.PSTroubleshootingResult
+### System.Boolean
 
 ## 筆記
-關鍵字：azure、azurerm、arm、資源、管理、管理員、網路監視程式、疑難排解、VPN、連接
+關鍵字：azure、azurerm、arm、資源、管理、管理員、網路、網路、網路監視程式、封包、捕獲、流量、移除
 
 ## 相關連結
 

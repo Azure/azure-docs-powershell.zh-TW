@@ -5,43 +5,43 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzApplicationGatewaySslProfilePolicy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzApplicationGatewaySslProfilePolicy.md
-ms.openlocfilehash: a1e6bd507b7ddcc0a70405136cb76bba9231a7f1
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 49d55a48f9e9b769854a5cd01929188fd7993d35
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100135982"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100415558"
 ---
 # Get-AzApplicationGatewaySslProfilePolicy
 
-## 摘要
-取得應用程式閘道 SSL 設定檔的 SSL 原則。
+## 簡介
+獲得應用程式閘道 SSL 設定檔的 SSL 策略。
 
-## 句法
+## 語法
 
 ```
 Get-AzApplicationGatewaySslProfilePolicy -SslProfile <PSApplicationGatewaySslProfile>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## 說明
-**AzApplicationGatewaySslProfilePolicy** Cmdlet 會取得應用程式閘道 ssl 設定檔的 SSL 原則。
+## 描述
+**Get-AzApplicationGatewaySslProfilePolicy** Cmdlet 會取得應用程式閘道 SSL 設定檔的 SSL 策略。
 
-## 示例
+## 例子
 
-### 範例1
+### 範例 1
 ```powershell
 PS C:\>$AppGW = Get-AzApplicationGateway -Name "ApplicationGateway01" -ResourceGroupName "ResourceGroup01"
 PS C:\> $SslProfile  = Get-AzApplicationGatewaySslProfile -Name "SslProfile01" -ApplicationGateway $AppGw
 PS C:\> $sslpolicy = Get-AzApplicationGatewaySslProfilePolicy -SslProfile $SslProfile
 ```
 
-第一個命令會在名為 ResourceGroup01 的資源群組中，取得名為 ApplicationGateway01 的應用程式閘道，並將它儲存在 $AppGw 變數中。 第二個命令會針對 $AppGw 取得名為 SslProfile01 的 SSL 設定檔，並將它儲存 $SslProfile 變數。 最後一個命令會從 SSL 設定檔中取得 SSL 原則 $SslProfile 並將它儲存在 $sslpolicy 變數中。
+第一個命令會獲得名為 ResourceGroup01 的資源群組中名為 ApplicationGateway01 的應用程式閘道，並儲存在$AppGw變數。 第二個命令會獲得名稱為 SslProfile01 的 SSL 設定檔，$AppGw儲存為$SslProfile變數。 最後一個命令會從 SSL 設定檔中$SslProfile SSL 策略，並儲存在$sslpolicy變數中。
 
 ## 參數
 
 ### -DefaultProfile
-用於與 Azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: IAzureContextContainer
@@ -71,24 +71,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### PSApplicationGatewaySslProfile 中的 [.]
+### Microsoft.Azure.Commands.Network.models.PSApplicationGatewaySslProfile
 
 ## 輸出
 
-### PSApplicationGatewaySslPolicy 中的 [.]
+### Microsoft.Azure.Commands.Network.models.PSApplicationGatewaySslPolicy
 
 ## 筆記
 
 ## 相關連結
 
-[新-AzApplicationGatewaySslProfilePolicy](./New-AzApplicationGatewaySslProfilePolicy.md)
 
-[附加 AzApplicationGatewaySslProfilePolicy](./Add-AzApplicationGatewaySslProfilePolicy.md)
 
-[移除-AzApplicationGatewaySslProfilePolicy](./Remove-AzApplicationGatewaySslProfilePolicy.md)
+[Remove-AzApplicationGatewaySslProfilePolicy](./Remove-AzApplicationGatewaySslProfilePolicy.md)
 
 [Set-AzApplicationGatewaySslProfilePolicy](./Set-AzApplicationGatewaySslProfilePolicy.md)

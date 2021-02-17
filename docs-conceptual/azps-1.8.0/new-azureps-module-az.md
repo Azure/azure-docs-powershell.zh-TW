@@ -1,17 +1,17 @@
 ---
 title: Azure PowerShell Az 模組簡介
 description: 介紹新的 Azure PowerShell 模組 Az，也就是 AzureRM 模組的替代項目。
-ms.date: 05/10/2019
+ms.date: 02/12/2021
 ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 0856748290e2bdea79b9ef845f2c000e9fefcd62
-ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
-ms.translationtype: HT
+ms.openlocfilehash: f6ffd66d20943541c3591d41db7c72861f44204c
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93408372"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100415456"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>新的 Azure PowerShell Az 模組簡介
 
@@ -45,7 +45,7 @@ Az 是新模組，因此版本已重設為 1.0.0。
 
 1. [將 Azure PowerShell AzureRM 模組解除安裝](/powershell/azure/uninstall-az-ps#uninstall-the-azurerm-module)
 2. [安裝 Azure PowerShell Az 模組](install-az-ps.md)
-3. **選擇性** ：當您熟悉新的命令集時，請使用 [Enable-AzureRMAlias](/powershell/module/az.accounts/enable-azurermalias) 啟用相容性模式來新增 AzureRM Cmdlet 的別名。 如需詳細資訊，請參閱下一節或[開始從 AzureRM 移轉至 Az](migrate-from-azurerm-to-az.md)。
+3. **選擇性**：當您熟悉新的命令集時，請使用 [Enable-AzureRMAlias](/powershell/module/az.accounts/enable-azurermalias) 啟用相容性模式來新增 AzureRM Cmdlet 的別名。 如需詳細資訊，請參閱下一節或[開始從 AzureRM 移轉至 Az](migrate-from-azurerm-to-az.md)。
 
 ## <a name="migrate-existing-scripts-to-az"></a>將現有指令碼遷移至 Az
 
@@ -63,6 +63,8 @@ Az 是新模組，因此版本已重設為 1.0.0。
 > [!IMPORTANT]
 > 即使 Cmdlet 名稱已有別名，但 Az Cmdlet 仍可能有新的 (或重新命名的) 參數或已變更的傳回值。 請不要誤以為啟用別名就能完成移轉。 請參閱[完整重大變更清單](migrate-az-1.0.0.md)，找出您的指令碼可能需要更新之處。
 
-## <a name="continued-support-for-azurerm"></a>對 AzureRM 的持續支援
+## <a name="support-for-azurerm"></a>對 AzureRM 的支援
 
-AzureRM 不會再收到新的 Cmdlet 或功能。 不過，我們仍會正式維護 AzureRM 模組，並在 2020 年 12 月之前都會提供錯誤修正。
+由於 Az PowerShell 模組現在具備 AzureRM PowerShell 模組的所有功能，因此我們將于2024年2月29日淘汰 AzureRM PowerShell 模組。
+
+若要避免服務中斷，請將使用 AzureRM PowerShell 模組的 [腳本更新為在](https://aka.ms/azpsmigrate) 2024 年2月29日之前使用 Az powershell 模組。 若要自動更新您的腳本，請遵循 [快速入門手冊](/powershell/azure/quickstart-migrate-azurerm-to-az-automatically)。

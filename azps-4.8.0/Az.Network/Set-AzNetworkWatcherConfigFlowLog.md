@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzNetworkWatcherConfigFlowLog.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzNetworkWatcherConfigFlowLog.md
-ms.openlocfilehash: 2b6ad73e3a054ee01c2200ea47098fe3c3f206fa
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: afa73cab1f0e66ecc9388b9fb2c536ca50bc609d
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94136217"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100415422"
 ---
 # Set-AzNetworkWatcherConfigFlowLog
 
-## 摘要
-配置目標資源的流程記錄。
+## 簡介
+設定目標資源的流量記錄。
 
-## 句法
+## 語法
 
 ### SetFlowlogByResourceWithoutTA (預設) 
 ```
@@ -99,12 +99,12 @@ Set-AzNetworkWatcherConfigFlowLog -Location <String> -TargetResourceId <String> 
  [<CommonParameters>]
 ```
 
-## 說明
-Set-AzNetworkWatcherConfigFlowLog 會配置目標資源的流程記錄。 要設定的屬性包括：是否針對提供的資源啟用流程記錄、已設定的儲存空間帳戶來傳送記錄、流程記錄格式，以及記錄的保留原則。 目前支援資料流程記錄的網路安全性群組。 
+## 描述
+此Set-AzNetworkWatcherConfigFlowLog設定目標資源的流量記錄。 要設定的屬性包括：是否針對提供的資源啟用流程記錄、設定儲存帳戶以傳送記錄、流程記錄格式，以及記錄保留原則。 目前網路安全性群組支援流程記錄。 
 
-## 示例
+## 例子
 
-### 範例1：針對指定的 NSG 設定流程記錄
+### 範例 1：為指定的 NSG 設定流程記錄
 ```
 PS C:\> $NW = Get-AzNetworkWatcher -ResourceGroupName NetworkWatcherRg -Name NetworkWatcher_westcentralus
 PS C:\> $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName NSGRG -Name appNSG
@@ -126,9 +126,9 @@ Format           : {
                    }
 ```
 
-在這個範例中，我們會設定網路安全性群組的流程記錄狀態。 在回應中，我們會看到指定的 NSG 已啟用流程記錄、預設格式，且未設定保留原則。
+在此範例中，我們設定網路安全性群組的流量記錄狀態。 在回應中，我們會看到指定的 NSG 已啟用流程記錄、預設格式，且未設定保留原則。
 
-### 範例2：針對指定的 NSG 設定流程記錄，並將 [流程] 記錄的版本設定為2。
+### 範例 2：為指定的 NSG 設定流程記錄，並設定流程記錄的版本為 2。
 ```
 PS C:\> $NW = Get-AzNetworkWatcher -ResourceGroupName NetworkWatcherRg -Name NetworkWatcher_westcentralus
 PS C:\> $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName NSGRG -Name appNSG
@@ -150,9 +150,9 @@ Format           : {
                    }
 ```
 
-在這個範例中，我們會使用指定的版本2記錄，在網路安全性群組 (NSG) 上設定流程記錄。 在回應中，我們會看到指定的 NSG 已啟用流程記錄、設定格式，且未設定保留原則。 如果區域不支援您指定的版本，網路觀察程式將會在區域中寫入預設支援的版本。
+在此範例中，我們在已指定版本 2 記錄 (NSG) 組設定流程記錄。 在回應中，我們會看到指定的 NSG 已啟用流程記錄、已設定格式，而且未設定保留原則。 如果地區不支援您指定的版本，Network Watcher 會撰寫該區域中預設支援的版本。
 
-### 範例3：針對指定的 NSG 設定流程記錄和流量分析
+### 範例 3：為指定的 NSG 設定流程記錄與流量分析
 ```
 PS C:\> $NW = Get-AzNetworkWatcher -ResourceGroupName NetworkWatcherRg -Name NetworkWatcher_westcentralus
 PS C:\> $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName NSGRG -Name appNSG
@@ -184,9 +184,9 @@ FlowAnalyticsConfiguration : {
           }
 ```
 
-在這個範例中，我們會為網路安全群組設定流程記錄狀態和流量分析。 在回應中，我們會看到指定的 NSG 已啟用流程記錄和流量分析、預設格式以及沒有設定保留原則。
+在此範例中，我們針對網路安全性群組設定流程記錄狀態和流量分析。 在回應中，我們會看到指定的 NSG 已啟用流程記錄與流量分析、預設格式，且未設定保留原則。
 
-### 範例4：針對特定的 NSG 停用流量分析，並設定流量分析
+### 範例 4：停用指定 NSG 的流量分析，並已進行流程記錄與流量分析
 ```
 PS C:\> $NW = Get-AzNetworkWatcher -ResourceGroupName NetworkWatcherRg -Name NetworkWatcher_westcentralus
 PS C:\> $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName NSGRG -Name appNSG
@@ -219,7 +219,7 @@ FlowAnalyticsConfiguration : {
           }
 ```
 
-在這個範例中，我們會停用 [網路安全性群組] 的流量分析，此群組已設定了較舊的流量記錄和流量分析。 在回應中，我們會看到指定的 NSG 已啟用流程記錄，但流量分析卻停用了。
+在此範例中，我們針對先前已進行流程記錄與流量分析的網路安全性群組停用流量分析。 在回應中，我們會看到指定的 NSG 已啟用流程記錄功能，但流量分析已停用。
 
 ## 參數
 
@@ -239,7 +239,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -254,7 +254,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableFlowLog
-[標記] 可啟用/停用流程記錄。
+標出以啟用/停用流程記錄。
 
 ```yaml
 Type: System.Boolean
@@ -269,7 +269,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableRetention
-[標記] 可啟用/停用保留。
+標出以啟用/停用保留。
 
 ```yaml
 Type: System.Boolean
@@ -284,7 +284,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableTrafficAnalytics
-[標記] 可啟用/停用保留。
+標出以啟用/停用保留。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -299,7 +299,7 @@ Accept wildcard characters: False
 ```
 
 ### -FormatType
-資料流程記錄格式的類型。
+流程記錄格式類型。
 
 ```yaml
 Type: System.String
@@ -314,7 +314,7 @@ Accept wildcard characters: False
 ```
 
 ### -FormatVersion
-資料流程記錄格式的版本。
+流程記錄格式的版本。
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -329,7 +329,7 @@ Accept wildcard characters: False
 ```
 
 ### -位置
-網路觀察程式的位置。
+網路監視者的位置。
 
 ```yaml
 Type: System.String
@@ -344,7 +344,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcher
-網路觀察程式資源。
+網路監視程式資源。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
@@ -359,7 +359,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcherName
-網路觀察程式的名稱。
+網路監視者的名稱。
 
 ```yaml
 Type: System.String
@@ -374,7 +374,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-網路監視程式資源群組的名稱。
+網路監視者資源組的名稱。
 
 ```yaml
 Type: System.String
@@ -389,7 +389,7 @@ Accept wildcard characters: False
 ```
 
 ### -RetentionInDays
-要保留資料流程記錄記錄的天數。
+保留流程記錄記錄的天數。
 
 ```yaml
 Type: System.Int32
@@ -404,7 +404,7 @@ Accept wildcard characters: False
 ```
 
 ### -StorageAccountId
-用來儲存流程記錄的儲存空間帳戶 ID。
+用來儲存流程記錄表的儲存帳戶識別碼。
 
 ```yaml
 Type: System.String
@@ -434,7 +434,7 @@ Accept wildcard characters: False
 ```
 
 ### -TrafficAnalyticsInterval
-取得或設定間隔 (（分鐘）) 這會決定 TA 服務執行流程分析的頻率。
+以分鐘為單位 (或設定時間間隔) 決定 TA 服務應該執行流程分析的頻率。
 
 ```yaml
 Type: System.Int32
@@ -476,7 +476,7 @@ Accept wildcard characters: False
 ```
 
 ### -WorkspaceGUID
-用來儲存流量分析資料之 WS 的 GUID。
+用來儲存流量分析資料的 WS GUID。
 
 ```yaml
 Type: System.String
@@ -491,7 +491,7 @@ Accept wildcard characters: False
 ```
 
 ### -WorkspaceLocation
-WS 的 Azure 地區，用來儲存流量分析資料。
+用來儲存流量分析資料的 WS Azure 區域。
 
 ```yaml
 Type: System.String
@@ -521,7 +521,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，系統會提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -536,7 +536,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。 未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。 不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -551,81 +551,81 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 http://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
-### PSNetworkWatcher 中的 [.]
+### Microsoft.Azure.Commands.Network.models.PSNetworkWatcher
 
-### System.object
+### System.String
 
-### System.object
+### System.Boolean
 
-### System.object
+### System.Int32
 
-### "CoreLib" 1 ["System.object，System.object，版本 = 4.0.0.0，Culture = 中性，PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Int32， System.Private.CoreLib， Version=4.0.0.0， Culture=neutral， PublicKeyToken=7cec85d7bea7798e]]
 
-### IOperationalInsightWorkspace 中的 [Common.]
+### Microsoft.Azure.management.Internal.Network.Common.IOperationalInsightWorkspace
 
 ## 輸出
 
-### PSFlowLog 中的 [.]
+### Microsoft.Azure.Commands.network.models.PSFlowLog
 
 ## 筆記
-關鍵字： azure，azurerm，arm，資源，管理，管理員，網路，網路，觀察程式，流程，記錄，flowlog，記錄
+關鍵字：azure、azurerm、arm、resource、management、manager、network、network、watcher、flow、logs、flowlog、logging
 
 ## 相關連結
 
-[新-AzNetworkWatcher](./New-AzNetworkWatcher.md)
+[New-AzNetworkWatcher](./New-AzNetworkWatcher.md)
 
-[AzNetworkWatcher](./Get-AzNetworkWatcher.md)
+[Get-AzNetworkWatcher](./Get-AzNetworkWatcher.md)
 
-[移除-AzNetworkWatcher](./Remove-AzNetworkWatcher.md)
+[Remove-AzNetworkWatcher](./Remove-AzNetworkWatcher.md)
 
-[AzNetworkWatcherNextHop](./Get-AzNetworkWatcherNextHop.md)
+[Get-AzNetworkWatcherNextHop](./Get-AzNetworkWatcherNextHop.md)
 
-[AzNetworkWatcherSecurityGroupView](./Get-AzNetworkWatcherSecurityGroupView.md)
+[Get-AzNetworkWatcherSecurityGroupView](./Get-AzNetworkWatcherSecurityGroupView.md)
 
-[AzNetworkWatcherTopology](./Get-AzNetworkWatcherTopology.md)
+[Get-AzNetworkWatcherTopwork](./Get-AzNetworkWatcherTopology.md)
 
-[開始-AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md)
+[Start-AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md)
 
-[新-AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
+[New-AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
 
-[新-AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
+[New-AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
 
-[AzNetworkWatcherPacketCapture](./Get-AzNetworkWatcherPacketCapture.md)
+[Get-AzNetworkWatcherPacketCapture](./Get-AzNetworkWatcherPacketCapture.md)
 
-[移除-AzNetworkWatcherPacketCapture](./Remove-AzNetworkWatcherPacketCapture.md)
+[Remove-AzNetworkWatcherPacketCapture](./Remove-AzNetworkWatcherPacketCapture.md)
 
-[停止 AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
+[Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
 
-[新-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
+[New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
 
 [Test-AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md)
 
 [Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
 
-[停止 AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
+[Stop-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
-[開始-AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md)
+[Start-AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md)
 
 [Set-AzNetworkWatcherConnectionMonitor](./Set-AzNetworkWatcherConnectionMonitor.md)
 
 [Set-AzNetworkWatcherConfigFlowLog](./Set-AzNetworkWatcherConfigFlowLog.md)
 
-[移除-AzNetworkWatcherConnectionMonitor](./Remove-AzNetworkWatcherConnectionMonitor.md)
+[Remove-AzNetworkWatcherConnectionMonitor](./Remove-AzNetworkWatcherConnectionMonitor.md)
 
-[新-AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md)
+[New-AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md)
 
-[AzNetworkWatcherTroubleshootingResult](./Get-AzNetworkWatcherTroubleshootingResult.md)
+[Get-AzNetworkWatcherTroubleshootingResult](./Get-AzNetworkWatcherTroubleshootingResult.md)
 
-[AzNetworkWatcherReachabilityReport](./Get-AzNetworkWatcherReachabilityReport.md)
+[Get-AzNetworkWatcherReachabilityReport](./Get-AzNetworkWatcherReachabilityReport.md)
 
-[AzNetworkWatcherReachabilityProvidersList](./Get-AzNetworkWatcherReachabilityProvidersList.md)
+[Get-AzNetworkWatcherReachabilityProvidersList](./Get-AzNetworkWatcherReachabilityProvidersList.md)
 
-[AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
+[Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)

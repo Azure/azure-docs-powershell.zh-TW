@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackend.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackend.md
-ms.openlocfilehash: 4886e5e064276b73f571c81724b98a409930126a
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 1f78630f195fca7e08ed755dbaeb48e413c8f8d1
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93611584"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400996"
 ---
 # New-AzApiManagementBackend
 
-## 摘要
+## 簡介
 建立新的後端實體。
 
-## 句法
+## 語法
 
 ```
 New-AzApiManagementBackend -Context <PsApiManagementContext> [-BackendId <String>] -Protocol <String>
@@ -28,12 +28,12 @@ New-AzApiManagementBackend -Context <PsApiManagementContext> [-BackendId <String
  [-Confirm] [<CommonParameters>]
 ```
 
-## 說明
+## 描述
 在 Api 管理中建立新的後端實體。
 
-## 示例
+## 例子
 
-### 使用基本授權配置建立後123
+### 使用基本授權方案建立後端 123
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>$credential = New-AzApiManagementBackendCredential -AuthorizationHeaderScheme basic -AuthorizationHeaderParameter opensesame -Query @{"sv" = @('xx', 'bb'); "sr" = @('cc')} -Header @{"x-my-1" = @('val1', 'val2')}
@@ -41,13 +41,13 @@ PS C:\>$credential = New-AzApiManagementBackendCredential -AuthorizationHeaderSc
 PS C:\>$backend = New-AzApiManagementBackend -Context  $apimContext -BackendId 123 -Url 'https://contoso.com/awesomeapi' -Protocol http -Title "first backend" -SkipCertificateChainValidation $true -Credential $credential -Description "my backend"
 ```
 
-建立新的後端
+建立新後端
 
 ## 參數
 
-### -BackendId
+### -後端Id
 新後端的識別碼。
-這個參數是選用的。
+此參數為選擇性。
 如果未指定，將會產生。
 
 ```yaml
@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ### -內容
 PsApiManagementCoNtext 的實例。
-這個參數是必要的。
+此參數為必填專案。
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -79,8 +79,8 @@ Accept wildcard characters: False
 ```
 
 ### -認證
-在與後端交談時應使用的認證詳細資料。
-這個參數是選用的。
+與後端交談時應該使用的認證詳細資料。
+此參數為選擇性。
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendCredential
@@ -95,7 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -111,7 +111,7 @@ Accept wildcard characters: False
 
 ### -描述
 後端描述。
-這個參數是選用的。
+此參數為選擇性。
 
 ```yaml
 Type: System.String
@@ -126,9 +126,9 @@ Accept wildcard characters: False
 ```
 
 ### -通訊協定
-後端通訊通訊協定。
-這個參數是必要的。
-有效值為 "HTTP" 和 "soap"。
+後端通訊通訊通訊協定。
+此參數為必填專案。
+有效的值為 'HTTP' 和 'soap'。
 
 ```yaml
 Type: System.String
@@ -144,8 +144,8 @@ Accept wildcard characters: False
 ```
 
 ### -Proxy
-傳送要求給後所要使用的 Proxy 伺服器詳細資料。
-這個參數是選用的。
+傳送要求至後端時所使用的 Proxy 伺服器詳細資料。
+此參數為選擇性。
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendProxy
@@ -161,8 +161,8 @@ Accept wildcard characters: False
 
 ### -ResourceId
 外部系統中資源的管理 Uri。
-這個參數是選用的。
-此 url 可以是邏輯 App、函數 App 或 Api App 的 Arm 資源 Id。
+此參數為選擇性。
+此 URL 可以是邏輯應用程式、函數 App 或 Api Apps 的 Arm 資源識別碼。
 
 ```yaml
 Type: System.String
@@ -177,7 +177,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceFabricCluster
-Service Fabric 群集後端詳細資料。 這個參數是選用的。
+服務結構組群後端詳細資料。 此參數為選擇性。
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementServiceFabric
@@ -192,8 +192,8 @@ Accept wildcard characters: False
 ```
 
 ### -SkipCertificateChainValidation
-在與後端交談時，是否略過憑證連結驗證。
-這個參數是選用的。
+與後端交談時是否要略過憑證鏈驗證。
+此參數為選擇性。
 
 ```yaml
 Type: System.Nullable`1[System.Boolean]
@@ -208,8 +208,8 @@ Accept wildcard characters: False
 ```
 
 ### -SkipCertificateNameValidation
-在與後端交談時，是否略過憑證名稱驗證。
-這個參數是選用的。
+是否要在與後端交談時略過憑證名稱驗證。
+此參數為選擇性。
 
 ```yaml
 Type: System.Nullable`1[System.Boolean]
@@ -225,7 +225,7 @@ Accept wildcard characters: False
 
 ### -標題
 後端標題。
-這個參數是選用的。
+此參數為選擇性。
 
 ```yaml
 Type: System.String
@@ -240,8 +240,8 @@ Accept wildcard characters: False
 ```
 
 ### -Url
-後端的執行時間 Url。
-這個參數是必要的。
+後端的執行時間 URL。
+此參數為必填專案。
 
 ```yaml
 Type: System.String
@@ -256,7 +256,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -271,7 +271,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。 未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。 不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -286,37 +286,37 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 https://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
-### ServiceManagement. PsApiManagementCoNtext （ApiManagement）
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.models.PsApiManagementCoNtext
 
-### System.object
+### System.String
 
-### "CoreLib" 1 ["System.object，System.object，版本 = 4.0.0.0，Culture = 中立，PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Boolean， System.Private.CoreLib， Version=4.0.0.0， Culture=neutral， PublicKeyToken=7cec85d7bea7798e]]
 
-### ServiceManagement. PsApiManagementBackendCredential （ApiManagement）
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.models.PsApiManagementBackendCredential
 
-### ServiceManagement. PsApiManagementBackendProxy （ApiManagement）
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.models.PsApiManagementBackendProxy
 
-### ServiceManagement. PsApiManagementServiceFabric （ApiManagement）
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.models.PsApiManagementServiceFabric
 
 ## 輸出
 
-### ServiceManagement. PsApiManagementBackend （ApiManagement）
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.models.PsApiManagementBackend
 
 ## 筆記
 
 ## 相關連結
 
-[AzApiManagementBackend](./Get-AzApiManagementBackend)
+[Get-AzApiManagementBackend](./Get-AzApiManagementBackend.md)
 
-[新-AzApiManagementBackendCredential](./New-AzApiManagementBackendCredential.md)
+[New-AzApiManagementBackendCredential](./New-AzApiManagementBackendCredential.md)
 
-[新-AzApiManagementBackendProxy](./New-AzApiManagementBackendProxy.md)
+[New-AzApiManagementBackendProxy](./New-AzApiManagementBackendProxy.md)
 
 [Set-AzApiManagementBackend](./Set-AzApiManagementBackend.md)
 
-[移除-AzApiManagementBackend](./Remove-AzApiManagementBackend.md)
+[Remove-AzApiManagementBackend](./Remove-AzApiManagementBackend.md)
 

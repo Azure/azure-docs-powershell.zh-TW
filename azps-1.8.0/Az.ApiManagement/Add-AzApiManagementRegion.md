@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Add-AzApiManagementRegion.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Add-AzApiManagementRegion.md
-ms.openlocfilehash: b180dabec976164eac70106b49378d832fb00db8
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: aebcb8be906811607aefee7dbdc2c7630b9e391e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93611650"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401176"
 ---
 # Add-AzApiManagementRegion
 
-## 摘要
-將新的部署區域新增至 PsApiManagement 實例。
+## 簡介
+新增部署區域至 PsApiManagement 實例。
 
-## 句法
+## 語法
 
 ```
 Add-AzApiManagementRegion -ApiManagement <PsApiManagement> -Location <String> [-Sku <PsApiManagementSku>]
@@ -26,31 +26,31 @@ Add-AzApiManagementRegion -ApiManagement <PsApiManagement> -Location <String> [-
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## 說明
-**AzApiManagementRegion** Cmdlet 會將類型 **PsApiManagementRegion** 的新實例新增到所提供之 AdditionalRegions 的 **中，** 的 **AdditionalRegions** 。
-這個 Cmdlet 不會自行部署任何內容，但會在記憶體中更新 **PsApiManagement** 的實例。
-若要更新 API 管理的部署，請將已修改的 **PsApiManagement** 實例傳到更新-AzApiManagementDeployment。
+## 描述
+**Add-AzApiManagementRegion** Cmdlet 會將 **類型 PsApiManagementRegion** 的新實例新增到 **Microsoft.Azure.Commands.ApiManagement.models.PsApiManagement** 類型提供實例的 **AdditionalRegions** 集合。
+此 Cmdlet 不會自行部署任何專案，但會更新 **記憶體中的 PsApiManagement** 實例。
+若要更新 API 管理部署，請將修改後的 **PsApiManagement** 實例傳遞至 Set-AzApiManagement。
 
-## 示例
+## 例子
 
-### 範例1：將新的部署區域新增至 PsApiManagement 實例
+### 範例 1：新增部署區域至 PsApiManagement 實例
 ```
 PS C:\>Add-AzApiManagementRegion -ApiManagement $ApiManagement -Location "East US" -Sku "Premium" -Capacity 2
 ```
 
-這個命令會將兩個 premium SKU 單位及名為 [東美國] 的區域新增至 **PsApiManagement** 實例。
+此命令會將兩個進位 SKU 單位和名為 East US 的區域新增到 **PsApiManagement** 實例。
 
-### 範例2：將新的部署區域新增至 PsApiManagement 實例，然後更新部署
+### 範例 2：新增部署區域至 PsApiManagement 實例，然後更新部署
 ```
-PS C:\>Get-AzApiManagement -ResourceGroupName "Contoso" -Name "ContosoApi" | Add-AzApiManagementRegion -Location "East US" -Sku "Premium" -Capacity 2 | Update-AzApiManagementDeployment
+PS C:\>Get-AzApiManagement -ResourceGroupName "Contoso" -Name "ContosoApi" | Add-AzApiManagementRegion -Location "East US" -Sku "Premium" -Capacity 2 | Set-AzApiManagement
 ```
 
-這個命令會取得 **PsApiManagement** 物件，為名為 [東部] 的地區新增兩個 premium SKU 單位，然後更新 [部署]。
+此命令會獲得 **PsApiManagement 物件** 、為名為 East US 的區域新增兩個進位 SKU 單位，然後更新部署。
 
 ## 參數
 
 ### -ApiManagement
-指定此 Cmdlet 新增其他部署區域的 **PsApiManagement** 實例。
+指定此 **Cmdlet 新增其他部署區域的 PsApiManagement** 實例。
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 ```
 
 ### -容量
-指定部署區域的 SKU 容量。
+指定部署地區的 SKU 容量。
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -80,7 +80,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -95,8 +95,8 @@ Accept wildcard characters: False
 ```
 
 ### -位置
-指定新部署區域在 Api 管理服務支援區域之間的位置。
-若要取得有效的位置，請使用 Cmdlet Get-AzResourceProvider ProviderNamespace "ApiManagement" |其中 {$ _。ResourceTypes [0]。ResourceTypeName-eq "service"} |Select-Object 位置
+指定 Api 管理服務支援區域之間的新部署區域位置。
+若要取得有效的位置，請使用 Cmdlet Get-AzResourceProvider -ProviderNamespace "Microsoft.ApiManagement" |其中 {$_.ResourceTypes[0]。ResourceTypeName -eq "service"} |Select-Object位置
 
 ```yaml
 Type: System.String
@@ -110,12 +110,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Sku
-指定部署區域的層級。
-有效值為： 
-- 人員
+### -SKU
+指定部署區域層級。
+有效的值為：
+- 開發 人員
 - 標準
-- 佳
+- 溢價
 
 ```yaml
 Type: System.Nullable`1[Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementSku]
@@ -131,7 +131,7 @@ Accept wildcard characters: False
 ```
 
 ### -VirtualNetwork
-指定虛擬網路配置。
+指定虛擬網路組配置。
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementVirtualNetwork
@@ -146,25 +146,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 https://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
-### PsApiManagement 中的 ApiManagement。
+### Microsoft.Azure.Commands.ApiManagement.models.PsApiManagement
 
 ## 輸出
 
-### PsApiManagement 中的 ApiManagement。
+### Microsoft.Azure.Commands.ApiManagement.models.PsApiManagement
 
 ## 筆記
-* 這個 Cmdlet 會將更新的 **PsApiManagement** 實例寫入管線。
+* Cmdlet 會將更新 **的 PsApiManagement 實例** 寫入管線。
 
 ## 相關連結
 
-[移除-AzApiManagementRegion](./Remove-AzApiManagementRegion.md)
+[Remove-AzApiManagementRegion](./Remove-AzApiManagementRegion.md)
 
-[更新-AzApiManagementRegion](./Update-AzApiManagementRegion.md)
+[Update-AzApiManagementRegion](./Update-AzApiManagementRegion.md)
 
-[更新-AzApiManagementDeployment](./Update-AzApiManagementDeployment.md)
+[Set-AzApiManagement](./Set-AzApiManagement.md)
 
 

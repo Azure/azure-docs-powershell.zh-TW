@@ -5,33 +5,33 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementApiVersionSet.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementApiVersionSet.md
-ms.openlocfilehash: 16fea88f5a5a1ad8a0e39f62b26d918ca7a64dbd
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 5b7c06e9ed75cf973a3b9e375ff888477b9a96d7
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93611637"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400972"
 ---
 # Get-AzApiManagementApiVersionSet
 
-## 摘要
-取得 API 版本集合的詳細資料
+## 簡介
+取得 API 版本集的詳細資訊
 
-## 句法
+## 語法
 
 ```
 Get-AzApiManagementApiVersionSet -Context <PsApiManagementContext> [-ApiVersionSetId <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## 說明
-**AzApiManagementApiVersionSet** Cmdlet 會取得 api 管理內容中所設定 Api 版本集合的詳細資料。
+## 描述
+**Get-AzApiManagementApiVersionSet** Cmdlet 會取得 API 管理環境中所設定 API 版本集的詳細資訊。
 
-## 示例
+## 例子
 
-### 範例1
+### 範例 1
 
-### 範例1：取得所有 API 版本集合
+### 範例 1：取得所有 API 版本集
 ```powershell
 PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Get-AzApiManagementApiVersionSet -Context $ApiMgmtContext
@@ -68,9 +68,9 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 ```
 
-這個命令會取得指定內容的所有 API 版本集合。
+此命令會針對指定的上下文獲得所有 API 版本集。
 
-### 範例2：取得由識別碼設定的 API 版本
+### 範例 2：取得 API 版本設定
 ```powershell
 PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Get-AzApiManagementApiVersionSet -Context $ApiMgmtContext -ApiVersionSetId $ApiVersionSetId
@@ -86,13 +86,13 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 ```
 
-這個命令會以指定的識別碼來取得 API 版本設定。
+此命令會獲得具有指定識別碼的 API 版本集。
 
 ## 參數
 
 ### -ApiVersionSetId
 要尋找的 API 識別碼。
-如果已指定，將會嘗試透過識別碼取得 API。
+如果指定，會嘗試使用識別碼取得 API。
 
 ```yaml
 Type: System.String
@@ -108,7 +108,7 @@ Accept wildcard characters: False
 
 ### -內容
 PsApiManagementCoNtext 的實例。
-這個參數是必要的。
+此參數為必填項。
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -123,7 +123,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 Azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -138,24 +138,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 https://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
-### ServiceManagement. PsApiManagementCoNtext （ApiManagement）
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.models.PsApiManagementCoNtext
 
-### System.object
+### System.String
 
 ## 輸出
 
-### ServiceManagement. PsApiManagementApiVersionSet （ApiManagement）
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.models.PsApiManagementApiVersionSet
 
 ## 筆記
 
 ## 相關連結
 
-[新-AzApiManagementApiVersionSet](./New-AzApiManagementApiVersionSet.md)
+[New-AzApiManagementApiVersionSet](./New-AzApiManagementApiVersionSet.md)
 
-[移除-AzApiManagementApiSet](./Remove-AzApiManagementApiVersionSet.md)
+[Remove-AzApiManagementApiSet](./Remove-AzApiManagementApiVersionSet.md)
 
-[Set-AzApiManagementApiVersionSet](./Set-AzApiManagementApiSet.md)
+[Set-AzApiManagementApiVersionSet](./Set-AzApiManagementApiVersionSet.md)
