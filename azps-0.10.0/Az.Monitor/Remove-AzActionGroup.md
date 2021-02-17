@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Monitor/Monitor/help/Remove-AzActionGroup.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Monitor/Monitor/help/Remove-AzActionGroup.md
-ms.openlocfilehash: 25185202bd0804960c6803b98955e62ab9410c76
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: 2e7240f607d2c9ed426c35f9427452640ceec84f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93794570"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399340"
 ---
 # Remove-AzActionGroup
 
-## 摘要
+## 簡介
 移除動作群組。
 
-## 句法
+## 語法
 
 ### ByPropertyName (預設) 
 ```
@@ -38,12 +38,12 @@ Remove-AzActionGroup -InputObject <PSActionGroupResource> [-DefaultProfile <IAzu
  [-Confirm] [<CommonParameters>]
 ```
 
-## 說明
-**AzActionGroup** Cmdlet 會移除 [動作] 群組。
+## 描述
+**Remove-AzActionGroup** Cmdlet 會移除動作群組。
 
-## 示例
+## 例子
 
-### 範例1：移除動作群組
+### 範例 1：移除動作群組
 ```
 PS C:\>Remove-AzActionGroup -ResourceGroup "Default-Web-CentralUS" -Name "myActionGroup"
 RequestId                                                                                                    StatusCode
@@ -54,7 +54,7 @@ RequestId                                                                       
 ## 參數
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-[動作] 群組資源
+動作群組資源
 
 ```yaml
 Type: Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-動作群組的名稱。
+動作組的名稱。
 
 ```yaml
 Type: System.String
@@ -99,7 +99,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-資源群組
+資源群組的命名
 
 ```yaml
 Type: System.String
@@ -129,7 +129,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，系統會提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -144,7 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。 未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。 不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -159,22 +159,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### System.object
+### System.String
 
-### PSActionGroupResource 中的 OutputClasses。
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource
 
 ## 輸出
 
-### AzureOperationResponse
+### Microsoft.Azure.AzureOperationResponse
 
 ## 筆記
 
 ## 相關連結
 
 [Set-AzActionGroup](./Set-AzActionGroup.md) 
-[AzActionGroup](./Get-AzActionGroup.md) 
-[新-AzActionGroupReceiver](./AzureRmActionGroupReceiver.md)
+[Get-AzActionGroup](./Get-AzActionGroup.md)
+

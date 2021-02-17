@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/start-
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Start-AzSqlDatabaseExecuteIndexRecommendation.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Start-AzSqlDatabaseExecuteIndexRecommendation.md
-ms.openlocfilehash: c432b3a23c4495abebda013b5dd3943132827a30
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 1ab1e223ec173cf5727011956f52979026159594
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93614682"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399510"
 ---
 # Start-AzSqlDatabaseExecuteIndexRecommendation
 
-## 摘要
+## 簡介
 啟動執行建議索引作業的工作流程。
 
-## 句法
+## 語法
 
 ```
 Start-AzSqlDatabaseExecuteIndexRecommendation -ServerName <String> -DatabaseName <String>
@@ -26,17 +26,17 @@ Start-AzSqlDatabaseExecuteIndexRecommendation -ServerName <String> -DatabaseName
  [<CommonParameters>]
 ```
 
-## 說明
-**Start AzSqlDatabaseExecuteIndexRecommendation** Cmdlet 會啟動工作流程，以針對 Azure SQL 資料庫執行建議的索引作業。
+## 描述
+**Start-AzSqlDatabaseExecuteIndexRecommendation** Cmdlet 會啟動工作流程，針對 Azure SQL Database 執行建議的索引作業。
 
-## 示例
+## 例子
 
-### 範例1：執行索引建議
+### 範例 1：執行索引建議
 ```
 PS C:\>Start-AzSqlDatabaseExecuteIndexRecommendation -ResourceGroup "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" -IndexRecommendationName "INDEX_NAME"
 ```
 
-這個命令會執行索引建議。
+此命令會執行索引建議。
 
 ## 參數
 
@@ -56,7 +56,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-指定指派給伺服器之資源群組的名稱。
+指定伺服器指派給的資源組名。
 
 ```yaml
 Type: System.String
@@ -101,7 +101,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServerName
-指定主持此 Cmdlet 啟動工作流程之資料庫的伺服器。
+指定主管此 Cmdlet 啟動工作流程之資料庫的伺服器。
 
 ```yaml
 Type: System.String
@@ -116,23 +116,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](https://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### System.object
+### System.String
 
 ## 輸出
 
-### IndexRecommendation （.Sql）命令
+### Microsoft.Azure.Commands.Sql.Model.IndexRecommendation
 
 ## 筆記
 
 ## 相關連結
 
-[AzSqlDatabaseIndexRecommendations](./Get-AzSqlDatabaseIndexRecommendations.md)
 
-[停止 AzSqlDatabaseExecuteIndexRecommendation](./Stop-AzSqlDatabaseExecuteIndexRecommendation.md)
+[Stop-AzSqlDatabaseExecuteIndexRecommendation](./Stop-AzSqlDatabaseExecuteIndexRecommendation.md)
 
 [SQL 資料庫檔](https://docs.microsoft.com/azure/sql-database/)
 
