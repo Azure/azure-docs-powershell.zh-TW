@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertRule.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertRule.md
-ms.openlocfilehash: f515d7db58e75cc916478e07edb4e34233201a4d
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 61c50e59dfb02a454c9f513f4f5dac277a4ee28d
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93970448"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100409132"
 ---
 # Get-AzAlertRule
 
-## 摘要
-取得警示規則。
+## 簡介
+獲得警示規則。
 
-## 句法
+## 語法
 
 ### GetByResourceGroup
 ```
@@ -38,39 +38,39 @@ Get-AzAlertRule -ResourceGroupName <String> -TargetResourceId <String> [-Detaile
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## 說明
-AzAlertRule Cmdlet 會根據其名稱或 URI，或從指定的資源群組取得所有警示規則，來 **取得** 警示規則。
+## 描述
+**Get-AzAlertRule** Cmdlet 會依名稱或 URI 或指定資源群組的所有警示規則，取得警示規則。
 
-## 示例
+## 例子
 
-### 範例1：取得資源群組的警示規則
+### 範例 1：取得資源群組的警示規則
 ```
 PS C:\>Get-AzAlertRule -ResourceGroup "Default-Web-CentralUS"
 ```
 
-這個命令會取得名為 [預設-Web CentralUS] 的資源群組的所有通知規則。
-輸出不會包含有關規則的詳細資料，因為未指定 *DetailedOutput* 參數。
+此命令會針對名為 Default-Web-CentralUS 的資源群組，獲得所有警示規則。
+輸出不會包含規則的詳細資料，因為 *未指定 DetailedOutput* 參數。
 
-### 範例2：依名稱取得警示規則
+### 範例 2：依名稱取得提醒規則
 ```
 PS C:\>Get-AzAlertRule -ResourceGroup "Default-Web-CentralUS" -Name "myalert-7da64548-214d-42ca-b12b-b245bb8f0ac8"
 ```
 
-這個命令會取得名為 myalert-7da64548-214d-42ca-b12b-b245bb8f0ac8 的警示規則。
-因為未指定 *DetailedOutput* 參數，所以輸出只包含有關警示規則的基本資訊。
+此命令會獲得名為 myalert-7da64548-214d-42ca-b12b-b245bb8f0ac8 的警示規則。
+由於 *未指定 DetailedOutput* 參數，因此輸出只會包含警示規則的基本資訊。
 
-### 範例3：透過名稱取得警示規則及詳細的輸出
+### 範例 3：依名稱取得具有詳細輸出的警示規則
 ```
 PS C:\>Get-AzAlertRule -ResourceGroup "Default-Web-CentralUS" -Name "myalert-7da64548-214d-42ca-b12b-b245bb8f0ac8" -DetailedOutput
 ```
 
-這個命令會取得名為 myalert-7da64548-214d-42ca-b12b-b245bb8f0ac8 的警示規則。
-已指定 *DetailedOutput* 參數，因此會詳細說明輸出。
+此命令會獲得名為 myalert-7da64548-214d-42ca-b12b-b245bb8f0ac8 的警示規則。
+*指定 DetailedOutput* 參數，因此輸出會詳述。
 
 ## 參數
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### -DetailedOutput
-顯示輸出中的完整詳細資料。
+在輸出中顯示完整詳細資料。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-指定資源群組的名稱。
+指定資源組的名稱。
 
 ```yaml
 Type: System.String
@@ -145,30 +145,29 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### System.object
+### System.String
 
-### SwitchParameter 的系統管理功能
+### System.Management.Automation.SwitchParameter
 
 ## 輸出
 
-### PSAlertRule 中的 OutputClasses。
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSAlertRule
 
 ## 筆記
 
 ## 相關連結
 
-[附加 AzLogAlertRule](./Add-AzLogAlertRule.md)
 
-[附加 AzMetricAlertRule](./Add-AzMetricAlertRule.md)
+[Add-AzMetricAlertRule](./Add-AzMetricAlertRule.md)
 
-[附加 AzWebtestAlertRule](./Add-AzWebtestAlertRule.md)
+[Add-AzWebtestAlertRule](./Add-AzWebtestAlertRule.md)
 
-[AzAlertHistory](./Get-AzAlertHistory.md)
+[Get-AzAlertHistory](./Get-AzAlertHistory.md)
 
-[移除-AzAlertRule](./Remove-AzAlertRule.md)
+[Remove-AzAlertRule](./Remove-AzAlertRule.md)
 
 
