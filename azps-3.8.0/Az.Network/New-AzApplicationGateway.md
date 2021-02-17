@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGateway.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGateway.md
-ms.openlocfilehash: 46eb4979c62a5c1f2cb8277ddc1461ee09a339c7
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: d78daedb0d8e5b8767e596316d7da8d252b59805
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93966292"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405171"
 ---
 # New-AzApplicationGateway
 
-## 摘要
+## 簡介
 建立應用程式閘道。
 
-## 句法
+## 語法
 
 ### IdentityByUserAssignedIdentityId (預設) 
 ```
@@ -113,21 +113,21 @@ New-AzApplicationGateway -Name <String> -ResourceGroupName <String> -Location <S
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## 說明
-**新的-AzApplicationGateway** Cmdlet 會建立 Azure 應用程式閘道。
-應用程式閘道需要下列各項：
-- [資源] 群組。
-- 虛擬網路。
-- 後端伺服器池，包含後端伺服器的 IP 位址。
-- 後端伺服器池設定。 每個池都有套用至池中所有伺服器的埠、通訊協定及 cookie 關聯性等設定。
-- 前端 IP 位址，也就是在應用程式閘道開啟的 IP 位址。 前端 IP 位址可以是公用 IP 位址或內部 IP 位址。
-- 前端埠，即是在應用程式閘道開啟的公用埠。 擊中這些埠的流量會重新導向到後端伺服器。
-- 系結監聽器與後端伺服器池的要求路由規則。 規則會定義當通信量擊中特定的監聽程式時，應該會將它導向到哪個後端伺服器池。
-偵聽程式有前端埠、前端 IP 位址、通訊協定 (HTTP 或 HTTPS) 以及安全通訊端層 (SSL) 憑證名 (如果設定 SSL 卸載) 。
+## 描述
+**New-AzApplicationGateway** Cmdlet 會建立 Azure 應用程式閘道。
+應用程式閘道需要下列專案：
+- 資源群組。
+- 一個虛擬網路。
+- 後端伺服器資料庫，包含後端伺服器的 IP 位址。
+- 後端伺服器資料庫設定。 每個資料庫都有一些設定，例如埠、通訊協定和 Cookie 型關聯，這些設定會適用于該資料庫內的所有伺服器。
+- 前端 IP 位址，即應用程式閘道上開啟的 IP 位址。 前端 IP 位址可以是公用 IP 位址或內部 IP 位址。
+- 前端埠，即應用程式閘道上開啟的公用埠。 到達這些埠的流量會重新導向至後端伺服器。
+- 將聆聽者與後端伺服器集區綁定的要求路由規則。 規則會定義當流量到達特定聆聽者時，該流量應導向至哪個後端伺服器集區。
+聆聽者擁有前端埠、前端 IP 位址、通訊協定 (HTTP 或 HTTPS) ，以及安全通訊端層 (SSL) 憑證名稱 (若已) 。
 
-## 示例
+## 例子
 
-### 範例1：建立應用程式閘道
+### 範例 1：建立應用程式閘道
 ```
 PS C:\> $ResourceGroup = New-AzResourceGroup -Name "ResourceGroup01" -Location "West US" -Tag @{Name = "Department"; Value = "Marketing"} 
 PS C:\> $Subnet = New-AzVirtualNetworkSubnetConfig -Name "Subnet01" -AddressPrefix 10.0.0.0/24
@@ -147,28 +147,28 @@ PS C:\> $Sku = New-AzApplicationGatewaySku -Name "Standard_Small" -Tier Standard
 PS C:\> $Gateway = New-AzApplicationGateway -Name "AppGateway01" -ResourceGroupName "ResourceGroup01" -Location "West US" -BackendAddressPools $Pool -BackendHttpSettingsCollection $PoolSetting -FrontendIpConfigurations $FrontEndIpConfig  -GatewayIpConfigurations $GatewayIpConfig -FrontendPorts $FrontEndPort -HttpListeners $Listener -RequestRoutingRules $Rule -Sku $Sku
 ```
 
-下列範例會先建立資源群組和虛擬網路，以及下列專案來建立應用程式閘道：
-- 後端伺服器池
-- 後端伺服器池設定
+下列範例會先建立資源群組和虛擬網路來建立應用程式閘道，以及下列各項：
+- 後端伺服器資料庫
+- 後端伺服器資料庫設定
 - 前端埠
 - 前端 IP 位址
-- 要求路由規則這四個命令會建立一個虛擬網路。
-第一個命令會建立子網配置。
-第二個命令會建立虛擬網路。
-第三個命令會驗證子網設定，而第四個命令會驗證虛擬網路已順利建立。
+- 要求路由規則 這四個命令會建立一個虛擬網路。
+第一個命令會建立子網組配置。
+第二個命令會建立一個虛擬網路。
+第三個命令會驗證子網組配置，第四個命令會驗證已成功建立虛擬網路。
 下列命令會建立應用程式閘道。
-第一個命令會為先前建立的子網建立名為 GatewayIp01 的 IP 配置。
-第二個命令會使用後端 IP 位址清單來建立名為 Pool01 的後端伺服器池，並將該池儲存在 $Pool 變數中。
-第三個命令會建立後端伺服器池的設定，並將設定儲存在 $PoolSetting 變數中。
-第四個命令會在埠80建立前端埠，將它命名為 FrontEndPort01，並將埠儲存在 $FrontEndPort 變數中。
-第五個命令會使用新的 AzPublicIpAddress 建立公用 IP 位址。
-第六個命令會使用 $PublicIp 建立前端 IP 設定，並將其命名為 FrontEndPortConfig01，並將它儲存在 $FrontEndIpConfig 變數中。
-第七個命令會使用先前建立的 $FrontEndIpConfig $FrontEndPort 來建立偵聽程式。
-第八個命令會建立監聽程式的規則。
+第一個命令會針對先前建立之子網建立名為 GatewayIp01 的 IP 組配置。
+第二個命令會建立名為 Pool01 的後端伺服器資料庫，並包含後端 IP 位址清單，並且將資料庫儲存在 $Pool 變數中。
+第三個命令會建立後端伺服器資料庫的設定，並儲存于$PoolSetting變數。
+第四個命令在埠 80 上建立前端埠，將它命名為 FrontEndPort01，並且將埠儲存在 $FrontEndPort 變數中。
+第五個命令會使用 New-AzPublicIpAddress 建立公用 IP 位址。
+第六個命令會使用 $PublicIp 建立前端 IP 組$PublicIp，將它命名為 FrontEndPortConfig01，然後儲存在 $FrontEndIpConfig 變數中。
+第七個命令會使用先前建立$FrontEndIpConfig $FrontEndPort。
+第八個命令會為聆聽者建立規則。
 第九個命令會設定 SKU。
-第10個命令會使用先前命令所設定的物件來建立閘道。
+第十個命令會使用先前命令所設定的物件來建立閘道。
 
-### 範例2：使用 UserAssigned 身分識別來建立應用程式閘道
+### 範例 2：使用 UserAssigned 身分識別建立應用程式閘道
 ```
 PS C:\> $ResourceGroup = New-AzResourceGroup -Name "ResourceGroup01" -Location "West US" -Tag @{Name = "Department"; Value = "Marketing"} 
 PS C:\> $Subnet = New-AzVirtualNetworkSubnetConfig -Name "Subnet01" -AddressPrefix 10.0.0.0/24
@@ -223,7 +223,7 @@ Accept wildcard characters: False
 ```
 
 ### -AutoscaleConfiguration
-自動縮放設定
+自動縮放組配置
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayAutoscaleConfiguration
@@ -237,8 +237,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -BackendAddressPools
-指定應用程式閘道的後端位址集區清單。
+### -後端AddressPools
+指定應用程式閘道的後端位址資料庫清單。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendAddressPool[]
@@ -252,7 +252,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -BackendHttpSettingsCollection
+### -後端HttpSettingsCollection
 指定應用程式閘道的後端 HTTP 設定清單。
 
 ```yaml
@@ -283,7 +283,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -328,7 +328,7 @@ Accept wildcard characters: False
 ```
 
 ### -FirewallPolicy
-防火牆設定
+防火牆組
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayWebApplicationFirewallPolicy
@@ -357,8 +357,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Force
-強制執行命令，而不要求使用者確認。
+### -強制
+強制執行命令，但不要求使用者確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -373,7 +373,7 @@ Accept wildcard characters: False
 ```
 
 ### -ForceFirewallPolicyAssociation
-是否啟用 [強制 firewallPolicy 關聯]。
+是否已啟用強制防火牆策略關聯。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -388,7 +388,7 @@ Accept wildcard characters: False
 ```
 
 ### -FrontendIPConfigurations
-指定應用程式閘道的前端 IP 配置清單。
+指定應用程式閘道的前端 IP 群組原則清單。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayFrontendIPConfiguration[]
@@ -418,7 +418,7 @@ Accept wildcard characters: False
 ```
 
 ### -GatewayIPConfigurations
-指定應用程式閘道的 IP 配置清單。
+指定應用程式閘道的 IP 群組原則清單。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayIPConfiguration[]
@@ -432,8 +432,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -HttpListeners
-指定應用程式閘道的 HTTP 攔截器清單。
+### -HTTPListeners
+指定應用程式閘道的 HTTP 聆聽者清單。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayHttpListener[]
@@ -447,7 +447,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### 身分識別
+### -身分識別
 要指派給應用程式閘道的應用程式閘道身分識別。
 
 ```yaml
@@ -463,7 +463,7 @@ Accept wildcard characters: False
 ```
 
 ### -位置
-指定要在其中建立應用程式閘道的區域。
+指定要建立應用程式閘道的區域。
 
 ```yaml
 Type: System.String
@@ -492,8 +492,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -探針
-指定應用程式閘道的探測器。
+### -進位器
+指定應用程式閘道的介面。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayProbe[]
@@ -508,7 +508,7 @@ Accept wildcard characters: False
 ```
 
 ### -RedirectConfigurations
-重新導向配置清單
+重新導向組配置清單
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRedirectConfiguration[]
@@ -538,7 +538,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-指定要在其中建立應用程式閘道的資源群組的名稱。
+指定要建立應用程式閘道的資源組名。
 
 ```yaml
 Type: System.String
@@ -567,8 +567,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Sku
-指定應用程式閘道 (SKU) 的庫存單位。
+### -SKU
+指定應用程式閘道 (SKU) 庫存單位。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySku
@@ -583,7 +583,7 @@ Accept wildcard characters: False
 ```
 
 ### -SslCertificates
-指定 (SSL) 應用程式閘道憑證的安全通訊端層的清單。
+指定應用程式閘道的安全通訊端層 (SSL) 憑證清單。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslCertificate[]
@@ -598,7 +598,7 @@ Accept wildcard characters: False
 ```
 
 ### -SslPolicy
-指定應用程式閘道的 SSL 原則。
+指定應用程式閘道的 SSL 策略。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslPolicy
@@ -612,8 +612,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Tag
-雜湊資料表形式的索引鍵/值對。 例如： @ {key0 = "value0"; key1 = $null; key2 = "value2"}
+### -標記
+以雜湊表格形式建立索引鍵值組。 例如：@{key0="value0";key1=$null;key2="value2"}
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -628,7 +628,7 @@ Accept wildcard characters: False
 ```
 
 ### -TrustedRootCertificate
-受信任的根憑證清單
+信任的根憑證清單
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayTrustedRootCertificate[]
@@ -643,7 +643,7 @@ Accept wildcard characters: False
 ```
 
 ### -UrlPathMaps
-指定應用程式閘道的 URL 路徑對應。
+指定應用程式閘道的 URL 路徑地圖。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayUrlPathMap[]
@@ -658,7 +658,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserAssignedIdentityId
-指派給應用程式閘道的使用者指派身分識別的 ResourceId。
+指派身分識別給使用者的 ResourceId，指派給應用程式閘道。
 
 ```yaml
 Type: System.String
@@ -673,7 +673,7 @@ Accept wildcard characters: False
 ```
 
 ### -WebApplicationFirewallConfiguration
-指定 (WAF) 設定的 web 應用程式防火牆。 您可以使用 Get-AzApplicationGatewayWebApplicationFirewallConfiguration Cmdlet 來取得 WAF。
+指定 Web 應用程式防火牆 (WAF) 組。 您可以使用 Cmdlet Get-AzApplicationGatewayWebApplicationFirewallConfiguration取得 WAF。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayWebApplicationFirewallConfiguration
@@ -687,8 +687,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Zone
-顯示應用程式閘道需要來源之位置的可用性區域清單。
+### -區域
+表示應用程式閘道需要來自何處的可用性區域清單。
 
 ```yaml
 Type: System.String[]
@@ -703,7 +703,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -718,8 +718,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。
-未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。
+不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -734,76 +734,75 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### System.object
+### System.String
 
-### PSApplicationGatewaySku 中的 [.]
+### Microsoft.Azure.Commands.Network.models.PSApplicationGatewaySku
 
-### PSApplicationGatewaySslPolicy 中的 [.]
+### Microsoft.Azure.Commands.Network.models.PSApplicationGatewaySslPolicy
 
-### PSApplicationGatewayIPConfiguration [] （[]）
+### Microsoft.Azure.Commands.Network.models.PSApplicationGatewayIPConfiguration[]
 
-### PSApplicationGatewaySslCertificate [] （[]）
+### Microsoft.Azure.Commands.Network.models.PSApplicationGatewaySslCertificate[]
 
-### PSApplicationGatewayAuthenticationCertificate [] （[]）
+### Microsoft.Azure.Commands.Network.models.PSApplicationGatewayAuthenticationCertificate[]
 
-### PSApplicationGatewayTrustedRootCertificate [] （[]）
+### Microsoft.Azure.Commands.Network.models.PSApplicationGatewayTrustedRootCertificate[]
 
-### PSApplicationGatewayFrontendIPConfiguration [] （[]）
+### Microsoft.Azure.Commands.Network.models.PSApplicationGatewayFrontendIPConfiguration[]
 
-### PSApplicationGatewayFrontendPort [] （[]）
+### Microsoft.Azure.Commands.Network.models.PSApplicationGatewayFrontendPort[]
 
-### PSApplicationGatewayProbe [] （[]）
+### Microsoft.Azure.Commands.Network.models.PSApplicationGatewayProbe[]
 
-### PSApplicationGatewayBackendAddressPool [] （[]）
+### Microsoft.Azure.Commands.Network.models.PSApplicationGatewayBackendAddressPool[]
 
-### PSApplicationGatewayBackendHttpSettings [] （[]）
+### Microsoft.Azure.Commands.Network.models.PSApplicationGatewayBackendHttpSettings[]
 
-### PSApplicationGatewayHttpListener [] （[]）
+### Microsoft.Azure.Commands.Network.models.PSApplicationGatewayHttpListener[]
 
-### PSApplicationGatewayUrlPathMap [] （[]）
+### Microsoft.Azure.Commands.network.models.PSApplicationGatewayUrlPathMap[]
 
-### PSApplicationGatewayRequestRoutingRule [] （[]）
+### Microsoft.Azure.Commands.Network.models.PSApplicationGatewayRequestRoutingRule[]
 
-### PSApplicationGatewayRewriteRuleSet [] （[]）
+### Microsoft.Azure.Commands.Network.models.PSApplicationGatewayRewriteRuleSet[]
 
-### PSApplicationGatewayRedirectConfiguration [] （[]）
+### Microsoft.Azure.Commands.Network.models.PSApplicationGatewayRedirectConfiguration[]
 
-### PSApplicationGatewayWebApplicationFirewallConfiguration 中的 [.]
+### Microsoft.Azure.Commands.Network.models.PSApplicationGatewayWebApplicationFirewallConfiguration
 
-### PSApplicationGatewayAutoscaleConfiguration 中的 [.]
+### Microsoft.Azure.Commands.Network.models.PSApplicationGatewayAutoscaleConfiguration
 
-### [System.object] 集合. Hashtable
+### System.Collections.Hashtable
 
-### PSManagedServiceIdentity 中的 [.]
+### Microsoft.Azure.Commands.Network.models.PSManagedServiceIdentity
 
 ## 輸出
 
-### PSApplicationGateway 中的 [.]
+### Microsoft.Azure.Commands.Network.models.PSApplicationGateway
 
 ## 筆記
 
 ## 相關連結
 
-[新-AzApplicationGatewayBackendAddressPool](./New-AzApplicationGatewayBackendAddressPool.md)
+[New-AzApplicationGatewayBackendAddressPool](./New-AzApplicationGatewayBackendAddressPool.md)
 
-[新-AzApplicationGatewayBackendHttpSettings](./New-AzApplicationGatewayBackendHttpSettings.md)
 
-[新-AzApplicationGatewayFrontendIPConfig](./New-AzApplicationGatewayFrontendIPConfig.md)
+[New-AzApplicationGatewayFrontendIPConfig](./New-AzApplicationGatewayFrontendIPConfig.md)
 
-[新-AzApplicationGatewayFrontendPort](./New-AzApplicationGatewayFrontendPort.md)
+[New-AzApplicationGatewayFrontendPort](./New-AzApplicationGatewayFrontendPort.md)
 
-[新-AzApplicationGatewayHttpListener](./New-AzApplicationGatewayHttpListener.md)
+[New-AzApplicationGatewayHttpListener](./New-AzApplicationGatewayHttpListener.md)
 
-[新-AzApplicationGatewayIPConfiguration](./New-AzApplicationGatewayIPConfiguration.md)
+[New-AzApplicationGatewayIPConfiguration](./New-AzApplicationGatewayIPConfiguration.md)
 
-[新-AzApplicationGatewayRequestRoutingRule](./New-AzApplicationGatewayRequestRoutingRule.md)
+[New-AzApplicationGatewayRequestRoutingRule](./New-AzApplicationGatewayRequestRoutingRule.md)
 
-[新-AzApplicationGatewaySku](./New-AzApplicationGatewaySku.md)
+[New-AzApplicationGatewaySku](./New-AzApplicationGatewaySku.md)
 
-[新-AzVirtualNetwork](./New-AzVirtualNetwork.md)
+[New-AzVirtualNetwork](./New-AzVirtualNetwork.md)
 
-[新-AzVirtualNetworkSubnetConfig](./New-AzVirtualNetworkSubnetConfig.md)
+[New-AzVirtualNetworkSubnetConfig](./New-AzVirtualNetworkSubnetConfig.md)

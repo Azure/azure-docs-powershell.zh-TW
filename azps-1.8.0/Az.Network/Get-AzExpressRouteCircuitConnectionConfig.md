@@ -6,37 +6,37 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitConnectionConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitConnectionConfig.md
-ms.openlocfilehash: 70badaebf0b6b8a35fd96cc20a54aab1ff316bef
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 0adba1dfe453852b0797f40d6cd4d188db87169f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93622047"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401992"
 ---
 # Get-AzExpressRouteCircuitConnectionConfig
 
-## 摘要
-取得與 ExpressRouteCircuit 的私有對等相關聯的 ExpressRoute 線路連線設定。
+## 簡介
+獲得與 ExpressRouteCircuit 的專用對等關聯的 ExpressRoute 回路連接組。
 
-## 句法
+## 語法
 
 ```
 Get-AzExpressRouteCircuitConnectionConfig [[-Name] <String>] [-ExpressRouteCircuit] <PSExpressRouteCircuit>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## 說明
-AzExpressRouteCircuitConnectionConfig Cmdlet 會為與 ExpressRoute 回路的私人對等相關聯的線路連線 **取得** 配置。
+## 描述
+**Get-AzExpressRouteRouteCircuitConnectionConfig** Cmdlet 會針對 ExpressRoute 回路，取得與私人對等關聯的回路連接組式。
 
-## 示例
+## 例子
 
-### 範例1：顯示 ExpressRoute 線路的線路連線設定
+### 範例 1：顯示 ExpressRoute 回路的回路連接組
 ```
 $circuit_init = Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg
 Get-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName -ExpressRouteCircuit $circuit_init
 ```
 
-### 範例2：使用管道取得與 ExpressRoute 電路相關聯的線路連線資源
+### 範例 2：使用管線取得與 ExpressRoute 回路相關聯的回路連接資源
 ```
 Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg|Get-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName
 ```
@@ -44,7 +44,7 @@ Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg|Ge
 ## 參數
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -59,7 +59,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExpressRouteCircuit
-包含線路連接設定的 ExpressRoute 電路物件。
+包含回路連接配置的 ExpressRoute 回路物件。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit
@@ -74,7 +74,7 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-要檢索之線路連接設定的名稱。
+要取回的回路連接組名。
 
 ```yaml
 Type: System.String
@@ -89,26 +89,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](https://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### PSExpressRouteCircuit 中的 [.]
+### Microsoft.Azure.Commands.Network.models.PSExpressRouteCircuit
 
 ## 輸出
 
-### PSExpressRouteCircuitConnection 中的 [.]
+### Microsoft.Azure.Commands.Network.models.PSExpressRouteCircuitConnection
 
 ## 筆記
 
 ## 相關連結
 
-[AzExpressRouteCircuit](Get-AzExpressRouteCircuit.md)
+[Get-AzExpressRouteCircuit](Get-AzExpressRouteCircuit.md)
 
-[附加 AzExpressRouteCircuitConnectionConfig](Add-AzExpressRouteCircuitConnectionConfig.md)
+[Add-AzExpressRouteCircuitConnectionConfig](Add-AzExpressRouteCircuitConnectionConfig.md)
 
-[移除-AzExpressRouteCircuitConnectionConfig](Remove-AzExpressRouteCircuitConnectionConfig.md)
+[Remove-AzExpressRouteCircuitConnectionConfig](Remove-AzExpressRouteCircuitConnectionConfig.md)
 
-[Set-AzExpressRouteCircuitConnectionConfig](Set-AzExpressRouteCircuitConnectionConfig.md)
 
-[新-AzExpressRouteCircuitConnectionConfig](New-AzExpressRouteCircuitConnectionConfig.md)
+
+
