@@ -6,49 +6,49 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.notificati
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHubListKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHubListKey.md
-ms.openlocfilehash: 6b9aa676e00d137612908955e88558b4cefb0eb8
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 7ce6c3c08c1794e2bed794186203a5c6c0d1fdea
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93621355"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399884"
 ---
-# <span data-ttu-id="60c11-101">Get-AzNotificationHubListKey</span><span class="sxs-lookup"><span data-stu-id="60c11-101">Get-AzNotificationHubListKey</span></span>
+# <span data-ttu-id="f36a9-101">Get-AzNotificationHubListKey</span><span class="sxs-lookup"><span data-stu-id="f36a9-101">Get-AzNotificationHubListKey</span></span>
 
-## <span data-ttu-id="60c11-102">摘要</span><span class="sxs-lookup"><span data-stu-id="60c11-102">SYNOPSIS</span></span>
-<span data-ttu-id="60c11-103">取得與通知中樞授權規則相關聯的主要和次要連接字串。</span><span class="sxs-lookup"><span data-stu-id="60c11-103">Gets the primary and secondary connection strings associated with a notification hub authorization rule.</span></span>
+## <span data-ttu-id="f36a9-102">簡介</span><span class="sxs-lookup"><span data-stu-id="f36a9-102">SYNOPSIS</span></span>
+<span data-ttu-id="f36a9-103">獲得與通知中樞授權規則相關聯的主要和次要連接字串。</span><span class="sxs-lookup"><span data-stu-id="f36a9-103">Gets the primary and secondary connection strings associated with a notification hub authorization rule.</span></span>
 
-## <span data-ttu-id="60c11-104">句法</span><span class="sxs-lookup"><span data-stu-id="60c11-104">SYNTAX</span></span>
+## <span data-ttu-id="f36a9-104">語法</span><span class="sxs-lookup"><span data-stu-id="f36a9-104">SYNTAX</span></span>
 
 ```
 Get-AzNotificationHubListKey [-ResourceGroup] <String> [-Namespace] <String> [-NotificationHub] <String>
  [-AuthorizationRule] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="60c11-105">說明</span><span class="sxs-lookup"><span data-stu-id="60c11-105">DESCRIPTION</span></span>
-<span data-ttu-id="60c11-106">**AzNotificationHubListKey** Cmdlet 會傳回通知中樞共用存取簽章的主要和次要連接字串， (SAS) 授權規則。</span><span class="sxs-lookup"><span data-stu-id="60c11-106">The **Get-AzNotificationHubListKey** cmdlet returns the primary and secondary connection strings of a notification hub Shared Access Signature (SAS) authorization rule.</span></span>
-<span data-ttu-id="60c11-107">授權規則可管理使用者對中心的許可權。</span><span class="sxs-lookup"><span data-stu-id="60c11-107">Authorization rules manage user rights to the hub.</span></span>
-<span data-ttu-id="60c11-108">每個規則都包含主要和次要的連線字串。</span><span class="sxs-lookup"><span data-stu-id="60c11-108">Each rule includes a primary and a secondary connection string.</span></span>
-<span data-ttu-id="60c11-109">這些連接字串 (Uri) 執行下列動作：</span><span class="sxs-lookup"><span data-stu-id="60c11-109">These connection strings (URIs) perform the following:</span></span>
-- <span data-ttu-id="60c11-110">將使用者指向資源。</span><span class="sxs-lookup"><span data-stu-id="60c11-110">Point users to a resource.</span></span>
-- <span data-ttu-id="60c11-111">包含含查詢參數的權杖。</span><span class="sxs-lookup"><span data-stu-id="60c11-111">Include a token containing query parameters.</span></span>
-<span data-ttu-id="60c11-112">其中一個參數（即簽名）是用來驗證使用者，並提供指定的存取層級。</span><span class="sxs-lookup"><span data-stu-id="60c11-112">One of these parameters, the signature, is used to authenticate the user and provide the specified level of access.</span></span>
+## <span data-ttu-id="f36a9-105">描述</span><span class="sxs-lookup"><span data-stu-id="f36a9-105">DESCRIPTION</span></span>
+<span data-ttu-id="f36a9-106">**Get-AzNotificationHubListKey** Cmdlet 會返回通知中樞共用存取簽名 (SAS) 授權規則的主要和次要連接字串。</span><span class="sxs-lookup"><span data-stu-id="f36a9-106">The **Get-AzNotificationHubListKey** cmdlet returns the primary and secondary connection strings of a notification hub Shared Access Signature (SAS) authorization rule.</span></span>
+<span data-ttu-id="f36a9-107">授權規則會管理中樞的使用者許可權。</span><span class="sxs-lookup"><span data-stu-id="f36a9-107">Authorization rules manage user rights to the hub.</span></span>
+<span data-ttu-id="f36a9-108">每個規則包含主要和次要連接字串。</span><span class="sxs-lookup"><span data-stu-id="f36a9-108">Each rule includes a primary and a secondary connection string.</span></span>
+<span data-ttu-id="f36a9-109">這些連接字串 (URI) 執行下列操作：</span><span class="sxs-lookup"><span data-stu-id="f36a9-109">These connection strings (URIs) perform the following:</span></span>
+- <span data-ttu-id="f36a9-110">將使用者指向資源。</span><span class="sxs-lookup"><span data-stu-id="f36a9-110">Point users to a resource.</span></span>
+- <span data-ttu-id="f36a9-111">包含包含查詢參數的權杖。</span><span class="sxs-lookup"><span data-stu-id="f36a9-111">Include a token containing query parameters.</span></span>
+<span data-ttu-id="f36a9-112">其中一個參數簽名可用來驗證使用者，並提供指定的存取層級。</span><span class="sxs-lookup"><span data-stu-id="f36a9-112">One of these parameters, the signature, is used to authenticate the user and provide the specified level of access.</span></span>
 
-## <span data-ttu-id="60c11-113">示例</span><span class="sxs-lookup"><span data-stu-id="60c11-113">EXAMPLES</span></span>
+## <span data-ttu-id="f36a9-113">例子</span><span class="sxs-lookup"><span data-stu-id="f36a9-113">EXAMPLES</span></span>
 
-### <span data-ttu-id="60c11-114">範例1：取得授權規則的主要和次要連接字串</span><span class="sxs-lookup"><span data-stu-id="60c11-114">Example 1: Get the primary and secondary connection strings for an authorization rule</span></span>
+### <span data-ttu-id="f36a9-114">範例 1：取得授權規則的主要和次要連接字串</span><span class="sxs-lookup"><span data-stu-id="f36a9-114">Example 1: Get the primary and secondary connection strings for an authorization rule</span></span>
 ```
 PS C:\>Get-AzNotificationHubListKey -Namespace "ContosoNamespace" -NotificationHub "ContosoInternalHub" -ResourceGroup "ContosoNotificationsGroup" -AuthorizationRule "ListenRule"
 ```
 
-<span data-ttu-id="60c11-115">這個命令會取得授權規則 ListenRule （指派給 ContosoInternalHub 通知中樞的規則）的主要和次要連接字串。</span><span class="sxs-lookup"><span data-stu-id="60c11-115">This command gets the primary and secondary connection strings for the authorization rule ListenRule, a rule assigned to the ContosoInternalHub notification hub.</span></span>
-<span data-ttu-id="60c11-116">命令必須包含中樞命名空間和資源群組。</span><span class="sxs-lookup"><span data-stu-id="60c11-116">The command must include the hub namespace and resource group.</span></span>
+<span data-ttu-id="f36a9-115">此命令會獲得授權規則 ListenRule 的主要和次要連接字串，這是指派給 ContosoInternalHub 通知中樞的規則。</span><span class="sxs-lookup"><span data-stu-id="f36a9-115">This command gets the primary and secondary connection strings for the authorization rule ListenRule, a rule assigned to the ContosoInternalHub notification hub.</span></span>
+<span data-ttu-id="f36a9-116">命令必須包含中樞命名空間和資源群組。</span><span class="sxs-lookup"><span data-stu-id="f36a9-116">The command must include the hub namespace and resource group.</span></span>
 
-## <span data-ttu-id="60c11-117">參數</span><span class="sxs-lookup"><span data-stu-id="60c11-117">PARAMETERS</span></span>
+## <span data-ttu-id="f36a9-117">參數</span><span class="sxs-lookup"><span data-stu-id="f36a9-117">PARAMETERS</span></span>
 
-### <span data-ttu-id="60c11-118">-AuthorizationRule</span><span class="sxs-lookup"><span data-stu-id="60c11-118">-AuthorizationRule</span></span>
-<span data-ttu-id="60c11-119">指定 (SAS) 驗證規則的共用存取簽章名稱。</span><span class="sxs-lookup"><span data-stu-id="60c11-119">Specifies the name of a Shared Access Signature (SAS) authentication rule.</span></span>
-<span data-ttu-id="60c11-120">這些規則決定使用者對通知中樞所擁有的存取類型。</span><span class="sxs-lookup"><span data-stu-id="60c11-120">These rules determine the type of access that users have to the notification hub.</span></span>
+### <span data-ttu-id="f36a9-118">-AuthorizationRule</span><span class="sxs-lookup"><span data-stu-id="f36a9-118">-AuthorizationRule</span></span>
+<span data-ttu-id="f36a9-119">指定 SAS 驗證規則的共用存取簽 (名稱) 名稱。</span><span class="sxs-lookup"><span data-stu-id="f36a9-119">Specifies the name of a Shared Access Signature (SAS) authentication rule.</span></span>
+<span data-ttu-id="f36a9-120">這些規則會決定使用者對通知中樞的存取類型。</span><span class="sxs-lookup"><span data-stu-id="f36a9-120">These rules determine the type of access that users have to the notification hub.</span></span>
 
 ```yaml
 Type: System.String
@@ -62,8 +62,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="60c11-121">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="60c11-121">-DefaultProfile</span></span>
-<span data-ttu-id="60c11-122">用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱</span><span class="sxs-lookup"><span data-stu-id="60c11-122">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="f36a9-121">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="f36a9-121">-DefaultProfile</span></span>
+<span data-ttu-id="f36a9-122">用於與 Azure 通訊的認證、帳戶、租使用者和訂閱</span><span class="sxs-lookup"><span data-stu-id="f36a9-122">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -77,9 +77,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="60c11-123">-命名空間</span><span class="sxs-lookup"><span data-stu-id="60c11-123">-Namespace</span></span>
-<span data-ttu-id="60c11-124">指定通知中心指派給哪個命名空間。</span><span class="sxs-lookup"><span data-stu-id="60c11-124">Specifies the namespace to which the notification hub is assigned.</span></span>
-<span data-ttu-id="60c11-125">命名空間提供一種群組和分類通知中樞的方式。</span><span class="sxs-lookup"><span data-stu-id="60c11-125">Namespaces provide a way to group and categorize notification hubs.</span></span>
+### <span data-ttu-id="f36a9-123">-命名空間</span><span class="sxs-lookup"><span data-stu-id="f36a9-123">-Namespace</span></span>
+<span data-ttu-id="f36a9-124">指定指派通知中樞的命名空間。</span><span class="sxs-lookup"><span data-stu-id="f36a9-124">Specifies the namespace to which the notification hub is assigned.</span></span>
+<span data-ttu-id="f36a9-125">命名空間提供將通知中樞分組和分類的方式。</span><span class="sxs-lookup"><span data-stu-id="f36a9-125">Namespaces provide a way to group and categorize notification hubs.</span></span>
 
 ```yaml
 Type: System.String
@@ -93,9 +93,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="60c11-126">-NotificationHub</span><span class="sxs-lookup"><span data-stu-id="60c11-126">-NotificationHub</span></span>
-<span data-ttu-id="60c11-127">指定此 Cmdlet 指派授權規則的通知中樞。</span><span class="sxs-lookup"><span data-stu-id="60c11-127">Specifies the notification hub that this cmdlet assigns an authorization rule to.</span></span>
-<span data-ttu-id="60c11-128">通知中樞可用來傳送推播通知給多個用戶端，而不管這些用戶端使用的平臺為何。</span><span class="sxs-lookup"><span data-stu-id="60c11-128">Notification hubs are used to send push notifications to multiple clients regardless of the platform used by those clients.</span></span>
+### <span data-ttu-id="f36a9-126">-NotificationHub</span><span class="sxs-lookup"><span data-stu-id="f36a9-126">-NotificationHub</span></span>
+<span data-ttu-id="f36a9-127">指定此 Cmdlet 指派授權規則的通知中樞。</span><span class="sxs-lookup"><span data-stu-id="f36a9-127">Specifies the notification hub that this cmdlet assigns an authorization rule to.</span></span>
+<span data-ttu-id="f36a9-128">通知中樞可用來傳送推入通知給多個用戶端，無論這些用戶端使用哪個平臺。</span><span class="sxs-lookup"><span data-stu-id="f36a9-128">Notification hubs are used to send push notifications to multiple clients regardless of the platform used by those clients.</span></span>
 
 ```yaml
 Type: System.String
@@ -109,9 +109,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="60c11-129">-ResourceGroup</span><span class="sxs-lookup"><span data-stu-id="60c11-129">-ResourceGroup</span></span>
-<span data-ttu-id="60c11-130">指定通知中心指派給哪個資源群組。</span><span class="sxs-lookup"><span data-stu-id="60c11-130">Specifies the resource group to which the notification hub is assigned.</span></span>
-<span data-ttu-id="60c11-131">資源群組會以協助您簡單地清查管理和 Azure 管理的方式，來組織諸如命名空間、通知中樞和授權規則等專案。</span><span class="sxs-lookup"><span data-stu-id="60c11-131">Resource groups organize items such as namespaces, notification hubs, and authorization rules in ways that help simply inventory management and Azure administration.</span></span>
+### <span data-ttu-id="f36a9-129">-ResourceGroup</span><span class="sxs-lookup"><span data-stu-id="f36a9-129">-ResourceGroup</span></span>
+<span data-ttu-id="f36a9-130">指定指派通知中樞給的資源群組。</span><span class="sxs-lookup"><span data-stu-id="f36a9-130">Specifies the resource group to which the notification hub is assigned.</span></span>
+<span data-ttu-id="f36a9-131">資源群組會以只協助庫存管理和 Azure 系統管理的方式整理專案，例如命名空間、通知中樞和授權規則。</span><span class="sxs-lookup"><span data-stu-id="f36a9-131">Resource groups organize items such as namespaces, notification hubs, and authorization rules in ways that help simply inventory management and Azure administration.</span></span>
 
 ```yaml
 Type: System.String
@@ -125,21 +125,20 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="60c11-132">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="60c11-132">CommonParameters</span></span>
-<span data-ttu-id="60c11-133">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="60c11-133">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="60c11-134">如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。</span><span class="sxs-lookup"><span data-stu-id="60c11-134">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="f36a9-132">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="f36a9-132">CommonParameters</span></span>
+<span data-ttu-id="f36a9-133">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="f36a9-133">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="f36a9-134">詳細資訊請參閱 https://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。</span><span class="sxs-lookup"><span data-stu-id="f36a9-134">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="60c11-135">輸入</span><span class="sxs-lookup"><span data-stu-id="60c11-135">INPUTS</span></span>
+## <span data-ttu-id="f36a9-135">輸入</span><span class="sxs-lookup"><span data-stu-id="f36a9-135">INPUTS</span></span>
 
-### <span data-ttu-id="60c11-136">System.object</span><span class="sxs-lookup"><span data-stu-id="60c11-136">System.String</span></span>
+### <span data-ttu-id="f36a9-136">System.String</span><span class="sxs-lookup"><span data-stu-id="f36a9-136">System.String</span></span>
 
-## <span data-ttu-id="60c11-137">輸出</span><span class="sxs-lookup"><span data-stu-id="60c11-137">OUTPUTS</span></span>
+## <span data-ttu-id="f36a9-137">輸出</span><span class="sxs-lookup"><span data-stu-id="f36a9-137">OUTPUTS</span></span>
 
-### <span data-ttu-id="60c11-138">ResourceListKeys 中的 NotificationHubs。</span><span class="sxs-lookup"><span data-stu-id="60c11-138">Microsoft.Azure.Management.NotificationHubs.Models.ResourceListKeys</span></span>
+### <span data-ttu-id="f36a9-138">Microsoft.Azure.management.NotificationHubs.models.ResourceListKeys</span><span class="sxs-lookup"><span data-stu-id="f36a9-138">Microsoft.Azure.Management.NotificationHubs.Models.ResourceListKeys</span></span>
 
-## <span data-ttu-id="60c11-139">筆記</span><span class="sxs-lookup"><span data-stu-id="60c11-139">NOTES</span></span>
+## <span data-ttu-id="f36a9-139">筆記</span><span class="sxs-lookup"><span data-stu-id="f36a9-139">NOTES</span></span>
 
-## <span data-ttu-id="60c11-140">相關連結</span><span class="sxs-lookup"><span data-stu-id="60c11-140">RELATED LINKS</span></span>
+## <span data-ttu-id="f36a9-140">相關連結</span><span class="sxs-lookup"><span data-stu-id="f36a9-140">RELATED LINKS</span></span>
 
-[<span data-ttu-id="60c11-141">AzNotificationHubAuthorizationRules</span><span class="sxs-lookup"><span data-stu-id="60c11-141">Get-AzNotificationHubAuthorizationRules</span></span>](./Get-AzNotificationHubAuthorizationRules.md)
 
 
