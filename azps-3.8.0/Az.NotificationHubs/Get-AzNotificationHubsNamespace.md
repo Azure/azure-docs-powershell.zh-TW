@@ -6,62 +6,62 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.notificati
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHubsNamespace.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHubsNamespace.md
-ms.openlocfilehash: 021f83895494fa56cbd60032c37eecdc0007460b
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 93ee8ceb15d3c07942f87c0187f4b04b8ac4aaa5
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93796634"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413297"
 ---
-# <span data-ttu-id="faac0-101">Get-AzNotificationHubsNamespace</span><span class="sxs-lookup"><span data-stu-id="faac0-101">Get-AzNotificationHubsNamespace</span></span>
+# <span data-ttu-id="564e3-101">Get-AzNotificationHubsNamespace</span><span class="sxs-lookup"><span data-stu-id="564e3-101">Get-AzNotificationHubsNamespace</span></span>
 
-## <span data-ttu-id="faac0-102">摘要</span><span class="sxs-lookup"><span data-stu-id="faac0-102">SYNOPSIS</span></span>
-<span data-ttu-id="faac0-103">取得通知中心命名空間的相關資訊。</span><span class="sxs-lookup"><span data-stu-id="faac0-103">Gets information about a notification hub namespace.</span></span>
+## <span data-ttu-id="564e3-102">簡介</span><span class="sxs-lookup"><span data-stu-id="564e3-102">SYNOPSIS</span></span>
+<span data-ttu-id="564e3-103">獲得通知中樞命名空間相關資訊。</span><span class="sxs-lookup"><span data-stu-id="564e3-103">Gets information about a notification hub namespace.</span></span>
 
-## <span data-ttu-id="faac0-104">句法</span><span class="sxs-lookup"><span data-stu-id="faac0-104">SYNTAX</span></span>
+## <span data-ttu-id="564e3-104">語法</span><span class="sxs-lookup"><span data-stu-id="564e3-104">SYNTAX</span></span>
 
 ```
 Get-AzNotificationHubsNamespace [[-ResourceGroup] <String>] [[-Namespace] <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="faac0-105">說明</span><span class="sxs-lookup"><span data-stu-id="faac0-105">DESCRIPTION</span></span>
-<span data-ttu-id="faac0-106">**AzNotificationHubsNamespace** Cmdlet 會取得通知中心命名空間的相關資訊。</span><span class="sxs-lookup"><span data-stu-id="faac0-106">**The Get-AzNotificationHubsNamespace** cmdlet gets information about notification hub namespaces.</span></span>
-<span data-ttu-id="faac0-107">這個 Cmdlet 可讓您選擇取得所有命名空間的資訊，以及指派給指定資源群組的命名空間資訊;或傳回特定命名空間的相關資訊。</span><span class="sxs-lookup"><span data-stu-id="faac0-107">This cmdlet provides you the option of getting information for all your namespaces, information about the namespaces assigned to a specified resource group; or for returning information about a specific namespace.</span></span>
-<span data-ttu-id="faac0-108">命名空間是邏輯容器，可協助您組織和管理通知中樞。</span><span class="sxs-lookup"><span data-stu-id="faac0-108">Namespaces are logical containers that help you organize and manage your notification hubs.</span></span>
-<span data-ttu-id="faac0-109">您必須至少有一個通知中心命名空間：所有通知中樞都必須指派給命名空間。</span><span class="sxs-lookup"><span data-stu-id="faac0-109">You must have at least one notification hub namespace: all notification hubs must be assigned to a namespace.</span></span>
-<span data-ttu-id="faac0-110">單一命名空間可以存放多個中心，這表示您在組織中可能只需要一個命名空間。</span><span class="sxs-lookup"><span data-stu-id="faac0-110">A single namespace can house multiple hubs which means that you might only need one namespace in your organization.</span></span>
-<span data-ttu-id="faac0-111">不過，您也可以使用多個命名空間來更完善地組織您的中樞，或提供特定的個人許可權來管理選取的中樞子集。</span><span class="sxs-lookup"><span data-stu-id="faac0-111">However, you can also have multiple namespaces to better organize your hubs, or to give specific individuals permission to manage a selected subset of hubs.</span></span>
-<span data-ttu-id="faac0-112">**AzNotificationHubsNamespace** Cmdlet 會傳回有關命名空間本身的基本資訊。</span><span class="sxs-lookup"><span data-stu-id="faac0-112">The **Get-AzNotificationHubsNamespace** cmdlet returns basic information about the namespace itself.</span></span>
-<span data-ttu-id="faac0-113">若要取得與命名空間相關聯之授權規則的相關資訊，請使用 AzNotificationHubsNamespaceAuthorizationRules。</span><span class="sxs-lookup"><span data-stu-id="faac0-113">To get information about the authorization rules associated with a namespace use Get-AzNotificationHubsNamespaceAuthorizationRules.</span></span>
+## <span data-ttu-id="564e3-105">描述</span><span class="sxs-lookup"><span data-stu-id="564e3-105">DESCRIPTION</span></span>
+<span data-ttu-id="564e3-106">**Get-AzNotificationHubsNamespace** Cmdlet 會取得通知中樞命名空間相關資訊。</span><span class="sxs-lookup"><span data-stu-id="564e3-106">**The Get-AzNotificationHubsNamespace** cmdlet gets information about notification hub namespaces.</span></span>
+<span data-ttu-id="564e3-107">此 Cmdlet 提供您取得所有命名空間資訊、指派給指定資源群組之命名空間相關資訊的選項;或用於退回特定命名空間的資訊。</span><span class="sxs-lookup"><span data-stu-id="564e3-107">This cmdlet provides you the option of getting information for all your namespaces, information about the namespaces assigned to a specified resource group; or for returning information about a specific namespace.</span></span>
+<span data-ttu-id="564e3-108">命名空間是邏輯容器，可協助組織及管理通知中樞。</span><span class="sxs-lookup"><span data-stu-id="564e3-108">Namespaces are logical containers that help you organize and manage your notification hubs.</span></span>
+<span data-ttu-id="564e3-109">您至少必須有一個通知中樞命名空間：所有通知中樞都必須指派給命名空間。</span><span class="sxs-lookup"><span data-stu-id="564e3-109">You must have at least one notification hub namespace: all notification hubs must be assigned to a namespace.</span></span>
+<span data-ttu-id="564e3-110">單一命名空間可以包含多個中樞，這表示您可能只需要貴組織的一個命名空間。</span><span class="sxs-lookup"><span data-stu-id="564e3-110">A single namespace can house multiple hubs which means that you might only need one namespace in your organization.</span></span>
+<span data-ttu-id="564e3-111">不過，您也可以有多個命名空間，以更有效地整理中樞，或給予特定人員管理所選中樞子集的許可權。</span><span class="sxs-lookup"><span data-stu-id="564e3-111">However, you can also have multiple namespaces to better organize your hubs, or to give specific individuals permission to manage a selected subset of hubs.</span></span>
+<span data-ttu-id="564e3-112">**Get-AzNotificationHubsNamespace** Cmdlet 會返回命名空間本身的基本資訊。</span><span class="sxs-lookup"><span data-stu-id="564e3-112">The **Get-AzNotificationHubsNamespace** cmdlet returns basic information about the namespace itself.</span></span>
+<span data-ttu-id="564e3-113">若要取得與命名空間相關聯的授權規則相關資訊，請使用 Get-AzNotificationHubsNamespaceAuthorizationRules。</span><span class="sxs-lookup"><span data-stu-id="564e3-113">To get information about the authorization rules associated with a namespace use Get-AzNotificationHubsNamespaceAuthorizationRules.</span></span>
 
-## <span data-ttu-id="faac0-114">示例</span><span class="sxs-lookup"><span data-stu-id="faac0-114">EXAMPLES</span></span>
+## <span data-ttu-id="564e3-114">例子</span><span class="sxs-lookup"><span data-stu-id="564e3-114">EXAMPLES</span></span>
 
-### <span data-ttu-id="faac0-115">範例1：取得所有通知中心命名空間的相關資訊</span><span class="sxs-lookup"><span data-stu-id="faac0-115">Example 1: Get information for all notification hub namespaces</span></span>
+### <span data-ttu-id="564e3-115">範例 1：取得所有通知中樞命名空間的資訊</span><span class="sxs-lookup"><span data-stu-id="564e3-115">Example 1: Get information for all notification hub namespaces</span></span>
 ```
 PS C:\>Get-AzNotificationHubsNamespace
 ```
 
-<span data-ttu-id="faac0-116">這個命令會傳回所有通知中心命名空間的資訊。</span><span class="sxs-lookup"><span data-stu-id="faac0-116">This command returns information for all your notification hub namespaces.</span></span>
+<span data-ttu-id="564e3-116">此命令會針對您所有的通知中樞命名空間，會返回資訊。</span><span class="sxs-lookup"><span data-stu-id="564e3-116">This command returns information for all your notification hub namespaces.</span></span>
 
-### <span data-ttu-id="faac0-117">範例2：取得單一通知中樞命名空間的相關資訊</span><span class="sxs-lookup"><span data-stu-id="faac0-117">Example 2: Get information for a single notification hub namespace</span></span>
+### <span data-ttu-id="564e3-117">範例 2：取得單一通知中樞命名空間的資訊</span><span class="sxs-lookup"><span data-stu-id="564e3-117">Example 2: Get information for a single notification hub namespace</span></span>
 ```
 PS C:\>Get-AzNotificationHubsNamespace -Namespace "ContosoNamespace"
 ```
 
-<span data-ttu-id="faac0-118">這個命令會取得單一通知中樞命名空間的資訊： ContosoNamespace。</span><span class="sxs-lookup"><span data-stu-id="faac0-118">This command gets information for a single notification hub namespace: ContosoNamespace.</span></span>
+<span data-ttu-id="564e3-118">此命令會獲得單一通知中樞命名空間的資訊：ContosoNamespace。</span><span class="sxs-lookup"><span data-stu-id="564e3-118">This command gets information for a single notification hub namespace: ContosoNamespace.</span></span>
 
-### <span data-ttu-id="faac0-119">範例3：取得指派給特定命名空間之所有通知中心的相關資訊</span><span class="sxs-lookup"><span data-stu-id="faac0-119">Example 3: Get information for all notification hubs assigned to a specific namespace</span></span>
+### <span data-ttu-id="564e3-119">範例 3：取得指派給特定命名空間之所有通知中樞的資訊</span><span class="sxs-lookup"><span data-stu-id="564e3-119">Example 3: Get information for all notification hubs assigned to a specific namespace</span></span>
 ```
 PS C:\>Get-AzNotificationHubsNamespace -ResourceGroup "ContosoNotificationsGroup"
 ```
 
-<span data-ttu-id="faac0-120">這個命令會取得指派給資源群組 ContosoNotificationsGroup 的所有通知中心命名空間的資訊。</span><span class="sxs-lookup"><span data-stu-id="faac0-120">This command gets information for all notification hub namespaces assigned to the resource group ContosoNotificationsGroup.</span></span>
+<span data-ttu-id="564e3-120">此命令會獲得指派給資源群組 ContosoNotificationsGroup 的所有通知中樞命名空間的資訊。</span><span class="sxs-lookup"><span data-stu-id="564e3-120">This command gets information for all notification hub namespaces assigned to the resource group ContosoNotificationsGroup.</span></span>
 
-## <span data-ttu-id="faac0-121">參數</span><span class="sxs-lookup"><span data-stu-id="faac0-121">PARAMETERS</span></span>
+## <span data-ttu-id="564e3-121">參數</span><span class="sxs-lookup"><span data-stu-id="564e3-121">PARAMETERS</span></span>
 
-### <span data-ttu-id="faac0-122">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="faac0-122">-DefaultProfile</span></span>
-<span data-ttu-id="faac0-123">用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱</span><span class="sxs-lookup"><span data-stu-id="faac0-123">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="564e3-122">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="564e3-122">-DefaultProfile</span></span>
+<span data-ttu-id="564e3-123">用於與 Azure 通訊的認證、帳戶、租使用者和訂閱</span><span class="sxs-lookup"><span data-stu-id="564e3-123">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -75,9 +75,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="faac0-124">-命名空間</span><span class="sxs-lookup"><span data-stu-id="faac0-124">-Namespace</span></span>
-<span data-ttu-id="faac0-125">指定命名空間的唯一名稱。</span><span class="sxs-lookup"><span data-stu-id="faac0-125">Specifies a unique name for the namespace.</span></span>
-<span data-ttu-id="faac0-126">命名空間提供一種群組和分類通知中樞的方式。</span><span class="sxs-lookup"><span data-stu-id="faac0-126">Namespaces provide a way to group and categorize notification hubs.</span></span>
+### <span data-ttu-id="564e3-124">-命名空間</span><span class="sxs-lookup"><span data-stu-id="564e3-124">-Namespace</span></span>
+<span data-ttu-id="564e3-125">指定命名空間的唯一名稱。</span><span class="sxs-lookup"><span data-stu-id="564e3-125">Specifies a unique name for the namespace.</span></span>
+<span data-ttu-id="564e3-126">命名空間提供將通知中樞分組和分類的方式。</span><span class="sxs-lookup"><span data-stu-id="564e3-126">Namespaces provide a way to group and categorize notification hubs.</span></span>
 
 ```yaml
 Type: System.String
@@ -91,9 +91,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="faac0-127">-ResourceGroup</span><span class="sxs-lookup"><span data-stu-id="faac0-127">-ResourceGroup</span></span>
-<span data-ttu-id="faac0-128">指定將命名空間指派給哪個資源群組。</span><span class="sxs-lookup"><span data-stu-id="faac0-128">Specifies the resource group to which the namespace is assigned.</span></span>
-<span data-ttu-id="faac0-129">資源群組會以協助您簡單地清查管理和 Azure 管理的方式，來組織諸如命名空間、通知中樞和授權規則等專案。</span><span class="sxs-lookup"><span data-stu-id="faac0-129">Resource groups organize items such as namespaces, notification hubs, and authorization rules in ways that help simply inventory management and Azure administration.</span></span>
+### <span data-ttu-id="564e3-127">-ResourceGroup</span><span class="sxs-lookup"><span data-stu-id="564e3-127">-ResourceGroup</span></span>
+<span data-ttu-id="564e3-128">指定指派命名空間的資源群組。</span><span class="sxs-lookup"><span data-stu-id="564e3-128">Specifies the resource group to which the namespace is assigned.</span></span>
+<span data-ttu-id="564e3-129">資源群組會以只協助庫存管理和 Azure 系統管理的方式整理專案，例如命名空間、通知中樞和授權規則。</span><span class="sxs-lookup"><span data-stu-id="564e3-129">Resource groups organize items such as namespaces, notification hubs, and authorization rules in ways that help simply inventory management and Azure administration.</span></span>
 
 ```yaml
 Type: System.String
@@ -107,27 +107,26 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="faac0-130">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="faac0-130">CommonParameters</span></span>
-<span data-ttu-id="faac0-131">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="faac0-131">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="faac0-132">如需詳細資訊，請參閱 about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216) 。</span><span class="sxs-lookup"><span data-stu-id="faac0-132">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="564e3-130">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="564e3-130">CommonParameters</span></span>
+<span data-ttu-id="564e3-131">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="564e3-131">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="564e3-132">詳細資訊請參閱 http://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。</span><span class="sxs-lookup"><span data-stu-id="564e3-132">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="faac0-133">輸入</span><span class="sxs-lookup"><span data-stu-id="faac0-133">INPUTS</span></span>
+## <span data-ttu-id="564e3-133">輸入</span><span class="sxs-lookup"><span data-stu-id="564e3-133">INPUTS</span></span>
 
-### <span data-ttu-id="faac0-134">System.object</span><span class="sxs-lookup"><span data-stu-id="faac0-134">System.String</span></span>
+### <span data-ttu-id="564e3-134">System.String</span><span class="sxs-lookup"><span data-stu-id="564e3-134">System.String</span></span>
 
-## <span data-ttu-id="faac0-135">輸出</span><span class="sxs-lookup"><span data-stu-id="faac0-135">OUTPUTS</span></span>
+## <span data-ttu-id="564e3-135">輸出</span><span class="sxs-lookup"><span data-stu-id="564e3-135">OUTPUTS</span></span>
 
-### <span data-ttu-id="faac0-136">NamespaceAttributes 中的 NotificationHubs。</span><span class="sxs-lookup"><span data-stu-id="faac0-136">Microsoft.Azure.Commands.NotificationHubs.Models.NamespaceAttributes</span></span>
+### <span data-ttu-id="564e3-136">Microsoft.Azure.Commands.NotificationHubs.models.命名空間Attributes</span><span class="sxs-lookup"><span data-stu-id="564e3-136">Microsoft.Azure.Commands.NotificationHubs.Models.NamespaceAttributes</span></span>
 
-## <span data-ttu-id="faac0-137">筆記</span><span class="sxs-lookup"><span data-stu-id="faac0-137">NOTES</span></span>
+## <span data-ttu-id="564e3-137">筆記</span><span class="sxs-lookup"><span data-stu-id="564e3-137">NOTES</span></span>
 
-## <span data-ttu-id="faac0-138">相關連結</span><span class="sxs-lookup"><span data-stu-id="faac0-138">RELATED LINKS</span></span>
+## <span data-ttu-id="564e3-138">相關連結</span><span class="sxs-lookup"><span data-stu-id="564e3-138">RELATED LINKS</span></span>
 
-[<span data-ttu-id="faac0-139">AzNotificationHubsNamespaceAuthorizationRules</span><span class="sxs-lookup"><span data-stu-id="faac0-139">Get-AzNotificationHubsNamespaceAuthorizationRules</span></span>](./Get-AzNotificationHubsNamespaceAuthorizationRules.md)
 
-[<span data-ttu-id="faac0-140">新-AzNotificationHubsNamespace</span><span class="sxs-lookup"><span data-stu-id="faac0-140">New-AzNotificationHubsNamespace</span></span>](./New-AzNotificationHubsNamespace.md)
+[<span data-ttu-id="564e3-139">New-AzNotificationHubsNamespace</span><span class="sxs-lookup"><span data-stu-id="564e3-139">New-AzNotificationHubsNamespace</span></span>](./New-AzNotificationHubsNamespace.md)
 
-[<span data-ttu-id="faac0-141">移除-AzNotificationHubsNamespace</span><span class="sxs-lookup"><span data-stu-id="faac0-141">Remove-AzNotificationHubsNamespace</span></span>](./Remove-AzNotificationHubsNamespace.md)
+[<span data-ttu-id="564e3-140">Remove-AzNotificationHubsNamespace</span><span class="sxs-lookup"><span data-stu-id="564e3-140">Remove-AzNotificationHubsNamespace</span></span>](./Remove-AzNotificationHubsNamespace.md)
 
-[<span data-ttu-id="faac0-142">Set-AzNotificationHubsNamespace</span><span class="sxs-lookup"><span data-stu-id="faac0-142">Set-AzNotificationHubsNamespace</span></span>](./Set-AzNotificationHubsNamespace.md)
+[<span data-ttu-id="564e3-141">Set-AzNotificationHubsNamespace</span><span class="sxs-lookup"><span data-stu-id="564e3-141">Set-AzNotificationHubsNamespace</span></span>](./Set-AzNotificationHubsNamespace.md)
 
 

@@ -6,99 +6,99 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzADApplication.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzADApplication.md
-ms.openlocfilehash: afcb95eca70c005023bacc2b2d71d9fda54c9259
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: f693fbc0ae4809f287e954babea0188c9d1d23b8
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93957973"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413382"
 ---
-# <span data-ttu-id="d9c88-101">Get-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="d9c88-101">Get-AzADApplication</span></span>
+# <span data-ttu-id="57fde-101">Get-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="57fde-101">Get-AzADApplication</span></span>
 
-## <span data-ttu-id="d9c88-102">摘要</span><span class="sxs-lookup"><span data-stu-id="d9c88-102">SYNOPSIS</span></span>
-<span data-ttu-id="d9c88-103">列出現有的 azure active directory 應用程式。</span><span class="sxs-lookup"><span data-stu-id="d9c88-103">Lists existing azure active directory applications.</span></span>
+## <span data-ttu-id="57fde-102">簡介</span><span class="sxs-lookup"><span data-stu-id="57fde-102">SYNOPSIS</span></span>
+<span data-ttu-id="57fde-103">列出現有的 Azure Active Directory 應用程式。</span><span class="sxs-lookup"><span data-stu-id="57fde-103">Lists existing azure active directory applications.</span></span>
 
-## <span data-ttu-id="d9c88-104">句法</span><span class="sxs-lookup"><span data-stu-id="d9c88-104">SYNTAX</span></span>
+## <span data-ttu-id="57fde-104">語法</span><span class="sxs-lookup"><span data-stu-id="57fde-104">SYNTAX</span></span>
 
-### <span data-ttu-id="d9c88-105">EmptyParameterSet (預設) </span><span class="sxs-lookup"><span data-stu-id="d9c88-105">EmptyParameterSet (Default)</span></span>
+### <span data-ttu-id="57fde-105">EmptyParameterSet (預設) </span><span class="sxs-lookup"><span data-stu-id="57fde-105">EmptyParameterSet (Default)</span></span>
 ```
 Get-AzADApplication [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount] [-Skip <UInt64>]
  [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="d9c88-106">ApplicationObjectIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="d9c88-106">ApplicationObjectIdParameterSet</span></span>
+### <span data-ttu-id="57fde-106">ApplicationObjectIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="57fde-106">ApplicationObjectIdParameterSet</span></span>
 ```
 Get-AzADApplication -ObjectId <String> [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount]
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="d9c88-107">ApplicationIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="d9c88-107">ApplicationIdParameterSet</span></span>
+### <span data-ttu-id="57fde-107">ApplicationIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="57fde-107">ApplicationIdParameterSet</span></span>
 ```
 Get-AzADApplication -ApplicationId <Guid> [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount]
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="d9c88-108">SearchStringParameterSet</span><span class="sxs-lookup"><span data-stu-id="d9c88-108">SearchStringParameterSet</span></span>
+### <span data-ttu-id="57fde-108">SearchStringParameterSet</span><span class="sxs-lookup"><span data-stu-id="57fde-108">SearchStringParameterSet</span></span>
 ```
 Get-AzADApplication -DisplayNameStartWith <String> [-DefaultProfile <IAzureContextContainer>]
  [-IncludeTotalCount] [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="d9c88-109">DisplayNameParameterSet</span><span class="sxs-lookup"><span data-stu-id="d9c88-109">DisplayNameParameterSet</span></span>
+### <span data-ttu-id="57fde-109">DisplayNameParameterSet</span><span class="sxs-lookup"><span data-stu-id="57fde-109">DisplayNameParameterSet</span></span>
 ```
 Get-AzADApplication -DisplayName <String> [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount]
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="d9c88-110">ApplicationIdentifierUriParameterSet</span><span class="sxs-lookup"><span data-stu-id="d9c88-110">ApplicationIdentifierUriParameterSet</span></span>
+### <span data-ttu-id="57fde-110">ApplicationIdentifierUriParameterSet</span><span class="sxs-lookup"><span data-stu-id="57fde-110">ApplicationIdentifierUriParameterSet</span></span>
 ```
 Get-AzADApplication -IdentifierUri <String> [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount]
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="d9c88-111">說明</span><span class="sxs-lookup"><span data-stu-id="d9c88-111">DESCRIPTION</span></span>
-<span data-ttu-id="d9c88-112">列出現有的 azure active directory 應用程式。</span><span class="sxs-lookup"><span data-stu-id="d9c88-112">Lists existing azure active directory applications.</span></span>
-<span data-ttu-id="d9c88-113">應用程式查閱可以由 ObjectId、ApplicationId、IdentifierUri 或 DisplayName 來完成。</span><span class="sxs-lookup"><span data-stu-id="d9c88-113">Application lookup can be done by ObjectId, ApplicationId, IdentifierUri or DisplayName.</span></span>
-<span data-ttu-id="d9c88-114">如果未提供任何參數，則它會提取租使用者下的所有應用程式。</span><span class="sxs-lookup"><span data-stu-id="d9c88-114">If no parameter is provided, it fetches all applications under the tenant.</span></span>
+## <span data-ttu-id="57fde-111">描述</span><span class="sxs-lookup"><span data-stu-id="57fde-111">DESCRIPTION</span></span>
+<span data-ttu-id="57fde-112">列出現有的 Azure Active Directory 應用程式。</span><span class="sxs-lookup"><span data-stu-id="57fde-112">Lists existing azure active directory applications.</span></span>
+<span data-ttu-id="57fde-113">應用程式查找可以由 ObjectId、ApplicationId、IdentifierUri 或 DisplayName 完成。</span><span class="sxs-lookup"><span data-stu-id="57fde-113">Application lookup can be done by ObjectId, ApplicationId, IdentifierUri or DisplayName.</span></span>
+<span data-ttu-id="57fde-114">如果沒有提供參數，它會在租使用者下抓取所有應用程式。</span><span class="sxs-lookup"><span data-stu-id="57fde-114">If no parameter is provided, it fetches all applications under the tenant.</span></span>
 
-## <span data-ttu-id="d9c88-115">示例</span><span class="sxs-lookup"><span data-stu-id="d9c88-115">EXAMPLES</span></span>
+## <span data-ttu-id="57fde-115">例子</span><span class="sxs-lookup"><span data-stu-id="57fde-115">EXAMPLES</span></span>
 
-### <span data-ttu-id="d9c88-116">範例 1-列出所有應用程式</span><span class="sxs-lookup"><span data-stu-id="d9c88-116">Example 1 - List all applications</span></span>
+### <span data-ttu-id="57fde-116">範例 1 - 列出所有應用程式</span><span class="sxs-lookup"><span data-stu-id="57fde-116">Example 1 - List all applications</span></span>
 
 ```
 PS C:\> Get-AzADApplication
 ```
 
-<span data-ttu-id="d9c88-117">列出租使用者下的所有應用程式。</span><span class="sxs-lookup"><span data-stu-id="d9c88-117">Lists all the applications under a tenant.</span></span>
+<span data-ttu-id="57fde-117">列出租使用者下的所有應用程式。</span><span class="sxs-lookup"><span data-stu-id="57fde-117">Lists all the applications under a tenant.</span></span>
 
-### <span data-ttu-id="d9c88-118">範例 2-使用分頁的清單應用程式</span><span class="sxs-lookup"><span data-stu-id="d9c88-118">Example 2 - List applications using paging</span></span>
+### <span data-ttu-id="57fde-118">範例 2 - 使用分頁功能列出應用程式</span><span class="sxs-lookup"><span data-stu-id="57fde-118">Example 2 - List applications using paging</span></span>
 
 ```
 PS C:\> Get-AzADApplication -First 100
 ```
 
-<span data-ttu-id="d9c88-119">列出租使用者底下的第一個100應用程式。</span><span class="sxs-lookup"><span data-stu-id="d9c88-119">Lists the first 100 applications under a tenant.</span></span>
+<span data-ttu-id="57fde-119">列出租使用者下前 100 個應用程式。</span><span class="sxs-lookup"><span data-stu-id="57fde-119">Lists the first 100 applications under a tenant.</span></span>
 
-### <span data-ttu-id="d9c88-120">範例 3-透過識別碼 URI 取得應用程式</span><span class="sxs-lookup"><span data-stu-id="d9c88-120">Example 3 - Get application by identifier URI</span></span>
+### <span data-ttu-id="57fde-120">範例 3 - 根據識別碼 URI 取得應用程式</span><span class="sxs-lookup"><span data-stu-id="57fde-120">Example 3 - Get application by identifier URI</span></span>
 
 ```
 PS C:\> Get-AzADApplication -IdentifierUri http://mySecretApp1
 ```
 
-<span data-ttu-id="d9c88-121">取得識別碼 uri 為 "" 的應用程式 http://mySecretApp1 。</span><span class="sxs-lookup"><span data-stu-id="d9c88-121">Gets the application with identifier uri as "http://mySecretApp1".</span></span>
+<span data-ttu-id="57fde-121">將識別碼為 uri 的應用程式當做 http://mySecretApp1 ""。</span><span class="sxs-lookup"><span data-stu-id="57fde-121">Gets the application with identifier uri as "http://mySecretApp1".</span></span>
 
-### <span data-ttu-id="d9c88-122">範例 4-依物件識別碼取得應用程式</span><span class="sxs-lookup"><span data-stu-id="d9c88-122">Example 4 - Get application by object id</span></span>
+### <span data-ttu-id="57fde-122">範例 4 - 根據物件識別碼取得應用程式</span><span class="sxs-lookup"><span data-stu-id="57fde-122">Example 4 - Get application by object id</span></span>
 
 ```
 PS C:\> Get-AzADApplication -ObjectId 39e64ec6-569b-4030-8e1c-c3c519a05d69
 ```
 
-<span data-ttu-id="d9c88-123">取得物件 id 為 ' 39e64ec6-569b-4030-8e1c-c3c519a05d69」的應用程式。</span><span class="sxs-lookup"><span data-stu-id="d9c88-123">Gets the application with the object id '39e64ec6-569b-4030-8e1c-c3c519a05d69'.</span></span>
+<span data-ttu-id="57fde-123">使用物件識別碼為 '39e64ec6-569b-4030-8e1c-c3c519a05d69'的應用程式。</span><span class="sxs-lookup"><span data-stu-id="57fde-123">Gets the application with the object id '39e64ec6-569b-4030-8e1c-c3c519a05d69'.</span></span>
 
-## <span data-ttu-id="d9c88-124">參數</span><span class="sxs-lookup"><span data-stu-id="d9c88-124">PARAMETERS</span></span>
+## <span data-ttu-id="57fde-124">參數</span><span class="sxs-lookup"><span data-stu-id="57fde-124">PARAMETERS</span></span>
 
-### <span data-ttu-id="d9c88-125">-ApplicationId</span><span class="sxs-lookup"><span data-stu-id="d9c88-125">-ApplicationId</span></span>
-<span data-ttu-id="d9c88-126">要提取之應用程式的應用程式識別碼。</span><span class="sxs-lookup"><span data-stu-id="d9c88-126">The application id of the application to fetch.</span></span>
+### <span data-ttu-id="57fde-125">-ApplicationId</span><span class="sxs-lookup"><span data-stu-id="57fde-125">-ApplicationId</span></span>
+<span data-ttu-id="57fde-126">要抓取的應用程式之應用程式識別碼。</span><span class="sxs-lookup"><span data-stu-id="57fde-126">The application id of the application to fetch.</span></span>
 
 ```yaml
 Type: System.Guid
@@ -112,8 +112,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d9c88-127">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="d9c88-127">-DefaultProfile</span></span>
-<span data-ttu-id="d9c88-128">用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱</span><span class="sxs-lookup"><span data-stu-id="d9c88-128">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="57fde-127">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="57fde-127">-DefaultProfile</span></span>
+<span data-ttu-id="57fde-128">用於與 Azure 通訊的認證、帳戶、租使用者和訂閱</span><span class="sxs-lookup"><span data-stu-id="57fde-128">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -127,8 +127,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d9c88-129">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="d9c88-129">-DisplayName</span></span>
-<span data-ttu-id="d9c88-130">應用程式的顯示名稱。</span><span class="sxs-lookup"><span data-stu-id="d9c88-130">The display name of the application.</span></span>
+### <span data-ttu-id="57fde-129">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="57fde-129">-DisplayName</span></span>
+<span data-ttu-id="57fde-130">應用程式的顯示名稱。</span><span class="sxs-lookup"><span data-stu-id="57fde-130">The display name of the application.</span></span>
 
 ```yaml
 Type: System.String
@@ -142,8 +142,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d9c88-131">-DisplayNameStartWith</span><span class="sxs-lookup"><span data-stu-id="d9c88-131">-DisplayNameStartWith</span></span>
-<span data-ttu-id="d9c88-132">從顯示名稱開始提取所有應用程式。</span><span class="sxs-lookup"><span data-stu-id="d9c88-132">Fetch all applications starting with the display name.</span></span>
+### <span data-ttu-id="57fde-131">-DisplayNameStartWith</span><span class="sxs-lookup"><span data-stu-id="57fde-131">-DisplayNameStartWith</span></span>
+<span data-ttu-id="57fde-132">從顯示名稱開始抓取所有應用程式。</span><span class="sxs-lookup"><span data-stu-id="57fde-132">Fetch all applications starting with the display name.</span></span>
 
 ```yaml
 Type: System.String
@@ -157,8 +157,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d9c88-133">-IdentifierUri</span><span class="sxs-lookup"><span data-stu-id="d9c88-133">-IdentifierUri</span></span>
-<span data-ttu-id="d9c88-134">要提取之應用程式的唯一識別碼 Uri。</span><span class="sxs-lookup"><span data-stu-id="d9c88-134">Unique identifier Uri of the application to fetch.</span></span>
+### <span data-ttu-id="57fde-133">-IdentifierUri</span><span class="sxs-lookup"><span data-stu-id="57fde-133">-IdentifierUri</span></span>
+<span data-ttu-id="57fde-134">要抓取之應用程式的唯一識別碼 Uri。</span><span class="sxs-lookup"><span data-stu-id="57fde-134">Unique identifier Uri of the application to fetch.</span></span>
 
 ```yaml
 Type: System.String
@@ -172,8 +172,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d9c88-135">-ObjectId</span><span class="sxs-lookup"><span data-stu-id="d9c88-135">-ObjectId</span></span>
-<span data-ttu-id="d9c88-136">要提取之應用程式的物件識別碼。</span><span class="sxs-lookup"><span data-stu-id="d9c88-136">The object id of the application to fetch.</span></span>
+### <span data-ttu-id="57fde-135">-ObjectId</span><span class="sxs-lookup"><span data-stu-id="57fde-135">-ObjectId</span></span>
+<span data-ttu-id="57fde-136">要抓取之應用程式的物件識別碼。</span><span class="sxs-lookup"><span data-stu-id="57fde-136">The object id of the application to fetch.</span></span>
 
 ```yaml
 Type: System.String
@@ -187,8 +187,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d9c88-137">-IncludeTotalCount</span><span class="sxs-lookup"><span data-stu-id="d9c88-137">-IncludeTotalCount</span></span>
-<span data-ttu-id="d9c88-138">報告資料集中的物件數目。</span><span class="sxs-lookup"><span data-stu-id="d9c88-138">Reports the number of objects in the data set.</span></span> <span data-ttu-id="d9c88-139">這個參數目前不會執行任何動作。</span><span class="sxs-lookup"><span data-stu-id="d9c88-139">Currently, this parameter does nothing.</span></span>
+### <span data-ttu-id="57fde-137">-IncludeTotalCount</span><span class="sxs-lookup"><span data-stu-id="57fde-137">-IncludeTotalCount</span></span>
+<span data-ttu-id="57fde-138">報告資料集中的物件數目。</span><span class="sxs-lookup"><span data-stu-id="57fde-138">Reports the number of objects in the data set.</span></span> <span data-ttu-id="57fde-139">目前，此參數沒有任何影響。</span><span class="sxs-lookup"><span data-stu-id="57fde-139">Currently, this parameter does nothing.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -202,8 +202,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d9c88-140">-略過</span><span class="sxs-lookup"><span data-stu-id="d9c88-140">-Skip</span></span>
-<span data-ttu-id="d9c88-141">忽略前 N 個物件，然後取得剩餘的物件。</span><span class="sxs-lookup"><span data-stu-id="d9c88-141">Ignores the first N objects and then gets the remaining objects.</span></span>
+### <span data-ttu-id="57fde-140">-略過</span><span class="sxs-lookup"><span data-stu-id="57fde-140">-Skip</span></span>
+<span data-ttu-id="57fde-141">忽略前 N 個物件，然後獲得其餘的物件。</span><span class="sxs-lookup"><span data-stu-id="57fde-141">Ignores the first N objects and then gets the remaining objects.</span></span>
 
 ```yaml
 Type: System.UInt64
@@ -217,8 +217,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d9c88-142">-優先</span><span class="sxs-lookup"><span data-stu-id="d9c88-142">-First</span></span>
-<span data-ttu-id="d9c88-143">要傳回的物件數目上限。</span><span class="sxs-lookup"><span data-stu-id="d9c88-143">The maximum number of objects to return.</span></span>
+### <span data-ttu-id="57fde-142">-第一個</span><span class="sxs-lookup"><span data-stu-id="57fde-142">-First</span></span>
+<span data-ttu-id="57fde-143">要返回的物件數量上限。</span><span class="sxs-lookup"><span data-stu-id="57fde-143">The maximum number of objects to return.</span></span>
 
 ```yaml
 Type: System.UInt64
@@ -232,32 +232,31 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d9c88-144">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="d9c88-144">CommonParameters</span></span>
-<span data-ttu-id="d9c88-145">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="d9c88-145">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="d9c88-146">如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="d9c88-146">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="57fde-144">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="57fde-144">CommonParameters</span></span>
+<span data-ttu-id="57fde-145">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="57fde-145">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="57fde-146">詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="57fde-146">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="d9c88-147">輸入</span><span class="sxs-lookup"><span data-stu-id="d9c88-147">INPUTS</span></span>
+## <span data-ttu-id="57fde-147">輸入</span><span class="sxs-lookup"><span data-stu-id="57fde-147">INPUTS</span></span>
 
-### <span data-ttu-id="d9c88-148">System.object</span><span class="sxs-lookup"><span data-stu-id="d9c88-148">System.String</span></span>
+### <span data-ttu-id="57fde-148">System.String</span><span class="sxs-lookup"><span data-stu-id="57fde-148">System.String</span></span>
 
-### <span data-ttu-id="d9c88-149">Guid.empty</span><span class="sxs-lookup"><span data-stu-id="d9c88-149">System.Guid</span></span>
+### <span data-ttu-id="57fde-149">System.Guid</span><span class="sxs-lookup"><span data-stu-id="57fde-149">System.Guid</span></span>
 
-## <span data-ttu-id="d9c88-150">輸出</span><span class="sxs-lookup"><span data-stu-id="d9c88-150">OUTPUTS</span></span>
+## <span data-ttu-id="57fde-150">輸出</span><span class="sxs-lookup"><span data-stu-id="57fde-150">OUTPUTS</span></span>
 
-### <span data-ttu-id="d9c88-151">PSADApplication （即 Azure。</span><span class="sxs-lookup"><span data-stu-id="d9c88-151">Microsoft.Azure.Commands.ActiveDirectory.PSADApplication</span></span>
+### <span data-ttu-id="57fde-151">Microsoft.Azure.Commands.ActiveDirectory.PSADApplication</span><span class="sxs-lookup"><span data-stu-id="57fde-151">Microsoft.Azure.Commands.ActiveDirectory.PSADApplication</span></span>
 
-## <span data-ttu-id="d9c88-152">筆記</span><span class="sxs-lookup"><span data-stu-id="d9c88-152">NOTES</span></span>
+## <span data-ttu-id="57fde-152">筆記</span><span class="sxs-lookup"><span data-stu-id="57fde-152">NOTES</span></span>
 
-## <span data-ttu-id="d9c88-153">相關連結</span><span class="sxs-lookup"><span data-stu-id="d9c88-153">RELATED LINKS</span></span>
+## <span data-ttu-id="57fde-153">相關連結</span><span class="sxs-lookup"><span data-stu-id="57fde-153">RELATED LINKS</span></span>
 
-[<span data-ttu-id="d9c88-154">移除-AzADAppCredential</span><span class="sxs-lookup"><span data-stu-id="d9c88-154">Remove-AzADAppCredential</span></span>](./Remove-AzADAppCredential.md)
+[<span data-ttu-id="57fde-154">Remove-AzADAppCredential</span><span class="sxs-lookup"><span data-stu-id="57fde-154">Remove-AzADAppCredential</span></span>](./Remove-AzADAppCredential.md)
 
-[<span data-ttu-id="d9c88-155">新-AzADAppCredential</span><span class="sxs-lookup"><span data-stu-id="d9c88-155">New-AzADAppCredential</span></span>](./New-AzADAppCredential.md)
+[<span data-ttu-id="57fde-155">New-AzADAppCredential</span><span class="sxs-lookup"><span data-stu-id="57fde-155">New-AzADAppCredential</span></span>](./New-AzADAppCredential.md)
 
-[<span data-ttu-id="d9c88-156">AzADAppCredential</span><span class="sxs-lookup"><span data-stu-id="d9c88-156">Get-AzADAppCredential</span></span>](./Get-AzADAppCredential.md)
+[<span data-ttu-id="57fde-156">Get-AzADAppCredential</span><span class="sxs-lookup"><span data-stu-id="57fde-156">Get-AzADAppCredential</span></span>](./Get-AzADAppCredential.md)
 
-[<span data-ttu-id="d9c88-157">移除-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="d9c88-157">Remove-AzADApplication</span></span>](./Remove-AzADApplication.md)
+[<span data-ttu-id="57fde-157">Remove-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="57fde-157">Remove-AzADApplication</span></span>](./Remove-AzADApplication.md)
 
-[<span data-ttu-id="d9c88-158">Set-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="d9c88-158">Set-AzADApplication</span></span>](./Set-AzADApplication.md)
 
-[<span data-ttu-id="d9c88-159">新-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="d9c88-159">New-AzADApplication</span></span>](./New-AzADApplication.md)
+[<span data-ttu-id="57fde-158">New-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="57fde-158">New-AzADApplication</span></span>](./New-AzADApplication.md)
 

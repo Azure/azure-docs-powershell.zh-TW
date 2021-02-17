@@ -6,81 +6,81 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/g
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultKey.md
-ms.openlocfilehash: d14b695594d390edf880116d2ab3b5173faada7f
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: cab778247e6e3ae9db3549beae7fcd7495526757
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93956632"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100412090"
 ---
-# <span data-ttu-id="53665-101">Get-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="53665-101">Get-AzKeyVaultKey</span></span>
+# <span data-ttu-id="48fb4-101">Get-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="48fb4-101">Get-AzKeyVaultKey</span></span>
 
-## <span data-ttu-id="53665-102">摘要</span><span class="sxs-lookup"><span data-stu-id="53665-102">SYNOPSIS</span></span>
-<span data-ttu-id="53665-103">取得金鑰保存庫金鑰。</span><span class="sxs-lookup"><span data-stu-id="53665-103">Gets Key Vault keys.</span></span>
+## <span data-ttu-id="48fb4-102">簡介</span><span class="sxs-lookup"><span data-stu-id="48fb4-102">SYNOPSIS</span></span>
+<span data-ttu-id="48fb4-103">獲得金鑰庫金鑰。</span><span class="sxs-lookup"><span data-stu-id="48fb4-103">Gets Key Vault keys.</span></span>
 
-## <span data-ttu-id="53665-104">句法</span><span class="sxs-lookup"><span data-stu-id="53665-104">SYNTAX</span></span>
+## <span data-ttu-id="48fb4-104">語法</span><span class="sxs-lookup"><span data-stu-id="48fb4-104">SYNTAX</span></span>
 
-### <span data-ttu-id="53665-105">ByVaultName (預設) </span><span class="sxs-lookup"><span data-stu-id="53665-105">ByVaultName (Default)</span></span>
+### <span data-ttu-id="48fb4-105">ByVaultName (預設) </span><span class="sxs-lookup"><span data-stu-id="48fb4-105">ByVaultName (Default)</span></span>
 ```
 Get-AzKeyVaultKey [-VaultName] <String> [[-Name] <String>] [-InRemovedState]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="53665-106">ByKeyName</span><span class="sxs-lookup"><span data-stu-id="53665-106">ByKeyName</span></span>
+### <span data-ttu-id="48fb4-106">ByKeyName</span><span class="sxs-lookup"><span data-stu-id="48fb4-106">ByKeyName</span></span>
 ```
 Get-AzKeyVaultKey [-VaultName] <String> [-Name] <String> [-Version] <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="53665-107">ByKeyVersions</span><span class="sxs-lookup"><span data-stu-id="53665-107">ByKeyVersions</span></span>
+### <span data-ttu-id="48fb4-107">ByKeyVersions</span><span class="sxs-lookup"><span data-stu-id="48fb4-107">ByKeyVersions</span></span>
 ```
 Get-AzKeyVaultKey [-VaultName] <String> [-Name] <String> [-IncludeVersions]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="53665-108">ByInputObjectVaultName</span><span class="sxs-lookup"><span data-stu-id="53665-108">ByInputObjectVaultName</span></span>
+### <span data-ttu-id="48fb4-108">ByInputObjectVaultName</span><span class="sxs-lookup"><span data-stu-id="48fb4-108">ByInputObjectVaultName</span></span>
 ```
 Get-AzKeyVaultKey [-InputObject] <PSKeyVault> [[-Name] <String>] [-InRemovedState]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="53665-109">ByInputObjectKeyName</span><span class="sxs-lookup"><span data-stu-id="53665-109">ByInputObjectKeyName</span></span>
+### <span data-ttu-id="48fb4-109">ByInputObjectKeyName</span><span class="sxs-lookup"><span data-stu-id="48fb4-109">ByInputObjectKeyName</span></span>
 ```
 Get-AzKeyVaultKey [-InputObject] <PSKeyVault> [-Name] <String> [-Version] <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="53665-110">ByInputObjectKeyVersions</span><span class="sxs-lookup"><span data-stu-id="53665-110">ByInputObjectKeyVersions</span></span>
+### <span data-ttu-id="48fb4-110">ByInputObjectKeyVersions</span><span class="sxs-lookup"><span data-stu-id="48fb4-110">ByInputObjectKeyVersions</span></span>
 ```
 Get-AzKeyVaultKey [-InputObject] <PSKeyVault> [-Name] <String> [-IncludeVersions]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="53665-111">ByResourceIdVaultName</span><span class="sxs-lookup"><span data-stu-id="53665-111">ByResourceIdVaultName</span></span>
+### <span data-ttu-id="48fb4-111">ByResourceIdVaultName</span><span class="sxs-lookup"><span data-stu-id="48fb4-111">ByResourceIdVaultName</span></span>
 ```
 Get-AzKeyVaultKey [-ResourceId] <String> [[-Name] <String>] [-InRemovedState]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="53665-112">ByResourceIdKeyName</span><span class="sxs-lookup"><span data-stu-id="53665-112">ByResourceIdKeyName</span></span>
+### <span data-ttu-id="48fb4-112">ByResourceIdKeyName</span><span class="sxs-lookup"><span data-stu-id="48fb4-112">ByResourceIdKeyName</span></span>
 ```
 Get-AzKeyVaultKey [-ResourceId] <String> [-Name] <String> [-Version] <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="53665-113">ByResourceIdKeyVersions</span><span class="sxs-lookup"><span data-stu-id="53665-113">ByResourceIdKeyVersions</span></span>
+### <span data-ttu-id="48fb4-113">ByResourceIdKeyVersions</span><span class="sxs-lookup"><span data-stu-id="48fb4-113">ByResourceIdKeyVersions</span></span>
 ```
 Get-AzKeyVaultKey [-ResourceId] <String> [-Name] <String> [-IncludeVersions]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="53665-114">說明</span><span class="sxs-lookup"><span data-stu-id="53665-114">DESCRIPTION</span></span>
-<span data-ttu-id="53665-115">**AzKeyVaultKey** Cmdlet 會取得 Azure 金鑰保存庫金鑰。</span><span class="sxs-lookup"><span data-stu-id="53665-115">The **Get-AzKeyVaultKey** cmdlet gets Azure Key Vault keys.</span></span>
-<span data-ttu-id="53665-116">這個 Cmdlet 會取得特定的 **KeyVault KeyBundle** 或主要保存庫或依據版本中所有 **KeyBundle** 物件的清單。</span><span class="sxs-lookup"><span data-stu-id="53665-116">This cmdlet gets a specific **Microsoft.Azure.Commands.KeyVault.Models.KeyBundle** or a list of all **KeyBundle** objects in a key vault or by version.</span></span>
+## <span data-ttu-id="48fb4-114">描述</span><span class="sxs-lookup"><span data-stu-id="48fb4-114">DESCRIPTION</span></span>
+<span data-ttu-id="48fb4-115">**Get-AzKeyVaultKey** Cmdlet 會取得 Azure 金鑰庫金鑰。</span><span class="sxs-lookup"><span data-stu-id="48fb4-115">The **Get-AzKeyVaultKey** cmdlet gets Azure Key Vault keys.</span></span>
+<span data-ttu-id="48fb4-116">此 Cmdlet 會獲得特定的 **Microsoft.Azure.Commands.KeyVault.Models.KeyBundle** 或金鑰庫或版本中所有 **KeyBundle** 物件的清單。</span><span class="sxs-lookup"><span data-stu-id="48fb4-116">This cmdlet gets a specific **Microsoft.Azure.Commands.KeyVault.Models.KeyBundle** or a list of all **KeyBundle** objects in a key vault or by version.</span></span>
 
-## <span data-ttu-id="53665-117">示例</span><span class="sxs-lookup"><span data-stu-id="53665-117">EXAMPLES</span></span>
+## <span data-ttu-id="48fb4-117">例子</span><span class="sxs-lookup"><span data-stu-id="48fb4-117">EXAMPLES</span></span>
 
-### <span data-ttu-id="53665-118">範例1：取得金鑰保存庫中的所有按鍵</span><span class="sxs-lookup"><span data-stu-id="53665-118">Example 1: Get all the keys in a key vault</span></span>
+### <span data-ttu-id="48fb4-118">範例 1：取得金鑰庫中的所有金鑰</span><span class="sxs-lookup"><span data-stu-id="48fb4-118">Example 1: Get all the keys in a key vault</span></span>
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso'
 
@@ -109,9 +109,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-<span data-ttu-id="53665-119">這個命令會取得名為 Contoso 的主要電子倉庫中的所有金鑰。</span><span class="sxs-lookup"><span data-stu-id="53665-119">This command gets all the keys in the key vault named Contoso.</span></span>
+<span data-ttu-id="48fb4-119">此命令會獲得名稱為 Contoso 之金鑰庫中的所有金鑰。</span><span class="sxs-lookup"><span data-stu-id="48fb4-119">This command gets all the keys in the key vault named Contoso.</span></span>
 
-### <span data-ttu-id="53665-120">範例2：取得目前的金鑰版本</span><span class="sxs-lookup"><span data-stu-id="53665-120">Example 2: Get the current version of a key</span></span>
+### <span data-ttu-id="48fb4-120">範例 2：取得金鑰的目前版本</span><span class="sxs-lookup"><span data-stu-id="48fb4-120">Example 2: Get the current version of a key</span></span>
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test1'
 
@@ -128,9 +128,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-<span data-ttu-id="53665-121">這個命令會取得名為 Contoso 之金鑰保存庫中名為 test1 的目前版本的金鑰。</span><span class="sxs-lookup"><span data-stu-id="53665-121">This command gets the current version of the key named test1 in the key vault named Contoso.</span></span>
+<span data-ttu-id="48fb4-121">此命令會獲得名稱為 Contoso 之金鑰庫中名為 test1 的金鑰的目前版本。</span><span class="sxs-lookup"><span data-stu-id="48fb4-121">This command gets the current version of the key named test1 in the key vault named Contoso.</span></span>
 
-### <span data-ttu-id="53665-122">範例3：取得金鑰的所有版本</span><span class="sxs-lookup"><span data-stu-id="53665-122">Example 3: Get all versions of a key</span></span>
+### <span data-ttu-id="48fb4-122">範例 3：取得金鑰的所有版本</span><span class="sxs-lookup"><span data-stu-id="48fb4-122">Example 3: Get all versions of a key</span></span>
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test1' -IncludeVersions
 
@@ -159,9 +159,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-<span data-ttu-id="53665-123">這個命令會取得所有版本金鑰 vaultnamed Contoso 中名為 ITPfx 的金鑰。</span><span class="sxs-lookup"><span data-stu-id="53665-123">This command gets all versions the key named ITPfx in the key vaultnamed Contoso.</span></span>
+<span data-ttu-id="48fb4-123">此命令會獲得名稱為 Contoso 之金鑰庫中名為 ITPfx 的所有版本。</span><span class="sxs-lookup"><span data-stu-id="48fb4-123">This command gets all versions the key named ITPfx in the key vaultnamed Contoso.</span></span>
 
-### <span data-ttu-id="53665-124">範例4：取得特定的金鑰版本</span><span class="sxs-lookup"><span data-stu-id="53665-124">Example 4: Get a specific version of a key</span></span>
+### <span data-ttu-id="48fb4-124">範例 4：取得金鑰的特定版本</span><span class="sxs-lookup"><span data-stu-id="48fb4-124">Example 4: Get a specific version of a key</span></span>
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test1' -Version 'e4e95940e669407fbdb4298bc21a3e1d'
 
@@ -178,10 +178,10 @@ Purge Disabled : False
 Tags           :
 ```
 
-<span data-ttu-id="53665-125">這個命令會在名為 Contoso 的主要保存庫中，取得名為 test1 的特定金鑰版本。</span><span class="sxs-lookup"><span data-stu-id="53665-125">This command gets a specific version of the key named test1 in the key vault named Contoso.</span></span>
-<span data-ttu-id="53665-126">執行此命令之後，您可以流覽 $Key 物件來檢查索引鍵的各種屬性。</span><span class="sxs-lookup"><span data-stu-id="53665-126">After running this command, you can inspect various properties of the key by navigating the $Key object.</span></span>
+<span data-ttu-id="48fb4-125">此命令在名為 Contoso 的金鑰庫中，會獲得名為 test1 的特定金鑰版本。</span><span class="sxs-lookup"><span data-stu-id="48fb4-125">This command gets a specific version of the key named test1 in the key vault named Contoso.</span></span>
+<span data-ttu-id="48fb4-126">執行此命令之後，您可以流覽物件以檢查$Key屬性。</span><span class="sxs-lookup"><span data-stu-id="48fb4-126">After running this command, you can inspect various properties of the key by navigating the $Key object.</span></span>
 
-### <span data-ttu-id="53665-127">範例5：取得已刪除但未針對此金鑰保存庫清除的所有索引鍵。</span><span class="sxs-lookup"><span data-stu-id="53665-127">Example 5: Get all the keys that have been deleted but not purged for this key vault.</span></span>
+### <span data-ttu-id="48fb4-127">範例 5：取得此金鑰庫的所有已刪除但並未清除的金鑰。</span><span class="sxs-lookup"><span data-stu-id="48fb4-127">Example 5: Get all the keys that have been deleted but not purged for this key vault.</span></span>
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -InRemovedState
 
@@ -199,9 +199,9 @@ Purge Disabled       : False
 Tags                 :
 ```
 
-<span data-ttu-id="53665-128">這個命令會在名為 Contoso 的金鑰保存庫中，取得先前已刪除但尚未清除的所有索引鍵。</span><span class="sxs-lookup"><span data-stu-id="53665-128">This command gets all the keys that have been previously deleted, but not purged, in the key vault named Contoso.</span></span>
+<span data-ttu-id="48fb4-128">此命令會獲得先前在名稱為 Contoso 的金鑰庫中刪除但並未清除的所有金鑰。</span><span class="sxs-lookup"><span data-stu-id="48fb4-128">This command gets all the keys that have been previously deleted, but not purged, in the key vault named Contoso.</span></span>
 
-### <span data-ttu-id="53665-129">範例6：取得已刪除但未針對此金鑰保存庫清除的金鑰 ITPfx。</span><span class="sxs-lookup"><span data-stu-id="53665-129">Example 6: Gets the key ITPfx that has been deleted but not purged for this key vault.</span></span>
+### <span data-ttu-id="48fb4-129">範例 6：針對此金鑰庫，獲得已刪除但並未清除的金鑰 ITPfx。</span><span class="sxs-lookup"><span data-stu-id="48fb4-129">Example 6: Gets the key ITPfx that has been deleted but not purged for this key vault.</span></span>
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test3' -InRemovedState
 
@@ -219,10 +219,10 @@ Purge Disabled       : False
 Tags                 :
 ```
 
-<span data-ttu-id="53665-130">這個命令會在名為 Contoso 的金鑰保存庫中，取得先前已刪除但尚未清除的金鑰 test3。</span><span class="sxs-lookup"><span data-stu-id="53665-130">This command gets the key test3 that has been previously deleted, but not purged, in the key vault named Contoso.</span></span>
-<span data-ttu-id="53665-131">這個命令會傳回中繼資料，例如刪除日期，以及此刪除金鑰的排程清除日期。</span><span class="sxs-lookup"><span data-stu-id="53665-131">This command will return metadata such as the deletion date, and the scheduled purging date of this deleted key.</span></span>
+<span data-ttu-id="48fb4-130">此命令會獲得先前在名稱為 Contoso 的金鑰庫中刪除但並未清除的金鑰 test3。</span><span class="sxs-lookup"><span data-stu-id="48fb4-130">This command gets the key test3 that has been previously deleted, but not purged, in the key vault named Contoso.</span></span>
+<span data-ttu-id="48fb4-131">此命令會返回中繼資料，例如刪除日期，以及此刪除金鑰的排程清除日期。</span><span class="sxs-lookup"><span data-stu-id="48fb4-131">This command will return metadata such as the deletion date, and the scheduled purging date of this deleted key.</span></span>
 
-### <span data-ttu-id="53665-132">範例7：使用篩選取得金鑰保存庫中的所有金鑰</span><span class="sxs-lookup"><span data-stu-id="53665-132">Example 7: Get all the keys in a key vault using filtering</span></span>
+### <span data-ttu-id="48fb4-132">範例 7：使用篩選功能取得金鑰庫中的所有金鑰</span><span class="sxs-lookup"><span data-stu-id="48fb4-132">Example 7: Get all the keys in a key vault using filtering</span></span>
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName "test*"
 
@@ -251,12 +251,12 @@ Purge Disabled : False
 Tags           :
 ```
 
-<span data-ttu-id="53665-133">這個命令會取得名為 Contoso 的主要電子倉庫中，以「test」開頭的所有索引鍵。</span><span class="sxs-lookup"><span data-stu-id="53665-133">This command gets all the keys in the key vault named Contoso that start with "test".</span></span>
+<span data-ttu-id="48fb4-133">此命令會獲得名稱為 Contoso 的金鑰庫中以「測試」做為開始的所有金鑰。</span><span class="sxs-lookup"><span data-stu-id="48fb4-133">This command gets all the keys in the key vault named Contoso that start with "test".</span></span>
 
-## <span data-ttu-id="53665-134">參數</span><span class="sxs-lookup"><span data-stu-id="53665-134">PARAMETERS</span></span>
+## <span data-ttu-id="48fb4-134">參數</span><span class="sxs-lookup"><span data-stu-id="48fb4-134">PARAMETERS</span></span>
 
-### <span data-ttu-id="53665-135">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="53665-135">-DefaultProfile</span></span>
-<span data-ttu-id="53665-136">用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱</span><span class="sxs-lookup"><span data-stu-id="53665-136">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="48fb4-135">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="48fb4-135">-DefaultProfile</span></span>
+<span data-ttu-id="48fb4-136">用於與 Azure 通訊的認證、帳戶、租使用者和訂閱</span><span class="sxs-lookup"><span data-stu-id="48fb4-136">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -270,11 +270,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="53665-137">-IncludeVersions</span><span class="sxs-lookup"><span data-stu-id="53665-137">-IncludeVersions</span></span>
-<span data-ttu-id="53665-138">表示此 Cmdlet 會取得所有版本的金鑰。</span><span class="sxs-lookup"><span data-stu-id="53665-138">Indicates that this cmdlet gets all versions of a key.</span></span>
-<span data-ttu-id="53665-139">索引鍵的目前版本是清單中的第一個版本。</span><span class="sxs-lookup"><span data-stu-id="53665-139">The current version of a key is the first one on the list.</span></span>
-<span data-ttu-id="53665-140">如果您指定此參數，您也必須指定 *Name* 及 *VaultName* 參數。</span><span class="sxs-lookup"><span data-stu-id="53665-140">If you specify this parameter you must also specify the *Name* and *VaultName* parameters.</span></span>
-<span data-ttu-id="53665-141">如果您沒有指定 *IncludeVersions* 參數，這個 Cmdlet 會取得具有指定 *名稱* 的目前金鑰版本。</span><span class="sxs-lookup"><span data-stu-id="53665-141">If you do not specify the *IncludeVersions* parameter, this cmdlet gets the current version of the key with the specified *Name*.</span></span>
+### <span data-ttu-id="48fb4-137">-IncludeVersions</span><span class="sxs-lookup"><span data-stu-id="48fb4-137">-IncludeVersions</span></span>
+<span data-ttu-id="48fb4-138">表示此 Cmdlet 會獲得所有版本的金鑰。</span><span class="sxs-lookup"><span data-stu-id="48fb4-138">Indicates that this cmdlet gets all versions of a key.</span></span>
+<span data-ttu-id="48fb4-139">目前版本的金鑰是清單中的第一個版本。</span><span class="sxs-lookup"><span data-stu-id="48fb4-139">The current version of a key is the first one on the list.</span></span>
+<span data-ttu-id="48fb4-140">如果您指定此參數，您也必須指定 *Name* 和 *VaultName* 參數。</span><span class="sxs-lookup"><span data-stu-id="48fb4-140">If you specify this parameter you must also specify the *Name* and *VaultName* parameters.</span></span>
+<span data-ttu-id="48fb4-141">如果您未指定 *IncludeVersions* 參數，此 Cmdlet 會以指定的名稱獲得目前版本的 *金鑰*。</span><span class="sxs-lookup"><span data-stu-id="48fb4-141">If you do not specify the *IncludeVersions* parameter, this cmdlet gets the current version of the key with the specified *Name*.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -288,8 +288,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="53665-142">-InputObject</span><span class="sxs-lookup"><span data-stu-id="53665-142">-InputObject</span></span>
-<span data-ttu-id="53665-143">KeyVault 物件。</span><span class="sxs-lookup"><span data-stu-id="53665-143">KeyVault object.</span></span>
+### <span data-ttu-id="48fb4-142">-InputObject</span><span class="sxs-lookup"><span data-stu-id="48fb4-142">-InputObject</span></span>
+<span data-ttu-id="48fb4-143">KeyVault 物件。</span><span class="sxs-lookup"><span data-stu-id="48fb4-143">KeyVault object.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
@@ -303,8 +303,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="53665-144">-InRemovedState</span><span class="sxs-lookup"><span data-stu-id="53665-144">-InRemovedState</span></span>
-<span data-ttu-id="53665-145">指定是否要在輸出中顯示先前刪除的索引鍵</span><span class="sxs-lookup"><span data-stu-id="53665-145">Specifies whether to show the previously deleted keys in the output</span></span>
+### <span data-ttu-id="48fb4-144">-InRemovedState</span><span class="sxs-lookup"><span data-stu-id="48fb4-144">-InRemovedState</span></span>
+<span data-ttu-id="48fb4-145">指定是否要在輸出中顯示先前刪除的按鍵</span><span class="sxs-lookup"><span data-stu-id="48fb4-145">Specifies whether to show the previously deleted keys in the output</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -318,8 +318,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="53665-146">-名稱</span><span class="sxs-lookup"><span data-stu-id="53665-146">-Name</span></span>
-<span data-ttu-id="53665-147">指定要取得的金鑰捆綁的名稱。</span><span class="sxs-lookup"><span data-stu-id="53665-147">Specifies the name of the key bundle to get.</span></span>
+### <span data-ttu-id="48fb4-146">-名稱</span><span class="sxs-lookup"><span data-stu-id="48fb4-146">-Name</span></span>
+<span data-ttu-id="48fb4-147">指定要取得之金鑰組合的名稱。</span><span class="sxs-lookup"><span data-stu-id="48fb4-147">Specifies the name of the key bundle to get.</span></span>
 
 ```yaml
 Type: System.String
@@ -345,8 +345,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="53665-148">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="53665-148">-ResourceId</span></span>
-<span data-ttu-id="53665-149">KeyVault 資源識別碼。</span><span class="sxs-lookup"><span data-stu-id="53665-149">KeyVault Resource Id.</span></span>
+### <span data-ttu-id="48fb4-148">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="48fb4-148">-ResourceId</span></span>
+<span data-ttu-id="48fb4-149">KeyVault 資源識別碼。</span><span class="sxs-lookup"><span data-stu-id="48fb4-149">KeyVault Resource Id.</span></span>
 
 ```yaml
 Type: System.String
@@ -360,9 +360,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="53665-150">-VaultName</span><span class="sxs-lookup"><span data-stu-id="53665-150">-VaultName</span></span>
-<span data-ttu-id="53665-151">指定由此 Cmdlet 取得金鑰之金鑰電子倉庫的名稱。</span><span class="sxs-lookup"><span data-stu-id="53665-151">Specifies the name of the key vault from which this cmdlet gets keys.</span></span>
-<span data-ttu-id="53665-152">這個 Cmdlet 會根據此參數指定的名稱和您所選的環境，來構造金鑰 vault (FQDN) 的完整功能變數名稱。</span><span class="sxs-lookup"><span data-stu-id="53665-152">This cmdlet constructs the fully qualified domain name (FQDN) of a key vault based on the name that this parameter specifies and your selected environment.</span></span>
+### <span data-ttu-id="48fb4-150">-VaultName</span><span class="sxs-lookup"><span data-stu-id="48fb4-150">-VaultName</span></span>
+<span data-ttu-id="48fb4-151">指定此 Cmdlet 從其中獲得金鑰的金鑰庫名稱。</span><span class="sxs-lookup"><span data-stu-id="48fb4-151">Specifies the name of the key vault from which this cmdlet gets keys.</span></span>
+<span data-ttu-id="48fb4-152">此 Cmdlet 會根據此參數指定的名稱 (所選環境，建構金鑰庫的 FQDN) 完整功能變數名稱。</span><span class="sxs-lookup"><span data-stu-id="48fb4-152">This cmdlet constructs the fully qualified domain name (FQDN) of a key vault based on the name that this parameter specifies and your selected environment.</span></span>
 
 ```yaml
 Type: System.String
@@ -376,9 +376,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="53665-153">-版本</span><span class="sxs-lookup"><span data-stu-id="53665-153">-Version</span></span>
-<span data-ttu-id="53665-154">指定金鑰版本。</span><span class="sxs-lookup"><span data-stu-id="53665-154">Specifies the key version.</span></span>
-<span data-ttu-id="53665-155">這個 Cmdlet 根據金鑰保存庫名稱、您目前選取的環境、金鑰名稱及金鑰版本來構造金鑰的 FQDN。</span><span class="sxs-lookup"><span data-stu-id="53665-155">This cmdlet constructs the FQDN of a key based on the key vault name, your currently selected environment, the key name, and the key version.</span></span>
+### <span data-ttu-id="48fb4-153">-版本</span><span class="sxs-lookup"><span data-stu-id="48fb4-153">-Version</span></span>
+<span data-ttu-id="48fb4-154">指定金鑰版本。</span><span class="sxs-lookup"><span data-stu-id="48fb4-154">Specifies the key version.</span></span>
+<span data-ttu-id="48fb4-155">此 Cmdlet 會根據金鑰庫名稱、您目前選取的環境、金鑰名稱和金鑰版本來建構金鑰的 FQDN。</span><span class="sxs-lookup"><span data-stu-id="48fb4-155">This cmdlet constructs the FQDN of a key based on the key vault name, your currently selected environment, the key name, and the key version.</span></span>
 
 ```yaml
 Type: System.String
@@ -392,34 +392,33 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="53665-156">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="53665-156">CommonParameters</span></span>
-<span data-ttu-id="53665-157">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="53665-157">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="53665-158">如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="53665-158">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="48fb4-156">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="48fb4-156">CommonParameters</span></span>
+<span data-ttu-id="48fb4-157">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="48fb4-157">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="48fb4-158">詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="48fb4-158">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="53665-159">輸入</span><span class="sxs-lookup"><span data-stu-id="53665-159">INPUTS</span></span>
+## <span data-ttu-id="48fb4-159">輸入</span><span class="sxs-lookup"><span data-stu-id="48fb4-159">INPUTS</span></span>
 
-### <span data-ttu-id="53665-160">PSKeyVault 中的 KeyVault。</span><span class="sxs-lookup"><span data-stu-id="53665-160">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault</span></span>
+### <span data-ttu-id="48fb4-160">Microsoft.Azure.Commands.KeyVault.models.PSKeyVault</span><span class="sxs-lookup"><span data-stu-id="48fb4-160">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault</span></span>
 
-### <span data-ttu-id="53665-161">System.object</span><span class="sxs-lookup"><span data-stu-id="53665-161">System.String</span></span>
+### <span data-ttu-id="48fb4-161">System.String</span><span class="sxs-lookup"><span data-stu-id="48fb4-161">System.String</span></span>
 
-## <span data-ttu-id="53665-162">輸出</span><span class="sxs-lookup"><span data-stu-id="53665-162">OUTPUTS</span></span>
+## <span data-ttu-id="48fb4-162">輸出</span><span class="sxs-lookup"><span data-stu-id="48fb4-162">OUTPUTS</span></span>
 
-### <span data-ttu-id="53665-163">PSKeyVaultKeyIdentityItem 中的 KeyVault。</span><span class="sxs-lookup"><span data-stu-id="53665-163">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKeyIdentityItem</span></span>
+### <span data-ttu-id="48fb4-163">Microsoft.Azure.Commands.KeyVault.models.PSKeyVaultKeyIdentityItem</span><span class="sxs-lookup"><span data-stu-id="48fb4-163">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKeyIdentityItem</span></span>
 
-### <span data-ttu-id="53665-164">PSKeyVaultKey 中的 KeyVault。</span><span class="sxs-lookup"><span data-stu-id="53665-164">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKey</span></span>
+### <span data-ttu-id="48fb4-164">Microsoft.Azure.Commands.KeyVault.models.PSKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="48fb4-164">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKey</span></span>
 
-### <span data-ttu-id="53665-165">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKeyIdentityItem</span><span class="sxs-lookup"><span data-stu-id="53665-165">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKeyIdentityItem</span></span>
+### <span data-ttu-id="48fb4-165">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKeyIdentityItem</span><span class="sxs-lookup"><span data-stu-id="48fb4-165">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKeyIdentityItem</span></span>
 
-### <span data-ttu-id="53665-166">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="53665-166">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKey</span></span>
+### <span data-ttu-id="48fb4-166">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="48fb4-166">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKey</span></span>
 
-## <span data-ttu-id="53665-167">筆記</span><span class="sxs-lookup"><span data-stu-id="53665-167">NOTES</span></span>
+## <span data-ttu-id="48fb4-167">筆記</span><span class="sxs-lookup"><span data-stu-id="48fb4-167">NOTES</span></span>
 
-## <span data-ttu-id="53665-168">相關連結</span><span class="sxs-lookup"><span data-stu-id="53665-168">RELATED LINKS</span></span>
+## <span data-ttu-id="48fb4-168">相關連結</span><span class="sxs-lookup"><span data-stu-id="48fb4-168">RELATED LINKS</span></span>
 
-[<span data-ttu-id="53665-169">附加 AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="53665-169">Add-AzKeyVaultKey</span></span>](./Add-AzKeyVaultKey.md)
+[<span data-ttu-id="48fb4-169">Add-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="48fb4-169">Add-AzKeyVaultKey</span></span>](./Add-AzKeyVaultKey.md)
 
-[<span data-ttu-id="53665-170">移除-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="53665-170">Remove-AzKeyVaultKey</span></span>](./Remove-AzKeyVaultKey.md)
+[<span data-ttu-id="48fb4-170">Remove-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="48fb4-170">Remove-AzKeyVaultKey</span></span>](./Remove-AzKeyVaultKey.md)
 
-[<span data-ttu-id="53665-171">復原-AzKeyVaultKeyRemoval</span><span class="sxs-lookup"><span data-stu-id="53665-171">Undo-AzKeyVaultKeyRemoval</span></span>](./Undo-AzKeyVaultKeyRemoval.md)
+[<span data-ttu-id="48fb4-171">Undo-AzKeyVaultKeyRemoval</span><span class="sxs-lookup"><span data-stu-id="48fb4-171">Undo-AzKeyVaultKeyRemoval</span></span>](./Undo-AzKeyVaultKeyRemoval.md)
 
-[<span data-ttu-id="53665-172">Set-AzKeyVaultKeyAttribute</span><span class="sxs-lookup"><span data-stu-id="53665-172">Set-AzKeyVaultKeyAttribute</span></span>](./Set-AzKeyVaultKeyAttribute.md)
 

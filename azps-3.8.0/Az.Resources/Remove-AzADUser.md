@@ -6,83 +6,83 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzADUser.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzADUser.md
-ms.openlocfilehash: f05acfb05e9cd60616e243e36da406477e8d9d03
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: b3c59fabe648293b6ed92d23e4953cc17190e5e9
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93797498"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413348"
 ---
-# <span data-ttu-id="e0e1e-101">Remove-AzADUser</span><span class="sxs-lookup"><span data-stu-id="e0e1e-101">Remove-AzADUser</span></span>
+# <span data-ttu-id="96a4f-101">Remove-AzADUser</span><span class="sxs-lookup"><span data-stu-id="96a4f-101">Remove-AzADUser</span></span>
 
-## <span data-ttu-id="e0e1e-102">摘要</span><span class="sxs-lookup"><span data-stu-id="e0e1e-102">SYNOPSIS</span></span>
-<span data-ttu-id="e0e1e-103">刪除 active directory 使用者。</span><span class="sxs-lookup"><span data-stu-id="e0e1e-103">Deletes an active directory user.</span></span>
+## <span data-ttu-id="96a4f-102">簡介</span><span class="sxs-lookup"><span data-stu-id="96a4f-102">SYNOPSIS</span></span>
+<span data-ttu-id="96a4f-103">刪除 Active Directory 使用者。</span><span class="sxs-lookup"><span data-stu-id="96a4f-103">Deletes an active directory user.</span></span>
 
-## <span data-ttu-id="e0e1e-104">句法</span><span class="sxs-lookup"><span data-stu-id="e0e1e-104">SYNTAX</span></span>
+## <span data-ttu-id="96a4f-104">語法</span><span class="sxs-lookup"><span data-stu-id="96a4f-104">SYNTAX</span></span>
 
-### <span data-ttu-id="e0e1e-105">UPNOrObjectIdParameterSet (預設) </span><span class="sxs-lookup"><span data-stu-id="e0e1e-105">UPNOrObjectIdParameterSet (Default)</span></span>
+### <span data-ttu-id="96a4f-105">UPNOrObjectIdParameterSet (預設) </span><span class="sxs-lookup"><span data-stu-id="96a4f-105">UPNOrObjectIdParameterSet (Default)</span></span>
 ```
 Remove-AzADUser -UPNOrObjectId <String> [-PassThru] [-Force] [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="e0e1e-106">UPNParameterSet</span><span class="sxs-lookup"><span data-stu-id="e0e1e-106">UPNParameterSet</span></span>
+### <span data-ttu-id="96a4f-106">UPNParameterSet</span><span class="sxs-lookup"><span data-stu-id="96a4f-106">UPNParameterSet</span></span>
 ```
 Remove-AzADUser -UserPrincipalName <String> [-PassThru] [-Force] [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="e0e1e-107">ObjectIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="e0e1e-107">ObjectIdParameterSet</span></span>
+### <span data-ttu-id="96a4f-107">ObjectIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="96a4f-107">ObjectIdParameterSet</span></span>
 ```
 Remove-AzADUser -ObjectId <String> [-PassThru] [-Force] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="e0e1e-108">DisplayNameParameterSet</span><span class="sxs-lookup"><span data-stu-id="e0e1e-108">DisplayNameParameterSet</span></span>
+### <span data-ttu-id="96a4f-108">DisplayNameParameterSet</span><span class="sxs-lookup"><span data-stu-id="96a4f-108">DisplayNameParameterSet</span></span>
 ```
 Remove-AzADUser -DisplayName <String> [-PassThru] [-Force] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="e0e1e-109">InputObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="e0e1e-109">InputObjectParameterSet</span></span>
+### <span data-ttu-id="96a4f-109">InputObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="96a4f-109">InputObjectParameterSet</span></span>
 ```
 Remove-AzADUser -InputObject <PSADUser> [-PassThru] [-Force] [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="e0e1e-110">說明</span><span class="sxs-lookup"><span data-stu-id="e0e1e-110">DESCRIPTION</span></span>
-<span data-ttu-id="e0e1e-111">刪除 active directory 使用者 (公司/學校帳戶也會 popularly 稱為組織識別碼) 。</span><span class="sxs-lookup"><span data-stu-id="e0e1e-111">Deletes an active directory user (work/school account also popularly known as org-id).</span></span>
+## <span data-ttu-id="96a4f-110">描述</span><span class="sxs-lookup"><span data-stu-id="96a4f-110">DESCRIPTION</span></span>
+<span data-ttu-id="96a4f-111">刪除公司/ (帳戶的活動目錄使用者，也稱為組織識別碼) 。</span><span class="sxs-lookup"><span data-stu-id="96a4f-111">Deletes an active directory user (work/school account also popularly known as org-id).</span></span>
 
-## <span data-ttu-id="e0e1e-112">示例</span><span class="sxs-lookup"><span data-stu-id="e0e1e-112">EXAMPLES</span></span>
+## <span data-ttu-id="96a4f-112">例子</span><span class="sxs-lookup"><span data-stu-id="96a4f-112">EXAMPLES</span></span>
 
-### <span data-ttu-id="e0e1e-113">範例 1-依使用者主要名稱移除使用者</span><span class="sxs-lookup"><span data-stu-id="e0e1e-113">Example 1 - Remove a user by user principal name</span></span>
+### <span data-ttu-id="96a4f-113">範例 1 - 根據使用者主體名稱移除使用者</span><span class="sxs-lookup"><span data-stu-id="96a4f-113">Example 1 - Remove a user by user principal name</span></span>
 
 ```
 PS C:\> Remove-AzADUser -UserPrincipalName foo@domain.com
 ```
 
-<span data-ttu-id="e0e1e-114">從租使用者中移除使用者主要名稱為 "" 的使用者 foo@domain.com 。</span><span class="sxs-lookup"><span data-stu-id="e0e1e-114">Removes the user with user principal name "foo@domain.com" from the tenant.</span></span>
+<span data-ttu-id="96a4f-114">從租使用者移除具有使用者主體名稱 foo@domain.com "" 的使用者。</span><span class="sxs-lookup"><span data-stu-id="96a4f-114">Removes the user with user principal name "foo@domain.com" from the tenant.</span></span>
 
-### <span data-ttu-id="e0e1e-115">範例 2-依物件識別碼移除使用者</span><span class="sxs-lookup"><span data-stu-id="e0e1e-115">Example 2 - Remove a user by object id</span></span>
+### <span data-ttu-id="96a4f-115">範例 2 - 根據物件識別碼移除使用者</span><span class="sxs-lookup"><span data-stu-id="96a4f-115">Example 2 - Remove a user by object id</span></span>
 
 ```
 PS C:\> Remove-AzADUser -ObjectId 7a9582cf-88c4-4319-842b-7a5d60967a69
 ```
 
-<span data-ttu-id="e0e1e-116">從租使用者移除物件 id 為 ' 7a9582cf-88c4-4319-842b-7a5d60967a69」的使用者。</span><span class="sxs-lookup"><span data-stu-id="e0e1e-116">Removes the user with object id '7a9582cf-88c4-4319-842b-7a5d60967a69' from the tenant.</span></span>
+<span data-ttu-id="96a4f-116">從租使用者移除物件識別碼為 '7a9582cf-88c4-4319-842b-7a5d60967a69'的使用者。</span><span class="sxs-lookup"><span data-stu-id="96a4f-116">Removes the user with object id '7a9582cf-88c4-4319-842b-7a5d60967a69' from the tenant.</span></span>
 
-### <span data-ttu-id="e0e1e-117">範例 3-依管道移除使用者</span><span class="sxs-lookup"><span data-stu-id="e0e1e-117">Example 3 - Remove a user by piping</span></span>
+### <span data-ttu-id="96a4f-117">範例 3 - 使用管道移除使用者</span><span class="sxs-lookup"><span data-stu-id="96a4f-117">Example 3 - Remove a user by piping</span></span>
 
 ```
 PS C:\> Get-AzADUser -ObjectId 7a9582cf-88c4-4319-842b-7a5d60967a69 | Remove-AzADUser
 ```
 
-<span data-ttu-id="e0e1e-118">取得物件識別碼為 ' 7a9582cf-88c4-4319-842b-7a5d60967a69 ' 的使用者，以及 Remove-AzADUser Cmdlet 的管道，以從租使用者中移除使用者。</span><span class="sxs-lookup"><span data-stu-id="e0e1e-118">Gets the user with object id '7a9582cf-88c4-4319-842b-7a5d60967a69' and pipes that to the Remove-AzADUser cmdlet to remove the user from the tenant.</span></span>
+<span data-ttu-id="96a4f-118">讓使用者使用物件識別碼 '7a9582cf-88c4-4319-842b-7a5d60967a69'，以及將使用者從租使用者移除之 Remove-AzADUser Cmdlet 的管道。</span><span class="sxs-lookup"><span data-stu-id="96a4f-118">Gets the user with object id '7a9582cf-88c4-4319-842b-7a5d60967a69' and pipes that to the Remove-AzADUser cmdlet to remove the user from the tenant.</span></span>
 
-## <span data-ttu-id="e0e1e-119">參數</span><span class="sxs-lookup"><span data-stu-id="e0e1e-119">PARAMETERS</span></span>
+## <span data-ttu-id="96a4f-119">參數</span><span class="sxs-lookup"><span data-stu-id="96a4f-119">PARAMETERS</span></span>
 
-### <span data-ttu-id="e0e1e-120">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="e0e1e-120">-DefaultProfile</span></span>
-<span data-ttu-id="e0e1e-121">用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱</span><span class="sxs-lookup"><span data-stu-id="e0e1e-121">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="96a4f-120">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="96a4f-120">-DefaultProfile</span></span>
+<span data-ttu-id="96a4f-121">用於與 Azure 通訊的認證、帳戶、租使用者和訂閱</span><span class="sxs-lookup"><span data-stu-id="96a4f-121">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -96,8 +96,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="e0e1e-122">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="e0e1e-122">-DisplayName</span></span>
-<span data-ttu-id="e0e1e-123">要刪除之使用者的顯示名稱。</span><span class="sxs-lookup"><span data-stu-id="e0e1e-123">The display name of the user to be deleted.</span></span>
+### <span data-ttu-id="96a4f-122">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="96a4f-122">-DisplayName</span></span>
+<span data-ttu-id="96a4f-123">要刪除之使用者的顯示名稱。</span><span class="sxs-lookup"><span data-stu-id="96a4f-123">The display name of the user to be deleted.</span></span>
 
 ```yaml
 Type: System.String
@@ -111,8 +111,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="e0e1e-124">-Force</span><span class="sxs-lookup"><span data-stu-id="e0e1e-124">-Force</span></span>
-<span data-ttu-id="e0e1e-125">如果已指定，就不要求確認刪除使用者。</span><span class="sxs-lookup"><span data-stu-id="e0e1e-125">If specified, doesn't ask for confirmation for deleting the user.</span></span>
+### <span data-ttu-id="96a4f-124">-強制</span><span class="sxs-lookup"><span data-stu-id="96a4f-124">-Force</span></span>
+<span data-ttu-id="96a4f-125">如果指定，不會要求刪除使用者的確認。</span><span class="sxs-lookup"><span data-stu-id="96a4f-125">If specified, doesn't ask for confirmation for deleting the user.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -126,8 +126,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="e0e1e-126">-InputObject</span><span class="sxs-lookup"><span data-stu-id="e0e1e-126">-InputObject</span></span>
-<span data-ttu-id="e0e1e-127">要刪除的使用者物件。</span><span class="sxs-lookup"><span data-stu-id="e0e1e-127">The user object to be deleted.</span></span>
+### <span data-ttu-id="96a4f-126">-InputObject</span><span class="sxs-lookup"><span data-stu-id="96a4f-126">-InputObject</span></span>
+<span data-ttu-id="96a4f-127">要刪除的使用者物件。</span><span class="sxs-lookup"><span data-stu-id="96a4f-127">The user object to be deleted.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ActiveDirectory.PSADUser
@@ -141,8 +141,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="e0e1e-128">-ObjectId</span><span class="sxs-lookup"><span data-stu-id="e0e1e-128">-ObjectId</span></span>
-<span data-ttu-id="e0e1e-129">要刪除之使用者的物件識別碼。</span><span class="sxs-lookup"><span data-stu-id="e0e1e-129">The object id of the user to be deleted.</span></span>
+### <span data-ttu-id="96a4f-128">-ObjectId</span><span class="sxs-lookup"><span data-stu-id="96a4f-128">-ObjectId</span></span>
+<span data-ttu-id="96a4f-129">要刪除之使用者的物件識別碼。</span><span class="sxs-lookup"><span data-stu-id="96a4f-129">The object id of the user to be deleted.</span></span>
 
 ```yaml
 Type: System.String
@@ -156,8 +156,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="e0e1e-130">-PassThru</span><span class="sxs-lookup"><span data-stu-id="e0e1e-130">-PassThru</span></span>
-<span data-ttu-id="e0e1e-131">如果命令成功，則指定此值會傳回 true。</span><span class="sxs-lookup"><span data-stu-id="e0e1e-131">Specifying this will return true if the command was successful.</span></span>
+### <span data-ttu-id="96a4f-130">-PassThru</span><span class="sxs-lookup"><span data-stu-id="96a4f-130">-PassThru</span></span>
+<span data-ttu-id="96a4f-131">如果命令成功，指定此選項會返回 True。</span><span class="sxs-lookup"><span data-stu-id="96a4f-131">Specifying this will return true if the command was successful.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -171,8 +171,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="e0e1e-132">-UPNOrObjectId</span><span class="sxs-lookup"><span data-stu-id="e0e1e-132">-UPNOrObjectId</span></span>
-<span data-ttu-id="e0e1e-133">要刪除之使用者的使用者主要名稱或 objectId。</span><span class="sxs-lookup"><span data-stu-id="e0e1e-133">The user principal name or the objectId of the user to be deleted.</span></span>
+### <span data-ttu-id="96a4f-132">-UPNOrObjectId</span><span class="sxs-lookup"><span data-stu-id="96a4f-132">-UPNOrObjectId</span></span>
+<span data-ttu-id="96a4f-133">要刪除的使用者主體名稱或 objectId。</span><span class="sxs-lookup"><span data-stu-id="96a4f-133">The user principal name or the objectId of the user to be deleted.</span></span>
 
 ```yaml
 Type: System.String
@@ -186,8 +186,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="e0e1e-134">-UserPrincipalName</span><span class="sxs-lookup"><span data-stu-id="e0e1e-134">-UserPrincipalName</span></span>
-<span data-ttu-id="e0e1e-135">要刪除之使用者的使用者主要名稱。</span><span class="sxs-lookup"><span data-stu-id="e0e1e-135">The user principal name of the user to be deleted.</span></span>
+### <span data-ttu-id="96a4f-134">-UserPrincipalName</span><span class="sxs-lookup"><span data-stu-id="96a4f-134">-UserPrincipalName</span></span>
+<span data-ttu-id="96a4f-135">要刪除的使用者主要名稱。</span><span class="sxs-lookup"><span data-stu-id="96a4f-135">The user principal name of the user to be deleted.</span></span>
 
 ```yaml
 Type: System.String
@@ -201,8 +201,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="e0e1e-136">-確認</span><span class="sxs-lookup"><span data-stu-id="e0e1e-136">-Confirm</span></span>
-<span data-ttu-id="e0e1e-137">在執行 Cmdlet 之前提示您進行確認。</span><span class="sxs-lookup"><span data-stu-id="e0e1e-137">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="96a4f-136">-確認</span><span class="sxs-lookup"><span data-stu-id="96a4f-136">-Confirm</span></span>
+<span data-ttu-id="96a4f-137">執行 Cmdlet 之前，提示您確認。</span><span class="sxs-lookup"><span data-stu-id="96a4f-137">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -216,9 +216,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="e0e1e-138">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="e0e1e-138">-WhatIf</span></span>
-<span data-ttu-id="e0e1e-139">顯示在執行 Cmdlet 時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="e0e1e-139">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="e0e1e-140">未執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="e0e1e-140">The cmdlet is not run.</span></span>
+### <span data-ttu-id="96a4f-138">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="96a4f-138">-WhatIf</span></span>
+<span data-ttu-id="96a4f-139">顯示 Cmdlet 執行時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="96a4f-139">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="96a4f-140">不會執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="96a4f-140">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -232,26 +232,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="e0e1e-141">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="e0e1e-141">CommonParameters</span></span>
-<span data-ttu-id="e0e1e-142">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="e0e1e-142">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="e0e1e-143">如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="e0e1e-143">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="96a4f-141">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="96a4f-141">CommonParameters</span></span>
+<span data-ttu-id="96a4f-142">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="96a4f-142">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="96a4f-143">詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="96a4f-143">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="e0e1e-144">輸入</span><span class="sxs-lookup"><span data-stu-id="e0e1e-144">INPUTS</span></span>
+## <span data-ttu-id="96a4f-144">輸入</span><span class="sxs-lookup"><span data-stu-id="96a4f-144">INPUTS</span></span>
 
-### <span data-ttu-id="e0e1e-145">System.object</span><span class="sxs-lookup"><span data-stu-id="e0e1e-145">System.String</span></span>
+### <span data-ttu-id="96a4f-145">System.String</span><span class="sxs-lookup"><span data-stu-id="96a4f-145">System.String</span></span>
 
-### <span data-ttu-id="e0e1e-146">PSADUser （即 Azure。</span><span class="sxs-lookup"><span data-stu-id="e0e1e-146">Microsoft.Azure.Commands.ActiveDirectory.PSADUser</span></span>
+### <span data-ttu-id="96a4f-146">Microsoft.Azure.Commands.ActiveDirectory.PSADUser</span><span class="sxs-lookup"><span data-stu-id="96a4f-146">Microsoft.Azure.Commands.ActiveDirectory.PSADUser</span></span>
 
-## <span data-ttu-id="e0e1e-147">輸出</span><span class="sxs-lookup"><span data-stu-id="e0e1e-147">OUTPUTS</span></span>
+## <span data-ttu-id="96a4f-147">輸出</span><span class="sxs-lookup"><span data-stu-id="96a4f-147">OUTPUTS</span></span>
 
-### <span data-ttu-id="e0e1e-148">System.object</span><span class="sxs-lookup"><span data-stu-id="e0e1e-148">System.Boolean</span></span>
+### <span data-ttu-id="96a4f-148">System.Boolean</span><span class="sxs-lookup"><span data-stu-id="96a4f-148">System.Boolean</span></span>
 
-## <span data-ttu-id="e0e1e-149">筆記</span><span class="sxs-lookup"><span data-stu-id="e0e1e-149">NOTES</span></span>
+## <span data-ttu-id="96a4f-149">筆記</span><span class="sxs-lookup"><span data-stu-id="96a4f-149">NOTES</span></span>
 
-## <span data-ttu-id="e0e1e-150">相關連結</span><span class="sxs-lookup"><span data-stu-id="e0e1e-150">RELATED LINKS</span></span>
+## <span data-ttu-id="96a4f-150">相關連結</span><span class="sxs-lookup"><span data-stu-id="96a4f-150">RELATED LINKS</span></span>
 
-[<span data-ttu-id="e0e1e-151">新-AzADUser</span><span class="sxs-lookup"><span data-stu-id="e0e1e-151">New-AzADUser</span></span>](./New-AzADUser.md)
+[<span data-ttu-id="96a4f-151">New-AzADUser</span><span class="sxs-lookup"><span data-stu-id="96a4f-151">New-AzADUser</span></span>](./New-AzADUser.md)
 
-[<span data-ttu-id="e0e1e-152">AzADUser</span><span class="sxs-lookup"><span data-stu-id="e0e1e-152">Get-AzADUser</span></span>](./Get-AzADUser.md)
+[<span data-ttu-id="96a4f-152">Get-AzADUser</span><span class="sxs-lookup"><span data-stu-id="96a4f-152">Get-AzADUser</span></span>](./Get-AzADUser.md)
 
-[<span data-ttu-id="e0e1e-153">Set-AzADUser</span><span class="sxs-lookup"><span data-stu-id="e0e1e-153">Set-AzADUser</span></span>](./Set-AzADUser.md)
 

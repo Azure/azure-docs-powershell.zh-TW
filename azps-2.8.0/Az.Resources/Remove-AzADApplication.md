@@ -6,77 +6,77 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzADApplication.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzADApplication.md
-ms.openlocfilehash: eed437a235072972778925c0b94f2d22466399b3
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 7b66dff3f59e3ad186bfc559343aebf484ff2bc2
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93792209"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413535"
 ---
-# <span data-ttu-id="b9805-101">Remove-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="b9805-101">Remove-AzADApplication</span></span>
+# <span data-ttu-id="5a24a-101">Remove-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="5a24a-101">Remove-AzADApplication</span></span>
 
-## <span data-ttu-id="b9805-102">摘要</span><span class="sxs-lookup"><span data-stu-id="b9805-102">SYNOPSIS</span></span>
-<span data-ttu-id="b9805-103">刪除 azure active directory 應用程式。</span><span class="sxs-lookup"><span data-stu-id="b9805-103">Deletes the azure active directory application.</span></span>
+## <span data-ttu-id="5a24a-102">簡介</span><span class="sxs-lookup"><span data-stu-id="5a24a-102">SYNOPSIS</span></span>
+<span data-ttu-id="5a24a-103">刪除 Azure Active Directory 應用程式。</span><span class="sxs-lookup"><span data-stu-id="5a24a-103">Deletes the azure active directory application.</span></span>
 
-## <span data-ttu-id="b9805-104">句法</span><span class="sxs-lookup"><span data-stu-id="b9805-104">SYNTAX</span></span>
+## <span data-ttu-id="5a24a-104">語法</span><span class="sxs-lookup"><span data-stu-id="5a24a-104">SYNTAX</span></span>
 
-### <span data-ttu-id="b9805-105">ObjectIdParameterSet (預設) </span><span class="sxs-lookup"><span data-stu-id="b9805-105">ObjectIdParameterSet (Default)</span></span>
+### <span data-ttu-id="5a24a-105">ObjectIdParameterSet (預設) </span><span class="sxs-lookup"><span data-stu-id="5a24a-105">ObjectIdParameterSet (Default)</span></span>
 ```
 Remove-AzADApplication -ObjectId <String> [-PassThru] [-Force] [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="b9805-106">ApplicationIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="b9805-106">ApplicationIdParameterSet</span></span>
+### <span data-ttu-id="5a24a-106">ApplicationIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="5a24a-106">ApplicationIdParameterSet</span></span>
 ```
 Remove-AzADApplication -ApplicationId <Guid> [-PassThru] [-Force] [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="b9805-107">ApplicationDisplayNameParameterSet</span><span class="sxs-lookup"><span data-stu-id="b9805-107">ApplicationDisplayNameParameterSet</span></span>
+### <span data-ttu-id="5a24a-107">ApplicationDisplayNameParameterSet</span><span class="sxs-lookup"><span data-stu-id="5a24a-107">ApplicationDisplayNameParameterSet</span></span>
 ```
 Remove-AzADApplication -DisplayName <String> [-PassThru] [-Force] [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="b9805-108">InputObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="b9805-108">InputObjectParameterSet</span></span>
+### <span data-ttu-id="5a24a-108">InputObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="5a24a-108">InputObjectParameterSet</span></span>
 ```
 Remove-AzADApplication -InputObject <PSADApplication> [-PassThru] [-Force]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="b9805-109">說明</span><span class="sxs-lookup"><span data-stu-id="b9805-109">DESCRIPTION</span></span>
-<span data-ttu-id="b9805-110">刪除 azure active directory 應用程式。</span><span class="sxs-lookup"><span data-stu-id="b9805-110">Deletes the azure active directory application.</span></span>
+## <span data-ttu-id="5a24a-109">描述</span><span class="sxs-lookup"><span data-stu-id="5a24a-109">DESCRIPTION</span></span>
+<span data-ttu-id="5a24a-110">刪除 Azure Active Directory 應用程式。</span><span class="sxs-lookup"><span data-stu-id="5a24a-110">Deletes the azure active directory application.</span></span>
 
-## <span data-ttu-id="b9805-111">示例</span><span class="sxs-lookup"><span data-stu-id="b9805-111">EXAMPLES</span></span>
+## <span data-ttu-id="5a24a-111">例子</span><span class="sxs-lookup"><span data-stu-id="5a24a-111">EXAMPLES</span></span>
 
-### <span data-ttu-id="b9805-112">範例 1-依物件識別碼移除應用程式</span><span class="sxs-lookup"><span data-stu-id="b9805-112">Example 1 - Remove application by object id</span></span>
+### <span data-ttu-id="5a24a-112">範例 1 - 根據物件識別碼移除應用程式</span><span class="sxs-lookup"><span data-stu-id="5a24a-112">Example 1 - Remove application by object id</span></span>
 
 ```
 PS C:\> Remove-AzADApplication -ObjectId b4cd1619-80b3-4cfb-9f8f-9f2333425738
 ```
 
-<span data-ttu-id="b9805-113">從租使用者移除物件 id 為 ' b4cd1619-80b3-4cfb-9f8f-9f2333425738」的應用程式。</span><span class="sxs-lookup"><span data-stu-id="b9805-113">Removes the application with object id 'b4cd1619-80b3-4cfb-9f8f-9f2333425738' from the tenant.</span></span>
+<span data-ttu-id="5a24a-113">從租使用者移除具有物件識別碼 'b4cd1619-80b3-4cfb-9f8f-9f2333425738'的應用程式。</span><span class="sxs-lookup"><span data-stu-id="5a24a-113">Removes the application with object id 'b4cd1619-80b3-4cfb-9f8f-9f2333425738' from the tenant.</span></span>
 
-### <span data-ttu-id="b9805-114">範例 2-依應用程式識別碼移除應用程式</span><span class="sxs-lookup"><span data-stu-id="b9805-114">Example 2 - Remove application by application id</span></span>
+### <span data-ttu-id="5a24a-114">範例 2 - 根據應用程式識別碼移除應用程式</span><span class="sxs-lookup"><span data-stu-id="5a24a-114">Example 2 - Remove application by application id</span></span>
 
 ```
 PS C:\> Remove-AzADApplication -ApplicationId f9c5ea4f-28f0-401a-a491-491a037fa346
 ```
 
-<span data-ttu-id="b9805-115">從租使用者移除含應用程式識別碼 ' f9c5ea4f-28f0-401a-a491-491a037fa346」的應用程式。</span><span class="sxs-lookup"><span data-stu-id="b9805-115">Removes the application with application id 'f9c5ea4f-28f0-401a-a491-491a037fa346' from the tenant.</span></span>
+<span data-ttu-id="5a24a-115">從租使用者移除應用程式識別碼為 'f9c5ea4f-28f0-401a-a491-491a037fa346'的應用程式。</span><span class="sxs-lookup"><span data-stu-id="5a24a-115">Removes the application with application id 'f9c5ea4f-28f0-401a-a491-491a037fa346' from the tenant.</span></span>
 
-### <span data-ttu-id="b9805-116">範例 3-透過管道移除應用程式</span><span class="sxs-lookup"><span data-stu-id="b9805-116">Example 3 - Remove application by piping</span></span>
+### <span data-ttu-id="5a24a-116">範例 3 - 使用管道移除應用程式</span><span class="sxs-lookup"><span data-stu-id="5a24a-116">Example 3 - Remove application by piping</span></span>
 
 ```
 PS C:\> Get-AzADApplication -ObjectId b4cd1619-80b3-4cfb-9f8f-9f2333425738 | Remove-AzADApplication
 ```
 
-<span data-ttu-id="b9805-117">取得 b4cd1619-80b3-4cfb-9f8f-9f2333425738 Cmdlet 的物件識別碼 '」和 Remove-AzADApplication 管道，以從租使用者中移除應用程式的應用程式。</span><span class="sxs-lookup"><span data-stu-id="b9805-117">Gets the application with object id 'b4cd1619-80b3-4cfb-9f8f-9f2333425738' and pipes that to the Remove-AzADApplication cmdlet to remove the application from the tenant.</span></span>
+<span data-ttu-id="5a24a-117">使用物件識別碼 'b4cd1619-80b3-4cfb-9f8f-9f2333425738'及管道將應用程式從租使用者移除至 Remove-AzADApplication Cmdlet 的應用程式，</span><span class="sxs-lookup"><span data-stu-id="5a24a-117">Gets the application with object id 'b4cd1619-80b3-4cfb-9f8f-9f2333425738' and pipes that to the Remove-AzADApplication cmdlet to remove the application from the tenant.</span></span>
 
-## <span data-ttu-id="b9805-118">參數</span><span class="sxs-lookup"><span data-stu-id="b9805-118">PARAMETERS</span></span>
+## <span data-ttu-id="5a24a-118">參數</span><span class="sxs-lookup"><span data-stu-id="5a24a-118">PARAMETERS</span></span>
 
-### <span data-ttu-id="b9805-119">-ApplicationId</span><span class="sxs-lookup"><span data-stu-id="b9805-119">-ApplicationId</span></span>
-<span data-ttu-id="b9805-120">要移除之應用程式的應用程式識別碼。</span><span class="sxs-lookup"><span data-stu-id="b9805-120">The application id of the application to remove.</span></span>
+### <span data-ttu-id="5a24a-119">-ApplicationId</span><span class="sxs-lookup"><span data-stu-id="5a24a-119">-ApplicationId</span></span>
+<span data-ttu-id="5a24a-120">要移除的應用程式的應用程式識別碼。</span><span class="sxs-lookup"><span data-stu-id="5a24a-120">The application id of the application to remove.</span></span>
 
 ```yaml
 Type: System.Guid
@@ -90,8 +90,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b9805-121">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="b9805-121">-DefaultProfile</span></span>
-<span data-ttu-id="b9805-122">用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱</span><span class="sxs-lookup"><span data-stu-id="b9805-122">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="5a24a-121">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="5a24a-121">-DefaultProfile</span></span>
+<span data-ttu-id="5a24a-122">用於與 Azure 通訊的認證、帳戶、租使用者和訂閱</span><span class="sxs-lookup"><span data-stu-id="5a24a-122">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -105,8 +105,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b9805-123">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="b9805-123">-DisplayName</span></span>
-<span data-ttu-id="b9805-124">應用程式的顯示名稱。</span><span class="sxs-lookup"><span data-stu-id="b9805-124">The display name of the application.</span></span>
+### <span data-ttu-id="5a24a-123">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="5a24a-123">-DisplayName</span></span>
+<span data-ttu-id="5a24a-124">應用程式的顯示名稱。</span><span class="sxs-lookup"><span data-stu-id="5a24a-124">The display name of the application.</span></span>
 
 ```yaml
 Type: System.String
@@ -120,8 +120,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b9805-125">-Force</span><span class="sxs-lookup"><span data-stu-id="b9805-125">-Force</span></span>
-<span data-ttu-id="b9805-126">切換以刪除應用程式而不進行確認。</span><span class="sxs-lookup"><span data-stu-id="b9805-126">Switch to delete an application without a confirmation.</span></span>
+### <span data-ttu-id="5a24a-125">-強制</span><span class="sxs-lookup"><span data-stu-id="5a24a-125">-Force</span></span>
+<span data-ttu-id="5a24a-126">切換以在未確認的情況下刪除應用程式。</span><span class="sxs-lookup"><span data-stu-id="5a24a-126">Switch to delete an application without a confirmation.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -135,8 +135,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b9805-127">-InputObject</span><span class="sxs-lookup"><span data-stu-id="b9805-127">-InputObject</span></span>
-<span data-ttu-id="b9805-128">代表要移除之應用程式的物件。</span><span class="sxs-lookup"><span data-stu-id="b9805-128">The object representing the application to remove.</span></span>
+### <span data-ttu-id="5a24a-127">-InputObject</span><span class="sxs-lookup"><span data-stu-id="5a24a-127">-InputObject</span></span>
+<span data-ttu-id="5a24a-128">代表要移除之應用程式的物件。</span><span class="sxs-lookup"><span data-stu-id="5a24a-128">The object representing the application to remove.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ActiveDirectory.PSADApplication
@@ -150,8 +150,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b9805-129">-ObjectId</span><span class="sxs-lookup"><span data-stu-id="b9805-129">-ObjectId</span></span>
-<span data-ttu-id="b9805-130">要刪除之應用程式的物件識別碼。</span><span class="sxs-lookup"><span data-stu-id="b9805-130">The object id of the application to delete.</span></span>
+### <span data-ttu-id="5a24a-129">-ObjectId</span><span class="sxs-lookup"><span data-stu-id="5a24a-129">-ObjectId</span></span>
+<span data-ttu-id="5a24a-130">要刪除之應用程式的物件識別碼。</span><span class="sxs-lookup"><span data-stu-id="5a24a-130">The object id of the application to delete.</span></span>
 
 ```yaml
 Type: System.String
@@ -165,8 +165,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b9805-131">-PassThru</span><span class="sxs-lookup"><span data-stu-id="b9805-131">-PassThru</span></span>
-<span data-ttu-id="b9805-132">如果命令成功，則指定此值會傳回 true。</span><span class="sxs-lookup"><span data-stu-id="b9805-132">Specifying this will return true if the command was successful.</span></span>
+### <span data-ttu-id="5a24a-131">-PassThru</span><span class="sxs-lookup"><span data-stu-id="5a24a-131">-PassThru</span></span>
+<span data-ttu-id="5a24a-132">如果命令成功，指定此選項會返回 True。</span><span class="sxs-lookup"><span data-stu-id="5a24a-132">Specifying this will return true if the command was successful.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -180,8 +180,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b9805-133">-確認</span><span class="sxs-lookup"><span data-stu-id="b9805-133">-Confirm</span></span>
-<span data-ttu-id="b9805-134">在執行 Cmdlet 之前提示您進行確認。</span><span class="sxs-lookup"><span data-stu-id="b9805-134">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="5a24a-133">-確認</span><span class="sxs-lookup"><span data-stu-id="5a24a-133">-Confirm</span></span>
+<span data-ttu-id="5a24a-134">執行 Cmdlet 之前，系統會提示您確認。</span><span class="sxs-lookup"><span data-stu-id="5a24a-134">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -195,9 +195,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b9805-135">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="b9805-135">-WhatIf</span></span>
-<span data-ttu-id="b9805-136">顯示在執行 Cmdlet 時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="b9805-136">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="b9805-137">未執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="b9805-137">The cmdlet is not run.</span></span>
+### <span data-ttu-id="5a24a-135">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="5a24a-135">-WhatIf</span></span>
+<span data-ttu-id="5a24a-136">顯示 Cmdlet 執行時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="5a24a-136">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="5a24a-137">不會執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="5a24a-137">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -211,31 +211,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b9805-138">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="b9805-138">CommonParameters</span></span>
-<span data-ttu-id="b9805-139">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="b9805-139">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="b9805-140">如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。</span><span class="sxs-lookup"><span data-stu-id="b9805-140">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="5a24a-138">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="5a24a-138">CommonParameters</span></span>
+<span data-ttu-id="5a24a-139">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="5a24a-139">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="5a24a-140">詳細資訊請參閱 https://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。</span><span class="sxs-lookup"><span data-stu-id="5a24a-140">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="b9805-141">輸入</span><span class="sxs-lookup"><span data-stu-id="b9805-141">INPUTS</span></span>
+## <span data-ttu-id="5a24a-141">輸入</span><span class="sxs-lookup"><span data-stu-id="5a24a-141">INPUTS</span></span>
 
-### <span data-ttu-id="b9805-142">System.object</span><span class="sxs-lookup"><span data-stu-id="b9805-142">System.String</span></span>
+### <span data-ttu-id="5a24a-142">System.String</span><span class="sxs-lookup"><span data-stu-id="5a24a-142">System.String</span></span>
 
-### <span data-ttu-id="b9805-143">Guid.empty</span><span class="sxs-lookup"><span data-stu-id="b9805-143">System.Guid</span></span>
+### <span data-ttu-id="5a24a-143">System.Guid</span><span class="sxs-lookup"><span data-stu-id="5a24a-143">System.Guid</span></span>
 
-### <span data-ttu-id="b9805-144">PSADApplication （即 Azure。</span><span class="sxs-lookup"><span data-stu-id="b9805-144">Microsoft.Azure.Commands.ActiveDirectory.PSADApplication</span></span>
+### <span data-ttu-id="5a24a-144">Microsoft.Azure.Commands.ActiveDirectory.PSADApplication</span><span class="sxs-lookup"><span data-stu-id="5a24a-144">Microsoft.Azure.Commands.ActiveDirectory.PSADApplication</span></span>
 
-## <span data-ttu-id="b9805-145">輸出</span><span class="sxs-lookup"><span data-stu-id="b9805-145">OUTPUTS</span></span>
+## <span data-ttu-id="5a24a-145">輸出</span><span class="sxs-lookup"><span data-stu-id="5a24a-145">OUTPUTS</span></span>
 
-### <span data-ttu-id="b9805-146">System.object</span><span class="sxs-lookup"><span data-stu-id="b9805-146">System.Boolean</span></span>
+### <span data-ttu-id="5a24a-146">System.Boolean</span><span class="sxs-lookup"><span data-stu-id="5a24a-146">System.Boolean</span></span>
 
-## <span data-ttu-id="b9805-147">筆記</span><span class="sxs-lookup"><span data-stu-id="b9805-147">NOTES</span></span>
-<span data-ttu-id="b9805-148">關鍵字： azure，azurerm，arm，資源，管理，管理員，資源，群組，範本，部署</span><span class="sxs-lookup"><span data-stu-id="b9805-148">Keywords: azure, azurerm, arm, resource, management, manager, resource, group, template, deployment</span></span>
+## <span data-ttu-id="5a24a-147">筆記</span><span class="sxs-lookup"><span data-stu-id="5a24a-147">NOTES</span></span>
+<span data-ttu-id="5a24a-148">關鍵字：azure、azurerm、arm、資源、管理、管理員、資源、群組、範本、部署</span><span class="sxs-lookup"><span data-stu-id="5a24a-148">Keywords: azure, azurerm, arm, resource, management, manager, resource, group, template, deployment</span></span>
 
-## <span data-ttu-id="b9805-149">相關連結</span><span class="sxs-lookup"><span data-stu-id="b9805-149">RELATED LINKS</span></span>
+## <span data-ttu-id="5a24a-149">相關連結</span><span class="sxs-lookup"><span data-stu-id="5a24a-149">RELATED LINKS</span></span>
 
-[<span data-ttu-id="b9805-150">新-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="b9805-150">New-AzADApplication</span></span>](./New-AzADApplication.md)
+[<span data-ttu-id="5a24a-150">New-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="5a24a-150">New-AzADApplication</span></span>](./New-AzADApplication.md)
 
-[<span data-ttu-id="b9805-151">AzADApplication</span><span class="sxs-lookup"><span data-stu-id="b9805-151">Get-AzADApplication</span></span>](./Get-AzADApplication.md)
+[<span data-ttu-id="5a24a-151">Get-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="5a24a-151">Get-AzADApplication</span></span>](./Get-AzADApplication.md)
 
-[<span data-ttu-id="b9805-152">Set-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="b9805-152">Set-AzADApplication</span></span>](./Set-AzADApplication.md)
 
-[<span data-ttu-id="b9805-153">移除-AzADAppCredential</span><span class="sxs-lookup"><span data-stu-id="b9805-153">Remove-AzADAppCredential</span></span>](./Remove-AzADAppCredential.md)
+[<span data-ttu-id="5a24a-152">Remove-AzADAppCredential</span><span class="sxs-lookup"><span data-stu-id="5a24a-152">Remove-AzADAppCredential</span></span>](./Remove-AzADAppCredential.md)
 
