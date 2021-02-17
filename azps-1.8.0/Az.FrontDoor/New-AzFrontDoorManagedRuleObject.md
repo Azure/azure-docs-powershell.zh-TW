@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorManagedRuleObject.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorManagedRuleObject.md
-ms.openlocfilehash: b6035e991b585ba296a9fdc591ccbdb44dd1b089
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: c72573f467377a4ea16fd487a8cee5f0055a5cee
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93787794"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401448"
 ---
 # New-AzFrontDoorManagedRuleObject
 
-## 摘要
-建立 WAF 原則建立的 ManagedRule 物件
+## 簡介
+建立 ManagedRule 物件以建立 WAF 策略
 
-## 句法
+## 語法
 
 ```
 New-AzFrontDoorManagedRuleObject -Type <String> -Version <String>
@@ -25,12 +25,12 @@ New-AzFrontDoorManagedRuleObject -Type <String> -Version <String>
  [<CommonParameters>]
 ```
 
-## 說明
-建立 WAF 原則建立的 ManagedRule 物件
+## 描述
+建立 ManagedRule 物件以建立 WAF 策略
 
-## 示例
+## 例子
 
-### 範例1
+### 範例 1
 ```powershell
 PS C:\> $ruleOverride1 = New-AzFrontDoorManagedRuleOverrideObject -RuleId "942250" -Action Log -EnabledState Enabled
 PS C:\> $ruleOverride2 = New-AzFrontDoorManagedRuleOverrideObject -RuleId "942251" -Action Log -EnabledState Enabled
@@ -51,7 +51,7 @@ RuleGroupOverrides RuleSetType    RuleSetVersion
 ## 參數
 
 ### -DefaultProfile
-用於與 Azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 ```
 
 ### -RuleGroupOverride
-Azure managed 提供者覆蓋設定的清單
+Azure 受管理提供者的重寫群組原則清單
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSAzureRuleGroupOverride[]
@@ -96,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -版本
-版本的規則集
+規則集版本
 
 ```yaml
 Type: System.String
@@ -111,20 +111,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](https://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### 所有
+### 沒有
 
 ## 輸出
 
-### PSAzureManagedRule 中的 FrontDoor。
+### Microsoft.Azure.Commands.FrontDoor.models.PSAzureManagedRule
 
 ## 筆記
 
 ## 相關連結
 
-[新-AzFrontDoorFireWallPolicy](./New-AzFrontDoorFireWallPolicy.md) 
-[Set-AzFrontDoorFireWallPolicy](./Set-AzFrontDoorFireWallPolicy.md) 
-[新-AzFrontDoorRuleGroupOverrideObject](./New-AzFrontDoorRuleGroupOverrideObject.md)
+[New-AzFrontDoorFireWallPolicy](./New-AzFrontDoorFireWallPolicy.md) 
+[Update-AzFrontDoorFireWallPolicy](./Update-AzFrontDoorFireWallPolicy.md) 
+[New-AzFrontDoorRuleGroupOverrideObject](./New-AzFrontDoorRuleGroupOverrideObject.md)

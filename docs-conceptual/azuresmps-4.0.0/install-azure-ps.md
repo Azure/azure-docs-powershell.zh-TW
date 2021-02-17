@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/06/2017
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 2860d5c7642b137c1cb14a38fa13d59ec2a4123c
-ms.sourcegitcommit: 038cb42a3bd8c009bc57c8c1c252e66fa170c84b
-ms.translationtype: HT
+ms.openlocfilehash: 23ea4bcbd182cf1b063f2ae90921217de74a7044
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92523201"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401516"
 ---
 # <a name="installing-the-azure-powershell-service-management-module"></a>安裝 Azure PowerShell 服務管理模組
 
@@ -70,7 +70,7 @@ Add-AzureAccount
 
 Azure PowerShell 模組經常會更新。 如果您發現 Cmdlet 的線上說明包含模組中沒有的 Cmdlet 或參數，請下載並安裝最新版的模組。 若要尋找您的模組版本，請輸入︰`(Get-InstalledModule Azure).Version`。
 
-如需相關指令碼範例來協助您在 Azure 中自動進行一些常見工作，請參閱 [Windows Azure 指令碼中心](http://www.windowsazure.com/documentation/scripts/)。
+如需相關指令碼範例來協助您在 Azure 中自動進行一些常見工作，請參閱 [Windows Azure 指令碼中心](https://www.windowsazure.com/documentation/scripts/)。
 
 如需有關安裝、學習、使用和自訂 Windows PowerShell 的一般資訊，請參閱[使用 Windows PowerShell 來編寫指令碼](/powershell/scripting/learn/ps101/00-introduction)。
 

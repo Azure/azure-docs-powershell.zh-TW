@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorFireWallPolicy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorFireWallPolicy.md
-ms.openlocfilehash: 67caf6c97c493ad1d19b95ef00c896cb96a47582
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 9b1339d138087207b84a7f515c66bd9964420dcd
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93787817"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401482"
 ---
 # New-AzFrontDoorFireWallPolicy
 
-## 摘要
-建立 WAF 原則
+## 簡介
+建立 WAF 政策
 
-## 句法
+## 語法
 
 ```
 New-AzFrontDoorFireWallPolicy -ResourceGroupName <String> -Name <String> [-EnabledState <PSEnabledState>]
@@ -26,12 +26,12 @@ New-AzFrontDoorFireWallPolicy -ResourceGroupName <String> -Name <String> [-Enabl
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## 說明
-**AzFrontDoorFireWallPolicy** Cmdlet 會在指定的資源群組中，在 [目前訂閱] 底下建立新的 Azure WAF 原則
+## 描述
+**New-AzFrontDoorFireWallPolicy** Cmdlet 會在目前訂閱下的指定資源群組中建立新的 Azure WAF 策略
 
-## 示例
+## 例子
 
-### 範例1：建立 WAF 原則
+### 範例 1：建立 WAF 策略
 ```powershell
 PS C:\> New-AzFrontDoorFireWallPolicy -Name $policyName -ResourceGroupName $resourceGroupName -Customrule $customRule1,$customRule2 -ManagedRule $managedRule1 -EnabledState Enabled -Mode Prevention -RedirectUrl "https://www.bing.com/" -CustomBlockResponseStatusCode 405 -CustomBlockResponseBody "<html><head><title>You are blocked!</title></head><body></body></html>"
 
@@ -40,12 +40,12 @@ Name         PolicyMode PolicyEnabledState RedirectUrl
 {policyName} Prevention            Enabled https://www.bing.com/
 ```
 
-建立 WAF 原則
+建立 WAF 政策
 
 ## 參數
 
 ### -CustomBlockResponseBody
-自訂回應主體
+自訂回應內體
 
 ```yaml
 Type: System.String
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 Azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -105,8 +105,8 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledState
-原則處於 [啟用] 狀態或 [已停用] 狀態。
-可能的值包括：「已停用」、「已啟用」
+該策略處於啟用狀態或停用狀態。
+可能的值包括：'已停用'、'Enabled'
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSEnabledState
@@ -122,7 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -ManagedRule
-原則中的受管理規則
+原則內的受管理規則
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSManagedRule[]
@@ -136,9 +136,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### 模式
-描述它是否在策略層級的偵測模式或預防模式中。
-可能的值包括：「預防」、「偵測」
+### -模式
+說明它處於偵測模式或策略層級的防護模式。
+可能的值包括：'Prevention'， 'Detection'
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSMode
@@ -154,7 +154,7 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-WebApplicationFireWallPolicy [名稱]。
+WebApplicationFireWallPolicy 名稱。
 
 ```yaml
 Type: System.String
@@ -184,7 +184,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-資源群組名稱
+資源組名
 
 ```yaml
 Type: System.String
@@ -199,7 +199,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -214,8 +214,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。
-未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。
+不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -230,22 +230,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](https://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### 所有
+### 沒有
 
 ## 輸出
 
-### PSPolicy 中的 FrontDoor。
+### Microsoft.Azure.Commands.FrontDoor.models.PSPolicy
 
 ## 筆記
 
 ## 相關連結
 
-[Set-AzFrontDoorFireWallPolicy](./Set-AzFrontDoorFireWallPolicy.md) 
-[AzFrontDoorFireWallPolicy](./Get-AzFrontDoorFireWallPolicy.md) 
-[移除-AzFrontDoorFireWallPolicy](./Remove-AzFrontDoorFireWallPolicy.md) 
-[新-AzFrontDoorManagedRuleObject](./New-AzFrontDoorManagedRuleObject.md) 
-[新-AzFrontDoorCustomRuleObject](./New-AzFrontDoorManagedRuleObject.md)
+[Get-AzFrontDoorFireWallPolicy](./Get-AzFrontDoorFireWallPolicy.md) 
+[Remove-AzFrontDoorFireWallPolicy](./Remove-AzFrontDoorFireWallPolicy.md) 
+[Update-AzFrontDoorFireWallPolicy](./Update-AzFrontDoorFireWallPolicy.md) 
+[New-AzFrontDoorManagedRuleObject](./New-AzFrontDoorManagedRuleObject.md) 
+[New-AzFrontDoorCustomRuleObject](./New-AzFrontDoorManagedRuleObject.md)
