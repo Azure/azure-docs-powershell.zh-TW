@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.recoveryse
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesAsrProtectableItem.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesAsrProtectableItem.md
-ms.openlocfilehash: 4ea8bcb0e27c9ca44cc30f36005bdcccdbd20d61
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 31dc0a5e7fb9bba20aea6fb6395ec59ba54d0e2c
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93621178"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399833"
 ---
 # Get-AzRecoveryServicesAsrProtectableItem
 
-## 摘要
-在 ASR 保護容器中取得可保護的專案。
+## 簡介
+在 ASR 保護容器中取得受保護的專案。
 
-## 句法
+## 語法
 
 ### ByObject (預設) 
 ```
@@ -31,25 +31,25 @@ Get-AzRecoveryServicesAsrProtectableItem -Name <String> -ProtectionContainer <AS
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### ByObjectWithFriendlyName
+### ByObjectWithWithWithLyName
 ```
 Get-AzRecoveryServicesAsrProtectableItem -FriendlyName <String> -ProtectionContainer <ASRProtectionContainer>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## 說明
-**AzRecoveryServicesAsrProtectableItem** Cmdlet 會取得 Azure Site Recovery 保護容器中的可保護專案。
+## 描述
+**Get-AzRecoveryServicesrProtectableItem** Cmdlet 會取得 Azure 網站修復保護容器中的可保護專案。
 
-## 示例
+## 例子
 
-### 範例1
+### 範例 1
 ```
 PS C:\> $ProtectableItems = Get-AzRecoveryServicesAsrProtectableItem -ProtectionContainer $Container
 ```
 
-在指定的 ASR 保護容器中取得所有可保護的專案。
+在指定的 ASR 保護容器內，獲得所有可保護的專案。
 
-### 範例2
+### 範例 2
 ```
 PS C:\> Get-ASRProtectableItem -ProtectionContainer $pc -FriendlyName $piFriendlyName
 
@@ -70,9 +70,9 @@ ReplicationProtectedItemId    :
 SupportedReplicationProviders : {InMage, InMageAzureV2}
 ```
 
-在指定的 ASR 保護容器中，以指定的易記名稱取得可以保護的專案。
+取得指定 ASR 保護容器和具有指定好用名稱的可保護專案。
 
-### 範例3
+### 範例 3
 ```
 PS C:\> Get-ASRProtectableItem -ProtectionContainer $pc -Name $piName
 
@@ -93,12 +93,12 @@ ReplicationProtectedItemId    :
 SupportedReplicationProviders : {InMage, InMageAzureV2}
 ```
 
-在指定的 ASR 保護容器中取得所有可保護的專案。
+在指定的 ASR 保護容器內，獲得所有可保護的專案。
 
 ## 參數
 
 ### -DefaultProfile
-用於與 Azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱。
 
 
 ```yaml
@@ -113,8 +113,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### FriendlyName
-指定 ASR [能保護的專案] 的易記名稱。
+### -FriendlyName
+指定 ASR 可保護專案的好用名稱。
 
 ```yaml
 Type: System.String
@@ -129,7 +129,7 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-指定 ASR [能保護的專案] 的名稱。
+指定 ASR 可保護專案的名稱。
 
 ```yaml
 Type: System.String
@@ -144,7 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProtectionContainer
-指定 Azure Site Recovery 保護容器物件。
+指定 Azure 網站復原保護容器物件。
 
 ```yaml
 Type: Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectionContainer
@@ -159,20 +159,18 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 https://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
-### RecoveryServices. SiteRecovery. ASRProtectionContainer
+### Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectionContainer
 
 ## 輸出
 
-### RecoveryServices. SiteRecovery. ASRProtectableItem
+### Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectableItem
 
 ## 筆記
 
 ## 相關連結
 
-[AzRecoveryServicesAsrProtectionEntity](./Get-AzRecoveryServicesAsrProtectionEntity.md)
 
-[Set-AzRecoveryServicesAsrProtectionEntity](./Set-AzRecoveryServicesAsrProtectionEntity.md)

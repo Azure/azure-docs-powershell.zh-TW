@@ -5,43 +5,43 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzApplicationGatewayClientAuthConfiguration.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzApplicationGatewayClientAuthConfiguration.md
-ms.openlocfilehash: 92d3945e92dc4996fbbe3fc0abbcc296ab141621
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 64dc67a59b739ac7cab51c9c4a02fd7a73f8b4cc
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100132514"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100407585"
 ---
 # Remove-AzApplicationGatewayClientAuthConfiguration
 
-## 摘要
-移除 SSL 設定檔物件的用戶端驗證設定。
+## 簡介
+移除 SSL 設定檔物件的用戶端驗證組式。
 
-## 句法
+## 語法
 
 ```
 Remove-AzApplicationGatewayClientAuthConfiguration -SslProfile <PSApplicationGatewaySslProfile>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## 說明
-**AzApplicationGatewayClientAuthConfiguration** Cmdlet 會移除 SSL 設定檔物件的用戶端驗證設定。
+## 描述
+**Remove-AzApplicationGatewayClientAuthConfiguration** Cmdlet 會移除 SSL 設定檔物件的用戶端驗證組式。
 
-## 示例
+## 例子
 
-### 範例1
+### 範例 1
 ```powershell
 PS C:\> $AppGw = Get-AzApplicationGateway -Name "ApplicationGateway01" -ResourceGroupName "ResourceGroup01"
 PS C:\> $profile  = Get-AzApplicationGatewaySslProfile -Name "Profile01" -ApplicationGateway $AppGw
 PS C:\> Remove-AzApplicationGatewayClientAuthConfiguration -SslProfile $profile
 ```
 
-第一個命令會在名為 ResourceGroup01 的資源群組中，取得名為 ApplicationGateway01 的應用程式閘道，並將它儲存在 $AppGw 變數中。 第二個命令會針對 $AppGw 取得名為 Profile01 的 SSL 設定檔，並將它儲存在 $profile 變數中。 最後一個命令會移除儲存在 $profile 中之 ssl 設定檔的用戶端驗證設定。
+第一個命令會獲得名為 ResourceGroup01 的資源群組中名為 ApplicationGateway01 的應用程式閘道，並儲存在$AppGw變數。 第二個命令會獲得名稱為 Profile01 的 SSL 設定檔$AppGw並儲存在$profile變數中。 最後一個命令會移除儲存在 $profile 中的 ssl 設定檔的用戶端驗證$profile。
 
 ## 參數
 
 ### -DefaultProfile
-用於與 Azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: IAzureContextContainer
@@ -56,7 +56,7 @@ Accept wildcard characters: False
 ```
 
 ### -SslProfile
-Ssl 設定檔
+ssl 設定檔
 
 ```yaml
 Type: PSApplicationGatewaySslProfile
@@ -71,24 +71,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### PSApplicationGatewaySslProfile 中的 [.]
+### Microsoft.Azure.Commands.Network.models.PSApplicationGatewaySslProfile
 
 ## 輸出
 
-### PSApplicationGatewaySslProfile 中的 [.]
+### Microsoft.Azure.Commands.Network.models.PSApplicationGatewaySslProfile
 
 ## 筆記
 
 ## 相關連結
 
-[新-AzApplicationGatewayClientAuthConfiguration](./New-AzApplicationGatewayClientAuthConfiguration.md)
+[New-AzApplicationGatewayClientAuthConfiguration](./New-AzApplicationGatewayClientAuthConfiguration.md)
 
-[附加 AzApplicationGatewayClientAuthConfiguration](./Add-AzApplicationGatewayClientAuthConfiguration.md)
 
-[AzApplicationGatewayClientAuthConfiguration](./Get-AzApplicationGatewayClientAuthConfiguration.md)
+[Get-AzApplicationGatewayClientAuthConfiguration](./Get-AzApplicationGatewayClientAuthConfiguration.md)
 
 [Set-AzApplicationGatewayClientAuthConfiguration](./Set-AzApplicationGatewayClientAuthConfiguration.md)
