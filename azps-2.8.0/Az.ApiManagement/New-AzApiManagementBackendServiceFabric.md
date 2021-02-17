@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendServiceFabric.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendServiceFabric.md
-ms.openlocfilehash: 9178efa364b7655e0a96f68a81399807435be4d5
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 744889e022301951bbc9ba2895eb5750f85925d0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93614001"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401652"
 ---
 # New-AzApiManagementBackendServiceFabric
 
-## 摘要
+## 簡介
 建立物件 `PsApiManagementServiceFabric`
 
-## 句法
+## 語法
 
 ```
 New-AzApiManagementBackendServiceFabric -ManagementEndpoint <String[]> -ClientCertificateThumbprint <String>
@@ -25,13 +25,13 @@ New-AzApiManagementBackendServiceFabric -ManagementEndpoint <String[]> -ClientCe
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## 說明
+## 描述
 
-**新的-AzApiManagementBackendServiceFabric** Cmdlet `PsApiManagementServiceFabric` 會建立要在 Cmdlet **New-AzApiManagementBackend** 和 **Set AzApiManagementBackend** 中使用的物件。
+**New-AzApiManagementBackendServiceFabric** Cmdlet 會建立要用於 `PsApiManagementServiceFabric` Cmdlet **New-AzApiManagementBackend** 和 **Set-AzApiManagementBackend** 的物件。
 
-## 示例
+## 例子
 
-### 範例1：建立後端服務結構 In-Memory 物件
+### 範例 1：建立後端服務結構In-Memory物件
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>$ManagementEndpoints = 'https://sfbackend-01.net:443', 'https://sfbackend-02.net:443'
@@ -47,7 +47,7 @@ PS C:\>$backend = New-AzApiManagementBackend -Context  $apimContext -BackendId 1
 
 ### -ClientCertificateThumbprint
 管理端點的用戶端憑證指紋。
-這個參數是必要的。
+此參數為必填項。
 
 ```yaml
 Type: System.String
@@ -62,7 +62,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 Azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -77,8 +77,8 @@ Accept wildcard characters: False
 ```
 
 ### -ManagementEndpoint
-Service Fabric 群集管理端點。
-這個參數是必要的。
+服務結構組群管理端點。
+此參數為必填項。
 
 ```yaml
 Type: System.String[]
@@ -93,8 +93,8 @@ Accept wildcard characters: False
 ```
 
 ### -MaxPartitionResolutionRetry
-解析 Service Fabric 分區時的最大重試次數。
-此參數為 optional，且預設值為5。
+解決 Service Fabric 分割時重試次數上限。
+此參數為選擇性，預設值為 5。
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -109,7 +109,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServerCertificateThumbprint
-[憑證群集管理服務] 用來進行 tls 通訊的指紋。這個參數是選用的。
+憑證組管理服務用於 tls 通訊的指紋。此參數為選擇性。
 
 ```yaml
 Type: System.String[]
@@ -125,7 +125,7 @@ Accept wildcard characters: False
 
 ### -ServerX509Name
 Server X509 憑證名稱集合。
-這個參數是選用的。
+此參數為選擇性。
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -140,26 +140,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](https://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### System.object
+### System.String
 
 ## 輸出
 
-### ServiceManagement. PsApiManagementServiceFabric （ApiManagement）
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.models.PsApiManagementServiceFabric
 
 ## 筆記
 
 ## 相關連結
 
-[AzApiManagementBackend](./Get-AzApiManagementBackend)
+[Get-AzApiManagementBackend](./Get-AzApiManagementBackend.md)
 
-[新-AzApiManagementBackend](./New-AzApiManagementBackend.md)
+[New-AzApiManagementBackend](./New-AzApiManagementBackend.md)
 
-[新-AzApiManagementBackendProxy](./New-AzApiManagementBackendProxy.md)
+[New-AzApiManagementBackendProxy](./New-AzApiManagementBackendProxy.md)
 
 [Set-AzApiManagementBackend](./Set-AzApiManagementBackend.md)
 
-[移除-AzApiManagementBackend](./Remove-AzApiManagementBackend.md)
+[Remove-AzApiManagementBackend](./Remove-AzApiManagementBackend.md)
