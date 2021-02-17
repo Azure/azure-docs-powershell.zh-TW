@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzADUser.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzADUser.md
-ms.openlocfilehash: 2dc9a0d3d41ca1bccb131e92cf514fd2f814943b
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 8799450cc73784b45804ea1fa26785716a895bed
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93620799"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399578"
 ---
 # Remove-AzADUser
 
-## 摘要
-刪除 active directory 使用者。
+## 簡介
+刪除 Active Directory 使用者。
 
-## 句法
+## 語法
 
 ### UPNOrObjectIdParameterSet (預設) 
 ```
@@ -50,39 +50,39 @@ Remove-AzADUser -InputObject <PSADUser> [-PassThru] [-Force] [-DefaultProfile <I
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## 說明
-刪除 active directory 使用者 (公司/學校帳戶也會 popularly 稱為組織識別碼) 。
+## 描述
+刪除公司/ (帳戶的活動目錄使用者，也稱為組織識別碼) 。
 
-## 示例
+## 例子
 
-### 範例 1-依使用者主要名稱移除使用者
+### 範例 1 - 根據使用者主體名稱移除使用者
 
 ```
 PS C:\> Remove-AzADUser -UserPrincipalName foo@domain.com
 ```
 
-從租使用者中移除使用者主要名稱為 "" 的使用者 foo@domain.com 。
+從租使用者移除具有使用者主體名稱 foo@domain.com "" 的使用者。
 
-### 範例 2-依物件識別碼移除使用者
+### 範例 2 - 根據物件識別碼移除使用者
 
 ```
 PS C:\> Remove-AzADUser -ObjectId 7a9582cf-88c4-4319-842b-7a5d60967a69
 ```
 
-從租使用者移除物件 id 為 ' 7a9582cf-88c4-4319-842b-7a5d60967a69」的使用者。
+從租使用者移除物件識別碼為 '7a9582cf-88c4-4319-842b-7a5d60967a69'的使用者。
 
-### 範例 3-依管道移除使用者
+### 範例 3 - 使用管道移除使用者
 
 ```
 PS C:\> Get-AzADUser -ObjectId 7a9582cf-88c4-4319-842b-7a5d60967a69 | Remove-AzADUser
 ```
 
-取得物件識別碼為 ' 7a9582cf-88c4-4319-842b-7a5d60967a69 ' 的使用者，以及 Remove-AzADUser Cmdlet 的管道，以從租使用者中移除使用者。
+讓使用者使用物件識別碼 '7a9582cf-88c4-4319-842b-7a5d60967a69'，以及將使用者從租使用者移除之 Remove-AzADUser Cmdlet 的管道。
 
 ## 參數
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -111,8 +111,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Force
-如果已指定，就不要求確認刪除使用者。
+### -強制
+如果指定，不會要求刪除使用者的確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -157,7 +157,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-如果命令成功，則指定此值會傳回 true。
+如果命令成功，指定此選項會返回 True。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -172,7 +172,7 @@ Accept wildcard characters: False
 ```
 
 ### -UPNOrObjectId
-要刪除之使用者的使用者主要名稱或 objectId。
+要刪除的使用者主體名稱或 objectId。
 
 ```yaml
 Type: System.String
@@ -187,7 +187,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserPrincipalName
-要刪除之使用者的使用者主要名稱。
+要刪除的使用者主要名稱。
 
 ```yaml
 Type: System.String
@@ -202,7 +202,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，系統會提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -217,8 +217,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。
-未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。
+不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -233,25 +233,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 https://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
-### System.object
+### System.String
 
-### PSADUser （即 Azure。
+### Microsoft.Azure.Commands.ActiveDirectory.PSADUser
 
 ## 輸出
 
-### System.object
+### System.Boolean
 
 ## 筆記
 
 ## 相關連結
 
-[新-AzADUser](./New-AzADUser.md)
+[New-AzADUser](./New-AzADUser.md)
 
-[AzADUser](./Get-AzADUser.md)
+[Get-AzADUser](./Get-AzADUser.md)
 
-[Set-AzADUser](./Set-AzADUser.md)
 
