@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzApplicationGatewaySslProfilePolicy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzApplicationGatewaySslProfilePolicy.md
-ms.openlocfilehash: 344be8b71bc74f3620ca90dd60b61f9a59026ea0
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 7d04d73905bde7ab008c6910cab708e209125316
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100135710"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100407993"
 ---
-# <span data-ttu-id="f0888-101">Set-AzApplicationGatewaySslProfilePolicy</span><span class="sxs-lookup"><span data-stu-id="f0888-101">Set-AzApplicationGatewaySslProfilePolicy</span></span>
+# <span data-ttu-id="5eb90-101">Set-AzApplicationGatewaySslProfilePolicy</span><span class="sxs-lookup"><span data-stu-id="5eb90-101">Set-AzApplicationGatewaySslProfilePolicy</span></span>
 
-## <span data-ttu-id="f0888-102">摘要</span><span class="sxs-lookup"><span data-stu-id="f0888-102">SYNOPSIS</span></span>
-<span data-ttu-id="f0888-103">修改應用程式閘道 SSL 設定檔的 SSL 原則。</span><span class="sxs-lookup"><span data-stu-id="f0888-103">Modifies the SSL policy of an application gateway SSL profile.</span></span>
+## <span data-ttu-id="5eb90-102">簡介</span><span class="sxs-lookup"><span data-stu-id="5eb90-102">SYNOPSIS</span></span>
+<span data-ttu-id="5eb90-103">修改應用程式閘道 SSL 設定檔的 SSL 策略。</span><span class="sxs-lookup"><span data-stu-id="5eb90-103">Modifies the SSL policy of an application gateway SSL profile.</span></span>
 
-## <span data-ttu-id="f0888-104">句法</span><span class="sxs-lookup"><span data-stu-id="f0888-104">SYNTAX</span></span>
+## <span data-ttu-id="5eb90-104">語法</span><span class="sxs-lookup"><span data-stu-id="5eb90-104">SYNTAX</span></span>
 
 ```
 Set-AzApplicationGatewaySslProfilePolicy -SslProfile <PSApplicationGatewaySslProfile>
@@ -26,24 +26,24 @@ Set-AzApplicationGatewaySslProfilePolicy -SslProfile <PSApplicationGatewaySslPro
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="f0888-105">說明</span><span class="sxs-lookup"><span data-stu-id="f0888-105">DESCRIPTION</span></span>
-<span data-ttu-id="f0888-106">**AzApplicationGatewaySslProfilePolicy** Cmdlet 會修改應用程式閘道 SSL 設定檔的 SSL 原則。</span><span class="sxs-lookup"><span data-stu-id="f0888-106">The **Set-AzApplicationGatewaySslProfilePolicy** cmdlet modifies the SSL policy of an application gateway SSL profile.</span></span>
+## <span data-ttu-id="5eb90-105">描述</span><span class="sxs-lookup"><span data-stu-id="5eb90-105">DESCRIPTION</span></span>
+<span data-ttu-id="5eb90-106">**Set-AzApplicationGatewaySslProfilePolicy** Cmdlet 會修改應用程式閘道 SSL 設定檔的 SSL 策略。</span><span class="sxs-lookup"><span data-stu-id="5eb90-106">The **Set-AzApplicationGatewaySslProfilePolicy** cmdlet modifies the SSL policy of an application gateway SSL profile.</span></span>
 
-## <span data-ttu-id="f0888-107">示例</span><span class="sxs-lookup"><span data-stu-id="f0888-107">EXAMPLES</span></span>
+## <span data-ttu-id="5eb90-107">例子</span><span class="sxs-lookup"><span data-stu-id="5eb90-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="f0888-108">範例1</span><span class="sxs-lookup"><span data-stu-id="f0888-108">Example 1</span></span>
+### <span data-ttu-id="5eb90-108">範例 1</span><span class="sxs-lookup"><span data-stu-id="5eb90-108">Example 1</span></span>
 ```powershell
 PS C:\>$AppGw = Get-AzApplicationGateway -Name "ApplicationGateway01" -ResourceGroupName "ResourceGroup01"
 PS C:\> $profile  = Get-AzApplicationGatewaySslProfile -Name "SslProfile01" -ApplicationGateway $AppGw
 PS C:\> $profile = Set-AzApplicationGatewaySslProfilePolicy -SslProfile $profile -PolicyType Predefined -PolicyName AppGwSslPolicy20170401
 ```
 
-<span data-ttu-id="f0888-109">第一個命令會在名為 ResourceGroup01 的資源群組中，取得名為 ApplicationGateway01 的應用程式閘道，並將它儲存在 $AppGw 變數中。</span><span class="sxs-lookup"><span data-stu-id="f0888-109">The first command gets the application gateway named ApplicationGateway01 in the resource group named ResourceGroup01 and stores it in the $AppGw variable.</span></span> <span data-ttu-id="f0888-110">第二個命令會針對 $AppGw 取得名為 SslProfile01 的 ssl 設定檔，並將設定儲存在 $profile 變數中。</span><span class="sxs-lookup"><span data-stu-id="f0888-110">The second command gets the ssl profile named SslProfile01 for $AppGw and stores the settings in the $profile variable.</span></span> <span data-ttu-id="f0888-111">最後一個命令會修改儲存在 $profile 之 ssl 設定檔物件的 ssl 原則。</span><span class="sxs-lookup"><span data-stu-id="f0888-111">The last command modifies the ssl policy of the ssl profile object stored in $profile.</span></span>
+<span data-ttu-id="5eb90-109">第一個命令會獲得名為 ResourceGroup01 的資源群組中名為 ApplicationGateway01 的應用程式閘道，並儲存在$AppGw變數。</span><span class="sxs-lookup"><span data-stu-id="5eb90-109">The first command gets the application gateway named ApplicationGateway01 in the resource group named ResourceGroup01 and stores it in the $AppGw variable.</span></span> <span data-ttu-id="5eb90-110">第二個命令會獲得名稱為 SslProfile01 的 ssl 設定檔$AppGw將設定儲存在$profile變數中。</span><span class="sxs-lookup"><span data-stu-id="5eb90-110">The second command gets the ssl profile named SslProfile01 for $AppGw and stores the settings in the $profile variable.</span></span> <span data-ttu-id="5eb90-111">最後一個命令會修改儲存在 $profile 中的 ssl 設定檔物件的 ssl $profile。</span><span class="sxs-lookup"><span data-stu-id="5eb90-111">The last command modifies the ssl policy of the ssl profile object stored in $profile.</span></span>
 
-## <span data-ttu-id="f0888-112">參數</span><span class="sxs-lookup"><span data-stu-id="f0888-112">PARAMETERS</span></span>
+## <span data-ttu-id="5eb90-112">參數</span><span class="sxs-lookup"><span data-stu-id="5eb90-112">PARAMETERS</span></span>
 
-### <span data-ttu-id="f0888-113">-CipherSuite</span><span class="sxs-lookup"><span data-stu-id="f0888-113">-CipherSuite</span></span>
-<span data-ttu-id="f0888-114">要在應用程式閘道的指定順序啟用 Ssl 密碼套件</span><span class="sxs-lookup"><span data-stu-id="f0888-114">Ssl cipher suites to be enabled in the specified order to application gateway</span></span>
+### <span data-ttu-id="5eb90-113">-CipherSuite</span><span class="sxs-lookup"><span data-stu-id="5eb90-113">-CipherSuite</span></span>
+<span data-ttu-id="5eb90-114">以指定的順序啟用應用程式閘道的 Ssl 密碼套件</span><span class="sxs-lookup"><span data-stu-id="5eb90-114">Ssl cipher suites to be enabled in the specified order to application gateway</span></span>
 
 ```yaml
 Type: String[]
@@ -57,8 +57,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f0888-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="f0888-115">-DefaultProfile</span></span>
-<span data-ttu-id="f0888-116">用於與 Azure 進行通訊的認證、帳戶、租使用者及訂閱。</span><span class="sxs-lookup"><span data-stu-id="f0888-116">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+### <span data-ttu-id="5eb90-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="5eb90-115">-DefaultProfile</span></span>
+<span data-ttu-id="5eb90-116">用於與 Azure 通訊的認證、帳戶、租使用者和訂閱。</span><span class="sxs-lookup"><span data-stu-id="5eb90-116">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
 
 ```yaml
 Type: IAzureContextContainer
@@ -72,8 +72,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f0888-117">-DisabledSslProtocols</span><span class="sxs-lookup"><span data-stu-id="f0888-117">-DisabledSslProtocols</span></span>
-<span data-ttu-id="f0888-118">要停用的 SSL 通訊協定清單</span><span class="sxs-lookup"><span data-stu-id="f0888-118">List of SSL protocols to be disabled</span></span>
+### <span data-ttu-id="5eb90-117">-DisabledSslProtocols</span><span class="sxs-lookup"><span data-stu-id="5eb90-117">-DisabledSslProtocols</span></span>
+<span data-ttu-id="5eb90-118">要停用的 SSL 通訊協定清單</span><span class="sxs-lookup"><span data-stu-id="5eb90-118">List of SSL protocols to be disabled</span></span>
 
 ```yaml
 Type: String[]
@@ -88,8 +88,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f0888-119">-MinProtocolVersion</span><span class="sxs-lookup"><span data-stu-id="f0888-119">-MinProtocolVersion</span></span>
-<span data-ttu-id="f0888-120">應用程式閘道支援的最小 Ssl 通訊協定版本</span><span class="sxs-lookup"><span data-stu-id="f0888-120">Minimum version of Ssl protocol to be supported on application gateway</span></span>
+### <span data-ttu-id="5eb90-119">-MinProtocolVersion</span><span class="sxs-lookup"><span data-stu-id="5eb90-119">-MinProtocolVersion</span></span>
+<span data-ttu-id="5eb90-120">應用程式閘道支援的最小 Ssl 通訊協定版本</span><span class="sxs-lookup"><span data-stu-id="5eb90-120">Minimum version of Ssl protocol to be supported on application gateway</span></span>
 
 ```yaml
 Type: String
@@ -104,8 +104,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f0888-121">-PolicyName</span><span class="sxs-lookup"><span data-stu-id="f0888-121">-PolicyName</span></span>
-<span data-ttu-id="f0888-122">Ssl 預先定義原則的名稱</span><span class="sxs-lookup"><span data-stu-id="f0888-122">Name of Ssl predefined policy</span></span>
+### <span data-ttu-id="5eb90-121">-PolicyName</span><span class="sxs-lookup"><span data-stu-id="5eb90-121">-PolicyName</span></span>
+<span data-ttu-id="5eb90-122">Ssl 預先定義之策略的名稱</span><span class="sxs-lookup"><span data-stu-id="5eb90-122">Name of Ssl predefined policy</span></span>
 
 ```yaml
 Type: String
@@ -119,8 +119,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f0888-123">-PolicyType</span><span class="sxs-lookup"><span data-stu-id="f0888-123">-PolicyType</span></span>
-<span data-ttu-id="f0888-124">Ssl 原則類型</span><span class="sxs-lookup"><span data-stu-id="f0888-124">Type of Ssl Policy</span></span>
+### <span data-ttu-id="5eb90-123">-PolicyType</span><span class="sxs-lookup"><span data-stu-id="5eb90-123">-PolicyType</span></span>
+<span data-ttu-id="5eb90-124">Ssl 策略類型</span><span class="sxs-lookup"><span data-stu-id="5eb90-124">Type of Ssl Policy</span></span>
 
 ```yaml
 Type: String
@@ -135,8 +135,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f0888-125">-SslProfile</span><span class="sxs-lookup"><span data-stu-id="f0888-125">-SslProfile</span></span>
-<span data-ttu-id="f0888-126">應用程式閘道 SSL 設定檔</span><span class="sxs-lookup"><span data-stu-id="f0888-126">The application gateway SSL profile</span></span>
+### <span data-ttu-id="5eb90-125">-SslProfile</span><span class="sxs-lookup"><span data-stu-id="5eb90-125">-SslProfile</span></span>
+<span data-ttu-id="5eb90-126">應用程式閘道 SSL 設定檔</span><span class="sxs-lookup"><span data-stu-id="5eb90-126">The application gateway SSL profile</span></span>
 
 ```yaml
 Type: PSApplicationGatewaySslProfile
@@ -150,8 +150,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f0888-127">-確認</span><span class="sxs-lookup"><span data-stu-id="f0888-127">-Confirm</span></span>
-<span data-ttu-id="f0888-128">在執行 Cmdlet 之前提示您進行確認。</span><span class="sxs-lookup"><span data-stu-id="f0888-128">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="5eb90-127">-確認</span><span class="sxs-lookup"><span data-stu-id="5eb90-127">-Confirm</span></span>
+<span data-ttu-id="5eb90-128">執行 Cmdlet 之前，系統會提示您確認。</span><span class="sxs-lookup"><span data-stu-id="5eb90-128">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: SwitchParameter
@@ -165,9 +165,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f0888-129">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="f0888-129">-WhatIf</span></span>
-<span data-ttu-id="f0888-130">顯示在執行 Cmdlet 時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="f0888-130">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="f0888-131">未執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="f0888-131">The cmdlet is not run.</span></span>
+### <span data-ttu-id="5eb90-129">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="5eb90-129">-WhatIf</span></span>
+<span data-ttu-id="5eb90-130">顯示 Cmdlet 執行時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="5eb90-130">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="5eb90-131">不會執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="5eb90-131">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: SwitchParameter
@@ -181,25 +181,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f0888-132">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="f0888-132">CommonParameters</span></span>
-<span data-ttu-id="f0888-133">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="f0888-133">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="f0888-134">如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="f0888-134">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="5eb90-132">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="5eb90-132">CommonParameters</span></span>
+<span data-ttu-id="5eb90-133">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="5eb90-133">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="5eb90-134">詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="5eb90-134">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="f0888-135">輸入</span><span class="sxs-lookup"><span data-stu-id="f0888-135">INPUTS</span></span>
+## <span data-ttu-id="5eb90-135">輸入</span><span class="sxs-lookup"><span data-stu-id="5eb90-135">INPUTS</span></span>
 
-### <span data-ttu-id="f0888-136">PSApplicationGatewaySslProfile 中的 [.]</span><span class="sxs-lookup"><span data-stu-id="f0888-136">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslProfile</span></span>
+### <span data-ttu-id="5eb90-136">Microsoft.Azure.Commands.Network.models.PSApplicationGatewaySslProfile</span><span class="sxs-lookup"><span data-stu-id="5eb90-136">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslProfile</span></span>
 
-## <span data-ttu-id="f0888-137">輸出</span><span class="sxs-lookup"><span data-stu-id="f0888-137">OUTPUTS</span></span>
+## <span data-ttu-id="5eb90-137">輸出</span><span class="sxs-lookup"><span data-stu-id="5eb90-137">OUTPUTS</span></span>
 
-### <span data-ttu-id="f0888-138">PSApplicationGatewaySslProfile 中的 [.]</span><span class="sxs-lookup"><span data-stu-id="f0888-138">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslProfile</span></span>
+### <span data-ttu-id="5eb90-138">Microsoft.Azure.Commands.Network.models.PSApplicationGatewaySslProfile</span><span class="sxs-lookup"><span data-stu-id="5eb90-138">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslProfile</span></span>
 
-## <span data-ttu-id="f0888-139">筆記</span><span class="sxs-lookup"><span data-stu-id="f0888-139">NOTES</span></span>
+## <span data-ttu-id="5eb90-139">筆記</span><span class="sxs-lookup"><span data-stu-id="5eb90-139">NOTES</span></span>
 
-## <span data-ttu-id="f0888-140">相關連結</span><span class="sxs-lookup"><span data-stu-id="f0888-140">RELATED LINKS</span></span>
+## <span data-ttu-id="5eb90-140">相關連結</span><span class="sxs-lookup"><span data-stu-id="5eb90-140">RELATED LINKS</span></span>
 
-[<span data-ttu-id="f0888-141">附加 AzApplicationGatewaySslProfilePolicy</span><span class="sxs-lookup"><span data-stu-id="f0888-141">Add-AzApplicationGatewaySslProfilePolicy</span></span>](./Add-AzApplicationGatewaySslProfilePolicy.md)
 
-[<span data-ttu-id="f0888-142">新-AzApplicationGatewaySslProfilePolicy</span><span class="sxs-lookup"><span data-stu-id="f0888-142">New-AzApplicationGatewaySslProfilePolicy</span></span>](./New-AzApplicationGatewaySslProfilePolicy.md)
 
-[<span data-ttu-id="f0888-143">AzApplicationGatewaySslProfilePolicy</span><span class="sxs-lookup"><span data-stu-id="f0888-143">Get-AzApplicationGatewaySslProfilePolicy</span></span>](./Get-AzApplicationGatewaySslProfilePolicy.md)
+[<span data-ttu-id="5eb90-141">Get-AzApplicationGatewaySslProfilePolicy</span><span class="sxs-lookup"><span data-stu-id="5eb90-141">Get-AzApplicationGatewaySslProfilePolicy</span></span>](./Get-AzApplicationGatewaySslProfilePolicy.md)
 
-[<span data-ttu-id="f0888-144">移除-AzApplicationGatewaySslProfilePolicy</span><span class="sxs-lookup"><span data-stu-id="f0888-144">Remove-AzApplicationGatewaySslProfilePolicy</span></span>](./Remove-AzApplicationGatewaySslProfilePolicy.md)
+[<span data-ttu-id="5eb90-142">Remove-AzApplicationGatewaySslProfilePolicy</span><span class="sxs-lookup"><span data-stu-id="5eb90-142">Remove-AzApplicationGatewaySslProfilePolicy</span></span>](./Remove-AzApplicationGatewaySslProfilePolicy.md)
