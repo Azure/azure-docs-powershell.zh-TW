@@ -6,38 +6,38 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzExpressRouteCircuitConnectionConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzExpressRouteCircuitConnectionConfig.md
-ms.openlocfilehash: bf69b628224baa74014d75b4c687a15d830d13c7
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: c596dffcef97dfbb1cabbc5ca2c2455a7768c25f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93621627"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401822"
 ---
 # Remove-AzExpressRouteCircuitConnectionConfig
 
-## 摘要
-移除 ExpressRoute 線路連線設定。
+## 簡介
+移除 ExpressRoute 回路連接組。
 
-## 句法
+## 語法
 
 ```
 Remove-AzExpressRouteCircuitConnectionConfig [-Name] <String> [-ExpressRouteCircuit] <PSExpressRouteCircuit>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## 說明
-**AzExpressRouteCircuitConnectionConfig** Cmdlet 會移除與指定快速路由線路相關聯的 ExpressRoute 線路連線設定。
+## 描述
+**Remove-AzExpressRouteRouteCircuitConnectionConfig** Cmdlet 會移除與特定 Express Route 回路相關聯的 ExpressRoute 回路連接組。
 
-## 示例
+## 例子
 
-### 範例1：從 ExpressRoute 回路中移除電路連線設定
+### 範例 1：從 ExpressRoute 回路移除回路連接組
 ```
 $circuit_init = Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg
 Remove-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName -ExpressRouteCircuit $circuit_init
 Set-AzExpressRouteCircuit -ExpressRouteCircuit $circuit_init
 ```
 
-### 範例2：使用 ExpressRoute 線路中的管道移除電路連線設定
+### 範例 2：從 ExpressRoute 回路使用管道移除回路連接組
 ```
 Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg|Remove-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName|Set-AzExpressRouteCircuit
 ```
@@ -45,7 +45,7 @@ Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg|Re
 ## 參數
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -60,7 +60,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExpressRouteCircuit
-包含要移除之對等設定的 ExpressRoute 電路。
+包含要移除之對等配置的 ExpressRoute 回路。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-要移除之電路連接設定的名稱。
+要移除的回路連接組名。
 
 ```yaml
 Type: System.String
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，系統會提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -105,7 +105,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。 未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。 不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -120,30 +120,30 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 https://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
-### PSExpressRouteCircuit 中的 [.]
+### Microsoft.Azure.Commands.Network.models.PSExpressRouteCircuit
 
 ## 輸出
 
-### PSExpressRouteCircuit 中的 [.]
+### Microsoft.Azure.Commands.Network.models.PSExpressRouteCircuit
 
 ## 筆記
 
 ## 相關連結
 
-[AzExpressRouteCircuit](Get-AzExpressRouteCircuit.md)
+[Get-AzExpressRouteCircuit](Get-AzExpressRouteCircuit.md)
 
-[AzExpressRouteCircuitConnectionConfig](Get-AzExpressRouteCircuitConnectionConfig.md)
+[Get-AzExpressRouteCircuitConnectionConfig](Get-AzExpressRouteCircuitConnectionConfig.md)
 
-[附加 AzExpressRouteCircuitConnectionConfig](Add-AzExpressRouteCircuitConnectionConfig.md)
+[Add-AzExpressRouteCircuitConnectionConfig](Add-AzExpressRouteCircuitConnectionConfig.md)
 
-[Set-AzExpressRouteCircuitConnectionConfig](Set-AzExpressRouteCircuitConnectionConfig.md)
 
-[新-AzExpressRouteCircuitConnectionConfig](New-AzExpressRouteCircuitConnectionConfig.md)
+
+
 
 [Set-AzExpressRouteCircuit](Set-AzExpressRouteCircuit.md)
 
-[AzExpressRouteCircuit](Get-AzExpressRouteCircuit.md)
+[Get-AzExpressRouteCircuit](Get-AzExpressRouteCircuit.md)
