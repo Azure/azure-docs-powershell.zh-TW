@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitRouteTableSummary.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitRouteTableSummary.md
-ms.openlocfilehash: cc3057582876dd3836f6b157a8ee31bb5b232539
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: bca0dde2947b214d13032b54681f2fc179c26af1
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93622042"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401958"
 ---
-# <span data-ttu-id="db687-101">Get-AzExpressRouteCircuitRouteTableSummary</span><span class="sxs-lookup"><span data-stu-id="db687-101">Get-AzExpressRouteCircuitRouteTableSummary</span></span>
+# <span data-ttu-id="d2c98-101">Get-AzExpressRouteCircuitRouteTableSummary</span><span class="sxs-lookup"><span data-stu-id="d2c98-101">Get-AzExpressRouteCircuitRouteTableSummary</span></span>
 
-## <span data-ttu-id="db687-102">摘要</span><span class="sxs-lookup"><span data-stu-id="db687-102">SYNOPSIS</span></span>
-<span data-ttu-id="db687-103">取得 ExpressRoute 回路的路由資料表摘要。</span><span class="sxs-lookup"><span data-stu-id="db687-103">Gets a route table summary of an ExpressRoute circuit.</span></span>
+## <span data-ttu-id="d2c98-102">簡介</span><span class="sxs-lookup"><span data-stu-id="d2c98-102">SYNOPSIS</span></span>
+<span data-ttu-id="d2c98-103">獲得 ExpressRoute 回路的路由資料表摘要。</span><span class="sxs-lookup"><span data-stu-id="d2c98-103">Gets a route table summary of an ExpressRoute circuit.</span></span>
 
-## <span data-ttu-id="db687-104">句法</span><span class="sxs-lookup"><span data-stu-id="db687-104">SYNTAX</span></span>
+## <span data-ttu-id="d2c98-104">語法</span><span class="sxs-lookup"><span data-stu-id="d2c98-104">SYNTAX</span></span>
 
 ```
 Get-AzExpressRouteCircuitRouteTableSummary -ResourceGroupName <String> -ExpressRouteCircuitName <String>
@@ -26,20 +26,20 @@ Get-AzExpressRouteCircuitRouteTableSummary -ResourceGroupName <String> -ExpressR
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="db687-105">說明</span><span class="sxs-lookup"><span data-stu-id="db687-105">DESCRIPTION</span></span>
-<span data-ttu-id="db687-106">AzExpressRouteCircuitRouteTableSummary Cmdlet 會針對特定路由內容， **取得** BGP 鄰居資訊摘要。</span><span class="sxs-lookup"><span data-stu-id="db687-106">The **Get-AzExpressRouteCircuitRouteTableSummary** cmdlet retrieves a summary of BGP neighbor information for a particular routing context.</span></span> <span data-ttu-id="db687-107">此資訊對判斷路由內容已建立的時間，以及對等路由器宣告的路由首碼數量很有用。</span><span class="sxs-lookup"><span data-stu-id="db687-107">This information is useful to determine for how long a routing context has been established and the number of route prefixes advertised by the peering router.</span></span>
+## <span data-ttu-id="d2c98-105">描述</span><span class="sxs-lookup"><span data-stu-id="d2c98-105">DESCRIPTION</span></span>
+<span data-ttu-id="d2c98-106">**Get-AzExpressRouteRouteCircuitRouteTableSummary Cmdlet** 會針對特定路由上下文，取得 BGP 相鄰資訊的摘要。</span><span class="sxs-lookup"><span data-stu-id="d2c98-106">The **Get-AzExpressRouteCircuitRouteTableSummary** cmdlet retrieves a summary of BGP neighbor information for a particular routing context.</span></span> <span data-ttu-id="d2c98-107">此資訊很適合用於判斷路由上下文的建立時間，以及對等路由器所宣告的路由首碼數目。</span><span class="sxs-lookup"><span data-stu-id="d2c98-107">This information is useful to determine for how long a routing context has been established and the number of route prefixes advertised by the peering router.</span></span>
 
-## <span data-ttu-id="db687-108">示例</span><span class="sxs-lookup"><span data-stu-id="db687-108">EXAMPLES</span></span>
+## <span data-ttu-id="d2c98-108">例子</span><span class="sxs-lookup"><span data-stu-id="d2c98-108">EXAMPLES</span></span>
 
-### <span data-ttu-id="db687-109">範例1：顯示主要路徑的路由摘要</span><span class="sxs-lookup"><span data-stu-id="db687-109">Example 1: Display the route summary for the primary path</span></span>
+### <span data-ttu-id="d2c98-109">範例 1：顯示主要路徑的路由摘要</span><span class="sxs-lookup"><span data-stu-id="d2c98-109">Example 1: Display the route summary for the primary path</span></span>
 ```
 Get-AzExpressRouteCircuitRouteTableSummary -ResourceGroupName $RG -ExpressRouteCircuitName $CircuitName -DevicePath 'Primary'
 ```
 
-## <span data-ttu-id="db687-110">參數</span><span class="sxs-lookup"><span data-stu-id="db687-110">PARAMETERS</span></span>
+## <span data-ttu-id="d2c98-110">參數</span><span class="sxs-lookup"><span data-stu-id="d2c98-110">PARAMETERS</span></span>
 
-### <span data-ttu-id="db687-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="db687-111">-DefaultProfile</span></span>
-<span data-ttu-id="db687-112">用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。</span><span class="sxs-lookup"><span data-stu-id="db687-112">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="d2c98-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="d2c98-111">-DefaultProfile</span></span>
+<span data-ttu-id="d2c98-112">用於與 azure 通訊的認證、帳戶、租使用者和訂閱。</span><span class="sxs-lookup"><span data-stu-id="d2c98-112">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -53,8 +53,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="db687-113">-DevicePath</span><span class="sxs-lookup"><span data-stu-id="db687-113">-DevicePath</span></span>
-<span data-ttu-id="db687-114">此參數可接受的值為： `Primary` 或 `Secondary`</span><span class="sxs-lookup"><span data-stu-id="db687-114">The acceptable values for this parameter are: `Primary` or `Secondary`</span></span>
+### <span data-ttu-id="d2c98-113">-DevicePath</span><span class="sxs-lookup"><span data-stu-id="d2c98-113">-DevicePath</span></span>
+<span data-ttu-id="d2c98-114">此參數可接受的值為： `Primary` 或 `Secondary`</span><span class="sxs-lookup"><span data-stu-id="d2c98-114">The acceptable values for this parameter are: `Primary` or `Secondary`</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.DevicePathEnum
@@ -69,8 +69,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="db687-115">-ExpressRouteCircuitName</span><span class="sxs-lookup"><span data-stu-id="db687-115">-ExpressRouteCircuitName</span></span>
-<span data-ttu-id="db687-116">所檢查的 ExpressRoute 電路名稱。</span><span class="sxs-lookup"><span data-stu-id="db687-116">The name of the ExpressRoute circuit being examined.</span></span>
+### <span data-ttu-id="d2c98-115">-ExpressRouteCircuitName</span><span class="sxs-lookup"><span data-stu-id="d2c98-115">-ExpressRouteCircuitName</span></span>
+<span data-ttu-id="d2c98-116">要檢查的 ExpressRoute 回路名稱。</span><span class="sxs-lookup"><span data-stu-id="d2c98-116">The name of the ExpressRoute circuit being examined.</span></span>
 
 ```yaml
 Type: System.String
@@ -84,8 +84,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="db687-117">-PeeringType</span><span class="sxs-lookup"><span data-stu-id="db687-117">-PeeringType</span></span>
-<span data-ttu-id="db687-118">此參數可接受的值為： `AzurePrivatePeering` 、 `AzurePublicPeering` 和 `MicrosoftPeering`</span><span class="sxs-lookup"><span data-stu-id="db687-118">The acceptable values for this parameter are: `AzurePrivatePeering`, `AzurePublicPeering`, and `MicrosoftPeering`</span></span>
+### <span data-ttu-id="d2c98-117">-PeeringType</span><span class="sxs-lookup"><span data-stu-id="d2c98-117">-PeeringType</span></span>
+<span data-ttu-id="d2c98-118">此參數可接受的值為： `AzurePrivatePeering` 、 `AzurePublicPeering` 和 `MicrosoftPeering`</span><span class="sxs-lookup"><span data-stu-id="d2c98-118">The acceptable values for this parameter are: `AzurePrivatePeering`, `AzurePublicPeering`, and `MicrosoftPeering`</span></span>
 
 ```yaml
 Type: System.String
@@ -100,8 +100,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="db687-119">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="db687-119">-ResourceGroupName</span></span>
-<span data-ttu-id="db687-120">包含 ExpressRoute 回路之資源群組的名稱。</span><span class="sxs-lookup"><span data-stu-id="db687-120">The name of the resource group containing the ExpressRoute circuit.</span></span>
+### <span data-ttu-id="d2c98-119">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="d2c98-119">-ResourceGroupName</span></span>
+<span data-ttu-id="d2c98-120">包含 ExpressRoute 回路的資源組名。</span><span class="sxs-lookup"><span data-stu-id="d2c98-120">The name of the resource group containing the ExpressRoute circuit.</span></span>
 
 ```yaml
 Type: System.String
@@ -115,23 +115,23 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="db687-121">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="db687-121">CommonParameters</span></span>
-<span data-ttu-id="db687-122">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="db687-122">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="db687-123">如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="db687-123">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="d2c98-121">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="d2c98-121">CommonParameters</span></span>
+<span data-ttu-id="d2c98-122">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="d2c98-122">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="d2c98-123">詳細資訊[請參閱about_CommonParameters。](https://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="d2c98-123">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="db687-124">輸入</span><span class="sxs-lookup"><span data-stu-id="db687-124">INPUTS</span></span>
+## <span data-ttu-id="d2c98-124">輸入</span><span class="sxs-lookup"><span data-stu-id="d2c98-124">INPUTS</span></span>
 
-### <span data-ttu-id="db687-125">System.object</span><span class="sxs-lookup"><span data-stu-id="db687-125">System.String</span></span>
+### <span data-ttu-id="d2c98-125">System.String</span><span class="sxs-lookup"><span data-stu-id="d2c98-125">System.String</span></span>
 
-## <span data-ttu-id="db687-126">輸出</span><span class="sxs-lookup"><span data-stu-id="db687-126">OUTPUTS</span></span>
+## <span data-ttu-id="d2c98-126">輸出</span><span class="sxs-lookup"><span data-stu-id="d2c98-126">OUTPUTS</span></span>
 
-### <span data-ttu-id="db687-127">PSExpressRouteCircuitRoutesTableSummary 中的 [.]</span><span class="sxs-lookup"><span data-stu-id="db687-127">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuitRoutesTableSummary</span></span>
+### <span data-ttu-id="d2c98-127">Microsoft.Azure.Commands.Network.models.PSExpressRouteCircuitRoutesTableSummary</span><span class="sxs-lookup"><span data-stu-id="d2c98-127">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuitRoutesTableSummary</span></span>
 
-## <span data-ttu-id="db687-128">筆記</span><span class="sxs-lookup"><span data-stu-id="db687-128">NOTES</span></span>
+## <span data-ttu-id="d2c98-128">筆記</span><span class="sxs-lookup"><span data-stu-id="d2c98-128">NOTES</span></span>
 
-## <span data-ttu-id="db687-129">相關連結</span><span class="sxs-lookup"><span data-stu-id="db687-129">RELATED LINKS</span></span>
+## <span data-ttu-id="d2c98-129">相關連結</span><span class="sxs-lookup"><span data-stu-id="d2c98-129">RELATED LINKS</span></span>
 
-[<span data-ttu-id="db687-130">AzExpressRouteCircuitARPTable</span><span class="sxs-lookup"><span data-stu-id="db687-130">Get-AzExpressRouteCircuitARPTable</span></span>](Get-AzExpressRouteCircuitARPTable.md)
+[<span data-ttu-id="d2c98-130">Get-AzExpressRouteCircuitARPTable</span><span class="sxs-lookup"><span data-stu-id="d2c98-130">Get-AzExpressRouteCircuitARPTable</span></span>](Get-AzExpressRouteCircuitARPTable.md)
 
-[<span data-ttu-id="db687-131">AzExpressRouteCircuitRouteTable</span><span class="sxs-lookup"><span data-stu-id="db687-131">Get-AzExpressRouteCircuitRouteTable</span></span>](Get-AzExpressRouteCircuitRouteTable.md)
+[<span data-ttu-id="d2c98-131">Get-AzExpressRouteCircuitRouteTable</span><span class="sxs-lookup"><span data-stu-id="d2c98-131">Get-AzExpressRouteCircuitRouteTable</span></span>](Get-AzExpressRouteCircuitRouteTable.md)
 
-[<span data-ttu-id="db687-132">AzExpressRouteCircuitStats</span><span class="sxs-lookup"><span data-stu-id="db687-132">Get-AzExpressRouteCircuitStats</span></span>](Get-AzExpressRouteCircuitStats.md)
+[<span data-ttu-id="d2c98-132">Get-AzExpressRouteCircuitStat</span><span class="sxs-lookup"><span data-stu-id="d2c98-132">Get-AzExpressRouteCircuitStat</span></span>](Get-AzExpressRouteCircuitStat.md)
