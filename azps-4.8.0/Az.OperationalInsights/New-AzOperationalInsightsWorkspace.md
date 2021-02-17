@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.operationa
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/OperationalInsights/OperationalInsights/help/New-AzOperationalInsightsWorkspace.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/OperationalInsights/OperationalInsights/help/New-AzOperationalInsightsWorkspace.md
-ms.openlocfilehash: feac2aa9c5dd92c0d76090c6fc28353d56f9647c
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 8515bf4085fcd03d87aa15c3da649fe318b94966
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94135479"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405001"
 ---
 # New-AzOperationalInsightsWorkspace
 
-## 摘要
+## 簡介
 建立工作區。
 
-## 句法
+## 語法
 
 ```
 New-AzOperationalInsightsWorkspace [-ResourceGroupName] <String> [-Name] <String> [-Location] <String>
@@ -27,33 +27,33 @@ New-AzOperationalInsightsWorkspace [-ResourceGroupName] <String> [-Name] <String
  [[-PublicNetworkAccessForQuery] <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## 說明
-**新的-AzOperationalInsightsWorkspace** Cmdlet 會在指定的資源群組和位置中建立一個工作區。
+## 描述
+**New-AzOperationalInsightsWorkspace** Cmdlet 會建立指定資源群組和位置中的工作區。
 
-## 示例
+## 例子
 
-### 範例1：依名稱建立工作區
+### 範例 1：根據名稱建立工作區
 ```
 PS C:\>New-AzOperationalInsightsWorkspace -ResourceGroupName "ContosoResourceGroup" -Name "MyWorkspace" -Location "East US" -Sku "Standard"
 ```
 
-這個命令會在名為 [ContosoResourceGroup] 的資源群組中，建立名為 MyWorkspace 的標準 SKU 工作區。
+此命令在名為 ContosoResourceGroup 的資源群組中，建立名為 MyWorkspace 的標準 SKU 工作區。
 
-### 範例2：建立工作區並將其連結至現有的帳戶
+### 範例 2：建立工作區，並連結至現有帳戶
 ```
 PS C:\>$OILinkTargets = Get-AzOperationalInsightsLinkTargets
 
 PS C:\>$OILinkTargets[0] | New-AzOperationalInsightsWorkspace -ResourceGroupName "ContosoResourceGroup" -Name "MyWorkspace" -Sku "Standard"
 ```
 
-第一個命令使用 Get-AzOperationalInsightsLinkTargets Cmdlet 來取得 Operational Insights 帳戶連結目標，然後將它們儲存在 $OILinkTargets 變數中。
-第二個命令會使用管線運算子，將 $OILinkTargets 中的第一個帳戶連結目標傳遞給 **AzOperationalInsightsWorkspace** Cmdlet。
-此命令會建立一個名為 MyWorkspace 的標準 SKU 工作區，該工作區已連結至 $OILinkTargets 中第一個 Operational Insights 帳戶。
+第一個命令使用 Get-AzOperationalInsightsLinkTargets Cmdlet 取得營運深入資訊帳戶連結目標，然後將它們儲存在 $OILinkTargets 變數中。
+第二個命令會使用管線運算子，將 $OILinkTargets 中的第一個帳戶連結目標傳遞至 **New-AzOperationalInsightsWorkspace** Cmdlet。
+該命令會建立名為 MyWorkspace 的標準 SKU 工作區，該工作區會連結至 $OILinkTargets 中第一個營運深入資訊帳戶。
 
 ## 參數
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -67,8 +67,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Force
-強制執行命令，而不要求使用者確認。
+### -強制
+強制執行命令，但不要求使用者確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 ```
 
 ### -位置
-指定要建立工作區的位置，例如 [東美國] 或 [西部]。
+指定建立工作區的位置，例如美國東部或西歐。
 
 ```yaml
 Type: System.String
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### -PublicNetworkAccessForIngestion
-存取工作區接收的網路存取類型。 值應為 [Enabled] 或 "Disabled"
+存取工作區輸入的網路存取類型。 值應為 'Enabled' 或 'Disabled'
 
 ```yaml
 Type: System.String
@@ -128,7 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -PublicNetworkAccessForQuery
-用於存取工作區查詢的網路存取類型。 值應為 [Enabled] 或 "Disabled"
+存取工作區查詢的網路存取類型。 值應為 'Enabled' 或 'Disabled'
 
 ```yaml
 Type: System.String
@@ -143,8 +143,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-指定 Azure 資源群組的名稱。
-工作區是在此資源群組中建立。
+指定 Azure 資源組的名稱。
+此資源群組中已建立工作區。
 
 ```yaml
 Type: System.String
@@ -159,7 +159,7 @@ Accept wildcard characters: False
 ```
 
 ### -RetentionInDays
-工作區資料保留天數（天）。 730 days 是所有其他 Sku 允許的上限
+工作區資料保留天數。 所有其他 SKU 的允許上限為 730 天
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -173,13 +173,13 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Sku
-指定工作區的服務層級。 如需有關使用哪個值的詳細資訊，請核取 https://docs.microsoft.com/en-us/azure/azure-monitor/platform/manage-cost-storage#legacy-pricing-tiers 。
-有效值為：
-- 空閒
+### -SKU
+指定工作區的服務層級。 如需有關要使用哪個值的資訊，請檢查 https://docs.microsoft.com/en-us/azure/azure-monitor/platform/manage-cost-storage#legacy-pricing-tiers 。
+有效的值為：
+- 自由
 - pergb2018
 - pernode
-- 佳
+- 溢價
 - 獨立
 - 標準
 
@@ -195,7 +195,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Tag
+### -標記
 工作區的資源標記。
 
 ```yaml
@@ -211,7 +211,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -226,8 +226,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。
-未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。
+不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -242,30 +242,29 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### System.object
+### System.String
 
-### "CoreLib" 1 [[System. Guid.empty]、[System.] = 4.0.0.0、Culture = 中性、PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Guid， System.Private.CoreLib， Version=4.0.0.0， Culture=neutral， PublicKeyToken=7cec85d7bea7798e]]
 
-### [System.object] 集合. Hashtable
+### System.Collections.Hashtable
 
-### "CoreLib" 1 ["System.object，System.object，版本 = 4.0.0.0，Culture = 中性，PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Int32， System.Private.CoreLib， Version=4.0.0.0， Culture=neutral， PublicKeyToken=7cec85d7bea7798e]]
 
 ## 輸出
 
-### PSWorkspace 中的 OperationalInsights。
+### Microsoft.Azure.Commands.OperationalInsights.Models.PSWorkspace
 
 ## 筆記
 
-已發行新的定價模型。 如果您是 CSP，表示您必須針對 sku 使用 "獨立主機"。 在幕後，sku 將會變更為 pergb2018。 如需詳細資訊，請參閱下列內容： https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-usage-and-estimated-costs#new-pricing-model
+已發行新的定價模型。 如果您是 CSP，這表示您必須針對 SKU 使用「獨立」。 在幕後，SKU 將會變更為 pergb2018。 如需詳細資訊，請參閱下列專案： https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-usage-and-estimated-costs#new-pricing-model
 
 ## 相關連結
 
-[Azure Operational Insights Cmdlet](./Az.OperationalInsights.md)
+[Azure 營運深入資訊 Cmdlet](./Az.OperationalInsights.md)
 
-[AzOperationalInsightsLinkTargets](./Get-AzOperationalInsightsLinkTargets.md)
 
 

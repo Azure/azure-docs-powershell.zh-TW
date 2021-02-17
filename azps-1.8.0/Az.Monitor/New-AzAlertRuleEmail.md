@@ -6,55 +6,55 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAlertRuleEmail.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAlertRuleEmail.md
-ms.openlocfilehash: cfdd18a02a5e0507e86a37dee1e1662bb5094f37
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 063eccb7d42fdee26c642a866c2bce398c87662e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93786706"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100403046"
 ---
 # New-AzAlertRuleEmail
 
-## 摘要
-建立警示規則的電子郵件動作。
+## 簡介
+為警示規則建立電子郵件動作。
 
-## 句法
+## 語法
 
 ```
 New-AzAlertRuleEmail [[-CustomEmail] <String[]>] [-SendToServiceOwner]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## 說明
-**新的-AzAlertRuleEmail** Cmdlet 會為警示規則建立電子郵件動作。
+## 描述
+**New-AzAlertRuleEmail** Cmdlet 會為警示規則建立電子郵件動作。
 
-## 示例
+## 例子
 
-### 範例1：建立服務擁有者的警示規則電子郵件動作
+### 範例 1：為服務擁有者建立提醒規則電子郵件動作
 ```
 PS C:\>New-AzAlertRuleEmail -SendToServiceOwners
 ```
 
-當觸發警示規則時，這個命令會建立一個要傳送給其服務擁有者的警示規則電子郵件動作。
+此命令會建立警示規則電子郵件動作，以在警示規則發出時傳送給服務擁有者。
 
-### 範例2：為非服務擁有者建立警示規則電子郵件動作
+### 範例 2：為非服務擁有者建立提醒規則電子郵件動作
 ```
 PS C:\>New-AzAlertRuleEmail -CustomEmails pattif@contoso.com,davidchew@contoso.net
 ```
 
-這個命令會針對指定的電子郵件地址建立一個警示規則電子郵件動作，但不適用於服務擁有者。
+此命令會為指定的電子郵件地址建立通知規則電子郵件動作，但服務擁有者則不在此。
 
-### 範例3：為服務擁有者和非服務擁有者建立警示規則電子郵件動作
+### 範例 3：為服務擁有者和非服務擁有者建立提醒規則電子郵件動作
 ```
 PS C:\>New-AzAlertRuleEmail -CustomEmails pattif@contoso.net -SendToServiceOwners
 ```
 
-這個命令會針對指定的位址和其服務擁有者建立一個警示規則電子郵件動作。
+此命令會針對指定位址及其服務擁有者建立警示規則電子郵件動作。
 
 ## 參數
 
 ### -CustomEmail
-指定逗號分隔的電子郵件地址清單。
+指定逗號分隔電子郵件地址的清單。
 
 ```yaml
 Type: System.String[]
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 ```
 
 ### -SendToServiceOwner
-表示此操作會在規則激發時傳送電子郵件給服務擁有者。
+表示此作業在規則啟用時傳送電子郵件給服務擁有者。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -99,28 +99,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 https://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
-### System.object []
+### System.String[]
 
-### SwitchParameter 的系統管理功能
+### System.Management.Automation.SwitchParameter
 
 ## 輸出
 
-### RuleEmailAction 中的 [管理模型]。
+### Microsoft.Azure.management.Monitor.management.models.RuleEmailAction
 
 ## 筆記
 
 ## 相關連結
 
-[附加 AzLogAlertRule](./Add-AzLogAlertRule.md)
 
-[附加 AzMetricAlertRule](./Add-AzMetricAlertRule.md)
+[Add-AzMetricAlertRule](./Add-AzMetricAlertRule.md)
 
-[附加 AzWebtestAlertRule](./Add-AzWebtestAlertRule.md)
+[Add-AzWebtestAlertRule](./Add-AzWebtestAlertRule.md)
 
-[新-AzAlertRuleWebhook](./New-AzAlertRuleWebhook.md)
+[New-AzAlertRuleWeb一體式](./New-AzAlertRuleWebhook.md)
 
 

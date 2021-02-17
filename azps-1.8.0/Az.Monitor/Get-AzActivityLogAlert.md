@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzActivityLogAlert.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzActivityLogAlert.md
-ms.openlocfilehash: 26a1fbcc2016de2e6eca4cff2ee2442ef0111919
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 93112c8e7518ac23b23e5b1bb6c18109481495dc
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93786753"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100403148"
 ---
 # Get-AzActivityLogAlert
 
-## 摘要
-取得一或多個活動記錄通知資源。
+## 簡介
+獲得一或多個活動記錄提醒資源。
 
-## 句法
+## 語法
 
 ### GetByNameAndResourceGroup
 ```
@@ -32,36 +32,36 @@ Get-AzActivityLogAlert [[-ResourceGroupName] <String>] [-DefaultProfile <IAzureC
  [<CommonParameters>]
 ```
 
-## 說明
-**AzActivityLogAlert** Cmdlet 會取得一或多個活動記錄通知資源。
+## 描述
+**Get-AzActivityLogAlert** Cmdlet 會取得一或多個活動記錄提醒資源。
 
-## 示例
+## 例子
 
-### 範例1：依訂閱識別碼取得活動記錄通知
+### 範例 1：根據訂閱識別碼取得活動記錄提醒
 ```
 PS C:\>Get-AzActivityLogAlert
 ```
 
-這個命令會列出目前訂閱的所有活動記錄通知。
+此命令會列出目前訂閱的所有活動記錄通知。
 
-### 範例2：取得特定資源群組的活動記錄警報
+### 範例 2：取得給定資源群組的活動記錄提醒
 ```
 PS C:\>Get-AzActivityLogAlert -ResourceGroupName "Default-activityLogAlerts"
 ```
 
-這個命令會列出特定資源群組的活動記錄通知。
+此命令會列出給定資源群組的活動記錄通知。
 
-### 範例3：取得活動記錄警示。
+### 範例 3：取得活動記錄提醒。
 ```
 PS C:\>Get-AzActivityLogAlert -ResourceGroupName "Default-activityLogAlerts" -Name "alert1"
 ```
 
-這個命令會列出一個 (清單，其中只有一個元素) 活動記錄通知。
+此命令會列出一 (活動記錄提醒的單一) 清單。
 
 ## 參數
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -76,7 +76,7 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-活動記錄通知的名稱。
+活動記錄提醒的名稱。
 
 ```yaml
 Type: System.String
@@ -91,8 +91,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-警示資源所在之資源群組的名稱。
-如果 Name 不是 null 或空，此參數必須包含且非空字串。
+警示資源存在之資源組的名稱。
+如果 Name 不是 Null 或空值，此參數必須包含非空字串。
 
 ```yaml
 Type: System.String
@@ -119,15 +119,15 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 https://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
-### System.object
+### System.String
 
 ## 輸出
 
-### PSActivityLogAlertResource 中的 OutputClasses。
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
 
 ## 筆記
 
@@ -135,10 +135,6 @@ Accept wildcard characters: False
 
 [Set-AzActivityLogAlert](./Set-AzActivityLogAlert.md)
 
-[更新-AzActivityLogAlert](./Update-AzActivityLogAlert.md)
+[Remove-AzActivityLogAlert](./Remove-AzActivityLogAlert.md)
 
-[移除-AzActivityLogAlert](./Remove-AzActivityLogAlert.md)
-
-[新-AzActionGroup](./New-AzActionGroup.md)
-
-[新-AzActivityLogAlertCondition](./Get-AzActivityLogAlertCondition.md)
+[New-AzActionGroup](./New-AzActionGroup.md)

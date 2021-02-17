@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Remove-AzActivityLogAlert.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Remove-AzActivityLogAlert.md
-ms.openlocfilehash: 72d5fb7f5af5fb8e6501bfedee55ebe791765715
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 9d1cd1b13a24c2b5a5374d29cfd38273caa92e33
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93786674"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100403012"
 ---
 # Remove-AzActivityLogAlert
 
-## 摘要
-移除活動記錄通知。
+## 簡介
+移除活動記錄提醒。
 
-## 句法
+## 語法
 
 ### RemoveByNameAndResourceGroup
 ```
@@ -38,14 +38,14 @@ Remove-AzActivityLogAlert -ResourceId <String> [-DefaultProfile <IAzureContextCo
  [<CommonParameters>]
 ```
 
-## 說明
-**AzActivityLogAlert** Cmdlet 會移除活動記錄通知。
-這個 Cmdlet 會實現 ShouldProcess 模式，亦即，在實際修補資源之前，它可能會要求使用者進行確認。
-這個 Cmdlet 會實現 ShouldProcess 模式，亦即，在實際建立、修改或移除資源之前，它可能會要求使用者進行確認。
+## 描述
+**Remove-AzActivityLogAlert** Cmdlet 會移除活動記錄提醒。
+此 Cmdlet 實做 ShouldProcess 模式，即實際修補資源之前，可能會向使用者要求確認。
+此 Cmdlet 實做 ShouldProcess 模式，即實際建立、修改或移除資源之前，可能會向使用者要求確認。
 
-## 示例
+## 例子
 
-### 範例1：移除活動記錄通知
+### 範例 1：移除活動記錄提醒
 ```
 PS C:\>Remove-AzActivityLogAlert -ResourceGroup "Default-Web-CentralUS" -Name "myalert"
 RequestId                                                                                                    StatusCode
@@ -53,9 +53,9 @@ RequestId                                                                       
 2c6c159b-0e73-4a01-a67b-c32c1a0008a3                                                                                 OK
 ```
 
-使用名稱和資源群組名稱作為輸入，移除活動記錄提醒。
+使用名稱和資源組名做為輸入來移除活動記錄提醒。
 
-### 範例2：使用 PSActivityLogAlertResource 做為輸入來移除活動記錄提醒
+### 範例 2：使用 PSActivityLogAlertResource 做為輸入來移除活動記錄提醒
 ```
 PS C:\>Get-AzActivityLogAlert -ResourceGroup "Default-activityLogAlerts" -Name "alert1" | Remove-AzActivityLogAlert 
 RequestId                                                                                                    StatusCode
@@ -63,19 +63,19 @@ RequestId                                                                       
 5c371547-80b0-4185-9b95-700b129de9d4                                                                                 OK
 ```
 
-使用 PSActivityLogAlertResource 作為輸入來移除活動記錄提醒。
+使用 PSActivityLogAlertResource 做為輸入來移除活動記錄提醒。
 
-### 範例3：使用 ResourceId 參數移除 ActivityLogAlert
+### 範例 3：使用 ResourceId 參數移除 ActivityLogAlert
 ```
 PS C:\>Find-AzResource -ResourceGroupEquals "myResourceGroup" -ResourceNameEquals "myLogAlert" | Remove-AzActivityLogAlert
 ```
 
-這個命令會從管道使用 ResourceId 參數移除 ActivityLogAlert。
+此命令會使用 ResourceId 參數從管道移除 ActivityLogAlert。
 
 ## 參數
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-設定呼叫的 InputObject tags 屬性來解壓縮所需的名稱，以及資源組名屬性。
+設定呼叫的 InputObject 標記屬性，以解壓縮必要的名稱和資源組名屬性。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
@@ -105,7 +105,7 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-活動記錄通知的名稱。
+活動記錄提醒的名稱。
 
 ```yaml
 Type: System.String
@@ -120,7 +120,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-警示資源所在之資源群組的名稱。
+警示資源存在之資源組的名稱。
 
 ```yaml
 Type: System.String
@@ -135,7 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-設定呼叫的 ResourceId 標籤屬性來解壓縮所需的名稱、資源組名稱屬性。
+設定呼叫的 ResourceId 標記屬性，以解壓縮必要的名稱、資源組名屬性。
 
 ```yaml
 Type: System.String
@@ -150,7 +150,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，系統會提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -165,7 +165,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。 未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。 不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -180,17 +180,17 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 https://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
-### System.object
+### System.String
 
-### PSActivityLogAlertResource 中的 OutputClasses。
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
 
 ## 輸出
 
-### AzureOperationResponse
+### Microsoft.Azure.AzureOperationResponse
 
 ## 筆記
 
@@ -202,9 +202,9 @@ Accept wildcard characters: False
 
 [Set-AzActivityLogAlert](./Set-AzActivityLogAlert.md)
 
-[AzActivityLogAlert](./Get-AzActivityLogAlert.md)
+[Get-AzActivityLogAlert](./Get-AzActivityLogAlert.md)
 
-[新-AzActionGroup](./New-AzActionGroup.md)
+[New-AzActionGroup](./New-AzActionGroup.md)
 
-[新-AzActivityLogAlertCondition](./Get-AzActivityLogAlertCondition.md)
+
 

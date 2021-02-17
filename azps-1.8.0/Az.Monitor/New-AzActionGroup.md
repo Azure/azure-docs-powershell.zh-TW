@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzActionGroup.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzActionGroup.md
-ms.openlocfilehash: 8cf82f8ec01bc2a02470daf6dd0bd336bb564813
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 6fd3ceb5a0c49b5c8b4f530deddb31fdf5b09f4a
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93786710"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100403080"
 ---
 # New-AzActionGroup
 
-## 摘要
-在記憶體中建立 ActionGroup 參考物件。
+## 簡介
+在記憶體中建立 ActionGroup 參照物件。
 
-## 句法
+## 語法
 
 ```
 New-AzActionGroup -ActionGroupId <String>
@@ -26,12 +26,12 @@ New-AzActionGroup -ActionGroupId <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## 說明
-**新的 AzActionGroup** Cmdlet 會在記憶體中建立動作群組參照物件。
+## 描述
+**New-AzActionGroup** Cmdlet 會建立記憶體中的動作群組參照物件。
 
-## 示例
+## 例子
 
-### 範例1：在記憶體中建立動作群組參照物件
+### 範例 1：在記憶體中建立動作群組參照物件
 ```
 PS C:\>$dict = New-Object "System.Collections.Generic.Dictionary``2[System.String,System.String]"
 PS C:\>$dict.Add('key1', 'value1')
@@ -56,7 +56,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -70,8 +70,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -WebhookProperty
-[動作] 群組的 webhook 屬性
+### -Web上Property
+動作群組的 Web 區屬性
 
 ```yaml
 Type: System.Collections.Generic.Dictionary`2[System.String,System.String]
@@ -86,17 +86,17 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 https://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
-### System.object
+### System.String
 
-### [System.object]。字典 ' 2 [CoreLib，版本 = 4.0.0.0，Culture = 中性，PublicKeyToken = 7cec85d7bea7798e]，[System.object，，Culture = 中立，PublicKeyToken = 4.0.0.0]」）。））中的 "
+### System.Collections.Generic.Dictionary'2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
 ## 輸出
 
-### ActivityLogAlertActionGroup 中的 [管理模型]。
+### Microsoft.Azure.management.monitor.management.models.ActivityLogAlertActionGroup
 
 ## 筆記
 
@@ -108,9 +108,9 @@ Accept wildcard characters: False
 
 [Disable-AzActivityLogAlert](./Disable-AzActivityLogAlert.md)
 
-[AzActivityLogAlert](./Get-AzActivityLogAlert.md)
+[Get-AzActivityLogAlert](./Get-AzActivityLogAlert.md)
 
-[移除-AzActivityLogAlert](./Remove-AzActivityLogAlert.md)
+[Remove-AzActivityLogAlert](./Remove-AzActivityLogAlert.md)
 
-[新-AzActivityLogAlertCondition](./Get-AzActivityLogAlertCondition.md)
+
 
