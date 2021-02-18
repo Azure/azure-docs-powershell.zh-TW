@@ -6,48 +6,48 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAlertRuleWebhook.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAlertRuleWebhook.md
-ms.openlocfilehash: 03459cedbebaeba46331edf7aeb9a7972711912a
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 8410ca475ed17376e01a526512d758c4712f2726
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94129422"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100415932"
 ---
 # New-AzAlertRuleWebhook
 
-## 摘要
-建立警示規則 webhook。
+## 簡介
+建立警示規則 web一樣。
 
-## 句法
+## 語法
 
 ```
 New-AzAlertRuleWebhook [-ServiceUri] <String> [[-Property] <Hashtable>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## 說明
-**新的-AzAlertRuleWebhook** Cmdlet 會建立一個警報規則 webhook。
+## 描述
+**New-AzAlertRuleWeb有 Cmdlet** 會建立警示規則 webrule。
 
-## 示例
+## 例子
 
-### 範例1：建立警示規則 webhook
+### 範例 1：建立提醒規則 web更
 ```
 PS C:\>New-AzAlertRuleWebhook -ServiceUri "http://contoso.com"
 ```
 
-這個命令會透過只指定服務 URI 來建立警示規則 webhook。
+此命令僅指定服務 URI，以建立警示規則 web建立。
 
-### 範例2：使用一個屬性建立 webhook
+### 範例 2：使用一個屬性建立 Web一個
 ```
 PS C:\>$Actual = New-AzAlertRuleWebhook -ServiceUri "http://contoso.com" -Property @{prop1 = 'value1'}
 ```
 
-這個命令會針對具有一個屬性的 Contoso.com 建立一個警示規則 webhook，然後將它儲存在 $Actual 變數中。
+此命令會針對具有一個屬性Contoso.com建立提醒規則 web出，然後將它儲存在$Actual變數中。
 
 ## 參數
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -62,7 +62,7 @@ Accept wildcard characters: False
 ```
 
 ### -屬性
-指定 [@ (property1 = ' value1 ",.... ) 格式的屬性清單。
+指定格式為 @ (屬性1 = 'value1',....) 。
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -92,30 +92,29 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### System.object
+### System.String
 
-### [System.object] 集合. Hashtable
+### System.Collections.Hashtable
 
 ## 輸出
 
-### RuleWebhookAction 中的 [管理模型]。
+### Microsoft.Azure.management.monitor.management.models.RuleWebaction
 
 ## 筆記
 
 ## 相關連結
 
-[附加 AzLogAlertRule](./Add-AzLogAlertRule.md)
 
-[附加 AzMetricAlertRule](./Add-AzMetricAlertRule.md)
+[Add-AzMetricAlertRule](./Add-AzMetricAlertRule.md)
 
-[附加 AzWebtestAlertRule](./Add-AzWebtestAlertRule.md)
+[Add-AzWebtestAlertRule](./Add-AzWebtestAlertRule.md)
 
-[新-AzAlertRuleEmail](./New-AzAlertRuleEmail.md)
+[New-AzAlertRuleEmail](./New-AzAlertRuleEmail.md)
 
-[新-AzAutoscaleWebhook](./New-AzAutoscaleWebhook.md)
+[New-AzAutoscaleWeb用](./New-AzAutoscaleWebhook.md)
 
 

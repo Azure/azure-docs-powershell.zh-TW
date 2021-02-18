@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Set-AzResource.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Set-AzResource.md
-ms.openlocfilehash: 7a4929ffff531bb11b19b44ca9c0914c71662c8d
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 82e06a4736a613111efac452eb1fced2713dc470
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93969092"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100415745"
 ---
 # Set-AzResource
 
-## 摘要
+## 簡介
 修改資源。
 
-## 句法
+## 語法
 
 ### ByResourceId (預設) 
 ```
@@ -54,24 +54,24 @@ Set-AzResource [-Kind <String>] [-Properties <PSObject>] [-Plan <Hashtable>] [-S
  [<CommonParameters>]
 ```
 
-## 說明
-**AzResource** Cmdlet 會修改現有的 Azure 資源。
-指定要依名稱和類型或依識別碼來修改的資源。
+## 描述
+**Set-AzResource** Cmdlet 會修改現有的 Azure 資源。
+指定要根據名稱和類型或識別碼修改的資源。
 
-## 示例
+## 例子
 
-### 範例1：修改資源
+### 範例 1：修改資源
 ```
 PS C:\> $Resource = Get-AzResource -ResourceType Microsoft.Web/sites -ResourceGroupName ResourceGroup11 -ResourceName ContosoSite
 PS C:\> $Resource.Properties.Enabled = "False"
 PS C:\> $Resource | Set-AzResource -Force
 ```
 
-第一個命令會使用 Get-AzResource Cmdlet 來取得名為 ContosoSite 的資源，然後將它儲存在 $Resource 變數中。
-第二個命令會修改 $Resource 的屬性。
-最後一個命令會更新資源以符合 $Resource。
+第一個命令會使用 Get-AzResource Cmdlet 來獲得名為 ContosoSite 的資源，然後將它儲存在$Resource變數中。
+第二個命令會修改 $Resource。
+最後一個命令會更新資源以與$Resource。
 
-### 範例2：修改指定資源群組中的所有資源
+### 範例 2：修改給定資源群組中所有資源
 ```
 PS C:\> $Resource = Get-AzResource -ResourceGroupName testrg
 PS C:\> $Resource | ForEach-Object { $_.Tags.Add("testkey", "testval") }
@@ -99,17 +99,17 @@ Properties        : @{key=value}
 Sku               : @{name=A0}
 ```
 
-第一個命令會取得 testrg 資源群組中的資源，然後將它們儲存在 $Resource 變數中。
+第一個命令會獲得 testrg 資源群組中的資源，然後將資源儲存在$Resource變數中。
 
-第二個命令會迴圈顯示資源群組中的每一個資源，並將新標記新增到其中。
+第二個命令會在每個資源群組中執行，並新增標記給他們。
 
-最後一個命令會更新這些資源中的每一個。
+最後一個命令會更新這些資源。
 
 ## 參數
 
 ### -ApiVersion
 指定要使用的資源提供者 API 版本。
-如果您沒有指定版本，此 Cmdlet 會使用最新的可用版本。
+如果您未指定版本，此 Cmdlet 會使用最新的可用版本。
 
 ```yaml
 Type: System.String
@@ -139,7 +139,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -154,7 +154,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExtensionResourceName
-指定資源延伸資源的名稱。
+指定資源的擴充資源名稱。
 例如，若要指定資料庫，請使用下列格式：伺服器名稱 `/` 資料庫名稱
 
 ```yaml
@@ -170,8 +170,8 @@ Accept wildcard characters: False
 ```
 
 ### -ExtensionResourceType
-指定延伸資源的資源類型。
-例如，如果延伸資源是資料庫，請指定下列各項： `Microsoft.Sql/Servers/Databases`
+指定擴充資源的資源類型。
+例如，如果擴充資源是資料庫，請指定下列專案： `Microsoft.Sql/Servers/Databases`
 
 ```yaml
 Type: System.String
@@ -185,8 +185,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Force
-強制執行命令，而不要求使用者確認。
+### -強制
+強制執行命令，但不要求使用者確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -201,7 +201,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-要更新之資源的物件表示。
+要更新之資源的物件標記法。
 
 ```yaml
 Type: Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResource
@@ -215,7 +215,7 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### 類型
+### -Kind
 指定資源的資源類型。
 
 ```yaml
@@ -231,8 +231,8 @@ Accept wildcard characters: False
 ```
 
 ### -ODataQuery
-指定 (OData) 樣式篩選的開放式資料通訊協定。
-除了任何其他篩選器之外，此 Cmdlet 還會將此值附加到要求中。
+指定開啟資料通訊協定 (OData) 樣式篩選。
+除了任何其他篩選之外，此 Cmdlet 會附加此值至要求。
 
 ```yaml
 Type: System.String
@@ -246,8 +246,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -方案
-以雜湊資料表的形式指定資源的資源計劃屬性。
+### -規劃
+指定資源的資源計劃屬性 #A0 為雜湊資料表 #A1。
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -261,8 +261,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -預先
-表示此 Cmdlet 會在自動決定要使用哪個版本時，考慮預發行 API 版本。
+### -Pre
+表示此 Cmdlet 會在自動決定要使用哪個版本時，考慮測試版 API 版本。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -276,7 +276,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -屬性
+### -Properties
 指定資源的資源屬性。
 
 ```yaml
@@ -292,7 +292,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-指定此 Cmdlet 修改資源之資源群組的名稱。
+指定此 Cmdlet 修改資源的資源組名。
 
 ```yaml
 Type: System.String
@@ -307,7 +307,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-指定完全限定的資源識別碼，包括訂閱，如下列範例所示： `/subscriptions/` 訂閱識別碼`/providers/Microsoft.Sql/servers/ContosoServer/databases/ContosoDatabase`
+指定完整資源識別碼，包括訂閱，如下列範例所示： `/subscriptions/` 訂閱識別碼`/providers/Microsoft.Sql/servers/ContosoServer/databases/ContosoDatabase`
 
 ```yaml
 Type: System.String
@@ -321,7 +321,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -CoNtext.resourcename
+### -ResourceName
 指定資源的名稱。
 例如，若要指定資料庫，請使用下列格式： `ContosoServer/ContosoDatabase`
 
@@ -339,7 +339,7 @@ Accept wildcard characters: False
 
 ### -ResourceType
 指定資源的類型。
-舉例來說，對於資料庫而言，資源類型如下所示： `Microsoft.Sql/Servers/Databases`
+例如，對於資料庫，資源類型如下： `Microsoft.Sql/Servers/Databases`
 
 ```yaml
 Type: System.String
@@ -353,8 +353,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Sku
-將資源的 SKU 物件指定為雜湊表。
+### -SKU
+指定資源的 SKU 物件做為雜湊表格。
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -368,8 +368,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Tag
-雜湊資料表形式的索引鍵/值對。 例如： @ {key0 = "value0"; key1 = $null; key2 = "value2"}
+### -標記
+以雜湊表格形式建立索引鍵值組。 例如：@{key0="value0";key1=$null;key2="value2"}
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -414,7 +414,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -429,8 +429,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。
-未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。
+不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -445,32 +445,31 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### PSResource 中的 SdkModels （）
+### Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResource
 
-### System.object
+### System.String
 
-### 系統管理. PSObject
+### System.Management.Automation.PSObject
 
-### [System.object] 集合. Hashtable
+### System.Collections.Hashtable
 
 ## 輸出
 
-### 系統管理. PSObject
+### System.Management.Automation.PSObject
 
 ## 筆記
 
 ## 相關連結
 
-[尋找-AzResource](./Find-AzResource.md)
 
-[AzResource](./Get-AzResource.md)
+[Get-AzResource](./Get-AzResource.md)
 
-[移動流覽 AzResource](./Move-AzResource.md)
+[Move-AzResource](./Move-AzResource.md)
 
-[新-AzResource](./New-AzResource.md)
+[New-AzResource](./New-AzResource.md)
 
-[移除-AzResource](./Remove-AzResource.md)
+[Remove-AzResource](./Remove-AzResource.md)

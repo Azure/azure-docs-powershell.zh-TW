@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.datafactor
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Set-AzDataFactoryV2DataFlow.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Set-AzDataFactoryV2DataFlow.md
-ms.openlocfilehash: 42d9de3f23f1aca904aa0f42722217d0b9bf8a3a
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 44439d49fc89f00abaef904e80112d076121890f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94127092"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100415949"
 ---
 # Set-AzDataFactoryV2DataFlow
 
-## 摘要
-在資料工廠中建立資料流程。
+## 簡介
+在 Data Factory 中建立資料流程。
 
-## 句法
+## 語法
 
 ### ByFactoryName (預設) 
 ```
@@ -32,12 +32,12 @@ Set-AzDataFactoryV2DataFlow [-DefinitionFile] <String> [-Force] [-ResourceId] <S
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## 說明
-Set-AzDataFactoryV2DataFlow Cmdlet 會建立資料流程程或更新 Azure 資料工廠中現有的資料流程。
+## 描述
+Cmdlet Set-AzDataFactoryV2DataFlow建立資料流程，或更新 Azure Data Factory 中現有的資料流程。
 
-## 示例
+## 例子
 
-### 範例1：建立資料流程程
+### 範例 1：建立資料流程
 ```powershell
 PS C:\> Set-AzDataFactoryV2DataFlow -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "TaxiDemo1" -DefinitionFile "C:\\samples\\WikiSample\\TaxiDemo1.json"
 
@@ -46,13 +46,13 @@ DataFlowName           DataFactoryName ResourceGroupName                        
 TaxiDemo1                      WikiADF               adf Microsoft.Azure.Management.DataFactory.Models.MappingDataFlow
 ```
 
-這個命令會在名為 WikiADF 的資料工廠中建立名為 TaxiDemo1 的資料流程。
-此命令會根據檔案中 TaxiDemo1.js的資訊來控制資料流程。
+此命令在名稱為 WikiADF 的資料工廠中，建立名為一個名為一個以一個資料流程程命名的一個資料流程程。
+命令以檔案中資料TaxiDemo1.js的基礎。
 
 ## 參數
 
 ### -DataFactoryName
-資料工廠名稱。
+資料出廠名稱。
 
 ```yaml
 Type: System.String
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 Azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -82,7 +82,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefinitionFile
-JSON 檔路徑。
+JSON 檔案路徑。
 
 ```yaml
 Type: System.String
@@ -96,8 +96,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Force
-不要要求確認。
+### -強制
+請勿要求確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -112,7 +112,7 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-資料流程程名稱。
+資料流程名稱。
 
 ```yaml
 Type: System.String
@@ -127,7 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-資源群組的名稱。
+資源組名。
 
 ```yaml
 Type: System.String
@@ -157,7 +157,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -172,8 +172,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。
-未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。
+不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -188,21 +188,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### System.object
+### System.String
 
 ## 輸出
 
 ### Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataFlow
 
 ## 筆記
-關鍵字： azure，azurerm，arm，資源，管理，管理員，資料，工廠
+關鍵字：azure、azurerm、arm、resource、management、manager、data、azure
 
 ## 相關連結
 
-[AzDataFactoryDataFlow](./Get-AzDataFactoryDataFlow.md)
 
-[移除-AzDataFactoryDataFlow](./Remove-AzDataFactoryDataFlow.md)
