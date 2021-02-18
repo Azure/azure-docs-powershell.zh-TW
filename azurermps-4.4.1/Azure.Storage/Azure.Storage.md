@@ -6,202 +6,201 @@ Help Version: ''
 Locale: en-US
 content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/Storage/Commands.Storage/help/Azure.Storage.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/Storage/Commands.Storage/help/Azure.Storage.md
-gitcommit: https://github.com/Azure/azure-powershell/blob/89262bc4144696c69376c3fb654c881de55b6450
-ms.openlocfilehash: 7579023c82863b943080553d2c741244b9ae9c0f
-ms.sourcegitcommit: 43f4bdf2a59dd82fd881512aa9761bf72eb5703c
+ms.openlocfilehash: 864398d8af8ac05d7bfad93c195bf0ecb2c5ba1a
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "93442163"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410373"
 ---
-# Azure. Storage 模組
-## 說明
-本主題顯示 Azure 存儲 Cmdlet 的說明主題。
+# Azure.Storage Module
+## 描述
+本主題顯示 Azure 儲存體 Cmdlet 的說明主題。
 
-## Azure. 儲存 Cmdlet
-### [AzureStorageBlob](Get-AzureStorageBlob.md)
-列出容器中的 blob。
+## Azure.Storage Cmdlet
+### [Get-AzureStorageBlob](Get-AzureStorageBlob.md)
+列出容器中的 Blob。
 
-### [AzureStorageBlobContent](Get-AzureStorageBlobContent.md)
-下載儲存 blob。
+### [Get-AzureStorageBlobContent](Get-AzureStorageBlobContent.md)
+下載儲存 Blob。
 
-### [AzureStorageBlobCopyState](Get-AzureStorageBlobCopyState.md)
-取得 Azure 儲存區 blob 的複製狀態。
+### [Get-AzureStorageBlobCopyState](Get-AzureStorageBlobCopyState.md)
+獲得 Azure 儲存體 Blob 的複製狀態。
 
-### [AzureStorageContainer](Get-AzureStorageContainer.md)
+### [Get-AzureStorageContainer](Get-AzureStorageContainer.md)
 列出儲存容器。
 
-### [AzureStorageContainerStoredAccessPolicy](Get-AzureStorageContainerStoredAccessPolicy.md)
-取得 Azure 儲存體容器的儲存存取原則或原則。
+### [Get-AzureStorageContainerStoredAccessPolicy](Get-AzureStorageContainerStoredAccessPolicy.md)
+取得 Azure 儲存容器的儲存存取策略或策略。
 
-### [AzureStorageCORSRule](Get-AzureStorageCORSRule.md)
-取得儲存服務類型的 CORS 規則。
+### [Get-AzureStorageCORSRule](Get-AzureStorageCORSRule.md)
+為儲存服務類型獲得 CORS 規則。
 
-### [AzureStorageFile](Get-AzureStorageFile.md)
+### [Get-AzureStorageFile](Get-AzureStorageFile.md)
 列出路徑的目錄和檔案。
 
-### [AzureStorageFileContent](Get-AzureStorageFileContent.md)
+### [Get-AzureStorageFileContent](Get-AzureStorageFileContent.md)
 下載檔案的內容。
 
-### [AzureStorageFileCopyState](Get-AzureStorageFileCopyState.md)
-取得複製操作的狀態。
+### [Get-AzureStorageFileCopyState](Get-AzureStorageFileCopyState.md)
+獲得複製作業的狀態。
 
-### [AzureStorageQueue](Get-AzureStorageQueue.md)
-列出 [儲存佇列]。
+### [Get-AzureStorageQueue](Get-AzureStorageQueue.md)
+列出儲存佇列。
 
-### [AzureStorageQueueStoredAccessPolicy](Get-AzureStorageQueueStoredAccessPolicy.md)
-取得 Azure 儲存空間佇列的儲存存取原則或原則。
+### [Get-AzureStorageQueueStoredAccessPolicy](Get-AzureStorageQueueStoredAccessPolicy.md)
+取得 Azure 儲存佇列的儲存存取策略或策略。
 
-### [AzureStorageServiceLoggingProperty](Get-AzureStorageServiceLoggingProperty.md)
-取得 Azure 儲存服務的記錄屬性。
+### [Get-AzureStorageServiceLoggingProperty](Get-AzureStorageServiceLoggingProperty.md)
+為 Azure 儲存體服務獲取記錄屬性。
 
-### [AzureStorageServiceMetricsProperty](Get-AzureStorageServiceMetricsProperty.md)
-取得 Azure 儲存服務的公制屬性。
+### [Get-AzureStorageServiceMetricsProperty](Get-AzureStorageServiceMetricsProperty.md)
+為 Azure 儲存體服務獲取計量屬性。
 
-### [AzureStorageShare](Get-AzureStorageShare.md)
-取得檔案共用的清單。
+### [Get-AzureStorageShare](Get-AzureStorageShare.md)
+獲得檔案共用清單。
 
-### [AzureStorageShareStoredAccessPolicy](Get-AzureStorageShareStoredAccessPolicy.md)
-取得儲存空間共用的存取原則。
+### [Get-AzureStorageShareStoredAccessPolicy](Get-AzureStorageShareStoredAccessPolicy.md)
+取得儲存空間共用儲存的存取策略。
 
-### [AzureStorageTable](Get-AzureStorageTable.md)
+### [Get-AzureStorageTable](Get-AzureStorageTable.md)
 列出儲存資料表。
 
-### [AzureStorageTableStoredAccessPolicy](Get-AzureStorageTableStoredAccessPolicy.md)
-取得 Azure 儲存空間資料表的儲存存取原則或原則。
+### [Get-AzureStorageTableStoredAccessPolicy](Get-AzureStorageTableStoredAccessPolicy.md)
+取得 Azure 儲存資料表的儲存存取策略或策略。
 
-### [新-AzureStorageAccountSASToken](New-AzureStorageAccountSASToken.md)
-建立帳戶層級 SAS 權杖。
+### [New-AzureStorageAccountSASToken](New-AzureStorageAccountSASToken.md)
+建立帳戶層級的 SAS 權杖。
 
-### [新-AzureStorageBlobSASToken](New-AzureStorageBlobSASToken.md)
-針對 Azure 儲存區 blob 產生 SAS 權杖。
+### [New-AzureStorageBlobSASToken](New-AzureStorageBlobSASToken.md)
+產生 Azure 儲存 Blob 的 SAS 權杖。
 
-### [新-AzureStorageContainer](New-AzureStorageContainer.md)
-建立 Azure 儲存空間容器。
+### [New-AzureStorageContainer](New-AzureStorageContainer.md)
+建立 Azure 儲存容器。
 
-### [新-AzureStorageContainerSASToken](New-AzureStorageContainerSASToken.md)
-針對 Azure 儲存空間容器產生 SAS 權杖。
+### [New-AzureStorageContainerSASToken](New-AzureStorageContainerSASToken.md)
+產生 Azure 儲存容器的 SAS 權杖。
 
-### [新-AzureStorageContainerStoredAccessPolicy](New-AzureStorageContainerStoredAccessPolicy.md)
-建立 Azure 儲存空間容器的儲存存取原則。
+### [New-AzureStorageContainerStoredAccessPolicy](New-AzureStorageContainerStoredAccessPolicy.md)
+建立 Azure 儲存容器的儲存存取策略。
 
-### [新-AzureStorageCoNtext](New-AzureStorageContext.md)
-建立 Azure 儲存區內容。
+### [New-AzureStorageCoNtext](New-AzureStorageContext.md)
+建立 Azure 儲存內容。
 
-### [新-AzureStorageDirectory](New-AzureStorageDirectory.md)
+### [New-AzureStorageDirectory](New-AzureStorageDirectory.md)
 建立目錄。
 
-### [新-AzureStorageFileSASToken](New-AzureStorageFileSASToken.md)
-產生儲存空間的共用存取簽名權杖。
+### [New-AzureStorageFileSASToken](New-AzureStorageFileSASToken.md)
+產生儲存檔案的共用存取簽章權杖。
 
-### [新-AzureStorageQueue](New-AzureStorageQueue.md)
+### [New-AzureStorageQueue](New-AzureStorageQueue.md)
 建立儲存佇列。
 
-### [新-AzureStorageQueueSASToken](New-AzureStorageQueueSASToken.md)
-針對 Azure 儲存空間佇列產生共用存取簽名權杖。
+### [New-AzureStorageQueueSASToken](New-AzureStorageQueueSASToken.md)
+產生 Azure 儲存佇列的共用存取簽章權杖。
 
-### [新-AzureStorageQueueStoredAccessPolicy](New-AzureStorageQueueStoredAccessPolicy.md)
-建立 Azure 儲存空間佇列的儲存存取原則。
+### [New-AzureStorageQueueStoredAccessPolicy](New-AzureStorageQueueStoredAccessPolicy.md)
+建立 Azure 儲存佇列的儲存存取策略。
 
-### [新-AzureStorageShare](New-AzureStorageShare.md)
+### [New-AzureStorageShare](New-AzureStorageShare.md)
 建立檔案共用。
 
-### [新-AzureStorageShareSASToken](New-AzureStorageShareSASToken.md)
-產生 Azure 儲存空間共用的共用存取簽名權杖。
+### [New-AzureStorageShareSASToken](New-AzureStorageShareSASToken.md)
+為 Azure 儲存空間共用產生共用存取簽章權杖。
 
-### [新-AzureStorageShareStoredAccessPolicy](New-AzureStorageShareStoredAccessPolicy.md)
-在儲存空間共用上建立儲存的存取原則。
+### [New-AzureStorageShareStoredAccessPolicy](New-AzureStorageShareStoredAccessPolicy.md)
+在儲存空間共用上建立儲存的存取策略。
 
-### [新-AzureStorageTable](New-AzureStorageTable.md)
-建立儲存空間表。
+### [New-AzureStorageTable](New-AzureStorageTable.md)
+建立儲存資料表。
 
-### [新-AzureStorageTableSASToken](New-AzureStorageTableSASToken.md)
-針對 Azure 儲存空間資料表產生 SAS 權杖。
+### [New-AzureStorageTableSASToken](New-AzureStorageTableSASToken.md)
+產生 Azure 儲存體資料表的 SAS 權杖。
 
-### [新-AzureStorageTableStoredAccessPolicy](New-AzureStorageTableStoredAccessPolicy.md)
-建立 Azure 儲存空間資料表的儲存存取原則。
+### [New-AzureStorageTableStoredAccessPolicy](New-AzureStorageTableStoredAccessPolicy.md)
+建立 Azure 儲存資料表的儲存存取策略。
 
-### [移除-AzureStorageBlob](Remove-AzureStorageBlob.md)
-移除指定的儲存區 blob。
+### [Remove-AzureStorageBlob](Remove-AzureStorageBlob.md)
+移除指定的儲存 Blob。
 
-### [移除-AzureStorageContainer](Remove-AzureStorageContainer.md)
-移除指定的儲存空間容器。
+### [Remove-AzureStorageContainer](Remove-AzureStorageContainer.md)
+移除指定的儲存容器。
 
-### [移除-AzureStorageContainerStoredAccessPolicy](Remove-AzureStorageContainerStoredAccessPolicy.md)
-從 Azure 儲存體容器移除已儲存的存取原則。
+### [Remove-AzureStorageContainerStoredAccessPolicy](Remove-AzureStorageContainerStoredAccessPolicy.md)
+從 Azure 儲存容器移除儲存的存取策略。
 
-### [移除-AzureStorageCORSRule](Remove-AzureStorageCORSRule.md)
-移除存儲服務的 CORS。
+### [Remove-AzureStorageCORSRule](Remove-AzureStorageCORSRule.md)
+移除儲存服務的 CORS。
 
-### [移除-AzureStorageDirectory](Remove-AzureStorageDirectory.md)
+### [Remove-AzureStorageDirectory](Remove-AzureStorageDirectory.md)
 刪除目錄。
 
-### [移除-AzureStorageFile](Remove-AzureStorageFile.md)
+### [Remove-AzureStorageFile](Remove-AzureStorageFile.md)
 刪除檔案。
 
-### [移除-AzureStorageQueue](Remove-AzureStorageQueue.md)
+### [Remove-AzureStorageQueue](Remove-AzureStorageQueue.md)
 移除儲存佇列。
 
-### [移除-AzureStorageQueueStoredAccessPolicy](Remove-AzureStorageQueueStoredAccessPolicy.md)
-從 Azure 儲存空間佇列移除已儲存的存取原則。
+### [Remove-AzureStorageQueueStoredAccessPolicy](Remove-AzureStorageQueueStoredAccessPolicy.md)
+從 Azure 儲存佇列移除儲存的存取策略。
 
-### [移除-AzureStorageShare](Remove-AzureStorageShare.md)
+### [Remove-AzureStorageShare](Remove-AzureStorageShare.md)
 刪除檔案共用。
 
-### [移除-AzureStorageShareStoredAccessPolicy](Remove-AzureStorageShareStoredAccessPolicy.md)
-從儲存空間共用移除已儲存的存取原則。
+### [Remove-AzureStorageShareStoredAccessPolicy](Remove-AzureStorageShareStoredAccessPolicy.md)
+從儲存空間共用移除儲存的存取策略。
 
-### [移除-AzureStorageTable](Remove-AzureStorageTable.md)
-移除儲存空間資料表。
+### [Remove-AzureStorageTable](Remove-AzureStorageTable.md)
+移除儲存資料表。
 
-### [移除-AzureStorageTableStoredAccessPolicy](Remove-AzureStorageTableStoredAccessPolicy.md)
-從 Azure 儲存空間資料表移除已儲存的存取原則。
+### [Remove-AzureStorageTableStoredAccessPolicy](Remove-AzureStorageTableStoredAccessPolicy.md)
+從 Azure 儲存資料表移除儲存的存取策略。
 
 ### [Set-AzureStorageBlobContent](Set-AzureStorageBlobContent.md)
-將本機檔案上傳到 Azure 儲存區 blob。
+將本地檔案上傳到 Azure 儲存體 Blob。
 
 ### [Set-AzureStorageContainerAcl](Set-AzureStorageContainerAcl.md)
-將公用存取許可權設定為儲存容器。
+設定儲存容器的公用存取權限。
 
 ### [Set-AzureStorageContainerStoredAccessPolicy](Set-AzureStorageContainerStoredAccessPolicy.md)
-針對 Azure 儲存體容器設定儲存的存取原則。
+設定 Azure 儲存容器的儲存存取策略。
 
 ### [Set-AzureStorageCORSRule](Set-AzureStorageCORSRule.md)
-為一種類型的儲存服務設定 CORS 規則。
+設定儲存服務類型的 CORS 規則。
 
 ### [Set-AzureStorageFileContent](Set-AzureStorageFileContent.md)
 上傳檔案的內容。
 
 ### [Set-AzureStorageQueueStoredAccessPolicy](Set-AzureStorageQueueStoredAccessPolicy.md)
-針對 Azure 儲存空間佇列設定儲存的存取原則。
+設定 Azure 儲存佇列的儲存存取策略。
 
 ### [Set-AzureStorageServiceLoggingProperty](Set-AzureStorageServiceLoggingProperty.md)
-修改 Azure 儲存服務的記錄。
+修改 Azure 儲存體服務的記錄。
 
 ### [Set-AzureStorageServiceMetricsProperty](Set-AzureStorageServiceMetricsProperty.md)
-修改 Azure 儲存空間服務的公制屬性。
+修改 Azure 儲存體服務的計量屬性。
 
 ### [Set-AzureStorageShareQuota](Set-AzureStorageShareQuota.md)
-設定共用的儲存空間。
+設定共用儲存空間容量。
 
 ### [Set-AzureStorageShareStoredAccessPolicy](Set-AzureStorageShareStoredAccessPolicy.md)
-更新儲存空間共用上的儲存存取原則。
+更新儲存空間共用上的儲存存取策略。
 
 ### [Set-AzureStorageTableStoredAccessPolicy](Set-AzureStorageTableStoredAccessPolicy.md)
-設定 Azure 儲存空間資料表的儲存存取原則。
+設定 Azure 儲存資料表的儲存存取策略。
 
-### [開始-AzureStorageBlobCopy](Start-AzureStorageBlobCopy.md)
-開始複製 blob。
+### [Start-AzureStorageBlobCopy](Start-AzureStorageBlobCopy.md)
+開始複製 Blob。
 
-### [開始-AzureStorageBlobIncrementalCopy](Start-AzureStorageBlobIncrementalCopy.md)
-從頁面 blob 快照開始增量複製作業至指定的目的地頁面 blob。
+### [Start-AzureStorageBlobIncrementalCopy](Start-AzureStorageBlobIncrementalCopy.md)
+啟動從頁面 Blob 快照到指定目的地頁面 Blob 的增量複製作業。
 
-### [開始-AzureStorageFileCopy](Start-AzureStorageFileCopy.md)
+### [Start-AzureStorageFileCopy](Start-AzureStorageFileCopy.md)
 開始複製來源檔案。
 
-### [停止 AzureStorageBlobCopy](Stop-AzureStorageBlobCopy.md)
-停止複製操作。
+### [Stop-AzureStorageBlobCopy](Stop-AzureStorageBlobCopy.md)
+停止複製作業。
 
-### [停止 AzureStorageFileCopy](Stop-AzureStorageFileCopy.md)
-停止複製操作至指定的目的地檔案。
+### [Stop-AzureStorageFileCopy](Stop-AzureStorageFileCopy.md)
+停止對指定目的地檔案的複製作業。
 
