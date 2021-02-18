@@ -3,19 +3,19 @@ external help file: Microsoft.Azure.Commands.RecoveryServicesRdfe.dll-Help.xml
 ms.assetid: 02396628-5E3E-49A6-8377-3F6DC488FEF8
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: 75a083c2f892b7b4f07c37ef978d1babb1dd0cb0
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: ee948161f101b83a4892441286b760a044e64358
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "93967039"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405817"
 ---
 # Get-AzureSiteRecoveryProtectionContainer
 
-## 摘要
-取得網站恢復電子倉庫的保護容器。
+## 簡介
+為網站復原存放庫獲取保護容器。
 
-## 句法
+## 語法
 
 ### 預設 (預設) 
 ```
@@ -32,14 +32,14 @@ Get-AzureSiteRecoveryProtectionContainer -Id <String> [-Profile <AzureSMProfile>
 Get-AzureSiteRecoveryProtectionContainer -Name <String> [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## 說明
-**AzureSiteRecoveryProtectionContainer** Cmdlet 會取得目前 Azure Site Recovery 保存庫的保護容器。
-保護容器是受保護物件（例如虛擬電腦）的邏輯容器。
-保護原則定義受保護專案的複製設定，而且可以與保護容器相關聯，並套用到受保護的實體。
+## 描述
+**Get-AzureSiteRecoveryProtectionContainer Cmdlet** 會取得目前 Azure 網站修復庫的保護容器。
+保護容器是受保護物件的邏輯容器，例如虛擬機器。
+保護原則會定義受保護專案的複製設定，而且可以與保護容器相關聯，並適用于受保護的實體。
 
-## 示例
+## 例子
 
-### 範例1：取得受保護的容器
+### 範例 1：取得受保護的容器
 ```
 PS C:\> Get-AzureSiteRecoveryProtectionContainer
 Name                        : PrimaryCloud
@@ -52,11 +52,11 @@ Role                        : Primary
 AvailableProtectionProfiles : {ab01dcbe-9da0-4c31-9564-d6904cfadfde, ad388147-83de-4d2f-a09d-fa46c626747e}
 ```
 
-這個命令會取得目前電子倉庫中受保護的容器。
+此命令會為目前的儲存庫獲得受保護的容器。
 
 ## 參數
 
-### -識別碼
+### -Id
 指定要取得之受保護容器的識別碼。
 
 ```yaml
@@ -72,7 +72,7 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-指定要取得的保護容器的名稱。
+指定要取得的保護容器名稱。
 
 ```yaml
 Type: String
@@ -88,7 +88,7 @@ Accept wildcard characters: False
 
 ### -設定檔
 指定此 Cmdlet 讀取的 Azure 設定檔。
-如果您沒有指定設定檔，此 Cmdlet 會從本機預設設定檔讀取。
+如果您未指定設定檔，此 Cmdlet 會從本地預設設定檔讀取。
 
 ```yaml
 Type: AzureSMProfile
@@ -103,7 +103,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 https://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
@@ -113,6 +113,6 @@ Accept wildcard characters: False
 
 ## 相關連結
 
-[Azure Site Recovery 服務 Cmdlet](./Azure.SiteRecoveryServices.md)
+
 
 

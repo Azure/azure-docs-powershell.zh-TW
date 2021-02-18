@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/new-az
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlSyncMember.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlSyncMember.md
-ms.openlocfilehash: 503f7be9d4d7f595ac8d337568038d7e7e724d1f
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 5846435df4921e425e12e908539849fda0bd2472
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93792704"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405732"
 ---
 # New-AzSqlSyncMember
 
-## 摘要
-建立 Azure SQL 資料庫同步處理成員。
+## 簡介
+建立 Azure SQL 資料庫同步成員。
 
-## 句法
+## 語法
 
 ### AzureSqlDatabase (預設) 
 ```
@@ -43,12 +43,12 @@ New-AzSqlSyncMember -Name <String> -MemberDatabaseType <String> -SqlServerDataba
  [-Confirm] [<CommonParameters>]
 ```
 
-## 說明
-**新的-AzSqlSyncMember** Cmdlet 會建立 Azure SQL 資料庫同步處理成員。
+## 描述
+**New-AzSqlSyncMember** Cmdlet 會建立 Azure SQL 資料庫同步成員。
 
-## 示例
+## 例子
 
-### 範例1：建立 Azure SQL 資料庫的同步處理成員。
+### 範例 1：建立 Azure SQL 資料庫的同步成員。
 ```
 PS C:\> $credential = Get-Credential
 PS C:\> New-AzSqlSyncMember -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" -SyncGroupName "SyncGroup01" -Name "SyncMember01" -SyncDirection "OneWayMemberToHub"
@@ -70,9 +70,9 @@ MemberDatabasePassword      :
 SyncState                   : UnProvisioned
 ```
 
-這個命令會建立 Azure SQL 資料庫的同步處理成員。
+此命令會為 Azure SQL 資料庫建立同步成員。
 
-### 範例2：建立內部部署 SQL Server 資料庫的同步成員
+### 範例 2：為內部部署 SQL Server 資料庫建立同步處理成員
 ```
 PS C:\> $credential = Get-Credential
 PS C:\> New-AzSqlSyncMember -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" -SyncGroupName "SyncGroup01" -Name "SyncMember01" -SyncDirection "OneWayMemberToHub"
@@ -95,12 +95,12 @@ MemberDatabasePassword      :
 SyncState                   : UnProvisioned
 ```
 
-這個命令會建立內部部署 SQL 資料庫的同步處理成員。
+此命令會為內部部署 SQL 資料庫建立同步成員。
 
 ## 參數
 
 ### -DatabaseName
-Azure SQL 資料庫的名稱。
+Azure SQL Database 的名稱。
 
 ```yaml
 Type: System.String
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -MemberDatabaseCredential
-認證 (Azure SQL 資料庫的使用者名稱和密碼) 。
+Azure SQL database (使用者) 密碼的認證。
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -191,7 +191,7 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-同步處理成員名稱。
+同步成員名稱。
 
 ```yaml
 Type: System.String
@@ -206,7 +206,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-資源群組的名稱。
+資源組的名稱。
 
 ```yaml
 Type: System.String
@@ -236,7 +236,7 @@ Accept wildcard characters: False
 ```
 
 ### -SqlServerDatabaseId
-同步處理代理程式所連線之 SQL server 資料庫的 id。
+同步處理代理程式所連接的 SQL 伺服器資料庫識別碼。
 
 ```yaml
 Type: System.String
@@ -251,7 +251,7 @@ Accept wildcard characters: False
 ```
 
 ### -SyncAgentName
-同步處理常式的名稱。
+同步代理程式的名稱。
 
 ```yaml
 Type: System.String
@@ -266,7 +266,7 @@ Accept wildcard characters: False
 ```
 
 ### -SyncAgentResourceGroupName
-同步處理代理程式所在之資源群組的名稱。
+同步代理程式位於下的資源組名。
 
 ```yaml
 Type: System.String
@@ -281,7 +281,7 @@ Accept wildcard characters: False
 ```
 
 ### -SyncAgentResourceID
-同步處理常式的資源識別碼。
+同步代理程式的資源識別碼。
 
 ```yaml
 Type: System.String
@@ -296,7 +296,7 @@ Accept wildcard characters: False
 ```
 
 ### -SyncAgentServerName
-同步處理代理程式所在之 Azure SQL Server 的名稱。
+同步處理代理程式位於下的 Azure SQL Server 名稱。
 
 ```yaml
 Type: System.String
@@ -311,7 +311,7 @@ Accept wildcard characters: False
 ```
 
 ### -SyncDirection
-此同步處理成員的同步處理方向。
+此同步成員之同步方向。
 
 ```yaml
 Type: System.String
@@ -327,7 +327,7 @@ Accept wildcard characters: False
 ```
 
 ### -SyncGroupName
-同步處理組名。
+同步組名。
 
 ```yaml
 Type: System.String
@@ -342,7 +342,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -357,8 +357,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。
-未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。
+不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -373,23 +373,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](https://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### System.object
+### System.String
 
 ## 輸出
 
-### AzureSqlSyncMemberModel 中的 [DataSync]
+### Microsoft.Azure.Commands.Sql.DataSync.Model.AzureSqlSyncMemberModel
 
 ## 筆記
 
 ## 相關連結
 
-[AzSqlSyncMember](./Get-AzSqlSyncMember.md)
+[Get-AzSqlSyncMember](./Get-AzSqlSyncMember.md)
 
-[Set-AzSqlSyncMember](./Set-AzSqlSyncMember.md)
 
-[移除-AzSqlSyncMember](./Remove-AzSqlSyncMember.md)
+[Remove-AzSqlSyncMember](./Remove-AzSqlSyncMember.md)
 

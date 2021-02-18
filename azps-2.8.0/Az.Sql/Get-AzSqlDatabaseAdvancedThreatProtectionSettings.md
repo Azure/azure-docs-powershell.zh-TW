@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/get-az
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlDatabaseAdvancedThreatProtectionSettings.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlDatabaseAdvancedThreatProtectionSettings.md
-ms.openlocfilehash: 186ff32138bba0556b05e9674f1711e9425a20c9
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 85a45c1a5f7c4d88adaf4e9b9da35b415b7a2093
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93792569"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405800"
 ---
 # Get-AzSqlDatabaseAdvancedThreatProtectionSettings
 
-## 摘要
-取得資料庫的高級威脅防護設定。
+## 簡介
+為資料庫獲取進位威脅防護設定。
 
-## 句法
+## 語法
 
 ```
 Get-AzSqlDatabaseAdvancedThreatProtectionSettings [-ServerName] <String> [-DatabaseName] <String>
@@ -26,13 +26,13 @@ Get-AzSqlDatabaseAdvancedThreatProtectionSettings [-ServerName] <String> [-Datab
  [<CommonParameters>]
 ```
 
-## 說明
-**AzSqlDatabaseAdvancedThreatProtectionSettings** Cmdlet 會取得 Azure SQL 資料庫的高級威脅防護設定。
-若要使用這個 Cmdlet，請指定 *ResourceGroupName* 、 *ServerName* 和 *DatabaseName* 參數，以識別此 Cmdlet 取得其設定的資料庫。
+## 描述
+**Get-AzSqlDatabaseAdvancedThreatProtectionSettings** Cmdlet 會取得 Azure SQL 資料庫的進級威脅防護設定。
+若要使用此 Cmdlet，請指定 *ResourceGroupName、ServerName* 和 *DatabaseName* 參數，以識別此 Cmdlet 可進行設定的資料庫。 
 
-## 示例
+## 例子
 
-### 範例1：取得資料庫的高級威脅防護設定
+### 範例 1：取得資料庫的進一步威脅防護設定
 ```
 PS C:\>Get-AzSqlDatabaseAdvancedThreatProtectionSettings -ResourceGroupName "ResourceGroup11" -ServerName "Server01" -DatabaseName "Database01"
 DatabaseName                 : Database01
@@ -46,8 +46,8 @@ ExcludedDetectionTypes       : {}
 RetentionInDays              : 0
 ```
 
-這個命令會取得名為 Database01 的資料庫的高級威脅防護設定。
-資料庫位於名為 Server01 的伺服器上，該伺服器已指派給資源群組 ResourceGroup11。
+此命令會針對名為 Database01 的資料庫，獲得進位威脅防護設定。
+資料庫位於伺服器名稱為 Server01，伺服器會指派給資源群組 ResourceGroup11。
 
 ## 參數
 
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -82,7 +82,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-指定指派給伺服器之資源群組的名稱。
+指定伺服器指派給的資源組名。
 
 ```yaml
 Type: System.String
@@ -112,7 +112,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -127,8 +127,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。
-未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。
+不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -143,21 +143,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 https://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
-### System.object
+### System.String
 
 ## 輸出
 
-### DatabaseAdvancedThreatProtectionSettingsModel 中的 [ThreatDetection]
+### Microsoft.Azure.Commands.Sql.ThreatDetection.Model.DatabaseAdvancedThreatProtectionSettingsModel
 
 ## 筆記
 
 ## 相關連結
 
-[移除-AzSqlDatabaseAdvancedThreatProtectionSettings](./Remove-AzSqlDatabaseAdvancedThreatProtectionSettings.md)
 
 
 
