@@ -6,111 +6,111 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzADServicePrincipal.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzADServicePrincipal.md
-ms.openlocfilehash: c51740ef111c0efe2f05c71d55ab5d3f076ac9d2
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 45f355b0317d8db8f9f24b40d5161e38888c4bb3
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93957798"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405579"
 ---
-# <span data-ttu-id="099ef-101">Get-AzADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="099ef-101">Get-AzADServicePrincipal</span></span>
+# <span data-ttu-id="72327-101">Get-AzADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="72327-101">Get-AzADServicePrincipal</span></span>
 
-## <span data-ttu-id="099ef-102">摘要</span><span class="sxs-lookup"><span data-stu-id="099ef-102">SYNOPSIS</span></span>
-<span data-ttu-id="099ef-103">篩選 active directory 服務主體。</span><span class="sxs-lookup"><span data-stu-id="099ef-103">Filters active directory service principals.</span></span>
+## <span data-ttu-id="72327-102">簡介</span><span class="sxs-lookup"><span data-stu-id="72327-102">SYNOPSIS</span></span>
+<span data-ttu-id="72327-103">篩選 Active Directory 服務主體。</span><span class="sxs-lookup"><span data-stu-id="72327-103">Filters active directory service principals.</span></span>
 
-## <span data-ttu-id="099ef-104">句法</span><span class="sxs-lookup"><span data-stu-id="099ef-104">SYNTAX</span></span>
+## <span data-ttu-id="72327-104">語法</span><span class="sxs-lookup"><span data-stu-id="72327-104">SYNTAX</span></span>
 
-### <span data-ttu-id="099ef-105">EmptyParameterSet (預設) </span><span class="sxs-lookup"><span data-stu-id="099ef-105">EmptyParameterSet (Default)</span></span>
+### <span data-ttu-id="72327-105">EmptyParameterSet (預設) </span><span class="sxs-lookup"><span data-stu-id="72327-105">EmptyParameterSet (Default)</span></span>
 ```
 Get-AzADServicePrincipal [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount] [-Skip <UInt64>]
  [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="099ef-106">SearchStringParameterSet</span><span class="sxs-lookup"><span data-stu-id="099ef-106">SearchStringParameterSet</span></span>
+### <span data-ttu-id="72327-106">SearchStringParameterSet</span><span class="sxs-lookup"><span data-stu-id="72327-106">SearchStringParameterSet</span></span>
 ```
 Get-AzADServicePrincipal -DisplayNameBeginsWith <String> [-DefaultProfile <IAzureContextContainer>]
  [-IncludeTotalCount] [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="099ef-107">DisplayNameParameterSet</span><span class="sxs-lookup"><span data-stu-id="099ef-107">DisplayNameParameterSet</span></span>
+### <span data-ttu-id="72327-107">DisplayNameParameterSet</span><span class="sxs-lookup"><span data-stu-id="72327-107">DisplayNameParameterSet</span></span>
 ```
 Get-AzADServicePrincipal -DisplayName <String> [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount]
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="099ef-108">ObjectIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="099ef-108">ObjectIdParameterSet</span></span>
+### <span data-ttu-id="72327-108">ObjectIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="72327-108">ObjectIdParameterSet</span></span>
 ```
 Get-AzADServicePrincipal -ObjectId <String> [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount]
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="099ef-109">ApplicationIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="099ef-109">ApplicationIdParameterSet</span></span>
+### <span data-ttu-id="72327-109">ApplicationIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="72327-109">ApplicationIdParameterSet</span></span>
 ```
 Get-AzADServicePrincipal -ApplicationId <Guid> [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount]
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="099ef-110">ApplicationObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="099ef-110">ApplicationObjectParameterSet</span></span>
+### <span data-ttu-id="72327-110">ApplicationObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="72327-110">ApplicationObjectParameterSet</span></span>
 ```
 Get-AzADServicePrincipal -ApplicationObject <PSADApplication> [-DefaultProfile <IAzureContextContainer>]
  [-IncludeTotalCount] [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="099ef-111">SPNParameterSet</span><span class="sxs-lookup"><span data-stu-id="099ef-111">SPNParameterSet</span></span>
+### <span data-ttu-id="72327-111">SPNParameterSet</span><span class="sxs-lookup"><span data-stu-id="72327-111">SPNParameterSet</span></span>
 ```
 Get-AzADServicePrincipal -ServicePrincipalName <String> [-DefaultProfile <IAzureContextContainer>]
  [-IncludeTotalCount] [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="099ef-112">說明</span><span class="sxs-lookup"><span data-stu-id="099ef-112">DESCRIPTION</span></span>
-<span data-ttu-id="099ef-113">篩選 active directory 服務主體。</span><span class="sxs-lookup"><span data-stu-id="099ef-113">Filters active directory service principals.</span></span>
+## <span data-ttu-id="72327-112">描述</span><span class="sxs-lookup"><span data-stu-id="72327-112">DESCRIPTION</span></span>
+<span data-ttu-id="72327-113">篩選 Active Directory 服務主體。</span><span class="sxs-lookup"><span data-stu-id="72327-113">Filters active directory service principals.</span></span>
 
-## <span data-ttu-id="099ef-114">示例</span><span class="sxs-lookup"><span data-stu-id="099ef-114">EXAMPLES</span></span>
+## <span data-ttu-id="72327-114">例子</span><span class="sxs-lookup"><span data-stu-id="72327-114">EXAMPLES</span></span>
 
-### <span data-ttu-id="099ef-115">範例 1-清單廣告服務原則</span><span class="sxs-lookup"><span data-stu-id="099ef-115">Example 1 - List AD service principals</span></span>
+### <span data-ttu-id="72327-115">範例 1 - 列出 AD 服務主體</span><span class="sxs-lookup"><span data-stu-id="72327-115">Example 1 - List AD service principals</span></span>
 
 ```
 PS C:\> Get-AzADServicePrincipal
 ```
 
-<span data-ttu-id="099ef-116">列出租使用者中的所有廣告服務主體。</span><span class="sxs-lookup"><span data-stu-id="099ef-116">Lists all AD service principals in a tenant.</span></span>
+<span data-ttu-id="72327-116">列出租使用者中所有的 AD 服務主體。</span><span class="sxs-lookup"><span data-stu-id="72327-116">Lists all AD service principals in a tenant.</span></span>
 
-### <span data-ttu-id="099ef-117">範例 2-使用分頁來列出廣告服務主體</span><span class="sxs-lookup"><span data-stu-id="099ef-117">Example 2 - List AD service principals using paging</span></span>
+### <span data-ttu-id="72327-117">範例 2 - 使用 paging 列出 AD 服務主體</span><span class="sxs-lookup"><span data-stu-id="72327-117">Example 2 - List AD service principals using paging</span></span>
 
 ```
 PS C:\> Get-AzADServicePrincipal -First 100
 ```
 
-<span data-ttu-id="099ef-118">列出租使用者中的第一個 100 AD 服務主體。</span><span class="sxs-lookup"><span data-stu-id="099ef-118">Lists the first 100 AD service principals in a tenant.</span></span>
+<span data-ttu-id="72327-118">列出租使用者中前 100 個 AD 服務主體。</span><span class="sxs-lookup"><span data-stu-id="72327-118">Lists the first 100 AD service principals in a tenant.</span></span>
 
-### <span data-ttu-id="099ef-119">範例3：依 SPN 列出服務主體</span><span class="sxs-lookup"><span data-stu-id="099ef-119">Example 3 - List service principals by SPN</span></span>
+### <span data-ttu-id="72327-119">範例 3 - 按 SPN 列出服務主體</span><span class="sxs-lookup"><span data-stu-id="72327-119">Example 3 - List service principals by SPN</span></span>
 
 ```
 PS C:\> Get-AzADServicePrincipal -ServicePrincipalName 36f81fc3-b00f-48cd-8218-3879f51ff39f
 ```
 
-<span data-ttu-id="099ef-120">列出 SPN 為「36f81fc3-b00f-48cd-8218-3879f51ff39f」的服務主體。</span><span class="sxs-lookup"><span data-stu-id="099ef-120">Lists service principals with the SPN '36f81fc3-b00f-48cd-8218-3879f51ff39f'.</span></span>
+<span data-ttu-id="72327-120">使用 SPN '36f81fc3-b00f-48cd-8218-3879f51ff39f'列出服務主體。</span><span class="sxs-lookup"><span data-stu-id="72327-120">Lists service principals with the SPN '36f81fc3-b00f-48cd-8218-3879f51ff39f'.</span></span>
 
-### <span data-ttu-id="099ef-121">範例4：依搜尋字串列出服務主體</span><span class="sxs-lookup"><span data-stu-id="099ef-121">Example 4 - List service principals by search string</span></span>
+### <span data-ttu-id="72327-121">範例 4 - 按搜尋字串列出服務主體</span><span class="sxs-lookup"><span data-stu-id="72327-121">Example 4 - List service principals by search string</span></span>
 
 ```
 PS C:\> Get-AzADServicePrincipal -SearchString "Web"
 ```
 
-<span data-ttu-id="099ef-122">列出顯示名稱以 "Web" 開頭的所有廣告服務主體。</span><span class="sxs-lookup"><span data-stu-id="099ef-122">Lists all AD service principals whose display name start with "Web".</span></span>
+<span data-ttu-id="72327-122">列出其顯示名稱以 "Web" 做為名字的所有 AD 服務主體。</span><span class="sxs-lookup"><span data-stu-id="72327-122">Lists all AD service principals whose display name start with "Web".</span></span>
 
-### <span data-ttu-id="099ef-123">範例5：依管道列出服務主體</span><span class="sxs-lookup"><span data-stu-id="099ef-123">Example 5 - List service principals by piping</span></span>
+### <span data-ttu-id="72327-123">範例 5 - 以管道列出服務主體</span><span class="sxs-lookup"><span data-stu-id="72327-123">Example 5 - List service principals by piping</span></span>
 
 ```
 PS C:\> Get-AzADApplication -ObjectId 39e64ec6-569b-4030-8e1c-c3c519a05d69 | Get-AzADServicePrincipal
 ```
 
-<span data-ttu-id="099ef-124">取得物件 id 為 "39e64ec6-569b-4030-8e1c-c3c519a05d69" 的 AD 應用程式，並將其管道至 Get-AzADServicePrincipal Cmdlet，以列出該應用程式的所有服務主體。</span><span class="sxs-lookup"><span data-stu-id="099ef-124">Gets the AD application with object id '39e64ec6-569b-4030-8e1c-c3c519a05d69' and pipes it to the Get-AzADServicePrincipal cmdlet to list all service principals for that application.</span></span>
+<span data-ttu-id="72327-124">使用物件識別碼為 '39e64ec6-569b-4030-8e1c-c3c519a05d69' 的 AD 應用程式，並管道到 Get-AzADServicePrincipal Cmdlet，以列出該應用程式的所有服務主體。</span><span class="sxs-lookup"><span data-stu-id="72327-124">Gets the AD application with object id '39e64ec6-569b-4030-8e1c-c3c519a05d69' and pipes it to the Get-AzADServicePrincipal cmdlet to list all service principals for that application.</span></span>
 
-## <span data-ttu-id="099ef-125">參數</span><span class="sxs-lookup"><span data-stu-id="099ef-125">PARAMETERS</span></span>
+## <span data-ttu-id="72327-125">參數</span><span class="sxs-lookup"><span data-stu-id="72327-125">PARAMETERS</span></span>
 
-### <span data-ttu-id="099ef-126">-ApplicationId</span><span class="sxs-lookup"><span data-stu-id="099ef-126">-ApplicationId</span></span>
-<span data-ttu-id="099ef-127">服務主體應用程式識別碼。</span><span class="sxs-lookup"><span data-stu-id="099ef-127">The service principal application id.</span></span>
+### <span data-ttu-id="72327-126">-ApplicationId</span><span class="sxs-lookup"><span data-stu-id="72327-126">-ApplicationId</span></span>
+<span data-ttu-id="72327-127">服務主體應用程式識別碼。</span><span class="sxs-lookup"><span data-stu-id="72327-127">The service principal application id.</span></span>
 
 ```yaml
 Type: System.Guid
@@ -124,8 +124,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="099ef-128">-ApplicationObject</span><span class="sxs-lookup"><span data-stu-id="099ef-128">-ApplicationObject</span></span>
-<span data-ttu-id="099ef-129">要檢索其服務主體的應用程式物件。</span><span class="sxs-lookup"><span data-stu-id="099ef-129">The application object whose service principal is being retrieved.</span></span>
+### <span data-ttu-id="72327-128">-ApplicationObject</span><span class="sxs-lookup"><span data-stu-id="72327-128">-ApplicationObject</span></span>
+<span data-ttu-id="72327-129">正在取回其服務主體的應用程式物件。</span><span class="sxs-lookup"><span data-stu-id="72327-129">The application object whose service principal is being retrieved.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ActiveDirectory.PSADApplication
@@ -139,8 +139,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="099ef-130">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="099ef-130">-DefaultProfile</span></span>
-<span data-ttu-id="099ef-131">用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱</span><span class="sxs-lookup"><span data-stu-id="099ef-131">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="72327-130">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="72327-130">-DefaultProfile</span></span>
+<span data-ttu-id="72327-131">用於與 Azure 通訊的認證、帳戶、租使用者和訂閱</span><span class="sxs-lookup"><span data-stu-id="72327-131">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -154,8 +154,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="099ef-132">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="099ef-132">-DisplayName</span></span>
-<span data-ttu-id="099ef-133">服務主體顯示名稱。</span><span class="sxs-lookup"><span data-stu-id="099ef-133">The service principal display name.</span></span>
+### <span data-ttu-id="72327-132">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="72327-132">-DisplayName</span></span>
+<span data-ttu-id="72327-133">服務主體顯示名稱。</span><span class="sxs-lookup"><span data-stu-id="72327-133">The service principal display name.</span></span>
 
 ```yaml
 Type: System.String
@@ -169,8 +169,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="099ef-134">-DisplayNameBeginsWith</span><span class="sxs-lookup"><span data-stu-id="099ef-134">-DisplayNameBeginsWith</span></span>
-<span data-ttu-id="099ef-135">服務主體搜尋字串。</span><span class="sxs-lookup"><span data-stu-id="099ef-135">The service principal search string.</span></span>
+### <span data-ttu-id="72327-134">-DisplayNameBeginsWith</span><span class="sxs-lookup"><span data-stu-id="72327-134">-DisplayNameBeginsWith</span></span>
+<span data-ttu-id="72327-135">服務主體搜尋字串。</span><span class="sxs-lookup"><span data-stu-id="72327-135">The service principal search string.</span></span>
 
 ```yaml
 Type: System.String
@@ -184,8 +184,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="099ef-136">-ObjectId</span><span class="sxs-lookup"><span data-stu-id="099ef-136">-ObjectId</span></span>
-<span data-ttu-id="099ef-137">服務主體的物件識別碼。</span><span class="sxs-lookup"><span data-stu-id="099ef-137">Object id of the service principal.</span></span>
+### <span data-ttu-id="72327-136">-ObjectId</span><span class="sxs-lookup"><span data-stu-id="72327-136">-ObjectId</span></span>
+<span data-ttu-id="72327-137">服務主體的物件識別碼。</span><span class="sxs-lookup"><span data-stu-id="72327-137">Object id of the service principal.</span></span>
 
 ```yaml
 Type: System.String
@@ -199,8 +199,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="099ef-138">-ServicePrincipalName</span><span class="sxs-lookup"><span data-stu-id="099ef-138">-ServicePrincipalName</span></span>
-<span data-ttu-id="099ef-139">服務的 SPN。</span><span class="sxs-lookup"><span data-stu-id="099ef-139">SPN of the service.</span></span>
+### <span data-ttu-id="72327-138">-ServicePrincipalName</span><span class="sxs-lookup"><span data-stu-id="72327-138">-ServicePrincipalName</span></span>
+<span data-ttu-id="72327-139">服務的 SPN。</span><span class="sxs-lookup"><span data-stu-id="72327-139">SPN of the service.</span></span>
 
 ```yaml
 Type: System.String
@@ -214,8 +214,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="099ef-140">-IncludeTotalCount</span><span class="sxs-lookup"><span data-stu-id="099ef-140">-IncludeTotalCount</span></span>
-<span data-ttu-id="099ef-141">報告資料集中的物件數目。</span><span class="sxs-lookup"><span data-stu-id="099ef-141">Reports the number of objects in the data set.</span></span> <span data-ttu-id="099ef-142">這個參數目前不會執行任何動作。</span><span class="sxs-lookup"><span data-stu-id="099ef-142">Currently, this parameter does nothing.</span></span>
+### <span data-ttu-id="72327-140">-IncludeTotalCount</span><span class="sxs-lookup"><span data-stu-id="72327-140">-IncludeTotalCount</span></span>
+<span data-ttu-id="72327-141">報告資料集中的物件數目。</span><span class="sxs-lookup"><span data-stu-id="72327-141">Reports the number of objects in the data set.</span></span> <span data-ttu-id="72327-142">目前，此參數沒有任何影響。</span><span class="sxs-lookup"><span data-stu-id="72327-142">Currently, this parameter does nothing.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -229,8 +229,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="099ef-143">-略過</span><span class="sxs-lookup"><span data-stu-id="099ef-143">-Skip</span></span>
-<span data-ttu-id="099ef-144">忽略前 N 個物件，然後取得剩餘的物件。</span><span class="sxs-lookup"><span data-stu-id="099ef-144">Ignores the first N objects and then gets the remaining objects.</span></span>
+### <span data-ttu-id="72327-143">-略過</span><span class="sxs-lookup"><span data-stu-id="72327-143">-Skip</span></span>
+<span data-ttu-id="72327-144">忽略第一個 N 個物件，然後獲得其餘的物件。</span><span class="sxs-lookup"><span data-stu-id="72327-144">Ignores the first N objects and then gets the remaining objects.</span></span>
 
 ```yaml
 Type: System.UInt64
@@ -244,8 +244,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="099ef-145">-優先</span><span class="sxs-lookup"><span data-stu-id="099ef-145">-First</span></span>
-<span data-ttu-id="099ef-146">要傳回的物件數目上限。</span><span class="sxs-lookup"><span data-stu-id="099ef-146">The maximum number of objects to return.</span></span>
+### <span data-ttu-id="72327-145">-第一個</span><span class="sxs-lookup"><span data-stu-id="72327-145">-First</span></span>
+<span data-ttu-id="72327-146">要返回的物件數量上限。</span><span class="sxs-lookup"><span data-stu-id="72327-146">The maximum number of objects to return.</span></span>
 
 ```yaml
 Type: System.UInt64
@@ -259,32 +259,31 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="099ef-147">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="099ef-147">CommonParameters</span></span>
-<span data-ttu-id="099ef-148">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="099ef-148">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="099ef-149">如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="099ef-149">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="72327-147">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="72327-147">CommonParameters</span></span>
+<span data-ttu-id="72327-148">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="72327-148">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="72327-149">詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="72327-149">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="099ef-150">輸入</span><span class="sxs-lookup"><span data-stu-id="099ef-150">INPUTS</span></span>
+## <span data-ttu-id="72327-150">輸入</span><span class="sxs-lookup"><span data-stu-id="72327-150">INPUTS</span></span>
 
-### <span data-ttu-id="099ef-151">System.object</span><span class="sxs-lookup"><span data-stu-id="099ef-151">System.String</span></span>
+### <span data-ttu-id="72327-151">System.String</span><span class="sxs-lookup"><span data-stu-id="72327-151">System.String</span></span>
 
-### <span data-ttu-id="099ef-152">Guid.empty</span><span class="sxs-lookup"><span data-stu-id="099ef-152">System.Guid</span></span>
+### <span data-ttu-id="72327-152">System.Guid</span><span class="sxs-lookup"><span data-stu-id="72327-152">System.Guid</span></span>
 
-### <span data-ttu-id="099ef-153">PSADApplication （即 Azure。</span><span class="sxs-lookup"><span data-stu-id="099ef-153">Microsoft.Azure.Commands.ActiveDirectory.PSADApplication</span></span>
+### <span data-ttu-id="72327-153">Microsoft.Azure.Commands.ActiveDirectory.PSADApplication</span><span class="sxs-lookup"><span data-stu-id="72327-153">Microsoft.Azure.Commands.ActiveDirectory.PSADApplication</span></span>
 
-## <span data-ttu-id="099ef-154">輸出</span><span class="sxs-lookup"><span data-stu-id="099ef-154">OUTPUTS</span></span>
+## <span data-ttu-id="72327-154">輸出</span><span class="sxs-lookup"><span data-stu-id="72327-154">OUTPUTS</span></span>
 
-### <span data-ttu-id="099ef-155">PSADServicePrincipal （即 Azure。</span><span class="sxs-lookup"><span data-stu-id="099ef-155">Microsoft.Azure.Commands.ActiveDirectory.PSADServicePrincipal</span></span>
+### <span data-ttu-id="72327-155">Microsoft.Azure.Commands.ActiveDirectory.PSADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="72327-155">Microsoft.Azure.Commands.ActiveDirectory.PSADServicePrincipal</span></span>
 
-## <span data-ttu-id="099ef-156">筆記</span><span class="sxs-lookup"><span data-stu-id="099ef-156">NOTES</span></span>
+## <span data-ttu-id="72327-156">筆記</span><span class="sxs-lookup"><span data-stu-id="72327-156">NOTES</span></span>
 
-## <span data-ttu-id="099ef-157">相關連結</span><span class="sxs-lookup"><span data-stu-id="099ef-157">RELATED LINKS</span></span>
+## <span data-ttu-id="72327-157">相關連結</span><span class="sxs-lookup"><span data-stu-id="72327-157">RELATED LINKS</span></span>
 
-[<span data-ttu-id="099ef-158">新-AzADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="099ef-158">New-AzADServicePrincipal</span></span>](./New-AzADServicePrincipal.md)
+[<span data-ttu-id="72327-158">New-AzADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="72327-158">New-AzADServicePrincipal</span></span>](./New-AzADServicePrincipal.md)
 
-[<span data-ttu-id="099ef-159">Set-AzADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="099ef-159">Set-AzADServicePrincipal</span></span>](./Set-AzADServicePrincipal.md)
 
-[<span data-ttu-id="099ef-160">移除-AzADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="099ef-160">Remove-AzADServicePrincipal</span></span>](./Remove-AzADServicePrincipal.md)
+[<span data-ttu-id="72327-159">Remove-AzADServicePrincipal</span><span class="sxs-lookup"><span data-stu-id="72327-159">Remove-AzADServicePrincipal</span></span>](./Remove-AzADServicePrincipal.md)
 
-[<span data-ttu-id="099ef-161">AzADApplication</span><span class="sxs-lookup"><span data-stu-id="099ef-161">Get-AzADApplication</span></span>](./Get-AzADApplication.md)
+[<span data-ttu-id="72327-160">Get-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="72327-160">Get-AzADApplication</span></span>](./Get-AzADApplication.md)
 
-[<span data-ttu-id="099ef-162">AzADSpCredential</span><span class="sxs-lookup"><span data-stu-id="099ef-162">Get-AzADSpCredential</span></span>](./Get-AzADSpCredential.md)
+[<span data-ttu-id="72327-161">Get-AzADSpCredential</span><span class="sxs-lookup"><span data-stu-id="72327-161">Get-AzADSpCredential</span></span>](./Get-AzADSpCredential.md)
 

@@ -5,40 +5,40 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementApiVersionSet.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementApiVersionSet.md
-ms.openlocfilehash: 4fefe6e7a763cdce60483342e8e8db880405e060
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 931c61c9a42b795a78ad17133c1b15ba126afa04
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93614066"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405426"
 ---
-# <span data-ttu-id="3487f-101">Get-AzApiManagementApiVersionSet</span><span class="sxs-lookup"><span data-stu-id="3487f-101">Get-AzApiManagementApiVersionSet</span></span>
+# <span data-ttu-id="86d69-101">Get-AzApiManagementApiVersionSet</span><span class="sxs-lookup"><span data-stu-id="86d69-101">Get-AzApiManagementApiVersionSet</span></span>
 
-## <span data-ttu-id="3487f-102">摘要</span><span class="sxs-lookup"><span data-stu-id="3487f-102">SYNOPSIS</span></span>
-<span data-ttu-id="3487f-103">取得 API 版本集合的詳細資料</span><span class="sxs-lookup"><span data-stu-id="3487f-103">Get the details of the API Version Sets</span></span>
+## <span data-ttu-id="86d69-102">簡介</span><span class="sxs-lookup"><span data-stu-id="86d69-102">SYNOPSIS</span></span>
+<span data-ttu-id="86d69-103">取得 API 版本集的詳細資訊</span><span class="sxs-lookup"><span data-stu-id="86d69-103">Get the details of the API Version Sets</span></span>
 
-## <span data-ttu-id="3487f-104">句法</span><span class="sxs-lookup"><span data-stu-id="3487f-104">SYNTAX</span></span>
+## <span data-ttu-id="86d69-104">語法</span><span class="sxs-lookup"><span data-stu-id="86d69-104">SYNTAX</span></span>
 
-### <span data-ttu-id="3487f-105">CoNtextParameterSet (預設) </span><span class="sxs-lookup"><span data-stu-id="3487f-105">ContextParameterSet (Default)</span></span>
+### <span data-ttu-id="86d69-105">CoNtextParameterSet (預設) </span><span class="sxs-lookup"><span data-stu-id="86d69-105">ContextParameterSet (Default)</span></span>
 ```
 Get-AzApiManagementApiVersionSet -Context <PsApiManagementContext> [-ApiVersionSetId <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="3487f-106">ResourceIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="3487f-106">ResourceIdParameterSet</span></span>
+### <span data-ttu-id="86d69-106">ResourceIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="86d69-106">ResourceIdParameterSet</span></span>
 ```
 Get-AzApiManagementApiVersionSet -Context <PsApiManagementContext> [-ApiVersionSetId <String>]
  -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="3487f-107">說明</span><span class="sxs-lookup"><span data-stu-id="3487f-107">DESCRIPTION</span></span>
-<span data-ttu-id="3487f-108">**AzApiManagementApiVersionSet** Cmdlet 會取得 api 管理內容中所設定 Api 版本集合的詳細資料。</span><span class="sxs-lookup"><span data-stu-id="3487f-108">The **Get-AzApiManagementApiVersionSet** cmdlet gets the details of the API Version Sets configured in an API Management context.</span></span>
+## <span data-ttu-id="86d69-107">描述</span><span class="sxs-lookup"><span data-stu-id="86d69-107">DESCRIPTION</span></span>
+<span data-ttu-id="86d69-108">**Get-AzApiManagementApiVersionSet** Cmdlet 會取得 API 管理環境中所設定 API 版本集的詳細資訊。</span><span class="sxs-lookup"><span data-stu-id="86d69-108">The **Get-AzApiManagementApiVersionSet** cmdlet gets the details of the API Version Sets configured in an API Management context.</span></span>
 
-## <span data-ttu-id="3487f-109">示例</span><span class="sxs-lookup"><span data-stu-id="3487f-109">EXAMPLES</span></span>
+## <span data-ttu-id="86d69-109">例子</span><span class="sxs-lookup"><span data-stu-id="86d69-109">EXAMPLES</span></span>
 
-### <span data-ttu-id="3487f-110">範例1</span><span class="sxs-lookup"><span data-stu-id="3487f-110">Example 1</span></span>
+### <span data-ttu-id="86d69-110">範例 1</span><span class="sxs-lookup"><span data-stu-id="86d69-110">Example 1</span></span>
 
-### <span data-ttu-id="3487f-111">範例1：取得所有 API 版本集合</span><span class="sxs-lookup"><span data-stu-id="3487f-111">Example 1: Get all API Version Sets</span></span>
+### <span data-ttu-id="86d69-111">範例 1：取得所有 API 版本集</span><span class="sxs-lookup"><span data-stu-id="86d69-111">Example 1: Get all API Version Sets</span></span>
 ```powershell
 PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Get-AzApiManagementApiVersionSet -Context $ApiMgmtContext
@@ -75,9 +75,9 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 ```
 
-<span data-ttu-id="3487f-112">這個命令會取得指定內容的所有 API 版本集合。</span><span class="sxs-lookup"><span data-stu-id="3487f-112">This command gets all of the API Version sets for the specified context.</span></span>
+<span data-ttu-id="86d69-112">此命令會針對指定的上下文獲得所有 API 版本集。</span><span class="sxs-lookup"><span data-stu-id="86d69-112">This command gets all of the API Version sets for the specified context.</span></span>
 
-### <span data-ttu-id="3487f-113">範例2：取得由識別碼設定的 API 版本</span><span class="sxs-lookup"><span data-stu-id="3487f-113">Example 2: Get a API Version Set by ID</span></span>
+### <span data-ttu-id="86d69-113">範例 2：取得 API 版本設定</span><span class="sxs-lookup"><span data-stu-id="86d69-113">Example 2: Get a API Version Set by ID</span></span>
 ```powershell
 PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Get-AzApiManagementApiVersionSet -Context $ApiMgmtContext -ApiVersionSetId $ApiVersionSetId
@@ -93,13 +93,13 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 ```
 
-<span data-ttu-id="3487f-114">這個命令會以指定的識別碼來取得 API 版本設定。</span><span class="sxs-lookup"><span data-stu-id="3487f-114">This command gets the API Version Set with the specified ID.</span></span>
+<span data-ttu-id="86d69-114">此命令會獲得具有指定識別碼的 API 版本集。</span><span class="sxs-lookup"><span data-stu-id="86d69-114">This command gets the API Version Set with the specified ID.</span></span>
 
-## <span data-ttu-id="3487f-115">參數</span><span class="sxs-lookup"><span data-stu-id="3487f-115">PARAMETERS</span></span>
+## <span data-ttu-id="86d69-115">參數</span><span class="sxs-lookup"><span data-stu-id="86d69-115">PARAMETERS</span></span>
 
-### <span data-ttu-id="3487f-116">-ApiVersionSetId</span><span class="sxs-lookup"><span data-stu-id="3487f-116">-ApiVersionSetId</span></span>
-<span data-ttu-id="3487f-117">要尋找的 API 識別碼。</span><span class="sxs-lookup"><span data-stu-id="3487f-117">API identifier to look for.</span></span>
-<span data-ttu-id="3487f-118">如果已指定，將會嘗試透過識別碼取得 API。</span><span class="sxs-lookup"><span data-stu-id="3487f-118">If specified will try to get the API by the Id.</span></span>
+### <span data-ttu-id="86d69-116">-ApiVersionSetId</span><span class="sxs-lookup"><span data-stu-id="86d69-116">-ApiVersionSetId</span></span>
+<span data-ttu-id="86d69-117">要尋找的 API 識別碼。</span><span class="sxs-lookup"><span data-stu-id="86d69-117">API identifier to look for.</span></span>
+<span data-ttu-id="86d69-118">如果指定，會嘗試使用識別碼取得 API。</span><span class="sxs-lookup"><span data-stu-id="86d69-118">If specified will try to get the API by the Id.</span></span>
 
 ```yaml
 Type: System.String
@@ -113,9 +113,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3487f-119">-內容</span><span class="sxs-lookup"><span data-stu-id="3487f-119">-Context</span></span>
-<span data-ttu-id="3487f-120">PsApiManagementCoNtext 的實例。</span><span class="sxs-lookup"><span data-stu-id="3487f-120">Instance of PsApiManagementContext.</span></span>
-<span data-ttu-id="3487f-121">這個參數是必要的。</span><span class="sxs-lookup"><span data-stu-id="3487f-121">This parameter is required.</span></span>
+### <span data-ttu-id="86d69-119">-內容</span><span class="sxs-lookup"><span data-stu-id="86d69-119">-Context</span></span>
+<span data-ttu-id="86d69-120">PsApiManagementCoNtext 的實例。</span><span class="sxs-lookup"><span data-stu-id="86d69-120">Instance of PsApiManagementContext.</span></span>
+<span data-ttu-id="86d69-121">此參數為必填專案。</span><span class="sxs-lookup"><span data-stu-id="86d69-121">This parameter is required.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -129,8 +129,8 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3487f-122">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="3487f-122">-DefaultProfile</span></span>
-<span data-ttu-id="3487f-123">用於與 Azure 進行通訊的認證、帳戶、租使用者及訂閱。</span><span class="sxs-lookup"><span data-stu-id="3487f-123">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+### <span data-ttu-id="86d69-122">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="86d69-122">-DefaultProfile</span></span>
+<span data-ttu-id="86d69-123">用於與 Azure 通訊的認證、帳戶、租使用者和訂閱。</span><span class="sxs-lookup"><span data-stu-id="86d69-123">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -144,8 +144,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3487f-124">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="3487f-124">-ResourceId</span></span>
-<span data-ttu-id="3487f-125">ApiVersionSet 的 Arm 資源識別碼。</span><span class="sxs-lookup"><span data-stu-id="3487f-125">Arm Resource Identifier of the ApiVersionSet.</span></span> <span data-ttu-id="3487f-126">如果已指定，將會嘗試依據識別碼尋找 apiVersionSet。</span><span class="sxs-lookup"><span data-stu-id="3487f-126">If specified will try to find apiVersionSet by the identifier.</span></span> <span data-ttu-id="3487f-127">這個參數是必要的。</span><span class="sxs-lookup"><span data-stu-id="3487f-127">This parameter is required.</span></span>
+### <span data-ttu-id="86d69-124">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="86d69-124">-ResourceId</span></span>
+<span data-ttu-id="86d69-125">ApiVersionSet 的 Arm 資源識別碼。</span><span class="sxs-lookup"><span data-stu-id="86d69-125">Arm Resource Identifier of the ApiVersionSet.</span></span> <span data-ttu-id="86d69-126">如果指定，會嘗試根據識別碼尋找 apiVersionSet。</span><span class="sxs-lookup"><span data-stu-id="86d69-126">If specified will try to find apiVersionSet by the identifier.</span></span> <span data-ttu-id="86d69-127">此參數為必填項。</span><span class="sxs-lookup"><span data-stu-id="86d69-127">This parameter is required.</span></span>
 
 ```yaml
 Type: System.String
@@ -159,25 +159,25 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3487f-128">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="3487f-128">CommonParameters</span></span>
-<span data-ttu-id="3487f-129">這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。</span><span class="sxs-lookup"><span data-stu-id="3487f-129">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="3487f-130">如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="3487f-130">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="86d69-128">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="86d69-128">CommonParameters</span></span>
+<span data-ttu-id="86d69-129">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="86d69-129">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="86d69-130">詳細資訊[請參閱about_CommonParameters。](https://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="86d69-130">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="3487f-131">輸入</span><span class="sxs-lookup"><span data-stu-id="3487f-131">INPUTS</span></span>
+## <span data-ttu-id="86d69-131">輸入</span><span class="sxs-lookup"><span data-stu-id="86d69-131">INPUTS</span></span>
 
-### <span data-ttu-id="3487f-132">ServiceManagement. PsApiManagementCoNtext （ApiManagement）</span><span class="sxs-lookup"><span data-stu-id="3487f-132">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span></span>
+### <span data-ttu-id="86d69-132">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.models.PsApiManagementCoNtext</span><span class="sxs-lookup"><span data-stu-id="86d69-132">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span></span>
 
-### <span data-ttu-id="3487f-133">System.object</span><span class="sxs-lookup"><span data-stu-id="3487f-133">System.String</span></span>
+### <span data-ttu-id="86d69-133">System.String</span><span class="sxs-lookup"><span data-stu-id="86d69-133">System.String</span></span>
 
-## <span data-ttu-id="3487f-134">輸出</span><span class="sxs-lookup"><span data-stu-id="3487f-134">OUTPUTS</span></span>
+## <span data-ttu-id="86d69-134">輸出</span><span class="sxs-lookup"><span data-stu-id="86d69-134">OUTPUTS</span></span>
 
-### <span data-ttu-id="3487f-135">ServiceManagement. PsApiManagementApiVersionSet （ApiManagement）</span><span class="sxs-lookup"><span data-stu-id="3487f-135">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApiVersionSet</span></span>
+### <span data-ttu-id="86d69-135">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.models.PsApiManagementApiVersionSet</span><span class="sxs-lookup"><span data-stu-id="86d69-135">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApiVersionSet</span></span>
 
-## <span data-ttu-id="3487f-136">筆記</span><span class="sxs-lookup"><span data-stu-id="3487f-136">NOTES</span></span>
+## <span data-ttu-id="86d69-136">筆記</span><span class="sxs-lookup"><span data-stu-id="86d69-136">NOTES</span></span>
 
-## <span data-ttu-id="3487f-137">相關連結</span><span class="sxs-lookup"><span data-stu-id="3487f-137">RELATED LINKS</span></span>
+## <span data-ttu-id="86d69-137">相關連結</span><span class="sxs-lookup"><span data-stu-id="86d69-137">RELATED LINKS</span></span>
 
-[<span data-ttu-id="3487f-138">新-AzApiManagementApiVersionSet</span><span class="sxs-lookup"><span data-stu-id="3487f-138">New-AzApiManagementApiVersionSet</span></span>](./New-AzApiManagementApiVersionSet.md)
+[<span data-ttu-id="86d69-138">New-AzApiManagementApiVersionSet</span><span class="sxs-lookup"><span data-stu-id="86d69-138">New-AzApiManagementApiVersionSet</span></span>](./New-AzApiManagementApiVersionSet.md)
 
-[<span data-ttu-id="3487f-139">移除-AzApiManagementApiSet</span><span class="sxs-lookup"><span data-stu-id="3487f-139">Remove-AzApiManagementApiSet</span></span>](./Remove-AzApiManagementApiVersionSet.md)
+[<span data-ttu-id="86d69-139">Remove-AzApiManagementApiSet</span><span class="sxs-lookup"><span data-stu-id="86d69-139">Remove-AzApiManagementApiSet</span></span>](./Remove-AzApiManagementApiVersionSet.md)
 
-[<span data-ttu-id="3487f-140">Set-AzApiManagementApiVersionSet</span><span class="sxs-lookup"><span data-stu-id="3487f-140">Set-AzApiManagementApiVersionSet</span></span>](./Set-AzApiManagementApiSet.md)
+[<span data-ttu-id="86d69-140">Set-AzApiManagementApiVersionSet</span><span class="sxs-lookup"><span data-stu-id="86d69-140">Set-AzApiManagementApiVersionSet</span></span>](./Set-AzApiManagementApiVersionSet.md)
