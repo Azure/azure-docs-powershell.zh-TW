@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/r
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultAccessPolicy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultAccessPolicy.md
-ms.openlocfilehash: e084894c26cee1a619f418437986593fe86876bb
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: e19565aa8ae249acf61fce67f0a2b54e20143758
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93971039"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410152"
 ---
 # Remove-AzKeyVaultAccessPolicy
 
-## 摘要
-從金鑰保存庫移除使用者或應用程式的擁有權限。
+## 簡介
+從金鑰庫移除使用者或應用程式的擁有權限。
 
-## 句法
+## 語法
 
 ### ByUserPrincipalName (預設) 
 ```
@@ -115,14 +115,14 @@ Remove-AzKeyVaultAccessPolicy [-ResourceId] <String> [-EnabledForDeployment] [-E
  [<CommonParameters>]
 ```
 
-## 說明
-**AzKeyVaultAccessPolicy** Cmdlet 會移除使用者或應用程式的擁有權限，或從金鑰保存庫中的所有使用者和應用程式。
-即使您移除擁有權限，包含金鑰保存庫的 Azure 訂閱擁有者也可以新增許可權給金鑰保存庫。
-請注意，雖然為這個 Cmdlet 指定 [資源群組] 是選擇性的，但您應該這麼做，以取得較佳的效能。
+## 描述
+**Remove-AzKeyVaultAccessPolicy** Cmdlet 會從金鑰庫移除使用者或應用程式或所有使用者和應用程式的擁有權限。
+即使您移除擁有權限，包含金鑰庫的 Azure 訂閱擁有者也可以新增金鑰庫的許可權。
+請注意，雖然指定資源群組是這個 Cmdlet 的選擇性專案，但您應這麼做以提升績效。
 
-## 示例
+## 例子
 
-### 範例1：移除使用者的許可權
+### 範例 1：移除使用者的許可權
 ```powershell
 PS C:\> Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -UserPrincipalName 'PattiFuller@contoso.com' -PassThru
 
@@ -158,35 +158,35 @@ Network Rule Set                 :
 Tags                             :
 ```
 
-這個命令會移除使用者 PattiFuller@contoso.com 在名為 Contoso03Vault 的金鑰保存庫上擁有的擁有權限。  如果指定了-PassThru，則會傳回 KeyVault 物件。
+此命令會移除使用者在名為 PattiFuller@contoso.com Contoso03Vault 之金鑰庫上擁有的擁有權限。  如果指定 -PassThru，會傳回 KeyVault 物件。
 
-### 範例2：移除應用程式的許可權
+### 範例 2：移除應用程式的許可權
 ```powershell
 PS C:\> Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ServicePrincipalName 'http://payroll.contoso.com'
 ```
 
-這個命令會移除應用程式在名為 Contoso03Vault 的金鑰保存庫上擁有的擁有權限。
-這個範例會使用在 Azure Active Directory 中註冊的服務主體名稱來識別應用程式 http://payroll.contoso.com 。
+此命令會移除應用程式在名為 Contoso03Vault 的金鑰庫上擁有的擁有權限。
+此範例使用在 Azure Active Directory 中註冊的服務主體名稱來識別應用程式 `http://payroll.contoso.com` 。
 
-### 範例3：使用物件識別碼移除應用程式的許可權
+### 範例 3：使用應用程式的物件識別碼移除其許可權
 ```powershell
 PS C:\> Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ObjectID 34595082-9346-41b6-8d6b-295a2808b8db
 ```
 
-這個命令會移除應用程式在名為 Contoso03Vault 的金鑰保存庫上擁有的擁有權限。
-這個範例會依據服務主體的物件識別碼來識別應用程式。
+此命令會移除應用程式在名為 Contoso03Vault 的金鑰庫上擁有的擁有權限。
+此範例會以服務主體的物件識別碼識別應用程式。
 
-### 範例4：移除 Microsoft. 計算資源提供者的許可權
+### 範例 4：移除 Microsoft.Compute 資源提供者的許可權
 ```powershell
 PS C:\> Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ResourceGroupName 'Group14' -EnabledForDeployment
 ```
 
-這個命令會移除 Microsoft. 計算資源提供者的許可權，以便從 Contoso03Vault 取得機密。
+此命令會移除 Microsoft.Compute 資源提供者從 Contoso03Vault 取得秘訣的許可權。
 
 ## 參數
 
 ### -ApplicationId
-指定應該移除其許可權的應用程式識別碼
+指定應移除其許可權的應用程式識別碼
 
 ```yaml
 Type: System.Nullable`1[System.Guid]
@@ -201,7 +201,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -216,7 +216,7 @@ Accept wildcard characters: False
 ```
 
 ### -EmailAddress
-指定您想要移除其存取權的使用者的使用者電子郵件地址。
+指定您想要移除其存取權之使用者的使用者電子郵件地址。
 
 ```yaml
 Type: System.String
@@ -231,7 +231,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForDeployment
-如果已指定，則會停用 Microsoft 的此金鑰保存庫的密碼檢索。當在資源建立中參照時，計算資源提供者。
+如果指定，Microsoft.Compute 資源提供者在建立資源時參照時，會停用從這個金鑰庫中的機密內容。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -245,8 +245,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -EnabledForDiskEncryption
-如果已指定，則會停用 Azure 磁片加密的來自此金鑰保存庫的密碼檢索。
+### -EnabledForCryptEncryption
+如果指定，Azure 磁片加密會停用此金鑰庫中的機密內容。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -261,7 +261,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForTemplateDeployment
-如果已指定，則會在範本中參照 Azure 資源管理員時，停用此金鑰保存庫的密碼檢索。
+如果指定，當在範本中參照時，Azure Resource Manager 會停用從此索引鍵庫中的機密內容。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -276,7 +276,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-金鑰保存庫物件。
+Key Vault 物件。
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
@@ -291,7 +291,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
-指定 Azure Active Directory 中要移除許可權的使用者或服務主體物件識別碼。
+指定 Azure Active Directory 中使用者或服務主體的物件識別碼，以移除其許可權。
 
 ```yaml
 Type: System.String
@@ -306,8 +306,8 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-傳回代表您正在使用之專案的物件。
-根據預設，這個 Cmdlet 不會產生任何輸出。
+會返回代表您處理之專案的物件。
+根據預設，此 Cmdlet 不會產生任何輸出。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -322,8 +322,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-指定與要修改其存取原則之金鑰保存庫相關聯的資源群組的名稱。
-如果未指定，此 Cmdlet 會在目前的訂閱中搜尋主要電子倉庫。
+指定與正在修改其存取策略之金鑰庫相關聯的資源組名。
+如果未指定，此 Cmdlet 會搜尋目前訂閱中的金鑰保存庫。
 
 ```yaml
 Type: System.String
@@ -353,8 +353,8 @@ Accept wildcard characters: False
 ```
 
 ### -ServicePrincipalName
-指定您要移除其許可權之應用程式的服務主體名稱。
-指定在 Azure Active Directory 中為應用程式註冊的應用程式識別碼（也稱為「用戶端識別碼」）。
+指定您想要移除其許可權之應用程式的服務主體名稱。
+指定在 Azure Active Directory 中為應用程式註冊的應用程式識別碼 ，也稱為用戶端識別碼。
 
 ```yaml
 Type: System.String
@@ -369,7 +369,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserPrincipalName
-指定您想要移除其存取權的使用者的使用者主要名稱。
+指定您想要移除其存取權之使用者的使用者主體名稱。
 
 ```yaml
 Type: System.String
@@ -384,8 +384,8 @@ Accept wildcard characters: False
 ```
 
 ### -VaultName
-指定主要電子倉庫的名稱。
-這個 Cmdlet 會移除此參數指定之金鑰保存庫的許可權。
+指定金鑰庫的名稱。
+此 Cmdlet 會移除此參數指定的金鑰庫許可權。
 
 ```yaml
 Type: System.String
@@ -400,7 +400,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，系統會提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -415,8 +415,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。
-未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。
+不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -431,17 +431,17 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### PSKeyVault 中的 KeyVault。
+### Microsoft.Azure.Commands.KeyVault.models.PSKeyVault
 
-### System.object
+### System.String
 
 ## 輸出
 
-### PSKeyVault 中的 KeyVault。
+### Microsoft.Azure.Commands.KeyVault.models.PSKeyVault
 
 ## 筆記
 

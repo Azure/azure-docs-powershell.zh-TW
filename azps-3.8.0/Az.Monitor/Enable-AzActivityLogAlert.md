@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/en
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Enable-AzActivityLogAlert.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Enable-AzActivityLogAlert.md
-ms.openlocfilehash: 39f097c2cc580d2b161e3b4b31b247c13c3a411c
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: f1af25ca59b6af6a9712019d541e68c269609242
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93966457"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100409183"
 ---
 # Enable-AzActivityLogAlert
 
-## 摘要
-啟用活動記錄通知並設定其標記。
+## 簡介
+啟用活動記錄提醒並設定其標記。
 
-## 句法
+## 語法
 
 ### EnableByNameAndResourceGroup
 ```
@@ -38,38 +38,38 @@ Enable-AzActivityLogAlert -ResourceId <String> [-DefaultProfile <IAzureContextCo
  [<CommonParameters>]
 ```
 
-## 說明
-**Enable-AzActivityLogAlert** Cmdlet 可啟用活動記錄通知並設定其標記。
-這個 Cmdlet 會實現 ShouldProcess 模式，亦即，在實際修補資源之前，它可能會要求使用者進行確認。
+## 描述
+**Enable-AzActivityLogAlert** Cmdlet 允許啟用活動記錄提醒並設定其標籤。
+此 Cmdlet 實做 ShouldProcess 模式，即實際修補資源之前，可能會向使用者要求確認。
 
-## 示例
+## 例子
 
-### 範例1：啟用活動記錄通知
+### 範例 1：啟用活動記錄提醒
 ```
 PS C:\>Enable-AzActivityLogAlert -Name "alert1" -ResourceGroupName "Default-ActivityLogsAlerts"
 ```
 
-這個命令會在資源群組預設-ActivityLogsAlerts 中啟用稱為 alert1 的活動記錄提醒。
+此命令會啟用資源群組 Default-ActivityLogsAlerts 中稱為通知1 的活動記錄提醒。
 
-### 範例2：使用 PSActivityLogAlertResource 物件做為輸入來啟用活動記錄提醒
+### 範例 2：使用 PSActivityLogAlertResource 物件做為輸入來啟用活動記錄提醒
 ```
 PS C:\>$obj = Get-AzActivityLogAlert -ResourceGroup "Default-activityLogAlerts" -Name "alert1"
 PS C:\>Enable-AzActivityLogAlert -InputObject $obj
 ```
 
-這個命令會啟用稱為 alert1 的活動記錄提醒。 針對這種情況，它會使用 PSActivityLogAlertResource 物件做為輸入引數。
+此命令會啟用稱為警示1 的活動記錄提醒。 為此，它會使用 PSActivityLogAlertResource 物件做為輸入引數。
 
-### 範例3：使用 ResourceId 參數啟用 ActivityLogAlert
+### 範例 3：使用 ResourceId 參數啟用 ActivityLogAlert
 ```
 PS C:\>Get-AzResource -ResourceGroupName "myResourceGroup" -Name "myLogAlert" | Enable-AzActivityLogAlert
 ```
 
-這個命令會從管道使用 ResourceId 參數來啟用 ActivityLogAlert。
+此命令會使用來自管道的 ResourceId 參數啟用 ActivityLogAlert。
 
 ## 參數
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-設定通話的 InputObject tags 屬性來解壓縮所需的名稱、資源組名稱，以及選用的標記屬性。
+設定呼叫的 InputObject 標記屬性，以解壓縮必要的名稱、資源組名，以及選擇性的標記屬性。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
@@ -99,7 +99,7 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-活動記錄通知的名稱。
+活動記錄提醒的名稱。
 
 ```yaml
 Type: System.String
@@ -114,7 +114,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-要在其中存在預警資源之資源群組的名稱。
+警示資源將存在之資源組的名稱。
 
 ```yaml
 Type: System.String
@@ -129,7 +129,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-設定呼叫的 ResourceId 標籤屬性來解壓縮所需的名稱、資源組名稱屬性。
+設定呼叫的 ResourceId 標記屬性，以解壓縮必要的名稱、資源組名屬性。
 
 ```yaml
 Type: System.String
@@ -144,7 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，系統會提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -159,7 +159,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。 未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。 不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -174,17 +174,17 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### System.object
+### System.String
 
-### PSActivityLogAlertResource 中的 OutputClasses。
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
 
 ## 輸出
 
-### PSActivityLogAlertResource 中的 OutputClasses。
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
 
 ## 筆記
 
@@ -192,12 +192,12 @@ Accept wildcard characters: False
 
 [Set-AzActivityLogAlert](./Set-AzActivityLogAlert.md)
 
-[AzActivityLogAlert](./Get-AzActivityLogAlert.md)
+[Get-AzActivityLogAlert](./Get-AzActivityLogAlert.md)
 
-[移除-AzActivityLogAlert](./Remove-AzActivityLogAlert.md)
+[Remove-AzActivityLogAlert](./Remove-AzActivityLogAlert.md)
 
-[新-AzActionGroup](./New-AzActionGroup.md)
+[New-AzActionGroup](./New-AzActionGroup.md)
 
-[新-AzActivityLogAlertCondition](./Get-AzActivityLogAlertCondition.md)
+
 
 [Disable-AzActivityLogAlert](./Disable-AzActivityLogAlert.md)

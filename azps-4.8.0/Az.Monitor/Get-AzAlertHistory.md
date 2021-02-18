@@ -6,31 +6,31 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertHistory.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertHistory.md
-ms.openlocfilehash: 5d4b3be80602377a7eae378939e4bb10221de324
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 42f407235238cec0b7e298bce344e71c075cecfd
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93971378"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405834"
 ---
 # Get-AzAlertHistory
 
-## 摘要
-取得預警的歷程記錄。
+## 簡介
+獲得提醒的歷程記錄。
 
-## 句法
+## 語法
 
 ```
 Get-AzAlertHistory [-ResourceId <String>] [-StartTime <DateTime>] [-EndTime <DateTime>] [-Status <String>]
  [-Caller <String>] [-DetailedOutput] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## 說明
-**AzAlertHistory** Cmdlet 會在已啟用、停用、激發、解決等問題時，取得警報的歷程記錄。
+## 描述
+**Get-AzAlertHistory** Cmdlet 會取得警示啟用、停用、啟用、解決等功能的歷程記錄。
 
-## 示例
+## 例子
 
-### 範例1：取得通知歷程記錄
+### 範例 1：取得提醒記錄
 ```
 PS C:\>Get-AzAlertHistory -StartTime 2015-02-11T11:00:00 -EndTime 2015-02-11T12:00:00 -DetailedOutput
 Authorization        : 
@@ -170,9 +170,9 @@ SubscriptionId       : b93fb07a-6f93-30be-bf3e-4f0deca15f4f
 SubStatus            :
 ```
 
-這個命令會針對目前的訂閱取得指定時間範圍的警示歷程記錄。
+此命令會針對目前訂閱的指定時間範圍，獲得警示記錄。
 
-### 範例2：取得特定資源的警示歷程記錄
+### 範例 2：取得指定資源的警示記錄
 ```
 PS C:\>Get-AzAlertHistory -StartTime 2015-02-11T11:00:00 -EndTime 2015-02-11T12:00:00 -ResourceId "/subscriptions/b93fb07a-6f93-30be-bf3e-4f0deca15f4f/resourceGroups/Default-Web-EastUS/providers/microsoft.insights/alertrules/checkrule3-4b135401-a30c-4224-ae21-fa53a5bd253d" -DetailedOutput
 
@@ -268,11 +268,11 @@ SubscriptionId       : b93fb07a-6f93-30be-bf3e-4f0deca15f4f
 SubStatus            :
 ```
 
-這個命令會取得指定資源的警示規則相關事件。
+此命令會獲得指定資源的警示規則相關事件。
 
 ## 參數
 
-### -來電者
+### -本機號碼
 指定來電者。
 
 ```yaml
@@ -288,7 +288,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -303,7 +303,7 @@ Accept wildcard characters: False
 ```
 
 ### -DetailedOutput
-顯示輸出中的完整詳細資料。
+在輸出中顯示完整詳細資料。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -318,8 +318,8 @@ Accept wildcard characters: False
 ```
 
 ### -EndTime
-指定當地時間的查詢結束時間。
-預設為目前時間。
+指定查詢在本地時間中的結束時間。
+預設值為目前時間。
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -334,7 +334,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-指定與規則相關聯的資源識別碼。
+指定規則所關聯的資源識別碼。
 
 ```yaml
 Type: System.String
@@ -349,8 +349,8 @@ Accept wildcard characters: False
 ```
 
 ### -StartTime
-指定當地時間查詢的開始時間。
-預設為目前的當地時間減去1小時。
+指定查詢在本地時間中的開始時間。
+預設值為目前的當地時間減 1 小時。
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -380,32 +380,31 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### System.object
+### System.String
 
-### System.object Null ' 1 [CoreLib，System.object = 4.0.0.0，Culture = 中立，PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.DateTime， System.Private.CoreLib， Version=4.0.0.0， Culture=neutral， PublicKeyToken=7cec85d7bea7798e]]
 
-### SwitchParameter 的系統管理功能
+### System.Management.Automation.SwitchParameter
 
 ## 輸出
 
-### PSEventData 中的 OutputClasses。
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSEventData
 
 ## 筆記
 
 ## 相關連結
 
-[附加 AzLogAlertRule](./Add-AzLogAlertRule.md)
 
-[附加 AzMetricAlertRule](./Add-AzMetricAlertRule.md)
+[Add-AzMetricAlertRule](./Add-AzMetricAlertRule.md)
 
-[附加 AzWebtestAlertRule](./Add-AzWebtestAlertRule.md)
+[Add-AzWebtestAlertRule](./Add-AzWebtestAlertRule.md)
 
-[AzAlertRule](./Get-AzAlertRule.md)
+[Get-AzAlertRule](./Get-AzAlertRule.md)
 
-[移除-AzAlertRule](./Remove-AzAlertRule.md)
+[Remove-AzAlertRule](./Remove-AzAlertRule.md)
 
 

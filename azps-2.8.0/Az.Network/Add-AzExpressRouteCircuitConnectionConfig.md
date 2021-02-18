@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ad
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Add-AzExpressRouteCircuitConnectionConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Add-AzExpressRouteCircuitConnectionConfig.md
-ms.openlocfilehash: a3b5b20eac34076dd6a5490a5d9cf1a5e2c49684
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: bc08305d7aa604dd9c7540573ffb5a199e85b287
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93790305"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100409761"
 ---
 # Add-AzExpressRouteCircuitConnectionConfig
 
-## 摘要
-將線路連線設定新增到快速路由線路的專用對等。 
+## 簡介
+新增回路連接組配置至 Express Route 回路的專用對等。 
 
-## 句法
+## 語法
 
 ### SetByResource (預設) 
 ```
@@ -34,12 +34,12 @@ Add-AzExpressRouteCircuitConnectionConfig [-Name] <String> [-ExpressRouteCircuit
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## 說明
-**AzExpressRouteCircuitConnectionConfig** Cmdlet 會將線路連線設定新增至 ExpressRoute 回路的專用對等。 這可讓跨地區或訂閱的兩個 Express 路線電路對等。請注意，執行 **附加 AzExpressRouteCircuitPeeringConfig** 之後，您必須呼叫 Set-AzExpressRouteCircuit Cmdlet 才能啟動設定。
+## 描述
+**Add-AzExpressRouteRouteCircuitConnectionConfig** Cmdlet 會將回路連接組配置新增到 ExpressRoute 回路的私人對等。 這可讓跨區域或訂閱對等兩個 Express Route 回路。請注意，在啟動 **Add-AzExpressRouteRouteCircuitPeeringConfig** 之後，您必須呼叫 Set-AzExpressRouteCircuit Cmdlet 以啟用該組配置。
 
-## 示例
+## 例子
 
-### 範例1：將電路連線資源新增至現有的 ExpressRoute 電路
+### 範例 1：新增回路連接資源至現有的 ExpressRoute 回路
 ```
 $circuit_init = Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg
 $circuit_peer = Get-AzExpressRouteCircuit -Name $peeringCircuitName -ResourceGroupName $rg
@@ -48,7 +48,7 @@ Add-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName -ExpressR
 Set-AzExpressRouteCircuit -ExpressRouteCircuit $circuit_init
 ```
 
-### 範例2：使用管道將電路連線設定新增至現有的 ExpressRoute 電路
+### 範例 2：使用管道將回路連接組組新增到現有的 ExpressRoute 回路
 ```
 $circuit_peer = Get-AzExpressRouteCircuit -Name $peeringCircuitName -ResourceGroupName $rg
 $addressSpace = '60.0.0.0/29'
@@ -58,7 +58,7 @@ Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg|Ad
 ## 參數
 
 ### -AddressPrefix
-在快速路線回路之間建立 VxLan 隧道的最小/29 個客戶位址空間
+在 Express Route 回路之間建立 VxLan 軸線的最小 /29 個客戶位址空間
 
 ```yaml
 Type: System.String
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 ```
 
 ### -AuthorizationKey
-另一個訂閱中對等快速路由回路的授權金鑰。 您可以使用現有的命令來建立對等電路的授權。
+在另一個訂閱中對等 Express Route 回路的授權金鑰。 您可以使用現有的命令建立對等回路上的授權。
 
 ```yaml
 Type: System.String
@@ -88,7 +88,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -103,7 +103,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExpressRouteCircuit
-要修改的 ExpressRoute 電路。 這是 **AzExpressRouteCircuit** Cmdlet 傳回的 Azure 物件。
+要修改的 ExpressRoute 回路。 這是 **Get-AzExpressRouteCircuit Cmdlet** 所返回的 Azure 物件。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit
@@ -118,7 +118,7 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-要新增之電路連線資源的名稱。
+要新增的回路連接資源名稱。
 
 ```yaml
 Type: System.String
@@ -133,7 +133,7 @@ Accept wildcard characters: False
 ```
 
 ### -PeerExpressRouteCircuitPeering
-要與目前電路 peered 的私人對等遠端電路對等資源識別碼。
+與目前回路對等的遠端回路之私人對等的資源識別碼。
 
 ```yaml
 Type: System.String
@@ -148,7 +148,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -163,7 +163,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。 未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。 不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -178,32 +178,32 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 https://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
-### PSExpressRouteCircuit 中的 [.]
+### Microsoft.Azure.Commands.Network.models.PSExpressRouteCircuit
 
-### System.object
+### System.String
 
 ## 輸出
 
-### PSExpressRouteCircuit 中的 [.]
+### Microsoft.Azure.Commands.Network.models.PSExpressRouteCircuit
 
 ## 筆記
 
 ## 相關連結
 
-[AzExpressRouteCircuit](Get-AzExpressRouteCircuit.md)
+[Get-AzExpressRouteCircuit](Get-AzExpressRouteCircuit.md)
 
-[AzExpressRouteCircuitConnectionConfig](Get-AzExpressRouteCircuitConnectionConfig.md)
+[Get-AzExpressRouteCircuitConnectionConfig](Get-AzExpressRouteCircuitConnectionConfig.md)
 
-[移除-AzExpressRouteCircuitConnectionConfig](Remove-AzExpressRouteCircuitConnectionConfig.md)
+[Remove-AzExpressRouteCircuitConnectionConfig](Remove-AzExpressRouteCircuitConnectionConfig.md)
 
-[Set-AzExpressRouteCircuitConnectionConfig](Set-AzExpressRouteCircuitConnectionConfig.md)
 
-[新-AzExpressRouteCircuitConnectionConfig](New-AzExpressRouteCircuitConnectionConfig.md)
+
+
 
 [Set-AzExpressRouteCircuit](Set-AzExpressRouteCircuit.md)
 
-[AzExpressRouteCircuit](Get-AzExpressRouteCircuit.md)
+[Get-AzExpressRouteCircuit](Get-AzExpressRouteCircuit.md)

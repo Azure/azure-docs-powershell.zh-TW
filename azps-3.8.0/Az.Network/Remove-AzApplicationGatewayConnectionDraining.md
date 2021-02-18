@@ -5,44 +5,44 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzApplicationGatewayConnectionDraining.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzApplicationGatewayConnectionDraining.md
-ms.openlocfilehash: 342b8e73ff4e3b01cbf51ea567e8eb7490ecd5c6
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 4b0eb6188f75b71e3e56107138b6d5e2f9fc7b93
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93957983"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406068"
 ---
 # Remove-AzApplicationGatewayConnectionDraining
 
-## 摘要
-移除後端 HTTP 設定物件的連接排出配置。
+## 簡介
+移除後端 HTTP 設定物件的連接耗用設定。
 
-## 句法
+## 語法
 
 ```
 Remove-AzApplicationGatewayConnectionDraining -BackendHttpSettings <PSApplicationGatewayBackendHttpSettings>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## 說明
-**AzApplicationGatewayConnectionDraining** Cmdlet 會移除後端 HTTP 設定物件的連接排出配置。
+## 描述
+**Remove-AzApplicationGatewayConnectionDraining Cmdlet** 會移除後端 HTTP 設定物件的連接消耗設定。
 
-## 示例
+## 例子
 
-### 範例1
+### 範例 1
 ```
 PS C:\> $AppGw = Get-AzApplicationGateway -Name "ApplicationGateway01" -ResourceGroupName "ResourceGroup01"
 PS C:\> $Settings  = Get-AzApplicationGatewayBackendHttpSettings -Name "Settings01" -ApplicationGateway $AppGw
 PS C:\> Remove-AzApplicationGatewayConnectionDraining -BackendHttpSettings $Settings
 ```
 
-第一個命令會在名為 ResourceGroup01 的資源群組中，取得名為 ApplicationGateway01 的應用程式閘道，並將它儲存在 $AppGw 變數中。
-第二個命令會針對 $AppGw 取得名為 Settings01 的後端 HTTP 設定，並將設定儲存在 $Settings 變數中。
-最後一個命令會移除 $Settings 中儲存後端 HTTP 設定的連接排出設定。
+第一個命令會獲得名為 ResourceGroup01 的資源群組中名為 ApplicationGateway01 的應用程式閘道，並儲存在$AppGw變數。
+第二個命令會獲得名為 Settings01 的後端 HTTP 設定，$AppGw將設定儲存在 $Settings 變數中。
+最後一個命令會移除儲存在 $Settings 中的後端 HTTP 設定之連接消耗$Settings。
 
 ## 參數
 
-### -BackendHttpSettings
+### -後端HttpSettings
 後端 HTTP 設定
 
 ```yaml
@@ -58,7 +58,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -73,27 +73,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 http://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
-### PSApplicationGatewayBackendHttpSettings 中的 [.]
+### Microsoft.Azure.Commands.Network.models.PSApplicationGatewayBackendHttpSettings
 
 ## 輸出
 
-### PSApplicationGatewayBackendHttpSettings 中的 [.]
+### Microsoft.Azure.Commands.Network.models.PSApplicationGatewayBackendHttpSettings
 
 ## 筆記
 
 ## 相關連結
 
-[AzApplicationGateway](./Get-AzApplicationGateway.md)
+[Get-AzApplicationGateway](./Get-AzApplicationGateway.md)
 
-[AzApplicationGatewayBackendHttpSettings](./Get-AzApplicationGatewayBackendHttpSettings.md)
 
-[AzApplicationGatewayConnectionDraining](./Get-AzApplicationGatewayConnectionDraining.md)
+[Get-AzApplicationGatewayConnectionDraining](./Get-AzApplicationGatewayConnectionDraining.md)
 
-[新-AzApplicationGatewayConnectionDraining](./New-AzApplicationGatewayConnectionDraining.md)
+[New-AzApplicationGatewayConnectionDraining](./New-AzApplicationGatewayConnectionDraining.md)
 
 [Set-AzApplicationGatewayConnectionDraining](./Set-AzApplicationGatewayConnectionDraining.md)
 

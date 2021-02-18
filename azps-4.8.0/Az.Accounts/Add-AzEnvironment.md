@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.accounts/a
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Add-AzEnvironment.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Add-AzEnvironment.md
-ms.openlocfilehash: ba5a398e21543bc4b19c09309884ceb11fed3197
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 2db2e90dc1292bdfe67907e5a180b08a09a54718
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94129711"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406004"
 ---
 # Add-AzEnvironment
 
-## 摘要
-新增 Azure 資源管理員實例的端點和中繼資料。
+## 簡介
+新增 Azure Resource Manager 實例的端點和中繼資料。
 
-## 句法
+## 語法
 
-### 預設)  (名稱
+### 名稱 (預設) 
 ```
 Add-AzEnvironment [-Name] <String> [[-PublishSettingsFileUrl] <String>] [[-ServiceEndpoint] <String>]
  [[-ManagementPortalUrl] <String>] [[-StorageEndpoint] <String>] [[-ActiveDirectoryEndpoint] <String>]
@@ -51,19 +51,19 @@ Add-AzEnvironment [-Name] <String> [[-StorageEndpoint] <String>] [-ARMEndpoint] 
  [<CommonParameters>]
 ```
 
-### 搜索
+### 發現
 ```
 Add-AzEnvironment -AutoDiscover [-Uri <Uri>] [-Scope {Process | CurrentUser}]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## 說明
-Add-AzEnvironment Cmdlet 會新增端點和中繼資料，以啟用 Azure 資源管理器 Cmdlet 與新的 Azure 資源管理器實例連線。
-內建的環境 AzureCloud 和 AzureChinaCloud 會以現有的 Azure 資源管理器公用實例為目標。
+## 描述
+此Add-AzEnvironment Cmdlet 會新增端點和中繼資料，讓 Azure Resource Manager Cmdlet 與 Azure Resource Manager 的新實例進行連接。
+AzureCloud 和 AzureChinaCloud 的內建環境會鎖定現有的 Azure Resource Manager 公用實例。
 
-## 示例
+## 例子
 
-### 範例1：建立及修改新的環境
+### 範例 1：建立及修改新環境
 ```
 PS C:\> Add-AzEnvironment -Name TestEnvironment `
         -ActiveDirectoryEndpoint TestADEndpoint `
@@ -113,9 +113,9 @@ ExtendedProperties                                : {}
 BatchEndpointResourceId                           :
 ```
 
-在這個範例中，我們會使用 [載入 AzEnvironment] 來建立含範例端點的新 Azure 環境，然後使用 Cmdlet Set-AzEnvironment 變更已建立之環境的 ActiveDirectoryEndpoint 和 GraphEndpoint 屬性的值。
+在此範例中，我們將使用 Add-AzEnvironment 建立具有範例端點的新 Azure 環境，然後使用 Cmdlet Set-AzEnvironment 變更所建立環境 ActiveDirectoryEndpoint 和 GraphEndpoint 屬性的值。
 
-### 範例2：透過 Uri 探索新的環境
+### 範例 2：透過 Uri 探索新環境
 ```
 <#
 Uri https://configuredmetadata.net returns an array of environment metadata. The following example contains a payload for the AzureCloud default environment.
@@ -162,12 +162,12 @@ Name            Resource Manager Url ActiveDirectory Authority
 TestEnvironment TestRMEndpoint       TestADEndpoint/
 ```
 
-在這個範例中，我們會從 Uri 探索新的 Azure 環境 https://configuredmetadata.net 。
+在此範例中，我們將從 Uri 探索新的 `https://configuredmetadata.net` Azure 環境。
 
 ## 參數
 
 ### -ActiveDirectoryEndpoint
-指定 Azure Active Directory 驗證的基本機構。
+指定 Azure Active Directory 驗證的基本授權。
 
 ```yaml
 Type: System.String
@@ -182,7 +182,7 @@ Accept wildcard characters: False
 ```
 
 ### -ActiveDirectoryServiceEndpointResourceId
-針對將要求傳送到 Azure 資源管理器或服務管理 (RDFE) 端點的標記指定物件。
+指定向 AZURE Resource Manager 或 RDFE 端點的服務管理 (驗證) 物件。
 
 ```yaml
 Type: System.String
@@ -212,7 +212,7 @@ Accept wildcard characters: False
 ```
 
 ### -ARMEndpoint
-Azure 資源管理器端點
+Azure Resource Manager 端點
 
 ```yaml
 Type: System.String
@@ -227,7 +227,7 @@ Accept wildcard characters: False
 ```
 
 ### -自動探索
-透過預設或設定的端點探索環境。
+透過預設或已配置的端點探索環境。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -257,7 +257,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureAnalysisServicesEndpointSuffix
-與 Azure Log Analytics API 進行通訊時要使用的端點。
+與 Azure Log Analytics API 通訊時使用的端點。
 
 ```yaml
 Type: System.String
@@ -272,7 +272,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureAttestationServiceEndpointResourceId
-所要求權杖之收件者之 Azure 認證服務的資源識別碼。
+這是要求權杖收件者之 Azure 識別服務的資源識別碼。
 
 ```yaml
 Type: System.String
@@ -287,7 +287,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureAttestationServiceEndpointSuffix
-Azure 認證服務的 Dns 尾碼。
+Azure 表示服務的 Dns 尾碼。
 
 ```yaml
 Type: System.String
@@ -302,7 +302,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureDataLakeAnalyticsCatalogAndJobEndpointSuffix
-Azure Data Lake Analytics 作業與目錄服務的 Dns 尾碼
+Azure Data Lake Analytics 工作與目錄服務的 Dns 尾碼
 
 ```yaml
 Type: System.String
@@ -317,7 +317,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureDataLakeStoreFileSystemEndpointSuffix
-Azure Data Lake Store FileSystem 的 Dns 尾碼。 範例： azuredatalake.net
+Azure Data Lake Store FileSystem 的 Dns 尾碼。 範例：azuredatalake.net
 
 ```yaml
 Type: System.String
@@ -332,7 +332,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureKeyVaultDnsSuffix
-Azure 金鑰保存庫服務的 Dns 尾碼。 範例是 vault-int.azure-int.net
+Azure 金鑰庫服務的 Dns 尾碼。 範例為vault-int.azure-int.net
 
 ```yaml
 Type: System.String
@@ -347,7 +347,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureKeyVaultServiceEndpointResourceId
-Azure 金鑰保存庫資料服務的資源識別碼，是所要求權杖的收件者。
+Azure 金鑰庫資料服務的資源識別碼，服務是要求權杖的收件者。
 
 ```yaml
 Type: System.String
@@ -362,7 +362,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureOperationalInsightsEndpoint
-與 Azure Log Analytics API 進行通訊時要使用的端點。
+與 Azure Log Analytics API 通訊時使用的端點。
 
 ```yaml
 Type: System.String
@@ -377,7 +377,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureOperationalInsightsEndpointResourceId
-針對 Azure Log Analytics API 進行驗證的標記物件。
+使用 Azure Log Analytics API 驗證權杖的物件。
 
 ```yaml
 Type: System.String
@@ -392,7 +392,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureSynapseAnalyticsEndpointResourceId
-所要求權杖之收件者之 Azure Synapse 分析的資源識別碼。
+這是要求權杖收件者的 Azure Synapse Analytics 資源識別碼。
 
 ```yaml
 Type: System.String
@@ -422,7 +422,7 @@ Accept wildcard characters: False
 ```
 
 ### -BatchEndpointResourceId
-作為所請求標記之收件者之 Azure Batch 服務的資源識別碼
+這是要求權杖收件者的 Azure Batch 服務資源識別碼
 
 ```yaml
 Type: System.String
@@ -437,7 +437,7 @@ Accept wildcard characters: False
 ```
 
 ### -DataLakeAudience
-針對 AD Data Lake services 端點進行驗證的標記物件。
+使用 AD Data Lake 服務端點驗證權杖的物件。
 
 ```yaml
 Type: System.String
@@ -452,7 +452,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、租使用者與訂閱
+用於與 Azure 通訊的認證、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -482,7 +482,7 @@ Accept wildcard characters: False
 ```
 
 ### -GalleryEndpoint
-指定 [部署範本] 的 [Azure 資源管理器] 圖庫的端點。
+指定部署範本 Azure Resource Manager 圖庫的端點。
 
 ```yaml
 Type: System.String
@@ -497,7 +497,7 @@ Accept wildcard characters: False
 ```
 
 ### -GraphAudience
-使用廣告圖端點進行驗證的標記物件。
+使用 AD Graph 端點驗證權杖的觀眾。
 
 ```yaml
 Type: System.String
@@ -512,7 +512,7 @@ Accept wildcard characters: False
 ```
 
 ### -GraphEndpoint
-指定 (Active Directory 中繼資料) 要求的圖形 URL。
+指定 Graph 的 URL (Active Directory 中繼資料) 要求。
 
 ```yaml
 Type: System.String
@@ -542,7 +542,7 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-指定要新增之環境的名稱。
+指定要新增的環境名稱。
 
 ```yaml
 Type: System.String
@@ -557,7 +557,7 @@ Accept wildcard characters: False
 ```
 
 ### -PublishSettingsFileUrl
-指定可從中下載 publishsettings 檔案的 URL。
+指定可從中下載 .publishsettings 檔案的 URL。
 
 ```yaml
 Type: System.String
@@ -572,7 +572,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceManagerEndpoint
-指定 Azure 資源管理員要求的 URL。
+指定 Azure Resource Manager 要求 URL。
 
 ```yaml
 Type: System.String
@@ -587,7 +587,7 @@ Accept wildcard characters: False
 ```
 
 ### -範圍
-決定內容變更的範圍，例如，變更只適用于目前的進程，或只適用于此使用者開始的所有會話。
+決定上下文變更的範圍，例如，變更是否僅適用于目前的程式，或適用于此使用者啟動的所有會話。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Profile.Common.ContextModificationScope
@@ -603,7 +603,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceEndpoint
-指定服務管理 (RDFE) 要求的端點。
+指定 RDFE (服務管理) 端點。
 
 ```yaml
 Type: System.String
@@ -618,7 +618,7 @@ Accept wildcard characters: False
 ```
 
 ### -SqlDatabaseDnsSuffix
-指定 Azure SQL 資料庫伺服器的網功能變數名稱稱尾碼。
+指定 Azure SQL Database 伺服器的功能變數名稱尾碼。
 
 ```yaml
 Type: System.String
@@ -633,7 +633,7 @@ Accept wildcard characters: False
 ```
 
 ### -StorageEndpoint
-指定儲存 (blob、資料表、佇列及檔案) 存取的端點。
+指定儲存空間的端點 (Blob、資料表、佇列和檔案) 存取。
 
 ```yaml
 Type: System.String
@@ -648,7 +648,7 @@ Accept wildcard characters: False
 ```
 
 ### -TrafficManagerDnsSuffix
-指定 Azure 流量管理器服務的網功能變數名稱稱尾碼。
+指定 Azure Traffic Manager 服務的功能變數名稱尾碼。
 
 ```yaml
 Type: System.String
@@ -663,7 +663,7 @@ Accept wildcard characters: False
 ```
 
 ### -Uri
-指定要取得環境之網際網路資源的 URI。
+指定網際網路資源的 URI 以抓取環境。
 
 ```yaml
 Type: System.Uri
@@ -678,7 +678,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -693,7 +693,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。 未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。 不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -708,25 +708,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### System.object
+### System.String
 
-### SwitchParameter 的系統管理功能
+### System.Management.Automation.SwitchParameter
 
 ## 輸出
 
-### PSAzureEnvironment 的設定檔。
+### Microsoft.Azure.Commands.Profile.models.PSAzureEnvironment
 
 ## 筆記
 
 ## 相關連結
 
-[AzEnvironment](./Get-AzEnvironment.md)
+[Get-AzEnvironment](./Get-AzEnvironment.md)
 
-[移除-AzEnvironment](./Remove-AzEnvironment.md)
+[Remove-AzEnvironment](./Remove-AzEnvironment.md)
 
 [Set-AzEnvironment](./Set-AzEnvironment.md)
 

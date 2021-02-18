@@ -1,17 +1,17 @@
 ---
 title: Azure Az PowerShell 模組簡介
 description: 介紹 Az PowerShell 模組，建議用於與 Azure 互動，並取代 AzureRM PowerShell 模組。
-ms.date: 12/1/2020
+ms.date: 02/12/2021
 ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 9021a1d8fdc73aedb87b17631f8e67cb8ef79166
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: b52b6995fb50a6ce502d42e7df588ca72340a1e7
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100012523"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100409472"
 ---
 # <a name="introducing-the-azure-az-powershell-module"></a>Azure Az PowerShell 模組簡介
 
@@ -78,7 +78,9 @@ Az PowerShell 是以 .NET Standard 程式庫為基礎，可以在所有平台 (�
 
 Az 是最新的 Azure PowerShell 模組。 若有任何問題或功能要求，您可以直接記錄在 [GitHub 存放庫](https://github.com/Azure/azure-powershell)，如果擁有支援合約，則可透過 Microsoft 支援服務直接回報。 功能要求將會在最新版本的 Az 中實作。 重大問題將會在最新的兩個 Az 版本中實作。
 
-AzureRM 不會再收到新的 Cmdlet 或功能。 不過，我們仍會正式維護 AzureRM 模組，並在 2021 年 2 月之前都會提供重要修正程式。
+由於 Az PowerShell 模組現在具備 AzureRM PowerShell 模組的所有功能，因此我們將于2024年2月29日淘汰 AzureRM PowerShell 模組。
+
+若要避免服務中斷，請將使用 AzureRM PowerShell 模組的 [腳本更新為在](https://aka.ms/azpsmigrate) 2024 年2月29日之前使用 Az powershell 模組。 若要自動更新您的腳本，請遵循 [快速入門手冊](/powershell/azure/quickstart-migrate-azurerm-to-az-automatically)。
 
 ## <a name="data-collection"></a>資料集合
 
