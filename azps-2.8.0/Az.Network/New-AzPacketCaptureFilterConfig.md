@@ -5,31 +5,31 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzPacketCaptureFilterConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzPacketCaptureFilterConfig.md
-ms.openlocfilehash: f8e51258a56051edf99aa1ec0cfa5e252e0ac0d6
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: b71272021edf0c44731cde372f005fef3418089e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93789293"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100414606"
 ---
 # New-AzPacketCaptureFilterConfig
 
-## 摘要
-建立新的 [資料包捕獲篩選] 物件。
+## 簡介
+建立新封包捕獲篩選物件。
 
-## 句法
+## 語法
 
 ```
 New-AzPacketCaptureFilterConfig [-Protocol <String>] [-RemoteIPAddress <String>] [-LocalIPAddress <String>]
  [-LocalPort <String>] [-RemotePort <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## 說明
-New-AzPacketCaptureFilterConfig Cmdlet 會建立新的 [資料包捕獲] 篩選物件。 這個物件是用來限制在資料包捕獲會話期間使用指定準則捕獲的資料包類型。 New-AzNetworkWatcherPacketCapture Cmdlet 可以接受多個篩選物件，以啟用可撰寫的捕獲會話。
+## 描述
+Cmdlet New-AzPacketCaptureFilterConfig建立一個新的封包捕獲篩選物件。 此物件用來限制使用指定準則在封包捕獲會話期間所捕獲的封包類型。 Cmdlet New-AzNetworkWatcherPacketCapture接受多個篩選物件，以啟用可撰寫的捕獲會話。
 
-## 示例
+## 例子
 
-### 範例1：使用多個篩選建立資料包捕獲
+### 範例 1：建立包含多個篩選的封包捕獲
 ```
 $nw = Get-AzResource | Where {$_.ResourceType -eq "Microsoft.Network/networkWatchers" -and $_.Location -eq "WestCentralUS" } 
 $networkWatcher = Get-AzNetworkWatcher -Name $nw.Name -ResourceGroupName $nw.ResourceGroupName 
@@ -41,12 +41,12 @@ $filter2 = New-AzPacketCaptureFilterConfig -Protocol UDP
 New-AzNetworkWatcherPacketCapture -NetworkWatcher $networkWatcher -TargetVirtualMachineId $vm.Id -PacketCaptureName "PacketCaptureTest" -StorageAccountId $storageAccount.id -TimeLimitInSeconds 60 -Filters $filter1, $filter2
 ```
 
-在這個範例中，我們會建立名為 "PacketCaptureTest" 的資料包捕獲，並提供多個篩選和時間限制。 會話完成後，就會將它儲存到指定的儲存空間帳戶。 注意：必須在目標虛擬機器上安裝 Azure 網路觀察程式延伸，才能建立資料包捕獲。
+在此範例中，我們建立名為「PacketCaptureTest」的封包捕獲，具有多個篩選和時間限制。 會話完成之後，就會儲存到指定的儲存空間帳戶。 注意：Azure 網路監視程式擴充功能必須安裝在目標虛擬機器上，以建立封包捕獲。
 
 ## 參數
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -61,10 +61,10 @@ Accept wildcard characters: False
 ```
 
 ### -LocalIPAddress
-指定要篩選的本機 IP 位址。
-[範例] 輸入： [127.0.0.1 "代表單一位址專案。
-範圍的 "127.0.0.1-127.0.0.255"。
-"127.0.0.1; 127.0.0.5;" 代表多個專案。
+指定要篩選的當地 IP 位址。
+輸入範例：單一位址專案輸入"127.0.0.1"。
+範圍為 "127.0.0.1-127.0.0.255"。
+多個專案為「127.0.0.1;127.0.0.5;」。
 
 ```yaml
 Type: System.String
@@ -79,10 +79,10 @@ Accept wildcard characters: False
 ```
 
 ### -LocalPort
-指定要篩選的本機 IP 位址。
-[範例] 輸入： [127.0.0.1 "代表單一位址專案。
-範圍的 "127.0.0.1-127.0.0.255"。
-"127.0.0.1; 127.0.0.5;" 代表多個專案。
+指定要篩選的當地 IP 位址。
+輸入範例：單一位址專案輸入"127.0.0.1"。
+範圍為 "127.0.0.1-127.0.0.255"。
+多個專案為「127.0.0.1;127.0.0.5;」。
 
 ```yaml
 Type: System.String
@@ -113,9 +113,9 @@ Accept wildcard characters: False
 
 ### -RemoteIPAddress
 指定要篩選的遠端 IP 位址。
-[範例] 輸入： [127.0.0.1 "代表單一位址專案。
-範圍的 "127.0.0.1-127.0.0.255"。
-"127.0.0.1; 127.0.0.5;" 代表多個專案。
+輸入範例：單一位址專案輸入"127.0.0.1"。
+範圍為"127.0.0.1-127.0.0.255"。
+多個專案為「127.0.0.1;127.0.0.5;」。
 
 ```yaml
 Type: System.String
@@ -131,9 +131,9 @@ Accept wildcard characters: False
 
 ### -RemotePort
 指定要篩選的遠端埠。
-遠端埠範例輸入：「80」（適用于單一端口專案）。
-範圍的 "80-85"。
-"80; 443;" （針對多個專案）。
+遠端埠範例輸入：「80」表示單一端口專案。
+範圍為"80-85"。
+多個專案為 「80;443;」。
 
 ```yaml
 Type: System.String
@@ -148,71 +148,71 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 https://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
-### System.object
+### System.String
 
 ## 輸出
 
-### PSPacketCaptureFilter 中的 [.]
+### Microsoft.Azure.Commands.Network.models.PSPacketCaptureFilter
 
 ## 筆記
-關鍵字： azure、azurerm、arm、資源、管理、管理員、網路、網路、觀察者、資料包、捕獲、流量、篩選器 
+關鍵字：azure、azurerm、arm、資源、管理、管理員、網路、網路、監視者、封包、捕獲、流量、篩選 
 
 ## 相關連結
 
-[新-AzNetworkWatcher](./New-AzNetworkWatcher.md)
+[New-AzNetworkWatcher](./New-AzNetworkWatcher.md)
 
-[AzNetworkWatcher](./Get-AzNetworkWatcher.md)
+[Get-AzNetworkWatcher](./Get-AzNetworkWatcher.md)
 
-[移除-AzNetworkWatcher](./Remove-AzNetworkWatcher.md)
+[Remove-AzNetworkWatcher](./Remove-AzNetworkWatcher.md)
 
-[AzNetworkWatcherNextHop](./Get-AzNetworkWatcherNextHop.md)
+[Get-AzNetworkWatcherNextHop](./Get-AzNetworkWatcherNextHop.md)
 
-[AzNetworkWatcherSecurityGroupView](./Get-AzNetworkWatcherSecurityGroupView.md)
+[Get-AzNetworkWatcherSecurityGroupView](./Get-AzNetworkWatcherSecurityGroupView.md)
 
-[AzNetworkWatcherTopology](./Get-AzNetworkWatcherTopology.md)
+[Get-AzNetworkWatcherTopwork](./Get-AzNetworkWatcherTopology.md)
 
-[開始-AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md)
+[Start-AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md)
 
-[新-AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
+[New-AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
 
-[新-AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
+[New-AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
 
-[AzNetworkWatcherPacketCapture](./Get-AzNetworkWatcherPacketCapture.md)
+[Get-AzNetworkWatcherPacketCapture](./Get-AzNetworkWatcherPacketCapture.md)
 
-[移除-AzNetworkWatcherPacketCapture](./Remove-AzNetworkWatcherPacketCapture.md)
+[Remove-AzNetworkWatcherPacketCapture](./Remove-AzNetworkWatcherPacketCapture.md)
 
-[停止 AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
+[Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
 
-[新-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
+[New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
 
 [Test-AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md)
 
 [Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
 
-[停止 AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
+[Stop-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
-[開始-AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md)
+[Start-AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md)
 
 [Set-AzNetworkWatcherConnectionMonitor](./Set-AzNetworkWatcherConnectionMonitor.md)
 
 [Set-AzNetworkWatcherConfigFlowLog](./Set-AzNetworkWatcherConfigFlowLog.md)
 
-[移除-AzNetworkWatcherConnectionMonitor](./Remove-AzNetworkWatcherConnectionMonitor.md)
+[Remove-AzNetworkWatcherConnectionMonitor](./Remove-AzNetworkWatcherConnectionMonitor.md)
 
-[新-AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md)
+[New-AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md)
 
-[AzNetworkWatcherTroubleshootingResult](./Get-AzNetworkWatcherTroubleshootingResult.md)
+[Get-AzNetworkWatcherTroubleshootingResult](./Get-AzNetworkWatcherTroubleshootingResult.md)
 
-[AzNetworkWatcherReachabilityReport](./Get-AzNetworkWatcherReachabilityReport.md)
+[Get-AzNetworkWatcherReachabilityReport](./Get-AzNetworkWatcherReachabilityReport.md)
 
-[AzNetworkWatcherReachabilityProvidersList](./Get-AzNetworkWatcherReachabilityProvidersList.md)
+[Get-AzNetworkWatcherReachabilityProvidersList](./Get-AzNetworkWatcherReachabilityProvidersList.md)
 
-[AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
+[Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport)
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
