@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/s
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Set-AzKeyVaultAccessPolicy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Set-AzKeyVaultAccessPolicy.md
-ms.openlocfilehash: 4ef8c131e0094928808e6479b2c5ffe40090c5d0
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 5f47237088808fe8966d239f9a0de7c892301db0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94127651"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410713"
 ---
 # Set-AzKeyVaultAccessPolicy
 
-## 摘要
-授與修改使用者、應用程式或安全性群組的現有許可權，以使用金鑰保存庫執行作業。
+## 簡介
+授予或修改使用者、應用程式或安全性群組的現有許可權，以使用金鑰庫執行作業。
 
-## 句法
+## 語法
 
 ### ByUserPrincipalName (預設) 
 ```
@@ -135,26 +135,26 @@ Set-AzKeyVaultAccessPolicy [-ResourceId] <String> [-EnabledForDeployment] [-Enab
  [<CommonParameters>]
 ```
 
-## 說明
-**AzKeyVaultAccessPolicy** Cmdlet 會授權或修改使用者、應用程式或安全性群組的現有許可權，以使用金鑰保存庫執行指定的作業。 它不會修改其他使用者、應用程式或安全性群組在主要電子倉庫上所擁有的許可權。
-如果您要設定安全性群組的許可權，此操作只會影響該安全性群組中的使用者。
-下列目錄必須都是相同的 Azure 目錄： 
-- 存放主要電子倉庫之 Azure 訂閱的預設目錄。
-- 包含您要授予其許可權之使用者或應用程式群組的 Azure 目錄。
-不符合這些條件的案例範例，且這個 Cmdlet 將無法運作： 
-- 授權其他組織的使用者管理您的主要電子倉庫。
-每個組織都有自己的目錄。 
+## 描述
+**Set-AzKeyVaultAccessPolicy** Cmdlet 會授予或修改使用者、應用程式或安全性群組的現有許可權，以使用金鑰庫執行指定的作業。 它不會修改其他使用者、應用程式或安全性群組在金鑰庫上擁有的許可權。
+如果您要為安全性群組設定許可權，此作業只會影響該安全性群組的使用者。
+下列目錄必須都是相同的 Azure 目錄：
+- 金鑰庫所在的 Azure 訂閱預設目錄。
+- 包含您授予許可權之使用者或應用程式群組的 Azure 目錄。
+這些條件未符合且此 Cmdlet 無法工作的範例如下：
+- 授權不同組織的使用者管理您的金鑰庫。
+每個組織都有自己的目錄。
 - 您的 Azure 帳戶有多個目錄。
-如果您在預設目錄以外的目錄中登錄應用程式，您就無法授權該應用程式使用您的金鑰保存庫。
-應用程式必須位於預設目錄中。
-請注意，雖然為這個 Cmdlet 指定 [資源群組] 是選擇性的，但您應該這麼做，以取得較佳的效能。
+如果您在預設目錄外的其他目錄中註冊應用程式，您無法授權該應用程式使用您的金鑰庫。
+應用程式必須位在預設目錄中。
+請注意，雖然指定資源群組是這個 Cmdlet 的選擇性專案，但您應這麼做以提升績效。
 
 > [!NOTE]
-> 使用服務主體來授與存取原則許可權時，您必須使用這個 `-BypassObjectIdValidation` 參數。
+> 使用服務主體來授予存取策略許可權時，您必須使用 `-BypassObjectIdValidation` 參數。
 
-## 示例
+## 例子
 
-### 範例1：針對金鑰電子倉庫的使用者授與許可權，並修改許可權
+### 範例 1：將金鑰庫的許可權授予使用者，並修改許可權
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -UserPrincipalName 'PattiFuller@contoso.com' -PermissionsToKeys create,import,delete,list -PermissionsToSecrets set,delete -PassThru
 
@@ -235,63 +235,64 @@ Access Policies                  :
 Tags                             :
 ```
 
-第一個命令會在您的 Azure Active Directory 中為使用者授予許可權， PattiFuller@contoso.com 以在名為 Contoso03Vault 的金鑰保存庫中執行金鑰和密碼的操作。 *PassThru* 參數會產生 Cmdlet 傳回的更新物件。
-第二個命令會修改 PattiFuller@contoso.com 在第一個命令中所授的許可權，現在允許取得機密，除了設定及刪除密碼以外。 此命令之後，對主要作業的許可權會保持不變。
-最後一個命令會進一步修改現有的許可權，以 PattiFuller@contoso.com 移除擁有權限的主要操作。 此命令之後，機密作業的許可權會保持不變。 
+第一個命令會授予您 Azure Active Directory 中使用者的許可權，以使用名稱為 PattiFuller@contoso.com Contoso03Vault 的金鑰庫來執行金鑰和機密作業。 *PassThru 參數* 會導致 Cmdlet 傳回更新的物件。
+第二個命令會修改第一個命令中授予的許可權，現在除了設定和刪除外，也允許取得 PattiFuller@contoso.com 機密。 此命令之後，按鍵作業的許可權會維持不變。
+最後一個命令會進一步修改現有許可權， PattiFuller@contoso.com 以移除金鑰作業的擁有權限。 此命令之後，機密作業的許可權會維持不變。
 
-### 範例2：將應用程式服務主體的許可權授予讀取及撰寫機密的許可權
+### 範例 2：授予應用程式服務主體讀取及寫入機密的許可權
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ServicePrincipalName 'http://payroll.contoso.com' -PermissionsToSecrets Get,Set
 ```
 
-這個命令會為應用程式授予一個名為 Contoso03Vault 的金鑰保存庫的許可權。 *ServicePrincipalName* 參數會指定應用程式。 應用程式必須在您的 Azure Active Directory 中註冊。 *ServicePrincipalName* 參數的值必須是應用程式的服務主體名稱或應用程式識別碼 GUID。
-這個範例會指定服務主體名稱 http://payroll.contoso.com ，且命令會授與寫入密碼的應用程式許可權。
+此命令會為名為 Contoso03Vault 之金鑰庫的應用程式授予許可權。
+*ServicePrincipalName* 參數會指定應用程式。 應用程式必須在 Azure Active Directory 中註冊。 *ServicePrincipalName* 參數的值必須是應用程式的服務主體名稱或應用程式識別碼 GUID。
+此範例會指定服務主體名稱，而命令會授予應用程式讀取及寫入機密 `http://payroll.contoso.com` 的許可權。
 
-### 範例3：使用物件識別碼為應用程式授與許可權
+### 範例 3：使用應用程式的物件識別碼授予許可權
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ObjectId 34595082-9346-41b6-8d6b-295a2808b8db -PermissionsToSecrets Get,Set
 ```
 
-這個命令會授與寫入密碼的應用程式許可權。
-這個範例會使用應用程式服務主體的物件識別碼來指定應用程式。
+此命令會授予應用程式讀取及撰寫秘訣的許可權。
+此範例會使用應用程式服務主體的物件識別碼指定應用程式。
 
-### 範例4：為使用者主要名稱授與許可權
+### 範例 4：授予使用者主體名稱的許可權
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -UserPrincipalName 'PattiFuller@contoso.com' -PermissionsToSecrets Get,List,Set
 ```
 
-這個命令會針對針對密碼存取權的指定使用者主要名稱，授與 [取得]、[清單] 和 [設定] 許可權。
+此命令會為指定的使用者主體名稱轉移存取機密的許可權、清單和設定許可權。
 
-### 範例5：讓 Microsoft 能從金鑰保存庫取得機密。計算資源提供者
+### 範例 5：啟用 Microsoft.Compute 資源提供者從金鑰庫取取秘訣
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ResourceGroupName 'Group14' -EnabledForDeployment
 ```
 
-這個命令會授與 Microsoft. 計算資源提供者在 Contoso03Vault 金鑰保存庫中檢索的密碼許可權。
+此命令會授予 Microsoft.Compute 資源提供者從 Contoso03Vault 金鑰庫所取之機密的許可權。
 
-### 範例6：授與安全性群組的許可權
+### 範例 6：將許可權授予安全性群組
 ```powershell
 PS C:\> Get-AzADGroup
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'myownvault' -ObjectId (Get-AzADGroup -SearchString 'group2')[0].Id -PermissionsToKeys get, set -PermissionsToSecrets get, set
 ```
 
-第一個命令使用 Get-AzADGroup Cmdlet 來取得所有 Active Directory 群組。 從輸出中，您會看到3個群組傳回、命名為 [ **group1** ]、[ **group2** ] 和 [ **group3** ]。 多個群組可以有相同的名稱，但永遠都是唯一的 ObjectId。 如果傳回多個同名的群組，請使用輸出中的 ObjectId 來識別您想要使用的群組。
-接著，您可以使用此命令的輸出，將 group2 的許可權授 Set-AzKeyVaultAccessPolicy 與您的主要保存庫（名為 **myownvault** ）。 這個範例列舉了相同命令列中以「group2」為內聯的群組。
-傳回的清單中可能有多個名為「group2」的群組。
-這個範例會選取第一個專案，並在 \[ \] 傳回的清單中以 index 0 所示。
+第一個命令會使用 Get-AzADGroup Cmdlet 取得所有 Active Directory 群組。 在輸出中，您看到 3 個群組已返回、名為 **group1、group2** 和 **group3。**  多個群組可以有相同的名稱，但永遠都有唯一的 ObjectId。 當多個具有相同名稱的群組被退回時，請使用輸出中的 ObjectId 來識別您想要使用的物件。
+接著，您將此命令的輸出與 Set-AzKeyVaultAccessPolicy一起，將許可權授予名為 **myownvault** 的金鑰庫的 group2。 此範例會列舉同一命令列中名為"group2"的內嵌群組。
+在所退回的清單中，可能有多個群組被命名為'group2'。
+此範例會挑選第一個，以所返回清單中的索引 \[ 0 \] 表示。
 
-### 範例7：授與客戶管理的租使用者金鑰 (BYOK) 的 Azure 資訊保護存取權
+### 範例 7：將 Azure 資訊保護存取權授予客戶管理的租使用者金鑰 (BYOK) 
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso04Vault' -ServicePrincipalName 00000012-0000-0000-c000-000000000000 -PermissionsToKeys decrypt,sign,get
 ```
 
-這個命令授權 Azure 資訊保護使用客戶管理的金鑰 (將您自己的金鑰或 "BYOK" 案例) 為 Azure 資訊保護租使用者金鑰。
-當您執行此命令時，請指定您自己的金鑰保存庫名稱，但您必須指定具有 GUID **00000012-0000-0000-c000-000000000000** 的 *ServicePrincipalName* 參數，並指定範例中的許可權。
+此命令授權 Azure 資訊保護使用客戶管理的金鑰 (您攜帶的金鑰，或「BYOK」案例) 做為 Azure 資訊保護租使用者金鑰。
+當您執行此命令時，請指定您自己的金鑰庫名稱，但您必須使用 GUID **00000012-0000-c000-0000-00000000000** 指定 *ServicePrincipalName* 參數，並指定範例中的許可權。
 
 ## 參數
 
 ### -ApplicationId
-以供日後使用。
+供日後使用。
 
 ```yaml
 Type: System.Nullable`1[System.Guid]
@@ -307,7 +308,7 @@ Accept wildcard characters: False
 
 ### -BypassObjectIdValidation
 可讓您指定物件識別碼，而不驗證該物件存在於 Azure Active Directory 中。
-如果您想要將您的金鑰保存庫存取權授予參照來自其他 Azure 租使用者的委派安全性群組的物件識別碼，請使用此參數。
+只有在您想要將金鑰庫存取權授予參照另一個 Azure 租使用者委派安全性群組的物件識別碼時，才使用此參數。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -322,7 +323,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -337,8 +338,8 @@ Accept wildcard characters: False
 ```
 
 ### -EmailAddress
-指定要授與許可權的使用者的使用者電子郵件地址。
-此電子郵件地址必須存在於與目前訂閱相關聯的目錄中，且必須是唯一的。
+指定要授予許可權之使用者的使用者電子郵件地址。
+這個電子郵件地址必須存在於與目前訂閱相關聯的目錄中，而且是唯一的。
 
 ```yaml
 Type: System.String
@@ -353,7 +354,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForDeployment
-當在資源建立期間參照此金鑰保存庫時，可使用 Microsoft. 計算資源提供者來從此金鑰保存庫中取得機密資訊，例如建立虛擬機器時。
+當資源建立中參照這個金鑰庫時 ，例如建立虛擬機器時，可讓 Microsoft.Compute 資源提供者從這個金鑰庫中取回秘訣。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -367,8 +368,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -EnabledForDiskEncryption
-讓 Azure 磁片加密服務從此金鑰保存庫取得機密和解除解包金鑰。
+### -EnabledForCryptEncryption
+啟用 Azure 磁片加密服務，以取得金鑰庫中的金鑰和解包金鑰。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -383,7 +384,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForTemplateDeployment
-在範本部署中參照此金鑰保存庫時，允許 Azure 資源管理員從該金鑰保存庫取得機密。
+當範本部署中參照此金鑰庫時，可讓 Azure Resource Manager 從此金鑰庫取得秘訣。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -398,7 +399,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-金鑰保存庫物件
+Key Vault 物件
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultIdentityItem
@@ -413,7 +414,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
-指定 Azure Active Directory 中要授與許可權的使用者或服務主體物件識別碼。
+指定 Azure Active Directory 中使用者或服務主體的物件識別碼，以授予許可權。
 
 ```yaml
 Type: System.String
@@ -428,8 +429,8 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-傳回代表您正在使用之專案的物件。
-根據預設，這個 Cmdlet 不會產生任何輸出。
+會返回代表您處理之專案的物件。
+根據預設，此 Cmdlet 不會產生任何輸出。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -444,24 +445,24 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionsToCertificates
-指定要授與使用者或服務主體的憑證許可權陣列。
+指定要授予使用者或服務主體的憑證許可權陣列。
 此參數可接受的值：
 - 獲取
 - 清單
-- Delete
-- 建立
-- Import
-- 時更新
+- 刪除
+- 創建
+- 進口
+- 更新
 - Managecontacts
 - Getissuers
 - Listissuers
 - Setissuers
 - Deleteissuers
 - Manageissuers
-- 找回
+- 恢復
 - 備份
-- 還原
-- 立即
+- 恢復
+- 清除
 
 ```yaml
 Type: System.String[]
@@ -477,24 +478,24 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionsToKeys
-指定要授與使用者或服務主體的主要操作許可權陣列。
+指定要授予使用者或服務主體之金鑰作業許可權的陣列。
 此參數可接受的值：
-- 對
-- 進行
+- 解密
+- 加密
 - UnwrapKey
 - WrapKey
-- 是否
-- 母音
+- 驗證
+- 標誌
 - 獲取
 - 清單
-- 時更新
-- 建立
-- Import
-- Delete
+- 更新
+- 創建
+- 進口
+- 刪除
 - 備份
-- 還原
-- 找回
-- 立即
+- 恢復
+- 恢復
+- 清除
 
 ```yaml
 Type: System.String[]
@@ -510,16 +511,16 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionsToSecrets
-指定要授與使用者或服務主體的機密操作許可權陣列。
+指定一組機密作業許可權陣列，以授予使用者或服務主體。
 此參數可接受的值：
 - 獲取
 - 清單
-- 設定
-- Delete
+- 設置
+- 刪除
 - 備份
-- 還原
-- 找回
-- 立即
+- 恢復
+- 恢復
+- 清除
 
 ```yaml
 Type: System.String[]
@@ -535,7 +536,7 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionsToStorage
-指定受管理的儲存帳戶和 SaS 定義操作許可權，以授與使用者或服務主體。
+指定受管理的儲存空間帳戶和 SaS 定義作業許可權，以授予使用者或服務主體。
 
 ```yaml
 Type: System.String[]
@@ -551,7 +552,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-指定資源群組的名稱。
+指定資源組的名稱。
 
 ```yaml
 Type: System.String
@@ -566,7 +567,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-主要保存庫資源識別碼
+金鑰庫資源識別碼
 
 ```yaml
 Type: System.String
@@ -581,8 +582,8 @@ Accept wildcard characters: False
 ```
 
 ### -ServicePrincipalName
-指定要授與許可權之應用程式的服務主體名稱。
-指定在 AzureActive 目錄中為應用程式註冊的應用程式識別碼（也稱為「用戶端識別碼」）。 具有此參數指定之服務主體名稱的應用程式，必須在包含您目前訂閱的 Azure 目錄中註冊。
+指定要授予許可權之應用程式的服務主體名稱。
+指定在 AzureActive Directory 中為應用程式註冊的應用程式識別碼 ，也稱為用戶端識別碼。 具有此參數指定之服務主體名稱的應用程式必須在包含您目前訂閱的 Azure 目錄中註冊。
 
 ```yaml
 Type: System.String
@@ -597,8 +598,8 @@ Accept wildcard characters: False
 ```
 
 ### -UserPrincipalName
-指定要授與許可權的使用者的使用者主要名稱。
-此使用者主要名稱必須存在於與目前訂閱相關聯的目錄中。
+指定要授予許可權之使用者的使用者主體名稱。
+此使用者主體名稱必須存在於與目前訂閱相關聯的目錄中。
 
 ```yaml
 Type: System.String
@@ -613,8 +614,8 @@ Accept wildcard characters: False
 ```
 
 ### -VaultName
-指定主要電子倉庫的名稱。
-這個 Cmdlet 會修改此參數指定之金鑰保存庫的存取原則。
+指定金鑰庫的名稱。
+此 Cmdlet 會修改此參數指定之金鑰庫的存取策略。
 
 ```yaml
 Type: System.String
@@ -629,7 +630,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，系統會提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -644,7 +645,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。 未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。 不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -659,23 +660,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### PSKeyVaultIdentityItem 中的 KeyVault。
+### Microsoft.Azure.Commands.KeyVault.models.PSKeyVaultIdentityItem
 
-### System.object
+### System.String
 
 ## 輸出
 
-### PSKeyVault 中的 KeyVault。
+### Microsoft.Azure.Commands.KeyVault.models.PSKeyVault
 
 ## 筆記
 
 ## 相關連結
 
-[AzKeyVault](./Get-AzKeyVault.md)
+[Get-AzKeyVault](./Get-AzKeyVault.md)
 
-[移除-AzKeyVaultAccessPolicy](./Remove-AzKeyVaultAccessPolicy.md)
+[Remove-AzKeyVaultAccessPolicy](./Remove-AzKeyVaultAccessPolicy.md)
 

@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.recoveryse
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Start-AzRecoveryServicesAsrApplyRecoveryPoint.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Start-AzRecoveryServicesAsrApplyRecoveryPoint.md
-ms.openlocfilehash: 893298c3349d2d7ceaa998a1f147ce8dd590f101
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: b06501fafbc573e10ac7d5dba3435dbf96342ba0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93959457"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410730"
 ---
 # Start-AzRecoveryServicesAsrApplyRecoveryPoint
 
-## 摘要
-在提交容錯移轉作業之前，變更失敗的受保護專案的復原點。
+## 簡介
+在承諾執行容錯移轉作業之前，變更容錯移轉超過受保護專案的復原點。
 
-## 句法
+## 語法
 
 ```
 Start-AzRecoveryServicesAsrApplyRecoveryPoint -RecoveryPoint <ASRRecoveryPoint>
@@ -26,22 +26,22 @@ Start-AzRecoveryServicesAsrApplyRecoveryPoint -RecoveryPoint <ASRRecoveryPoint>
  [<CommonParameters>]
 ```
 
-## 說明
-在提交容錯移轉作業之前， **AzRecoveryServicesAsrApplyRecoveryPoint** 會變更已失敗的受保護專案的復原點。
+## 描述
+**Start-AzRecoveryServicesAsrApplyRecoveryPoint** 會先變更容錯移轉超過受保護專案的復原點，然後再進行容錯移轉作業。
 
-## 示例
+## 例子
 
-### 範例1
+### 範例 1
 ```
 PS C:\> $currentJob = Start-AzRecoveryServicesAsrApplyRecoveryPoint -RecoveryPoint $RecoveryPoint -ReplicationProtectedItem $RPI
 ```
 
-開始將指定的復原點套用至複製受保護的專案，並傳回用於追蹤作業的 ASR 作業。
+開始將指定的復原點適用于複本受保護的專案，並返回用來追蹤作業的 ASR 工作。
 
 ## 參數
 
 ### -DataEncryptionPrimaryCertFile
-如果正在使用資料加密，指定主要憑證檔案。
+指定使用資料加密時的主要憑證檔案。
 
 ```yaml
 Type: System.String
@@ -55,8 +55,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DataEncryptionSecondaryCertFile
-指定要使用資料加密的次要憑證檔案。
+### -DataEncryption？aryCertFile
+指定使用資料加密時次要憑證檔案。
 
 ```yaml
 Type: System.String
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-用於與 Azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 Azure 通訊的認證、帳戶、租使用者和訂閱。
 
 
 ```yaml
@@ -87,7 +87,7 @@ Accept wildcard characters: False
 ```
 
 ### -RecoveryPoint
-指定對應至要套用之復原點的復原點物件。
+指定對應到要適用之修復點的復原點物件。
 
 ```yaml
 Type: Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRRecoveryPoint
@@ -117,7 +117,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。 未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。 不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -147,18 +147,18 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## 輸入
 
-### RecoveryServices. SiteRecovery. ASRReplicationProtectedItem
+### Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRReplicationProtectedItem
 
 ## 輸出
 
-### RecoveryServices. SiteRecovery. ASRJob
+### Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRJob
 
 ## 筆記
 
 ## 相關連結
 
-[Azure Site Recovery Cmdlet](./Az.SiteRecovery.md)
+
