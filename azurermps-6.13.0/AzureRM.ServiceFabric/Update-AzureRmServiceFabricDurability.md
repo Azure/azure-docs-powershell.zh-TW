@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.servi
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/ServiceFabric/Commands.ServiceFabric/help/Update-AzureRmServiceFabricDurability.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/ServiceFabric/Commands.ServiceFabric/help/Update-AzureRmServiceFabricDurability.md
-ms.openlocfilehash: 56a6afff6551ae0191ac1f17d3a52c47940e045a
-ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.openlocfilehash: 7bc55521f04cf4d6e2bff18a01bfbdf4d76410f2
+ms.sourcegitcommit: 608289d079b819df2b8d1a2f7935cc500367a312
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "93449725"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101684993"
 ---
 # Update-AzureRmServiceFabricDurability
 
-## 摘要
-更新群集中節點類型的持久性層或 VmSku。
+## 簡介
+更新該組集中節點類型的節點層級或 VmSKU。 它也將會更新相關聯虛擬機器縮放集上的 Service Fabric VM 擴充功能層級。
 
 [!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
-## 句法
+## 語法
 
 ```
 Update-AzureRmServiceFabricDurability [-ResourceGroupName] <String> [-Name] <String> -NodeType <String>
@@ -27,22 +27,22 @@ Update-AzureRmServiceFabricDurability [-ResourceGroupName] <String> [-Name] <Str
  [-Confirm] [<CommonParameters>]
 ```
 
-## 說明
-使用 **AzureRmServiceFabricDurability** 更新群集的持續性或 SKU。
+## 描述
+使用 **Update-AzureRmServiceFabricDurability** 來更新組群的不更新或 SKU。
 
-## 示例
+## 例子
 
-### 範例1
+### 範例 1
 ```
 PS c:> Update-AzureRmServiceFabricDurability -ResourceGroupName 'Group1' -Name 'Contoso01SFCluster' -DurabilityLevel Silver -NodeType nt1
 ```
 
-這個命令會將 NodeType "nt1" 的持久性層變更為銀色。
+此命令將 NodeType 'nt1' 的層級變更為銀牌。
 
 ## 參數
 
 ### -DefaultProfile
-用於與 azure 進行通訊的認證、帳戶、租使用者及訂閱。
+用於與 azure 通訊的認證、帳戶、租使用者和訂閱。
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
@@ -56,8 +56,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DurabilityLevel
-指定持續性等級。
+### -LevelyLevel
+指定高度。
 
 ```yaml
 Type: Microsoft.Azure.Commands.ServiceFabric.Models.DurabilityLevel
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 ```
 
 ### -名稱
-指定群集的名稱。
+指定組名。
 
 ```yaml
 Type: System.String
@@ -103,7 +103,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-指定資源群組的名稱。
+指定資源組的名稱。
 
 ```yaml
 Type: System.String
@@ -117,7 +117,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Sku
+### -SKU
 指定節點類型的 SKU。
 
 ```yaml
@@ -133,7 +133,7 @@ Accept wildcard characters: False
 ```
 
 ### -確認
-在執行 Cmdlet 之前提示您進行確認。
+執行 Cmdlet 之前，提示您確認。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -148,7 +148,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示在執行 Cmdlet 時會發生什麼情況。 未執行 Cmdlet。
+顯示 Cmdlet 執行時會發生什麼情況。 不會執行 Cmdlet。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -163,19 +163,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-這個 Cmdlet 支援通用參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-WarningAction、-WarningVariable、-、-、-、-、-、-。 如需詳細資訊，請參閱 about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216) 。
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊請參閱 https://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。
 
 ## 輸入
 
-### System.object
-參數： NodeType (ByValue) ，Sku (ByValue) 
+### System.String
+參數：NodeType (ByValue) 、SKU (ByValue) 
 
-### DurabilityLevel 中的 ServiceFabric。
-參數： DurabilityLevel (ByValue) 
+### Microsoft.Azure.Commands.ServiceFabric.models.LevelyLevel
+參數：以 ByValue (的Level) 
 
 ## 輸出
 
-### PSCluster 中的 ServiceFabric。
+### Microsoft.Azure.Commands.ServiceFabric.Models.PSCluster
 
 ## 筆記
 

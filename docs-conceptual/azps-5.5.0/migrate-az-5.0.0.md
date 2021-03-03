@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 10/27/2020
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 35d562db72e37a630fce8530d715e783412add2e
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: edfbe14ae3a42bb0b385fe9d6b5fa681a1aa2101
+ms.sourcegitcommit: 608289d079b819df2b8d1a2f7935cc500367a312
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100012537"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101684929"
 ---
 # <a name="migration-guide-for-az-500"></a>Az 5.0.0 的移轉指南
 
@@ -239,7 +239,7 @@ Update-AzKeyVault -VaultName 'Contoso03Vault' -ResourceGroupName 'Group14' -Enab
 
 ### <a name="get-azkeyvaultsecret"></a>Get-AzKeyVaultSecret
 
-已移除 `Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultSecret` 類型的 `SecretValueText` 屬性。 `SecretValueText` 屬性已取代為 `SecretValue`。
+已移除 `Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultSecret` 類型的 `SecretValueText` 屬性。 請將套用 `-AsPlainText` 至呼叫以取得純文字秘密，或 `$secret.SecretValue` `SecureString` 在您的腳本中使用類型。
 
 #### <a name="before"></a>之前
 
@@ -251,13 +251,7 @@ $secretInPlainText = $secret.SecretValueText
 #### <a name="after"></a>在
 
 ```powershell
-# PowerShell 7 or newer
-$secret = Get-AzKeyVaultSecret -VaultName myVault -Name mySecret
-$secretInPlainText = ConvertFrom-SecureString -SecureString $secret.SecretValue -AsPlainText
-
-# Prior to PowerShell 7, or Windows PowerShell
-$secret = Get-AzKeyVaultSecret -VaultName myVault -Name mySecret
-$secretInPlainText = [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR([System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secret.SecretValue))
+$secretInPlainText = Get-AzKeyVaultSecret -VaultName myVault -Name mySecret -AsPlainText
 ```
 
 ## <a name="azmanagedservices"></a>Az.ManagedServices
