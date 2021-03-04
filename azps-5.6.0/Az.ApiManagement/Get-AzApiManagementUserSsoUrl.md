@@ -1,0 +1,109 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ApiManagement.ServiceManagement.dll-Help.xml
+Module Name: Az.ApiManagement
+ms.assetid: 27FF1B7D-E103-4504-AD09-8D3A8BCA8B75
+online version: https://docs.microsoft.com/powershell/module/az.apimanagement/get-azapimanagementuserssourl
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementUserSsoUrl.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementUserSsoUrl.md
+ms.openlocfilehash: b4c89a1f0da5e4ce07d9d2174fce031365e09cb4
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101908690"
+---
+# <span data-ttu-id="24d27-101">Get-AzApiManagementUserSsoUrl</span><span class="sxs-lookup"><span data-stu-id="24d27-101">Get-AzApiManagementUserSsoUrl</span></span>
+
+## <span data-ttu-id="24d27-102">簡介</span><span class="sxs-lookup"><span data-stu-id="24d27-102">SYNOPSIS</span></span>
+<span data-ttu-id="24d27-103">產生使用者的 SSO URL。</span><span class="sxs-lookup"><span data-stu-id="24d27-103">Generates an SSO URL for a user.</span></span>
+
+## <span data-ttu-id="24d27-104">語法</span><span class="sxs-lookup"><span data-stu-id="24d27-104">SYNTAX</span></span>
+
+```
+Get-AzApiManagementUserSsoUrl -Context <PsApiManagementContext> -UserId <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="24d27-105">描述</span><span class="sxs-lookup"><span data-stu-id="24d27-105">DESCRIPTION</span></span>
+<span data-ttu-id="24d27-106">**Get-AzApiManagementUserSsoUrl** Cmdlet 會為 (SSO) URL 產生單一登入。</span><span class="sxs-lookup"><span data-stu-id="24d27-106">The **Get-AzApiManagementUserSsoUrl** cmdlet generates a single sign-on (SSO) URL for a user.</span></span>
+
+## <span data-ttu-id="24d27-107">例子</span><span class="sxs-lookup"><span data-stu-id="24d27-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="24d27-108">範例 1：取得使用者的 SSO URL</span><span class="sxs-lookup"><span data-stu-id="24d27-108">Example 1: Get a user's SSO URL</span></span>
+```powershell
+PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Get-AzApiManagementUserSsoUrl -Context $apimContext -UserId "0123456789"
+```
+
+<span data-ttu-id="24d27-109">此命令會獲得使用者的 SSO URL。</span><span class="sxs-lookup"><span data-stu-id="24d27-109">This command gets a user's SSO URL.</span></span>
+
+## <span data-ttu-id="24d27-110">參數</span><span class="sxs-lookup"><span data-stu-id="24d27-110">PARAMETERS</span></span>
+
+### <span data-ttu-id="24d27-111">-內容</span><span class="sxs-lookup"><span data-stu-id="24d27-111">-Context</span></span>
+<span data-ttu-id="24d27-112">指定 **PsApiManagementCoNtext** 物件。</span><span class="sxs-lookup"><span data-stu-id="24d27-112">Specifies a **PsApiManagementContext** object.</span></span>
+<span data-ttu-id="24d27-113">此參數為必填項。</span><span class="sxs-lookup"><span data-stu-id="24d27-113">This parameter is required.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="24d27-114">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="24d27-114">-DefaultProfile</span></span>
+<span data-ttu-id="24d27-115">用於與 azure 通訊的認證、帳戶、租使用者和訂閱。</span><span class="sxs-lookup"><span data-stu-id="24d27-115">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="24d27-116">-UserId</span><span class="sxs-lookup"><span data-stu-id="24d27-116">-UserId</span></span>
+<span data-ttu-id="24d27-117">指定使用者識別碼。</span><span class="sxs-lookup"><span data-stu-id="24d27-117">Specifies a user ID.</span></span>
+<span data-ttu-id="24d27-118">此參數為必填項。</span><span class="sxs-lookup"><span data-stu-id="24d27-118">This parameter is required.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="24d27-119">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="24d27-119">CommonParameters</span></span>
+<span data-ttu-id="24d27-120">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="24d27-120">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="24d27-121">詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="24d27-121">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="24d27-122">輸入</span><span class="sxs-lookup"><span data-stu-id="24d27-122">INPUTS</span></span>
+
+### <span data-ttu-id="24d27-123">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.models.PsApiManagementCoNtext</span><span class="sxs-lookup"><span data-stu-id="24d27-123">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span></span>
+
+### <span data-ttu-id="24d27-124">System.String</span><span class="sxs-lookup"><span data-stu-id="24d27-124">System.String</span></span>
+
+## <span data-ttu-id="24d27-125">輸出</span><span class="sxs-lookup"><span data-stu-id="24d27-125">OUTPUTS</span></span>
+
+### <span data-ttu-id="24d27-126">System.String</span><span class="sxs-lookup"><span data-stu-id="24d27-126">System.String</span></span>
+
+## <span data-ttu-id="24d27-127">筆記</span><span class="sxs-lookup"><span data-stu-id="24d27-127">NOTES</span></span>
+
+## <span data-ttu-id="24d27-128">相關連結</span><span class="sxs-lookup"><span data-stu-id="24d27-128">RELATED LINKS</span></span>
+
+[<span data-ttu-id="24d27-129">Get-AzApiManagementUser</span><span class="sxs-lookup"><span data-stu-id="24d27-129">Get-AzApiManagementUser</span></span>](./Get-AzApiManagementUser.md)
+
+
