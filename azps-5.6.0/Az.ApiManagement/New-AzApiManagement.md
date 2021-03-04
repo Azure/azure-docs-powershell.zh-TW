@@ -1,0 +1,499 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ApiManagement.dll-Help.xml
+Module Name: Az.ApiManagement
+ms.assetid: 164C5205-01BA-47BB-B780-D0B9AE614A4B
+online version: https://docs.microsoft.com/powershell/module/az.apimanagement/new-azapimanagement
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagement.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagement.md
+ms.openlocfilehash: 79387b634bc42a4885139db35ad68a9145c02dba
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101916605"
+---
+# New-AzApiManagement
+
+## 簡介
+建立 API 管理部署。
+
+## 語法
+
+```
+New-AzApiManagement -ResourceGroupName <String> -Name <String> -Location <String> -Organization <String>
+ -AdminEmail <String> [-Sku <PsApiManagementSku>] [-Capacity <Int32>] [-VpnType <PsApiManagementVpnType>]
+ [-VirtualNetwork <PsApiManagementVirtualNetwork>]
+ [-Tag <System.Collections.Generic.Dictionary`2[System.String,System.String]>]
+ [-AdditionalRegions <PsApiManagementRegion[]>]
+ [-CustomHostnameConfiguration <PsApiManagementCustomHostNameConfiguration[]>]
+ [-SystemCertificateConfiguration <PsApiManagementSystemCertificate[]>]
+ [-SslSetting <PsApiManagementSslSetting>] [-SystemAssignedIdentity] [-UserAssignedIdentity <String[]>]
+ [-EnableClientCertificate] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## 描述
+**New-AzApiManagement** Cmdlet 在 Azure API 管理中建立 API 管理部署。
+
+## 例子
+
+### 範例 1：建立開發人員層 API 管理服務
+```powershell
+PS D:\> New-AzApiManagement -ResourceGroupName "ContosoGroup02" -Name "ContosoApi2" -Location "Central US" -Organization "Contoso" -AdminEmail "admin@contoso.com"
+
+
+PublicIPAddresses                     : {104.43.240.65}
+PrivateIPAddresses                    :
+Id                                    : /subscriptions/a200340d-6b82-494d-9dbf-687ba6e33f9e/resourceGroups/ContosoGroup02/providers/Microsoft.ApiManagement/service/ContosoApi2
+Name                                  : ContosoApi2
+Location                              : Central US
+Sku                                   : Developer
+Capacity                              : 1
+CreatedTimeUtc                        : 2/24/2020 10:34:12 PM
+ProvisioningState                     : Succeeded
+RuntimeUrl                            : https://contosoapi2.azure-api.net
+RuntimeRegionalUrl                    : https://contosoapi2-centralus-01.regional.azure-api.net
+PortalUrl                             : https://contosoapi2.portal.azure-api.net
+DeveloperPortalUrl                    : https://contosoapi2.developer.azure-api.net
+ManagementApiUrl                      : https://contosoapi2.management.azure-api.net
+ScmUrl                                : https://contosoapi2.scm.azure-api.net
+PublisherEmail                        : admin@contoso.com
+OrganizationName                      : Contoso
+NotificationSenderEmail               : apimgmt-noreply@mail.windowsazure.com
+VirtualNetwork                        :
+VpnType                               : None
+PortalCustomHostnameConfiguration     :
+ProxyCustomHostnameConfiguration      : {contosoapi2.azure-api.net}
+ManagementCustomHostnameConfiguration :
+ScmCustomHostnameConfiguration        :
+DeveloperPortalHostnameConfiguration  :
+SystemCertificates                    :
+Tags                                  : {}
+AdditionalRegions                     : {}
+SslSetting                            : Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementSslSetting
+Identity                              :
+EnableClientCertificate               :
+ResourceGroupName                     : ContosoGroup02
+```
+
+此命令會建立開發人員層 API 管理服務。
+命令會指定組織和系統管理員位址。
+命令不會指定 *SKU* 參數。
+因此，Cmdlet 會使用 Developer 的預設值。
+
+### 範例 2：建立具有三個單位的標準層服務
+```powershell
+PS C:\>New-AzApiManagement -ResourceGroupName "ContosoGroup02" -Name "ContosoApi" -Location "Central US" -Organization "Contoso" -AdminEmail "admin@contoso.com" -Sku Standard -Capacity 3
+```
+
+此命令會建立有三個單位的標準層 API 管理服務。
+
+### 範例 3：建立消費層級服務
+```powershell
+PS D:\github\azure-powershell> New-AzApiManagement -ResourceGroupName Api-Default-North-Europe -Name consumptionskuservice -Location 'West Europe' -Sku Consumption -Organization microsoft -AdminEmail contoso@contoso.com -SystemAssignedIdentity -EnableClientCertificate
+
+PublicIPAddresses                     :
+PrivateIPAddresses                    :
+Id                                    : /subscriptions/subid/resourceGroups/Api-Default-North-Europe/providers/Microsoft.ApiManagement/service/consumptionskuservice
+Name                                  : consumptionskuservice
+Location                              : West Europe
+Sku                                   : Consumption
+Capacity                              : 0
+ProvisioningState                     : Succeeded
+RuntimeUrl                            : https://consumptionskuservice.azure-api.net
+PortalCustomHostnameConfiguration     :
+ProxyCustomHostnameConfiguration      : {consumptionskuservice.azure-api.net}
+ManagementCustomHostnameConfiguration :
+ScmCustomHostnameConfiguration        :
+DeveloperPortalHostnameConfiguration  :
+SystemCertificates                    :
+Tags                                  : {}
+AdditionalRegions                     : {}
+SslSetting                            : Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementSslSetting
+Identity                              : Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementServiceIdentity
+EnableClientCertificate               : True
+ResourceGroupName                     : Api-Default-North-Europe
+```
+
+此命令會建立消費層級 API 管理服務，並啟用西歐的用戶端憑證。
+
+### 範例 4：為外部虛擬網路建立 API 管理服務
+```powershell
+PS C:\> $virtualNetwork = New-AzApiManagementVirtualNetwork -Location "West US" -SubnetResourceId "/subscriptions/a8ff56dc-3bc7-4174-b1e8-3726ab15d0e2/resourceGroups/ContosoGroup/providers/Microsoft.Network/virtualNetworks/westUsVirtualNetwork/subnets/backendSubnet"
+PS C:\> New-AzApiManagement -ResourceGroupName "ContosoGroup" -Location "West US" -Name "ContosoApi" -Organization Contoso -AdminEmail admin@contoso.com -VirtualNetwork $virtualNetwork -VpnType "External" -Sku "Premium"
+```
+
+此命令在 Azure 虛擬網路子網中建立進位層 API 管理服務，其外部閘道端點具有美國西部的主區域。
+
+### 範例 5：為內部虛擬網路建立 API 管理服務
+```powershell
+PS C:\> $virtualNetwork = New-AzApiManagementVirtualNetwork -Location "West US" -SubnetResourceId "/subscriptions/a8ff56dc-3bc7-4174-b1e8-3726ab15d0e2/resourceGroups/ContosoGroup/providers/Microsoft.Network/virtualNetworks/westUsVirtualNetwork/subnets/backendSubnet"
+PS C:\> New-AzApiManagement -ResourceGroupName "ContosoGroup" -Location "West US" -Name "ContosoApi" -Organization "Contoso" -AdminEmail "admin@contoso.com" -VirtualNetwork $virtualNetwork -VpnType "Internal" -Sku "Premium"
+```
+
+此命令在 Azure 虛擬網路子網中建立進一層 API 管理服務，其內部閘道端點具有美國西部的主區域。
+
+### 範例 6：建立 API 管理服務並啟用 TLS 1.0 通訊協定
+```powershell
+PS C:\> $enableTls=@{"Tls10" = "True"}
+PS C:\> $sslSetting = New-AzApiManagementSslSetting -FrontendProtocol $enableTls -BackendProtocol $enableTls
+PS C:\> New-AzApiManagement -ResourceGroupName Api-Default-CentralUS -Name "testtlspowershell" -Sku Standard -Location "CentralUS" -Organization "Microsoft" -AdminEmail "bar@contoso.com" -SslSetting $sslSetting
+
+PublicIPAddresses                     : {23.99.140.18}
+PrivateIPAddresses                    :
+Id                                    : /subscriptions/subid/resourceGroups/Api-Default-CentralUS/providers/Microsoft.ApiManagement/service/testtlspowershell
+Name                                  : testtlspowershell
+Location                              : Central US
+Sku                                   : Standard
+Capacity                              : 1
+ProvisioningState                     : Succeeded
+RuntimeUrl                            : https://testtlspowershell.azure-api.net
+RuntimeRegionalUrl                    : https://testtlspowershell-centralus-01.regional.azure-api.net
+PortalUrl                             : https://testtlspowershell.portal.azure-api.net
+ManagementApiUrl                      : https://testtlspowershell.management.azure-api.net
+ScmUrl                                : https://testtlspowershell.scm.azure-api.net
+PublisherEmail                        : bar@contoso.com
+OrganizationName                      : Microsoft
+NotificationSenderEmail               : apimgmt-noreply@mail.windowsazure.com
+VirtualNetwork                        :
+VpnType                               : None
+PortalCustomHostnameConfiguration     :
+ProxyCustomHostnameConfiguration      : {testtlspowershell.azure-api.net}
+ManagementCustomHostnameConfiguration :
+ScmCustomHostnameConfiguration        :
+DeveloperPortalHostnameConfiguration  :
+SystemCertificates                    :
+Tags                                  : {}
+AdditionalRegions                     : {}
+SslSetting                            : Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementSslSetting
+Identity                              :
+EnableClientCertificate               :
+ResourceGroupName                     : Api-Default-CentralUS
+```
+
+此命令會建立標準 SKU Api 管理服務，並啟用 Frontend 用戶端上的 TLS 1.0，以在 ApiManagement 閘道和後端之間啟用 ApiManagement 閘道和後端用戶端。
+
+## 參數
+
+### -AdditionalRegions
+Azure API 管理的其他部署區域。
+
+```yaml
+Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementRegion[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -AdminEmail
+指定 API 管理系統傳送之所有通知的原始電子郵件地址。
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -容量
+指定 Azure API 管理服務的 SKU 容量。
+預設值為 1 (1) 。
+
+```yaml
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -CustomHostnameConfiguration
+自訂主機名稱組配置。 預設值會$null。 傳遞$null會設定預設主機名稱。
+
+```yaml
+Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementCustomHostNameConfiguration[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+用於與 azure 通訊的認證、帳戶、租使用者和訂閱。
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EnableClientCertificate
+標號僅適用于消費 SKU ApiManagement Service。 這會強制針對每個閘道要求呈現用戶端憑證。 這也可以啟用閘道上之策略中的憑證驗證功能。
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -位置
+指定建立 Api 管理服務的位置。
+若要取得有效的位置，請使用 Cmdlet Get-AzResourceProvider -ProviderNamespace "Microsoft.ApiManagement" |其中 {$_.ResourceTypes[0]。ResourceTypeName -eq "service"} |Select-Object位置
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -名稱
+指定 API 管理部署的名稱。
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -組織
+指定組織的名稱。
+API 管理在電子郵件通知中的開發人員入口網站使用此位址。
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+指定此 Cmdlet 建立 API 管理部署的資源組名。
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -SKU
+指定 API 管理服務的層級。
+有效的值為： 
+- 開發 人員 
+- 標準 
+- Premium 預設為開發人員。
+
+```yaml
+Type: System.Nullable`1[Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementSku]
+Parameter Sets: (All)
+Aliases:
+Accepted values: Developer, Basic, Standard, Premium, Consumption
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -SslSetting
+ApiManagement 服務的 Ssl 設定。 預設值會$null
+
+```yaml
+Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementSslSetting
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -SystemAssignedIdentity
+為此伺服器產生並指派 Azure Active Directory 身分識別，以用於 Azure KeyVault 等重要管理服務。
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SystemCertificateConfiguration
+由內部 CA 所發行的憑證，以安裝在服務上。 預設值會$null。
+
+```yaml
+Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementSystemCertificate[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -標記
+標記字典。
+
+```yaml
+Type: System.Collections.Generic.Dictionary`2[System.String,System.String]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -UserAssignedIdentity
+指派使用者身分驗證至此伺服器，以用於 Azure KeyVault 等重要管理服務。
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -VirtualNetwork
+主 Azure API 管理部署地區的虛擬網路群組原則。
+
+```yaml
+Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementVirtualNetwork
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -VpnType
+ApiManagement 部署的虛擬網路類型。 有效的值為 
+- "None" (預設值。 ApiManagement 不是任何虛擬網路的一部分") 
+- 「外部」 (ApiManagement 部署是在具有網際網路對端點的虛擬網路中設定) 
+- 「內部」 (ApiManagement 部署是在有內部網路對端點的虛擬網路中設定) 
+
+```yaml
+Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementVpnType
+Parameter Sets: (All)
+Aliases:
+Accepted values: None, External, Internal
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)
+
+## 輸入
+
+### System.String
+
+### System.Nullable'1[[Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementSku, Microsoft.Azure.PowerShell.Cmdlets.ApiManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+### System.Nullable'1[[System.Int32， System.Private.CoreLib， Version=4.0.0.0， Culture=neutral， PublicKeyToken=7cec85d7bea7798e]]
+
+### Microsoft.Azure.Commands.ApiManagement.models.PsApiManagementVirtualNetwork
+
+### System.Collections.Generic.Dictionary'2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
+
+### Microsoft.Azure.Commands.ApiManagement.models.PsApiManagementRegion[]
+
+### Microsoft.Azure.Commands.ApiManagement.models.PsApiManagementCustomHostNameConfiguration[]
+
+### Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementSystemCertificate[]
+
+## 輸出
+
+### Microsoft.Azure.Commands.ApiManagement.models.PsApiManagement
+
+## 筆記
+
+## 相關連結
+
+[Backup-AzApiManagement](./Backup-AzApiManagement.md)
+
+[Get-AzApiManagement](./Get-AzApiManagement.md)
+
+[Set-AzApiManagement](./Set-AzApiManagement.md)
+
+[Remove-AzApiManagement](./Remove-AzApiManagement.md)
+
+[Restore-AzApiManagement](./Restore-AzApiManagement.md)
+
+
