@@ -1,0 +1,391 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
+Module Name: Az.Network
+ms.assetid: 13EF1028-43DE-424D-8185-EC45B5CEF2C1
+online version: https://docs.microsoft.com/powershell/module/az.network/set-aznetworkinterfaceipconfig
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzNetworkInterfaceIpConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzNetworkInterfaceIpConfig.md
+ms.openlocfilehash: 9427a79c607d56fcc9ce7a39fa24bfa3e301cfc8
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101915301"
+---
+# <span data-ttu-id="e4d9c-101">Set-AzNetworkInterfaceIpConfig</span><span class="sxs-lookup"><span data-stu-id="e4d9c-101">Set-AzNetworkInterfaceIpConfig</span></span>
+
+## <span data-ttu-id="e4d9c-102">簡介</span><span class="sxs-lookup"><span data-stu-id="e4d9c-102">SYNOPSIS</span></span>
+<span data-ttu-id="e4d9c-103">更新網路介面的 IP 組配置。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-103">Updates an IP configuration for a network interface.</span></span>
+
+## <span data-ttu-id="e4d9c-104">語法</span><span class="sxs-lookup"><span data-stu-id="e4d9c-104">SYNTAX</span></span>
+
+### <span data-ttu-id="e4d9c-105">SetByResource (預設) </span><span class="sxs-lookup"><span data-stu-id="e4d9c-105">SetByResource (Default)</span></span>
+```
+Set-AzNetworkInterfaceIpConfig -Name <String> -NetworkInterface <PSNetworkInterface>
+ [-PrivateIpAddressVersion <String>] [-PrivateIpAddress <String>] [-Primary] [-Subnet <PSSubnet>]
+ [-PublicIpAddress <PSPublicIpAddress>] [-LoadBalancerBackendAddressPool <PSBackendAddressPool[]>]
+ [-LoadBalancerInboundNatRule <PSInboundNatRule[]>]
+ [-ApplicationGatewayBackendAddressPool <PSApplicationGatewayBackendAddressPool[]>]
+ [-ApplicationSecurityGroup <PSApplicationSecurityGroup[]>] [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="e4d9c-106">SetByResourceId</span><span class="sxs-lookup"><span data-stu-id="e4d9c-106">SetByResourceId</span></span>
+```
+Set-AzNetworkInterfaceIpConfig -Name <String> -NetworkInterface <PSNetworkInterface>
+ [-PrivateIpAddressVersion <String>] [-PrivateIpAddress <String>] [-Primary] [-SubnetId <String>]
+ [-PublicIpAddressId <String>] [-LoadBalancerBackendAddressPoolId <String[]>]
+ [-LoadBalancerInboundNatRuleId <String[]>] [-ApplicationGatewayBackendAddressPoolId <String[]>]
+ [-ApplicationSecurityGroupId <String[]>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="e4d9c-107">描述</span><span class="sxs-lookup"><span data-stu-id="e4d9c-107">DESCRIPTION</span></span>
+<span data-ttu-id="e4d9c-108">**Set-AzNetworkInterfaceIpConfig** Cmdlet 會更新網路介面的 IP 設定。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-108">The **Set-AzNetworkInterfaceIpConfig** cmdlet updates an IP configuration for a network interface.</span></span>
+
+## <span data-ttu-id="e4d9c-109">例子</span><span class="sxs-lookup"><span data-stu-id="e4d9c-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="e4d9c-110">1：變更 IP 配置的 IP 位址</span><span class="sxs-lookup"><span data-stu-id="e4d9c-110">1: Changing the IP address of an IP configuration</span></span>
+```
+$vnet = Get-AzVirtualNetwork -Name myvnet -ResourceGroupName myrg
+$subnet = Get-AzVirtualNetworkSubnetConfig -Name mysubnet -VirtualNetwork $vnet
+
+$nic = Get-AzNetworkInterface -Name nic1 -ResourceGroupName myrg
+
+$nic | Set-AzNetworkInterfaceIpConfig -Name ipconfig1 -PrivateIpAddress 10.0.0.11 -Subnet $subnet
+    -Primary
+
+$nic | Set-AzNetworkInterface
+```
+
+<span data-ttu-id="e4d9c-111">前兩個命令會取得稱為 myvnet 的虛擬網路和稱為 mysubnet 的子網，並分別儲存在 $vnet 和 $subnet 變數中。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-111">The first two commands get a virtual network called myvnet and a subnet called mysubnet and store it in the variables $vnet and $subnet respectively.</span></span> <span data-ttu-id="e4d9c-112">第三個命令會獲得與需要更新之 IP 組配置的關聯網路介面 nic1。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-112">The third command gets the network interface nic1 associated with the IP configuration that needs to be updated.</span></span> <span data-ttu-id="e4d9c-113">第三個命令將主要 IP 設定 ipconfig1 的私人 IP 位址設定為 10.0.0.11。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-113">The third command sets the private IP address of the primary IP configuration ipconfig1 to 10.0.0.11.</span></span> <span data-ttu-id="e4d9c-114">最後，最後一個命令會更新網路介面，以確保已成功進行變更。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-114">Finally, the last command updates the network interface ensuring the changes have been made successfully.</span></span>
+    
+
+### <span data-ttu-id="e4d9c-115">2：將 IP 組與應用程式安全性群組建立關聯</span><span class="sxs-lookup"><span data-stu-id="e4d9c-115">2: Associating an IP configuration with an application security group</span></span>
+```
+$vnet = Get-AzVirtualNetwork -Name myvnet -ResourceGroupName myrg
+$subnet = Get-AzVirtualNetworkSubnetConfig -Name mysubnet -VirtualNetwork $vnet
+$asg = Get-ApplicationSecurityGroup -Name myasg -ResourceGroupName myrg
+
+$nic = Get-AzNetworkInterface -Name nic1 -ResourceGroupName myrg
+
+$nic | Set-AzNetworkInterfaceIpConfig -Name ipconfig1 -PrivateIpAddress 10.0.0.11 -Subnet $subnet -ApplicationSecurityGroup $asg
+    -Primary
+
+$nic | Set-AzNetworkInterface
+```
+
+<span data-ttu-id="e4d9c-116">在此範例中，變數$asg包含應用程式安全性群組參照。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-116">In this example, the variable $asg contains a reference to an application security group.</span></span>
+<span data-ttu-id="e4d9c-117">第四個命令會獲得與需要更新之 IP 組配置的關聯網路介面 nic1。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-117">The fourth command gets the network interface nic1 associated with the IP configuration that needs to be updated.</span></span> <span data-ttu-id="e4d9c-118">此Set-AzNetworkInterfaceIpConfig將主要 IP 設定 ipconfig1 的私人 IP 位址設定為 10.0.0.11，並建立與所取應用程式安全性群組之間的關聯。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-118">The Set-AzNetworkInterfaceIpConfig sets the private IP address of the primary IP configuration ipconfig1 to 10.0.0.11 and creates an association with the retrieved application security group.</span></span>
+<span data-ttu-id="e4d9c-119">最後，最後一個命令會更新網路介面，以確保已成功進行變更。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-119">Finally, the last command updates the network interface ensuring the changes have been made successfully.</span></span>
+
+## <span data-ttu-id="e4d9c-120">參數</span><span class="sxs-lookup"><span data-stu-id="e4d9c-120">PARAMETERS</span></span>
+
+### <span data-ttu-id="e4d9c-121">-ApplicationGatewayBackendAddressPool</span><span class="sxs-lookup"><span data-stu-id="e4d9c-121">-ApplicationGatewayBackendAddressPool</span></span>
+<span data-ttu-id="e4d9c-122">指定此網路介面 IP 組配置所屬的應用程式閘道後端位址集區參照集合。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-122">Specifies a collection of application gateway backend address pool references to which this network interface IP configuration belongs.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendAddressPool[]
+Parameter Sets: SetByResource
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e4d9c-123">-ApplicationGatewayBackendAddressPoolId</span><span class="sxs-lookup"><span data-stu-id="e4d9c-123">-ApplicationGatewayBackendAddressPoolId</span></span>
+<span data-ttu-id="e4d9c-124">指定此網路介面 IP 組配置所屬的應用程式閘道後端位址集區參照集合。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-124">Specifies a collection of application gateway backend address pool references to which this network interface IP configuration belongs.</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: SetByResourceId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e4d9c-125">-ApplicationSecurityGroup</span><span class="sxs-lookup"><span data-stu-id="e4d9c-125">-ApplicationSecurityGroup</span></span>
+<span data-ttu-id="e4d9c-126">指定此網路介面 IP 組配置所屬的應用程式安全性群組參照集合。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-126">Specifies a collection of application security group references to which this network interface IP configuration belongs.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSApplicationSecurityGroup[]
+Parameter Sets: SetByResource
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e4d9c-127">-ApplicationSecurityGroupId</span><span class="sxs-lookup"><span data-stu-id="e4d9c-127">-ApplicationSecurityGroupId</span></span>
+<span data-ttu-id="e4d9c-128">指定此網路介面 IP 組配置所屬的應用程式安全性群組參照集合。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-128">Specifies a collection of application security group references to which this network interface IP configuration belongs.</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: SetByResourceId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e4d9c-129">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="e4d9c-129">-DefaultProfile</span></span>
+<span data-ttu-id="e4d9c-130">用於與 azure 通訊的認證、帳戶、租使用者和訂閱。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-130">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e4d9c-131">-LoadBalancerBackendAddressPool</span><span class="sxs-lookup"><span data-stu-id="e4d9c-131">-LoadBalancerBackendAddressPool</span></span>
+<span data-ttu-id="e4d9c-132">指定此網路介面 IP 組配置所屬的負載平衡器後端位址集區參照集合。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-132">Specifies a collection of load balancer backend address pool references to which this network interface IP configuration belongs.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSBackendAddressPool[]
+Parameter Sets: SetByResource
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e4d9c-133">-LoadBalancerBackendAddressPoolId</span><span class="sxs-lookup"><span data-stu-id="e4d9c-133">-LoadBalancerBackendAddressPoolId</span></span>
+<span data-ttu-id="e4d9c-134">指定此網路介面 IP 組配置所屬的負載平衡器後端位址集區參照集合。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-134">Specifies a collection of load balancer backend address pool references to which this network interface IP configuration belongs.</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: SetByResourceId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e4d9c-135">-LoadBalancerInboundNatRule</span><span class="sxs-lookup"><span data-stu-id="e4d9c-135">-LoadBalancerInboundNatRule</span></span>
+<span data-ttu-id="e4d9c-136">指定一組負載平衡器輸入網路位址轉譯 (NAT) 此網路介面 IP 配置所屬的規則參照。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-136">Specifies a collection of load balancer inbound network address translation (NAT) rule references to which this network interface IP configuration belongs.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSInboundNatRule[]
+Parameter Sets: SetByResource
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e4d9c-137">-LoadBalancerInboundNatRuleId</span><span class="sxs-lookup"><span data-stu-id="e4d9c-137">-LoadBalancerInboundNatRuleId</span></span>
+<span data-ttu-id="e4d9c-138">指定此網路介面 IP 組配置所屬的負載平衡器內入 NAT 規則參照集合。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-138">Specifies a collection of load balancer inbound NAT rule references to which this network interface IP configuration belongs.</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: SetByResourceId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e4d9c-139">-名稱</span><span class="sxs-lookup"><span data-stu-id="e4d9c-139">-Name</span></span>
+<span data-ttu-id="e4d9c-140">指定此 Cmdlet 所設定的網路 IP 設定名稱。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-140">Specifies the name of the network IP configuration for which this cmdlet sets.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e4d9c-141">-NetworkInterface</span><span class="sxs-lookup"><span data-stu-id="e4d9c-141">-NetworkInterface</span></span>
+<span data-ttu-id="e4d9c-142">指定 **NetworkInterface** 物件。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-142">Specifies a **NetworkInterface** object.</span></span>
+<span data-ttu-id="e4d9c-143">此 Cmdlet 會新增網路介面 IP 設定至此參數指定的物件。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-143">This cmdlet adds a network interface IP configuration to the object that this parameter specifies.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSNetworkInterface
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e4d9c-144">-主要</span><span class="sxs-lookup"><span data-stu-id="e4d9c-144">-Primary</span></span>
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e4d9c-145">-PrivateIpAddress</span><span class="sxs-lookup"><span data-stu-id="e4d9c-145">-PrivateIpAddress</span></span>
+<span data-ttu-id="e4d9c-146">指定網路介面 IP 配置的靜態 IP 位址。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-146">Specifies the static IP address of the network interface IP configuration.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e4d9c-147">-PrivateIpAddressVersion</span><span class="sxs-lookup"><span data-stu-id="e4d9c-147">-PrivateIpAddressVersion</span></span>
+<span data-ttu-id="e4d9c-148">指定網路介面 IP 配置的 IP 位址版本。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-148">Specifies the IP address version of a network interface IP configuration.</span></span>
+<span data-ttu-id="e4d9c-149">此參數可接受的值為：</span><span class="sxs-lookup"><span data-stu-id="e4d9c-149">The acceptable values for this parameter are:</span></span>
+- <span data-ttu-id="e4d9c-150">IPv4</span><span class="sxs-lookup"><span data-stu-id="e4d9c-150">IPv4</span></span>
+- <span data-ttu-id="e4d9c-151">IPv6</span><span class="sxs-lookup"><span data-stu-id="e4d9c-151">IPv6</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+Accepted values: IPv4, IPv6
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e4d9c-152">-PublicIpAddress</span><span class="sxs-lookup"><span data-stu-id="e4d9c-152">-PublicIpAddress</span></span>
+<span data-ttu-id="e4d9c-153">指定 **PublicIPAddress** 物件。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-153">Specifies a **PublicIPAddress** object.</span></span>
+<span data-ttu-id="e4d9c-154">此 Cmdlet 會建立公用 IP 位址的參照，以與這個網路介面 IP 組組建立關聯。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-154">This cmdlet creates a reference to a public IP Address to associate with this network interface IP configuration.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSPublicIpAddress
+Parameter Sets: SetByResource
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e4d9c-155">-PublicIpAddressId</span><span class="sxs-lookup"><span data-stu-id="e4d9c-155">-PublicIpAddressId</span></span>
+<span data-ttu-id="e4d9c-156">此 Cmdlet 會建立公用 IP 位址的參照，以與這個網路介面 IP 組組建立關聯。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-156">This cmdlet creates a reference to a public IP Address to associate with this network interface IP configuration.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SetByResourceId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e4d9c-157">-子網</span><span class="sxs-lookup"><span data-stu-id="e4d9c-157">-Subnet</span></span>
+<span data-ttu-id="e4d9c-158">指定 **子網** 物件。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-158">Specifies a **Subnet** object.</span></span>
+<span data-ttu-id="e4d9c-159">此 Cmdlet 會建立子網的參照，以建立此網路介面 IP 組配置。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-159">This cmdlet creates a reference to a subnet in which this network interface IP configuration is created.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSSubnet
+Parameter Sets: SetByResource
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e4d9c-160">-子網Id</span><span class="sxs-lookup"><span data-stu-id="e4d9c-160">-SubnetId</span></span>
+<span data-ttu-id="e4d9c-161">此 Cmdlet 會建立子網的參照，以建立此網路介面 IP 組配置。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-161">This cmdlet creates a reference to a subnet in which this network interface IP configuration is created.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SetByResourceId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e4d9c-162">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="e4d9c-162">CommonParameters</span></span>
+<span data-ttu-id="e4d9c-163">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-163">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="e4d9c-164">詳細資訊請參閱 http://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。</span><span class="sxs-lookup"><span data-stu-id="e4d9c-164">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="e4d9c-165">輸入</span><span class="sxs-lookup"><span data-stu-id="e4d9c-165">INPUTS</span></span>
+
+### <span data-ttu-id="e4d9c-166">Microsoft.Azure.Commands.Network.models.PSNetworkInterface</span><span class="sxs-lookup"><span data-stu-id="e4d9c-166">Microsoft.Azure.Commands.Network.Models.PSNetworkInterface</span></span>
+
+### <span data-ttu-id="e4d9c-167">System.String[]</span><span class="sxs-lookup"><span data-stu-id="e4d9c-167">System.String[]</span></span>
+
+### <span data-ttu-id="e4d9c-168">Microsoft.Azure.Commands.Network.models.PSBackendAddressPool[]</span><span class="sxs-lookup"><span data-stu-id="e4d9c-168">Microsoft.Azure.Commands.Network.Models.PSBackendAddressPool[]</span></span>
+
+### <span data-ttu-id="e4d9c-169">Microsoft.Azure.Commands.Network.models.PSInboundNatRule[]</span><span class="sxs-lookup"><span data-stu-id="e4d9c-169">Microsoft.Azure.Commands.Network.Models.PSInboundNatRule[]</span></span>
+
+### <span data-ttu-id="e4d9c-170">Microsoft.Azure.Commands.Network.models.PSApplicationGatewayBackendAddressPool[]</span><span class="sxs-lookup"><span data-stu-id="e4d9c-170">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendAddressPool[]</span></span>
+
+### <span data-ttu-id="e4d9c-171">Microsoft.Azure.Commands.Network.models.PSApplicationSecurityGroup[]</span><span class="sxs-lookup"><span data-stu-id="e4d9c-171">Microsoft.Azure.Commands.Network.Models.PSApplicationSecurityGroup[]</span></span>
+
+## <span data-ttu-id="e4d9c-172">輸出</span><span class="sxs-lookup"><span data-stu-id="e4d9c-172">OUTPUTS</span></span>
+
+### <span data-ttu-id="e4d9c-173">Microsoft.Azure.Commands.Network.models.PSNetworkInterface</span><span class="sxs-lookup"><span data-stu-id="e4d9c-173">Microsoft.Azure.Commands.Network.Models.PSNetworkInterface</span></span>
+
+## <span data-ttu-id="e4d9c-174">筆記</span><span class="sxs-lookup"><span data-stu-id="e4d9c-174">NOTES</span></span>
+* <span data-ttu-id="e4d9c-175">關鍵字：azure、azurerm、arm、資源、管理、管理員、網路、網路</span><span class="sxs-lookup"><span data-stu-id="e4d9c-175">Keywords: azure, azurerm, arm, resource, management, manager, network, networking</span></span>
+
+## <span data-ttu-id="e4d9c-176">相關連結</span><span class="sxs-lookup"><span data-stu-id="e4d9c-176">RELATED LINKS</span></span>
+
+[<span data-ttu-id="e4d9c-177">Add-AzNetworkInterfaceIpConfig</span><span class="sxs-lookup"><span data-stu-id="e4d9c-177">Add-AzNetworkInterfaceIpConfig</span></span>](./Add-AzNetworkInterfaceIpConfig.md)
+
+[<span data-ttu-id="e4d9c-178">Get-AzNetworkInterfaceIpConfig</span><span class="sxs-lookup"><span data-stu-id="e4d9c-178">Get-AzNetworkInterfaceIpConfig</span></span>](./Get-AzNetworkInterfaceIpConfig.md)
+
+[<span data-ttu-id="e4d9c-179">New-AzNetworkInterfaceIpConfig</span><span class="sxs-lookup"><span data-stu-id="e4d9c-179">New-AzNetworkInterfaceIpConfig</span></span>](./New-AzNetworkInterfaceIpConfig.md)
+
+[<span data-ttu-id="e4d9c-180">Remove-AzNetworkInterfaceIpConfig</span><span class="sxs-lookup"><span data-stu-id="e4d9c-180">Remove-AzNetworkInterfaceIpConfig</span></span>](./Remove-AzNetworkInterfaceIpConfig.md)
