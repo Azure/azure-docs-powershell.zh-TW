@@ -1,0 +1,323 @@
+---
+external help file: ''
+Module Name: Az.MariaDb
+online version: https://docs.microsoft.com/powershell/module/az.mariadb/update-azmariadbfirewallrule
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MariaDb/help/Update-AzMariaDbFirewallRule.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MariaDb/help/Update-AzMariaDbFirewallRule.md
+ms.openlocfilehash: 850b1cfae70abb3e1225f9ff7bcda937dc0f0db4
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101915425"
+---
+# <span data-ttu-id="56260-101">Update-AzMariaDbFirewallRule</span><span class="sxs-lookup"><span data-stu-id="56260-101">Update-AzMariaDbFirewallRule</span></span>
+
+## <span data-ttu-id="56260-102">簡介</span><span class="sxs-lookup"><span data-stu-id="56260-102">SYNOPSIS</span></span>
+<span data-ttu-id="56260-103">建立新防火牆規則或更新現有的防火牆規則。</span><span class="sxs-lookup"><span data-stu-id="56260-103">Creates a new firewall rule or updates an existing firewall rule.</span></span>
+
+## <span data-ttu-id="56260-104">語法</span><span class="sxs-lookup"><span data-stu-id="56260-104">SYNTAX</span></span>
+
+### <span data-ttu-id="56260-105">UpdateExpanded (預設) </span><span class="sxs-lookup"><span data-stu-id="56260-105">UpdateExpanded (Default)</span></span>
+```
+Update-AzMariaDbFirewallRule -Name <String> -ResourceGroupName <String> -ServerName <String>
+ -EndIPAddress <String> -StartIPAddress <String> [-SubscriptionId <String>] [-DefaultProfile <PSObject>]
+ [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### <span data-ttu-id="56260-106">ClientIPAddress</span><span class="sxs-lookup"><span data-stu-id="56260-106">ClientIPAddress</span></span>
+```
+Update-AzMariaDbFirewallRule -Name <String> -ResourceGroupName <String> -ServerName <String>
+ -ClientIPAddress <String> [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### <span data-ttu-id="56260-107">ClientIPAddressViaIdentity</span><span class="sxs-lookup"><span data-stu-id="56260-107">ClientIPAddressViaIdentity</span></span>
+```
+Update-AzMariaDbFirewallRule -InputObject <IMariaDbIdentity> -ClientIPAddress <String>
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### <span data-ttu-id="56260-108">UpdateViaIdentityExpanded</span><span class="sxs-lookup"><span data-stu-id="56260-108">UpdateViaIdentityExpanded</span></span>
+```
+Update-AzMariaDbFirewallRule -InputObject <IMariaDbIdentity> -EndIPAddress <String> -StartIPAddress <String>
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+## <span data-ttu-id="56260-109">描述</span><span class="sxs-lookup"><span data-stu-id="56260-109">DESCRIPTION</span></span>
+<span data-ttu-id="56260-110">建立新防火牆規則或更新現有的防火牆規則。</span><span class="sxs-lookup"><span data-stu-id="56260-110">Creates a new firewall rule or updates an existing firewall rule.</span></span>
+
+## <span data-ttu-id="56260-111">例子</span><span class="sxs-lookup"><span data-stu-id="56260-111">EXAMPLES</span></span>
+
+### <span data-ttu-id="56260-112">範例 1：更新 MariaDB 防火牆規則</span><span class="sxs-lookup"><span data-stu-id="56260-112">Example 1: Update MariaDB firewall rule</span></span>
+```powershell
+PS C:\> Update-AzMariaDbFirewallRule -Name fr-cfgl3y -ServerName mariadb-test-4rmtig -ResourceGroupName mariadb-test-qu5ov0 -StartIPAddress 0.0.3.1 -EndIPAddress 0.0.3.255
+
+Name      StartIPAddress EndIPAddress
+----      -------------- ------------
+fr-cfgl3y 0.0.3.1        0.0.3.255
+```
+
+<span data-ttu-id="56260-113">此命令會更新 MariaDB 防火牆規則。</span><span class="sxs-lookup"><span data-stu-id="56260-113">This command updates a MariaDB firewall rule.</span></span>
+
+### <span data-ttu-id="56260-114">範例 2：依身分識別更新 MariaDB 防火牆規則。</span><span class="sxs-lookup"><span data-stu-id="56260-114">Example 2: Update MariaDB Firewall Rule by identity.</span></span>
+```powershell
+PS C:\> $ID = "/subscriptions/<SubscriptionId>/resourceGroups/mariadb-test-qu5ov0/providers/Microsoft.DBforMariaDB/servers/mariadb-test-4rmtig/firewallRules/fr-cfgl3y"
+PS C:\> Update-AzMariaDbFirewallRule -InputObject $ID -EndIPAddress 0.0.0.3 -StartIPAddress 0.0.0.2
+
+Name      StartIPAddress EndIPAddress
+----      -------------- ------------
+fr-cfgl3y 0.0.0.2        0.0.0.3
+```
+
+<span data-ttu-id="56260-115">Cmdlet 會依身分識別更新 MariaDB 防火牆規則。</span><span class="sxs-lookup"><span data-stu-id="56260-115">The cmdlet updates MariaDB Firewall Rule by identity.</span></span>
+
+### <span data-ttu-id="56260-116">範例 3：更新 MariaDB 防火牆規則 by -ClientIPAddress。</span><span class="sxs-lookup"><span data-stu-id="56260-116">Example 3: Update MariaDB Firewall Rule by -ClientIPAddress.</span></span>
+```powershell
+PS C:\> $ID = "/subscriptions/<SubscriptionId>/resourceGroups/mariadb-test-qu5ov0/providers/Microsoft.DBforMariaDB/servers/mariadb-test-4rmtig/firewallRules/fr-cfgl3y"
+PS C:\> Update-AzMariaDbFirewallRule -InputObject $ID --ClientIPAddress 0.0.0.2
+
+Name      StartIPAddress EndIPAddress
+----      -------------- ------------
+fr-cfgl3y 0.0.0.2        0.0.0.2
+```
+
+<span data-ttu-id="56260-117">Cmdlet 會更新 MariaDB 防火牆規則 By -ClientIPAddress。</span><span class="sxs-lookup"><span data-stu-id="56260-117">The cmdlet updates MariaDB Firewall Rule by -ClientIPAddress.</span></span>
+
+## <span data-ttu-id="56260-118">參數</span><span class="sxs-lookup"><span data-stu-id="56260-118">PARAMETERS</span></span>
+
+### <span data-ttu-id="56260-119">-AsJob</span><span class="sxs-lookup"><span data-stu-id="56260-119">-AsJob</span></span>
+<span data-ttu-id="56260-120">以工作執行命令</span><span class="sxs-lookup"><span data-stu-id="56260-120">Run the command as a job</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="56260-121">-ClientIPAddress</span><span class="sxs-lookup"><span data-stu-id="56260-121">-ClientIPAddress</span></span>
+<span data-ttu-id="56260-122">用戶端指定的伺服器防火牆規則之單一 IP。</span><span class="sxs-lookup"><span data-stu-id="56260-122">Client specified single IP of the server firewall rule.</span></span>
+<span data-ttu-id="56260-123">必須是 IPv4 格式。</span><span class="sxs-lookup"><span data-stu-id="56260-123">Must be IPv4 format.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ClientIPAddress, ClientIPAddressViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="56260-124">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="56260-124">-DefaultProfile</span></span>
+<span data-ttu-id="56260-125">用於與 Azure 通訊的認證、帳戶、租使用者和訂閱。</span><span class="sxs-lookup"><span data-stu-id="56260-125">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: System.Management.Automation.PSObject
+Parameter Sets: (All)
+Aliases: AzureRMContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="56260-126">-EndIPAddress</span><span class="sxs-lookup"><span data-stu-id="56260-126">-EndIPAddress</span></span>
+<span data-ttu-id="56260-127">伺服器防火牆規則的結束 IP 位址。</span><span class="sxs-lookup"><span data-stu-id="56260-127">The end IP address of the server firewall rule.</span></span>
+<span data-ttu-id="56260-128">必須是 IPv4 格式。</span><span class="sxs-lookup"><span data-stu-id="56260-128">Must be IPv4 format.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="56260-129">-InputObject</span><span class="sxs-lookup"><span data-stu-id="56260-129">-InputObject</span></span>
+<span data-ttu-id="56260-130">身分識別參數若要建構，請參閱 INPUTOBJECT 屬性的 NOTES 區段，並建立雜湊表。</span><span class="sxs-lookup"><span data-stu-id="56260-130">Identity Parameter To construct, see NOTES section for INPUTOBJECT properties and create a hash table.</span></span>
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.MariaDb.Models.IMariaDbIdentity
+Parameter Sets: ClientIPAddressViaIdentity, UpdateViaIdentityExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="56260-131">-名稱</span><span class="sxs-lookup"><span data-stu-id="56260-131">-Name</span></span>
+<span data-ttu-id="56260-132">伺服器防火牆規則的名稱。</span><span class="sxs-lookup"><span data-stu-id="56260-132">The name of the server firewall rule.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ClientIPAddress, UpdateExpanded
+Aliases: FirewallRuleName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="56260-133">-NoWait</span><span class="sxs-lookup"><span data-stu-id="56260-133">-NoWait</span></span>
+<span data-ttu-id="56260-134">非同步執行命令</span><span class="sxs-lookup"><span data-stu-id="56260-134">Run the command asynchronously</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="56260-135">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="56260-135">-ResourceGroupName</span></span>
+<span data-ttu-id="56260-136">包含資源的資源組名。</span><span class="sxs-lookup"><span data-stu-id="56260-136">The name of the resource group that contains the resource.</span></span>
+<span data-ttu-id="56260-137">您可以從 Azure Resource Manager API 或入口網站取得此值。</span><span class="sxs-lookup"><span data-stu-id="56260-137">You can obtain this value from the Azure Resource Manager API or the portal.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ClientIPAddress, UpdateExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="56260-138">-ServerName</span><span class="sxs-lookup"><span data-stu-id="56260-138">-ServerName</span></span>
+<span data-ttu-id="56260-139">伺服器名稱。</span><span class="sxs-lookup"><span data-stu-id="56260-139">The name of the server.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ClientIPAddress, UpdateExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="56260-140">-StartIPAddress</span><span class="sxs-lookup"><span data-stu-id="56260-140">-StartIPAddress</span></span>
+<span data-ttu-id="56260-141">伺服器防火牆規則的起始 IP 位址。</span><span class="sxs-lookup"><span data-stu-id="56260-141">The start IP address of the server firewall rule.</span></span>
+<span data-ttu-id="56260-142">必須是 IPv4 格式。</span><span class="sxs-lookup"><span data-stu-id="56260-142">Must be IPv4 format.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="56260-143">-SubscriptionId</span><span class="sxs-lookup"><span data-stu-id="56260-143">-SubscriptionId</span></span>
+<span data-ttu-id="56260-144">可識別 Azure 訂閱的訂閱識別碼。</span><span class="sxs-lookup"><span data-stu-id="56260-144">The subscription ID that identifies an Azure subscription.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ClientIPAddress, UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="56260-145">-確認</span><span class="sxs-lookup"><span data-stu-id="56260-145">-Confirm</span></span>
+<span data-ttu-id="56260-146">執行 Cmdlet 之前，提示您確認。</span><span class="sxs-lookup"><span data-stu-id="56260-146">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="56260-147">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="56260-147">-WhatIf</span></span>
+<span data-ttu-id="56260-148">顯示 Cmdlet 執行時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="56260-148">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="56260-149">不會執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="56260-149">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="56260-150">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="56260-150">CommonParameters</span></span>
+<span data-ttu-id="56260-151">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="56260-151">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="56260-152">詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="56260-152">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="56260-153">輸入</span><span class="sxs-lookup"><span data-stu-id="56260-153">INPUTS</span></span>
+
+### <span data-ttu-id="56260-154">Microsoft.Azure.PowerShell.Cmdlets.MariaDb.models.IAzaDbIdentity</span><span class="sxs-lookup"><span data-stu-id="56260-154">Microsoft.Azure.PowerShell.Cmdlets.MariaDb.Models.IMariaDbIdentity</span></span>
+
+## <span data-ttu-id="56260-155">輸出</span><span class="sxs-lookup"><span data-stu-id="56260-155">OUTPUTS</span></span>
+
+### <span data-ttu-id="56260-156">Microsoft.Azure.PowerShell.Cmdlets.MariaDb.Models.Api20180601Preview.IFirewallRule</span><span class="sxs-lookup"><span data-stu-id="56260-156">Microsoft.Azure.PowerShell.Cmdlets.MariaDb.Models.Api20180601Preview.IFirewallRule</span></span>
+
+## <span data-ttu-id="56260-157">筆記</span><span class="sxs-lookup"><span data-stu-id="56260-157">NOTES</span></span>
+
+<span data-ttu-id="56260-158">別名</span><span class="sxs-lookup"><span data-stu-id="56260-158">ALIASES</span></span>
+
+<span data-ttu-id="56260-159">複雜的參數屬性</span><span class="sxs-lookup"><span data-stu-id="56260-159">COMPLEX PARAMETER PROPERTIES</span></span>
+
+<span data-ttu-id="56260-160">若要建立下列描述的參數，請建構包含適當屬性的雜湊表。</span><span class="sxs-lookup"><span data-stu-id="56260-160">To create the parameters described below, construct a hash table containing the appropriate properties.</span></span> <span data-ttu-id="56260-161">有關雜湊表的資訊，請執行Get-Help about_Hash_Tables。</span><span class="sxs-lookup"><span data-stu-id="56260-161">For information on hash tables, run Get-Help about_Hash_Tables.</span></span>
+
+
+<span data-ttu-id="56260-162">INPUTOBJECT： <IMariaDbIdentity> 身分識別參數</span><span class="sxs-lookup"><span data-stu-id="56260-162">INPUTOBJECT <IMariaDbIdentity>: Identity Parameter</span></span>
+  - <span data-ttu-id="56260-163">`[ConfigurationName <String>]`：伺服器組組的名稱。</span><span class="sxs-lookup"><span data-stu-id="56260-163">`[ConfigurationName <String>]`: The name of the server configuration.</span></span>
+  - <span data-ttu-id="56260-164">`[DatabaseName <String>]`：資料庫的名稱。</span><span class="sxs-lookup"><span data-stu-id="56260-164">`[DatabaseName <String>]`: The name of the database.</span></span>
+  - <span data-ttu-id="56260-165">`[FirewallRuleName <String>]`：伺服器防火牆規則的名稱。</span><span class="sxs-lookup"><span data-stu-id="56260-165">`[FirewallRuleName <String>]`: The name of the server firewall rule.</span></span>
+  - <span data-ttu-id="56260-166">`[Id <String>]`：資源識別路徑</span><span class="sxs-lookup"><span data-stu-id="56260-166">`[Id <String>]`: Resource identity path</span></span>
+  - <span data-ttu-id="56260-167">`[LocationName <String>]`：位置的名稱。</span><span class="sxs-lookup"><span data-stu-id="56260-167">`[LocationName <String>]`: The name of the location.</span></span>
+  - <span data-ttu-id="56260-168">`[ResourceGroupName <String>]`：包含資源的資源組名。</span><span class="sxs-lookup"><span data-stu-id="56260-168">`[ResourceGroupName <String>]`: The name of the resource group that contains the resource.</span></span> <span data-ttu-id="56260-169">您可以從 Azure Resource Manager API 或入口網站取得此值。</span><span class="sxs-lookup"><span data-stu-id="56260-169">You can obtain this value from the Azure Resource Manager API or the portal.</span></span>
+  - <span data-ttu-id="56260-170">`[SecurityAlertPolicyName <SecurityAlertPolicyName?>]`：安全性警示策略的名稱。</span><span class="sxs-lookup"><span data-stu-id="56260-170">`[SecurityAlertPolicyName <SecurityAlertPolicyName?>]`: The name of the security alert policy.</span></span>
+  - <span data-ttu-id="56260-171">`[ServerName <String>]`：伺服器名稱。</span><span class="sxs-lookup"><span data-stu-id="56260-171">`[ServerName <String>]`: The name of the server.</span></span>
+  - <span data-ttu-id="56260-172">`[SubscriptionId <String>]`：識別 Azure 訂閱的訂閱識別碼。</span><span class="sxs-lookup"><span data-stu-id="56260-172">`[SubscriptionId <String>]`: The subscription ID that identifies an Azure subscription.</span></span>
+  - <span data-ttu-id="56260-173">`[VirtualNetworkRuleName <String>]`：虛擬網路規則的名稱。</span><span class="sxs-lookup"><span data-stu-id="56260-173">`[VirtualNetworkRuleName <String>]`: The name of the virtual network rule.</span></span>
+
+## <span data-ttu-id="56260-174">相關連結</span><span class="sxs-lookup"><span data-stu-id="56260-174">RELATED LINKS</span></span>
+
