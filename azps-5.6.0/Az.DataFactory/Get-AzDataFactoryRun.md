@@ -1,0 +1,191 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.DataFactories.dll-Help.xml
+Module Name: Az.DataFactory
+ms.assetid: 7100B5F0-A07B-4305-BF80-1F52647A03AB
+online version: https://docs.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryrun
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Get-AzDataFactoryRun.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Get-AzDataFactoryRun.md
+ms.openlocfilehash: 2dbab7978716d6bb960c1804abf9e86246571e29
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101907754"
+---
+# <span data-ttu-id="2e4fe-101">Get-AzDataFactoryRun</span><span class="sxs-lookup"><span data-stu-id="2e4fe-101">Get-AzDataFactoryRun</span></span>
+
+## <span data-ttu-id="2e4fe-102">簡介</span><span class="sxs-lookup"><span data-stu-id="2e4fe-102">SYNOPSIS</span></span>
+<span data-ttu-id="2e4fe-103">在 Azure Data Factory 中為資料集的資料區執行。</span><span class="sxs-lookup"><span data-stu-id="2e4fe-103">Gets runs for a data slice of a dataset in Azure Data Factory.</span></span>
+
+## <span data-ttu-id="2e4fe-104">語法</span><span class="sxs-lookup"><span data-stu-id="2e4fe-104">SYNTAX</span></span>
+
+### <span data-ttu-id="2e4fe-105">ByFactoryName (預設) </span><span class="sxs-lookup"><span data-stu-id="2e4fe-105">ByFactoryName (Default)</span></span>
+```
+Get-AzDataFactoryRun [-DataFactoryName] <String> [-DatasetName] <String> [-StartDateTime] <DateTime>
+ [-ResourceGroupName] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="2e4fe-106">ByFactoryObject</span><span class="sxs-lookup"><span data-stu-id="2e4fe-106">ByFactoryObject</span></span>
+```
+Get-AzDataFactoryRun [-DataFactory] <PSDataFactory> [-DatasetName] <String> [-StartDateTime] <DateTime>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="2e4fe-107">描述</span><span class="sxs-lookup"><span data-stu-id="2e4fe-107">DESCRIPTION</span></span>
+<span data-ttu-id="2e4fe-108">**Get-AzDataFactoryRun** Cmdlet 會針對 Azure Data Factory 中資料集的資料區區執行。</span><span class="sxs-lookup"><span data-stu-id="2e4fe-108">The **Get-AzDataFactoryRun** cmdlet gets the runs for a data slice of a dataset in Azure Data Factory.</span></span>
+<span data-ttu-id="2e4fe-109">資料工廠中的資料集是由時間軸的區塊所組成。</span><span class="sxs-lookup"><span data-stu-id="2e4fe-109">A dataset in a data factory is composed of slices over the time axis.</span></span>
+<span data-ttu-id="2e4fe-110">分割區的寬度取決於排程，無論是每小時或每天。</span><span class="sxs-lookup"><span data-stu-id="2e4fe-110">The width of a slice is determined by the schedule, either hourly or daily.</span></span>
+<span data-ttu-id="2e4fe-111">執行是一個處理區塊的單位。</span><span class="sxs-lookup"><span data-stu-id="2e4fe-111">A run is a unit of processing for a slice.</span></span>
+<span data-ttu-id="2e4fe-112">在重試或因失敗而重新執行區塊時，可能針對某一個區塊執行一或多個執行。</span><span class="sxs-lookup"><span data-stu-id="2e4fe-112">There could be one or more runs for a slice in case of retries or in case you rerun your slice due to failures.</span></span>
+<span data-ttu-id="2e4fe-113">一個區塊會以其開始時間來識別。</span><span class="sxs-lookup"><span data-stu-id="2e4fe-113">A slice is identified by its start time.</span></span>
+<span data-ttu-id="2e4fe-114">若要取得分割區開始時間，請使用 Get-AzDataFactorySlice Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="2e4fe-114">To obtain the start time of a slice, use the Get-AzDataFactorySlice cmdlet.</span></span>
+<span data-ttu-id="2e4fe-115">例如，若要執行下列區塊，請使用開始時間 2015-04-02T20：00：00。</span><span class="sxs-lookup"><span data-stu-id="2e4fe-115">For example, to get a run for the following slice, use the start time 2015-04-02T20:00:00.</span></span>
+<span data-ttu-id="2e4fe-116">ResourceGroupName ： ADF DataFactoryName ： SPDataFactory0924 DatasetName ： MarketingCampaignEffectivenessBlobDataset Start ： 5/2/2014 8：00：00 PM End ： 5/3/2014 8：00：00 PM 重試Count： 0 狀態 ： Ready LatencyStatus：</span><span class="sxs-lookup"><span data-stu-id="2e4fe-116">ResourceGroupName  : ADF DataFactoryName : SPDataFactory0924 DatasetName : MarketingCampaignEffectivenessBlobDataset Start : 5/2/2014 8:00:00 PM End : 5/3/2014 8:00:00 PM RetryCount : 0 Status : Ready LatencyStatus :</span></span>
+
+## <span data-ttu-id="2e4fe-117">例子</span><span class="sxs-lookup"><span data-stu-id="2e4fe-117">EXAMPLES</span></span>
+
+### <span data-ttu-id="2e4fe-118">範例 1：取得資料集</span><span class="sxs-lookup"><span data-stu-id="2e4fe-118">Example 1: Get a dataset</span></span>
+```
+PS C:\>Get-AzDataFactoryRun -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -DatasetName "DAWikiAggregatedData" -StartDateTime 2014-05-21T16:00:00Z
+Id                  : a7c4913c-9623-49b3-ae1e-3e45e2b68819
+ResourceGroupName   : ADF
+DataFactoryName     : WikiADF
+DatasetName           : DAWikiAggregatedData
+PipelineName        : 249ea141-ca00-8597-fad9-a148e5e7bdba
+ActivityId          : fcefe2bd-39b1-2d7a-7b35-bcc2b0432300
+ResumptionToken     : a7c4913c-9623-49b3-ae1e-3e45e2b68819
+ContinuationToken   : 
+ProcessingStartTime : 5/21/2014 5:02:41 PM
+ProcessingEndTime   : 5/21/2014 5:04:12 PM
+PercentComplete     : 100
+DataSliceStart      : 5/21/2014 4:00:00 PM
+DataSliceEnd        : 5/21/2014 5:00:00 PM
+Status              : Succeeded
+Timestamp           : 5/21/2014 5:02:41 PM
+RetryAttempt        : 0
+Properties          : {[errors, ]} 
+ErrorMessage        :
+```
+
+<span data-ttu-id="2e4fe-119">此命令會針對名為 DAWikiAggregatedData 的資料工廠中，從 2014 年 05 月 21 日 4：00 GMT 開始的資料工廠，執行所有作業。</span><span class="sxs-lookup"><span data-stu-id="2e4fe-119">This command gets all runs for slices of the dataset named DAWikiAggregatedData in the data factory named WikiADF that start from 4 PM GMT on 05/21/2014.</span></span>
+
+## <span data-ttu-id="2e4fe-120">參數</span><span class="sxs-lookup"><span data-stu-id="2e4fe-120">PARAMETERS</span></span>
+
+### <span data-ttu-id="2e4fe-121">-DataFactory</span><span class="sxs-lookup"><span data-stu-id="2e4fe-121">-DataFactory</span></span>
+<span data-ttu-id="2e4fe-122">指定 **PSDataFactory** 物件。</span><span class="sxs-lookup"><span data-stu-id="2e4fe-122">Specifies a **PSDataFactory** object.</span></span>
+<span data-ttu-id="2e4fe-123">此 Cmdlet 會針對屬於此參數指定之資料工廠的區塊執行。</span><span class="sxs-lookup"><span data-stu-id="2e4fe-123">This cmdlet gets runs for slices that belong to the data factory that this parameter specifies.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.DataFactories.Models.PSDataFactory
+Parameter Sets: ByFactoryObject
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2e4fe-124">-DataFactoryName</span><span class="sxs-lookup"><span data-stu-id="2e4fe-124">-DataFactoryName</span></span>
+<span data-ttu-id="2e4fe-125">指定資料工廠的名稱。</span><span class="sxs-lookup"><span data-stu-id="2e4fe-125">Specifies the name of a data factory.</span></span>
+<span data-ttu-id="2e4fe-126">此 Cmdlet 會針對屬於此參數指定之資料工廠的區塊執行。</span><span class="sxs-lookup"><span data-stu-id="2e4fe-126">This cmdlet gets runs for slices that belong to the data factory that this parameter specifies.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByFactoryName
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2e4fe-127">-DatasetName</span><span class="sxs-lookup"><span data-stu-id="2e4fe-127">-DatasetName</span></span>
+<span data-ttu-id="2e4fe-128">指定資料集的名稱。</span><span class="sxs-lookup"><span data-stu-id="2e4fe-128">Specifies the name of the dataset.</span></span>
+<span data-ttu-id="2e4fe-129">此 Cmdlet 會針對屬於此參數指定之資料集的區塊執行。</span><span class="sxs-lookup"><span data-stu-id="2e4fe-129">This cmdlet gets runs for slices that belong to the dataset that this parameter specifies.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2e4fe-130">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="2e4fe-130">-DefaultProfile</span></span>
+<span data-ttu-id="2e4fe-131">用於與 Azure 通訊的認證、帳戶、租使用者和訂閱</span><span class="sxs-lookup"><span data-stu-id="2e4fe-131">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2e4fe-132">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="2e4fe-132">-ResourceGroupName</span></span>
+<span data-ttu-id="2e4fe-133">指定 Azure 資源組的名稱。</span><span class="sxs-lookup"><span data-stu-id="2e4fe-133">Specifies the name of an Azure resource group.</span></span>
+<span data-ttu-id="2e4fe-134">此 Cmdlet 會針對屬於此參數指定之群組的區塊執行出廠設定。</span><span class="sxs-lookup"><span data-stu-id="2e4fe-134">This cmdlet gets factory runs for slices that belong to the group that this parameter specifies.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByFactoryName
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2e4fe-135">-StartDateTime</span><span class="sxs-lookup"><span data-stu-id="2e4fe-135">-StartDateTime</span></span>
+<span data-ttu-id="2e4fe-136">將時間週期的開始指定為 **DateTime** 物件。</span><span class="sxs-lookup"><span data-stu-id="2e4fe-136">Specifies the start of a time period as a **DateTime** object.</span></span>
+<span data-ttu-id="2e4fe-137">此 Cmdlet 會針對符合此時段的資料區執行。</span><span class="sxs-lookup"><span data-stu-id="2e4fe-137">This cmdlet gets runs for the data slices that match this time period.</span></span>
+<span data-ttu-id="2e4fe-138">*StartDateTime* 必須以 ISO8601 格式指定，如下列範例所示：2015-01-01Z 2015-01T00：00：00Z 2015-01-01T00 ：00：00.000Z (UTC) 2015-01-01T00：00：00：00-08：00 (太平洋標準時間) 預設時區設計工具為 UTC。</span><span class="sxs-lookup"><span data-stu-id="2e4fe-138">*StartDateTime* must be specified in the ISO8601 format, as in the following examples: 2015-01-01Z 2015-01-01T00:00:00Z 2015-01-01T00:00:00.000Z (UTC) 2015-01-01T00:00:00-08:00 (Pacific Standard Time) The default time zone designator is UTC.</span></span>
+
+```yaml
+Type: System.DateTime
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2e4fe-139">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="2e4fe-139">CommonParameters</span></span>
+<span data-ttu-id="2e4fe-140">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="2e4fe-140">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="2e4fe-141">詳細資訊請參閱 http://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。</span><span class="sxs-lookup"><span data-stu-id="2e4fe-141">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="2e4fe-142">輸入</span><span class="sxs-lookup"><span data-stu-id="2e4fe-142">INPUTS</span></span>
+
+### <span data-ttu-id="2e4fe-143">Microsoft.Azure.Commands.DataFactories.Models.PSDataFactory</span><span class="sxs-lookup"><span data-stu-id="2e4fe-143">Microsoft.Azure.Commands.DataFactories.Models.PSDataFactory</span></span>
+
+### <span data-ttu-id="2e4fe-144">System.String</span><span class="sxs-lookup"><span data-stu-id="2e4fe-144">System.String</span></span>
+
+## <span data-ttu-id="2e4fe-145">輸出</span><span class="sxs-lookup"><span data-stu-id="2e4fe-145">OUTPUTS</span></span>
+
+### <span data-ttu-id="2e4fe-146">Microsoft.Azure.Commands.DataFactories.Models.PSDataSliceRun</span><span class="sxs-lookup"><span data-stu-id="2e4fe-146">Microsoft.Azure.Commands.DataFactories.Models.PSDataSliceRun</span></span>
+
+## <span data-ttu-id="2e4fe-147">筆記</span><span class="sxs-lookup"><span data-stu-id="2e4fe-147">NOTES</span></span>
+* <span data-ttu-id="2e4fe-148">關鍵字：azure、azurerm、arm、resource、management、manager、data、azure</span><span class="sxs-lookup"><span data-stu-id="2e4fe-148">Keywords: azure, azurerm, arm, resource, management, manager, data, factories</span></span>
+
+## <span data-ttu-id="2e4fe-149">相關連結</span><span class="sxs-lookup"><span data-stu-id="2e4fe-149">RELATED LINKS</span></span>
+
+[<span data-ttu-id="2e4fe-150">Get-AzDataFactorySlice</span><span class="sxs-lookup"><span data-stu-id="2e4fe-150">Get-AzDataFactorySlice</span></span>](./Get-AzDataFactorySlice.md)
+
+
