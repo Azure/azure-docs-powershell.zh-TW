@@ -1,0 +1,223 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.DeviceProvisioningServices.dll-Help.xml
+Module Name: Az.DeviceProvisioningServices
+online version: https://docs.microsoft.com/powershell/module/az.deviceprovisioningservices/remove-aziotdeviceprovisioningservicecertificate
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DeviceProvisioningServices/DeviceProvisioningServices/help/Remove-AzIoTDeviceProvisioningServiceCertificate.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DeviceProvisioningServices/DeviceProvisioningServices/help/Remove-AzIoTDeviceProvisioningServiceCertificate.md
+ms.openlocfilehash: fdf6e61b972b2d78db96f88bea502e2d1a4a5865
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101902965"
+---
+# <span data-ttu-id="b995a-101">Remove-AzIoTDeviceProvisioningServiceCertificate</span><span class="sxs-lookup"><span data-stu-id="b995a-101">Remove-AzIoTDeviceProvisioningServiceCertificate</span></span>
+
+## <span data-ttu-id="b995a-102">簡介</span><span class="sxs-lookup"><span data-stu-id="b995a-102">SYNOPSIS</span></span>
+<span data-ttu-id="b995a-103">刪除 Azure IoT Hub 裝置設置服務憑證。</span><span class="sxs-lookup"><span data-stu-id="b995a-103">Delete an Azure IoT Hub Device Provisioning Service certificate.</span></span>
+
+## <span data-ttu-id="b995a-104">語法</span><span class="sxs-lookup"><span data-stu-id="b995a-104">SYNTAX</span></span>
+
+### <span data-ttu-id="b995a-105">ResourceSet (預設) </span><span class="sxs-lookup"><span data-stu-id="b995a-105">ResourceSet (Default)</span></span>
+```
+Remove-AzIoTDeviceProvisioningServiceCertificate [-ResourceGroupName] <String> [-Name] <String>
+ [-CertificateName] <String> [-Etag] <String> [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="b995a-106">InputObjectSet</span><span class="sxs-lookup"><span data-stu-id="b995a-106">InputObjectSet</span></span>
+```
+Remove-AzIoTDeviceProvisioningServiceCertificate [-InputObject] <PSCertificateResponse> [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="b995a-107">ResourceIdSet</span><span class="sxs-lookup"><span data-stu-id="b995a-107">ResourceIdSet</span></span>
+```
+Remove-AzIoTDeviceProvisioningServiceCertificate [-ResourceId] <String> [-Etag] <String> [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="b995a-108">描述</span><span class="sxs-lookup"><span data-stu-id="b995a-108">DESCRIPTION</span></span>
+<span data-ttu-id="b995a-109">有關 Azure IoT Hub 裝置設置服務中 CA 憑證的詳細說明，請參閱 https://docs.microsoft.com/azure/iot-dps/how-to-verify-certificates 。</span><span class="sxs-lookup"><span data-stu-id="b995a-109">For a detailed explanation of CA certificates in Azure IoT Hub Device Provisioning Service, see https://docs.microsoft.com/azure/iot-dps/how-to-verify-certificates.</span></span>
+
+## <span data-ttu-id="b995a-110">例子</span><span class="sxs-lookup"><span data-stu-id="b995a-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="b995a-111">範例 1</span><span class="sxs-lookup"><span data-stu-id="b995a-111">Example 1</span></span>
+```
+PS C:\> Remove-AzIoTDeviceProvisioningServiceCertificate -ResourceGroupName "myresourcegroup" -Name "myiotdps" -CertificateName "mycertificate" -Etag "AAAAAAFPazE=" -PassThru
+
+True
+```
+
+<span data-ttu-id="b995a-112">刪除 Azure IoT Hub 裝置布布服務中的「mycertificate」。</span><span class="sxs-lookup"><span data-stu-id="b995a-112">Delete "mycertificate" in an Azure IoT Hub device provisioning service.</span></span>
+
+## <span data-ttu-id="b995a-113">參數</span><span class="sxs-lookup"><span data-stu-id="b995a-113">PARAMETERS</span></span>
+
+### <span data-ttu-id="b995a-114">-CertificateName</span><span class="sxs-lookup"><span data-stu-id="b995a-114">-CertificateName</span></span>
+<span data-ttu-id="b995a-115">憑證名稱</span><span class="sxs-lookup"><span data-stu-id="b995a-115">Name of the Certificate</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ResourceSet
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b995a-116">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="b995a-116">-DefaultProfile</span></span>
+<span data-ttu-id="b995a-117">用於與 Azure 通訊的認證、帳戶、租使用者和訂閱。</span><span class="sxs-lookup"><span data-stu-id="b995a-117">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b995a-118">-Etag</span><span class="sxs-lookup"><span data-stu-id="b995a-118">-Etag</span></span>
+<span data-ttu-id="b995a-119">憑證的 Etag</span><span class="sxs-lookup"><span data-stu-id="b995a-119">Etag of the Certificate</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ResourceSet, ResourceIdSet
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b995a-120">-InputObject</span><span class="sxs-lookup"><span data-stu-id="b995a-120">-InputObject</span></span>
+<span data-ttu-id="b995a-121">IoT 裝置設置服務憑證物件</span><span class="sxs-lookup"><span data-stu-id="b995a-121">IoT Device Provisioning Service Certificate Object</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Management.DeviceProvisioningServices.Models.PSCertificateResponse
+Parameter Sets: InputObjectSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b995a-122">-名稱</span><span class="sxs-lookup"><span data-stu-id="b995a-122">-Name</span></span>
+<span data-ttu-id="b995a-123">IoT 裝置設置服務的名稱</span><span class="sxs-lookup"><span data-stu-id="b995a-123">Name of the IoT Device Provisioning Service</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ResourceSet
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b995a-124">-PassThru</span><span class="sxs-lookup"><span data-stu-id="b995a-124">-PassThru</span></span>
+<span data-ttu-id="b995a-125">{{Fill PassThru Description}}</span><span class="sxs-lookup"><span data-stu-id="b995a-125">{{Fill PassThru Description}}</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b995a-126">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="b995a-126">-ResourceGroupName</span></span>
+<span data-ttu-id="b995a-127">資源組的名稱</span><span class="sxs-lookup"><span data-stu-id="b995a-127">Name of the Resource Group</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ResourceSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b995a-128">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="b995a-128">-ResourceId</span></span>
+<span data-ttu-id="b995a-129">IoT 裝置提供服務憑證資源識別碼</span><span class="sxs-lookup"><span data-stu-id="b995a-129">IoT Device Provisioning Service Certificate Resource Id</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ResourceIdSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b995a-130">-確認</span><span class="sxs-lookup"><span data-stu-id="b995a-130">-Confirm</span></span>
+<span data-ttu-id="b995a-131">執行 Cmdlet 之前，提示您確認。</span><span class="sxs-lookup"><span data-stu-id="b995a-131">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b995a-132">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="b995a-132">-WhatIf</span></span>
+<span data-ttu-id="b995a-133">顯示 Cmdlet 執行時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="b995a-133">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="b995a-134">不會執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="b995a-134">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b995a-135">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="b995a-135">CommonParameters</span></span>
+<span data-ttu-id="b995a-136">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="b995a-136">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="b995a-137">詳細資訊請參閱 http://go.microsoft.com/fwlink/?LinkID=113216) about_CommonParameters (。</span><span class="sxs-lookup"><span data-stu-id="b995a-137">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="b995a-138">輸入</span><span class="sxs-lookup"><span data-stu-id="b995a-138">INPUTS</span></span>
+
+### <span data-ttu-id="b995a-139">Microsoft.Azure.Commands.management.DeviceProvisioningServices.models.PSCertificateResponse</span><span class="sxs-lookup"><span data-stu-id="b995a-139">Microsoft.Azure.Commands.Management.DeviceProvisioningServices.Models.PSCertificateResponse</span></span>
+
+### <span data-ttu-id="b995a-140">System.String</span><span class="sxs-lookup"><span data-stu-id="b995a-140">System.String</span></span>
+
+## <span data-ttu-id="b995a-141">輸出</span><span class="sxs-lookup"><span data-stu-id="b995a-141">OUTPUTS</span></span>
+
+### <span data-ttu-id="b995a-142">System.Boolean</span><span class="sxs-lookup"><span data-stu-id="b995a-142">System.Boolean</span></span>
+
+## <span data-ttu-id="b995a-143">筆記</span><span class="sxs-lookup"><span data-stu-id="b995a-143">NOTES</span></span>
+
+## <span data-ttu-id="b995a-144">相關連結</span><span class="sxs-lookup"><span data-stu-id="b995a-144">RELATED LINKS</span></span>

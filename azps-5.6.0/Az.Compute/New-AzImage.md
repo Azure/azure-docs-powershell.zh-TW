@@ -1,0 +1,174 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Compute.dll-Help.xml
+Module Name: Az.Compute
+online version: https://docs.microsoft.com/powershell/module/az.compute/new-azimage
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/New-AzImage.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/New-AzImage.md
+ms.openlocfilehash: 77a4879d403b52a828460bcfec5666b7071dcea9
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101903838"
+---
+# <span data-ttu-id="44a45-101">New-AzImage</span><span class="sxs-lookup"><span data-stu-id="44a45-101">New-AzImage</span></span>
+
+## <span data-ttu-id="44a45-102">簡介</span><span class="sxs-lookup"><span data-stu-id="44a45-102">SYNOPSIS</span></span>
+<span data-ttu-id="44a45-103">建立影像。</span><span class="sxs-lookup"><span data-stu-id="44a45-103">Creates an image.</span></span>
+
+## <span data-ttu-id="44a45-104">語法</span><span class="sxs-lookup"><span data-stu-id="44a45-104">SYNTAX</span></span>
+
+```
+New-AzImage [-ResourceGroupName] <String> [-ImageName] <String> [-Image] <PSImage> [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="44a45-105">描述</span><span class="sxs-lookup"><span data-stu-id="44a45-105">DESCRIPTION</span></span>
+<span data-ttu-id="44a45-106">**New-AzImage** Cmdlet 會建立影像。</span><span class="sxs-lookup"><span data-stu-id="44a45-106">The **New-AzImage** cmdlet creates an image.</span></span>
+
+## <span data-ttu-id="44a45-107">例子</span><span class="sxs-lookup"><span data-stu-id="44a45-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="44a45-108">範例 1</span><span class="sxs-lookup"><span data-stu-id="44a45-108">Example 1</span></span>
+```
+PS C:\> $imageConfig = New-AzImageConfig -Location 'West US';
+PS C:\> $osDiskVhdUri = "https://contoso.blob.core.windows.net/test/os.vhd"
+PS C:\> $dataDiskVhdUri1 = "https://contoso.blob.core.windows.net/test/data1.vhd"
+PS C:\> $dataDiskVhdUri2 = "https://contoso.blob.core.windows.net/test/data2.vhd"
+PS C:\> Set-AzImageOsDisk -Image $imageConfig -OsType 'Windows' -OsState 'Generalized' -BlobUri $osDiskVhdUri;
+PS C:\> Add-AzImageDataDisk -Image $imageConfig -Lun 1 -BlobUri $dataDiskVhdUri1;
+PS C:\> Add-AzImageDataDisk -Image $imageConfig -Lun 2 -BlobUri $dataDiskVhdUri2;
+PS C:\> New-AzImage -Image $imageConfig -ImageName 'ImageName01' -ResourceGroupName 'ResourceGroup01';
+```
+
+<span data-ttu-id="44a45-109">第一個命令會建立影像物件，然後將它儲存在$imageConfig變數中。</span><span class="sxs-lookup"><span data-stu-id="44a45-109">The first command creates an image object, and then stores it in the $imageConfig variable.</span></span>
+<span data-ttu-id="44a45-110">接下來三個命令會指派 os 磁片的路徑和兩個數據磁片$osDiskVhdUri、$dataDiskVhdUri 1 及$dataDiskVhdUri 2 個變數。</span><span class="sxs-lookup"><span data-stu-id="44a45-110">The next three commands assign paths of os disk and two data disks to the $osDiskVhdUri, $dataDiskVhdUri1, and $dataDiskVhdUri2 variables.</span></span>
+<span data-ttu-id="44a45-111">此方法僅適用于下列命令的可讀性。</span><span class="sxs-lookup"><span data-stu-id="44a45-111">This approach is only for readability of the following commands.</span></span>
+<span data-ttu-id="44a45-112">接下來三個命令會各自新增作業系統磁片和兩個數據磁片磁片至儲存在 $imageConfig。</span><span class="sxs-lookup"><span data-stu-id="44a45-112">The next three commands each adds an os disk and two data disks to the image stored in $imageConfig.</span></span>
+<span data-ttu-id="44a45-113">每個磁片的 URI 會儲存在 $osDiskVhdUri、$dataDiskVhdUri 1 和 $dataDiskVhdUri 2。</span><span class="sxs-lookup"><span data-stu-id="44a45-113">The URI of each disk is stored in $osDiskVhdUri, $dataDiskVhdUri1, and $dataDiskVhdUri2.</span></span>
+<span data-ttu-id="44a45-114">最後一個命令會建立資源群組 'ResourceGroup01' 中名為 "ImageName01" 的影像。</span><span class="sxs-lookup"><span data-stu-id="44a45-114">The final command creates an image named 'ImageName01' in resource group 'ResourceGroup01'.</span></span>
+
+## <span data-ttu-id="44a45-115">參數</span><span class="sxs-lookup"><span data-stu-id="44a45-115">PARAMETERS</span></span>
+
+### <span data-ttu-id="44a45-116">-AsJob</span><span class="sxs-lookup"><span data-stu-id="44a45-116">-AsJob</span></span>
+<span data-ttu-id="44a45-117">在背景中執行 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="44a45-117">Run cmdlet in the background</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="44a45-118">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="44a45-118">-DefaultProfile</span></span>
+<span data-ttu-id="44a45-119">用於與 azure 通訊的認證、帳戶、租使用者和訂閱。</span><span class="sxs-lookup"><span data-stu-id="44a45-119">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="44a45-120">-影像</span><span class="sxs-lookup"><span data-stu-id="44a45-120">-Image</span></span>
+<span data-ttu-id="44a45-121">指定一個本地影像物件。</span><span class="sxs-lookup"><span data-stu-id="44a45-121">Specifies a local image object.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Compute.Automation.Models.PSImage
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="44a45-122">-ImageName</span><span class="sxs-lookup"><span data-stu-id="44a45-122">-ImageName</span></span>
+<span data-ttu-id="44a45-123">指定影像的名稱。</span><span class="sxs-lookup"><span data-stu-id="44a45-123">Specifies the name of an image.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: Name
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="44a45-124">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="44a45-124">-ResourceGroupName</span></span>
+<span data-ttu-id="44a45-125">指定資源組的名稱。</span><span class="sxs-lookup"><span data-stu-id="44a45-125">Specifies the name of a resource group.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="44a45-126">-確認</span><span class="sxs-lookup"><span data-stu-id="44a45-126">-Confirm</span></span>
+<span data-ttu-id="44a45-127">執行 Cmdlet 之前，提示您確認。</span><span class="sxs-lookup"><span data-stu-id="44a45-127">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="44a45-128">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="44a45-128">-WhatIf</span></span>
+<span data-ttu-id="44a45-129">顯示 Cmdlet 執行時會發生什麼情況。</span><span class="sxs-lookup"><span data-stu-id="44a45-129">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="44a45-130">不會執行 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="44a45-130">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="44a45-131">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="44a45-131">CommonParameters</span></span>
+<span data-ttu-id="44a45-132">此 Cmdlet 支援常見的參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="44a45-132">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="44a45-133">詳細資訊[請參閱about_CommonParameters。](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="44a45-133">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="44a45-134">輸入</span><span class="sxs-lookup"><span data-stu-id="44a45-134">INPUTS</span></span>
+
+### <span data-ttu-id="44a45-135">System.String</span><span class="sxs-lookup"><span data-stu-id="44a45-135">System.String</span></span>
+
+### <span data-ttu-id="44a45-136">Microsoft.Azure.Commands.Compute.Automation.models.PSImage</span><span class="sxs-lookup"><span data-stu-id="44a45-136">Microsoft.Azure.Commands.Compute.Automation.Models.PSImage</span></span>
+
+## <span data-ttu-id="44a45-137">輸出</span><span class="sxs-lookup"><span data-stu-id="44a45-137">OUTPUTS</span></span>
+
+### <span data-ttu-id="44a45-138">Microsoft.Azure.Commands.Compute.Automation.models.PSImage</span><span class="sxs-lookup"><span data-stu-id="44a45-138">Microsoft.Azure.Commands.Compute.Automation.Models.PSImage</span></span>
+
+## <span data-ttu-id="44a45-139">筆記</span><span class="sxs-lookup"><span data-stu-id="44a45-139">NOTES</span></span>
+
+## <span data-ttu-id="44a45-140">相關連結</span><span class="sxs-lookup"><span data-stu-id="44a45-140">RELATED LINKS</span></span>
